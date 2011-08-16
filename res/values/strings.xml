@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, EpMobile!</string>
-    <string name="app_name">EP Mobile</string>
+	<string name="app_name">EP Mobile</string>
+	<string name="about_text">EP Mobile is a package of
+		useful electophysiology
+		tools for your phone or tablet.
+		
+		<i>Copyright (c) 2011 EP Studios, Inc.</i>
+	</string>
+	<string name="about_label">About</string>
+	<string name="about_title">About EP Mobile</string>
+	<string name="dofetilide_label">Dofetilide Calculator</string>
 </resources>
