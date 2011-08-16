@@ -2,12 +2,9 @@ package org.epstudios.epmobile;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.widget.Toast;
 import android.os.Bundle;
-import android.widget.Button;
 import android.view.View;
 import android.view.View.OnClickListener;
-
 
 public class EpMobile extends Activity implements OnClickListener {
     /** Called when the activity is first created. */
@@ -18,6 +15,8 @@ public class EpMobile extends Activity implements OnClickListener {
 
         View dofetilideButton = findViewById(R.id.dofetilide_button);
         dofetilideButton.setOnClickListener(this);
+        View qtcButton = findViewById(R.id.qtc_button);
+        qtcButton.setOnClickListener(this);
         View aboutButton = findViewById(R.id.about_button);
         aboutButton.setOnClickListener(this);
     }
@@ -29,6 +28,9 @@ public class EpMobile extends Activity implements OnClickListener {
     		break;
     	case R.id.dofetilide_button:
     		dofetilideCalculator();
+    		break;
+    	case R.id.qtc_button:
+    		qtcCalculator();
     		break;
     		// more buttons here
     	}
@@ -43,4 +45,6 @@ public class EpMobile extends Activity implements OnClickListener {
     private void dofetilideCalculator() {
     	;
     }
+    
+    private void qtcCalculator() {}
 }
