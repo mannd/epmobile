@@ -4,10 +4,15 @@
 	<string name="about_text">EP Mobile is a package of
 		useful electophysiology
 		tools for your phone or tablet.
-		<i>Copyright (c) 2011 EP Studios, Inc.</i>
+		Copyright \u00a9 2011 EP Studios, Inc.
+		All rights reserved.
 	</string>
 	<string name="about_label">About</string>
 	<string name="about_title">About EP Mobile</string>
 	<string name="dofetilide_label">Dofetilide Calculator</string>
 	<string name="qtc_label">QTc Calculator</string>
+	<string name="rr_label">RR Interval (msec)</string>
+	<string name="qt_label">QT Interval (msec)</string>
+	<string name="qtc_result_label">QTc (msec)</string>
+	<string name="calculate_label">Calculate!</string>
 </resources>

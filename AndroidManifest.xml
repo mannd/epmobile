@@ -14,9 +14,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-	<activity android:name=".About" android:label="@string/about_title"
-		android:theme="@android:style/Theme.Dialog">
-	</activity>  
-
+		<activity android:name=".About" android:label="@string/about_title"
+			android:theme="@android:style/Theme.Dialog">
+		</activity>  
+		<activity android:name=".Qtc" android:label="@string/qtc_label">
+		</activity>
     </application>
 </manifest>

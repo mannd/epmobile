@@ -46,5 +46,8 @@ public class EpMobile extends Activity implements OnClickListener {
     	;
     }
     
-    private void qtcCalculator() {}
+    private void qtcCalculator() {
+    	Intent i = new Intent(this, Qtc.class);
+    	startActivity(i);
+    }
 }
