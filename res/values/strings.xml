@@ -12,7 +12,10 @@
 	<string name="dofetilide_label">Dofetilide Calculator</string>
 	<string name="qtc_label">QTc Calculator</string>
 	<string name="rr_label">RR Interval (msec)</string>
+	<string name="rr_hint">RR (msec)</string>
 	<string name="qt_label">QT Interval (msec)</string>
+	<string name="qt_hint">QT (msec)</string>
 	<string name="qtc_result_label">QTc (msec)</string>
 	<string name="calculate_label">Calculate!</string>
+	<string name="clear_label">Clear</string>
 </resources>
