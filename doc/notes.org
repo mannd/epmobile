@@ -12,3 +12,5 @@
 *** all others!
 *** implementation
 **** Java class QtcCalculator
+*** Normal values
+**** Color code abnormal QTc
