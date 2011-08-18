@@ -1,0 +1,14 @@
+#+TITLE: EP Mobile Development Notes
+* Features
+** Dofetilide Calculator
+** QTc Calculator
+** CL/HR Converter
+* Menu
+** units
+*** msec or sec
+*** metric or US
+** QTc formulae
+*** Bazett's (default)
+*** all others!
+*** implementation
+**** Java class QtcCalculator

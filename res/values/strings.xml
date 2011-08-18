@@ -18,4 +18,5 @@
 	<string name="qtc_result_label">QTc (msec)</string>
 	<string name="calculate_label">Calculate!</string>
 	<string name="clear_label">Clear</string>
+	<string name="cleared">Cleared!</string>
 </resources>

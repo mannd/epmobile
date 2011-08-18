@@ -1,5 +1,7 @@
 package org.epstudios.epmobile;
 
+import org.epstudios.epmobile.QtcCalculator.QtcFormula;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -41,18 +43,12 @@ public class Qtc extends Activity implements OnClickListener {
 	}
 	
 	private void calculateQtc() {
-//		int rr = Integer.parseInt(rrEditText.getText().toString());
-//		int qt = Integer.parseInt(qtEditText.getText().toString());
-//		qtcTextView.setText(String.valueOf(rr));
 		CharSequence rrText = rrEditText.getText();
 		CharSequence qtText = qtEditText.getText();
 		try {
 			int rr = Integer.parseInt(rrText.toString());
 			int qt = Integer.parseInt(qtText.toString());
-			double decimalRr = rr / 1000.0;
-			double decimalQt = qt / 1000.0;
-			double decimalQtc = decimalQt / Math.sqrt(decimalRr);
-			int qtc =  (int) (decimalQtc * 1000);
+			int qtc = QtcCalculator.calculate(rr, qt, QtcFormula.BAZETT);
 			qtcTextView.setText("QTc = " + String.valueOf(qtc) + " msec");
 		}
 		catch (NumberFormatException e) {	
@@ -62,9 +58,9 @@ public class Qtc extends Activity implements OnClickListener {
 	
 	
 	private void clearEntries() {
-		rrEditText.setText("");
-		qtEditText.setText("");
-		qtcTextView.setText("Cleared!");
+		rrEditText.setText(null);
+		qtEditText.setText(null);
+		qtcTextView.setText(getString(R.string.cleared));
 		rrEditText.requestFocus();
 	}
 		
