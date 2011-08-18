@@ -24,9 +24,9 @@ public class Qtc extends Activity implements OnClickListener {
         qtEditText = (EditText) findViewById(R.id.qtEditText);
 	}
 	
-	TextView qtcTextView;
-	EditText rrEditText;
-	EditText qtEditText;
+	private TextView qtcTextView;
+	private EditText rrEditText;
+	private EditText qtEditText;
 
 	
 	public void onClick(View v) {
@@ -44,13 +44,20 @@ public class Qtc extends Activity implements OnClickListener {
 //		int rr = Integer.parseInt(rrEditText.getText().toString());
 //		int qt = Integer.parseInt(qtEditText.getText().toString());
 //		qtcTextView.setText(String.valueOf(rr));
-		String rrText = rrEditText.getText().toString();
-		String qtText = qtEditText.getText().toString();
-		Integer rr = Integer.getInteger(rrText);
-		Integer qt = Integer.getInteger(qtText);
-		if (rr == null || qt == null)
-			qtcTextView.setText("Invalid Arguements");
-		
+		CharSequence rrText = rrEditText.getText();
+		CharSequence qtText = qtEditText.getText();
+		try {
+			int rr = Integer.parseInt(rrText.toString());
+			int qt = Integer.parseInt(qtText.toString());
+			double decimalRr = rr / 1000.0;
+			double decimalQt = qt / 1000.0;
+			double decimalQtc = decimalQt / Math.sqrt(decimalRr);
+			int qtc =  (int) (decimalQtc * 1000);
+			qtcTextView.setText("QTc = " + String.valueOf(qtc) + " msec");
+		}
+		catch (NumberFormatException e) {	
+			qtcTextView.setText("Invalid!");
+		}		
 	}		
 	
 	
@@ -58,6 +65,7 @@ public class Qtc extends Activity implements OnClickListener {
 		rrEditText.setText("");
 		qtEditText.setText("");
 		qtcTextView.setText("Cleared!");
+		rrEditText.requestFocus();
 	}
 		
 
