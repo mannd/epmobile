@@ -3,6 +3,7 @@ package org.epstudios.epmobile;
 import org.epstudios.epmobile.QtcCalculator.QtcFormula;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -42,6 +43,8 @@ public class Qtc extends Activity implements OnClickListener {
 		}
 	}
 	
+	private final static int QTC_UPPER_LIMIT = 440;
+	
 	private void calculateQtc() {
 		CharSequence rrText = rrEditText.getText();
 		CharSequence qtText = qtEditText.getText();
@@ -50,9 +53,14 @@ public class Qtc extends Activity implements OnClickListener {
 			int qt = Integer.parseInt(qtText.toString());
 			int qtc = QtcCalculator.calculate(rr, qt, QtcFormula.BAZETT);
 			qtcTextView.setText("QTc = " + String.valueOf(qtc) + " msec");
+			if (qtc >= QTC_UPPER_LIMIT)
+				qtcTextView.setTextColor(Color.RED);
+			else
+				qtcTextView.setTextColor(Color.GREEN);
 		}
 		catch (NumberFormatException e) {	
 			qtcTextView.setText("Invalid!");
+			qtcTextView.setTextColor(Color.RED);
 		}		
 	}		
 	
@@ -60,7 +68,8 @@ public class Qtc extends Activity implements OnClickListener {
 	private void clearEntries() {
 		rrEditText.setText(null);
 		qtEditText.setText(null);
-		qtcTextView.setText(getString(R.string.cleared));
+		qtcTextView.setText(getString(R.string.qtc_result_label));
+		qtcTextView.setTextColor(Color.LTGRAY);
 		rrEditText.requestFocus();
 	}
 		
