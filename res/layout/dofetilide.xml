@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="match_parent"
+	android:background="@color/background"
+	android:layout_height="match_parent">
+	<LinearLayout android:layout_width="match_parent"
+		android:id="@+id/toplinearLayout" android:layout_height="wrap_content">
+	<RadioGroup android:id="@+id/sexRadioGroup"
+		android:layout_width="wrap_content" android:layout_height="wrap_content">
+		<RadioButton android:layout_height="wrap_content"
+			android:text="Male" android:layout_width="wrap_content"
+			android:id="@+id/male" android:checked="true"></RadioButton>
+		<RadioButton android:layout_height="wrap_content"
+			android:text="Female" android:layout_width="wrap_content"
+			android:id="@+id/female"></RadioButton>
+	</RadioGroup>
+	<TextView android:text="Age (years)" android:layout_width="wrap_content" 
+		android:id="@+id/ageTextView" 
+		android:textAppearance="?android:attr/textAppearanceMedium" 
+		android:layout_height="wrap_content">
+		</TextView>
+	<EditText android:layout_weight="1" android:id="@+id/ageEditText" 
+		android:layout_width="wrap_content" android:layout_height="wrap_content" 
+		android:inputType="number">
+		</EditText>
+	</LinearLayout>
+	<LinearLayout android:layout_width="match_parent"
+		android:id="@+id/middlelinearLayout" android:layout_height="wrap_content">
+	<TextView android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:text="Weight (kg)" android:layout_width="wrap_content"
+		android:id="@+id/textView1"></TextView>
+	<EditText android:layout_height="wrap_content"
+		android:layout_width="match_parent" android:id="@+id/weightEditText"
+		android:inputType="numberDecimal">
+		<requestFocus></requestFocus>
+	</EditText>
+	</LinearLayout>
+	<LinearLayout android:layout_width="match_parent"
+		android:id="@+id/middle2linearLayout" android:layout_height="wrap_content">
+	<TextView android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:text="Serum Creatinine" android:layout_width="wrap_content"
+		android:id="@+id/textView2"></TextView>
+	<EditText android:layout_height="wrap_content"
+		android:layout_width="match_parent" android:id="@+id/creatinineEditText"
+		android:inputType="numberDecimal"></EditText>
+	</LinearLayout>
+	<LinearLayout android:layout_width="match_parent"
+		android:id="@+id/linearLayout3" android:layout_height="wrap_content">
+		<Button android:text="@string/calculate_label" android:id="@+id/calculate_dose_button"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_weight="1"></Button>
+		<TextView android:id="@+id/calculated_dose" android:text="@string/dofetilide_result_label"
+			android:textSize="20sp"
+			android:textColor="@color/neutral_text"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_weight="1"></TextView>
+		<Button android:text="@string/clear_label" android:id="@+id/clear_button" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"></Button>
+	</LinearLayout>
+	<TextView android:text="Creatinine Clearance" android:layout_width="wrap_content" 
+	android:id="@+id/ccTextView" android:textAppearance="?android:attr/textAppearanceMedium" 
+	android:layout_height="wrap_content"></TextView>
+</LinearLayout>

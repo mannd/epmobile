@@ -19,5 +19,7 @@
 		</activity>  
 		<activity android:name=".Qtc" android:label="@string/qtc_label">
 		</activity>
+		<activity android:name=".Dofetilide" android:label="@string/dofetilide_label">
+		</activity>
     </application>
 </manifest>

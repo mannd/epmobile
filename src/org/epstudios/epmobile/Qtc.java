@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 import android.widget.EditText;
-import android.text.Editable;
+//import android.text.Editable;
 
 public class Qtc extends Activity implements OnClickListener {
 	@Override

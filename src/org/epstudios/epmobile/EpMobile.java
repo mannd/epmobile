@@ -43,7 +43,8 @@ public class EpMobile extends Activity implements OnClickListener {
     }
     
     private void dofetilideCalculator() {
-    	;
+    	Intent i = new Intent(this, Dofetilide.class);
+    	startActivity(i);
     }
     
     private void qtcCalculator() {
