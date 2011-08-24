@@ -13,11 +13,14 @@
 	<string name="qtc_label">QTc Calculator</string>
 	<string name="rr_label">RR Interval (msec)</string>
 	<string name="rr_hint">RR (msec)</string>
-	<string name="qt_label">QT Interval (msec)</string>
+	<string name="qt_label">QT Interval (msec)</string> 
 	<string name="qt_hint">QT (msec)</string>
 	<string name="qtc_result_label">QTc (msec)</string>
 	<string name="calculate_label">Calculate!</string>
 	<string name="clear_label">Clear</string>
 	<string name="cleared">Cleared!</string>
 	<string name="dofetilide_result_label">Dofetilide dose</string>
+	<string name="weight_hint">Weight (kgs)</string>
+	<string name="creatinine_hint">Creatinine (mg/dL)</string>
+	<string name="age_hint">Age (years)</string>
 </resources>

@@ -3,6 +3,10 @@
 	android:orientation="vertical" android:layout_width="match_parent"
 	android:background="@color/background"
 	android:layout_height="match_parent">
+	<TextView android:text="@string/dofetilide_label"
+		android:layout_height="wrap_content" android:layout_width="wrap_content"
+		android:layout_gravity="center" android:layout_marginBottom="25dip"
+		android:textSize="24.5sp" />
 	<LinearLayout android:layout_width="match_parent"
 		android:id="@+id/toplinearLayout" android:layout_height="wrap_content">
 	<RadioGroup android:id="@+id/sexRadioGroup"
@@ -21,6 +25,7 @@
 		</TextView>
 	<EditText android:layout_weight="1" android:id="@+id/ageEditText" 
 		android:layout_width="wrap_content" android:layout_height="wrap_content" 
+		android:hint="@string/age_hint"
 		android:inputType="number">
 		</EditText>
 	</LinearLayout>
@@ -28,21 +33,24 @@
 		android:id="@+id/middlelinearLayout" android:layout_height="wrap_content">
 	<TextView android:layout_height="wrap_content"
 		android:textAppearance="?android:attr/textAppearanceMedium"
-		android:text="Weight (kg)" android:layout_width="wrap_content"
+		android:text="Weight (kg)" 
+		android:layout_width="wrap_content"
 		android:id="@+id/textView1"></TextView>
 	<EditText android:layout_height="wrap_content"
 		android:layout_width="match_parent" android:id="@+id/weightEditText"
+		android:hint="@string/weight_hint"
 		android:inputType="numberDecimal">
-		<requestFocus></requestFocus>
 	</EditText>
 	</LinearLayout>
 	<LinearLayout android:layout_width="match_parent"
 		android:id="@+id/middle2linearLayout" android:layout_height="wrap_content">
 	<TextView android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
 		android:textAppearance="?android:attr/textAppearanceMedium"
-		android:text="Serum Creatinine" android:layout_width="wrap_content"
+		android:text="Creatinine" 
 		android:id="@+id/textView2"></TextView>
 	<EditText android:layout_height="wrap_content"
+		android:hint="@string/creatinine_hint"
 		android:layout_width="match_parent" android:id="@+id/creatinineEditText"
 		android:inputType="numberDecimal"></EditText>
 	</LinearLayout>
