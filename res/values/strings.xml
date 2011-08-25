@@ -34,4 +34,10 @@
 	<string name="hr_label">Heart Rate (bpm)</string>
 	<string name="hr_hint">HR (bpm)</string>
 	<string name="calculated_result_label"></string>
+	<string name="qtc_formula_title">QTc Formula</string>
+	<string name="qtc_formula_summary">Select the QTc formula</string>
+	<string name="settings_label">Settings...</string>
+	<string name="settings_shortcut">s</string>
+	<string name="settings_title">EP Mobile settings</string>
 </resources>
+

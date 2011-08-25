@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<array name="formula_names">
+		<item>"Bazett"</item>
+		<item>"Fridericia"</item>
+		<item>"Sagie"</item>
+	</array>
+	<array name="formula_values">
+		<item>"BAZETT"</item>
+		<item>"FRIDERICIA"</item>
+		<item>"SAGIE"</item>
+	</array>
+</resources>

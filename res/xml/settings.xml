@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+    	android:title="@string/qtc_formula_title"
+    	android:key="qtc_formula"
+    	android:summary="@string/qtc_formula_summary"
+    	android:entries="@array/formula_names"
+    	android:entryValues="@array/formula_values"
+    	android:defaultValue="BAZETT"
+    	>
+    </ListPreference>
+</PreferenceScreen>
