@@ -66,22 +66,20 @@ public class CycleLength extends Activity implements OnClickListener {
 	}
 	
 	private void calculateResult() {
-//		CharSequence rrText = rrEditText.getText();
-//		CharSequence qtText = qtEditText.getText();
-//		try {
-//			int rr = Integer.parseInt(rrText.toString());
-//			int qt = Integer.parseInt(qtText.toString());
-//			int qtc = QtcCalculator.calculate(rr, qt, QtcFormula.BAZETT);
-//			qtcTextView.setText("QTc = " + String.valueOf(qtc) + " msec");
-//			if (qtc >= QTC_UPPER_LIMIT)
-//				qtcTextView.setTextColor(Color.RED);
-//			else
-//				qtcTextView.setTextColor(Color.GREEN);
-//		}
-//		catch (NumberFormatException e) {	
-//			qtcTextView.setText("Invalid!");
-//			qtcTextView.setTextColor(Color.RED);
-//		}		
+		CharSequence resultText = inputEditText.getText();
+		resultTextView.setTextColor(Color.GREEN);
+		try {
+			int result = Integer.parseInt(resultText.toString());
+			result = 60000 / result;
+			if (intervalRateRadioGroup.getCheckedRadioButtonId() == R.id.cl_button)
+				resultTextView.setText("HR = " + String.valueOf(result) + " bpm");
+			else
+				resultTextView.setText("CL = " + String.valueOf(result) + " msec");
+		}
+		catch (NumberFormatException e) {	
+			resultTextView.setText("Invalid!");
+			resultTextView.setTextColor(Color.RED);
+		}		
 	}		
 	
 	
