@@ -9,18 +9,29 @@
 	</string>
 	<string name="about_label">About</string>
 	<string name="about_title">About EP Mobile</string>
-	<string name="dofetilide_label">Dofetilide Dose Calculator</string>
+	<string name="dofetilide_label">Dofetilide Calculator</string>
 	<string name="qtc_label">QTc Calculator</string>
+	<string name="cycle_length_label">Cycle Length Calculator</string>
 	<string name="rr_label">RR Interval (msec)</string>
 	<string name="rr_hint">RR (msec)</string>
 	<string name="qt_label">QT Interval (msec)</string> 
 	<string name="qt_hint">QT (msec)</string>
-	<string name="qtc_result_label">QTc (msec)</string>
+	<string name="qtc_result_label">QTc Interval (msec)</string>
 	<string name="calculate_label">Calculate!</string>
 	<string name="clear_label">Clear</string>
 	<string name="cleared">Cleared!</string>
 	<string name="dofetilide_result_label">Dofetilide dose</string>
 	<string name="weight_hint">Weight (kgs)</string>
 	<string name="creatinine_hint">Creatinine (mg/dL)</string>
-	<string name="age_hint">Age (years)</string>
+	<string name="age_hint">Age (yr)</string>
+	<string name="weight_label">Weight (kg)</string>
+	<string name="creatinine_label">Creatinine (mg/dL)</string>
+	<string name="creatinine_clearance_label"></string>
+	<string name="male_label">Male</string>
+	<string name="female_label">Female</string>
+	<string name="cl_label">Cycle Length (msec)</string>
+	<string name="cl_hint">CL (msec)</string>
+	<string name="hr_label">Heart Rate (bpm)</string>
+	<string name="hr_hint">HR (bpm)</string>
+	<string name="calculated_result_label"></string>
 </resources>

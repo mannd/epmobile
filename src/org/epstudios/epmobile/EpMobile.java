@@ -17,6 +17,8 @@ public class EpMobile extends Activity implements OnClickListener {
         dofetilideButton.setOnClickListener(this);
         View qtcButton = findViewById(R.id.qtc_button);
         qtcButton.setOnClickListener(this);
+        View intervalRateButton = findViewById(R.id.cycle_length_button);
+        intervalRateButton.setOnClickListener(this);
         View aboutButton = findViewById(R.id.about_button);
         aboutButton.setOnClickListener(this);
     }
@@ -31,6 +33,9 @@ public class EpMobile extends Activity implements OnClickListener {
     		break;
     	case R.id.qtc_button:
     		qtcCalculator();
+    		break;
+    	case R.id.cycle_length_button:
+    		intervalRateCalculator();
     		break;
     		// more buttons here
     	}
@@ -49,6 +54,11 @@ public class EpMobile extends Activity implements OnClickListener {
     
     private void qtcCalculator() {
     	Intent i = new Intent(this, Qtc.class);
+    	startActivity(i);
+    }
+    
+    private void intervalRateCalculator() {
+    	Intent i = new Intent(this, CycleLength.class);
     	startActivity(i);
     }
 }

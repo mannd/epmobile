@@ -58,7 +58,7 @@ public class Dofetilide extends Activity implements OnClickListener {
 			double creatinine = Double.parseDouble(creatinineText.toString());
 			double age = Double.parseDouble(ageText.toString());
 			int cc = (int) creatinineClearance(isMale, age, weight, creatinine);
-			ccTextView.setText("Creatinine Clearance = " + String.valueOf(cc));
+			ccTextView.setText("(Creatinine Clearance = " + String.valueOf(cc) + ")");
 			int dose = getDose(cc);
 			if (dose == 0) {
 				dofetilideDoseTextView.setText("Do not use!");
@@ -101,6 +101,8 @@ public class Dofetilide extends Activity implements OnClickListener {
 	private void clearEntries() {
 		weightEditText.setText(null);
 		creatinineEditText.setText(null);
+		ageEditText.setText(null);
+		ccTextView.setText(R.string.creatinine_clearance_label);
 		dofetilideDoseTextView.setText(getString(R.string.dofetilide_result_label));
 		dofetilideDoseTextView.setTextColor(Color.LTGRAY);
 		weightEditText.requestFocus();

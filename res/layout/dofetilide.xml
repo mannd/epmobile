@@ -8,10 +8,10 @@
 	<RadioGroup android:id="@+id/sexRadioGroup"
 		android:layout_width="wrap_content" android:layout_height="wrap_content">
 		<RadioButton android:layout_height="wrap_content"
-			android:text="Male" android:layout_width="wrap_content"
+			android:text="@string/male_label" android:layout_width="wrap_content"
 			android:id="@+id/male" android:checked="true"></RadioButton>
 		<RadioButton android:layout_height="wrap_content"
-			android:text="Female" android:layout_width="wrap_content"
+			android:text="@string/female_label" android:layout_width="wrap_content"
 			android:id="@+id/female"></RadioButton>
 	</RadioGroup>
 	<TextView android:text="Age (years)" android:layout_width="wrap_content" 
@@ -25,31 +25,36 @@
 		android:inputType="number">
 		</EditText>
 	</LinearLayout>
-	<LinearLayout android:layout_width="match_parent"
-		android:id="@+id/middlelinearLayout" android:layout_height="wrap_content">
-	<TextView android:layout_height="wrap_content"
-		android:textAppearance="?android:attr/textAppearanceMedium"
-		android:text="Weight (kg)" 
-		android:layout_width="wrap_content"
-		android:id="@+id/textView1"></TextView>
-	<EditText android:layout_height="wrap_content"
-		android:layout_width="match_parent" android:id="@+id/weightEditText"
-		android:hint="@string/weight_hint"
-		android:inputType="numberDecimal">
-	</EditText>
-	</LinearLayout>
-	<LinearLayout android:layout_width="match_parent"
-		android:id="@+id/middle2linearLayout" android:layout_height="wrap_content">
-	<TextView android:layout_height="wrap_content"
-		android:layout_width="wrap_content"
-		android:textAppearance="?android:attr/textAppearanceMedium"
-		android:text="Creatinine" 
-		android:id="@+id/textView2"></TextView>
-	<EditText android:layout_height="wrap_content"
-		android:hint="@string/creatinine_hint"
-		android:layout_width="match_parent" android:id="@+id/creatinineEditText"
-		android:inputType="numberDecimal"></EditText>
-	</LinearLayout>
+ 	<TableLayout
+  		android:layout_height="wrap_content"
+  		android:layout_width="wrap_content"
+  		android:layout_gravity="center"
+  		android:stretchColumns="*">
+  		<TableRow>
+  			<TextView android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:text="@string/weight_label" 
+				android:layout_width="wrap_content"
+				android:id="@+id/textView1">
+			</TextView>
+			<EditText android:layout_height="wrap_content"
+			android:layout_width="match_parent" android:id="@+id/weightEditText"
+			android:hint="@string/weight_hint"
+			android:inputType="numberDecimal">	</EditText>
+	  	</TableRow>
+  		<TableRow>
+  			<TextView android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:text="@string/creatinine_label" 
+				android:id="@+id/textView2">
+			</TextView>
+			<EditText android:layout_height="wrap_content" android:hint="@string/creatinine_hint"
+				android:layout_width="match_parent" android:id="@+id/creatinineEditText"
+				android:inputType="numberDecimal">
+			</EditText>
+  		</TableRow>
+  	</TableLayout>
 	<LinearLayout android:layout_width="match_parent"
 		android:id="@+id/linearLayout3" android:layout_height="wrap_content">
 		<Button android:text="@string/calculate_label" android:id="@+id/calculate_dose_button"
@@ -64,7 +69,7 @@
 			android:layout_width="wrap_content" 
 			android:layout_height="wrap_content"></Button>
 	</LinearLayout>
-	<TextView android:text="Creatinine Clearance" android:layout_width="wrap_content" 
+	<TextView android:text="@string/creatinine_clearance_label" android:layout_width="wrap_content" 
 	android:id="@+id/ccTextView" android:textAppearance="?android:attr/textAppearanceMedium" 
 	android:layout_height="wrap_content"></TextView>
 </LinearLayout>

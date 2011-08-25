@@ -26,6 +26,10 @@
 			android:layout_width="fill_parent" 
 			android:layout_height="wrap_content"
 			android:text="@string/qtc_label" />
+		<Button android:id="@+id/cycle_length_button"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/cycle_length_label" />
 		<Button android:id="@+id/about_button" 
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content" 
