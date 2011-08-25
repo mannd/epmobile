@@ -2,14 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="match_parent" android:background="@color/background"
 	android:layout_height="match_parent" android:orientation="vertical">
-	<TextView android:text="@string/qtc_label"
-		android:layout_height="wrap_content" android:layout_width="wrap_content"
-		android:layout_gravity="center" android:layout_marginBottom="25dip"
-		android:textSize="24.5sp" />
 	<LinearLayout android:layout_width="match_parent"
 		android:id="@+id/linearLayout1" android:layout_height="wrap_content">
 		<TextView android:id="@+id/textView1" android:text="@string/rr_label"
 			android:layout_width="wrap_content" android:layout_weight="1"
+			android:textAppearance="?android:attr/textAppearanceMedium" 
 			android:layout_height="wrap_content"></TextView>
 		<EditText android:id="@+id/rrEditText" android:text=""
 			android:hint="@string/rr_hint"
@@ -21,6 +18,7 @@
 		android:id="@+id/linearLayout2" android:layout_height="wrap_content">
 		<TextView android:id="@+id/textView2" android:text="@string/qt_label"
 			android:layout_width="wrap_content" android:layout_weight="1"
+			android:textAppearance="?android:attr/textAppearanceMedium" 
 			android:layout_height="wrap_content"></TextView>
 		<EditText android:id="@+id/qtEditText" android:layout_width="wrap_content"
 			android:layout_weight="1" android:layout_height="wrap_content"
@@ -40,8 +38,5 @@
 		<Button android:text="@string/clear_label" android:id="@+id/clear_button" 
 			android:layout_width="wrap_content" 
 			android:layout_height="wrap_content"></Button>
-	</LinearLayout>
-	<LinearLayout android:layout_width="match_parent"
-		android:id="@+id/linearLayout4" android:layout_height="wrap_content">
 	</LinearLayout>
 </LinearLayout>
