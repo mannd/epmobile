@@ -3,9 +3,9 @@
 	<string name="app_name">EP Mobile</string>
 	<string name="about_text">EP Mobile is a package of
 		useful electophysiology
-		tools for your phone or tablet.
+		tools for your Android phone or tablet.
 		Copyright \u00a9 2011 EP Studios, Inc.
-		All rights reserved.
+		Licensed under GNU GPL v3.
 	</string>
 	<string name="about_label">About</string>
 	<string name="about_title">About EP Mobile</string>
