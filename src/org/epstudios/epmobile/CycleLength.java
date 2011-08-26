@@ -1,7 +1,5 @@
 package org.epstudios.epmobile;
 
-import org.epstudios.epmobile.QtcCalculator.QtcFormula;
-
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -11,7 +9,6 @@ import android.widget.RadioGroup;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.EditText;
-//import android.text.Editable;
 
 public class CycleLength extends Activity implements OnClickListener {
 	@Override
