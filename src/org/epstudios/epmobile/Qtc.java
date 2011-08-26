@@ -6,6 +6,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.content.SharedPreferences;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -13,6 +15,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class Qtc extends Activity implements OnClickListener {
 	@Override
@@ -33,6 +36,7 @@ public class Qtc extends Activity implements OnClickListener {
 	private TextView qtcTextView;
 	private EditText rrEditText;
 	private EditText qtEditText;
+	private String qtcFormula;
 
 	
 	public void onClick(View v) {
@@ -54,7 +58,18 @@ public class Qtc extends Activity implements OnClickListener {
 		try {
 			int rr = Integer.parseInt(rrText.toString());
 			int qt = Integer.parseInt(qtText.toString());
-			int qtc = QtcCalculator.calculate(rr, qt, QtcFormula.BAZETT);
+			getPrefs();
+			QtcFormula formula;
+			if (qtcFormula.equals("BAZETT"))
+				formula = QtcFormula.BAZETT;
+			else if (qtcFormula.equals("FRIDERICIA"))
+				formula = QtcFormula.FRIDERICIA;
+			else if (qtcFormula.equals("SAGIE"))
+				formula = QtcFormula.SAGIE;
+			else
+				formula = QtcFormula.BAZETT;
+			Toast.makeText(this, qtcFormula, 3000).show();
+			int qtc = QtcCalculator.calculate(rr, qt, formula);
 			qtcTextView.setText("QTc = " + String.valueOf(qtc) + " msec");
 			if (qtc >= QTC_UPPER_LIMIT)
 				qtcTextView.setTextColor(Color.RED);
@@ -92,6 +107,12 @@ public class Qtc extends Activity implements OnClickListener {
 	    		return true;
 	    	}
 	    	return false;
+	    }
+	    
+	    private void getPrefs() {
+	    	SharedPreferences prefs = 
+	    		PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+	    	qtcFormula = prefs.getString("qtc_formula", "BAZETT");
 	    }
 		
 

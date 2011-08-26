@@ -67,6 +67,8 @@ public class CycleLength extends Activity implements OnClickListener {
 		resultTextView.setTextColor(Color.GREEN);
 		try {
 			int result = Integer.parseInt(resultText.toString());
+			if (result == 0)
+				throw new NumberFormatException();
 			result = 60000 / result;
 			if (intervalRateRadioGroup.getCheckedRadioButtonId() == R.id.cl_button)
 				resultTextView.setText("HR = " + String.valueOf(result) + " bpm");
