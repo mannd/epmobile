@@ -1,0 +1,15 @@
+EP Mobile provides cardiology tools for cardiac electrophysiologists,
+cardiologists and other health care workers who deal with cardiac arrhythmias.
+In addition to commonly used EP calculations, future editions of this program
+will include electrophysiology tips, techniques, and algorithms.
+
+Current features: 
+- Dofetilide (Tikosyn) dose calculator
+- QTc calculator
+- Choose QTc formula (Bazett, Fridericia, or Sagie)
+- Cycle length to heart rate calculator
+
+Categories: Medicine, Cardiology, Electrophysiology, Arrhythmia.
+
+EP Mobile is free, open source, and available under the 
+GNU GPL v3 license.  Source code is at https://www.github.com/mannd/epmobile.

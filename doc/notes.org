@@ -1,16 +1,27 @@
 #+TITLE: EP Mobile Development Notes
 * Features
-** Dofetilide Calculator
-** QTc Calculator
-** CL/HR Converter
+** DONE Dofetilide Calculator
+** DONE QTc Calculator
+** DONE CL/HR Converter
+** WPW Accessory Pathway localizer
+*** Milstein et al.  PACE 10:555, 1987.
+*** Arruda 1998
+** VT vs SVT Brugada algorithm
+** CHADS score
+** CHADS-VASc score
+** Bleeding score
+** ARVD score
 * Menu
 ** units
 *** msec or sec
 *** metric or US
 ** QTc formulae
-*** Bazett's (default)
-*** all others!
-*** implementation
-**** Java class QtcCalculator
+*** DONE Bazett's (default)
+*** DONE all others!
+*** implementation*
+*** DONE Java class QtcCalculator
 *** Normal values
-**** Color code abnormal QTc
+**** DONE Color code abnormal QTc
+* Main screen
+** New screen
+   Need alphabetized grouped by letter scrollview list
