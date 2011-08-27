@@ -10,4 +10,10 @@
 		<item>"FRIDERICIA"</item>
 		<item>"SAGIE"</item>
 	</array>
+	<array name="main_index">
+		<item>About</item>
+		<item>Cycle Length Calculator</item>
+		<item>Dofetilide Calculator</item>
+		<item>QTc Calculator</item>
+	</array>
 </resources>

@@ -18,50 +18,46 @@
 
 package org.epstudios.epmobile;
 
-import android.app.Activity;
+import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
-//import android.view.Menu;
-//import android.view.MenuInflater;
-//import android.view.MenuItem;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
 
-public class EpMobile extends Activity implements OnClickListener {
-    /** Called when the activity is first created. */
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
 
-        View dofetilideButton = findViewById(R.id.dofetilide_button);
-        dofetilideButton.setOnClickListener(this);
-        View qtcButton = findViewById(R.id.qtc_button);
-        qtcButton.setOnClickListener(this);
-        View intervalRateButton = findViewById(R.id.cycle_length_button);
-        intervalRateButton.setOnClickListener(this);
-        View aboutButton = findViewById(R.id.about_button);
-        aboutButton.setOnClickListener(this);
-    }
+public class EpMobile extends ListActivity {
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+				R.array.main_index, android.R.layout.simple_list_item_1);
+		setListAdapter(adapter);
+		ListView lv = getListView();
+		lv.setTextFilterEnabled(true);
+
+		lv.setOnItemClickListener(new OnItemClickListener() {
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				CharSequence selection = ((TextView) view).getText();
+				if (selection.equals("About"))
+					about();
+				else if (selection.equals("Cycle Length Calculator"))
+					intervalRateCalculator();
+				else if (selection.equals("Dofetilide Calculator"))
+					dofetilideCalculator();
+				else if (selection.equals("QTc Calculator"))
+					qtcCalculator();
+			}
+		});
+	}
     
-    public void onClick(View v) {
-    	switch (v.getId()) {
-    	case R.id.about_button:
-    		about();
-    		break;
-    	case R.id.dofetilide_button:
-    		dofetilideCalculator();
-    		break;
-    	case R.id.qtc_button:
-    		qtcCalculator();
-    		break;
-    	case R.id.cycle_length_button:
-    		intervalRateCalculator();
-    		break;
-    		// more buttons here
-    	}
-    }
-    	
     
     private void about() {
    		Intent i = new Intent(this, About.class);
@@ -83,21 +79,21 @@ public class EpMobile extends Activity implements OnClickListener {
     	startActivity(i);
     }
     
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//    	super.onCreateOptionsMenu(menu);
-//    	MenuInflater inflater = getMenuInflater();
-//    	inflater.inflate(R.menu.menu, menu);
-//    	return true;
-//    }
-//    
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//    	switch (item.getItemId()) {
-//    	case R.id.settings:
-//    		startActivity(new Intent(this, Prefs.class));
-//    		return true;
-//    	}
-//    	return false;
-//    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+    	super.onCreateOptionsMenu(menu);
+    	MenuInflater inflater = getMenuInflater();
+    	inflater.inflate(R.menu.menu, menu);
+    	return true;
+    }
+    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+    	switch (item.getItemId()) {
+    	case R.id.settings:
+    		startActivity(new Intent(this, Prefs.class));
+    		return true;
+    	}
+    	return false;
+    }
 }
