@@ -18,7 +18,6 @@
 
 package org.epstudios.epmobile;
 
-import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -28,7 +27,7 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 //import android.text.Editable;
 
-public class Dofetilide extends Activity implements OnClickListener {
+public class Dofetilide extends EpActivity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState)  {
 		super.onCreate(savedInstanceState);
