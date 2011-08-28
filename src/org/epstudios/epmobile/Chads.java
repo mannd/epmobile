@@ -26,28 +26,24 @@ import android.view.View.OnClickListener;
 import android.widget.CheckBox;
 
 
-public class HasBled extends EpActivity implements OnClickListener {
+public class Chads extends EpActivity implements OnClickListener {
 		@Override
 		protected void onCreate(Bundle savedInstanceState)  {
 			super.onCreate(savedInstanceState);
-			setContentView(R.layout.hasbled);
+			setContentView(R.layout.chads);
 			
 			View calculateButton = findViewById(R.id.calculate_button);
 	        calculateButton.setOnClickListener(this);
 	        View clearButton = findViewById(R.id.clear_button);
 	        clearButton.setOnClickListener(this);
 			
-			checkBox = new CheckBox[9];
+			checkBox = new CheckBox[5];
 			
-			checkBox[0] = (CheckBox) findViewById(R.id.hypertension);
-			checkBox[1] = (CheckBox) findViewById(R.id.abnormal_renal_function);
-			checkBox[2] = (CheckBox) findViewById(R.id.abnormal_liver_function);
-			checkBox[3] = (CheckBox) findViewById(R.id.stroke);
-			checkBox[4] = (CheckBox) findViewById(R.id.bleeding);
-			checkBox[5] = (CheckBox) findViewById(R.id.labile_inr);
-			checkBox[6] = (CheckBox) findViewById(R.id.age65);
-			checkBox[7] = (CheckBox) findViewById(R.id.drug);
-			checkBox[8] = (CheckBox) findViewById(R.id.etoh);
+			checkBox[0] = (CheckBox) findViewById(R.id.chf);
+			checkBox[1] = (CheckBox) findViewById(R.id.hypertension);
+			checkBox[2] = (CheckBox) findViewById(R.id.age75);
+			checkBox[3] = (CheckBox) findViewById(R.id.diabetes);
+			checkBox[4] = (CheckBox) findViewById(R.id.stroke);
 		}
 		
 		private CheckBox[] checkBox;
@@ -66,8 +62,12 @@ public class HasBled extends EpActivity implements OnClickListener {
 		private void calculateResult() {
 			int result = 0;
 			for (int i = 0; i < checkBox.length; i++) {
-				if (checkBox[i].isChecked())
-					result++;
+				if (checkBox[i].isChecked()) {
+					if (i == 4)		// stroke = 2 points
+						result = result + 2;
+					else 
+						result++;
+				}
 			}
 			displayResult(result);
 		}
@@ -75,40 +75,41 @@ public class HasBled extends EpActivity implements OnClickListener {
 		private void displayResult(int result) {
 			AlertDialog dialog = new AlertDialog.Builder(this).create();
 			String message;
-			if (result < 3)
-				message = getString(R.string.normal_hasbled);
+			if (result < 1)
+				message = getString(R.string.low_chads_message);
+			else if (result == 1)
+				message = getString(R.string.medium_chads_message);
 			else
-				message = getString(R.string.abnormal_hasbled);
+				message = getString(R.string.high_chads_message);
 			String risk = "";
 			switch (result) {
 			case 0:
+				risk = "1.9";
+				break;
 			case 1:
-				risk = "1.02-1.13";
+				risk = "2.8";
 				break;
 			case 2:
-				risk = "1.88";
+				risk = "4.0";
 				break;
 			case 3:
-				risk = "3.74";
+				risk = "5.9";
 				break;
 			case 4:
-				risk = "8.70";
+				risk = "8.5";
 				break;
 			case 5:
-				risk = "12.50";
+				risk = "12.5";
 				break;
 			case 6:
-			case 7:
-			case 8:
-			case 9:
-				risk = "> 12.50";
+				risk = "18.2";
 				break;
 			}
-			risk = "Bleeding risk is " + risk + " bleeds per 100 patient-years";
+			risk = "Annual stroke risk is " + risk + "%";
 			
-			dialog.setMessage("HAS-BLED score = " + result
-					+ "\n" + message + "\n" + risk
-					+ "\nREFERENCE: Pisters R et al. Chest 2010 138:1093.");
+			dialog.setMessage("CHADS score = " + result
+					+ "\n" + message + "\n" + risk + 
+					"\nReference: Gage BF et al. JAMA 2001 285:2864.");
 			dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Reset",
 					new DialogInterface.OnClickListener() {
 						@Override

@@ -52,6 +52,10 @@ public class EpMobile extends EpListActivity {
 					qtcCalculator();
 				else if (selection.equals("HAS-BLED Score"))
 					hasBledScore();
+				else if (selection.equals("CHADS\u2082 Score"))
+					chadsScore();
+				else if (selection.equals(getString(R.string.chadsvasc_title)))
+					chadsVascScore();
 			}
 		});
 	}
@@ -79,6 +83,16 @@ public class EpMobile extends EpListActivity {
     
     private void hasBledScore() {
     	Intent i = new Intent(this, HasBled.class);
+    	startActivity(i);
+    }
+    
+    private void chadsScore() {
+       	Intent i = new Intent(this, Chads.class);
+    	startActivity(i);
+    }
+    
+    private void chadsVascScore() {
+       	Intent i = new Intent(this, ChadsVasc.class);
     	startActivity(i);
     }
     
