@@ -50,6 +50,8 @@ public class EpMobile extends EpListActivity {
 					dofetilideCalculator();
 				else if (selection.equals("QTc Calculator"))
 					qtcCalculator();
+				else if (selection.equals("HAS-BLED Score"))
+					hasBledScore();
 			}
 		});
 	}
@@ -72,6 +74,11 @@ public class EpMobile extends EpListActivity {
     
     private void intervalRateCalculator() {
     	Intent i = new Intent(this, CycleLength.class);
+    	startActivity(i);
+    }
+    
+    private void hasBledScore() {
+    	Intent i = new Intent(this, HasBled.class);
     	startActivity(i);
     }
     

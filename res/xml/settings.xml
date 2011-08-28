@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen
   xmlns:android="http://schemas.android.com/apk/res/android">
+  
+  <PreferenceCategory>
     <ListPreference
     	android:title="@string/qtc_formula_title"
     	android:key="qtc_formula"
@@ -10,4 +12,15 @@
     	android:defaultValue="BAZETT"
     	>
     </ListPreference>
+       <EditTextPreference 
+    	android:title="@string/maximum_qtc_title"
+    	android:key="maximum_qtc"
+    	android:summary="@string/maximum_qtc_summary"
+    	android:dialogTitle="@string/maximum_qtc_title"
+    	android:dialogMessage="@string/maximum_qtc_message"
+    	android:inputType="number"
+    	android:defaultValue="@string/maximum_qtc_default_value"
+    	>
+    </EditTextPreference>
+  </PreferenceCategory>
 </PreferenceScreen>

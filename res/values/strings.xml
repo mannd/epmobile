@@ -7,7 +7,7 @@
 		Copyright \u00a9 2011 EP Studios, Inc.
 		Licensed under GNU GPL v3.
 	</string>
-	<string name="main_index_title">EP Mobile Main Index</string>
+	<string name="main_index_title">EP Mobile</string>
 	<string name="about_label">About</string>
 	<string name="about_title">About EP Mobile</string>
 	<string name="dofetilide_label">Dofetilide Calculator</string>
@@ -25,6 +25,7 @@
 	<string name="weight_hint">Weight (kgs)</string>
 	<string name="creatinine_hint">Creatinine (mg/dL)</string>
 	<string name="age_hint">Age (yr)</string>
+	<string name="age_label">Age (yr)</string>
 	<string name="weight_label">Weight (kg)</string>
 	<string name="creatinine_label">Creatinine (mg/dL)</string>
 	<string name="creatinine_clearance_label"></string>
@@ -37,8 +38,18 @@
 	<string name="calculated_result_label"></string>
 	<string name="qtc_formula_title">QTc Formula</string>
 	<string name="qtc_formula_summary">Select the QTc formula</string>
+	<string name="maximum_qtc_title">Maximum QTc</string>
+	<string name="maximum_qtc_summary">Enter the maximum QTc in msec</string>
+	<string name="maximum_qtc_message">This value is used to
+		color code (with red) abnormally high QTc values</string>
+	<string name="maximum_qtc_default_value">440</string>
+	
 	<string name="settings_label">Settings...</string>
 	<string name="settings_shortcut">s</string>
 	<string name="settings_title">EP Mobile settings</string>
+	<string name="hasbled_title">HAS-BLED Score</string>
+	<string name="htn_label">Hypertension (sys >= 160)</string>
+	<string name="abnormal_renal_label">Abnormal renal function 
+		(Cr \u2267 2.6 mg/dL)</string>
 </resources>
 

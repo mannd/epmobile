@@ -40,6 +40,9 @@ public abstract class EpActivity  extends Activity {
     	case R.id.settings:
     		startActivity(new Intent(this, Prefs.class));
     		return true;
+    	case R.id.about:
+    		startActivity(new Intent(this, About.class));
+    		return true;
     	}
     	return false;
     }

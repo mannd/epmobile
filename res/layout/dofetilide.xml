@@ -14,7 +14,7 @@
 			android:text="@string/female_label" android:layout_width="wrap_content"
 			android:id="@+id/female"></RadioButton>
 	</RadioGroup>
-	<TextView android:text="Age (years)" android:layout_width="wrap_content" 
+	<TextView android:text="@string/age_label" android:layout_width="wrap_content" 
 		android:id="@+id/ageTextView" 
 		android:textAppearance="?android:attr/textAppearanceMedium" 
 		android:layout_height="wrap_content">

@@ -33,8 +33,8 @@ public class CycleLength extends EpActivity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.cyclelength);
 		
-		View calculateQtcButton = findViewById(R.id.calculate_result_button);
-        calculateQtcButton.setOnClickListener(this);
+		View calculateResultButton = findViewById(R.id.calculate_result_button);
+        calculateResultButton.setOnClickListener(this);
         View clearButton = findViewById(R.id.clear_button);
         clearButton.setOnClickListener(this);
         intervalRateRadioGroup = (RadioGroup) findViewById(R.id.intervalRateRadioGroup);

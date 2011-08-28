@@ -39,4 +39,8 @@
 			android:layout_width="wrap_content" 
 			android:layout_height="wrap_content"></Button>
 	</LinearLayout>
+	<TextView android:id="@+id/qtc_formula"
+			android:layout_width="wrap_content" android:layout_weight="1"
+			android:textAppearance="?android:attr/textAppearanceMedium" 
+			android:layout_height="wrap_content"></TextView>
 </LinearLayout>

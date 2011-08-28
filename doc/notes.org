@@ -9,7 +9,19 @@
 ** VT vs SVT Brugada algorithm
 ** CHADS score
 ** CHADS-VASc score
-** Bleeding score
+** HAS-BLED
+   | Risk                           | Score |
+   | HTN (sys >= 160)               |     1 |
+   | Abnormal Kidney Cr>2.6 mg/dL   |     1 |
+   | Abnormal Liver                 |     1 |
+   | Previous Stroke                |     1 |
+   | Hx Bleeding or Anemia          |     1 |
+   | Labile INR (< 60% therapeutic) |     1 |
+   | Elderly (65 or older)          |     1 |
+   | Drugs - antiplatet             |     1 |
+   | Drugs - EtOH (>= 8 drinks/wk)  |     1 |
+   - Score of 3 or more indicates caution in using AC and increased 1 year
+     risk of bleeding.
 ** ARVD score
 * Menu
 ** units
