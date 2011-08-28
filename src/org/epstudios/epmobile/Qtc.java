@@ -48,11 +48,6 @@ public class Qtc extends EpActivity implements OnClickListener {
         
         clearEntries();
         
-//        SharedPreferences prefs = 	
-//        		PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-//        SharedPreferences.Editor editor = prefs.edit();
-//        editor.clear();
-//        editor.commit();
 	}
 
 	private TextView qtcTextView;

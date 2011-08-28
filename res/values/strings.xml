@@ -61,5 +61,7 @@
 	(e.g. ASA, Plavix)</string>
 	<string name="etoh_label">Alcolol intake (8 or more drinks per week)
 	</string>
+	<string name="normal_hasbled">Low bleeding risk</string>
+	<string name="abnormal_hasbled">High bleeding risk</string>
 </resources>
 
