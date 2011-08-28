@@ -50,6 +50,16 @@
 	<string name="hasbled_title">HAS-BLED Score</string>
 	<string name="htn_label">Hypertension (sys >= 160)</string>
 	<string name="abnormal_renal_label">Abnormal renal function 
-		(Cr \u2267 2.6 mg/dL)</string>
+		(dialysis, kidney transplant, Cr \u2267 2.6 mg/dL)</string>
+	<string name="abnormal_liver_label">Abnormal liver function</string>
+	<string name="stroke_label">Previous stroke history</string>
+	<string name="bleeding_label">Major bleeding history</string>
+	<string name="labile_inr_label">Labile INRs (high INRs, or &lt;60% 
+	of time in therapeutic range)</string>
+	<string name="age65_label">Age >= 65</string>
+	<string name="drug_label">Taking antiplatelet drugs 
+	(e.g. ASA, Plavix)</string>
+	<string name="etoh_label">Alcolol intake (8 or more drinks per week)
+	</string>
 </resources>
 

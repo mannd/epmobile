@@ -17,5 +17,40 @@
   	android:layout_width="wrap_content"
   	android:layout_height="wrap_content">  
   </CheckBox>	
+  <CheckBox android:id="@+id/abnormal_liver_function"
+  	android:text="@string/abnormal_liver_label"
+  	android:layout_width="wrap_content"
+  	android:layout_height="wrap_content">  
+  </CheckBox>	
+  <CheckBox android:id="@+id/stroke"
+  	android:text="@string/stroke_label"
+  	android:layout_width="wrap_content"
+  	android:layout_height="wrap_content">  
+  </CheckBox>	
+  <CheckBox android:id="@+id/bleeding"
+  	android:text="@string/bleeding_label"
+  	android:layout_width="wrap_content"
+  	android:layout_height="wrap_content">  
+  </CheckBox>	
+  <CheckBox android:id="@+id/labile_inr"
+  	android:text="@string/labile_inr_label"
+  	android:layout_width="wrap_content"
+  	android:layout_height="wrap_content">  
+  </CheckBox>	
+  <CheckBox android:id="@+id/age65"
+  	android:text="@string/age65_label"
+  	android:layout_width="wrap_content"
+  	android:layout_height="wrap_content">  
+  </CheckBox>	
+  <CheckBox android:id="@+id/drug"
+  	android:text="@string/drug_label"
+  	android:layout_width="wrap_content"
+  	android:layout_height="wrap_content">  
+  </CheckBox>	
+  <CheckBox android:id="@+id/etoh"
+  	android:text="@string/etoh_label"
+  	android:layout_width="wrap_content"
+  	android:layout_height="wrap_content">  
+  </CheckBox>	
   </LinearLayout>
 </ScrollView>
