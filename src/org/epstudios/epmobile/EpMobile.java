@@ -42,17 +42,17 @@ public class EpMobile extends EpListActivity {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				CharSequence selection = ((TextView) view).getText();
-				if (selection.equals("About"))
+				if (selection.equals(getString(R.string.about_label)))
 					about();
-				else if (selection.equals("Cycle Length Calculator"))
+				else if (selection.equals(getString(R.string.cycle_length_calculator_title)))
 					intervalRateCalculator();
-				else if (selection.equals("Dofetilide Calculator"))
+				else if (selection.equals(getString(R.string.dofetilide_calculator_title)))
 					dofetilideCalculator();
-				else if (selection.equals("QTc Calculator"))
+				else if (selection.equals(getString(R.string.qtc_calculator_title)))
 					qtcCalculator();
-				else if (selection.equals("HAS-BLED Score"))
+				else if (selection.equals(getString(R.string.hasbled_title)))
 					hasBledScore();
-				else if (selection.equals("CHADS\u2082 Score"))
+				else if (selection.equals(getString(R.string.chads_title)))
 					chadsScore();
 				else if (selection.equals(getString(R.string.chadsvasc_title)))
 					chadsVascScore();
