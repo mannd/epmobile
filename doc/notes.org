@@ -3,13 +3,42 @@
 ** DONE Dofetilide Calculator
 ** DONE QTc Calculator
 ** DONE CL/HR Converter
-** WPW Accessory Pathway localizer
+** TODO WPW Accessory Pathway localizer
 *** Milstein et al.  PACE 10:555, 1987.
 *** Arruda 1998
-** VT vs SVT Brugada algorithm
-** CHADS score
-** CHADS-VASc score
-** HAS-BLED
+** TODO VT vs SVT Brugada algorithm
+*** Proposed implementation
+    | Follow steps in order: |                                                  |     |
+    | Step 1                 | Absence of an RS Complex in all precordial leads | Y/N |
+    |                        | Y = VT                                           |     |
+    | Step 2                 | R to S interval > 100 ms in one precordial lead  | Y/N |
+    |                        | Y = VT                                           |     |
+    | Step 3                 | AV Dissociation                                  | Y/N |
+    |                        | Y = VT                                           |     |
+    | Step 4                 | Morphology criteria in V1-2 and V6               | Y/N |
+    |                        | Y = VT                                           |     |
+*** Morphology criteria
+    - RBBB QRS
+      - Lead V1
+	- Monophasic R or QR or RS favors VT
+	- Triphasic RSR' favors SVT
+      - Lead V6
+	- R to S ratio < 1 (R small than S) favors VT
+	- RS or QR favors VT
+	- Monophasic R favors VT
+	- Triphasic favors SVT
+	- R to S ration > 1 favors SVT
+    - LBBB QRS
+      - Lead V1 or V2
+	- Any of the following R > 30 ms, >60 ms to nadir S, notched S favors VT
+      - Lead V6
+	- Presence of any Q wave, QR or QS favors VT
+	- Absence of Q wave in V6 favors SVT
+*** Reference
+    http://askdrwiki.com/mediawiki/index.php?title=Brugada_Criteria#Four_Brugada_Criteria_for_Diagnosis_of_Ventricular_Tachycardia
+** DONE CHADS score
+** DONE CHADS-VASc score
+** DONE HAS-BLED
    | Risk                           | Score |
    | HTN (sys >= 160)               |     1 |
    | Abnormal Kidney Cr>2.6 mg/dL   |     1 |
@@ -22,7 +51,11 @@
    | Drugs - EtOH (>= 8 drinks/wk)  |     1 |
    - Score of 3 or more indicates caution in using AC and increased 1 year
      risk of bleeding.
-** ARVD score
+** TODO ARVD score
+** TODO Pradaxa dose calculator
+** TODO Epicardial vs endocardial VT
+** TODO Mitral annular VT
+** TODO Brugada ECG types
 * Menu
 ** units
 *** msec or sec
@@ -37,3 +70,7 @@
 * Main screen
 ** New screen
    Need alphabetized grouped by letter scrollview list
+* Implementation
+** Abstract base classes
+*** For creatinine clearance based calculators
+*** For scores

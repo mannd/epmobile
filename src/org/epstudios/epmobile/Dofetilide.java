@@ -25,7 +25,6 @@ import android.view.View.OnClickListener;
 import android.widget.TextView;
 import android.widget.EditText;
 import android.widget.RadioGroup;
-//import android.text.Editable;
 
 public class Dofetilide extends EpActivity implements OnClickListener {
 	@Override
@@ -74,7 +73,7 @@ public class Dofetilide extends EpActivity implements OnClickListener {
 			double weight = Double.parseDouble(weightText.toString());
 			double creatinine = Double.parseDouble(creatinineText.toString());
 			double age = Double.parseDouble(ageText.toString());
-			int cc = (int) creatinineClearance(isMale, age, weight, creatinine);
+			int cc = creatinineClearance(isMale, age, weight, creatinine);
 			ccTextView.setText("(Creatinine Clearance = " + String.valueOf(cc) + ")");
 			int dose = getDose(cc);
 			if (dose == 0) {
@@ -104,14 +103,14 @@ public class Dofetilide extends EpActivity implements OnClickListener {
 		return 0;
 	}
 
-	private double creatinineClearance(Boolean isMale, double age, double weight,
+	private int creatinineClearance(Boolean isMale, double age, double weight,
 			double creatinine) {
 		double crClr = 0;
 		crClr = (140 - age) * weight;
 		crClr = crClr / (72 * creatinine);
 		if (!isMale)
 			crClr = crClr * 0.85;
-		return crClr;
+		return (int) crClr;
 	}
 	
 	
