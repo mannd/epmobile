@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="match_parent"
+	android:background="@color/background"
+	android:layout_height="match_parent">
+	<LinearLayout android:layout_width="match_parent"
+		android:id="@+id/toplinearLayout" android:layout_height="wrap_content">
+	<RadioGroup android:id="@+id/sexRadioGroup"
+		android:layout_width="wrap_content" android:layout_height="wrap_content">
+		<RadioButton android:layout_height="wrap_content"
+			android:text="@string/male_label" android:layout_width="wrap_content"
+			android:id="@+id/male" android:checked="true"></RadioButton>
+		<RadioButton android:layout_height="wrap_content"
+			android:text="@string/female_label" android:layout_width="wrap_content"
+			android:id="@+id/female"></RadioButton>
+	</RadioGroup>
+	<TextView android:text="@string/age_label" android:layout_width="wrap_content" 
+		android:id="@+id/ageTextView" 
+		android:textAppearance="?android:attr/textAppearanceMedium" 
+		android:layout_height="wrap_content">
+		</TextView>
+	<EditText android:layout_weight="1" android:id="@+id/ageEditText" 
+		android:layout_width="wrap_content" android:layout_height="wrap_content" 
+		android:hint="@string/age_hint"
+		android:inputType="number">
+		</EditText>
+	</LinearLayout>
+ 	<TableLayout
+  		android:layout_height="wrap_content"
+  		android:layout_width="wrap_content"
+  		android:layout_gravity="center"
+  		android:stretchColumns="*">
+  		<TableRow>
+  			<TextView android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:text="@string/weight_label" 
+				android:layout_width="wrap_content"
+				android:id="@+id/textView1">
+			</TextView>
+			<EditText android:layout_height="wrap_content"
+			android:layout_width="match_parent" android:id="@+id/weightEditText"
+			android:hint="@string/weight_hint"
+			android:inputType="numberDecimal">	</EditText>
+	  	</TableRow>
+  		<TableRow>
+  			<TextView android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:text="@string/creatinine_label" 
+				android:id="@+id/textView2">
+			</TextView>
+			<EditText android:layout_height="wrap_content" android:hint="@string/creatinine_hint"
+				android:layout_width="match_parent" android:id="@+id/creatinineEditText"
+				android:inputType="numberDecimal">
+			</EditText>
+  		</TableRow>
+  	</TableLayout>
+	<LinearLayout android:layout_width="match_parent"
+		android:id="@+id/linearLayout3" android:layout_height="wrap_content">
+		<Button android:text="@string/calculate_label" android:id="@+id/calculate_dose_button"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_weight="1"></Button>
+		<TextView android:id="@+id/calculated_dose" android:text="@string/dabigatran_result_label"
+			android:textSize="20sp"
+			android:textColor="@color/neutral_text"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_weight="1"></TextView>
+		<Button android:text="@string/clear_label" android:id="@+id/clear_button" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"></Button>
+	</LinearLayout>
+	<TextView android:text="@string/creatinine_clearance_label" android:layout_width="wrap_content" 
+	android:id="@+id/ccTextView" android:textAppearance="?android:attr/textAppearanceMedium" 
+	android:layout_height="wrap_content"></TextView>
+</LinearLayout>

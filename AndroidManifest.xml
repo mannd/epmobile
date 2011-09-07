@@ -30,6 +30,8 @@
 		<activity android:name=".Chads" android:label="@string/chads_title">
 		</activity>
 		<activity android:name=".ChadsVasc" android:label="@string/chadsvasc_title">
-		</activity>		
+		</activity>	
+		<activity android:name=".Dabigatran" android:label="@string/dabigatran_label">
+		</activity>	
     </application>
 </manifest>

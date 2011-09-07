@@ -56,6 +56,8 @@ public class EpMobile extends EpListActivity {
 					chadsScore();
 				else if (selection.equals(getString(R.string.chadsvasc_title)))
 					chadsVascScore();
+				else if (selection.equals(getString(R.string.dabigatran_calculator_title)))
+					dabigatranCalculator();
 			}
 		});
 	}
@@ -69,6 +71,11 @@ public class EpMobile extends EpListActivity {
     private void dofetilideCalculator() {
     	Intent i = new Intent(this, Dofetilide.class);
     	startActivity(i);
+    }
+    
+    private void dabigatranCalculator() {
+    	Intent i = new Intent(this, Dabigatran.class);
+    	startActivity(i);	
     }
     
     private void qtcCalculator() {

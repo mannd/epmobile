@@ -12,6 +12,8 @@
 	<string name="about_title">About EP Mobile</string>
 	<string name="dofetilide_label">Dofetilide Calculator</string>
 	<string name="dofetilide_calculator_title">Dofetilide Calculator</string>
+	<string name="dabigatran_calculator_title">Dabigatran Calculator</string>
+	<string name="dabigatran_label">Dabigatran Calculator (US Dosing)</string>
 	<string name="qtc_label">QTc Calculator</string>
 	<string name="qtc_calculator_title">QTc Calculator</string>
 	<string name="cycle_length_label">Cycle Length Calculator</string>
@@ -25,6 +27,7 @@
 	<string name="clear_label">Clear</string>
 	<string name="cleared">Cleared!</string>
 	<string name="dofetilide_result_label">Dofetilide dose</string>
+	<string name="dabigatran_result_label">Dabigatran dose</string>
 	<string name="weight_hint">Weight (kg)</string>
 	<string name="creatinine_hint">Creatinine (mg/dL)</string>
 	<string name="age_hint">Age (yr)</string>
