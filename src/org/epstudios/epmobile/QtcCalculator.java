@@ -23,7 +23,7 @@ public class QtcCalculator {
 	// note Sagie also referred to as Framingham test in literature.
 	
 	public static int calculate(int rr, int qt, QtcFormula formula) {
-		int result = 0;
+		double result = 0.0;
 		double rrSec = msecToSec(rr);
 		double qtSec = msecToSec(qt);
 		switch (formula) {
@@ -40,7 +40,7 @@ public class QtcCalculator {
 			result = calculateQtcHodges(rrSec, qtSec);
 			break;
 		}
-		return result;
+		return secToMsec(result);
 	}
 	
 	private static double msecToSec(int interval) {
@@ -51,27 +51,23 @@ public class QtcCalculator {
 		return (int) Math.round((interval * 1000));
 	}
 	
-	private static int calculateQtcBazett(double rrSec, double qtSec) {
-		double qtcSec = qtSec / Math.sqrt(rrSec);
-		return secToMsec(qtcSec);
+	private static double calculateQtcBazett(double rrSec, double qtSec) {
+		return qtSec / Math.sqrt(rrSec);
 	}
 	
-	private static int calculateQtcFridericia(double rrSec, double qtSec) {
-		double qtcSec = qtSec / Math.cbrt(rrSec);
-		return secToMsec(qtcSec);
+	private static double calculateQtcFridericia(double rrSec, double qtSec) {
+		return qtSec / Math.cbrt(rrSec);
 	}
 	
-	private static int calculateQtcSagie(double rrSec, double qtSec) {
-		double qtcSec = qtSec + 0.154 * (1.0 - rrSec);
-		return secToMsec(qtcSec);
+	private static double calculateQtcSagie(double rrSec, double qtSec) {
+		return qtSec + 0.154 * (1.0 - rrSec);
 	}
 	
-	private static int calculateQtcHodges(double rrSec, double qtSec) {
+	private static double calculateQtcHodges(double rrSec, double qtSec) {
 		if (rrSec == 0)
 			return 0;	// avoid divide by zero
 		double hr =  (60000 / (rrSec * 1000)); // double: avoid rounding error
-		double qtcSec = qtSec + ((1.75 * (hr - 60) / 1000));
-		return secToMsec(qtcSec);
+		return qtSec + ((1.75 * (hr - 60) / 1000));
 	}
 	
 }
