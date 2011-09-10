@@ -44,7 +44,7 @@ public class QtcCalculator {
 	}
 	
 	private static int secToMsec(double interval) {
-		return (int) (interval * 1000);
+		return (int) Math.round((interval * 1000));
 	}
 	
 	private static int calculateQtcBazett(double rrSec, double qtSec) {
