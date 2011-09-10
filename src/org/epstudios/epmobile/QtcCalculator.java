@@ -19,7 +19,8 @@
 package org.epstudios.epmobile;
 
 public class QtcCalculator {
-	public enum QtcFormula { BAZETT, FRIDERICIA, SAGIE } 
+	public enum QtcFormula { BAZETT, FRIDERICIA, SAGIE, HODGES } 
+	// note Sagie also referred to as Framingham test in literature.
 	
 	public static int calculate(int rr, int qt, QtcFormula formula) {
 		int result = 0;
@@ -34,6 +35,9 @@ public class QtcCalculator {
 			break;
 		case SAGIE:
 			result = calculateQtcSagie(rrSec, qtSec);
+			break;
+		case HODGES:
+			result = calculateQtcHodges(rrSec, qtSec);
 			break;
 		}
 		return result;
@@ -59,6 +63,14 @@ public class QtcCalculator {
 	
 	private static int calculateQtcSagie(double rrSec, double qtSec) {
 		double qtcSec = qtSec + 0.154 * (1.0 - rrSec);
+		return secToMsec(qtcSec);
+	}
+	
+	private static int calculateQtcHodges(double rrSec, double qtSec) {
+		if (rrSec == 0)
+			return 0;	// avoid divide by zero
+		double hr =  (60000 / (rrSec * 1000)); // double: avoid rounding error
+		double qtcSec = qtSec + ((1.75 * (hr - 60) / 1000));
 		return secToMsec(qtcSec);
 	}
 	

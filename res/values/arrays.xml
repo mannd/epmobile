@@ -4,11 +4,13 @@
 		<item>"Bazett"</item>
 		<item>"Fridericia"</item>
 		<item>"Sagie"</item>
+		<item>"Hodges"</item>
 	</array>
 	<array name="formula_values">
 		<item>"BAZETT"</item>
 		<item>"FRIDERICIA"</item>
 		<item>"SAGIE"</item>
+		<item>"HODGES"</item>
 	</array>
 	<array name="main_index">
 		<item>About</item>

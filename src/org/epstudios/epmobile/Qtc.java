@@ -89,6 +89,8 @@ public class Qtc extends EpActivity implements OnClickListener {
 				formula = QtcFormula.FRIDERICIA;
 			else if (qtcFormula.equals("SAGIE"))
 				formula = QtcFormula.SAGIE;
+			else if (qtcFormula.equals("HODGES"))
+				formula = QtcFormula.HODGES;
 			else
 				formula = QtcFormula.BAZETT;
 			Toast.makeText(this, "QTc Formula is " + qtcFormula, 3000).show();
