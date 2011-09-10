@@ -73,7 +73,7 @@ public class Dofetilide extends EpActivity implements OnClickListener {
 			double weight = Double.parseDouble(weightText.toString());
 			double creatinine = Double.parseDouble(creatinineText.toString());
 			double age = Double.parseDouble(ageText.toString());
-			int cc = creatinineClearance(isMale, age, weight, creatinine);
+			int cc = CreatinineClearance.calculate(isMale, age, weight, creatinine);
 			ccTextView.setText("(Creatinine Clearance = " + String.valueOf(cc) + ")");
 			int dose = getDose(cc);
 			if (dose == 0) {
@@ -103,16 +103,6 @@ public class Dofetilide extends EpActivity implements OnClickListener {
 		return 0;
 	}
 
-	private int creatinineClearance(Boolean isMale, double age, double weight,
-			double creatinine) {
-		double crClr = 0;
-		crClr = (140 - age) * weight;
-		crClr = crClr / (72 * creatinine);
-		if (!isMale)
-			crClr = crClr * 0.85;
-		return (int) crClr;
-	}
-	
 	
 	private void clearEntries() {
 		weightEditText.setText(null);
