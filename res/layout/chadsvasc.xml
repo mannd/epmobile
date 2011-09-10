@@ -24,12 +24,11 @@
 			android:layout_width="wrap_content" android:layout_height="wrap_content" />			
 		<LinearLayout android:layout_width="match_parent"
 			android:id="@+id/linearLayout3" 
-			android:orientation="vertical"
 			android:layout_height="wrap_content">
 			<Button android:id="@+id/calculate_button" android:text="@string/calculate_label"
-				android:layout_width="fill_parent" android:layout_height="wrap_content" />
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
 			<Button android:id="@+id/clear_button" android:text="@string/clear_label"
-				android:layout_width="fill_parent" android:layout_height="wrap_content" />
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
 		</LinearLayout>
 	</LinearLayout>
 </ScrollView>
