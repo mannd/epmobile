@@ -12,8 +12,27 @@
 		<item>"SAGIE"</item>
 		<item>"HODGES"</item>
 	</array>
+	<array name="warfarin_tablets">
+		<item>"2 mg"</item>
+		<item>"2.5 mg"</item>
+		<item>"5 mg"</item>
+		<item>"7.5 mg"</item>
+	</array>
+	<array name="warfarin_tablet_values">
+		<item>"0"</item>
+		<item>"1"</item>
+		<item>"2"</item>
+		<item>"3"</item>
+	</array>
+	<array name="inr_targets">
+		<item>"2.0 - 3.0"</item>
+		<item>"2.5 - 3.5"</item>
+	</array>
+	<array name="inr_target_values">
+		<item>"0"</item>
+		<item>"1"</item>
+	</array>
 	<array name="main_index">
-		<item>About</item>
 		<item>CHADS\u2082 Score</item>
 		<item>CHA\u2082DS\u2082-VASc Score</item>
 		<item>Cycle Length Calculator</item>
@@ -21,5 +40,6 @@
 		<item>Dofetilide Calculator</item>
 		<item>HAS-BLED Score</item>
 		<item>QTc Calculator</item>
+		<item>Warfarin Calculator</item>
 	</array>
 </resources>

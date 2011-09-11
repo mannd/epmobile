@@ -87,5 +87,23 @@
 	or others) or Aspirin (Oral anticoagulant preferred)</string>
 	<string name="high_chadsvasc_message">Oral anticoagulation
 	(warfarin or dabigatran or others)</string>
+	<string name="warfarin_title">Warfarin Calculator</string>
+	<string name="warfarin_label">Warfarin dose calculator</string>
+	<string name="tablet_label">Tablet</string>
+	<string name="tablet1">2 mg</string>
+	<string name="tablet2">2.5 mg</string>
+	<string name="tablet3">5 mg</string>
+	<string name="tablet4">7.5 mg</string>
+	<string name="inr_label">INR</string>
+	<string name="weekly_dose_label">Current total warfarin dose per week</string>
+	<string name="inr_hint">INR</string>
+	<string name="weekly_dose_hint">Dose (mg/week)</string>
+	<string name="inr_target_label">INR target</string>
+	<string name="inr_target1">2.0 - 3.0</string>
+	<string name="inr_target2">2.5 - 3.5</string>
+	<string name="default_warfarin_tablet_title">Default Warfarin Tablet</string>
+	<string name="default_warfarin_tablet_summary">Select the default warfarin tablet strength</string>
+	<string name="default_inr_target_title">Default INR Target</string>
+	<string name="default_inr_target_summary">Default INR target range</string>
 </resources>
 

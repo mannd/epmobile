@@ -42,9 +42,7 @@ public class EpMobile extends EpListActivity {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				CharSequence selection = ((TextView) view).getText();
-				if (selection.equals(getString(R.string.about_label)))
-					about();
-				else if (selection.equals(getString(R.string.cycle_length_calculator_title)))
+				if (selection.equals(getString(R.string.cycle_length_calculator_title)))
 					intervalRateCalculator();
 				else if (selection.equals(getString(R.string.dofetilide_calculator_title)))
 					dofetilideCalculator();
@@ -58,15 +56,12 @@ public class EpMobile extends EpListActivity {
 					chadsVascScore();
 				else if (selection.equals(getString(R.string.dabigatran_calculator_title)))
 					dabigatranCalculator();
+				else if (selection.equals(getString(R.string.warfarin_title)))
+					warfarinCalculator();
 			}
 		});
 	}
     
-    
-    private void about() {
-   		Intent i = new Intent(this, About.class);
-		startActivity(i);
-    }
     
     private void dofetilideCalculator() {
     	Intent i = new Intent(this, Dofetilide.class);
@@ -100,6 +95,11 @@ public class EpMobile extends EpListActivity {
     
     private void chadsVascScore() {
        	Intent i = new Intent(this, ChadsVasc.class);
+    	startActivity(i);
+    }
+    
+    private void warfarinCalculator() {
+    	Intent i = new Intent(this, Warfarin.class);
     	startActivity(i);
     }
     

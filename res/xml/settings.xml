@@ -12,15 +12,32 @@
     	android:defaultValue="BAZETT"
     	>
     </ListPreference>
-       <EditTextPreference 
+    <EditTextPreference 
     	android:title="@string/maximum_qtc_title"
     	android:key="maximum_qtc"
     	android:summary="@string/maximum_qtc_summary"
     	android:dialogTitle="@string/maximum_qtc_title"
     	android:dialogMessage="@string/maximum_qtc_message"
     	android:inputType="number"
-    	android:defaultValue="@string/maximum_qtc_default_value"
-    	>
+    	android:defaultValue="@string/maximum_qtc_default_value">
     </EditTextPreference>
+  </PreferenceCategory>
+  <PreferenceCategory>
+  	<ListPreference
+  		android:title="@string/default_warfarin_tablet_title"
+  		android:key="default_warfarin_tablet"
+  		android:summary="@string/default_warfarin_tablet_summary"
+  		android:entries="@array/warfarin_tablets"
+  		android:entryValues="@array/warfarin_tablet_values"
+  		android:defaultValue="2">
+  	</ListPreference>
+  	<ListPreference
+  		android:title="@string/default_inr_target_title"
+  		android:key="default_inr_target"
+  		android:summary="@string/default_inr_target_summary"
+  		android:entries="@array/inr_targets"
+  		android:entryValues="@array/inr_target_values"
+  		android:defaultValue="0">
+  	</ListPreference>
   </PreferenceCategory>
 </PreferenceScreen>

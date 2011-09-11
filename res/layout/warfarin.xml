@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent" android:layout_height="wrap_content">
+	<LinearLayout android:layout_width="match_parent"
+		android:background="@color/background" android:layout_height="match_parent" android:orientation="vertical">
+		<LinearLayout android:background="@color/background" 
+			android:orientation="horizontal" 
+			android:layout_height="wrap_content" 
+			android:layout_width="match_parent" 
+			android:layout_weight="1">
+			<LinearLayout android:layout_width="wrap_content"
+				android:background="@color/background" android:layout_height="wrap_content"
+				android:orientation="vertical">
+				<TextView android:text="@string/tablet_label" android:id="@+id/textView1"
+					android:layout_width="wrap_content" 
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_height="wrap_content" />
+				<RadioGroup android:id="@+id/tabletRadioGroup"
+					android:layout_width="wrap_content" android:layout_height="wrap_content">
+
+					<RadioButton android:layout_height="wrap_content"
+						android:text="@string/tablet1" android:layout_width="wrap_content"
+						android:id="@+id/tablet1" android:checked="true" />
+					<RadioButton android:layout_height="wrap_content"
+						android:text="@string/tablet2" android:layout_width="wrap_content"
+						android:id="@+id/tablet2" />
+					<RadioButton android:layout_height="wrap_content"
+						android:text="@string/tablet3" android:layout_width="wrap_content"
+						android:id="@+id/tablet3" />
+					<RadioButton android:layout_height="wrap_content"
+						android:text="@string/tablet4" android:layout_width="wrap_content"
+						android:id="@+id/tablet4" />
+				</RadioGroup>
+			</LinearLayout>
+			<LinearLayout android:layout_width="wrap_content"
+				android:background="@color/background" android:layout_height="wrap_content"
+				android:orientation="vertical">
+				<TextView android:text="@string/inr_target_label"
+					android:id="@+id/targetTextView" android:layout_width="wrap_content"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_height="wrap_content" />
+				<RadioGroup android:id="@+id/inrTargetRadioGroup"
+					android:layout_width="wrap_content" android:layout_height="wrap_content">
+					<RadioButton android:layout_height="wrap_content"
+						android:text="@string/inr_target1" android:layout_width="wrap_content"
+						android:id="@+id/inrTarget1" android:checked="true" />
+					<RadioButton android:layout_height="wrap_content"
+						android:text="@string/inr_target2" android:layout_width="wrap_content"
+						android:id="@+id/inrTarget2" />
+				</RadioGroup>
+			</LinearLayout>
+		</LinearLayout>
+		<TextView android:text="@string/inr_label" android:id="@+id/inrTextView"
+			android:layout_width="wrap_content" android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_height="wrap_content" android:layout_weight="1"/>
+		<EditText android:id="@+id/inrEditText"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:hint="@string/inr_hint" android:inputType="numberDecimal" android:layout_weight="1"/>
+
+		<TextView android:text="@string/weekly_dose_label"
+			android:id="@+id/weeklyDoseTextView" android:layout_width="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_height="wrap_content" android:layout_weight="1"/>
+		<EditText android:id="@+id/weeklyDoseEditText"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:hint="@string/weekly_dose_hint" android:inputType="numberDecimal" android:layout_weight="1"/>
+
+		<LinearLayout android:layout_width="match_parent"
+			android:id="@+id/linearLayout3" android:layout_height="wrap_content" android:layout_weight="1">
+			<Button android:text="@string/calculate_label" android:id="@+id/calculate_dose_button"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_weight="1" />
+
+			<Button android:text="@string/clear_label" android:id="@+id/clear_button"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+
+		</LinearLayout>
+	</LinearLayout>
+</ScrollView>
