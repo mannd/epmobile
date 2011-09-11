@@ -26,6 +26,8 @@ public class Warfarin extends EpActivity implements OnClickListener {
 		inrEditText = (EditText) findViewById(R.id.inrEditText);
 		weeklyDoseEditText = (EditText) findViewById(R.id.weeklyDoseEditText);
 		
+		doseChange = new DoseChange(0, 0, "", Direction.INCREASE);
+		
 		clearEntries();
 	}
 	
@@ -55,6 +57,8 @@ public class Warfarin extends EpActivity implements OnClickListener {
 		private Direction direction;
 	}
 	
+	private DoseChange doseChange;
+	
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
@@ -73,13 +77,12 @@ public class Warfarin extends EpActivity implements OnClickListener {
 		try {
 			getRange();
 			double inr = Double.parseDouble(inrEditText.getText().toString());
-			double weeklyDose = Double.parseDouble(weeklyDoseEditText.getText().toString());
 			if (inr >= 6.0)
 				message = "Hold warfarin until INR back in therapeutic range.";
 			else if (inrTherapeutic(inr))
 				message = "INR is therapeutic.  No change in warfarin dose.";
 			else {
-				DoseChange doseChange = percentDoseChange(inr);
+				doseChange = percentDoseChange(inr);
 				if (doseChange.lowEnd == 0 || doseChange.highEnd == 0)
 					message = "Invalid Entries!";
 				else {
@@ -144,6 +147,34 @@ public class Warfarin extends EpActivity implements OnClickListener {
 
 	private DoseChange percentDoseChangeHighRange(double inr) {
 		DoseChange doseChange = new DoseChange(0, 0, "", Direction.INCREASE);
+		if (inr < 2.0) {
+			doseChange.lowEnd = 10;
+			doseChange.highEnd = 20;
+			doseChange.message = "Give additional dose.";
+		}
+		else if (inr >= 2.0 && inr < 2.5) {
+			doseChange.lowEnd = 5;
+			doseChange.highEnd = 15;
+			doseChange.direction = Direction.INCREASE;
+		}
+		else if (inr > 3.5 && inr < 4.6) {
+			doseChange.lowEnd = 5;
+			doseChange.highEnd = 15;
+			doseChange.direction = Direction.DECREASE;
+		}
+		else if (inr >= 4.6 && inr < 5.2) {
+			doseChange.lowEnd = 10;
+			doseChange.highEnd = 20;
+			doseChange.message = "Withhold no dose or one dose.";
+			doseChange.direction = Direction.DECREASE;
+		}		
+		else if (inr > 5.2) {
+			doseChange.lowEnd = 10;
+			doseChange.highEnd = 20;
+			doseChange.message = "Withhold no dose to two doses.";
+			doseChange.direction = Direction.DECREASE;
+		}
+		
 		return doseChange;
 	}
 
@@ -204,7 +235,7 @@ public class Warfarin extends EpActivity implements OnClickListener {
 	
 	private void displayDoses() {
 		AlertDialog dialog = new AlertDialog.Builder(this).create();
-		dialog.setMessage("Test");
+		dialog.setMessage(calculateNewWeeklyDose());
 		dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Reset",
 				new DialogInterface.OnClickListener() {
 					@Override
@@ -218,6 +249,23 @@ public class Warfarin extends EpActivity implements OnClickListener {
 					public void onClick(DialogInterface dialog, int which) {}
 				});
 		dialog.show();
+	}
+	
+	private String calculateNewWeeklyDose() {
+		try {
+			double oldWeeklyDose = Double.parseDouble(weeklyDoseEditText.getText().toString());
+			double newLowEndWeeklyDose = oldWeeklyDose;
+			double newHighEndWeeklyDose = oldWeeklyDose;
+			if (doseChange.direction == Direction.INCREASE) {
+				newLowEndWeeklyDose = newLowEndWeeklyDose + (oldWeeklyDose * doseChange.lowEnd / 100);
+				return String.valueOf(newLowEndWeeklyDose);
+			}
+			return "testing";
+			
+		}
+		catch (NumberFormatException e) {
+			return "Invalid Entry";
+		}
 	}
 	
 	private void clearEntries() {

@@ -74,3 +74,15 @@
 ** Abstract base classes
 *** For creatinine clearance based calculators
 *** For scores
+* Warfarin
+  | Day  | Change1 | Change2 |
+  | Sun  | 1 tab   | 1 tab   |
+  | Mon  |         |         |
+  | Tues |         |         |
+  | Wed  |         |         |
+  | Thur |         |         |
+  | Fri  |         |         |
+  | Sat  |         |         |
+  |------+---------+---------|
+** 
+
