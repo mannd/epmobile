@@ -35,6 +35,25 @@ public class Warfarin extends EpActivity implements OnClickListener {
 	private EditText weeklyDoseEditText;
 	private String defaultWarfarinTablet;
 	private String defaultInrTarget;
+	private double lowRange, highRange;
+	
+	private enum TargetRange { LOW_RANGE, HIGH_RANGE }
+	private enum Direction { INCREASE, DECREASE }
+	
+	private class DoseChange {
+		public DoseChange(int lowEnd, int highEnd, String message,
+				Direction direction) {
+			this.lowEnd = lowEnd;
+			this.highEnd = highEnd;
+			this.message = message;
+			this.direction = direction;
+		}
+
+		private int lowEnd;
+		private int highEnd;
+		private String message;
+		private Direction direction;
+	}
 	
 	@Override
 	public void onClick(View v) {
@@ -49,26 +68,143 @@ public class Warfarin extends EpActivity implements OnClickListener {
 	}
 	
 	private void calculateResult() {
-		String message;
+		String message = "";
+		Boolean showDoses = false;
 		try {
+			getRange();
 			double inr = Double.parseDouble(inrEditText.getText().toString());
+			double weeklyDose = Double.parseDouble(weeklyDoseEditText.getText().toString());
 			if (inr >= 6.0)
 				message = "Hold warfarin until INR back in therapeutic range.";
-			else
-				message = "Does not compute.";
-			displayResult(message);
+			else if (inrTherapeutic(inr))
+				message = "INR is therapeutic.  No change in warfarin dose.";
+			else {
+				DoseChange doseChange = percentDoseChange(inr);
+				if (doseChange.lowEnd == 0 || doseChange.highEnd == 0)
+					message = "Invalid Entries!";
+				else {
+					if (doseChange.message != null)
+						message = doseChange.message + "\n";
+					if (doseChange.direction == Direction.INCREASE)
+						message = message + "Increase ";
+					else
+						message = message + "Decrease ";
+					message = message + 
+						"weekly dose by " + String.valueOf(doseChange.lowEnd) +
+						"% to " + String.valueOf(doseChange.highEnd) + "%.";
+					showDoses = true;
+				}
+			}
+			displayResult(message, showDoses);
 		}
 		catch (NumberFormatException e) {
 			message = "Invalid Entry";
-			displayResult(message);
+			displayResult(message, false);
 		}
 	}
 	
+	private Boolean inrTherapeutic(double inr) {
+		return lowRange <= inr && inr <= highRange;
+	}
+	
+	private void getRange() {
+		// assumes only 2 ranges
+		TargetRange range = getTargetRange();
+		if (range == TargetRange.LOW_RANGE) {
+			lowRange = 2.0;
+			highRange = 3.0;
+		}
+		else {			// TargetRange.HIGH_RANGE
+			lowRange = 2.5;
+			highRange = 3.5;
+		}
+	}
+	
+	private TargetRange getTargetRange() {
+		if (inrTargetRadioGroup.getCheckedRadioButtonId() == R.id.inrTarget1)
+			return TargetRange.LOW_RANGE;
+		else if (inrTargetRadioGroup.getCheckedRadioButtonId() == R.id.inrTarget2)
+			return TargetRange.HIGH_RANGE;
+		else
+			return TargetRange.LOW_RANGE;
+	}
+	
+	private DoseChange percentDoseChange(double inr) {
+		// uses Horton et al. Am Fam Physician 1999 algorithm,
+		// modified to specify specific % based on subdividing inr into ranges
+		TargetRange range = getTargetRange();
+		if (range == TargetRange.LOW_RANGE)
+			return percentDoseChangeLowRange(inr);
+		else if (range == TargetRange.HIGH_RANGE)
+			return percentDoseChangeHighRange(inr);
+		else
+			return new DoseChange(0, 0, "", Direction.INCREASE);	// error!
+	}
+	
 
-	private void displayResult(String message) {
+	private DoseChange percentDoseChangeHighRange(double inr) {
+		DoseChange doseChange = new DoseChange(0, 0, "", Direction.INCREASE);
+		return doseChange;
+	}
+
+	private DoseChange percentDoseChangeLowRange(double inr) {
+		DoseChange doseChange = new DoseChange(0, 0, "", Direction.INCREASE);
+		if (inr < 2.0) {
+			doseChange.lowEnd = 5;
+			doseChange.highEnd = 20;
+		}
+		else if (inr >= 3.0 && inr < 3.6) {
+			doseChange.lowEnd = 5;
+			doseChange.highEnd = 15;
+			doseChange.direction = Direction.DECREASE;
+		}
+		else if (inr >= 3.6 && inr <= 4) {
+			doseChange.lowEnd = 10;
+			doseChange.highEnd = 15;
+			doseChange.message = "Withhold no dose or one dose.";
+			doseChange.direction = Direction.DECREASE;
+		}
+		else if (inr > 4) {
+			doseChange.lowEnd = 10;
+			doseChange.highEnd = 20;
+			doseChange.message = "Withhold no dose or one dose.";
+			doseChange.direction = Direction.DECREASE;
+		}
+		return doseChange;
+	}
+
+	private void displayResult(String message, Boolean showDoses) {
 		AlertDialog dialog = new AlertDialog.Builder(this).create();
 		
 		dialog.setMessage(message);
+		dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Reset",
+				new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						clearEntries();
+					}
+				});
+		dialog.setButton(DialogInterface.BUTTON_NEUTRAL, "Don't Reset",
+				new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {}
+				});
+		if (showDoses) {
+		dialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Dosing", 
+				new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						// TODO Auto-generated method stub
+						displayDoses();
+					}
+				});
+		}
+		dialog.show();
+	}
+	
+	private void displayDoses() {
+		AlertDialog dialog = new AlertDialog.Builder(this).create();
+		dialog.setMessage("Test");
 		dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Reset",
 				new DialogInterface.OnClickListener() {
 					@Override
