@@ -5,19 +5,7 @@
 <TableLayout
   android:layout_width="match_parent"
   android:layout_height="match_parent">
-  
  
-  <TableRow>
-  	<TextView
-  		android:id="@+id/weeklyDose1"
-  		android:layout_column="2"
-  		android:padding="3dip" />
-  	<TextView
-  		android:id="@+id/weeklyDose2"
-  		android:layout_column="4"
-  		android:padding="3dip" />
-  </TableRow>
-  
    <TableRow>
   	<TextView
   		android:layout_column="1"
@@ -36,7 +24,7 @@
   	
   <View
      android:layout_height="2dip"
-     android:background="#FF909090" />
+     android:background="@color/divider" />
      
   <TableRow>
      
@@ -153,6 +141,25 @@
   		android:id="@+id/satDose2"
   		android:padding="3dip" />
   </TableRow>
+  
+   <View
+     android:layout_height="2dip"
+     android:background="@color/divider" />
+  
+  <TableRow>
+  	<TextView
+  		android:layout_column="1"
+  		android:text="TOTAL" />
+  	<TextView
+  		android:id="@+id/weeklyDose1"
+  		android:layout_column="2"
+  		android:padding="3dip" />
+  	<TextView
+  		android:id="@+id/weeklyDose2"
+  		android:layout_column="4"
+  		android:padding="3dip" />
+  </TableRow>
+  
       
 </TableLayout>
 

@@ -30,7 +30,7 @@ public class DoseCalculator {
 	}
 	
 	public double[] weeklyDoses() {
-		double result[] = new double [NUM_DAYS];
+		double result[] = new double[NUM_DAYS];
 		// zeros are bad
 		if (tabletDose == 0 || weeklyDose == 0)
 			return result;

@@ -2,7 +2,7 @@
 <PreferenceScreen
   xmlns:android="http://schemas.android.com/apk/res/android">
   
-  <PreferenceCategory>
+  <PreferenceCategory android:title="QTc Settings">
     <ListPreference
     	android:title="@string/qtc_formula_title"
     	android:key="qtc_formula"
@@ -22,7 +22,7 @@
     	android:defaultValue="@string/maximum_qtc_default_value">
     </EditTextPreference>
   </PreferenceCategory>
-  <PreferenceCategory>
+  <PreferenceCategory android:title="Warfarin Settings">
   	<ListPreference
   		android:title="@string/default_warfarin_tablet_title"
   		android:key="default_warfarin_tablet"

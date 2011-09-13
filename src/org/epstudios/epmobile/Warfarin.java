@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
@@ -58,7 +59,7 @@ public class Warfarin extends EpActivity implements OnClickListener {
 		private Direction direction;
 	}
 	
-	private DoseChange doseChange;
+	public DoseChange doseChange;
 	
 	@Override
 	public void onClick(View v) {
@@ -235,25 +236,23 @@ public class Warfarin extends EpActivity implements OnClickListener {
 	}
 	
 	private void displayDoses() {
+		saveDoseChange();
 		Intent i = new Intent(this, DoseTable.class);
 		startActivity(i);
 	}
 	
-	private String calculateNewWeeklyDose() {
-		try {
-			double oldWeeklyDose = Double.parseDouble(weeklyDoseEditText.getText().toString());
-			double newLowEndWeeklyDose = oldWeeklyDose;
-			double newHighEndWeeklyDose = oldWeeklyDose;
-			if (doseChange.direction == Direction.INCREASE) {
-				newLowEndWeeklyDose = newLowEndWeeklyDose + (oldWeeklyDose * doseChange.lowEnd / 100);
-				return String.valueOf(newLowEndWeeklyDose);
-			}
-			return "testing";
-			
-		}
-		catch (NumberFormatException e) {
-			return "Invalid Entry";
-		}
+	private void saveDoseChange() {
+		// save in Preferences
+		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+		Editor editor = prefs.edit();
+		editor.putInt("lowEnd", doseChange.lowEnd);
+		editor.putInt("highEnd", doseChange.highEnd);
+		editor.putBoolean("increase", doseChange.direction == Direction.INCREASE);
+		// store warfarin tablet dose
+		// determine new mg per week
+		// e.g. newWeeklyDose = Math.round(weeklyDose +/- percentChange/100 * weeklyDose)
+		// store new weekly dose
+		editor.commit();
 	}
 	
 	private void clearEntries() {
