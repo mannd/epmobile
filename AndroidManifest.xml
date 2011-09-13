@@ -35,5 +35,7 @@
 		</activity>	
 		<activity android:name=".Warfarin" android:label="@string/warfarin_label">
 		</activity>
+		<activity android:name=".DoseTable" android:label="@string/dose_table_title">
+		</activity>
     </application>
 </manifest>

@@ -105,5 +105,6 @@
 	<string name="default_warfarin_tablet_summary">Select the default warfarin tablet strength</string>
 	<string name="default_inr_target_title">Default INR Target</string>
 	<string name="default_inr_target_summary">Default INR target range</string>
+	<string name="dose_table_title">Suggested Weekly Warfarin Doses</string>
 </resources>
 

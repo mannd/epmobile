@@ -2,6 +2,7 @@ package org.epstudios.epmobile;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -234,21 +235,8 @@ public class Warfarin extends EpActivity implements OnClickListener {
 	}
 	
 	private void displayDoses() {
-		AlertDialog dialog = new AlertDialog.Builder(this).create();
-		dialog.setMessage(calculateNewWeeklyDose());
-		dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Reset",
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						clearEntries();
-					}
-				});
-		dialog.setButton(DialogInterface.BUTTON_NEUTRAL, "Don't Reset",
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {}
-				});
-		dialog.show();
+		Intent i = new Intent(this, DoseTable.class);
+		startActivity(i);
 	}
 	
 	private String calculateNewWeeklyDose() {

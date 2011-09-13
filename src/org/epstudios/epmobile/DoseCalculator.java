@@ -3,13 +3,13 @@ package org.epstudios.epmobile;
 public class DoseCalculator {
 	static final int NUM_DAYS = 7;
 	// probably a more Java-esque way to do below exists...
-	static final int SUN = 0;
-	static final int MON = 1;
-	static final int TUE = 2;
-	static final int WED = 3;
-	static final int THU = 4;
-	static final int FRI = 5;
-	static final int SAT = 6;
+	public static final int SUN = 0;
+	public static final int MON = 1;
+	public static final int TUE = 2;
+	public static final int WED = 3;
+	public static final int THU = 4;
+	public static final int FRI = 5;
+	public static final int SAT = 6;
 	
 	public enum Order { INCREASE, DECREASE }
 	
