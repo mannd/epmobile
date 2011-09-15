@@ -35,14 +35,25 @@ public class DoseTable extends EpActivity implements OnClickListener {
 		lowEnd = prefs.getInt("lowEnd", 0);
 		highEnd = prefs.getInt("highEnd", 0);
 		increase = prefs.getBoolean("increase", true);
-		tabletDose = prefs.getString("tabletDose", "");
+		tabletDose = prefs.getFloat("tabletDose", 0);
+		double weeklyDose = prefs.getFloat("weeklyDose", 0);
 		
+		this.setTitle("Suggested dosing using " + String.valueOf(tabletDose) + " mg tabs");
 		TextView percent1TextView = (TextView) findViewById(R.id.percent1);
 		percent1TextView.setText(String.valueOf(lowEnd) + "% " 
 				+ (increase ? "Increase" : "Decrease"));
 		TextView percent2TextView = (TextView) findViewById(R.id.percent2);
 		percent2TextView.setText(String.valueOf(highEnd) + "% " 
 				+ (increase ? "Increase" : "Decrease"));
+		
+		
+		double newLowEndWeeklyDose = Warfarin.getNewDoseFromPercentage(lowEnd / 100.0, weeklyDose);
+		double newHighEndWeeklyDose = Warfarin.getNewDoseFromPercentage(highEnd / 100.0, weeklyDose);
+		DoseCalculator doseCalculator = new DoseCalculator(tabletDose, newLowEndWeeklyDose);
+		double[] result = doseCalculator.weeklyDoses();
+		TextView sunDose1TextView = (TextView) findViewById(R.id.sunDose1);
+		sunDose1TextView.setText(String.valueOf(result[0]));
+		
 	}
 
 	@Override
@@ -55,6 +66,6 @@ public class DoseTable extends EpActivity implements OnClickListener {
 	private int lowEnd;
 	private int highEnd;
 	private Boolean increase;
-	private String tabletDose;
+	private double tabletDose;
 
 }

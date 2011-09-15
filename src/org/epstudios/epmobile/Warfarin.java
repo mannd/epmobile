@@ -95,25 +95,39 @@ public class Warfarin extends EpActivity implements OnClickListener {
 		return Math.round(oldDose + oldDose * percent);
 	}
 	
-	private String getTabletDose() {
-		String dose = "";
+	private double getTabletDose() {
+		double dose = 5.0;
 		int id = tabletRadioGroup.getCheckedRadioButtonId();
 		switch (id) {
 		case R.id.tablet1:
-			dose = "2.0";
+			dose = 2.0;
 			break;
 		case R.id.tablet2:
-			dose = "2.5";
+			dose = 2.5;
 			break;
 		case R.id.tablet3:
-			dose = "5.0";
+			dose = 5.0;
 			break;
 		case R.id.tablet4:
-			dose = "7.5";
+			dose = 7.5;
 			break;
 		}
-		// shouldn't get here
-		return dose + " mg";
+		return dose;
+	}
+	
+	private double getWeeklyDose() {
+		try {
+			double weeklyDose = Double.parseDouble(weeklyDoseEditText.getText().toString());
+			return weeklyDose;
+		}
+		catch (NumberFormatException e) {
+			return 0.0;
+		}
+		
+	}
+	
+	public static Boolean weeklyDoseIsSane(double dose, double tabletSize) {
+		return dose >= 7 * 0.5 * tabletSize && dose <= 7 * 1.5 * tabletSize;
 	}
 	
 	private void calculateResult() {
@@ -140,7 +154,7 @@ public class Warfarin extends EpActivity implements OnClickListener {
 					message = message + 
 						"weekly dose by " + String.valueOf(doseChange.lowEnd) +
 						"% to " + String.valueOf(doseChange.highEnd) + "%.";
-					if (!weeklyDoseEditText.getText().toString().equals(""))
+					if (weeklyDoseIsSane(getWeeklyDose(), getTabletDose()))
 						showDoses = true;
 				}
 			}
@@ -292,11 +306,8 @@ public class Warfarin extends EpActivity implements OnClickListener {
 		editor.putInt("lowEnd", doseChange.lowEnd);
 		editor.putInt("highEnd", doseChange.highEnd);
 		editor.putBoolean("increase", doseChange.direction == Direction.INCREASE);
-		editor.putString("tabletDose", getTabletDose());
-		// store warfarin tablet dose
-		// determine new mg per week
-		// e.g. newWeeklyDose = Math.round(weeklyDose +/- percentChange/100 * weeklyDose)
-		// store new weekly dose
+		editor.putFloat("tabletDose", (float) getTabletDose());
+		editor.putFloat("weeklyDose", (float) getWeeklyDose());
 		editor.commit();
 	}
 	
