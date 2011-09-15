@@ -3,4 +3,6 @@
 	<color name="background">#ff000000</color>
 	<color name="neutral_text">#ffcccccc</color>
 	<color name="divider">#ff909090</color>
+	<color name="yellow">#ffffff00</color>
+	<color name="blue">#ff00ffff</color>
 </resources>

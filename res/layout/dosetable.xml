@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="match_parent" android:layout_height="match_parent">
+	android:layout_width="match_parent" android:background="@color/background"
+	android:layout_height="match_parent">
 
 	<TableLayout android:layout_width="match_parent"
 		android:layout_height="match_parent">
-		
-		<TableRow>
+
+		<TableRow android:textColor="@color/yellow">
 			<TextView android:layout_column="1" android:text="Day"
-				android:padding="3dip" />
+				android:textColor="@color/yellow" android:padding="3dip" />
 			<TextView android:id="@+id/percent1" android:padding="3dip" />
-			<TextView android:text="Day" android:padding="3dip" />
+			<TextView android:text="Day" android:textColor="@color/yellow"
+				android:padding="3dip" />
 			<TextView android:id="@+id/percent2" android:padding="3dip" />
 		</TableRow>
 
@@ -18,60 +20,67 @@
 		<TableRow>
 
 			<TextView android:layout_column="1" android:text="SUN"
-				android:padding="3dip" />
+				android:textColor="@color/blue" android:padding="3dip" />
 			<TextView android:id="@+id/sunDose1" android:padding="3dip" />
-			<TextView android:text="SUN" android:padding="3dip" />
+			<TextView android:text="SUN" android:textColor="@color/blue"
+				android:padding="3dip" />
 			<TextView android:id="@+id/sunDose2" android:padding="3dip" />
 		</TableRow>
 
 		<TableRow>
-			<TextView android:layout_column="1" android:text="MON"
-				android:padding="3dip" />
+			<TextView android:layout_column="1" android:textColor="@color/blue"
+				android:text="MON" android:padding="3dip" />
 			<TextView android:id="@+id/monDose1" android:padding="3dip" />
-			<TextView android:text="MON" android:padding="3dip" />
+			<TextView android:text="MON" android:textColor="@color/blue"
+				android:padding="3dip" />
 			<TextView android:id="@+id/monDose2" android:padding="3dip" />
 		</TableRow>
 
 		<TableRow>
 
 			<TextView android:layout_column="1" android:text="TUE"
-				android:padding="3dip" />
+				android:textColor="@color/blue" android:padding="3dip" />
 			<TextView android:id="@+id/tueDose1" android:padding="3dip" />
-			<TextView android:text="TUE" android:padding="3dip" />
+			<TextView android:text="TUE" android:textColor="@color/blue"
+				android:padding="3dip" />
 			<TextView android:id="@+id/tueDose2" android:padding="3dip" />
 		</TableRow>
 
 		<TableRow>
 			<TextView android:layout_column="1" android:text="WED"
-				android:padding="3dip" />
+				android:textColor="@color/blue" android:padding="3dip" />
 			<TextView android:id="@+id/wedDose1" android:padding="3dip" />
-			<TextView android:text="WED" android:padding="3dip" />
+			<TextView android:text="WED" android:textColor="@color/blue"
+				android:padding="3dip" />
 			<TextView android:id="@+id/wedDose2" android:padding="3dip" />
 		</TableRow>
 
 		<TableRow>
 
 			<TextView android:layout_column="1" android:text="THU"
-				android:padding="3dip" />
+				android:textColor="@color/blue" android:padding="3dip" />
 			<TextView android:id="@+id/thuDose1" android:padding="3dip" />
-			<TextView android:text="THU" android:padding="3dip" />
+			<TextView android:text="THU" android:textColor="@color/blue"
+				android:padding="3dip" />
 			<TextView android:id="@+id/thuDose2" android:padding="3dip" />
 		</TableRow>
 
 		<TableRow>
 			<TextView android:layout_column="1" android:text="FRI"
-				android:padding="3dip" />
+				android:textColor="@color/blue" android:padding="3dip" />
 			<TextView android:id="@+id/friDose1" android:padding="3dip" />
-			<TextView android:text="FRI" android:padding="3dip" />
+			<TextView android:text="FRI" android:textColor="@color/blue"
+				android:padding="3dip" />
 			<TextView android:id="@+id/friDose2" android:padding="3dip" />
 		</TableRow>
 
 		<TableRow>
 
-			<TextView android:layout_column="1" android:text="SAT"
-				android:padding="3dip" />
+			<TextView android:layout_column="1" android:textColor="@color/blue"
+				android:text="SAT" android:padding="3dip" />
 			<TextView android:id="@+id/satDose1" android:padding="3dip" />
-			<TextView android:text="SAT" android:padding="3dip" />
+			<TextView android:text="SAT" android:textColor="@color/blue"
+				android:padding="3dip" />
 			<TextView android:id="@+id/satDose2" android:padding="3dip" />
 		</TableRow>
 

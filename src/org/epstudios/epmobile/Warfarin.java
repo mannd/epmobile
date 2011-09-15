@@ -91,8 +91,8 @@ public class Warfarin extends EpActivity implements OnClickListener {
 		}
 	}
 	
-	public static double getNewDoseFromPercentage(double percent, double oldDose) {
-		return Math.round(oldDose + oldDose * percent);
+	public static double getNewDoseFromPercentage(double percent, double oldDose, Boolean increase) {
+		return Math.round(oldDose + (increase ? oldDose * percent : -oldDose * percent));
 	}
 	
 	private double getTabletDose() {
@@ -127,7 +127,8 @@ public class Warfarin extends EpActivity implements OnClickListener {
 	}
 	
 	public static Boolean weeklyDoseIsSane(double dose, double tabletSize) {
-		return dose >= 7 * 0.5 * tabletSize && dose <= 7 * 1.5 * tabletSize;
+		// need to make sure not only dose is sane, but max change to dose is sane
+		return dose - 0.2 * dose >= 7 * 0.5 * tabletSize && dose + 0.2 * dose <= 7 * 1.5 * tabletSize;
 	}
 	
 	private void calculateResult() {

@@ -47,25 +47,65 @@ public class DoseTable extends EpActivity implements OnClickListener {
 				+ (increase ? "Increase" : "Decrease"));
 		
 		
-		double newLowEndWeeklyDose = Warfarin.getNewDoseFromPercentage(lowEnd / 100.0, weeklyDose);
-		double newHighEndWeeklyDose = Warfarin.getNewDoseFromPercentage(highEnd / 100.0, weeklyDose);
+		double newLowEndWeeklyDose = Warfarin.getNewDoseFromPercentage(lowEnd / 100.0, weeklyDose, increase);
+		double newHighEndWeeklyDose = Warfarin.getNewDoseFromPercentage(highEnd / 100.0, weeklyDose, increase);
 		DoseCalculator doseCalculator = new DoseCalculator(tabletDose, newLowEndWeeklyDose);
 		double[] result = doseCalculator.weeklyDoses();
-		TextView sunDose1TextView = (TextView) findViewById(R.id.sunDose1);
-		sunDose1TextView.setText(String.valueOf(result[0]));
+		((TextView) findViewById(R.id.sunDose1)).setText(formatDose(result[SUN]));
+		((TextView) findViewById(R.id.monDose1)).setText(formatDose(result[MON]));
+		((TextView) findViewById(R.id.tueDose1)).setText(formatDose(result[TUE]));
+		((TextView) findViewById(R.id.wedDose1)).setText(formatDose(result[WED]));
+		((TextView) findViewById(R.id.thuDose1)).setText(formatDose(result[THU]));
+		((TextView) findViewById(R.id.friDose1)).setText(formatDose(result[FRI]));
+		((TextView) findViewById(R.id.satDose1)).setText(formatDose(result[SAT]));
+		String totalWeeklyLowDose = String.valueOf(totalDose(result, tabletDose)) + " mg/wk";
+		((TextView) findViewById(R.id.weeklyDose1)).setText(totalWeeklyLowDose);
+		doseCalculator.setWeeklyDose(newHighEndWeeklyDose);
+		result = doseCalculator.weeklyDoses();
+		((TextView) findViewById(R.id.sunDose2)).setText(formatDose(result[SUN]));
+		((TextView) findViewById(R.id.monDose2)).setText(formatDose(result[MON]));
+		((TextView) findViewById(R.id.tueDose2)).setText(formatDose(result[TUE]));
+		((TextView) findViewById(R.id.wedDose2)).setText(formatDose(result[WED]));
+		((TextView) findViewById(R.id.thuDose2)).setText(formatDose(result[THU]));
+		((TextView) findViewById(R.id.friDose2)).setText(formatDose(result[FRI]));
+		((TextView) findViewById(R.id.satDose2)).setText(formatDose(result[SAT]));
+		String totalWeeklyHighDose = String.valueOf(totalDose(result, tabletDose)) + " mg/wk";
+		((TextView) findViewById(R.id.weeklyDose2)).setText(totalWeeklyHighDose);
+		
+		
 		
 	}
 
 	@Override
-	
 	public void onClick(View arg0) {
 		// TODO Auto-generated method stub
 
 	}
 	
+	private final int SUN = 0;
+	private final int MON = 1;
+	private final int TUE = 2;
+	private final int WED = 3;
+	private final int THU = 4;
+	private final int FRI = 5;
+	private final int SAT = 6;
+
+	
+	
 	private int lowEnd;
 	private int highEnd;
 	private Boolean increase;
 	private double tabletDose;
+	
+	private double totalDose(double[] doses, double tabletDose) {
+		double total = 0.0;
+		for (int i = 0; i < doses.length; ++i)
+			total = total + doses[i] * tabletDose;
+		return total;
+	}
+	
+	private String formatDose(double dose) {
+		return String.valueOf(dose) + " tab";
+	}
 
 }
