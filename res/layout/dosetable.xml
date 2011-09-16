@@ -9,10 +9,13 @@
 		<TableRow android:textColor="@color/yellow">
 			<TextView android:layout_column="1" android:text="Day"
 				android:textColor="@color/yellow" android:padding="3dip" />
-			<TextView android:id="@+id/percent1" android:padding="3dip" />
+			<TextView android:id="@+id/percent1" 
+				android:textColor="@color/green"
+				android:padding="3dip" />
 			<TextView android:text="Day" android:textColor="@color/yellow"
 				android:padding="3dip" />
-			<TextView android:id="@+id/percent2" android:padding="3dip" />
+			<TextView android:id="@+id/percent2" android:textColor="@color/green"
+				android:padding="3dip" />
 		</TableRow>
 
 		<View android:layout_height="2dip" android:background="@color/divider" />
@@ -87,11 +90,16 @@
 		<View android:layout_height="2dip" android:background="@color/divider" />
 
 		<TableRow>
-			<TextView android:layout_column="1" android:text="TOTAL" />
+			<TextView android:layout_column="1" android:text="TOTAL" 
+				android:textColor="@color/yellow"/>
 			<TextView android:id="@+id/weeklyDose1"
-				android:layout_column="2" android:padding="3dip" />
+				android:layout_column="2" android:textColor="@color/green"
+				android:padding="3dip" />
+			<TextView android:layout_column="3" android:text="TOTAL" 
+				android:textColor="@color/yellow"/>
 			<TextView android:id="@+id/weeklyDose2"
-				android:layout_column="4" android:padding="3dip" />
+				android:layout_column="4" android:textColor="@color/green"
+				android:padding="3dip" />
 		</TableRow>
 
 
