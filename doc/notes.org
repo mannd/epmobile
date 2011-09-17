@@ -85,4 +85,21 @@
   | Sat  |         |         |
   |------+---------+---------|
 ** 
+* Preparing new version -- IMPORTANT!
+  - finish version
+  - update doc/description.txt
+  - run git log --pretty=oneline and update changes/x.y.z.txt
+  - update screenshots - resize them with GIMP to 320 x 480!
+  - IMPORTANT - update AndroidManifest.xml
+    - increment android:versionCode
+    - change android:versionName
+  - git commit
+  - git tag vX.Y.Z
+  - git push tags origin master
+  - make/sign epmobile.apk, save it in dev/epmobileapp/vX.Y.Z/
+  - on market.android.com update product details
+  - upload apk, deactivate old one
+  - DONE!
+
+
 
