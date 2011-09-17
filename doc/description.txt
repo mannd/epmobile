@@ -1,13 +1,13 @@
-EP Mobile provides cardiology tools for cardiac electrophysiologists,
-cardiologists and other health care workers who deal with cardiac arrhythmias.
-In addition to commonly used EP calculations, future editions of this program
-will include electrophysiology tips, techniques, and algorithms.
+EP Mobile provides cardiology tools for cardiac electrophysiologists, cardiologists and other health care workers who deal with cardiac arrhythmias. In addition to commonly used EP calculations, future editions of this program will include electrophysiology tips, techniques, and algorithms.
 
 Current features: 
 - Dofetilide (Tikosyn) dose calculator
 - QTc calculator
-- Choose QTc formula (Bazett, Fridericia, or Sagie)
+- Choose QTc formula (Bazett, Fridericia, Sagie or Hodges)
 - Cycle length to heart rate calculator
+- Atrial fibrillation risk scores (CHADS, CHADS-VASc, HAS-BLED)
+- NEW: Dabigatran (Pradaxa) dose calculator
+- NEW: Warfarin (Coumadin) weekly dose calculator
 
 Categories: Medicine, Cardiology, Electrophysiology, Arrhythmia.
 
