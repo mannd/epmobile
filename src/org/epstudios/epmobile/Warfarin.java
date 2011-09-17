@@ -269,6 +269,7 @@ public class Warfarin extends EpActivity implements OnClickListener {
 		AlertDialog dialog = new AlertDialog.Builder(this).create();
 		
 		dialog.setMessage(message);
+		dialog.setTitle(getString(R.string.warfarin_result_title));
 		dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Reset",
 				new DialogInterface.OnClickListener() {
 					@Override

@@ -121,6 +121,7 @@ public class HasBled extends EpActivity implements OnClickListener {
 						@Override
 						public void onClick(DialogInterface dialog, int which) {}
 					});
+			dialog.setTitle(getString(R.string.hasbled_title));
 			dialog.show();
 		}
 		

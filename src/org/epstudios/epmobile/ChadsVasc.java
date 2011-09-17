@@ -122,7 +122,7 @@ public class ChadsVasc extends EpActivity implements OnClickListener {
 			}
 			risk = "Annual stroke risk is " + risk + "%";
 			
-			dialog.setMessage("CHADS-VASc score = " + result
+			dialog.setMessage("CHA\u2082DS\u2082-VASc score = " + result
 					+ "\n" + message + "\n" + risk + 
 					"\nReference: Gregory YHL et al. CHEST 2010 137:263");
 			dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Reset",
@@ -137,6 +137,7 @@ public class ChadsVasc extends EpActivity implements OnClickListener {
 						@Override
 						public void onClick(DialogInterface dialog, int which) {}
 					});
+			dialog.setTitle(getString(R.string.chadsvasc_title));
 			dialog.show();
 		}
 		

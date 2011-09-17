@@ -107,7 +107,7 @@ public class Chads extends EpActivity implements OnClickListener {
 			}
 			risk = "Annual stroke risk is " + risk + "%";
 			
-			dialog.setMessage("CHADS score = " + result
+			dialog.setMessage("CHADS\u2082 score = " + result
 					+ "\n" + message + "\n" + risk + 
 					"\nReference: Gage BF et al. JAMA 2001 285:2864.");
 			dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Reset",
@@ -122,6 +122,8 @@ public class Chads extends EpActivity implements OnClickListener {
 						@Override
 						public void onClick(DialogInterface dialog, int which) {}
 					});
+			dialog.setTitle(getString(R.string.chads_title));
+		
 			dialog.show();
 		}
 		

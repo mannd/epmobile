@@ -52,7 +52,7 @@
 	
 	<string name="settings_label">Settings...</string>
 	<string name="settings_shortcut">s</string>
-	<string name="settings_title">EP Mobile settings</string>
+	<string name="settings_title">EP Mobile Settings</string>
 	<string name="hasbled_title">HAS-BLED Score</string>
 	<string name="htn_label">Hypertension (systolic BP \u2267 160)</string>
 	<string name="abnormal_renal_label">Abnormal renal function 
@@ -88,7 +88,7 @@
 	<string name="high_chadsvasc_message">Oral anticoagulation
 	(warfarin or dabigatran or others)</string>
 	<string name="warfarin_title">Warfarin Calculator</string>
-	<string name="warfarin_label">Warfarin dose calculator</string>
+	<string name="warfarin_label">Warfarin Dose Calculator</string>
 	<string name="tablet_label">Tablet</string>
 	<string name="tablet1">2 mg</string>
 	<string name="tablet2">2.5 mg</string>
@@ -106,5 +106,6 @@
 	<string name="default_inr_target_title">Default INR Target</string>
 	<string name="default_inr_target_summary">Default INR target range</string>
 	<string name="dose_table_title">Suggested Weekly Warfarin Doses</string>
+	<string name="warfarin_result_title">Suggested Warfarin Dosing</string>
 </resources>
 

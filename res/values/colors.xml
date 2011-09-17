@@ -4,6 +4,6 @@
 	<color name="neutral_text">#ffcccccc</color>
 	<color name="divider">#ff909090</color>
 	<color name="yellow">#ffffff00</color>
-	<color name="blue">#ff00ffff</color>
+	<color name="cyan">#ff00ffff</color>
 	<color name="green">#ff00ff00</color>
 </resources>
