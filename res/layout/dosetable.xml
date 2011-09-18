@@ -4,7 +4,8 @@
 	android:layout_height="match_parent">
 
 	<TableLayout android:layout_width="match_parent"
-		android:layout_height="match_parent">
+		android:layout_height="match_parent"
+		android:stretchColumns="*">
 
 		<TableRow android:textColor="@color/yellow">
 			<TextView android:layout_column="1" android:text="Day"
@@ -26,7 +27,7 @@
 				android:textColor="@color/cyan" android:padding="3dip" />
 			<TextView android:id="@+id/sunDose1" android:padding="3dip" />
 			<TextView android:text="SUN" android:textColor="@color/cyan"
-				android:padding="3dip" />
+				android:padding="3dip"/>
 			<TextView android:id="@+id/sunDose2" android:padding="3dip" />
 		</TableRow>
 
