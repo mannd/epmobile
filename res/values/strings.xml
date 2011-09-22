@@ -112,8 +112,13 @@
 	
 	<string name="brugada_vt_title">Brugada Criteria SVT vs VT</string>
 	<string name="brugada_step1">Absence of an RS complex in all precordial leads?</string>
+	<string name="vt_result">Wide complex tachycardia is most likely Ventricular Tachycardia</string>
+	<string name="svt_result">Wide complex tachycardia is most likely Supraventricular Tachycardia</string>
+	
+	<string name="wct_result_label">WCT Result</string>
 	<string name="yes">Yes</string>
 	<string name="no">No</string>
+	<string name="back">Back</string>
 	
 	
 </resources>

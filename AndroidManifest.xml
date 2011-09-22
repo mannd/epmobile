@@ -37,5 +37,7 @@
 		</activity>
 		<activity android:name=".DoseTable" android:label="@string/dose_table_title">
 		</activity>
+		<activity android:name=".Brugada" android:label="@string/brugada_vt_title">
+		</activity>
     </application>
 </manifest>

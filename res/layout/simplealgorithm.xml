@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" 
+    	android:id="@+id/stepTextView" 
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:gravity="center"
+		android:padding="10dip"
+    	android:text="Step1"></TextView>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/linearLayout1">
+        <Button android:text="@string/yes" android:id="@+id/yes_button" android:layout_weight="1"
+        	android:layout_width="match_parent" android:layout_height="wrap_content"></Button>
+        <Button android:text="@string/no" android:id="@+id/no_button" android:layout_weight="1"
+        	android:layout_width="match_parent" android:layout_height="wrap_content"></Button>
+        <Button android:text="@string/back" android:id="@+id/back_button" android:layout_weight="1"
+        	android:layout_width="match_parent" android:layout_height="wrap_content"></Button>
+
+
+    </LinearLayout>
+  
+</LinearLayout>

@@ -58,6 +58,8 @@ public class EpMobile extends EpListActivity {
 					dabigatranCalculator();
 				else if (selection.equals(getString(R.string.warfarin_title)))
 					warfarinCalculator();
+				else if (selection.equals(getString(R.string.brugada_vt_title)))
+					brugadaAlgorithm();
 			}
 		});
 	}
@@ -100,6 +102,11 @@ public class EpMobile extends EpListActivity {
     
     private void warfarinCalculator() {
     	Intent i = new Intent(this, Warfarin.class);
+    	startActivity(i);
+    }
+    
+    private void brugadaAlgorithm() {
+    	Intent i = new Intent(this, Brugada.class);
     	startActivity(i);
     }
     
