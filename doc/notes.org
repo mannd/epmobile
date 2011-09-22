@@ -100,6 +100,13 @@
   - on market.android.com update product details
   - upload apk, deactivate old one
   - DONE!
+* Style
+** General
+*** lower_case_hyphenated
+*** separate_numbers_1
+** Titles vs Labels
+   Activities have titles, everything else has labels
+   
 
 
 
