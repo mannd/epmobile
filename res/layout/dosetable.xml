@@ -102,8 +102,11 @@
 				android:layout_column="4" android:textColor="@color/green"
 				android:padding="3dip" />
 		</TableRow>
-
-
+		<TextView android:text="@string/warfarin_reference"
+			android:autoLink="web"
+			android:layout_height="wrap_content"
+			android:layout_width="fill_parent"
+			android:padding="3dip" /> 
 	</TableLayout>
 
 </ScrollView>
