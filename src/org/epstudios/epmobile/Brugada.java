@@ -1,7 +1,7 @@
 package org.epstudios.epmobile;
 
+import android.app.Dialog;
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -20,6 +20,9 @@ public class Brugada extends EpActivity implements OnClickListener {
 		noButton.setOnClickListener(this);
 		backButton = (Button) findViewById(R.id.back_button);
 		backButton.setOnClickListener(this);
+		morphologyButton = (Button) findViewById(R.id.morphology_button);
+		morphologyButton.setOnClickListener(this);
+		morphologyButton.setVisibility(View.GONE);
 		stepTextView = (TextView) findViewById(R.id.stepTextView);
 		
 		step1();
@@ -36,6 +39,10 @@ public class Brugada extends EpActivity implements OnClickListener {
 		case R.id.back_button:
 			step--;
 			gotoStep();
+			break;
+		case R.id.morphology_button:
+			displayMorphologyCriteria();
+			break;
 		}
 	}
 	
@@ -45,17 +52,17 @@ public class Brugada extends EpActivity implements OnClickListener {
 	}
 	
 	private void step2() {
-		stepTextView.setText("Step 2");
+		stepTextView.setText(getString(R.string.brugada_step_2));
 		backButton.setEnabled(true);
 	}
 	
 	private void step3() {
-		stepTextView.setText("Step 3");
+		stepTextView.setText(getString(R.string.brugada_step_3));
 		backButton.setEnabled(true);		
 	}
 	
 	private void step4() {
-		stepTextView.setText("Step 4");
+		stepTextView.setText(getString(R.string.brugada_step_4));
 		backButton.setEnabled(true);		
 	}
 	
@@ -75,6 +82,10 @@ public class Brugada extends EpActivity implements OnClickListener {
 	}
 	
 	private void gotoStep() {
+		if (step < 4)
+			morphologyButton.setVisibility(View.GONE);
+		else
+			morphologyButton.setVisibility(View.VISIBLE);
 		switch (step) {
 		case 1:
 			step1();
@@ -95,12 +106,6 @@ public class Brugada extends EpActivity implements OnClickListener {
 		AlertDialog dialog = new AlertDialog.Builder(this).create();
 		String message;
 		message = getString(R.string.vt_result);
-//		dialog.setButton(DialogInterface.BUTTON_POSITIVE, "OK",
-//				new DialogInterface.OnClickListener() {
-//					@Override
-//					public void onClick(DialogInterface dialog, int which) {}
-//				});
-		
 		dialog.setMessage(message);
 		dialog.setTitle(getString(R.string.wct_result_label));
 		dialog.show();
@@ -115,9 +120,19 @@ public class Brugada extends EpActivity implements OnClickListener {
 		dialog.show();
 	}
 	
+	private void displayMorphologyCriteria() {
+		Dialog dialog = new Dialog(this);
+		String message;
+//		message = "Tachycardia with a RBBB-like QRS";
+//		dialog.setMessage(message);
+		dialog.setTitle(getString(R.string.morphology_label));
+		dialog.show();
+	}
+	
 	private Button yesButton;
 	private Button noButton;
 	private Button backButton;
+	private Button morphologyButton;
 	private TextView stepTextView;
 	private static int step = 1;
 

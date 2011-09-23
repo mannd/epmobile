@@ -17,8 +17,8 @@
         	android:layout_width="match_parent" android:layout_height="wrap_content"></Button>
         <Button android:text="@string/back" android:id="@+id/back_button" android:layout_weight="1"
         	android:layout_width="match_parent" android:layout_height="wrap_content"></Button>
-
-
     </LinearLayout>
-  
+    <Button android:text="@string/morphology_label" android:id="@+id/morphology_button"
+    	android:layout_width="match_parent" android:layout_height="wrap_content">
+    </Button>
 </LinearLayout>
