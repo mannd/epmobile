@@ -33,7 +33,6 @@
 		<item>"1"</item>
 	</array>
 	<array name="main_index">
-		<item>Brugada Criteria SVT vs VT</item>
 		<item>CHADS\u2082 Score</item>
 		<item>CHA\u2082DS\u2082-VASc Score</item>
 		<item>Cycle Length Calculator</item>
@@ -42,5 +41,12 @@
 		<item>HAS-BLED Score</item>
 		<item>QTc Calculator</item>
 		<item>Warfarin Calculator</item>
+		<item>Wide Complex Tachycardia</item>
+	</array>
+	<array name="wct_algorithm_list">
+		<item>ACC Algorithm</item>
+		<item>Brugada Algorithm</item>
+		<item>Ultrasimple Brugada Algorithm</item>
+		<item>Vereckei Algorithm</item>
 	</array>
 </resources>

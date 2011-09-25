@@ -39,5 +39,7 @@
 		</activity>
 		<activity android:name=".Brugada" android:label="@string/brugada_vt_title">
 		</activity>
+		<activity android:name=".WctAlgorithmList" android:label="@string/wct_algorithm_title">
+		</activity>
     </application>
 </manifest>

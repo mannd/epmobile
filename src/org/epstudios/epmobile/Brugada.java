@@ -2,7 +2,9 @@ package org.epstudios.epmobile;
 
 import android.app.Dialog;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -121,12 +123,7 @@ public class Brugada extends EpActivity implements OnClickListener {
 	}
 	
 	private void displayMorphologyCriteria() {
-		Dialog dialog = new Dialog(this);
-		String message;
-//		message = "Tachycardia with a RBBB-like QRS";
-//		dialog.setMessage(message);
-		dialog.setTitle(getString(R.string.morphology_label));
-		dialog.show();
+
 	}
 	
 	private Button yesButton;

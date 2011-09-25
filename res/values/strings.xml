@@ -109,8 +109,11 @@
 	<string name="warfarin_result_title">Suggested Warfarin Dosing</string>
 	<string name="warfarin_reference">Reference: Horton J, Bushwick B: American Family Physician. Feb 1, 1999.
 		http://www.aafp.org/afp/990201ap/635.html</string>
+		
+	<string name="wct_algorithm_title">Wide Complex Tachycardia</string>
 	
 	<string name="brugada_vt_title">Brugada Criteria SVT vs VT</string>
+	<string name="brugada_wct_title">Brugada Algorithm</string>
 	<string name="brugada_step1">Absence of an RS complex in all precordial leads?</string>
 	<string name="brugada_step_2">R to S interval >100 ms in one precordial lead?</string>
 	<string name="brugada_step_3">AV dissociation?</string>
