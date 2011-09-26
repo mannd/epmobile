@@ -127,6 +127,13 @@
 	<string name="no">No</string>
 	<string name="back">Back</string>
 	<string name="morphology_label">Morphology Criteria</string>
+	<string name="wct_rbbb_v1">\nMonophasic R or QR or RS favors VT\nTriphasic RSR\' favors SVT\n</string>
+	<string name="wct_rbbb_v6">\nR to S ratio 1 (R wave smaller than S wave) favors VT\n
+		QS or QR favors VT\n
+		Monophasic R favors VT
+		Triphasic favors SVT
+		R to S ratio > 1 (R wave larger than S wave) favors SVT\n
+	</string>
 	
 	
 </resources>

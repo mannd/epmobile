@@ -41,5 +41,7 @@
 		</activity>
 		<activity android:name=".WctAlgorithmList" android:label="@string/wct_algorithm_title">
 		</activity>
+		<activity android:name=".WctMorphologyCriteria" android:label="@string/morphology_label">
+		</activity>
     </application>
 </manifest>

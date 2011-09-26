@@ -46,6 +46,7 @@
 	<array name="wct_algorithm_list">
 		<item>ACC Algorithm</item>
 		<item>Brugada Algorithm</item>
+		<item>Morphology Criteria</item>
 		<item>Ultrasimple Brugada Algorithm</item>
 		<item>Vereckei Algorithm</item>
 	</array>

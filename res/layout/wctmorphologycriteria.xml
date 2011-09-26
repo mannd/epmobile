@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
+    <TextView android:text="RBBB QRS" android:id="@+id/textView1" 
+    	android:layout_width="wrap_content" android:layout_height="wrap_content"
+    	android:textAppearance="?android:attr/textAppearanceLarge"></TextView>
+    <TextView android:text="Lead V1" android:layout_width="wrap_content" android:layout_height="wrap_content"
+    	android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
+    <TextView android:text="@string/wct_rbbb_v1" android:layout_width="wrap_content" android:layout_height="wrap_content"
+    	android:textAppearance="?android:attr/textAppearanceSmall"></TextView>
+   	<TextView android:text="Lead V6" android:layout_width="wrap_content" android:layout_height="wrap_content"
+    	android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
+   	<TextView android:text="@string/wct_rbbb_v6" android:layout_width="wrap_content" android:layout_height="wrap_content"
+    	android:textAppearance="?android:attr/textAppearanceSmall"></TextView>	
+</LinearLayout>

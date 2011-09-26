@@ -1,10 +1,8 @@
 package org.epstudios.epmobile;
 
-import android.app.Dialog;
 import android.app.AlertDialog;
-import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -123,7 +121,8 @@ public class Brugada extends EpActivity implements OnClickListener {
 	}
 	
 	private void displayMorphologyCriteria() {
-
+		Intent i = new Intent(this, WctMorphologyCriteria.class);
+		startActivity(i);
 	}
 	
 	private Button yesButton;
