@@ -1,6 +1,7 @@
 package org.epstudios.epmobile;
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -31,7 +32,7 @@ public class Brugada extends EpActivity implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.yes_button:
-			displayVtResult();
+			displayVtResult(step);
 			break;
 		case R.id.no_button:
 			getNoResult();
@@ -102,12 +103,45 @@ public class Brugada extends EpActivity implements OnClickListener {
 		}
 	}
 	
-	private void displayVtResult() {
+	private void displayVtResult(int step) {
 		AlertDialog dialog = new AlertDialog.Builder(this).create();
+		String sens = "";
+		String spec = "";
+		switch (step) {
+		case 1:
+		case 2:
+			sens=".21";
+			spec="1.0";
+			break;
+		case 3:
+			sens=".82";
+			spec=".98";
+			break;
+		case 4:
+			sens=".987";
+			spec=".965";
+			break;
+		}
 		String message;
 		message = getString(R.string.vt_result);
+		message = message + " (Sens=" + sens + ", Spec=" + spec + ") ";
+		message = message + getString(R.string.brugada_reference);
 		dialog.setMessage(message);
 		dialog.setTitle(getString(R.string.wct_result_label));
+		dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Done",
+				new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						finish();
+					}
+				});
+		dialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Back",
+				new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						;
+					}
+				});
 		dialog.show();
 	}
 	
@@ -115,8 +149,24 @@ public class Brugada extends EpActivity implements OnClickListener {
 		AlertDialog dialog = new AlertDialog.Builder(this).create();
 		String message;
 		message = getString(R.string.svt_result);
+		message = message + " (Sens=.965, Spec=.967) ";
+		message = message + getString(R.string.brugada_reference);
 		dialog.setMessage(message);
 		dialog.setTitle(getString(R.string.wct_result_label));
+		dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Done",
+				new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						finish();
+					}
+				});
+		dialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Back",
+				new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						;
+					}
+				});
 		dialog.show();
 	}
 	

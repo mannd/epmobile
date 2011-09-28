@@ -110,3 +110,9 @@
 
 
 
+* References
+** RV dysplasia
+   http://arvc.ca/arvc/info/i.php?ix=1&pag=3
+** WCT algorithms
+   http://askdrwiki.com/mediawiki/index.php?title=Brugada_Criteria#Four_Brugada_Criteria_for_Diagnosis_of_Ventricular_Tachycardia
+   http://en.ecgpedia.org/wiki/Approach_to_the_Wide_Complex_Tachycardia
