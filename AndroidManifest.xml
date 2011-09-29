@@ -43,5 +43,7 @@
 		</activity>
 		<activity android:name=".WctMorphologyCriteria" android:label="@string/morphology_label">
 		</activity>
+		<activity android:name=".Rwpt" android:label="@string/rwpt_title">
+		</activity>
     </application>
 </manifest>

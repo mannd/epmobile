@@ -136,6 +136,13 @@
 		R to S ratio > 1 (R wave larger than S wave) favors SVT\n
 	</string>
 	
+	<string name="rwpt_title">Ultrasimple Brugada Algorithm</string>
+	<string name="rwpt_text">R wave peak time in lead II (RWPT). 
+		Measure the onset of the QRS in ECG lead II to the first
+		change in polarity (nadir Q or peak R). RWPT \u2265 50 ms
+		strongly suggests VT (positive likelihood ratio 34.8).
+		Reference: Pava LF, et al. Heart Rhythm 2010;7:922.</string>
+	
 	
 </resources>
 

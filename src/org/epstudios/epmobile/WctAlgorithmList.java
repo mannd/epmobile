@@ -27,6 +27,8 @@ public class WctAlgorithmList extends EpListActivity {
 					brugadaAlgorithm();
 				else if (selection.equals(getString(R.string.morphology_label)))
 					morphologyCriteria();
+				else if (selection.equals(getString(R.string.rwpt_title)))
+					ultraSimpleBrugadaAlgorithm();
 			}
 		});
 	}
@@ -38,6 +40,11 @@ public class WctAlgorithmList extends EpListActivity {
 	
 	private void morphologyCriteria() {
 		Intent i = new Intent(this, WctMorphologyCriteria.class);
+		startActivity(i);
+	}
+	
+	private void ultraSimpleBrugadaAlgorithm() {
+		Intent i = new Intent(this, Rwpt.class);
 		startActivity(i);
 	}
 
