@@ -7,6 +7,7 @@
     <TextView android:text="RBBB QRS" android:id="@+id/textView1" 
     	android:layout_width="wrap_content" android:layout_height="wrap_content"
     	android:textAppearance="?android:attr/textAppearanceLarge"></TextView>
+    <RadioButton android:text="RBBB QRS in V1" android:id="@+id/radioButton1" android:layout_width="wrap_content" android:layout_height="wrap_content"></RadioButton>
     <TextView android:text="Lead V1" android:layout_width="wrap_content" android:layout_height="wrap_content"
     	android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
     <TextView android:text="@string/wct_rbbb_v1" android:layout_width="wrap_content" android:layout_height="wrap_content"
@@ -15,13 +16,6 @@
     	android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
    	<TextView android:text="@string/wct_rbbb_v6" android:layout_width="wrap_content" android:layout_height="wrap_content"
     	android:textAppearance="?android:attr/textAppearanceSmall"></TextView>	
-   <RadioGroup android:layout_width="match_parent" android:id="@+id/radioGroup1" android:layout_height="match_parent"
-   		android:orientation="horizontal">
-      <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="RadioButton" android:id="@+id/radio0" android:checked="true"></RadioButton>
-      <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="RadioButton" android:id="@+id/radio1"></RadioButton>
-      <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="RadioButton" android:id="@+id/radio2"></RadioButton>
-  </RadioGroup>
- 
    </TableLayout>
 
 </ScrollView>
