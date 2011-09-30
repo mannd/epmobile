@@ -50,4 +50,12 @@
 		<item>Ultrasimple Brugada Algorithm</item>
 		<item>Vereckei Algorithm</item>
 	</array>
+	<array name="interval_rate_labels">
+		<item>RR Interval (msec)</item>
+		<item>Heart Rate (bpm)</item>
+	</array>
+	<array name="interval_rate_values">
+		<item>INTERVAL</item>
+		<item>RATE</item>
+	</array>
 </resources>

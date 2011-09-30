@@ -21,6 +21,14 @@
     	android:inputType="number"
     	android:defaultValue="@string/maximum_qtc_default_value">
     </EditTextPreference>
+    <ListPreference
+    	android:title="@string/interval_rate_title"
+    	android:key="interval_rate"
+    	android:summary="@string/interval_rate_summary"
+    	android:entries="@array/interval_rate_labels"
+    	android:entryValues="@array/interval_rate_values"
+    	android:defaultValue="RATE">
+    </ListPreference>
   </PreferenceCategory>
   <PreferenceCategory android:title="Warfarin Settings">
   	<ListPreference

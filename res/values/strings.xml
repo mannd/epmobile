@@ -20,6 +20,9 @@
 	<string name="cycle_length_calculator_title">Cycle Length Calculator</string>
 	<string name="rr_label">RR Interval (msec)</string>
 	<string name="rr_hint">RR (msec)</string>
+	<string name="interval_rate_title">Interval or Rate</string>
+	<string name="interval_rate_summary">Use RR interval or heart rate as default</string>
+	
 	<string name="qt_label">QT Interval (msec)</string> 
 	<string name="qt_hint">QT (msec)</string>
 	<string name="qtc_result_label">QTc Interval (msec)</string>

@@ -26,11 +26,17 @@ import android.preference.PreferenceManager;
 import android.content.SharedPreferences;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.EditText;
 import android.widget.Toast;
 
 public class Qtc extends EpActivity implements OnClickListener {
+	private enum IntervalRate {INTERVAL, RATE};
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState)  {
 		super.onCreate(savedInstanceState);
@@ -41,20 +47,33 @@ public class Qtc extends EpActivity implements OnClickListener {
         View clearButton = findViewById(R.id.clear_button);
         clearButton.setOnClickListener(this);
         
+        intervalRateSpinner = (Spinner) findViewById(R.id.interval_rate_spinner);
         qtcTextView = (TextView) findViewById(R.id.calculated_qtc);
         rrEditText = (EditText) findViewById(R.id.rrEditText);
         qtEditText = (EditText) findViewById(R.id.qtEditText);
         qtcFormulaTextView = (TextView) findViewById(R.id.qtc_formula);
         
+        getPrefs();
+        setAdapters();
+        
         clearEntries();
         
 	}
 
+	private Spinner intervalRateSpinner;
 	private TextView qtcTextView;
 	private EditText rrEditText;
 	private EditText qtEditText;
 	private TextView qtcFormulaTextView;
 	private String qtcFormula;
+	private OnItemSelectedListener itemListener;
+	
+	private int qtcUpperLimit;
+	private final static int QTC_UPPER_LIMIT = 440;
+	private final static int INTERVAL_SELECTION = 0;
+	private final static int RATE_SELECTION = 1;
+	
+	private IntervalRate defaultIntervalRateSelection = IntervalRate.INTERVAL;
 
 	public void onClick(View v) {
 		switch (v.getId()) {
@@ -66,9 +85,48 @@ public class Qtc extends EpActivity implements OnClickListener {
 			break;
 		}
 	}
+	
+	private void setAdapters() {
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+				R.array.interval_rate_labels, android.R.layout.simple_spinner_item);
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		intervalRateSpinner.setAdapter(adapter);
+		if (defaultIntervalRateSelection.equals(IntervalRate.INTERVAL))
+			intervalRateSpinner.setSelection(INTERVAL_SELECTION);
+		else
+			intervalRateSpinner.setSelection(RATE_SELECTION);		
+		itemListener = new OnItemSelectedListener() {
+			public void onItemSelected(AdapterView parent, View v,
+					int position, long id) {
+				updateIntervalRateSelection();
+			}
+			public void onNothingSelected(AdapterView parent) {
+				// do nothing
+			}
+		
+		};
+		
+		intervalRateSpinner.setOnItemSelectedListener(itemListener);
 
-	private int qtcUpperLimit;
-	private final static int QTC_UPPER_LIMIT = 440;
+	}
+	
+	private void updateIntervalRateSelection() {
+		IntervalRate intervalRateSelection = getIntervalRateSelection();
+		if (intervalRateSelection.equals(IntervalRate.INTERVAL))
+			rrEditText.setHint(getString(R.string.rr_hint));
+		else
+			rrEditText.setHint(getString(R.string.hr_hint));
+	}
+	
+	private IntervalRate getIntervalRateSelection() {
+		String result = intervalRateSpinner.getSelectedItem().toString();
+		if (result.startsWith("RR"))
+			return IntervalRate.INTERVAL;
+		else
+			return IntervalRate.RATE;
+		
+	}
+
 
 	private void showQtcFormula() {
 		qtcFormulaTextView.setText("QTc formula used was " + qtcFormula);
@@ -77,8 +135,11 @@ public class Qtc extends EpActivity implements OnClickListener {
 	private void calculateQtc() {
 		CharSequence rrText = rrEditText.getText();
 		CharSequence qtText = qtEditText.getText();
+		IntervalRate intervalRateSelection = getIntervalRateSelection();
 		try {
 			int rr = Integer.parseInt(rrText.toString());
+			if (intervalRateSelection.equals(IntervalRate.RATE))
+				rr = 60000 / rr;
 			int qt = Integer.parseInt(qtText.toString());
 			getPrefs();
 			showQtcFormula();
@@ -119,6 +180,11 @@ public class Qtc extends EpActivity implements OnClickListener {
 		SharedPreferences prefs = PreferenceManager
 				.getDefaultSharedPreferences(getBaseContext());
 		qtcFormula = prefs.getString("qtc_formula", "BAZETT");
+		String intervalRatePreference = prefs.getString("interval_rate", "INTERVAL");
+		if (intervalRatePreference.equals("INTERVAL"))
+			defaultIntervalRateSelection = IntervalRate.INTERVAL;
+		else
+			defaultIntervalRateSelection = IntervalRate.RATE;
 		String s = prefs.getString("maximum_qtc", "");
 		try {
 			qtcUpperLimit = Integer.parseInt(s);
