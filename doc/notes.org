@@ -116,3 +116,76 @@
 ** WCT algorithms
    http://askdrwiki.com/mediawiki/index.php?title=Brugada_Criteria#Four_Brugada_Criteria_for_Diagnosis_of_Ventricular_Tachycardia
    http://en.ecgpedia.org/wiki/Approach_to_the_Wide_Complex_Tachycardia
+** RWPT
+   http://www.heartrhythmjournal.com/article/S1547-5271%2810%2900216-X/abstract
+* WCT
+** Wellens morphology criteria
+*** ECGpedia
+    - LBBB VT
+      - Initial R > 40 ms in V1 or V2 => VT
+      - RS > 100 ms in V1 or V2 => VT (redundent, already in Step 1?, Brugada)
+      - Slurred or notched S in V1 or V2 => VT
+      - Q to nadir QS > 60 ms in V1 or V2 => VT
+      - Q or QS in V6 => VT
+    - RBBB VT
+      - Monophasic R or qR in V1 => VT
+      - R taller than R' (rabbit ears) in V1 => VT
+      - rS in V6 => VT (i.e. RS ratio < 1)
+*** Brugada et al.
+**** Notes
+     - Text only refers to V1 and V6, figure (Fig 1) refers to V1-2 and
+       V6
+     - Table 1 on morphology criteria uses V1 for RBBB but V1 or V2 for LBBB
+     - In text, step 4 = "if the tachycardia fulfilled the morphology criteria
+       for VT in leads V1 and V6, the diagnosis of VT was made."
+**** Criteria from Table 1
+     - LBBB VT
+       - Lead V1 or V2
+	 - R > 30 msec or > 60 msec to nadir S or notched S 
+       - Lead V6
+	 - QR or QS
+	 - Monophasic R indeterminate
+	 - Triphasic SVT
+     - RBBB VT
+       - Lead V1
+	 - Monophasic R
+	 - QR or RS
+	 - Triphasic => SVT
+       - Lead V6
+	 - R to S ratio < 1
+	 - QS or QR
+	 - Monophasic R
+	 - Triphasic => SVT
+	 - R to S > 1 => ?VT or SVT
+*** Final criteria
+    - LBBB VT
+      - Lead V1 or V2
+	- R > 30 msec
+	- RS > 60 msec
+	- Notched S
+      - Lead V6
+	- QR
+	- QS
+    - RBBB VT
+      - Lead V1
+	- Monophasic R
+	- QR
+	- RS
+      - Lead V6
+	- R to S < 1
+	- QR
+	- QS
+	- Monophasic R
+*** Analysis
+**** Wellens
+***** At least 1 point in V1 and V6 => VT
+***** Zero points => SVT
+***** V1 and V6 discordant => indeterminate
+***** Include rabbit ears? - not listed in Brugada
+**** Brugada
+***** At least 1 point in V1 and V6 => VT
+***** Otherwise SVT
+*** Implementation
+    - Use figures and text for morphology criteria
+    - Use checklist for Brugada morphology criteria
+

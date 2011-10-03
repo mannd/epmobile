@@ -6,6 +6,6 @@ public class WctMorphologyCriteria extends EpActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState)  {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.wctmorphologycriteria);
+		setContentView(R.layout.wellensmorphology);
 	}
 }
