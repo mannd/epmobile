@@ -151,8 +151,10 @@
     
     
   </string>
+  <string name="rbbb_wct_label">"RBBB" Tachycardia</string>
+  <string name="lbbb_wct_label">"LBBB" Tachycardia</string>
   <string name="wellens_reference">
-  	From Wellens et al. Am J Med 1978;64:27.  Figures based on </string>
+  	From Wellens et al. Am J Med 1978;64:27.</string>
   
   
 </resources>
