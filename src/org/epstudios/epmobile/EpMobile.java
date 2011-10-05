@@ -58,7 +58,7 @@ public class EpMobile extends EpListActivity {
 					dabigatranCalculator();
 				else if (selection.equals(getString(R.string.warfarin_title)))
 					warfarinCalculator();
-				else if (selection.equals(getString(R.string.wct_algorithm_title)))
+				else if (selection.equals(getString(R.string.wct_algorithm_list_title)))
 					wctAlgorithm();
 			}
 		});

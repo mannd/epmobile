@@ -171,7 +171,7 @@ public class Brugada extends EpActivity implements OnClickListener {
 	}
 	
 	private void displayMorphologyCriteria() {
-		Intent i = new Intent(this, WctMorphologyCriteria.class);
+		Intent i = new Intent(this, BrugadaMorphologyCriteria.class);
 		startActivity(i);
 	}
 	

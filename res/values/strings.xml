@@ -113,6 +113,7 @@
   <string name="warfarin_reference">Reference: Horton J, Bushwick B: American Family Physician. Feb 1, 1999.
   http://www.aafp.org/afp/990201ap/635.html</string>
   
+  <string name="wct_algorithm_list_title">Wide Complex Tachycardia \u25B6</string>
   <string name="wct_algorithm_title">Wide Complex Tachycardia</string>
   
   <string name="brugada_vt_title">Brugada Criteria SVT vs VT</string>
