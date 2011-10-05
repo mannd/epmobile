@@ -1,5 +1,9 @@
 package org.epstudios.epmobile;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
@@ -90,7 +94,42 @@ public class BrugadaMorphologyCriteria extends EpActivity implements OnClickList
 	}
 	
 	private void calculateResult() {
-		// TODO
+		if (bothLeadsHaveEntries())  	
+			displayVtResult();
+		else
+			displaySvtResult();
+	}
+	
+	private Boolean bothLeadsHaveEntries() {
+		Set<Integer> lbbbV1 = new HashSet<Integer>();
+		Set<Integer> lbbbV6 = new HashSet<Integer>();
+		Set<Integer> rbbbV1 = new HashSet<Integer>();
+		Set<Integer> rbbbV6 = new HashSet<Integer>();
+		lbbbV1.add(0);
+		lbbbV1.add(1);
+		lbbbV1.add(2);
+		lbbbV6.add(3);
+		rbbbV1.add(0);
+		rbbbV1.add(1);
+		rbbbV1.add(2);
+		rbbbV6.add(3);
+		rbbbV6.add(4);
+		rbbbV6.add(5);
+		Boolean inV1 = false;
+		Boolean inV6 = false;
+		for (int i = 0; i < lbbbCheckBox.length; i++) {
+			if (lbbbCheckBox[i].isChecked() && lbbbV1.contains(i))
+				inV1 = true;
+			if (lbbbCheckBox[i].isChecked() && lbbbV6.contains(i))
+				inV6 = true;
+		}
+		for (int i = 0; i < rbbbCheckBox.length; i++) {
+			if (rbbbCheckBox[i].isChecked() && rbbbV1.contains(i))
+				inV1 = true;
+			if (rbbbCheckBox[i].isChecked() && rbbbV6.contains(i))
+				inV6 = true;
+		}
+		return inV1 && inV6;
 	}
 	
 	private void updateBbbSelection() {
@@ -103,6 +142,58 @@ public class BrugadaMorphologyCriteria extends EpActivity implements OnClickList
 			hideLbbbEntries();
 			showRbbbEntries();
 		}
+	}
+	
+	private void displayVtResult() {
+		AlertDialog dialog = new AlertDialog.Builder(this).create();
+		String sens = ".987";
+		String spec = ".965";
+		String message;
+		message = getString(R.string.vt_result);
+		message = message + " (Sens=" + sens + ", Spec=" + spec + ") ";
+		message = message + getString(R.string.brugada_reference);
+		dialog.setMessage(message);
+		dialog.setTitle(getString(R.string.wct_result_label));
+		dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Done",
+				new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						finish();
+					}
+				});
+		dialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Back",
+				new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						;
+					}
+				});
+		dialog.show();
+	}
+	
+	private void displaySvtResult() {
+		AlertDialog dialog = new AlertDialog.Builder(this).create();
+		String message;
+		message = getString(R.string.svt_result);
+		message = message + " (Sens=.965, Spec=.967) ";
+		message = message + getString(R.string.brugada_reference);
+		dialog.setMessage(message);
+		dialog.setTitle(getString(R.string.wct_result_label));
+		dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Done",
+				new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						finish();
+					}
+				});
+		dialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Back",
+				new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						;
+					}
+				});
+		dialog.show();
 	}
 	
 	private Bbb getBbbSelection() {
