@@ -58,4 +58,12 @@
 		<item>INTERVAL</item>
 		<item>RATE</item>
 	</array>
+	<array name="bbb_labels">
+		<item>LBBB Morphology</item>
+		<item>RBBB Morphology</item>
+	</array>
+	<array name="bbb_values">
+		<item>LBBB</item>
+		<item>RBBB</item>
+	</array>
 </resources>
