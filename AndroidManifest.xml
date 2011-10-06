@@ -45,5 +45,7 @@
 		</activity>
 		<activity android:name=".Rwpt" android:label="@string/rwpt_title">
 		</activity>
+		<activity android:name=".BrugadaMorphologyCriteria" android:label="@string/morphology_label">
+		</activity>
     </application>
 </manifest>
