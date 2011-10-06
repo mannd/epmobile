@@ -44,11 +44,11 @@
 		<item>Wide Complex Tachycardia \u25B6</item>
 	</array>
 	<array name="wct_algorithm_list">
-		<item>ACC Algorithm</item>
+		<!--  <item>ACC Algorithm</item> -->
 		<item>Brugada Algorithm</item>
 		<item>Morphology Criteria</item>
-		<item>Ultrasimple Brugada Algorithm</item>
-		<item>Vereckei Algorithm</item>
+		<item>R Wave Peak Time Criterion</item>
+		<!-- <item>Vereckei Algorithm</item> -->
 	</array>
 	<array name="interval_rate_labels">
 		<item>RR Interval (msec)</item>

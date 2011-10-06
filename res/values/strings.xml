@@ -142,7 +142,7 @@
   <string name="deep_s_v6">R to S ratio &lt; 1 in V6</string>
   <string name="monophasic_r_v6">Monophasic R in V6</string> 
   
-  <string name="rwpt_title">Ultrasimple Brugada Algorithm</string>
+  <string name="rwpt_title">R Wave Peak Time Criterion</string>
   <string name="rwpt_text">R wave peak time in lead II (RWPT). 
   Measure the onset of the QRS in ECG lead II to the first
   change in polarity (nadir Q or peak R). RWPT \u2265 50 ms
