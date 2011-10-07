@@ -26,6 +26,7 @@ public class Brugada extends EpActivity implements OnClickListener {
 		morphologyButton.setVisibility(View.GONE);
 		stepTextView = (TextView) findViewById(R.id.stepTextView);
 		
+		step = 1;	// needed to reset this when activity starts
 		step1();
 	}
 

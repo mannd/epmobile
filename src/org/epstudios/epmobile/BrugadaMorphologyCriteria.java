@@ -54,12 +54,6 @@ public class BrugadaMorphologyCriteria extends EpActivity implements OnClickList
 	private CheckBox[] lbbbCheckBox;
 	private CheckBox[] rbbbCheckBox;
 	
-//	private HashSet<int> lbbbV1Entries;
-//	
-//	private int[] lbbbV6Entries;
-//	private int[] rbbbV1Entries;
-//	private int[] rbbbV6Entries;
-
 	
 	private void setAdapters() {
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,

@@ -6,8 +6,9 @@ Current features:
 - Choose QTc formula (Bazett, Fridericia, Sagie or Hodges)
 - Cycle length to heart rate calculator
 - Atrial fibrillation risk scores (CHADS, CHADS-VASc, HAS-BLED)
-- NEW: Dabigatran (Pradaxa) dose calculator
-- NEW: Warfarin (Coumadin) weekly dose calculator
+- Dabigatran (Pradaxa) dose calculator
+- Warfarin (Coumadin) weekly dose calculator
+- NEW: Wide complex tachycardia algorithms
 
 Categories: Medicine, Cardiology, Electrophysiology, Arrhythmia.
 
