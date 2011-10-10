@@ -95,7 +95,7 @@
     - change android:versionName
   - git commit
   - git tag vX.Y.Z
-  - git push tags origin master
+  - git push --tags origin master
   - make/sign epmobile.apk, save it in dev/epmobileapp/vX.Y.Z/
   - on market.android.com update product details
   - upload apk, deactivate old one
@@ -107,7 +107,6 @@
 ** Titles vs Labels
    Activities have titles, everything else has labels
    
-
 
 * References
 ** RV dysplasia
