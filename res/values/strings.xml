@@ -152,6 +152,8 @@
   <string name="lbbb_wct_label">"LBBB" Tachycardia</string>
   <string name="wellens_reference">
   	From Wellens et al. Am J Med 1978;64:27.</string>
+  	
+  <string name="normal_ep_values_title">Normal EP Values</string>
   
   
 </resources>

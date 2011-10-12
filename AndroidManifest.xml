@@ -47,5 +47,7 @@
 		</activity>
 		<activity android:name=".BrugadaMorphologyCriteria" android:label="@string/morphology_label">
 		</activity>
+		<activity android:name=".NormalEpValues" android:label="@string/normal_ep_values_title">
+		</activity>
     </application>
 </manifest>

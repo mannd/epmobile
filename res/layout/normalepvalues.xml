@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+  <TableLayout android:layout_width="match_parent" android:layout_height="match_parent"
+  	android:stretchColumns="*">
+  	<TextView android:text="Basic Conduction Intervals" 
+  		android:background="@android:color/background_light"
+  		android:textColor="@android:color/black" 
+  		android:padding="3dip" />
+  	<TableRow>
+  	 	<TextView android:text="AH" />
+  		<TextView android:text="50-125 ms" android:padding="3dip" />
+  	</TableRow>
+  	<TableRow>
+  		<TextView android:text="HV" />
+  		<TextView android:text="35-55 ms" android:padding="3dip" />
+  	</TableRow>
+  	<TextView android:text="Refractory Periods" android:background="@android:color/darker_gray"
+  		android:textColor="@android:color/background_light" android:padding="3dip" />
+  
+  </TableLayout>
+</ScrollView>
