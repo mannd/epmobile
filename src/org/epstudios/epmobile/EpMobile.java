@@ -60,6 +60,8 @@ public class EpMobile extends EpListActivity {
 					warfarinCalculator();
 				else if (selection.equals(getString(R.string.wct_algorithm_list_title)))
 					wctAlgorithm();
+				else if (selection.equals(getString(R.string.normal_ep_values_title)))
+					normalEpValues();
 			}
 		});
 	}
@@ -107,6 +109,11 @@ public class EpMobile extends EpListActivity {
     
     private void wctAlgorithm() {
     	Intent i = new Intent(this, WctAlgorithmList.class);
+    	startActivity(i);
+    }
+    
+    private void normalEpValues() {
+    	Intent i = new Intent(this, NormalEpValues.class);
     	startActivity(i);
     }
     

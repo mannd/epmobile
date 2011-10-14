@@ -152,6 +152,15 @@
   <string name="lbbb_wct_label">"LBBB" Tachycardia</string>
   <string name="wellens_reference">
   	From Wellens et al. Am J Med 1978;64:27.</string>
+  	
+  <string name="normal_ep_values_title">Normal EP Values</string>
+  <string name="basic_intervals_label">Basic Conduction Intervals</string>
+  <string name="sinus_node_label">Sinus Node Function</string>
+  <string name="refractory_periods_label">Refractory Periods and Block Cycle Lengths
+  </string>
+  <string name="normal_ep_values_reference">Reference: Josephson ME.  Clinical Cardiac
+  	Electrophysiology.  Techniques and Interpretations.  2nd Edition.  Lea &amp; Febiger.
+  </string>
   
   
 </resources>
