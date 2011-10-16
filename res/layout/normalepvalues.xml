@@ -13,7 +13,7 @@
   	 	<TextView android:text="AH" 
   	 		android:textColor="@color/green"
   	 		android:padding="3dip" />
-  		<TextView android:text="50-125 ms"
+  		<TextView android:text="50-125 msec"
   			android:textColor="@color/yellow" 
   			android:padding="3dip" 
   			android:gravity="right" />
@@ -22,11 +22,17 @@
   		<TextView android:text="HV" 
   			android:textColor="@color/green" 
   			android:padding="3dip" />
-  		<TextView android:text="35-55 ms" 
+  		<TextView android:text="35-55 msec" 
   			android:textColor="@color/yellow" 
   			android:padding="3dip" 
   			android:gravity="right" />
   	</TableRow>
+	<TableRow>
+		<TextView android:text="H duration" android:textColor="@color/green"
+			android:padding="3dip" />
+		<TextView android:text="10-25 msec" android:textColor="@color/yellow"
+			android:padding="3dip" android:gravity="right" />
+	</TableRow>
   	<TextView android:text="@string/sinus_node_label" 
   		android:background="@android:color/background_light"
   		android:textColor="@android:color/black" 
@@ -35,7 +41,7 @@
   	 	<TextView android:text="SACT" 
   	 		android:textColor="@color/green"
   	 		android:padding="3dip" />
-  		<TextView android:text="45-125 ms" 
+  		<TextView android:text="45-125 msec" 
   			android:textColor="@color/yellow" 
   			android:padding="3dip" 
   			android:gravity="right" />
@@ -44,7 +50,7 @@
   	 	<TextView android:text="CSNRT" 
   	 		android:textColor="@color/green"
   	 		android:padding="3dip" />
-  		<TextView android:text="&lt;550 ms" 
+  		<TextView android:text="&lt;550 msec" 
   			android:textColor="@color/yellow" 
   			android:padding="3dip" 
   			android:gravity="right" />
@@ -66,7 +72,7 @@
   	 	<TextView android:text="Atrial ERP" 
   	 		android:textColor="@color/green"
   	 		android:padding="3dip" />
-  		<TextView android:text="170-300 ms" 
+  		<TextView android:text="170-300 msec" 
   			android:textColor="@color/yellow" 
   			android:padding="3dip" 
   			android:gravity="right" />
@@ -75,7 +81,7 @@
   	 	<TextView android:text="AV Node Block CL" 
   	 		android:textColor="@color/green"
   	 		android:padding="3dip" />
-  		<TextView android:text="500-350 ms" 
+  		<TextView android:text="500-350 msec" 
   			android:textColor="@color/yellow" 
   			android:padding="3dip" 
   			android:gravity="right" />
@@ -84,7 +90,7 @@
   	 	<TextView android:text="AV Node ERP" 
   	 		android:textColor="@color/green"
   	 		android:padding="3dip" />
-  		<TextView android:text="230-425 ms" 
+  		<TextView android:text="230-425 msec" 
   			android:textColor="@color/yellow" 
   			android:padding="3dip" 
   			android:gravity="right" />
@@ -93,7 +99,7 @@
   	 	<TextView android:text="AV Node FRP" 
   	 		android:textColor="@color/green"
   	 		android:padding="3dip" />
-  		<TextView android:text="330-525 ms" 
+  		<TextView android:text="330-525 msec" 
   			android:textColor="@color/yellow" 
   			android:padding="3dip" 
   			android:gravity="right" />
@@ -102,7 +108,7 @@
   	 	<TextView android:text="HPS ERP" 
   	 		android:textColor="@color/green"
   	 		android:padding="3dip" />
-  		<TextView android:text="330-450 ms" 
+  		<TextView android:text="330-450 msec" 
   			android:textColor="@color/yellow" 
   			android:padding="3dip" 
   			android:gravity="right" />
@@ -111,7 +117,7 @@
   	 	<TextView android:text="Ventricular ERP" 
   	 		android:textColor="@color/green"
   	 		android:padding="3dip" />
-  		<TextView android:text="170-290 ms" 
+  		<TextView android:text="170-290 msec" 
   			android:textColor="@color/yellow" 
   			android:padding="3dip" 
   			android:gravity="right" />
