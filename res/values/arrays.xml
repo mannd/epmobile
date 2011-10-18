@@ -33,6 +33,7 @@
 		<item>"1"</item>
 	</array>
 	<array name="main_index">
+		<item>ARVC/D Diagnosis</item>
 		<item>CHADS\u2082 Score</item>
 		<item>CHA\u2082DS\u2082-VASc Score</item>
 		<item>Cycle Length Calculator</item>

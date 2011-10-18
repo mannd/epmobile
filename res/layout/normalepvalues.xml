@@ -116,7 +116,7 @@
   			android:padding="3dip" 
   			android:gravity="right" />
   	</TableRow> 
-  	<TextView android:text="@string/normal_ep_values_reference" />
-
+  	<TextView android:text="@string/normal_ep_values_reference" 
+  		android:padding="3dip" />
   </TableLayout>
 </ScrollView>

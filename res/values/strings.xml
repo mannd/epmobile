@@ -159,8 +159,24 @@
   <string name="refractory_periods_label">Refractory Periods and Block Cycle Lengths
   </string>
   <string name="normal_ep_values_reference">Reference: Josephson ME.  Clinical Cardiac
-  	Electrophysiology.  Techniques and Interpretations.  2nd Edition.  Lea &amp; Febiger.
+  	Electrophysiology.  Techniques and Interpretations.  2nd Edition 1993.  Lea &amp; Febiger.
   </string>
+  
+  <string name="arvc_title">ARVC/D Diagnosis</string>
+  <string name="global_dysfunction_label">I. Global or regional dysfunction and structural alterations</string>
+  <string name="major">MAJOR</string>
+  <string name="minor">MINOR</string>
+  <string name="by_echo_label">By 2D echo:</string>
+  <string name="regional_echo_abnormality_label">Regional RV akinesia, dyskinesia, or aneurysm</string>
+  <string name="tissue_label">II. Tissue characterization of wall</string>
+  <string name="repolarization_label">III. Repolarization abnormalities</string>
+  <string name="depolarization_label">IV. Depolarization/conduction abnormalities</string>
+  <string name="arrhythmias_label">V. Arrhythmias</string>
+  <string name="family_history_label">VI. Family history</string>
+  
+  <string name="arvc_reference">Reference: Marcus FI et al. Circulation 2010;121:1533.
+ 	 http://circ.ahajournals.org/content/121/13/1533.long</string>
+  
   
   
 </resources>

@@ -62,6 +62,8 @@ public class EpMobile extends EpListActivity {
 					wctAlgorithm();
 				else if (selection.equals(getString(R.string.normal_ep_values_title)))
 					normalEpValues();
+				else if (selection.equals(getString(R.string.arvc_title)))
+					arvc();
 			}
 		});
 	}
@@ -114,6 +116,11 @@ public class EpMobile extends EpListActivity {
     
     private void normalEpValues() {
     	Intent i = new Intent(this, NormalEpValues.class);
+    	startActivity(i);
+    }
+    
+    private void arvc() {
+    	Intent i = new Intent(this, Arvc.class);
     	startActivity(i);
     }
     

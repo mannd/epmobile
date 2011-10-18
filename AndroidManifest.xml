@@ -49,5 +49,7 @@
 		</activity>
 		<activity android:name=".NormalEpValues" android:label="@string/normal_ep_values_title">
 		</activity>
+		<activity android:name=".Arvc" android:label="@string/arvc_title">
+		</activity>
     </application>
 </manifest>
