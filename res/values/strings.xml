@@ -168,11 +168,24 @@
   <string name="minor">MINOR</string>
   <string name="by_echo_label">By 2D echo:</string>
   <string name="regional_echo_abnormality_label">Regional RV akinesia, dyskinesia, or aneurysm</string>
+  <string name="regional_mri_abnormality_label">Regional RV akinesia or dyssynchronous RV contraction</string>
+  <string name="and">and</string>
+  <string name="plax_criteria">PLAX RVOT \u2265 32 mm (corrected for body size
+  	[PLAX/BSA] \u2265 19 mm/m\u00b2)</string>
+  <string name="psax_criteria">PSAX RVOT \u2265 32 mm (corrected for body size
+  	[PLAX/BSA] \u2265 21 mm/m\u00b2)</string>
+  <string name="fractional_area_criteria">fractional area change \u2264 33%</string>
+  <string name="by_mri_label">By MRI:</string>
+  
+  <string name="by_rv_angio_label">By RV Angiography:</string>
   <string name="tissue_label">II. Tissue characterization of wall</string>
   <string name="repolarization_label">III. Repolarization abnormalities</string>
   <string name="depolarization_label">IV. Depolarization/conduction abnormalities</string>
   <string name="arrhythmias_label">V. Arrhythmias</string>
   <string name="family_history_label">VI. Family history</string>
+  
+  <string name="arvc_key">BSA = body surface area. PLAX = parasternal long axis view.  PSAX = parasternal short
+  	axis view. RVOT = RV outflow tract.</string>
   
   <string name="arvc_reference">Reference: Marcus FI et al. Circulation 2010;121:1533.
  	 http://circ.ahajournals.org/content/121/13/1533.long</string>
