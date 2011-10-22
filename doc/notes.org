@@ -6,7 +6,7 @@
 ** TODO WPW Accessory Pathway localizer
 *** Milstein et al.  PACE 10:555, 1987.
 *** Arruda 1998
-** TODO VT vs SVT Brugada algorithm
+** DONE VT vs SVT Brugada algorithm
 *** Proposed implementation
     | Follow steps in order: |                                                  |     |
     | Step 1                 | Absence of an RS Complex in all precordial leads | Y/N |
@@ -52,10 +52,13 @@
    - Score of 3 or more indicates caution in using AC and increased 1 year
      risk of bleeding.
 ** TODO ARVD score
-** TODO Pradaxa dose calculator
+** DONE Pradaxa dose calculator
 ** TODO Epicardial vs endocardial VT
 ** TODO Mitral annular VT
 ** TODO Brugada ECG types
+** TODO LVH
+** DONE Normal EP Values
+** TODO EP Glossary
 * Menu
 ** units
 *** msec or sec
@@ -107,7 +110,6 @@
 ** Titles vs Labels
    Activities have titles, everything else has labels
    
-
 * References
 ** RV dysplasia
    http://arvc.ca/arvc/info/i.php?ix=1&pag=3
