@@ -123,7 +123,7 @@
 	<string name="brugada_wct_title">Brugada Algorithm</string>
 	<string name="brugada_step1">Absence of an RS complex in all precordial leads?
 	</string>
-	<string name="brugada_step_2">R to S interval >100 ms in one precordial lead?
+	<string name="brugada_step_2">R to S interval >100 msec in one precordial lead?
 	</string>
 	<string name="brugada_step_3">AV dissociation?</string>
 	<string name="brugada_step_4">Morphology criteria for VT present in both
@@ -153,7 +153,7 @@
 	<string name="rwpt_title">R Wave Peak Time Criterion</string>
 	<string name="rwpt_text">R wave peak time in lead II (RWPT).
 		Measure the onset of the QRS in ECG lead II to the first
-		change in polarity (nadir Q or peak R). RWPT \u2265 50 ms
+		change in polarity (nadir Q or peak R). RWPT \u2265 50 msec
 		strongly suggests VT (positive likelihood ratio 34.8).
 		Reference: Pava LF, et al. Heart Rhythm 2010;7:922.</string>
 	<string name="rbbb_wct_label">"RBBB" Tachycardia</string>
