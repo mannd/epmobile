@@ -108,13 +108,26 @@
 			android:layout_width="wrap_content" android:layout_height="wrap_content" />			
 		<TextView android:text="@string/minor" android:background="@android:color/background_dark"
 			android:textColor="@android:color/white" android:padding="3dip" />
+		<CheckBox android:id="@+id/minor_residual_myocytes"
+			android:text="@string/minor_residual_myocytes_label" 
+			android:layout_width="wrap_content" android:layout_height="wrap_content" />			
 		<TextView android:text="@string/repolarization_label"
 			android:background="@android:color/background_light"
 			android:textColor="@android:color/black" android:padding="3dip" />
 		<TextView android:text="@string/major" android:background="@android:color/background_dark"
 			android:textColor="@android:color/white" android:padding="3dip" />
+		<CheckBox android:id="@+id/major_repolarization"
+			android:text="@string/major_repolarization_label" 
+			android:layout_width="wrap_content" android:layout_height="wrap_content" />			
 		<TextView android:text="@string/minor" android:background="@android:color/background_dark"
 			android:textColor="@android:color/white" android:padding="3dip" />
+		<CheckBox android:id="@+id/minor_repolarization_no_rbbb"
+			android:text="@string/minor_repolarization_no_rbbb_label" 
+			android:layout_width="wrap_content" android:layout_height="wrap_content" />			
+		<CheckBox android:id="@+id/minor_repolarization_rbbb"
+			android:text="@string/minor_repolarization_rbbb_label" 
+			android:layout_width="wrap_content" android:layout_height="wrap_content" />			
+			
 		<TextView android:text="@string/depolarization_label"
 			android:background="@android:color/background_light"
 			android:textColor="@android:color/black" android:padding="3dip" />
