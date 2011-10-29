@@ -227,12 +227,23 @@
 	<string name="minor_repolarization_no_rbbb_label">TWI in V1 and V2;
 	\u003e 14 yrs; in absence of complete RBBB or in V4, V5, V6</string>
 	<string name="minor_repolarization_rbbb_label">TWI in V1-V4;\u003e 14 yrs; in presence of complete RBBB</string>
-	<string name="major_depolarization_label">Epsilon wave (reproducible low-amp signals between end of QRS complex to onset of T wave) in right precordial leads (V1-V3)</string>
-	<string name="saecg_label">LP by SAECG in \u2265 1 of 3 parameters in 
-	absence of QRS duration of \u2265 110 msec on ECG</string>
-
 	<string name="depolarization_label">IV. Depolarization/conduction abnormalities
+	</string>	
+	<string name="major_depolarization_label">Epsilon wave (reproducible low-amp signals between
+	end of QRS complex to onset of T wave) in right precordial leads (V1-V3)</string>
+	<string name="saecg_label">LP by SAECG in \u2265 1 of 3 parameters in 
+	absence of QRS duration of \u2265 110 msec on standard ECG</string>
+	<string name="filtered_qrs_label">Filtered QRS duration (fQRS) \u2265 114 msec</string>
+	<string name="duration_terminal_qrs_label">Duration of terminal QRS \u003c 40 \u03bcV
+	(low-amplitude signal duration) \u2265 38 msec</string>
+	<string name="root_mean_square_label">Root-mean-square voltage of terminal 40 msec \u2264 20 \u03bcV
 	</string>
+	<string name="terminal_activation_label">Terminal activation duration</string>
+	<string name="terminal_activation_duration_label">Terminal activation duration of QRS
+	\u2265 55 msec measure from the nadir of the S wave to the end of the QRS including
+	R\', in V1, V2, or V3, in the absence of complete RBBB</string> 
+
+
 	<string name="arrhythmias_label">V. Arrhythmias</string>
 	<string name="family_history_label">VI. Family history</string>
 

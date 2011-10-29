@@ -133,8 +133,26 @@
 			android:textColor="@android:color/black" android:padding="3dip" />
 		<TextView android:text="@string/major" android:background="@android:color/background_dark"
 			android:textColor="@android:color/white" android:padding="3dip" />
+		<CheckBox android:id="@+id/major_depolarization"
+			android:text="@string/major_depolarization_label" 
+			android:layout_width="wrap_content" android:layout_height="wrap_content" />			
 		<TextView android:text="@string/minor" android:background="@android:color/background_dark"
 			android:textColor="@android:color/white" android:padding="3dip" />
+		<TextView android:text="@string/saecg_label"></TextView>
+		<CheckBox android:id="@+id/filtered_qrs"
+			android:text="@string/filtered_qrs_label" 
+			android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		<CheckBox android:id="@+id/duration_terminal_qrs"
+			android:text="@string/duration_terminal_qrs_label" 
+			android:layout_width="wrap_content" android:layout_height="wrap_content" />		
+		<CheckBox android:id="@+id/root_mean_square"
+			android:text="@string/root_mean_square_label" 
+			android:layout_width="wrap_content" android:layout_height="wrap_content" />	
+		<TextView android:text="@string/terminal_activation_label"></TextView>
+		<CheckBox android:id="@+id/terminal_activation_duration"
+			android:text="@string/terminal_activation_duration_label" 
+			android:layout_width="wrap_content" android:layout_height="wrap_content" />			
+		
 		<TextView android:text="@string/arrhythmias_label"
 			android:background="@android:color/background_light"
 			android:textColor="@android:color/black" android:padding="3dip" />
