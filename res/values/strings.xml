@@ -186,15 +186,15 @@
 	<string name="and_one_label">and one of the following...</string>
 	<string name="major_plax_criteria">PLAX RVOT \u2265 32 mm (corrected for body size
 		[PLAX/BSA] \u2265 19 mm/m\u00b2)</string>
-	<string name="major_psax_criteria">PSAX RVOT \u2265 32 mm (corrected for body size
-		[PLAX/BSA] \u2265 21 mm/m\u00b2)</string>
+	<string name="major_psax_criteria">PSAX RVOT \u2265 36 mm (corrected for body size
+		[PSAX/BSA] \u2265 21 mm/m\u00b2)</string>
 	<string name="fractional_area_criteria">fractional area change \u2264 33%</string>
-	<string name="minor_plax_criteria">PLAX RVOT \u2265 29 to \u003c 33 mm (corrected for
+	<string name="minor_plax_criteria">PLAX RVOT \u2265 29 to \u003c 32 mm (corrected for
 		body size
 		[PLAX/BSA] \u2265 16 to \u003c 19 mm/m\u00b2)</string>
 	<string name="minor_psax_criteria">PSAX RVOT \u2265 32 to \u003c 36mm (corrected for
 		body size
-		[PLAX/BSA] \u2265 18 to \u003c 21 mm/m\u00b2)</string>
+		[PSAX/BSA] \u2265 18 to \u003c 21 mm/m\u00b2)</string>
 	<string name="fractional_area_minor_criteria">fractional area change \u003e 33%
 		and \u2264 40%</string>
 	<string name="by_mri_label">By MRI:</string>
@@ -217,16 +217,17 @@
 		free wall myocardium in \u2265 1 sample, with or without fatty
 		replacement of tissue on endomyocardial biopsy</string>
 	<string name="minor_residual_myocytes_label" formatted="false">
-		Residual myocytes 60% to 70% by morphometric
-		analysis (or 50% to 60% if estimated) with fibrous replacement of RV
+		Residual myocytes 60% to 75% by morphometric
+		analysis (or 50% to 65% if estimated) with fibrous replacement of RV
 		free wall myocardium in \u2265 1 sample, with or without fatty
 		replacement of tissue on endomyocardial biopsy</string>
 	<string name="repolarization_label">III. Repolarization abnormalities</string>
-	<string name="major_repolarization_label">TWI (V1, V2, V3) or beyond;
-	\u003e 14 yrs; in absence of complete RBBB QRS \u2265 120 msec</string>
-	<string name="minor_repolarization_no_rbbb_label">TWI in V1 and V2;
-	\u003e 14 yrs; in absence of complete RBBB or in V4, V5, V6</string>
-	<string name="minor_repolarization_rbbb_label">TWI in V1-V4;\u003e 14 yrs; in presence of complete RBBB</string>
+	<string name="major_repolarization_label">TWI (V1, V2, and V3) or beyond in
+	individuals \u003e 14 yrs (in absence of complete RBBB)</string>
+	<string name="minor_repolarization_no_rbbb_label">TWI in V1 and V2
+	in individuals \u003e 14 yrs (in absence of complete RBBB) or in V4, V5, V6</string>
+	<string name="minor_repolarization_rbbb_label">TWI in V1-V4 in
+	individuals \u003e 14 yrs in presence of complete RBBB</string>
 	<string name="depolarization_label">IV. Depolarization/conduction abnormalities
 	</string>	
 	<string name="major_depolarization_label">Epsilon wave (reproducible low-amp signals between
@@ -242,10 +243,30 @@
 	<string name="terminal_activation_duration_label">Terminal activation duration of QRS
 	\u2265 55 msec measure from the nadir of the S wave to the end of the QRS including
 	R\', in V1, V2, or V3, in the absence of complete RBBB</string> 
-
-
 	<string name="arrhythmias_label">V. Arrhythmias</string>
+	<string name="major_arrhythmias_label">Nonsustained or sustained VT of LBBB morphology
+	with superior axis (negative or indeterminate QRS in leads II, III, and aVF and
+	positive in lead aVL)</string>
+	<string name="rvot_vt_label">Nonsustained or sustained VT of RV outflow configuration,
+	LBBB morphology with inferior axis (positive QRS in leads II, III, and aVF and negative
+	in lead aVL) or of unknown axis</string>
+	<string name="pvcs_label">\u003e 500 ventricular exstrasystoles per 24 hours (Holter)
+	</string>
 	<string name="family_history_label">VI. Family history</string>
+	<string name="first_degree_relative_label">ARVC/D confirmed in a first-degree relative
+	who meets current Task Force criteria</string>
+	<string name="pathology_label">ARVC/D confirmed pathologically at autopsy or surgery 
+	in a first-degree relative</string>
+	<string name="genetic_label">Identification of a pathogenic mutation categorized
+	as associated or probably associated with ARVC/D in the patient under evaluation
+	</string>
+	<string name="possible_family_history_label">History of ARVC/D in a first-degree
+	relative in whom it is not possible or practical to determine whether the family
+	member meets current Task Force criteria</string>
+	<string name="family_history_sudden_death_label">Premature sudden death (\u003c 35
+	years of age) due to suspected ARVC/D in a first-degree relative</string>
+	<string name="second_degree_relative_label">ARVC/D confirmed pathologically or by 
+	current Task Force Criteria in a second-degree relative</string>
 
 	<string name="arvc_key">BSA = body surface area. PLAX = parasternal long
 		axis view. PSAX = parasternal short
