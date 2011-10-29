@@ -96,6 +96,7 @@
   - IMPORTANT - update AndroidManifest.xml
     - increment android:versionCode
     - change android:versionName
+  - git add changes/x.y.z.txt
   - git commit
   - git tag vX.Y.Z
   - git push --tags origin master

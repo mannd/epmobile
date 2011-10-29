@@ -1,4 +1,4 @@
-EP Mobile provides cardiology tools for cardiac electrophysiologists, cardiologists and other health care workers who deal with cardiac arrhythmias. In addition to commonly used EP calculations, future editions of this program will include electrophysiology tips, techniques, and algorithms.
+EP Mobile provides cardiology tools for cardiac electrophysiologists, cardiologists and other health care workers who deal with cardiac arrhythmias. This is a work in progress. New modules will be added every few weeks, so be sure and keep the program updated.
 
 Current features: 
 - Dofetilide (Tikosyn) dose calculator
@@ -8,7 +8,9 @@ Current features:
 - Atrial fibrillation risk scores (CHADS, CHADS-VASc, HAS-BLED)
 - Dabigatran (Pradaxa) dose calculator
 - Warfarin (Coumadin) weekly dose calculator
-- NEW: Wide complex tachycardia algorithms
+- Wide complex tachycardia algorithms
+- NEW: Normal EP values
+- NEW: ARVC/D Diagnosis
 
 Categories: Medicine, Cardiology, Electrophysiology, Arrhythmia.
 
