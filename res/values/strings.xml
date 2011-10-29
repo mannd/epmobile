@@ -216,7 +216,21 @@
 		analysis (or \u003c 50% if estimated) with fibrous replacement of RV
 		free wall myocardium in \u2265 1 sample, with or without fatty
 		replacement of tissue on endomyocardial biopsy</string>
+	<string name="minor_residual_myocytes_label" formatted="false">
+		Residual myocytes 60% to 70% by morphometric
+		analysis (or 50% to 60% if estimated) with fibrous replacement of RV
+		free wall myocardium in \u2265 1 sample, with or without fatty
+		replacement of tissue on endomyocardial biopsy</string>
 	<string name="repolarization_label">III. Repolarization abnormalities</string>
+	<string name="major_repolarization_label">TWI (V1, V2, V3) or beyond;
+	\u003e 14 yrs; in absence of complete RBBB QRS \u2265 120 msec</string>
+	<string name="minor_repolarization_no_rbbb_label">TWI in V1 and V2;
+	\u003e 14 yrs; in absence of complete RBBB or in V4, V5, V6</string>
+	<string name="minor_repolarization_rbbb_label">TWI in V1-V4;\u003e 14 yrs; in presence of complete RBBB</string>
+	<string name="major_depolarization_label">Epsilon wave (reproducible low-amp signals between end of QRS complex to onset of T wave) in right precordial leads (V1-V3)</string>
+	<string name="saecg_label">LP by SAECG in \u2265 1 of 3 parameters in 
+	absence of QRS duration of \u2265 110 msec on ECG</string>
+
 	<string name="depolarization_label">IV. Depolarization/conduction abnormalities
 	</string>
 	<string name="arrhythmias_label">V. Arrhythmias</string>
