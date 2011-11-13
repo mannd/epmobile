@@ -9,8 +9,8 @@ Current features:
 - Dabigatran (Pradaxa) dose calculator
 - Warfarin (Coumadin) weekly dose calculator
 - Wide complex tachycardia algorithms
-- NEW: Normal EP values
-- NEW: ARVC/D Diagnosis
+- Normal EP values
+- ARVC/D Diagnosis
 
 Categories: Medicine, Cardiology, Electrophysiology, Arrhythmia.
 
