@@ -18,13 +18,19 @@
 
 package org.epstudios.epmobile;
 
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.AdapterView.OnItemSelectedListener;
 
 public class Dabigatran extends EpActivity implements OnClickListener {
 	@Override
@@ -43,7 +49,15 @@ public class Dabigatran extends EpActivity implements OnClickListener {
         creatinineEditText = (EditText) findViewById(R.id.creatinineEditText);
         ageEditText = (EditText) findViewById(R.id.ageEditText);
         sexRadioGroup = (RadioGroup) findViewById(R.id.sexRadioGroup); 
+        weightSpinner = (Spinner) findViewById(R.id.weight_spinner);
+        
+        getPrefs();
+        setAdapters();
+        clearEntries();
 	}
+	
+	private enum WeightUnit {KG, LB};
+
 	
 	private TextView dabigitranDoseTextView;
 	private EditText weightEditText;
@@ -51,6 +65,14 @@ public class Dabigatran extends EpActivity implements OnClickListener {
 	private RadioGroup sexRadioGroup;
 	private EditText ageEditText;
 	private TextView ccTextView;	// cc == Creatinine Clearance
+	private Spinner weightSpinner;
+	private OnItemSelectedListener itemListener;
+	
+	private final static int KG_SELECTION = 0;
+	private final static int LB_SELECTION = 1;
+	
+	private WeightUnit defaultWeightUnitSelection = WeightUnit.KG;
+	
 	
 	
 	public void onClick(View v) {
@@ -64,6 +86,45 @@ public class Dabigatran extends EpActivity implements OnClickListener {
 		}
 	}
 	
+	private void setAdapters() {
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+				R.array.weight_unit_labels, android.R.layout.simple_spinner_item);
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		weightSpinner.setAdapter(adapter);
+		if (defaultWeightUnitSelection.equals(WeightUnit.KG))
+			weightSpinner.setSelection(KG_SELECTION);
+		else
+			weightSpinner.setSelection(LB_SELECTION);		
+		itemListener = new OnItemSelectedListener() {
+			public void onItemSelected(AdapterView parent, View v,
+					int position, long id) {
+				updateWeightUnitSelection();
+			}
+			public void onNothingSelected(AdapterView parent) {
+				// do nothing
+			}
+		
+		};
+		
+		weightSpinner.setOnItemSelectedListener(itemListener);	
+	}	
+	
+	private void updateWeightUnitSelection() {
+		WeightUnit weightUnitSelection = getWeightUnitSelection();
+		if (weightUnitSelection.equals(WeightUnit.KG))
+			weightEditText.setHint(getString(R.string.weight_hint));
+		else
+			weightEditText.setHint(getString(R.string.weight_lb_hint));
+	}
+	
+	private WeightUnit getWeightUnitSelection() {
+		int result = weightSpinner.getSelectedItemPosition();
+		if (result == 0)
+			return WeightUnit.KG;
+		else
+			return WeightUnit.LB;
+	}
+	
 	private void calculateDose() {
 		CharSequence weightText = weightEditText.getText();
 		CharSequence creatinineText = creatinineEditText.getText();
@@ -71,14 +132,29 @@ public class Dabigatran extends EpActivity implements OnClickListener {
 		Boolean isMale = sexRadioGroup.getCheckedRadioButtonId() == R.id.male;
 		try {
 			double weight = Double.parseDouble(weightText.toString());
+			if (getWeightUnitSelection().equals(WeightUnit.LB))
+				weight = UnitConverter.lbsToKgs(weight);
 			double creatinine = Double.parseDouble(creatinineText.toString());
 			double age = Double.parseDouble(ageText.toString());
 			int cc = CreatinineClearance.calculate(isMale, age, weight, creatinine);
-			ccTextView.setText("(Creatinine Clearance = " + String.valueOf(cc) + ")");
+			String ccMessage = getString(R.string.creatine_clearance_label) + " = " 
+				+ String.valueOf(cc) + "\n";
+			if ((cc >= 15) && (cc <= 30)) {
+				ccMessage += getString(R.string.dabigatran_warning_severe);
+				ccTextView.setTextColor(Color.parseColor("#ffa500"));
+			}
+			else if ((cc > 30) && (cc <= 50)) {
+				ccMessage += getString(R.string.dabigatran_warning_mild);
+				ccTextView.setTextColor(Color.YELLOW);
+			}
+			else
+				ccTextView.setTextColor(Color.WHITE);
+			ccTextView.setText(ccMessage);
 			int dose = getDose(cc);
 			if (dose == 0) {
 				dabigitranDoseTextView.setText("Do not use!");
 				dabigitranDoseTextView.setTextColor(Color.RED);
+				ccTextView.setTextColor(Color.RED);
 			}
 			else {
 				dabigitranDoseTextView.setTextColor(Color.LTGRAY);
@@ -94,9 +170,9 @@ public class Dabigatran extends EpActivity implements OnClickListener {
 
 	
 	private int getDose(double crClr) {
-		if (crClr > 30)
+		if (crClr >= 30)
 			return 150;
-		if (crClr > 15)
+		if (crClr >= 15)
 			return 75;
 		return 0;
 	}
@@ -106,10 +182,24 @@ public class Dabigatran extends EpActivity implements OnClickListener {
 		creatinineEditText.setText(null);
 		ageEditText.setText(null);
 		ccTextView.setText(R.string.creatinine_clearance_label);
+		ccTextView.setTextColor(Color.WHITE);
 		dabigitranDoseTextView.setText(getString(R.string.dabigatran_result_label));
 		dabigitranDoseTextView.setTextColor(Color.LTGRAY);
-		weightEditText.requestFocus();
+		ageEditText.requestFocus();
 	}
+	
+	private void getPrefs() {
+		SharedPreferences prefs = PreferenceManager
+				.getDefaultSharedPreferences(getBaseContext());
+		String weightUnitPreference = prefs.getString("default_weight_unit", "KG");
+		if (weightUnitPreference.equals("KG"))
+			defaultWeightUnitSelection = WeightUnit.KG;
+		else
+			defaultWeightUnitSelection = WeightUnit.LB;
+	}
+
+		
+
 		
 
 }

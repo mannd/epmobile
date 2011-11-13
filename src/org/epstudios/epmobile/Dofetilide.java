@@ -18,15 +18,22 @@
 
 package org.epstudios.epmobile;
 
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.AdapterView.OnItemSelectedListener;
 
 public class Dofetilide extends EpActivity implements OnClickListener {
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState)  {
 		super.onCreate(savedInstanceState);
@@ -43,7 +50,15 @@ public class Dofetilide extends EpActivity implements OnClickListener {
         creatinineEditText = (EditText) findViewById(R.id.creatinineEditText);
         ageEditText = (EditText) findViewById(R.id.ageEditText);
         sexRadioGroup = (RadioGroup) findViewById(R.id.sexRadioGroup); 
+        weightSpinner = (Spinner) findViewById(R.id.weight_spinner);
+        
+        getPrefs();
+        setAdapters();
+        
+        clearEntries();
 	}
+	
+	private enum WeightUnit {KG, LB};
 	
 	private TextView dofetilideDoseTextView;
 	private EditText weightEditText;
@@ -51,6 +66,15 @@ public class Dofetilide extends EpActivity implements OnClickListener {
 	private RadioGroup sexRadioGroup;
 	private EditText ageEditText;
 	private TextView ccTextView;	// cc == Creatinine Clearance
+	private Spinner weightSpinner;
+	private OnItemSelectedListener itemListener;
+	
+	private final static int KG_SELECTION = 0;
+	private final static int LB_SELECTION = 1;
+	
+	private WeightUnit defaultWeightUnitSelection = WeightUnit.KG;
+	
+	
 	
 	
 	public void onClick(View v) {
@@ -64,6 +88,45 @@ public class Dofetilide extends EpActivity implements OnClickListener {
 		}
 	}
 	
+	private void setAdapters() {
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+				R.array.weight_unit_labels, android.R.layout.simple_spinner_item);
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		weightSpinner.setAdapter(adapter);
+		if (defaultWeightUnitSelection.equals(WeightUnit.KG))
+			weightSpinner.setSelection(KG_SELECTION);
+		else
+			weightSpinner.setSelection(LB_SELECTION);		
+		itemListener = new OnItemSelectedListener() {
+			public void onItemSelected(AdapterView parent, View v,
+					int position, long id) {
+				updateWeightUnitSelection();
+			}
+			public void onNothingSelected(AdapterView parent) {
+				// do nothing
+			}
+		
+		};
+		
+		weightSpinner.setOnItemSelectedListener(itemListener);	
+	}
+	
+	private void updateWeightUnitSelection() {
+		WeightUnit weightUnitSelection = getWeightUnitSelection();
+		if (weightUnitSelection.equals(WeightUnit.KG))
+			weightEditText.setHint(getString(R.string.weight_hint));
+		else
+			weightEditText.setHint(getString(R.string.weight_lb_hint));
+	}
+	
+	private WeightUnit getWeightUnitSelection() {
+		int result = weightSpinner.getSelectedItemPosition();
+		if (result == 0)
+			return WeightUnit.KG;
+		else
+			return WeightUnit.LB;
+	}
+	
 	private void calculateDose() {
 		CharSequence weightText = weightEditText.getText();
 		CharSequence creatinineText = creatinineEditText.getText();
@@ -71,18 +134,23 @@ public class Dofetilide extends EpActivity implements OnClickListener {
 		Boolean isMale = sexRadioGroup.getCheckedRadioButtonId() == R.id.male;
 		try {
 			double weight = Double.parseDouble(weightText.toString());
+			if (getWeightUnitSelection().equals(WeightUnit.LB))
+				weight = UnitConverter.lbsToKgs(weight);
 			double creatinine = Double.parseDouble(creatinineText.toString());
 			double age = Double.parseDouble(ageText.toString());
 			int cc = CreatinineClearance.calculate(isMale, age, weight, creatinine);
-			ccTextView.setText("(Creatinine Clearance = " + String.valueOf(cc) + ")");
+			ccTextView.setText(getString(R.string.creatine_clearance_label) + " = " 
+					+ String.valueOf(cc));
 			int dose = getDose(cc);
 			if (dose == 0) {
 				dofetilideDoseTextView.setText("Do not use!");
 				dofetilideDoseTextView.setTextColor(Color.RED);
+				ccTextView.setTextColor(Color.RED);
 			}
 			else {
 				dofetilideDoseTextView.setTextColor(Color.LTGRAY);
 				dofetilideDoseTextView.setText(String.valueOf(dose) + " mcg BID");
+				ccTextView.setTextColor(Color.WHITE);
 			}
 		}
 		catch (NumberFormatException e) {	
@@ -109,10 +177,22 @@ public class Dofetilide extends EpActivity implements OnClickListener {
 		creatinineEditText.setText(null);
 		ageEditText.setText(null);
 		ccTextView.setText(R.string.creatinine_clearance_label);
+		ccTextView.setTextColor(Color.WHITE);
 		dofetilideDoseTextView.setText(getString(R.string.dofetilide_result_label));
 		dofetilideDoseTextView.setTextColor(Color.LTGRAY);
-		weightEditText.requestFocus();
+		ageEditText.requestFocus();
 	}
+	
+	private void getPrefs() {
+		SharedPreferences prefs = PreferenceManager
+				.getDefaultSharedPreferences(getBaseContext());
+		String weightUnitPreference = prefs.getString("default_weight_unit", "KG");
+		if (weightUnitPreference.equals("KG"))
+			defaultWeightUnitSelection = WeightUnit.KG;
+		else
+			defaultWeightUnitSelection = WeightUnit.LB;
+	}
+
 		
 
 }

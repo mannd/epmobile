@@ -32,12 +32,14 @@
 	<string name="dofetilide_result_label">Dofetilide dose</string>
 	<string name="dabigatran_result_label">Dabigatran dose</string>
 	<string name="weight_hint">Weight (kg)</string>
+	<string name="weight_lb_hint">Weight (lb)</string>
 	<string name="creatinine_hint">Creatinine (mg/dL)</string>
 	<string name="age_hint">Age (yr)</string>
 	<string name="age_label">Age (yr)</string>
 	<string name="weight_label">Weight (kg)</string>
 	<string name="creatinine_label">Creatinine (mg/dL)</string>
 	<string name="creatinine_clearance_label"></string>
+	
 	<string name="male_label">Male</string>
 	<string name="female_label">Female</string>
 	<string name="cl_label">Cycle Length (msec)</string>
@@ -275,6 +277,19 @@
 	<string name="arvc_reference">Reference: Marcus FI et al. Circulation
 		2010;121:1533.
 		http://circ.ahajournals.org/content/121/13/1533.long</string>
+		
+	<string name="qtc_settings">QTc Settings</string>
+	<string name="warfarin_settings">Warfarin Settings</string>
+	<string name="drug_calculator_settings">Drug Calculator Settings</string>
+	<string name="default_weight_unit_title">Default Weight Unit</string>
+	<string name="default_weight_unit_summary">Select default unit for weight</string>
+	
+	<string name="creatine_clearance_label">Creatinine Clearance</string>
+	<string name="dabigatran_warning_severe">Avoid concomitant use of P-gp inhibitors
+	    (e.g. dronederone).</string>
+	<string name="dabigatran_warning_mild">Consider reducing dose of dabigatran to 75 mg twice a day 
+	    when dronederone or systemic ketoconazole is administered with dabigatran.</string>
+	
 
 
 

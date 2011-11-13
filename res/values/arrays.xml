@@ -68,4 +68,12 @@
 		<item>LBBB</item>
 		<item>RBBB</item>
 	</array>
+	<array name="weight_unit_labels">
+	    <item>Weight (kg)</item>
+	    <item>Weight (lb)</item>
+	</array>
+	<array name="weight_unit_values">
+	    <item>KG</item>
+	    <item>LB</item>
+	</array>
 </resources>
