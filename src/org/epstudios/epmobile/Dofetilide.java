@@ -37,7 +37,7 @@ public class Dofetilide extends EpActivity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState)  {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.dofetilide);
+		setContentView(R.layout.drugcalculator);
 		
 		View calculateDoseButton = findViewById(R.id.calculate_dose_button);
         calculateDoseButton.setOnClickListener(this);

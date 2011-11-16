@@ -36,7 +36,7 @@ public class Dabigatran extends EpActivity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState)  {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.dabigatran);
+		setContentView(R.layout.drugcalculator);
 		
 		View calculateDoseButton = findViewById(R.id.calculate_dose_button);
         calculateDoseButton.setOnClickListener(this);
