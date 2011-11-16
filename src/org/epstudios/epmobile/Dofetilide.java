@@ -32,7 +32,7 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.AdapterView.OnItemSelectedListener;
 
-public class Dofetilide extends EpActivity implements OnClickListener {
+public class Dofetilide extends DrugCalculator implements OnClickListener {
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState)  {
@@ -44,7 +44,7 @@ public class Dofetilide extends EpActivity implements OnClickListener {
         View clearButton = findViewById(R.id.clear_button);
         clearButton.setOnClickListener(this);
         
-		dofetilideDoseTextView = (TextView) findViewById(R.id.calculated_dose);
+		calculatedDoseTextView = (TextView) findViewById(R.id.calculated_dose);
 		ccTextView = (TextView) findViewById(R.id.ccTextView);
         weightEditText = (EditText) findViewById(R.id.weightEditText);
         creatinineEditText = (EditText) findViewById(R.id.creatinineEditText);
@@ -60,7 +60,7 @@ public class Dofetilide extends EpActivity implements OnClickListener {
 	
 	private enum WeightUnit {KG, LB};
 	
-	private TextView dofetilideDoseTextView;
+	private TextView calculatedDoseTextView;
 	private EditText weightEditText;
 	private EditText creatinineEditText;
 	private RadioGroup sexRadioGroup;
@@ -139,29 +139,29 @@ public class Dofetilide extends EpActivity implements OnClickListener {
 			double creatinine = Double.parseDouble(creatinineText.toString());
 			double age = Double.parseDouble(ageText.toString());
 			int cc = CreatinineClearance.calculate(isMale, age, weight, creatinine);
-			ccTextView.setText(getString(R.string.creatine_clearance_label) + " = " 
-					+ String.valueOf(cc));
+			String ccMessage = getMessage(cc);
+			ccTextView.setText(ccMessage);
 			int dose = getDose(cc);
 			if (dose == 0) {
-				dofetilideDoseTextView.setText("Do not use!");
-				dofetilideDoseTextView.setTextColor(Color.RED);
+				calculatedDoseTextView.setText("Do not use!");
+				calculatedDoseTextView.setTextColor(Color.RED);
 				ccTextView.setTextColor(Color.RED);
 			}
 			else {
-				dofetilideDoseTextView.setTextColor(Color.LTGRAY);
-				dofetilideDoseTextView.setText(String.valueOf(dose) + " mcg BID");
+				calculatedDoseTextView.setTextColor(Color.LTGRAY);
+				calculatedDoseTextView.setText(String.valueOf(dose) + " mcg BID");
 				ccTextView.setTextColor(Color.WHITE);
 			}
 		}
 		catch (NumberFormatException e) {	
-			dofetilideDoseTextView.setText("Invalid!");
-			dofetilideDoseTextView.setTextColor(Color.RED);
+			calculatedDoseTextView.setText("Invalid!");
+			calculatedDoseTextView.setTextColor(Color.RED);
 		}		
 	}		
 	
 
 	
-	private int getDose(double crClr) {
+	protected int getDose(double crClr) {
 		if (crClr > 60)
 			return 500;
 		if (crClr > 40)
@@ -178,8 +178,8 @@ public class Dofetilide extends EpActivity implements OnClickListener {
 		ageEditText.setText(null);
 		ccTextView.setText(R.string.creatinine_clearance_label);
 		ccTextView.setTextColor(Color.WHITE);
-		dofetilideDoseTextView.setText(getString(R.string.dofetilide_result_label));
-		dofetilideDoseTextView.setTextColor(Color.LTGRAY);
+		calculatedDoseTextView.setText(getString(R.string.dofetilide_result_label));
+		calculatedDoseTextView.setTextColor(Color.LTGRAY);
 		ageEditText.requestFocus();
 	}
 	
