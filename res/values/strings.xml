@@ -29,8 +29,7 @@
 	<string name="calculate_label">Calculate!</string>
 	<string name="clear_label">Clear</string>
 	<string name="cleared">Cleared!</string>
-	<string name="dofetilide_result_label">Dofetilide dose</string>
-	<string name="dabigatran_result_label">Dabigatran dose</string>
+	<string name="dose_result_label">Dose</string>
 	<string name="weight_hint">Weight (kg)</string>
 	<string name="weight_lb_hint">Weight (lb)</string>
 	<string name="creatinine_hint">Creatinine (mg/dL)</string>
