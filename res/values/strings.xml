@@ -14,7 +14,6 @@
 	<string name="dofetilide_calculator_title">Dofetilide Calculator</string>
 	<string name="dabigatran_calculator_title">Dabigatran Calculator</string>
 	<string name="dabigatran_label">Dabigatran Calculator (US Dosing)</string>
-	<string name="qtc_label">QTc Calculator</string>
 	<string name="qtc_calculator_title">QTc Calculator</string>
 	<string name="cycle_length_label">Cycle Length Calculator</string>
 	<string name="cycle_length_calculator_title">Cycle Length Calculator</string>
@@ -288,6 +287,23 @@
 	    (e.g. dronederone).</string>
 	<string name="dabigatran_warning_mild">Consider reducing dose of dabigatran to 75 mg twice a day 
 	    when dronederone or systemic ketoconazole is administered with dabigatran.</string>
+	    
+	<string name="short_qt_title">Short QT Syndrome Diagnosis</string>
+	<string name="qtc_label">QTc (msec)</string>
+	<string name="jt_label">Jpoint-Tpeak (msec)</string>
+	<string name="clinical_history_label">Clinical History</string>
+	<string name="sudden_cardiac_arrest_label">Sudden cardiac arrest</string>
+	<string name="polymorphic_vt_label">Polymorphic VT or VF</string>
+	<string name="unexplained_syncope_label">Unexplained syncope</string>
+	<string name="afb_label">Atrial fibrillation</string>
+	<string name="family_hx_label">Family History</string>
+	<string name="relative_with_sqts_label">1st or 2nd degree relative with SQTS</string>
+	<string name="relative_with_sd_label">1st or 2nd degree relative with sudden death</string>
+	<string name="sids_label">Sudden infant death syndrome</string>
+	<string name="genotype_label">Genotype</string>
+	<string name="genotype_positive_label">Genotype positive</string>
+	<string name="mutation_label">Mutation of undetermined significance
+	    in a culprit gene</string>
 	
 
 

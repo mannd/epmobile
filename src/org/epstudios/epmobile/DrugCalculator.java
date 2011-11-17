@@ -83,11 +83,11 @@ public abstract class DrugCalculator extends EpActivity implements OnClickListen
 		else
 			weightSpinner.setSelection(LB_SELECTION);		
 		itemListener = new OnItemSelectedListener() {
-			public void onItemSelected(AdapterView parent, View v,
+			public void onItemSelected(AdapterView<?> parent, View v,
 					int position, long id) {
 				updateWeightUnitSelection();
 			}
-			public void onNothingSelected(AdapterView parent) {
+			public void onNothingSelected(AdapterView<?> parent) {
 				// do nothing
 			}
 		

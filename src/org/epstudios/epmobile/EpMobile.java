@@ -64,6 +64,8 @@ public class EpMobile extends EpListActivity {
 					normalEpValues();
 				else if (selection.equals(getString(R.string.arvc_title)))
 					arvc();
+				else if (selection.equals(getString(R.string.short_qt_title)))
+					shortQt();
 			}
 		});
 	}
@@ -121,6 +123,11 @@ public class EpMobile extends EpListActivity {
     
     private void arvc() {
     	Intent i = new Intent(this, Arvc.class);
+    	startActivity(i);
+    }
+    
+    private void shortQt() {
+    	Intent i = new Intent(this, ShortQt.class);
     	startActivity(i);
     }
     
