@@ -64,6 +64,8 @@ public class EpMobile extends EpListActivity {
 					normalEpValues();
 				else if (selection.equals(getString(R.string.arvc_title)))
 					arvc();
+				else if (selection.equals(getString(R.string.icd_calculator_title)))
+					icdCalculator();
 			}
 		});
 	}
@@ -122,6 +124,10 @@ public class EpMobile extends EpListActivity {
     private void arvc() {
     	Intent i = new Intent(this, Arvc.class);
     	startActivity(i);
+    }
+    
+    private void icdCalculator() {
+    	
     }
     
 }

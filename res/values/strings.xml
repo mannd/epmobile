@@ -289,6 +289,9 @@
 	<string name="dabigatran_warning_mild">Consider reducing dose of dabigatran to 75 mg twice a day 
 	    when dronederone or systemic ketoconazole is administered with dabigatran.</string>
 	
+	    
+	<string name="icd_calculator_title">ICD CMS Criteria</string>
+	
 
 
 
