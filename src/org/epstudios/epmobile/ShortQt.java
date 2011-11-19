@@ -32,103 +32,130 @@ public class ShortQt extends EpActivity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.shortqt);
 		
-//		View calculateButton = findViewById(R.id.calculate_button);
-//        calculateButton.setOnClickListener(this);
-//        View clearButton = findViewById(R.id.clear_button);
-//        clearButton.setOnClickListener(this);
-//        
+		View calculateButton = findViewById(R.id.calculate_button);
+        calculateButton.setOnClickListener(this);
+        View clearButton = findViewById(R.id.clear_button);
+        clearButton.setOnClickListener(this);
+        
+        qtcRadioGroup = (RadioGroup) findViewById(R.id.qtc_radio_group);
+        shortJtCheckBox = (CheckBox) findViewById(R.id.short_jt);
+        suddenCardiacArrestCheckBox = 
+        	(CheckBox) findViewById(R.id.sudden_cardiac_arrest);
+        polymorphicVtCheckBox = (CheckBox) findViewById(R.id.polymorphic_vt);
+        unexplainedSyncopeCheckBox = (CheckBox) findViewById(R.id.unexplained_syncope);
+        afbCheckBox = (CheckBox) findViewById(R.id.afb);
+        relativeWithSqtsCheckBox = (CheckBox) findViewById(R.id.relative_with_sqts);
+        relativeWithSdCheckBox = (CheckBox) findViewById(R.id.relative_with_sd);
+        sidsCheckBox = (CheckBox) findViewById(R.id.sids);
+        genotypePositiveCheckBox = (CheckBox) findViewById(R.id.genotype_positive);
+        mutationCheckBox = (CheckBox) findViewById(R.id.mutation);
  
         clearEntries();
 		
 	}
 	
 	// Algorithm
+	
+	private RadioGroup qtcRadioGroup;
+	private CheckBox shortJtCheckBox;
+	private CheckBox suddenCardiacArrestCheckBox;
+	private CheckBox polymorphicVtCheckBox;
+	private CheckBox unexplainedSyncopeCheckBox;
+	private CheckBox afbCheckBox;
+	private CheckBox relativeWithSqtsCheckBox;
+	private CheckBox relativeWithSdCheckBox;
+	private CheckBox sidsCheckBox;
+	private CheckBox genotypePositiveCheckBox;
+	private CheckBox mutationCheckBox;
 
 	
 	
 	public void onClick(View v) {
-//		switch (v.getId()) {
-//		case R.id.calculate_button:
-//			calculateResult();
-//			break;
-//		case R.id.clear_button:
-//			clearEntries();
-//			break;
-//		}
+		switch (v.getId()) {
+		case R.id.calculate_button:
+			calculateResult();
+			break;
+		case R.id.clear_button:
+			clearEntries();
+			break;
+		}
 	}
 	
 	private void calculateResult() {
-//		int majorCount = 0;
-//		int minorCount = 0;
-//		if (regionalEchoAbnormalityCheckBox.isChecked() && echoMajorRadioGroup.getCheckedRadioButtonId() > -1
-//				|| regionalMriAbnormalityCheckBox.isChecked() && mriMajorRadioGroup.getCheckedRadioButtonId() > -1
-//				|| regionalRvAngioAbnormalityCheckBox.isChecked())
-//			majorCount++;
-//		if (regionalEchoMinorAbnormalityCheckBox.isChecked() && echoMinorRadioGroup.getCheckedRadioButtonId() > -1
-//				|| minorRegionalMriAbnormalityCheckBox.isChecked() && mriMinorRadioGroup.getCheckedRadioButtonId() > -1)
-//			minorCount++;
-//		if (majorResidualMyocytesCheckBox.isChecked())
-//			majorCount++;
-//		if (minorResidualMyocytesCheckBox.isChecked())
-//			minorCount++;
-//		if (majorRepolarizationCheckBox.isChecked())
-//			majorCount++;
-//		if (minorRepolarizationNoRbbbCheckBox.isChecked() || minorRepolarizationRbbbCheckBox.isChecked())
-//			minorCount++;
-//		if (majorDepolarizationCheckBox.isChecked())
-//			majorCount++;
-//		if (filteredQrsCheckBox.isChecked() || durationTerminalQrsCheckBox.isChecked()
-//				|| rootMeanSquareCheckBox.isChecked() || terminalActivationDurationCheckBox.isChecked())
-//			minorCount++;
-//		if (majorArrhythmiasCheckBox.isChecked())
-//			majorCount++;
-//		if (rvotVtCheckBox.isChecked() || pvcsCheckBox.isChecked())
-//			minorCount++;
-//		if (firstDegreeRelativeCheckBox.isChecked() || pathologyCheckBox.isChecked()
-//				|| geneticCheckBox.isChecked())
-//			majorCount++;
-//		if (possibleFamilyHistoryCheckBox.isChecked() || familyHistorySuddenDeathCheckBox.isChecked()
-//				|| secondDegreeRelativeCheckBox.isChecked())
-//			minorCount++;
+		int score = 0;
+		if (qtcRadioGroup.getCheckedRadioButtonId() == R.id.short_qt)
+			score++;
+		else if (qtcRadioGroup.getCheckedRadioButtonId() == R.id.shorter_qt)
+			score += 2;
+		else if (qtcRadioGroup.getCheckedRadioButtonId() == R.id.shortest_qt)
+			score += 3;
+		if (shortJtCheckBox.isChecked())
+			score++;
+		if (suddenCardiacArrestCheckBox.isChecked())
+			score += 2;
+		if (polymorphicVtCheckBox.isChecked())
+			score += 2;
+		if (unexplainedSyncopeCheckBox.isChecked())
+			score++;
+		if (afbCheckBox.isChecked())
+			score++;
+		if (relativeWithSqtsCheckBox.isChecked())
+			score+= 2;
+		if (relativeWithSdCheckBox.isChecked())
+			score++;
+		if (sidsCheckBox.isChecked())
+			score++;
+		if (genotypePositiveCheckBox.isChecked())
+			score += 2;
+		if (mutationCheckBox.isChecked())
+			score++;
 		
-		//displayResult(majorCount, minorCount);
+		displayResult(score);
 	}
 	
-	private void displayResult(int major, int minor) {
-//		AlertDialog dialog = new AlertDialog.Builder(this).create();
-//		String message;
-//		message = "Major = " + major + "\n" + "Minor = " + minor + "\n";
-//		if (major >= 2 || major == 1 && minor >= 2 || minor >= 4)
-//			message = message + "Definite diagnosis of ARVC/D";
-//		else if (major == 1 && minor >= 1 || minor == 3)
-//			message = message + "Borderline diagnosis of ARVC/D";
-//		else if (major == 1 || minor == 2)
-//			message = message + "Possible diagnosis of ARVC/D";
-//		else
-//			message = message + "Not diagnostic of ARVC/D"; 
-//		dialog.setMessage(message);
-//		dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Reset",
-//				new DialogInterface.OnClickListener() {
-//					@Override
-//					public void onClick(DialogInterface dialog, int which) {
-//						clearEntries();
-//					}
-//				});
-//		dialog.setButton(DialogInterface.BUTTON_NEUTRAL, "Don't Reset",
-//				new DialogInterface.OnClickListener() {
-//					@Override
-//					public void onClick(DialogInterface dialog, int which) {}
-//				});
-//		dialog.setTitle(getString(R.string.arvc_title));
-//	
-//		dialog.show();
+	private void displayResult(int score) {
+		AlertDialog dialog = new AlertDialog.Builder(this).create();
+		String message;
+		message = "Score = " + score + "\n";
+		if (score >= 4)
+			message += "High probability of SQTS";
+		else if (score == 3)
+			message += "Intermediate probability of SQTS";
+		else if (score <= 2)
+			message += "Low probability of SQTS";
+		dialog.setMessage(message);
+		dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Reset",
+				new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						clearEntries();
+					}
+				});
+		dialog.setButton(DialogInterface.BUTTON_NEUTRAL, "Don't Reset",
+				new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {}
+				});
+		dialog.setTitle(getString(R.string.short_qt_title));
+	
+		dialog.show();
 	}
 	
 	
 	
 	
 	private void clearEntries() {
- 
+        qtcRadioGroup.clearCheck();
+        shortJtCheckBox.setChecked(false);
+        suddenCardiacArrestCheckBox.setChecked(false);
+        polymorphicVtCheckBox.setChecked(false);
+        unexplainedSyncopeCheckBox.setChecked(false);
+        afbCheckBox.setChecked(false);
+        relativeWithSqtsCheckBox.setChecked(false);
+        relativeWithSdCheckBox.setChecked(false);
+        sidsCheckBox.setChecked(false);
+        genotypePositiveCheckBox.setChecked(false);
+        mutationCheckBox.setChecked(false);        
 		
 	}
 	
