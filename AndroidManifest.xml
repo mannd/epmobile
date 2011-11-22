@@ -51,5 +51,7 @@
 		</activity>
 		<activity android:name=".Arvc" android:label="@string/arvc_title">
 		</activity>
+		<activity android:name=".Rivaroxaban" android:label="@string/rivaroxaban_calculator_title">
+		</activity>
     </application>
 </manifest>

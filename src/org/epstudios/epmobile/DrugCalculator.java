@@ -124,6 +124,7 @@ public abstract class DrugCalculator extends EpActivity implements OnClickListen
 			double creatinine = Double.parseDouble(creatinineText.toString());
 			double age = Double.parseDouble(ageText.toString());
 			int cc = CreatinineClearance.calculate(isMale, age, weight, creatinine);
+			ccTextView.setTextColor(Color.WHITE);	// reset to white here; text colored later
 			String ccMessage = getMessage(cc);
 			ccTextView.setText(ccMessage);
 			int dose = getDose(cc);
@@ -134,7 +135,7 @@ public abstract class DrugCalculator extends EpActivity implements OnClickListen
 			}
 			else {
 				calculatedDoseTextView.setTextColor(Color.LTGRAY);
-				calculatedDoseTextView.setText(String.valueOf(dose) + " mg BID");
+				calculatedDoseTextView.setText(String.valueOf(dose) + doseFrequency());
 			}
 		}
 		catch (NumberFormatException e) {	
@@ -142,6 +143,10 @@ public abstract class DrugCalculator extends EpActivity implements OnClickListen
 			calculatedDoseTextView.setTextColor(Color.RED);
 		}		
 	}		
+	
+	protected String doseFrequency() {
+		return " mg BID";
+	}
 	
 	private void clearEntries() {
 		weightEditText.setText(null);

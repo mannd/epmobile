@@ -190,3 +190,19 @@
     - Use figures and text for morphology criteria
     - Use checklist for Brugada morphology criteria
 
+* Short QT Syndrome
+** fine print of algorithm
+   - Jpoint-Tpeak interval measured in precordial lead with greatest
+     amplitude T wave.
+   - Clinical History: events must occur in the absence of an
+     identifiable etiology, including structural heart disease.
+   - Points can only be received for 1 of cardiac arrest, documented
+     polymorphic VT, or unexplained syncope.
+   - Family history points can only be received once int his section.
+   - A minimum of 1 point must be obtained in the ECG section in order
+     to obtain additional points.  
+* Rivaroxaban
+  | CrCl           | Dose                          |
+  | > 50 ml/min    | 20 mg daily with evening meal |
+  | 15 - 50 ml/min | 15 mg daily with evening meal |
+  | < 15 mL/min    | avoid                         |
