@@ -37,12 +37,10 @@
 		<item>CHADS\u2082 Score</item>
 		<item>CHA\u2082DS\u2082-VASc Score</item>
 		<item>Cycle Length Calculator</item>
-		<item>Dabigatran Calculator</item>
-		<item>Dofetilide Calculator</item>
+		<item>Drug Dose Calculators \u25B6</item>
 		<item>HAS-BLED Score</item>
 		<item>Normal EP Values</item>
 		<item>QTc Calculator</item>
-		<item>Rivaroxaban Calculator</item>
 		<item>Short QT Syndrome Diagnosis</item>
 		<item>Warfarin Calculator</item>
 		<item>Wide Complex Tachycardia \u25B6</item>
@@ -53,6 +51,11 @@
 		<item>Morphology Criteria</item>
 		<item>R Wave Peak Time Criterion</item>
 		<!-- <item>Vereckei Algorithm</item> -->
+	</array>
+	<array name="drug_calculator_list">
+	    <item>Dabigatran Calculator</item>
+	    <item>Dofetilide Calculator</item>
+	    <item>Rivaroxaban Calculator</item>
 	</array>
 	<array name="interval_rate_labels">
 		<item>RR Interval (msec)</item>
