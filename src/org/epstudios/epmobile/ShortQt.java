@@ -36,6 +36,8 @@ public class ShortQt extends EpActivity implements OnClickListener {
         calculateButton.setOnClickListener(this);
         View clearButton = findViewById(R.id.clear_button);
         clearButton.setOnClickListener(this);
+        View instructionsButton = findViewById(R.id.instructions_button);
+        instructionsButton.setOnClickListener(this);
         
         qtcRadioGroup = (RadioGroup) findViewById(R.id.qtc_radio_group);
         shortJtCheckBox = (CheckBox) findViewById(R.id.short_jt);
@@ -78,33 +80,48 @@ public class ShortQt extends EpActivity implements OnClickListener {
 		case R.id.clear_button:
 			clearEntries();
 			break;
+		case R.id.instructions_button:
+			displayInstructions();
+			break;
 		}
 	}
 	
 	private void calculateResult() {
 		int score = 0;
+		// ECG criteria
+		// one of the short QT intervals must be selected to get other points
+		if (qtcRadioGroup.getCheckedRadioButtonId() == -1 && !shortJtCheckBox.isChecked()) {
+			displayResult(score);
+			return;			
+		}
 		if (qtcRadioGroup.getCheckedRadioButtonId() == R.id.short_qt)
 			score++;
 		else if (qtcRadioGroup.getCheckedRadioButtonId() == R.id.shorter_qt)
 			score += 2;
 		else if (qtcRadioGroup.getCheckedRadioButtonId() == R.id.shortest_qt)
 			score += 3;
+		// Short JT is very specific for SQTS
 		if (shortJtCheckBox.isChecked())
 			score++;
-		if (suddenCardiacArrestCheckBox.isChecked())
+		// Clinical history
+		// points can be received for only one of the next 3 selections
+		if (suddenCardiacArrestCheckBox.isChecked())	
 			score += 2;
-		if (polymorphicVtCheckBox.isChecked())
+		else if (polymorphicVtCheckBox.isChecked())
 			score += 2;
-		if (unexplainedSyncopeCheckBox.isChecked())
+		else if (unexplainedSyncopeCheckBox.isChecked())
 			score++;
 		if (afbCheckBox.isChecked())
 			score++;
+		// Family history
+		// points can be received only once in this section
 		if (relativeWithSqtsCheckBox.isChecked())
 			score+= 2;
-		if (relativeWithSdCheckBox.isChecked())
+		else if (relativeWithSdCheckBox.isChecked())
 			score++;
-		if (sidsCheckBox.isChecked())
+		else if (sidsCheckBox.isChecked())
 			score++;
+		// Genotype
 		if (genotypePositiveCheckBox.isChecked())
 			score += 2;
 		if (mutationCheckBox.isChecked())
@@ -138,6 +155,14 @@ public class ShortQt extends EpActivity implements OnClickListener {
 				});
 		dialog.setTitle(getString(R.string.short_qt_title));
 	
+		dialog.show();
+	}
+	
+	private void displayInstructions() {
+		AlertDialog dialog = new AlertDialog.Builder(this).create();
+		String message = getString(R.string.sqts_instructions);
+		dialog.setMessage(message);
+		dialog.setTitle(getString(R.string.short_qt_title));
 		dialog.show();
 	}
 	

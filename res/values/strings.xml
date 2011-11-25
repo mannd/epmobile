@@ -289,11 +289,11 @@
 	    when dronederone or systemic ketoconazole is administered with dabigatran.</string>
 	    
 	<string name="short_qt_title">Short QT Syndrome Diagnosis</string>
-	<string name="qtc_label">QTc</string>
+	<string name="qtc_label">QTc Interval</string>
 	<string name="short_qt_label">\u003c 370 msec</string>
 	<string name="shorter_qt_label">\u003c 350 msec</string>
-	<string name="shortest_qt_label">\u003c 350 msec</string>
-	<string name="jt_label">Jpoint-Tpeak</string>
+	<string name="shortest_qt_label">\u003c 330 msec</string>
+	<string name="jt_label">Jpoint-Tpeak Interval</string>
 	<string name="short_jt_label">\u003c 120 msec</string>
 	<string name="clinical_history_label">Clinical History</string>
 	<string name="sudden_cardiac_arrest_label">Sudden cardiac arrest</string>
@@ -309,8 +309,12 @@
 	<string name="mutation_label">Mutation of undetermined significance
 	    in a culprit gene</string>
 	<string name="sqts_reference">Gollob M, et al. J Am Coll Cardiol 2011;57:802.</string>
-	
-
+	<string name="instructions_label">Instructions</string>
+	<string name="sqts_instructions">Electrocardiogram must be recorded in the absence of modifiers
+	    known to shorten the QT.  Jpoint-Tpeak interval must be measured in the precordial lead
+	    with the greatest amplitude T-wave.  Clinical history: events must occur in the absence of
+	    an identifiable etiology, including structural heart disease.  Note that at least one ECG
+	    manifestation must be present in order to get additional points.</string>
 
 
 </resources>

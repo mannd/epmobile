@@ -103,6 +103,8 @@
 				android:layout_width="wrap_content" android:layout_height="wrap_content" />
 			<Button android:id="@+id/clear_button" android:text="@string/clear_label"
 				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<Button android:id="@+id/instructions_button" android:text="@string/instructions_label"
+			    android:layout_width="wrap_content" android:layout_height="wrap_content" />
 		</LinearLayout>
 		<TextView android:text="@string/sqts_reference" 
 		    android:layout_width="match_parent"
