@@ -317,6 +317,9 @@
 	    with the greatest amplitude T-wave.  Clinical history: events must occur in the absence of
 	    an identifiable etiology, including structural heart disease.  Note that at least one ECG
 	    manifestation must be present in order to get additional points.</string>
+	    
+	<string name="drug_dose_calculator_list_title">Drug Dose Calculators \u25B6</string>
+	<string name="drug_dose_calculators_title">Drug Dose Calculators</string>
 
 </resources>
 
