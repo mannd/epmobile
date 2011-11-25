@@ -130,6 +130,8 @@ public class EpMobile extends EpListActivity {
     
     private void rivaroxabanCalculator() {
     	Intent i = new Intent(this, Rivaroxaban.class);
+    	startActivity(i);
+    }
 
     private void shortQt() {
     	Intent i = new Intent(this, ShortQt.class);
