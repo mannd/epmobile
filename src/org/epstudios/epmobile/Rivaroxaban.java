@@ -18,18 +18,20 @@
 
 package org.epstudios.epmobile;
 
-public class Dofetilide extends DrugCalculator {
+public class Rivaroxaban extends DrugCalculator {
 
 	@Override
-	protected int getDose(double crClr) {
-		if (crClr > 60)
-			return 500;
-		if (crClr > 40)
-			return 250;
-		if (crClr > 20)
-			return 125;
+	protected int getDose(double crCl) {
+		if (crCl > 50)
+			return 20;
+		if (crCl >= 15)
+			return 15;
 		return 0;
+	}
+	
+	@Override
+	protected String doseFrequency() {
+		return " mg daily\nwith evening meal";
 	}
 
 }
-

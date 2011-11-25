@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="org.epstudios.epmobile"
-      android:versionCode="7"
-      android:versionName="0.6">
+      android:versionCode="8"
+      android:versionName="0.7">
 <uses-sdk android:minSdkVersion="8"></uses-sdk>
 
 
@@ -17,7 +17,7 @@
 		<activity android:name=".About" android:label="@string/about_title"
 			android:theme="@android:style/Theme.Dialog">
 		</activity>  
-		<activity android:name=".Qtc" android:label="@string/qtc_label">
+		<activity android:name=".Qtc" android:label="@string/qtc_calculator_title">
 		</activity>
 		<activity android:name=".Dofetilide" android:label="@string/dofetilide_label">
 		</activity>
@@ -50,6 +50,12 @@
 		<activity android:name=".NormalEpValues" android:label="@string/normal_ep_values_title">
 		</activity>
 		<activity android:name=".Arvc" android:label="@string/arvc_title">
+		</activity>
+		<activity android:name=".Rivaroxaban" android:label="@string/rivaroxaban_calculator_title">
+		</activity>
+		<activity android:name=".ShortQt" android:label="@string/short_qt_title">
+		</activity>
+		<activity android:name=".DrugDoseCalculatorList" android:label="@string/drug_dose_calculators_title">
 		</activity>
     </application>
 </manifest>
