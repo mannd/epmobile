@@ -79,11 +79,11 @@ public class BrugadaMorphologyCriteria extends EpActivity implements OnClickList
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		bbbSpinner.setAdapter(adapter);
 		itemListener = new OnItemSelectedListener() {
-			public void onItemSelected(AdapterView parent, View v,
+			public void onItemSelected(AdapterView<?> parent, View v,
 					int position, long id) {
 				updateBbbSelection();
 			}
-			public void onNothingSelected(AdapterView parent) {
+			public void onNothingSelected(AdapterView<?> parent) {
 				// do nothing
 			}
 		

@@ -96,11 +96,11 @@ public class Qtc extends EpActivity implements OnClickListener {
 		else
 			intervalRateSpinner.setSelection(RATE_SELECTION);		
 		itemListener = new OnItemSelectedListener() {
-			public void onItemSelected(AdapterView parent, View v,
+			public void onItemSelected(AdapterView<?> parent, View v,
 					int position, long id) {
 				updateIntervalRateSelection();
 			}
-			public void onNothingSelected(AdapterView parent) {
+			public void onNothingSelected(AdapterView<?> parent) {
 				// do nothing
 			}
 		

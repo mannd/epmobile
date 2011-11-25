@@ -17,7 +17,7 @@
 		<activity android:name=".About" android:label="@string/about_title"
 			android:theme="@android:style/Theme.Dialog">
 		</activity>  
-		<activity android:name=".Qtc" android:label="@string/qtc_label">
+		<activity android:name=".Qtc" android:label="@string/qtc_calculator_title">
 		</activity>
 		<activity android:name=".Dofetilide" android:label="@string/dofetilide_label">
 		</activity>
@@ -52,6 +52,7 @@
 		<activity android:name=".Arvc" android:label="@string/arvc_title">
 		</activity>
 		<activity android:name=".Rivaroxaban" android:label="@string/rivaroxaban_calculator_title">
+		<activity android:name=".ShortQt" android:label="@string/short_qt_title">
 		</activity>
     </application>
 </manifest>

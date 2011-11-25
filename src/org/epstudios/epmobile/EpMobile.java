@@ -66,6 +66,8 @@ public class EpMobile extends EpListActivity {
 					arvc();
 				else if (selection.equals(getString(R.string.rivaroxaban_calculator_title)))
 					rivaroxabanCalculator();
+				else if (selection.equals(getString(R.string.short_qt_title)))
+					shortQt();
 			}
 		});
 	}
@@ -128,6 +130,9 @@ public class EpMobile extends EpListActivity {
     
     private void rivaroxabanCalculator() {
     	Intent i = new Intent(this, Rivaroxaban.class);
+
+    private void shortQt() {
+    	Intent i = new Intent(this, ShortQt.class);
     	startActivity(i);
     }
     
