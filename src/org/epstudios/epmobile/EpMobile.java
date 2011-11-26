@@ -64,6 +64,8 @@ public class EpMobile extends EpListActivity {
 					shortQt();
 				else if (selection.equals(getString(R.string.drug_dose_calculator_list_title)))
 					drugDoseCalculators();
+				else if (selection.equals(getString(R.string.icd_calculator_title)))
+					icdCalculator();
 			}
 		});
 	}
@@ -121,6 +123,10 @@ public class EpMobile extends EpListActivity {
     private void drugDoseCalculators() {
     	Intent i = new Intent(this, DrugDoseCalculatorList.class);
     	startActivity(i);
+    }
+
+    private void icdCalculator() {
+
     }
     
 }
