@@ -51,11 +51,24 @@
    | Drugs - EtOH (>= 8 drinks/wk)  |     1 |
    - Score of 3 or more indicates caution in using AC and increased 1 year
      risk of bleeding.
-** TODO ARVD score
-** TODO Pradaxa dose calculator
 ** TODO Epicardial vs endocardial VT
 ** TODO Mitral annular VT
 ** TODO Brugada ECG types
+** DONE ARVD score
+** DONE Pradaxa dose calculator
+** DONE Warfarin dose calculator
+** DONE Rivoraxaban dose calculator
+** DONE SQTS diagnosis
+** TODO Epicardial vs endocardial VT
+** TODO Mitral annular VT
+** TODO Brugada ECG types
+** TODO LVH
+** DONE Normal EP Values
+** TODO EP Glossary
+** TODO CMS ICD criteria
+** TODO LQTS criteria
+** TODO ACC WCT algorithm
+** TODO Creatinine Clearance calculator
 * Menu
 ** units
 *** msec or sec
@@ -67,12 +80,28 @@
 *** DONE Java class QtcCalculator
 *** Normal values
 **** DONE Color code abnormal QTc
+* Issues
+** Themes
+   We are using default Android theme.  android:background settings
+   probably should not be used.  Should try to use Android predefined
+   text settings and not specific colors.  Potentially could have an
+   application theme which by default is the default Android theme,
+   but with the ability to override it.
+** Strings
+   Still have a mixture of strings in strings.xml and in code.  All
+   strings (except maybe some numbers) should be in strings.xml.
+** Grouping
+*** TODO add Warfarin dose calculator to Drug Dose Calculators group
+*** ? other groups
+    - Risk Scores
+    - Diagnostic Scores
+    - ECG patterns
 * Main screen
 ** New screen
    Need alphabetized grouped by letter scrollview list
 * Implementation
 ** Abstract base classes
-*** For creatinine clearance based calculators
+*** DONE For creatinine clearance based calculators
 *** For scores
 * Warfarin
   | Day  | Change1 | Change2 |
