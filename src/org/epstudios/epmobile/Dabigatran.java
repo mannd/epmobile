@@ -14,7 +14,7 @@
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */   
+ */
 
 package org.epstudios.epmobile;
 
@@ -28,16 +28,13 @@ public class Dabigatran extends DrugCalculator {
 		if ((crCl >= 15) && (crCl <= 30)) {
 			msg += getString(R.string.dabigatran_warning_severe);
 			ccTextView.setTextColor(Color.parseColor("#ffa500"));
-		}
-		else if ((crCl > 30) && (crCl <= 50)) {
+		} else if ((crCl > 30) && (crCl <= 50)) {
 			msg += getString(R.string.dabigatran_warning_mild);
 			ccTextView.setTextColor(Color.YELLOW);
-		}
-		else
+		} else
 			ccTextView.setTextColor(Color.WHITE);
 		return msg;
 	}
-	
 
 	@Override
 	protected int getDose(double crClr) {
@@ -48,6 +45,4 @@ public class Dabigatran extends DrugCalculator {
 		return 0;
 	}
 
-
 }
-

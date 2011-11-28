@@ -14,17 +14,16 @@
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */   
+ */
 
 package org.epstudios.epmobile;
 
 import android.os.Bundle;
 
-public class Rwpt  extends EpActivity {
+public class Rwpt extends EpActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.rwpt);
 	}
 }
-

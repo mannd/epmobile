@@ -14,7 +14,7 @@
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */   
+ */
 
 package org.epstudios.epmobile;
 
@@ -23,7 +23,7 @@ public class UnitConverter {
 		final double conversionFactor = 0.45359237;
 		return weight * conversionFactor;
 	}
-	
+
 	public static double kgsToLbs(double weight) {
 		final double conversionFactor = 2.20462262;
 		return weight * conversionFactor;

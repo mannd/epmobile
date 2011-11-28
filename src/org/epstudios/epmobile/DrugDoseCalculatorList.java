@@ -14,7 +14,7 @@
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */   
+ */
 
 package org.epstudios.epmobile;
 
@@ -31,8 +31,9 @@ public class DrugDoseCalculatorList extends EpListActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-				R.array.drug_calculator_list, android.R.layout.simple_list_item_1);
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+				this, R.array.drug_calculator_list,
+				android.R.layout.simple_list_item_1);
 		setListAdapter(adapter);
 		ListView lv = getListView();
 		lv.setTextFilterEnabled(true);
@@ -41,31 +42,32 @@ public class DrugDoseCalculatorList extends EpListActivity {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				CharSequence selection = ((TextView) view).getText();
-				if (selection.equals(getString(R.string.dabigatran_calculator_title)))
+				if (selection
+						.equals(getString(R.string.dabigatran_calculator_title)))
 					dabigatranCalculator();
-				else if (selection.equals(getString(R.string.dofetilide_calculator_title)))
+				else if (selection
+						.equals(getString(R.string.dofetilide_calculator_title)))
 					dofetilideCalculator();
-				else if (selection.equals(getString(R.string.rivaroxaban_calculator_title)))
+				else if (selection
+						.equals(getString(R.string.rivaroxaban_calculator_title)))
 					rivaroxabanCalculator();
 			}
 		});
 	}
-	
-	  private void dabigatranCalculator() {
-	    	Intent i = new Intent(this, Dabigatran.class);
-	    	startActivity(i);	
-	    }
-	  
-	   private void dofetilideCalculator() {
-	    	Intent i = new Intent(this, Dofetilide.class);
-	    	startActivity(i);
-	    }
-	   
-	   private void rivaroxabanCalculator() {
-	    	Intent i = new Intent(this, Rivaroxaban.class);
-	    	startActivity(i);
-	    }
-	  
-	  
+
+	private void dabigatranCalculator() {
+		Intent i = new Intent(this, Dabigatran.class);
+		startActivity(i);
+	}
+
+	private void dofetilideCalculator() {
+		Intent i = new Intent(this, Dofetilide.class);
+		startActivity(i);
+	}
+
+	private void rivaroxabanCalculator() {
+		Intent i = new Intent(this, Rivaroxaban.class);
+		startActivity(i);
+	}
 
 }

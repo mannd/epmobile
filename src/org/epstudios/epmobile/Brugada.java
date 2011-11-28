@@ -14,7 +14,7 @@
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */   
+ */
 
 package org.epstudios.epmobile;
 
@@ -29,10 +29,10 @@ import android.widget.TextView;
 
 public class Brugada extends EpActivity implements OnClickListener {
 	@Override
-	protected void onCreate(Bundle savedInstanceState)  {
+	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.simplealgorithm);
-		
+
 		yesButton = (Button) findViewById(R.id.yes_button);
 		yesButton.setOnClickListener(this);
 		noButton = (Button) findViewById(R.id.no_button);
@@ -43,8 +43,8 @@ public class Brugada extends EpActivity implements OnClickListener {
 		morphologyButton.setOnClickListener(this);
 		morphologyButton.setVisibility(View.GONE);
 		stepTextView = (TextView) findViewById(R.id.stepTextView);
-		
-		step = 1;	// needed to reset this when activity starts
+
+		step = 1; // needed to reset this when activity starts
 		step1();
 	}
 
@@ -65,27 +65,27 @@ public class Brugada extends EpActivity implements OnClickListener {
 			break;
 		}
 	}
-	
+
 	private void step1() {
 		stepTextView.setText(getString(R.string.brugada_step1));
 		backButton.setEnabled(false);
 	}
-	
+
 	private void step2() {
 		stepTextView.setText(getString(R.string.brugada_step_2));
 		backButton.setEnabled(true);
 	}
-	
+
 	private void step3() {
 		stepTextView.setText(getString(R.string.brugada_step_3));
-		backButton.setEnabled(true);		
+		backButton.setEnabled(true);
 	}
-	
+
 	private void step4() {
 		stepTextView.setText(getString(R.string.brugada_step_4));
-		backButton.setEnabled(true);		
+		backButton.setEnabled(true);
 	}
-	
+
 	private void getNoResult() {
 		switch (step) {
 		case 1:
@@ -97,10 +97,10 @@ public class Brugada extends EpActivity implements OnClickListener {
 		case 4:
 			displaySvtResult();
 			break;
-		}		
-		
+		}
+
 	}
-	
+
 	private void gotoStep() {
 		if (step < 4)
 			morphologyButton.setVisibility(View.GONE);
@@ -121,7 +121,7 @@ public class Brugada extends EpActivity implements OnClickListener {
 			break;
 		}
 	}
-	
+
 	private void displayVtResult(int step) {
 		AlertDialog dialog = new AlertDialog.Builder(this).create();
 		String sens = "";
@@ -129,16 +129,16 @@ public class Brugada extends EpActivity implements OnClickListener {
 		switch (step) {
 		case 1:
 		case 2:
-			sens=".21";
-			spec="1.0";
+			sens = ".21";
+			spec = "1.0";
 			break;
 		case 3:
-			sens=".82";
-			spec=".98";
+			sens = ".82";
+			spec = ".98";
 			break;
 		case 4:
-			sens=".987";
-			spec=".965";
+			sens = ".987";
+			spec = ".965";
 			break;
 		}
 		String message;
@@ -163,7 +163,7 @@ public class Brugada extends EpActivity implements OnClickListener {
 				});
 		dialog.show();
 	}
-	
+
 	private void displaySvtResult() {
 		AlertDialog dialog = new AlertDialog.Builder(this).create();
 		String message;
@@ -188,18 +188,17 @@ public class Brugada extends EpActivity implements OnClickListener {
 				});
 		dialog.show();
 	}
-	
+
 	private void displayMorphologyCriteria() {
 		Intent i = new Intent(this, BrugadaMorphologyCriteria.class);
 		startActivity(i);
 	}
-	
+
 	private Button yesButton;
 	private Button noButton;
 	private Button backButton;
 	private Button morphologyButton;
 	private TextView stepTextView;
 	private static int step = 1;
-
 
 }

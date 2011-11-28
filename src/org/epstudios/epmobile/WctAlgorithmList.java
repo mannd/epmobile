@@ -14,7 +14,7 @@
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */   
+ */
 
 package org.epstudios.epmobile;
 
@@ -31,8 +31,9 @@ public class WctAlgorithmList extends EpListActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-				R.array.wct_algorithm_list, android.R.layout.simple_list_item_1);
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+				this, R.array.wct_algorithm_list,
+				android.R.layout.simple_list_item_1);
 		setListAdapter(adapter);
 		ListView lv = getListView();
 		lv.setTextFilterEnabled(true);
@@ -50,17 +51,17 @@ public class WctAlgorithmList extends EpListActivity {
 			}
 		});
 	}
-	
+
 	private void brugadaAlgorithm() {
 		Intent i = new Intent(this, Brugada.class);
 		startActivity(i);
 	}
-	
+
 	private void morphologyCriteria() {
 		Intent i = new Intent(this, WctMorphologyCriteria.class);
 		startActivity(i);
 	}
-	
+
 	private void ultraSimpleBrugadaAlgorithm() {
 		Intent i = new Intent(this, Rwpt.class);
 		startActivity(i);
