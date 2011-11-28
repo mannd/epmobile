@@ -51,9 +51,6 @@
    | Drugs - EtOH (>= 8 drinks/wk)  |     1 |
    - Score of 3 or more indicates caution in using AC and increased 1 year
      risk of bleeding.
-** TODO Epicardial vs endocardial VT
-** TODO Mitral annular VT
-** TODO Brugada ECG types
 ** DONE ARVD score
 ** DONE Pradaxa dose calculator
 ** DONE Warfarin dose calculator
