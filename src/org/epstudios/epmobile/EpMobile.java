@@ -47,14 +47,6 @@ public class EpMobile extends EpListActivity {
 				else if (selection
 						.equals(getString(R.string.qtc_calculator_title)))
 					qtcCalculator();
-				else if (selection.equals(getString(R.string.hasbled_title)))
-					hasBledScore();
-				else if (selection.equals(getString(R.string.chads_title)))
-					chadsScore();
-				else if (selection.equals(getString(R.string.chadsvasc_title)))
-					chadsVascScore();
-				else if (selection.equals(getString(R.string.warfarin_title)))
-					warfarinCalculator();
 				else if (selection
 						.equals(getString(R.string.wct_algorithm_list_title)))
 					wctAlgorithm();
@@ -71,6 +63,9 @@ public class EpMobile extends EpListActivity {
 				else if (selection
 						.equals(getString(R.string.icd_calculator_title)))
 					icdCalculator();
+				else if (selection
+						.equals(getString(R.string.risk_score_list_title)))
+					riskScores();
 			}
 		});
 	}
@@ -82,26 +77,6 @@ public class EpMobile extends EpListActivity {
 
 	private void intervalRateCalculator() {
 		Intent i = new Intent(this, CycleLength.class);
-		startActivity(i);
-	}
-
-	private void hasBledScore() {
-		Intent i = new Intent(this, HasBled.class);
-		startActivity(i);
-	}
-
-	private void chadsScore() {
-		Intent i = new Intent(this, Chads.class);
-		startActivity(i);
-	}
-
-	private void chadsVascScore() {
-		Intent i = new Intent(this, ChadsVasc.class);
-		startActivity(i);
-	}
-
-	private void warfarinCalculator() {
-		Intent i = new Intent(this, Warfarin.class);
 		startActivity(i);
 	}
 
@@ -134,4 +109,8 @@ public class EpMobile extends EpListActivity {
 
 	}
 
+	private void riskScores() {
+		Intent i = new Intent(this, RiskScoreList.class);
+		startActivity(i);
+	}
 }

@@ -18,14 +18,11 @@
 
 package org.epstudios.epmobile;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.CheckBox;
 
-public class HasBled extends EpActivity implements OnClickListener {
+public class HasBled extends RiskScore {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -49,20 +46,8 @@ public class HasBled extends EpActivity implements OnClickListener {
 		checkBox[8] = (CheckBox) findViewById(R.id.etoh);
 	}
 
-	private CheckBox[] checkBox;
-
-	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.calculate_button:
-			calculateResult();
-			break;
-		case R.id.clear_button:
-			clearEntries();
-			break;
-		}
-	}
-
-	private void calculateResult() {
+	@Override
+	protected void calculateResult() {
 		int result = 0;
 		for (int i = 0; i < checkBox.length; i++) {
 			if (checkBox[i].isChecked())
@@ -70,9 +55,9 @@ public class HasBled extends EpActivity implements OnClickListener {
 		}
 		displayResult(result);
 	}
-
-	private void displayResult(int result) {
-		AlertDialog dialog = new AlertDialog.Builder(this).create();
+	
+	@Override
+	protected String getResultMessage(int result) {
 		String message;
 		if (result < 3)
 			message = getString(R.string.normal_hasbled);
@@ -103,30 +88,16 @@ public class HasBled extends EpActivity implements OnClickListener {
 			risk = "> 12.50";
 			break;
 		}
-		risk = "Bleeding risk is " + risk + " bleeds per 100 patient-years";
-
-		dialog.setMessage("HAS-BLED score = " + result + "\n" + message + "\n"
-				+ risk + "\nREFERENCE: Pisters R et al. Chest 2010 138:1093.");
-		dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Reset",
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						clearEntries();
-					}
-				});
-		dialog.setButton(DialogInterface.BUTTON_NEUTRAL, "Don't Reset",
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-					}
-				});
-		dialog.setTitle(getString(R.string.hasbled_title));
-		dialog.show();
+		risk = "Bleeding risk is " + risk + 
+				" bleeds per 100 patient-years";
+		message = "HAS-BLED score = " + result + "\n" + 
+				message + "\n" + risk + 
+				"\nREFERENCE: Pisters R et al. Chest 2010 138:1093.";
+		return message;
 	}
-
-	private void clearEntries() {
-		for (int i = 0; i < checkBox.length; i++)
-			checkBox[i].setChecked(false);
+	
+	protected String getDialogTitle() {
+		return getString(R.string.hasbled_title);
 	}
 
 }

@@ -18,14 +18,11 @@
 
 package org.epstudios.epmobile;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.CheckBox;
 
-public class Chads extends EpActivity implements OnClickListener {
+public class Chads extends RiskScore {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -45,20 +42,8 @@ public class Chads extends EpActivity implements OnClickListener {
 		checkBox[4] = (CheckBox) findViewById(R.id.stroke);
 	}
 
-	private CheckBox[] checkBox;
 
-	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.calculate_button:
-			calculateResult();
-			break;
-		case R.id.clear_button:
-			clearEntries();
-			break;
-		}
-	}
-
-	private void calculateResult() {
+	protected void calculateResult() {
 		int result = 0;
 		for (int i = 0; i < checkBox.length; i++) {
 			if (checkBox[i].isChecked()) {
@@ -71,8 +56,14 @@ public class Chads extends EpActivity implements OnClickListener {
 		displayResult(result);
 	}
 
-	private void displayResult(int result) {
-		AlertDialog dialog = new AlertDialog.Builder(this).create();
+	
+	@Override
+	protected String getDialogTitle() {
+		return getString(R.string.chads_title);
+	}
+	
+	@Override
+	protected String getResultMessage(int result) {
 		String message;
 		if (result < 1)
 			message = getString(R.string.low_chads_message);
@@ -105,31 +96,10 @@ public class Chads extends EpActivity implements OnClickListener {
 			break;
 		}
 		risk = "Annual stroke risk is " + risk + "%";
-
-		dialog.setMessage("CHADS\u2082 score = " + result + "\n" + message
+		message = "CHADS\u2082 score = " + result + "\n" + message
 				+ "\n" + risk
-				+ "\nReference: Gage BF et al. JAMA 2001 285:2864.");
-		dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Reset",
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						clearEntries();
-					}
-				});
-		dialog.setButton(DialogInterface.BUTTON_NEUTRAL, "Don't Reset",
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-					}
-				});
-		dialog.setTitle(getString(R.string.chads_title));
-
-		dialog.show();
+				+ "\nReference: Gage BF et al. JAMA 2001 285:2864.";
+		return message;
+		
 	}
-
-	private void clearEntries() {
-		for (int i = 0; i < checkBox.length; i++)
-			checkBox[i].setChecked(false);
-	}
-
 }

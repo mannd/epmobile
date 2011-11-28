@@ -18,14 +18,11 @@
 
 package org.epstudios.epmobile;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.CheckBox;
 
-public class ChadsVasc extends EpActivity implements OnClickListener {
+public class ChadsVasc extends RiskScore {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -48,20 +45,8 @@ public class ChadsVasc extends EpActivity implements OnClickListener {
 		checkBox[7] = (CheckBox) findViewById(R.id.female);
 	}
 
-	private CheckBox[] checkBox;
-
-	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.calculate_button:
-			calculateResult();
-			break;
-		case R.id.clear_button:
-			clearEntries();
-			break;
-		}
-	}
-
-	private void calculateResult() {
+	@Override
+	protected void calculateResult() {
 		int result = 0;
 		// correct checking both age checkboxes
 		if (checkBox[2].isChecked() && checkBox[6].isChecked())
@@ -76,9 +61,14 @@ public class ChadsVasc extends EpActivity implements OnClickListener {
 		}
 		displayResult(result);
 	}
+	
+	@Override
+	protected String getDialogTitle() {
+		return getString(R.string.chadsvasc_title);
+	}
 
-	private void displayResult(int result) {
-		AlertDialog dialog = new AlertDialog.Builder(this).create();
+	@Override
+	protected String getResultMessage(int result) {
 		String message;
 		if (result < 1)
 			message = getString(R.string.low_chadsvasc_message);
@@ -120,30 +110,10 @@ public class ChadsVasc extends EpActivity implements OnClickListener {
 			break;
 		}
 		risk = "Annual stroke risk is " + risk + "%";
-
-		dialog.setMessage("CHA\u2082DS\u2082-VASc score = " + result + "\n"
+		message = "CHA\u2082DS\u2082-VASc score = " + result + "\n"
 				+ message + "\n" + risk
-				+ "\nReference: Gregory YHL et al. CHEST 2010 137:263");
-		dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Reset",
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						clearEntries();
-					}
-				});
-		dialog.setButton(DialogInterface.BUTTON_NEUTRAL, "Don't Reset",
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-					}
-				});
-		dialog.setTitle(getString(R.string.chadsvasc_title));
-		dialog.show();
-	}
-
-	private void clearEntries() {
-		for (int i = 0; i < checkBox.length; i++)
-			checkBox[i].setChecked(false);
+				+ "\nReference: Gregory YHL et al. CHEST 2010 137:263";
+		return message;
 	}
 
 }
