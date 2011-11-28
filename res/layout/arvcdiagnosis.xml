@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent" android:layout_width="match_parent">
+	<TableLayout android:layout_width="match_parent"
+		android:layout_height="match_parent">
+		<TextView android:text="@string/global_dysfunction_label"
+			android:background="@android:color/background_light"
+			android:textColor="@android:color/black" android:padding="3dip" />
+		<TextView android:text="@string/major" android:background="@android:color/background_dark"
+			android:textColor="@android:color/white" android:padding="3dip" />
+		<TextView android:text="@string/by_echo_label"
+			android:padding="3dip" />
+		<CheckBox android:id="@+id/regional_echo_abnormality"
+			android:text="@string/regional_echo_abnormality_label"
+			android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		<TextView android:text="@string/and_one_echo_label"
+			android:padding="3dip" />
+		<RadioGroup android:id="@+id/echo_major_radio_group"
+			android:layout_width="wrap_content" android:layout_height="wrap_content">
+			<RadioButton android:id="@+id/major_plax_criteria"
+				android:text="@string/major_plax_criteria" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:checked="true">
+			</RadioButton>
+			<RadioButton android:id="@+id/major_psax_criteria"
+				android:text="@string/major_psax_criteria" android:layout_width="wrap_content"
+				android:layout_height="wrap_content">
+			</RadioButton>
+			<RadioButton android:id="@+id/fractional_area_criteria"
+				android:text="@string/fractional_area_criteria"
+				android:layout_width="wrap_content" android:layout_height="wrap_content">
+			</RadioButton>
+		</RadioGroup>
+		<TextView android:text="@string/by_mri_label"
+			android:padding="3dip" />
+		<CheckBox android:id="@+id/regional_mri_abnormality"
+			android:text="@string/regional_mri_abnormality_label"
+			android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		<TextView android:text="@string/and_one_label"
+			android:padding="3dip" />
+		<RadioGroup android:id="@+id/mri_major_radio_group"
+			android:layout_width="wrap_content" android:layout_height="wrap_content">
+			<RadioButton android:id="@+id/major_mri_volume_criteria"
+				android:text="@string/major_mri_volume_criteria"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:checked="true">
+			</RadioButton>
+			<RadioButton android:id="@+id/major_mri_ef_criteria"
+				android:text="@string/major_mri_ef_criteria" android:layout_width="wrap_content"
+				android:layout_height="wrap_content">
+			</RadioButton>
+		</RadioGroup>
+		<TextView android:text="@string/by_rv_angio_label"
+			android:padding="3dip" />
+		<CheckBox android:id="@+id/regional_rv_angio_abnormality"
+			android:text="@string/regional_echo_abnormality_label"
+			android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		<TextView android:text="@string/minor" android:background="@android:color/background_dark"
+			android:textColor="@android:color/white" android:padding="3dip" />
+		<TextView android:text="@string/by_echo_label"
+			android:padding="3dip" />
+		<CheckBox android:id="@+id/regional_echo_minor_abnormality"
+			android:text="@string/regional_echo_minor_abnormality_label"
+			android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		<TextView android:text="@string/and_one_echo_label"
+			android:padding="3dip" />
+		<RadioGroup android:id="@+id/echo_minor_radio_group"
+			android:layout_width="wrap_content" android:layout_height="wrap_content">
+			<RadioButton android:id="@+id/minor_plax_criteria"
+				android:text="@string/minor_plax_criteria" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:checked="true">
+			</RadioButton>
+			<RadioButton android:id="@+id/minor_psax_criteria"
+				android:text="@string/minor_psax_criteria" android:layout_width="wrap_content"
+				android:layout_height="wrap_content">
+			</RadioButton>
+			<RadioButton android:id="@+id/fractional_area_criteria"
+				android:text="@string/fractional_area_criteria"
+				android:layout_width="wrap_content" android:layout_height="wrap_content">
+			</RadioButton>
+		</RadioGroup>
+		<TextView android:text="@string/by_mri_label"
+			android:padding="3dip" />
+		<CheckBox android:id="@+id/minor_regional_mri_abnormality"
+			android:text="@string/regional_mri_abnormality_label"
+			android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		<TextView android:text="@string/and_one_label"
+			android:padding="3dip" />
+		<RadioGroup android:id="@+id/mri_minor_radio_group"
+			android:layout_width="wrap_content" android:layout_height="wrap_content">
+			<RadioButton android:id="@+id/minor_mri_volume_criteria"
+				android:text="@string/minor_mri_volume_criteria"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:checked="true">
+			</RadioButton>
+			<RadioButton android:id="@+id/minor_mri_ef_criteria"
+				android:text="@string/minor_mri_ef_criteria" android:layout_width="wrap_content"
+				android:layout_height="wrap_content">
+			</RadioButton>
+		</RadioGroup>			
+		<TextView android:text="@string/tissue_label"
+			android:background="@android:color/background_light"
+			android:textColor="@android:color/black" android:padding="3dip" />
+		<TextView android:text="@string/major" android:background="@android:color/background_dark"
+			android:textColor="@android:color/white" android:padding="3dip" />
+		<CheckBox android:id="@+id/major_residual_myocytes"
+			android:text="@string/major_residual_myocytes_label" 
+			android:layout_width="wrap_content" android:layout_height="wrap_content" />			
+		<TextView android:text="@string/minor" android:background="@android:color/background_dark"
+			android:textColor="@android:color/white" android:padding="3dip" />
+		<CheckBox android:id="@+id/minor_residual_myocytes"
+			android:text="@string/minor_residual_myocytes_label" 
+			android:layout_width="wrap_content" android:layout_height="wrap_content" />			
+		<TextView android:text="@string/repolarization_label"
+			android:background="@android:color/background_light"
+			android:textColor="@android:color/black" android:padding="3dip" />
+		<TextView android:text="@string/major" android:background="@android:color/background_dark"
+			android:textColor="@android:color/white" android:padding="3dip" />
+		<CheckBox android:id="@+id/major_repolarization"
+			android:text="@string/major_repolarization_label" 
+			android:layout_width="wrap_content" android:layout_height="wrap_content" />			
+		<TextView android:text="@string/minor" android:background="@android:color/background_dark"
+			android:textColor="@android:color/white" android:padding="3dip" />
+		<CheckBox android:id="@+id/minor_repolarization_no_rbbb"
+			android:text="@string/minor_repolarization_no_rbbb_label" 
+			android:layout_width="wrap_content" android:layout_height="wrap_content" />			
+		<CheckBox android:id="@+id/minor_repolarization_rbbb"
+			android:text="@string/minor_repolarization_rbbb_label" 
+			android:layout_width="wrap_content" android:layout_height="wrap_content" />			
+			
+		<TextView android:text="@string/depolarization_label"
+			android:background="@android:color/background_light"
+			android:textColor="@android:color/black" android:padding="3dip" />
+		<TextView android:text="@string/major" android:background="@android:color/background_dark"
+			android:textColor="@android:color/white" android:padding="3dip" />
+		<CheckBox android:id="@+id/major_depolarization"
+			android:text="@string/major_depolarization_label" 
+			android:layout_width="wrap_content" android:layout_height="wrap_content" />			
+		<TextView android:text="@string/minor" android:background="@android:color/background_dark"
+			android:textColor="@android:color/white" android:padding="3dip" />
+		<TextView android:text="@string/saecg_label"></TextView>
+		<CheckBox android:id="@+id/filtered_qrs"
+			android:text="@string/filtered_qrs_label" 
+			android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		<CheckBox android:id="@+id/duration_terminal_qrs"
+			android:text="@string/duration_terminal_qrs_label" 
+			android:layout_width="wrap_content" android:layout_height="wrap_content" />		
+		<CheckBox android:id="@+id/root_mean_square"
+			android:text="@string/root_mean_square_label" 
+			android:layout_width="wrap_content" android:layout_height="wrap_content" />	
+		<TextView android:text="@string/terminal_activation_label"></TextView>
+		<CheckBox android:id="@+id/terminal_activation_duration"
+			android:text="@string/terminal_activation_duration_label" 
+			android:layout_width="wrap_content" android:layout_height="wrap_content" />			
+		<TextView android:text="@string/arrhythmias_label"
+			android:background="@android:color/background_light"
+			android:textColor="@android:color/black" android:padding="3dip" />
+		<TextView android:text="@string/major" android:background="@android:color/background_dark"
+			android:textColor="@android:color/white" android:padding="3dip" />
+		<CheckBox android:id="@+id/major_arrhythmias"
+			android:text="@string/major_arrhythmias_label" 
+			android:layout_width="wrap_content" android:layout_height="wrap_content" />	
+		<TextView android:text="@string/minor" android:background="@android:color/background_dark"
+			android:textColor="@android:color/white" android:padding="3dip" />
+		<CheckBox android:id="@+id/rvot_vt"
+			android:text="@string/rvot_vt_label" 
+			android:layout_width="wrap_content" android:layout_height="wrap_content" />			
+		<CheckBox android:id="@+id/pvcs"
+			android:text="@string/pvcs_label" 
+			android:layout_width="wrap_content" android:layout_height="wrap_content" />			
+		<TextView android:text="@string/family_history_label"
+			android:background="@android:color/background_light"
+			android:textColor="@android:color/black" android:padding="3dip" />
+		<TextView android:text="@string/major" android:background="@android:color/background_dark"
+			android:textColor="@android:color/white" android:padding="3dip" />
+		<CheckBox android:id="@+id/first_degree_relative"
+			android:text="@string/first_degree_relative_label" 
+			android:layout_width="wrap_content" android:layout_height="wrap_content" />			
+		<CheckBox android:id="@+id/pathology"
+			android:text="@string/pathology_label" 
+			android:layout_width="wrap_content" android:layout_height="wrap_content" />								
+		<CheckBox android:id="@+id/genetic"
+			android:text="@string/genetic_label" 
+			android:layout_width="wrap_content" android:layout_height="wrap_content" />					
+		<TextView android:text="@string/minor" android:background="@android:color/background_dark"
+			android:textColor="@android:color/white" android:padding="3dip" />
+		<CheckBox android:id="@+id/possible_family_history"
+			android:text="@string/possible_family_history_label" 
+			android:layout_width="wrap_content" android:layout_height="wrap_content" />					
+		<CheckBox android:id="@+id/family_history_sudden_death"
+			android:text="@string/family_history_sudden_death_label" 
+			android:layout_width="wrap_content" android:layout_height="wrap_content" />			
+		<CheckBox android:id="@+id/second_degree_relative"
+			android:text="@string/second_degree_relative_label" 
+			android:layout_width="wrap_content" android:layout_height="wrap_content" />					
+		<LinearLayout android:layout_width="match_parent"
+			android:id="@+id/linearLayout3" android:layout_height="wrap_content">
+			<Button android:id="@+id/calculate_button" android:text="@string/calculate_label"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<Button android:id="@+id/clear_button" android:text="@string/clear_label"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		</LinearLayout>
+		<TextView android:text="@string/arvc_key" android:padding="3dip" />
+		<TextView android:text="@string/arvc_reference"
+			android:autoLink="web" android:padding="3dip" />
+	</TableLayout>
+</ScrollView>

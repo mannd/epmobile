@@ -6,7 +6,7 @@
 ** TODO WPW Accessory Pathway localizer
 *** Milstein et al.  PACE 10:555, 1987.
 *** Arruda 1998
-** TODO VT vs SVT Brugada algorithm
+** DONE VT vs SVT Brugada algorithm
 *** Proposed implementation
     | Follow steps in order: |                                                  |     |
     | Step 1                 | Absence of an RS Complex in all precordial leads | Y/N |
@@ -122,9 +122,10 @@
   - IMPORTANT - update AndroidManifest.xml
     - increment android:versionCode
     - change android:versionName
+  - git add changes/x.y.z.txt
   - git commit
   - git tag vX.Y.Z
-  - git push tags origin master
+  - git push --tags origin master
   - make/sign epmobile.apk, save it in dev/epmobileapp/vX.Y.Z/
   - on market.android.com update product details
   - upload apk, deactivate old one
@@ -136,8 +137,6 @@
 ** Titles vs Labels
    Activities have titles, everything else has labels
    
-
-
 * References
 ** RV dysplasia
    http://arvc.ca/arvc/info/i.php?ix=1&pag=3
@@ -216,4 +215,85 @@
 *** Implementation
     - Use figures and text for morphology criteria
     - Use checklist for Brugada morphology criteria
+* Short QT Syndrome
+** fine print of algorithm
+   - Jpoint-Tpeak interval measured in precordial lead with greatest
+     amplitude T wave.
+   - Clinical History: events must occur in the absence of an
+     identifiable etiology, including structural heart disease.
+   - Points can only be received for 1 of cardiac arrest, documented
+     polymorphic VT, or unexplained syncope.
+   - Family history points can only be received once int his section.
+   - A minimum of 1 point must be obtained in the ECG section in order
+     to obtain additional points.  
+* Rivaroxaban
+  | CrCl           | Dose                          |
+  | > 50 ml/min    | 20 mg daily with evening meal |
+  | 15 - 50 ml/min | 15 mg daily with evening meal |
+  | < 15 mL/min    | avoid                         |
+* ICD Criteria
+  1. Documented cardiac arrest due to VF, not due to transient or
+     reversible cause.
+  2. Documented sustained ventricular tachyarrhythmia, either
+     spontaneous or induced by EP study, not associated with an acute
+     MI, and not due to a transient or reversible cause.
+  3. Documented familial or inherited conditions with a high risk of
+     life-threatening VT, such as long QT syndrome or hypertrophic
+     cardiomyopathy.
+  4. Documented prior MI, EF <= 35%, and inducible sus VT or VF at
+     EPS.  (MI more than 40 days pre-ICD, and EPS performed > 4 weeks
+     post MI.
+  5. Documented prior MI and EF <= 30%
+  6. ICM, documented prior MI, Class II or III HF, EF <= 35%.
+  7. NICM, > 9 months, Class II or III HF, EF <= 35%.
+  8. Pts who meed CMS coverage criteria for CRT device and have Class
+     IV HF.
+  9. NICM > 3 months, Class II or III, and EF <= 35%.
+** Exclusions
+*** Cardiogenic shock or symptomatic hypotension
+*** CABG or PCI withing past 3 months
+*** Acute MI within 40 days
+*** Symptoms or findings that would make patient a candidate for revascularization
+*** Irreversible brain damage from preexisting cerebral disease
+*** Non-cardiac disease with likelihood of survival < 1 year
+** Patients must be enrolled in ICD registry
+** Note exclusions and registry apply to the primary prevention indications
+** Parameters
+   - Cardiac arrest y/n
+   - sustained VT/VF spontaneous
+   - sustained VT/VF induced
+   - familial high risk condition
+   - EF <= 35%
+   - EF <= 30%
+   - Documented MI
+   - ICM
+   - NICM
+   - NYHA Class
+   - Duration of CM
+   - CRT indication
+** Simplified Parameters
+   - [ ] Cardiac arrest due to VF not due to reversible cause
+   - [ ] Spontaneous or inducible VT/VF
+   - [ ] Familial high risk condition (e.g. LQTS, HCM)
+   - [ ] Documented MI
+   - [ ] Ischemic CM
+   - [ ] Nonischemic CM
+   - [ ] Duration of CM
+   - [ ] EF (radio group)
+   - [ ] NYHA class (radio group)
+   - [ ] CRT Indication?
+*** Exclusions
+    - [ ] Cardiogenic shock or symptomatic hypotension
+    - CABG or PCI withing past 3 months
+    - Acute MI within 40 days
+    - Symptoms or findings that would make patient a candidate for revascularization
+    - Irreversible brain damage from preexisting cerebral disease
+    - Non-cardiac disease with likelihood of survival < 1 year
+** Logic
+   - Apply exclusions only where they should be (Primary prevention)
+   - 3 month limit only for NICM
+   - If indicated by too soon, say so
+   - CRT indication only enters into Class IV CHF
+     - Class IV excludes other indications
+   - 
 

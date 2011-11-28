@@ -18,13 +18,15 @@
 
 package org.epstudios.epmobile;
 
-import android.os.Bundle;
-
-public class Rwpt  extends EpActivity {
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.rwpt);
+public class UnitConverter {
+	public static double lbsToKgs(double weight) {
+		final double conversionFactor = 0.45359237;
+		return weight * conversionFactor;
 	}
-}
+	
+	public static double kgsToLbs(double weight) {
+		final double conversionFactor = 2.20462262;
+		return weight * conversionFactor;
+	}
 
+}

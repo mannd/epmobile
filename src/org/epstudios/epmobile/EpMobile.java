@@ -44,8 +44,6 @@ public class EpMobile extends EpListActivity {
 				CharSequence selection = ((TextView) view).getText();
 				if (selection.equals(getString(R.string.cycle_length_calculator_title)))
 					intervalRateCalculator();
-				else if (selection.equals(getString(R.string.dofetilide_calculator_title)))
-					dofetilideCalculator();
 				else if (selection.equals(getString(R.string.qtc_calculator_title)))
 					qtcCalculator();
 				else if (selection.equals(getString(R.string.hasbled_title)))
@@ -54,26 +52,23 @@ public class EpMobile extends EpListActivity {
 					chadsScore();
 				else if (selection.equals(getString(R.string.chadsvasc_title)))
 					chadsVascScore();
-				else if (selection.equals(getString(R.string.dabigatran_calculator_title)))
-					dabigatranCalculator();
 				else if (selection.equals(getString(R.string.warfarin_title)))
 					warfarinCalculator();
 				else if (selection.equals(getString(R.string.wct_algorithm_list_title)))
 					wctAlgorithm();
+				else if (selection.equals(getString(R.string.normal_ep_values_title)))
+					normalEpValues();
+				else if (selection.equals(getString(R.string.arvc_title)))
+					arvc();
+				else if (selection.equals(getString(R.string.short_qt_title)))
+					shortQt();
+				else if (selection.equals(getString(R.string.drug_dose_calculator_list_title)))
+					drugDoseCalculators();
+				else if (selection.equals(getString(R.string.icd_calculator_title)))
+					icdCalculator();
 			}
 		});
 	}
-    
-    
-    private void dofetilideCalculator() {
-    	Intent i = new Intent(this, Dofetilide.class);
-    	startActivity(i);
-    }
-    
-    private void dabigatranCalculator() {
-    	Intent i = new Intent(this, Dabigatran.class);
-    	startActivity(i);	
-    }
     
     private void qtcCalculator() {
     	Intent i = new Intent(this, Qtc.class);
@@ -108,6 +103,30 @@ public class EpMobile extends EpListActivity {
     private void wctAlgorithm() {
     	Intent i = new Intent(this, WctAlgorithmList.class);
     	startActivity(i);
+    }
+    
+    private void normalEpValues() {
+    	Intent i = new Intent(this, NormalEpValues.class);
+    	startActivity(i);
+    }
+    
+    private void arvc() {
+    	Intent i = new Intent(this, Arvc.class);
+    	startActivity(i);
+    }
+    
+    private void shortQt() {
+    	Intent i = new Intent(this, ShortQt.class);
+    	startActivity(i);
+    }
+    
+    private void drugDoseCalculators() {
+    	Intent i = new Intent(this, DrugDoseCalculatorList.class);
+    	startActivity(i);
+    }
+
+    private void icdCalculator() {
+
     }
     
 }

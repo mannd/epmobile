@@ -1,3 +1,21 @@
+/*  EP Mobile -- Mobile tools for electrophysiologists
+    Copyright (C) 2011 EP Studios, Inc.
+    www.epstudiossoftware.com
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */   
+
 package org.epstudios.epmobile;
 
 import java.util.HashSet;
@@ -54,12 +72,6 @@ public class BrugadaMorphologyCriteria extends EpActivity implements OnClickList
 	private CheckBox[] lbbbCheckBox;
 	private CheckBox[] rbbbCheckBox;
 	
-//	private HashSet<int> lbbbV1Entries;
-//	
-//	private int[] lbbbV6Entries;
-//	private int[] rbbbV1Entries;
-//	private int[] rbbbV6Entries;
-
 	
 	private void setAdapters() {
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -67,11 +79,11 @@ public class BrugadaMorphologyCriteria extends EpActivity implements OnClickList
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		bbbSpinner.setAdapter(adapter);
 		itemListener = new OnItemSelectedListener() {
-			public void onItemSelected(AdapterView parent, View v,
+			public void onItemSelected(AdapterView<?> parent, View v,
 					int position, long id) {
 				updateBbbSelection();
 			}
-			public void onNothingSelected(AdapterView parent) {
+			public void onNothingSelected(AdapterView<?> parent) {
 				// do nothing
 			}
 		

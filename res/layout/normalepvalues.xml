@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+  <TableLayout android:layout_width="match_parent" android:layout_height="match_parent"
+  	android:stretchColumns="*">
+  	<TextView android:text="@string/basic_intervals_label" 
+  		android:background="@android:color/background_light"
+  		android:textColor="@android:color/black" 
+  		android:padding="3dip" />
+  	<TableRow>
+  	 	<TextView android:text="AH" 
+  	 		android:textColor="@color/green"
+  	 		android:padding="3dip" />
+  		<TextView android:text="50-125 msec"
+  			android:textColor="@color/yellow" 
+  			android:padding="3dip" 
+  			android:gravity="right" />
+  	</TableRow>
+  	<TableRow>
+  		<TextView android:text="HV" 
+  			android:textColor="@color/green" 
+  			android:padding="3dip" />
+  		<TextView android:text="35-55 msec" 
+  			android:textColor="@color/yellow" 
+  			android:padding="3dip" 
+  			android:gravity="right" />
+  	</TableRow>
+	<TableRow>
+		<TextView android:text="H duration" android:textColor="@color/green"
+			android:padding="3dip" />
+		<TextView android:text="10-25 msec" android:textColor="@color/yellow"
+			android:padding="3dip" android:gravity="right" />
+	</TableRow>
+  	<TextView android:text="@string/sinus_node_label" 
+  		android:background="@android:color/background_light"
+  		android:textColor="@android:color/black" 
+  		android:padding="3dip" />
+   	<TableRow>
+  	 	<TextView android:text="SACT" 
+  	 		android:textColor="@color/green"
+  	 		android:padding="3dip" />
+  		<TextView android:text="45-125 msec" 
+  			android:textColor="@color/yellow" 
+  			android:padding="3dip" 
+  			android:gravity="right" />
+  	</TableRow>
+   	<TableRow>
+  	 	<TextView android:text="CSNRT" 
+  	 		android:textColor="@color/green"
+  	 		android:padding="3dip" />
+  		<TextView android:text="&lt;550 msec" 
+  			android:textColor="@color/yellow" 
+  			android:padding="3dip" 
+  			android:gravity="right" />
+  	</TableRow> 
+    <TableRow>
+  	 	<TextView android:text="SRT/SCL%" 
+  	 		android:textColor="@color/green"
+  	 		android:padding="3dip" />
+  		<TextView android:text="&lt;150%" 
+  			android:textColor="@color/yellow" 
+  			android:padding="3dip" 
+  			android:gravity="right" />
+  	</TableRow>  	 	
+  	<TextView android:text="@string/refractory_periods_label"   		
+  		android:background="@android:color/background_light"
+  		android:textColor="@android:color/black" 
+  		android:padding="3dip" />
+   	<TableRow>
+  	 	<TextView android:text="Atrial ERP" 
+  	 		android:textColor="@color/green"
+  	 		android:padding="3dip" />
+  		<TextView android:text="170-300 msec" 
+  			android:textColor="@color/yellow" 
+  			android:padding="3dip" 
+  			android:gravity="right" />
+  	</TableRow>
+   	<TableRow>
+  	 	<TextView android:text="AV Node Block CL" 
+  	 		android:textColor="@color/green"
+  	 		android:padding="3dip" />
+  		<TextView android:text="500-350 msec" 
+  			android:textColor="@color/yellow" 
+  			android:padding="3dip" 
+  			android:gravity="right" />
+  	</TableRow>   	
+   	<TableRow>
+  	 	<TextView android:text="AV Node ERP" 
+  	 		android:textColor="@color/green"
+  	 		android:padding="3dip" />
+  		<TextView android:text="230-425 msec" 
+  			android:textColor="@color/yellow" 
+  			android:padding="3dip" 
+  			android:gravity="right" />
+  	</TableRow> 
+    <TableRow>
+  	 	<TextView android:text="AV Node FRP" 
+  	 		android:textColor="@color/green"
+  	 		android:padding="3dip" />
+  		<TextView android:text="330-525 msec" 
+  			android:textColor="@color/yellow" 
+  			android:padding="3dip" 
+  			android:gravity="right" />
+  	</TableRow> 
+   	<TableRow>
+  	 	<TextView android:text="HPS ERP" 
+  	 		android:textColor="@color/green"
+  	 		android:padding="3dip" />
+  		<TextView android:text="330-450 msec" 
+  			android:textColor="@color/yellow" 
+  			android:padding="3dip" 
+  			android:gravity="right" />
+  	</TableRow>
+   	<TableRow>
+  	 	<TextView android:text="Ventricular ERP" 
+  	 		android:textColor="@color/green"
+  	 		android:padding="3dip" />
+  		<TextView android:text="170-290 msec" 
+  			android:textColor="@color/yellow" 
+  			android:padding="3dip" 
+  			android:gravity="right" />
+  	</TableRow> 
+  	<TextView android:text="@string/normal_ep_values_reference" 
+  		android:padding="3dip" />
+  </TableLayout>
+</ScrollView>

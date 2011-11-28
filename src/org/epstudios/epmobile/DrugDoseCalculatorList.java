@@ -22,17 +22,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.AdapterView.OnItemClickListener;
 
-public class WctAlgorithmList extends EpListActivity {
+public class DrugDoseCalculatorList extends EpListActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-				R.array.wct_algorithm_list, android.R.layout.simple_list_item_1);
+				R.array.drug_calculator_list, android.R.layout.simple_list_item_1);
 		setListAdapter(adapter);
 		ListView lv = getListView();
 		lv.setTextFilterEnabled(true);
@@ -41,29 +41,31 @@ public class WctAlgorithmList extends EpListActivity {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				CharSequence selection = ((TextView) view).getText();
-				if (selection.equals(getString(R.string.brugada_wct_title)))
-					brugadaAlgorithm();
-				else if (selection.equals(getString(R.string.morphology_label)))
-					morphologyCriteria();
-				else if (selection.equals(getString(R.string.rwpt_title)))
-					ultraSimpleBrugadaAlgorithm();
+				if (selection.equals(getString(R.string.dabigatran_calculator_title)))
+					dabigatranCalculator();
+				else if (selection.equals(getString(R.string.dofetilide_calculator_title)))
+					dofetilideCalculator();
+				else if (selection.equals(getString(R.string.rivaroxaban_calculator_title)))
+					rivaroxabanCalculator();
 			}
 		});
 	}
 	
-	private void brugadaAlgorithm() {
-		Intent i = new Intent(this, Brugada.class);
-		startActivity(i);
-	}
-	
-	private void morphologyCriteria() {
-		Intent i = new Intent(this, WctMorphologyCriteria.class);
-		startActivity(i);
-	}
-	
-	private void ultraSimpleBrugadaAlgorithm() {
-		Intent i = new Intent(this, Rwpt.class);
-		startActivity(i);
-	}
+	  private void dabigatranCalculator() {
+	    	Intent i = new Intent(this, Dabigatran.class);
+	    	startActivity(i);	
+	    }
+	  
+	   private void dofetilideCalculator() {
+	    	Intent i = new Intent(this, Dofetilide.class);
+	    	startActivity(i);
+	    }
+	   
+	   private void rivaroxabanCalculator() {
+	    	Intent i = new Intent(this, Rivaroxaban.class);
+	    	startActivity(i);
+	    }
+	  
+	  
 
 }

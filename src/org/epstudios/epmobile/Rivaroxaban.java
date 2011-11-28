@@ -18,13 +18,20 @@
 
 package org.epstudios.epmobile;
 
-import android.os.Bundle;
+public class Rivaroxaban extends DrugCalculator {
 
-public class Rwpt  extends EpActivity {
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.rwpt);
+	protected int getDose(double crCl) {
+		if (crCl > 50)
+			return 20;
+		if (crCl >= 15)
+			return 15;
+		return 0;
 	}
-}
+	
+	@Override
+	protected String doseFrequency() {
+		return " mg daily\nwith evening meal";
+	}
 
+}

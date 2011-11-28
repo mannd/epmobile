@@ -1,0 +1,15 @@
+EP Mobile v0.7 Release Notes
+============================
+
+Changes since v0.6
+--------------------
+
+* Fixed alignment in WCT morphology figures.
+
+* Added Rivaroxaban Calculator. 
+
+* Added Short QT Syndrome Diagnosis  
+
+* Grouped drug dose calculators together.
+
+* Minor formatting changes and bug fixes.
