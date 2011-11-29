@@ -42,7 +42,7 @@ public class Chads extends RiskScore {
 		checkBox[4] = (CheckBox) findViewById(R.id.stroke);
 	}
 
-
+	@Override
 	protected void calculateResult() {
 		int result = 0;
 		for (int i = 0; i < checkBox.length; i++) {

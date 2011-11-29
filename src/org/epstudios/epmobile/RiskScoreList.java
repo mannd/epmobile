@@ -30,6 +30,8 @@ public class RiskScoreList extends EpListActivity {
 					chadsVascScore();
 				else if (selection.equals(getString(R.string.hasbled_title)))
 					hasBledScore();
+				else if (selection.equals(getString(R.string.hcm_title)))
+					hcmScore();
 			}
 		});
 	}
@@ -46,6 +48,11 @@ public class RiskScoreList extends EpListActivity {
 
 	private void chadsVascScore() {
 		Intent i = new Intent(this, ChadsVasc.class);
+		startActivity(i);
+	}
+	
+	private void hcmScore() {
+		Intent i = new Intent(this, Hcm.class);
 		startActivity(i);
 	}
 

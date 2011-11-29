@@ -60,5 +60,7 @@
 		</activity>
 		<activity android:name=".RiskScoreList" android:label="@string/risk_scores_title">
 		</activity>
+		<activity android:name=".Hcm" android:label="@string/hcm_title">
+		</activity>
     </application>
 </manifest>

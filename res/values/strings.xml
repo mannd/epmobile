@@ -326,7 +326,7 @@
 	<string name="risk_scores_title">Risk Scores</string>
 
 	<!-- HCM -->
-	<string name="hcm_title">Hypertrophic Cardiomyopathy</string>
+	<string name="hcm_title">HCM Sudden Death Risk Score</string>
 	<!-- Major risk factors -->
 	<string name="cardiac_arrest_label">Cardiac arrest (VF)</string>
 	<string name="spontaneous_vt_label">Spontaneous sustained VT</string>
@@ -339,14 +339,29 @@
 	<!-- afb_label -->
 	<string name="myocardial_ischemia_label">Myocardial ischemia</string>
 	<string name="lv_outflow_obstruction_label">LV outflow obstruction</string>
-	<string name="high_risk_mutation">High-risk mutation</string>
-	<string name="intense_phycical_exertion_label">Intense (competitive) physical exertion</string>
+	<string name="high_risk_mutation_label">High-risk mutation</string>
+	
+	<string name="hcm_highest_risk_sd_text">Survivors of cardiac arrest and patients
+	    with spontaneous sustained VT are considered at very high risk for SD and are
+	    generally considered to be ICD candidates</string>
+	<string name="hcm_high_risk_text">Patients with 2 or more major risk factors are
+	    considered at high risk and should be considered for ICD implantation.  </string>
+	<string name="hcm_intermediate_risk_text">Patients with 1 major risk factor are
+	    at intermediate risk of SD and recommendations should be individualized.
+	    Factors such as young age and minor risk
+	    factors should be considered.  ICD implantation can be considered depending
+	    on these factors.</string>
+	<string name="hcm_low_risk_text">Patients without any major risk factors are
+	    considered to be at low risk for SD and ICD implantation is not recommended.</string>
+	  
 	
 	<string name="hcm_key">VF = ventricular fibrillation.  VT = ventricular tachycardia.
 	    SD = unexpected sudden death.  Abnormal exercise BP = failure to augment and maintain systolic
 	    BP \u003e 25 mm Hg with exercise.</string>
-	<string name="hcm_reference">Reference: Maron B et al.  Eur Heart J 2003:1965.
-		http://eurheartj.oxfordjournals.org/content/24/21/1965.full.pdf+html</string>
+	<string name="hcm_reference">References: Maron B et al.  Eur Heart J 2003:1965.
+	    McKenna WJ et al. Heart 2002;87:169.
+	    http://heart.bmj.com/content/87/2/169.full
+		</string>
 		
 </resources>
 
