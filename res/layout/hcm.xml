@@ -33,6 +33,12 @@
             android:text="@string/family_hx_sd_label" />
                         
 		<CheckBox
+            android:id="@+id/unexplained_syncope"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/unexplained_syncope_label" />
+                        
+		<CheckBox
             android:id="@+id/lv_thickness"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -33,25 +33,28 @@ public class Hcm extends RiskScore {
 		View clearButton = findViewById(R.id.clear_button);
 		clearButton.setOnClickListener(this);
 
-		checkBox = new CheckBox[10];
+		checkBox = new CheckBox[11];
 		
 		// super bad
 		checkBox[0] = (CheckBox) findViewById(R.id.cardiac_arrest);
 		checkBox[1] = (CheckBox) findViewById(R.id.spontaneous_vt);
 		// major risks
 		checkBox[2] = (CheckBox) findViewById(R.id.family_hx_sd);
-		checkBox[3] = (CheckBox) findViewById(R.id.lv_thickness);
-		checkBox[4] = (CheckBox) findViewById(R.id.abnormal_exercise_bp);
-		checkBox[5] = (CheckBox) findViewById(R.id.nonsustained_vt);
+		checkBox[3] = (CheckBox) findViewById(R.id.unexplained_syncope);
+		checkBox[4] = (CheckBox) findViewById(R.id.lv_thickness);
+		checkBox[5] = (CheckBox) findViewById(R.id.abnormal_exercise_bp);
+		checkBox[6] = (CheckBox) findViewById(R.id.nonsustained_vt);
 		// minor risks
-		checkBox[6] = (CheckBox) findViewById(R.id.afb);
-		checkBox[7] = (CheckBox) findViewById(R.id.myocardial_ischemia);
-		checkBox[8] = (CheckBox) findViewById(R.id.lv_outflow_obstruction);
-		checkBox[9] = (CheckBox) findViewById(R.id.high_risk_mutation);
+		checkBox[7] = (CheckBox) findViewById(R.id.afb);
+		checkBox[8] = (CheckBox) findViewById(R.id.myocardial_ischemia);
+		checkBox[9] = (CheckBox) findViewById(R.id.lv_outflow_obstruction);
+		checkBox[10] = (CheckBox) findViewById(R.id.high_risk_mutation);
 	}
 	
 	final int HIGHEST_RISK_SCORE = 100;    // can't happen by calculation
 	int minor_risks;                       // need to keep this at class level
+	final int firstMajorRisk = 2;
+	final int firstMinorRisk = 7;
 	
 	@Override
 	protected void calculateResult() {
@@ -60,10 +63,10 @@ public class Hcm extends RiskScore {
 		if (checkBox[0].isChecked() || checkBox[1].isChecked())
 			result = HIGHEST_RISK_SCORE;  // CA or spont VT
 		else {
-			for (int i = 2; i < 6; ++i)
+			for (int i = firstMajorRisk; i < firstMinorRisk; ++i)
 				if (checkBox[i].isChecked())
 					result++;
-			for (int i = 6; i <= 9; ++i)
+			for (int i = firstMinorRisk; i < checkBox.length; ++i)
 				if (checkBox[i].isChecked())
 					minor_risks++;
 		}
