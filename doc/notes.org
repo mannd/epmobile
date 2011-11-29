@@ -99,7 +99,7 @@
 * Implementation
 ** Abstract base classes
 *** DONE For creatinine clearance based calculators
-*** For scores
+*** DONE For scores
 * Warfarin
   | Day  | Change1 | Change2 |
   | Sun  | 1 tab   | 1 tab   |
@@ -133,7 +133,6 @@
 *** separate_numbers_1
 ** Titles vs Labels
    Activities have titles, everything else has labels
-   
 * References
 ** RV dysplasia
    http://arvc.ca/arvc/info/i.php?ix=1&pag=3
@@ -294,3 +293,11 @@
      - Class IV excludes other indications
    - 
 
+* Unicode symbols
+  | Description             | Hex Code |
+  |-------------------------+----------|
+  | right pointing triangle | \u25b6   |
+  | <                       | \u003c   |
+  | >                       | \u003e   |
+  | ≤                       | \u2264   |
+  | ≥                       | \u2265   |

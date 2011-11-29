@@ -140,6 +140,7 @@
 	<string name="no">No</string>
 	<string name="back">Back</string>
 	<string name="morphology_label">Morphology Criteria</string>
+	<string name="morphology_title">@string/morphology_label</string>
 	<string name="broad_r">R &gt; 30 msec in V1 or V2</string>
 	<string name="broad_rs">Onset to nadir S &gt; 60 msec in V1 or V2</string>
 	<string name="notched_s">Notched or slurred S in V1 or V2</string>
@@ -324,5 +325,28 @@
 	<string name="risk_score_list_title">Risk Scores \u25B6</string>
 	<string name="risk_scores_title">Risk Scores</string>
 
+	<!-- HCM -->
+	<string name="hcm_title">Hypertrophic Cardiomyopathy</string>
+	<!-- Major risk factors -->
+	<string name="cardiac_arrest_label">Cardiac arrest (VF)</string>
+	<string name="spontaneous_vt_label">Spontaneous sustained VT</string>
+	<string name="family_hx_sd_label">Family history of premature SD</string>
+	<!--  unexplained_syncope_label-->
+	<string name="lv_thickness_label">LV thickness \u2265 30 mm</string>
+	<string name="abnormal_exercise_bp_label">Abnormal exercise BP</string>
+	<string name="nonsustained_vt_label">Nonsustained VT (Holter)</string>
+	<!-- Minor risk factors -->
+	<!-- afb_label -->
+	<string name="myocardial_ischemia_label">Myocardial ischemia</string>
+	<string name="lv_outflow_obstruction_label">LV outflow obstruction</string>
+	<string name="high_risk_mutation">High-risk mutation</string>
+	<string name="intense_phycical_exertion_label">Intense (competitive) physical exertion</string>
+	
+	<string name="hcm_key">VF = ventricular fibrillation.  VT = ventricular tachycardia.
+	    SD = unexpected sudden death.  Abnormal exercise BP = failure to augment and maintain systolic
+	    BP \u003e 25 mm Hg with exercise.</string>
+	<string name="hcm_reference">Reference: Maron B et al.  Eur Heart J 2003:1965.
+		http://eurheartj.oxfordjournals.org/content/24/21/1965.full.pdf+html</string>
+		
 </resources>
 

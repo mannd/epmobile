@@ -44,7 +44,7 @@ public class WctAlgorithmList extends EpListActivity {
 				CharSequence selection = ((TextView) view).getText();
 				if (selection.equals(getString(R.string.brugada_wct_title)))
 					brugadaAlgorithm();
-				else if (selection.equals(getString(R.string.morphology_label)))
+				else if (selection.equals(getString(R.string.morphology_title)))
 					morphologyCriteria();
 				else if (selection.equals(getString(R.string.rwpt_title)))
 					ultraSimpleBrugadaAlgorithm();
