@@ -75,7 +75,8 @@
 			android:hint="@string/weekly_dose_hint" android:inputType="numberDecimal" android:layout_weight="1"/>
 
 		<LinearLayout android:layout_width="match_parent"
-			android:id="@+id/linearLayout3" android:layout_height="wrap_content" android:layout_weight="1">
+			android:id="@+id/linearLayout3" android:layout_height="wrap_content" 
+			android:layout_weight="1">
 			<Button android:text="@string/calculate_label" android:id="@+id/calculate_dose_button"
 				android:layout_width="wrap_content" android:layout_height="wrap_content"
 				android:layout_weight="1" />
