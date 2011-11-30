@@ -238,7 +238,7 @@
      cardiomyopathy.
   4. Documented prior MI, EF <= 35%, and inducible sus VT or VF at
      EPS.  (MI more than 40 days pre-ICD, and EPS performed > 4 weeks
-     post MI.
+     post MI.)
   5. Documented prior MI and EF <= 30%
   6. ICM, documented prior MI, Class II or III HF, EF <= 35%.
   7. NICM, > 9 months, Class II or III HF, EF <= 35%.
@@ -247,7 +247,7 @@
   9. NICM > 3 months, Class II or III, and EF <= 35%.
 ** Exclusions
 *** Cardiogenic shock or symptomatic hypotension
-*** CABG or PCI withing past 3 months
+*** CABG or PCI within past 3 months
 *** Acute MI within 40 days
 *** Symptoms or findings that would make patient a candidate for revascularization
 *** Irreversible brain damage from preexisting cerebral disease

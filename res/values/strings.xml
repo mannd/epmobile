@@ -391,6 +391,16 @@
 	 <string name="icd_duration_cm_label>CM duration \u003c 3 months</string>
 	 <string name="icd_duration_cm_label>CM duration \u2265 3 months</string>
 	 <string name="icd_inducible_vt_label>Inducible sustained VT/VF at EPS</string>
+	 <string name="icd_qrs_duration_short_label">QRS duration \u003c 120 msec</string>
+	 <string name="icd_qrs_duration_long_label">QRS duration \u2265 120 msec</string>
+	 <string name="exclusions_label">Exclusions</string>
+	 <string name="icd_cardiogenic_shock_label">Cardiogenic shock or symptomatic hypotension</string>
+	 <string name="icd_recent_cabg_label">CABG or PCI within past 3 months</string>
+	 <string name="icd_recent_mi_label">Acute MI within past 40 days</string>
+	 <string name="icd_recent_mi_eps_label">EPS performed within 4 weeks post-MI</string>
+	 <string name="icd_revascularization_candidate_label">Symptoms or findings that would make patient a candidate for revascularization</string>
+	 <string name="icd_brain_damage_label">Irreversible brain damage from preexisting cerebral disease</string>
+	 <string name="icd_bad_prognosis_label">Non-cardiac disease with likelihood of survival \u003c 1 year</string>
 		
 </resources>
 
