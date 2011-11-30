@@ -2,8 +2,14 @@
 <resources>
 	<string name="app_name">EP Mobile</string>
 	<string name="about_text">EP Mobile is a package of
-		useful electrophysiology
+		useful cardiac electrophysiology
 		tools for your Android phone or tablet.
+		These tools are for reference purposes only
+		and are not meant to substitute for clinical judgment.
+		If you have suggestions or comments, please email us at
+		mannd@epstudiossoftware.com.  If you are interested in
+		supporting the development of this program with a small
+		donation, visit www.epstudiossoftware.com.
 		Copyright \u00a9 2011 EP Studios, Inc.
 		Licensed under GNU GPL v3.
   </string>
@@ -367,10 +373,24 @@
 	 <!-- ICD CMS criteria -->
 	 <string name="secondary_prevention_label">Secondary Prevention</string>
 	 <string name="icd_cardiac_arrest_label">Documented cardiac arrest, not due to transient or reversible cause</string>
-	 <string name="icd_sus_vt_label">Documented sustained VT or VF, either spontaneous or induced by EP study, not associated with an acute MI, 
+	 <string name="icd_sus_vt_label">Documented sustained VT/VF, either spontaneous or induced by EP study, not associated with an acute MI, 
 	     and not due to transient or reversible cause</string>
 	     
 	 <string name="primary_prevention_label">Primary Prevention</string>
+	 <string name="icd_familial_conditions_label">Documented familial or inheritied condition with a high risk of life-threatening VT, such as long QT syndrome or hypertrophic cardiomyopathy</string>
+	 <string name="icd_nonischemic_cm_label">Nonischemic cardiomyopathy</string>
+	 <string name="icd_ischemic_cm_label">Ischemic cardiomyopathy</string>
+	 <string name="icd_ef_gt_35_label">EF \u003e 35%</string>
+	 <string name="icd_ef_lt_35_label">EF \u2264 35%</string>
+	 <string name="icd_ef_lt_30_label">EF \u264 30%</string>
+	 <string name="icd_mi_label">Documented prior MI</string>
+	 <string name="icd_nyha1_label">NYHA class I</string>
+	 <string name="icd_nyha2_label">NYHA class II</string>
+	 <string name="icd_nyha3_label">NYHA class III</string>
+	 <string name="icd_nyha4_label">NHYA class IV</string>
+	 <string name="icd_duration_cm_label>CM duration \u003c 3 months</string>
+	 <string name="icd_duration_cm_label>CM duration \u2265 3 months</string>
+	 <string name="icd_inducible_vt_label>Inducible sustained VT/VF at EPS</string>
 		
 </resources>
 
