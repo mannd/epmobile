@@ -106,7 +106,8 @@ public class EpMobile extends EpListActivity {
 	}
 
 	private void icdCalculator() {
-
+		Intent i = new Intent(this, CmsIcd.class);
+		startActivity(i);
 	}
 
 	private void riskScores() {

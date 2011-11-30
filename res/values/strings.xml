@@ -289,7 +289,7 @@
 	<string name="dabigatran_warning_mild">Consider reducing dose of dabigatran to 75 mg twice a day 
 	    when dronederone or systemic ketoconazole is administered with dabigatran.</string>
 	<string name="rivaroxaban_calculator_title">Rivaroxaban Calculator</string>
-	<string name="icd_calculator_title">ICD CMS Criteria</string>
+	<string name="icd_calculator_title">CMS ICD Criteria</string>
 	
 
 	<string name="short_qt_title">Short QT Syndrome Diagnosis</string>
@@ -363,6 +363,14 @@
 	    McKenna WJ et al. Heart 2002;87:169.
 	    http://heart.bmj.com/content/87/2/169.full
 		</string>
+		
+	 <!-- ICD CMS criteria -->
+	 <string name="secondary_prevention_label">Secondary Prevention</string>
+	 <string name="icd_cardiac_arrest_label">Documented cardiac arrest, not due to transient or reversible cause</string>
+	 <string name="icd_sus_vt_label">Documented sustained VT or VF, either spontaneous or induced by EP study, not associated with an acute MI, 
+	     and not due to transient or reversible cause</string>
+	     
+	 <string name="primary_prevention_label">Primary Prevention</string>
 		
 </resources>
 

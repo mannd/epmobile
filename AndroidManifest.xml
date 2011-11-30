@@ -62,5 +62,7 @@
 		</activity>
 		<activity android:name=".Hcm" android:label="@string/hcm_title">
 		</activity>
+		<activity android:name=".CmsIcd" android:label="@string/icd_calculator_title">
+		</activity>
     </application>
 </manifest>
