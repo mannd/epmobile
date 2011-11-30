@@ -343,22 +343,23 @@
 	
 	<string name="hcm_highest_risk_sd_text">Survivors of cardiac arrest and patients
 	    with spontaneous sustained VT are considered at very high risk for SD and are
-	    generally considered to be ICD candidates</string>
+	    ICD candidates</string>
 	<string name="hcm_high_risk_text">Patients with 2 or more major risk factors are
-	    considered at high risk and should be considered for ICD implantation.  </string>
-	<string name="hcm_intermediate_risk_text">Patients with 1 major risk factor are
-	    at intermediate risk of SD and recommendations should be individualized.
-	    Factors such as young age and minor risk
+	    considered at high risk and should be considered for ICD implantation.</string>
+	<string name="hcm_intermediate_risk_text">Patients with 1 major risk factor have 
+	    increased risk for SD and recommendations should be individualized.
+	    Factors such as the nature of the risk factor (e.g. SD in an immediate family
+	    member with HCM), young age (which confers greater risk) and presence of minor risk
 	    factors should be considered.  ICD implantation can be considered depending
 	    on these factors.</string>
-	<string name="hcm_low_risk_text">Patients without any major risk factors are
-	    considered to be at low risk for SD and ICD implantation is not recommended.</string>
-	  
-	
-	<string name="hcm_key">VF = ventricular fibrillation.  VT = ventricular tachycardia.
+	<string name="hcm_low_risk_text">Patients without any major risk factors (even if
+	    minor risk factors are present) are considered to be at low risk for SD.
+	    ICD implantation is not recommended.</string>
+	<string name="hcm_key">BP = blood pressure. VF = ventricular fibrillation.  VT = ventricular tachycardia.
 	    SD = unexpected sudden death.  Abnormal exercise BP = failure to augment and maintain systolic
 	    BP \u003e 25 mm Hg with exercise.</string>
 	<string name="hcm_reference">References: Maron B et al.  Eur Heart J 2003:1965.
+	    http://eurheartj.oxfordjournals.org/content/24/21/1965.full
 	    McKenna WJ et al. Heart 2002;87:169.
 	    http://heart.bmj.com/content/87/2/169.full
 		</string>
