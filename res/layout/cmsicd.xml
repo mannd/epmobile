@@ -1,41 +1,204 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-	    android:layout_width="match_parent"
-	    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
 
-  <LinearLayout android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:orientation="vertical" >
-    <TextView android:text="@string/secondary_prevention_label"
-	      android:background="@android:color/background_light"
-	      android:textColor="@android:color/black" 
-	      android:layout_width="match_parent"
-	      android:layout_height="wrap_content" />
-    
-    <CheckBox android:id="@+id/icd_cardiac_arrest"
-	      android:text="@string/icd_cardiac_arrest_label" 
-	      android:layout_width="wrap_content"
-	      android:layout_height="wrap_content" />
-    <CheckBox android:id="@+id/icd_sus_vt" 
-	      android:text="@string/icd_sus_vt_label"
-	      android:layout_width="wrap_content" 
-	      android:layout_height="wrap_content" />
-    
-    <LinearLayout android:layout_width="match_parent"
-		  android:id="@+id/linearLayout3" 
-		  android:layout_height="wrap_content">
-      <Button android:id="@+id/calculate_button" 
-	      android:text="@string/calculate_label"
-	      android:layout_width="wrap_content" 
-	      android:layout_height="wrap_content" />
-      <Button android:id="@+id/clear_button" 
-	      android:text="@string/clear_label"
-	      android:layout_width="wrap_content" 
-	      android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/background_light"
+            android:text="@string/secondary_prevention_label"
+            android:textColor="@android:color/black" />
+
+        <CheckBox
+            android:id="@+id/icd_cardiac_arrest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/icd_cardiac_arrest_label" />
+
+        <CheckBox
+            android:id="@+id/icd_sus_vt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/icd_sus_vt_label" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/background_light"
+            android:text="@string/primary_prevention_label"
+            android:textColor="@android:color/black" />
+
+        <CheckBox
+            android:id="@+id/icd_familial_conditions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/icd_familial_conditions_label" />
+
+        <CheckBox
+            android:id="@+id/icd_ischemic_cm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/icd_ischemic_cm_label" />
+
+        <CheckBox
+            android:id="@+id/icd_nonischemic_cm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/icd_nonischemic_cm_label" />
+
+        <RadioGroup
+            android:id="@+id/icd_ef_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <RadioButton
+                android:id="@+id/icd_ef_gt_35"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/icd_ef_gt_35_label" >
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/icd_ef_lt_35"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/icd_ef_lt_35_label" >
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/icd_ef_lt_30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/icd_ef_lt_30_label" >
+            </RadioButton>
+        </RadioGroup>
+
+        <CheckBox
+            android:id="@+id/icd_long_duration_cm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/icd_long_duration_cm_label" />
+        
+        <CheckBox
+            android:id="@+id/icd_mi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/icd_mi_label" />
+        
+       <RadioGroup
+            android:id="@+id/icd_nyha_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <RadioButton
+                android:id="@+id/icd_nyha1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/icd_nyha1_label" >
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/icd_nyha2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/icd_nyha2_label" >
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/icd_nyha3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/icd_nyha3_label" >
+            </RadioButton>
+            
+           <RadioButton
+                android:id="@+id/icd_nyha4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/icd_nyha4_label" >
+            </RadioButton>                
+        </RadioGroup>        
+        
+      	<CheckBox
+            android:id="@+id/icd_qrs_duration_long"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/icd_qrs_duration_long_label" />
+      	
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/background_light"
+            android:text="@string/exclusions_label"
+            android:textColor="@android:color/black" />    
+            
+      	<CheckBox
+            android:id="@+id/icd_cardiogenic_shock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/icd_cardiogenic_shock_label" />
+
+        <CheckBox
+            android:id="@+id/icd_recent_cabg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/icd_recent_cabg_label" />
+
+        <CheckBox
+            android:id="@+id/icd_recent_mi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/icd_recent_mi_label" />
+
+        <CheckBox
+            android:id="@+id/icd_recent_mi_eps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/icd_recent_mi_eps_label" />
+
+        <CheckBox
+            android:id="@+id/icd_revascularization_candidate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/icd_revascularization_candidate_label" />
+      	 
+        <CheckBox
+            android:id="@+id/icd_bad_prognosis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/icd_bad_prognosis_label" />
+
+        <CheckBox
+            android:id="@+id/icd_brain_damage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/icd_brain_damage_label" />
+      	         
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/calculate_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/calculate_label" />
+
+            <Button
+                android:id="@+id/clear_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/clear_label" />
+        </LinearLayout>
     </LinearLayout>
-    
-  </LinearLayout>
-
-  
 
 </ScrollView>
