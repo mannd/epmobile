@@ -401,6 +401,22 @@
 	 <string name="icd_revascularization_candidate_label">Symptoms or findings that would make patient a candidate for revascularization</string>
 	 <string name="icd_brain_damage_label">Irreversible brain damage from preexisting cerebral disease</string>
 	 <string name="icd_bad_prognosis_label">Non-cardiac disease with likelihood of survival \u003c 1 year</string>
+	 
+	 <string name="icd_approved_text">ICD implantation is CMS approved.</string>
+	 <string name="icd_class1_indication">Class I indication by HRS guidelines.</string>
+	 
+	 <string name="cms_icd_instructions">Select the indications that apply to the patient.
+	     Be as complete as possible.  Calculate button will show whether the patient meets
+	     CMS guidelines for Medicare reimbursement, and will show how the patient
+	     fits into AHA/ACC/HRS guidelines.  Note that these two sets of guidelines
+	     do not overlap completely, and it appears that CMS will base its decisions
+	     on its own guidelines alone.  Although unstated in CMS guidelines, patients
+	     considered for primary prevention ICDs should be on stable, optimal medical
+	     therapy for left venticular dysfunction.</string>
+	 <string name="cms_icd_references">References: Center for Medicaid and Medicare Services, 
+	     National Coverage Determination Manual, Chapter 1, Part 1, Section 20.4.
+	     ACC/AHA/HRS guidelines: http://content.onlinejacc.org/cgi/content/short/j.jacc.2008.02.033
+	     </string>
 		
 </resources>
 
