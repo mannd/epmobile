@@ -85,14 +85,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/icd_long_duration_cm_label" />
-        
+
         <CheckBox
             android:id="@+id/icd_mi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/icd_mi_label" />
-        
-       <RadioGroup
+
+        <CheckBox
+            android:id="@+id/icd_inducible_vt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/icd_inducible_vt_label" />
+
+        <RadioGroup
             android:id="@+id/icd_nyha_radio_group"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
@@ -118,29 +124,29 @@
                 android:layout_height="wrap_content"
                 android:text="@string/icd_nyha3_label" >
             </RadioButton>
-            
-           <RadioButton
+
+            <RadioButton
                 android:id="@+id/icd_nyha4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/icd_nyha4_label" >
-            </RadioButton>                
-        </RadioGroup>        
-        
-      	<CheckBox
+            </RadioButton>
+        </RadioGroup>
+
+        <CheckBox
             android:id="@+id/icd_qrs_duration_long"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/icd_qrs_duration_long_label" />
-      	
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/background_light"
             android:text="@string/exclusions_label"
-            android:textColor="@android:color/black" />    
-            
-      	<CheckBox
+            android:textColor="@android:color/black" />
+
+        <CheckBox
             android:id="@+id/icd_cardiogenic_shock"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -169,7 +175,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/icd_revascularization_candidate_label" />
-      	 
+
         <CheckBox
             android:id="@+id/icd_bad_prognosis"
             android:layout_width="wrap_content"
@@ -181,7 +187,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/icd_brain_damage_label" />
-      	         
+
         <LinearLayout
             android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
@@ -198,20 +204,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/clear_label" />
-            
-			<Button
+
+            <Button
                 android:id="@+id/instructions_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/instructions_label" />
-            
-           
         </LinearLayout>
-        <TextView  
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/cms_icd_references"
-            android:autoLink="web" >
+            android:autoLink="web"
+            android:text="@string/cms_icd_references" >
         </TextView>
     </LinearLayout>
 

@@ -133,6 +133,13 @@
 *** separate_numbers_1
 ** Titles vs Labels
    Activities have titles, everything else has labels
+* Eclipse set up
+** Android 4 SDK
+** Window->Preferences->Android->Editors->Format on Save
+** Window->Preferences->Android->Java->Editor->Perform selected actions on save
+*** Format Source code -> Format all lines
+** Project->Properties->Android->Project Build Target Android 4.0
+** 
 * References
 ** RV dysplasia
    http://arvc.ca/arvc/info/i.php?ix=1&pag=3

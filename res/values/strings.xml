@@ -383,19 +383,24 @@
     <string name="icd_revascularization_candidate_label">Symptoms or findings that would make patient a candidate for revascularization</string>
     <string name="icd_brain_damage_label">Irreversible brain damage from preexisting cerebral disease</string>
     <string name="icd_bad_prognosis_label">Non-cardiac disease with likelihood of survival \u003c 1 year</string>
-    <string name="icd_approved_text">ICD implantation is CMS approved.</string>
-    <string name="icd_class1_indication">Class I indication by HRS guidelines.</string>
+    <string name="icd_no_ef_or_nyha_message">Invalid. You must select an EF and
+        NYHA class.</string>
+    <string name="icd_approved_text">ICD implantation meets CMS guidelines.</string>
+    <string name="icd_not_approved_text">ICD implantation does NOT meet CMS guidelines.</string>
+    <string name="post_mi_time_exclusion">ICD implantation is too soon post MI.</string>
+    <string name="absolute_exclusion">ICD implantation has absolute exclusion.</string>
+    <string name="brain_damage_exclusion">Irreversible brain damage is an absolute exclusion for ICD implantation
+        according the CMS NCD.</string>
+    <string name="post_revascularization_exclusion">ICD implantation is too soon post myocardial revascularization.</string>
     <string name="cms_icd_instructions">Select the indications that apply to the patient.
 	     Be as complete as possible.  Calculate button will show whether the patient meets
-	     CMS guidelines for Medicare reimbursement, and will show how the patient
-	     fits into AHA/ACC/HRS guidelines.  Note that these two sets of guidelines
-	     do not overlap completely, and it appears that CMS will base its decisions
-	     on its own guidelines alone.  Although unstated in CMS guidelines, patients
+	     CMS guidelines for Medicare reimbursement.  Although unstated in CMS guidelines, patients
 	     considered for primary prevention ICDs should be on stable, optimal medical
-	     therapy for left venticular dysfunction.</string>
-    <string name="cms_icd_references">References: Center for Medicaid and Medicare Services, 
+	     therapy for left ventricular dysfunction.  Note also that the CMS NCD makes a distinction
+	     between EP testing performed for suspected VT (e.g. in a patient with syncope) in Guideline #2
+	     and EP testing performed for risk stratification (e.g. as in MADIT), which is Guideline #4.</string>
+    <string name="cms_icd_references">Reference: Center for Medicaid and Medicare Services, 
 	     National Coverage Determination Manual, Chapter 1, Part 1, Section 20.4.
-	     ACC/AHA/HRS guidelines: http://content.onlinejacc.org/cgi/content/short/j.jacc.2008.02.033
 	     </string>
 
 </resources>

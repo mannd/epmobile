@@ -20,7 +20,7 @@ public class CmsIcd extends RiskScore {
 		View instructionsButton = findViewById(R.id.instructions_button);
 		instructionsButton.setOnClickListener(this);
 
-		checkBox = new CheckBox[15];
+		checkBox = new CheckBox[16];
 
 		checkBox[0] = (CheckBox) findViewById(R.id.icd_cardiac_arrest);
 		checkBox[1] = (CheckBox) findViewById(R.id.icd_sus_vt);
@@ -29,22 +29,23 @@ public class CmsIcd extends RiskScore {
 		checkBox[4] = (CheckBox) findViewById(R.id.icd_nonischemic_cm);
 		checkBox[5] = (CheckBox) findViewById(R.id.icd_long_duration_cm);
 		checkBox[6] = (CheckBox) findViewById(R.id.icd_mi);
-		checkBox[7] = (CheckBox) findViewById(R.id.icd_qrs_duration_long);
+		checkBox[7] = (CheckBox) findViewById(R.id.icd_inducible_vt);
+		checkBox[8] = (CheckBox) findViewById(R.id.icd_qrs_duration_long);
 		// exclusions
-		checkBox[8] = (CheckBox) findViewById(R.id.icd_cardiogenic_shock);
-		checkBox[9] = (CheckBox) findViewById(R.id.icd_recent_cabg);
-		checkBox[10] = (CheckBox) findViewById(R.id.icd_recent_mi);
-		checkBox[11] = (CheckBox) findViewById(R.id.icd_recent_mi_eps);
-		checkBox[12] = (CheckBox) findViewById(R.id.icd_revascularization_candidate);
-		checkBox[13] = (CheckBox) findViewById(R.id.icd_bad_prognosis);
-		checkBox[14] = (CheckBox) findViewById(R.id.icd_brain_damage);
-		
+		checkBox[9] = (CheckBox) findViewById(R.id.icd_cardiogenic_shock);
+		checkBox[10] = (CheckBox) findViewById(R.id.icd_recent_cabg);
+		checkBox[11] = (CheckBox) findViewById(R.id.icd_recent_mi);
+		checkBox[12] = (CheckBox) findViewById(R.id.icd_recent_mi_eps);
+		checkBox[13] = (CheckBox) findViewById(R.id.icd_revascularization_candidate);
+		checkBox[14] = (CheckBox) findViewById(R.id.icd_bad_prognosis);
+		checkBox[15] = (CheckBox) findViewById(R.id.icd_brain_damage);
+
 		efRadioGroup = (RadioGroup) findViewById(R.id.icd_ef_radio_group);
 		nyhaRadioGroup = (RadioGroup) findViewById(R.id.icd_nyha_radio_group);
-		
+
 		clearEntries();
 	}
-	
+
 	private static final int CARDIAC_ARREST = 0;
 	private static final int SUS_VT = 1;
 	private static final int FAMILIAL_CONDITION = 2;
@@ -52,25 +53,36 @@ public class CmsIcd extends RiskScore {
 	private static final int NONISCHEMIC_CM = 4;
 	private static final int LONG_DURATION_CM = 5;
 	private static final int MI = 6;
-	private static final int QRS_DURATION_LONG = 7;
-	private static final int CARDIOGENIC_SHOCK = 8;
-	private static final int RECENT_CABG = 9;
-	private static final int RECENT_MI = 10;
-	private static final int RECENT_MI_EPS = 11;
-	private static final int REVASCULARIZATION_CANDIDATE = 12;
-	private static final int BAD_PROGNOSIS = 13;
-	private static final int BRAIN_DAMAGE = 14;
-	
+	private static final int INDUCIBLE_VT = 7;
+	private static final int QRS_DURATION_LONG = 8;
+	private static final int CARDIOGENIC_SHOCK = 9;
+	private static final int RECENT_CABG = 10;
+	private static final int RECENT_MI = 11;
+	private static final int RECENT_MI_EPS = 12;
+	private static final int REVASCULARIZATION_CANDIDATE = 13;
+	private static final int BAD_PROGNOSIS = 14;
+	private static final int BRAIN_DAMAGE = 15;
+	private static final int ABSOLUTE_EXCLUSION = 100;
+
 	private RadioGroup efRadioGroup;
 	private RadioGroup nyhaRadioGroup;
-	
+
+	private static final int EF_GT_35 = 0;
+	private static final int EF_LT_35 = 1;
+	private static final int EF_LT_30 = 2;
+
+	private static final int NYHA_I = 0;
+	private static final int NYHA_II = 1;
+	private static final int NYHA_III = 2;
+	private static final int NYHA_IV = 3;
+
 	@Override
 	public void onClick(View v) {
 		super.onClick(v);
 		if (v.getId() == R.id.instructions_button)
 			displayInstructions();
 	}
-	
+
 	private void displayInstructions() {
 		AlertDialog dialog = new AlertDialog.Builder(this).create();
 		String message = getString(R.string.cms_icd_instructions);
@@ -82,24 +94,74 @@ public class CmsIcd extends RiskScore {
 	@Override
 	protected void calculateResult() {
 		int result = -1;
-		if (checkBox[CARDIAC_ARREST].isChecked())
+		// according to NCD, brain damage excludes all indications
+		if (checkBox[BRAIN_DAMAGE].isChecked())
+			result = BRAIN_DAMAGE;
+		else if (checkBox[CARDIAC_ARREST].isChecked())
 			result = CARDIAC_ARREST;
 		else if (checkBox[SUS_VT].isChecked())
 			result = SUS_VT;
+		else if (absoluteExclusion())
+			result = ABSOLUTE_EXCLUSION;
+		else if (checkBox[FAMILIAL_CONDITION].isChecked())
+			result = FAMILIAL_CONDITION;
 		displayResult(result);
+	}
+
+	private Boolean absoluteExclusion() {
+		return checkBox[CARDIOGENIC_SHOCK].isChecked()
+				|| checkBox[REVASCULARIZATION_CANDIDATE].isChecked()
+				|| checkBox[BAD_PROGNOSIS].isChecked();
 	}
 
 	@Override
 	protected String getResultMessage(int result) {
 		String message = "";
-		switch (result) {
-		case CARDIAC_ARREST:
-		case SUS_VT:
-			message = getString(R.string.icd_approved_text);
-			message += "\n" + getString(R.string.icd_class1_indication);
-			break;
-			
+		if (result == BRAIN_DAMAGE) {
+			message += getString(R.string.icd_not_approved_text);
+			message += "\n" + getString(R.string.brain_damage_exclusion);
+			return message;
 		}
+		// no ef or NYHA class needed for secondary prevention
+		if (result == CARDIAC_ARREST || result == SUS_VT) {
+			message = getString(R.string.secondary_prevention_label);
+			message += "\n" + getString(R.string.icd_approved_text);
+			return message;
+		}
+		message = getString(R.string.primary_prevention_label) + "\n";
+		// check absolute exclusions since they apply to all other indications
+		if (result == ABSOLUTE_EXCLUSION) {
+			message += getString(R.string.icd_not_approved_text);
+			message += "\n" + getString(R.string.absolute_exclusion);
+			return message;
+		}
+		if (result == FAMILIAL_CONDITION) {
+			message += getString(R.string.icd_approved_text);
+			return message;
+		}
+		// primary prevention except for familial condition needs ef and NYHA
+		// class
+		if (efRadioGroup.getCheckedRadioButtonId() < 0
+				|| nyhaRadioGroup.getCheckedRadioButtonId() < 0) {
+			message = getString(R.string.icd_no_ef_or_nyha_message);
+			return message;
+		}
+		Boolean indicated = false;
+		if (efRadioGroup.getCheckedRadioButtonId() == 1) {
+
+		}
+		if (indicated) {
+			if (checkBox[RECENT_MI].isChecked()
+					|| checkBox[RECENT_MI_EPS].isChecked()) {
+				message += getString(R.string.icd_not_approved_text);
+				message += getString(R.string.post_mi_time_exclusion);
+			} else if (checkBox[RECENT_CABG].isChecked()) {
+				message += getString(R.string.icd_not_approved_text);
+				message += getString(R.string.post_revascularization_exclusion);
+			} else
+				message += "\n" + getString(R.string.icd_approved_text);
+		} else
+			message += "\n" + getString(R.string.icd_not_approved_text);
 		return message;
 	}
 
@@ -107,13 +169,13 @@ public class CmsIcd extends RiskScore {
 	protected String getDialogTitle() {
 		return getString(R.string.icd_calculator_title);
 	}
-	
+
 	@Override
 	protected void clearEntries() {
 		super.clearEntries();
 		efRadioGroup.clearCheck();
 		nyhaRadioGroup.clearCheck();
-		
+
 	}
 
 }
