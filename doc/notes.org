@@ -291,8 +291,17 @@
    - If indicated by too soon, say so
    - CRT indication only enters into Class IV CHF
      - Class IV excludes other indications
-   - 
-
+** Additional info
+   - ACC/AHA/HRS indication
+   - cite which CMS indication it falls under
+   - button to list CMS indications
+   - button to list AHA indications
+   - change module to ICD indications?
+   - maybe separate modules for CMS, AHA?
+   - show study that supports each indication
+     - AVID
+     - MADIT II
+     - etc.
 * Unicode symbols
   |-------------------------+----------|
   | Description             | Hex Code |
