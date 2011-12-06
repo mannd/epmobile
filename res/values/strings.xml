@@ -387,6 +387,8 @@
         NYHA class.</string>
     <string name="icd_approved_text">ICD implantation meets CMS guidelines.</string>
     <string name="icd_not_approved_text">ICD implantation does NOT meet CMS guidelines.</string>
+    <string name="crt_approved_text">Use of a CRT device may also be indicated.  See "Instructions" for
+        further information.</string>
     <string name="post_mi_time_exclusion">ICD implantation is too soon post MI.</string>
     <string name="absolute_exclusion">ICD implantation has absolute exclusion.</string>
     <string name="brain_damage_exclusion">Irreversible brain damage is an absolute exclusion for ICD implantation
@@ -398,7 +400,10 @@
 	     considered for primary prevention ICDs should be on stable, optimal medical
 	     therapy for left ventricular dysfunction.  Note also that the CMS NCD makes a distinction
 	     between EP testing performed for suspected VT (e.g. in a patient with syncope) in Guideline #2
-	     and EP testing performed for risk stratification (e.g. as in MADIT), which is Guideline #4.</string>
+	     and EP testing performed for risk stratification (e.g. as in MADIT), which is Guideline #4.
+	     The CMS NCD does not cover approval of CRT devices.  
+	     CRT device approval is subject to Local Coverage Documents and
+        local payers.  Note also that some locales may require QRS duration \u2265 130 msec for CRT coverage.</string>
     <string name="cms_icd_references">Reference: Center for Medicaid and Medicare Services, 
 	     National Coverage Determination Manual, Chapter 1, Part 1, Section 20.4.
 	     </string>
