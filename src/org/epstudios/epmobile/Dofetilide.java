@@ -14,7 +14,7 @@
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */   
+ */
 
 package org.epstudios.epmobile;
 
@@ -31,5 +31,9 @@ public class Dofetilide extends DrugCalculator {
 		return 0;
 	}
 
-}
+	@Override
+	protected String doseFrequency() {
+		return " mcg BID";
+	}
 
+}
