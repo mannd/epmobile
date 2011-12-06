@@ -31,4 +31,9 @@ public class Dofetilide extends DrugCalculator {
 		return 0;
 	}
 
+	@Override
+	protected String doseFrequency() {
+		return " mcg BID";
+	}
+
 }

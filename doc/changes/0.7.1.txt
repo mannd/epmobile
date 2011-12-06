@@ -1,0 +1,7 @@
+EP Mobile v0.7.1 Release Notes
+============================
+
+Changes since v0.7
+------------------
+
+* Bug fix: fixed dofetilide dosing units from mg to mcg.  This was a regression with version 0.7 and was correct in earlier versions.
