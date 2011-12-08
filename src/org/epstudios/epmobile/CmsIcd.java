@@ -63,18 +63,12 @@ public class CmsIcd extends RiskScore {
 	private static final int BAD_PROGNOSIS = 14;
 	private static final int BRAIN_DAMAGE = 15;
 	private static final int ABSOLUTE_EXCLUSION = 100;
+	private static final int POSSIBLE_INDICATION = 200;
+
+	private static final String CR = "\n";
 
 	private RadioGroup efRadioGroup;
 	private RadioGroup nyhaRadioGroup;
-
-	private static final int EF_GT_35 = 0;
-	private static final int EF_LT_35 = 1;
-	private static final int EF_LT_30 = 2;
-
-	private static final int NYHA_I = 0;
-	private static final int NYHA_II = 1;
-	private static final int NYHA_III = 2;
-	private static final int NYHA_IV = 3;
 
 	@Override
 	public void onClick(View v) {
@@ -105,6 +99,8 @@ public class CmsIcd extends RiskScore {
 			result = ABSOLUTE_EXCLUSION;
 		else if (checkBox[FAMILIAL_CONDITION].isChecked())
 			result = FAMILIAL_CONDITION;
+		else
+			result = POSSIBLE_INDICATION;
 		displayResult(result);
 	}
 
@@ -119,20 +115,31 @@ public class CmsIcd extends RiskScore {
 		String message = "";
 		if (result == BRAIN_DAMAGE) {
 			message += getString(R.string.icd_not_approved_text);
-			message += "\n" + getString(R.string.brain_damage_exclusion);
+			message += CR + getString(R.string.brain_damage_exclusion);
 			return message;
 		}
+		// need EF and NYHA for possible CRT with Secondary indication
+		Boolean efLessThan30 = efRadioGroup.getCheckedRadioButtonId() == R.id.icd_ef_lt_30;
+		Boolean efLessThan35 = efLessThan30
+				|| efRadioGroup.getCheckedRadioButtonId() == R.id.icd_ef_lt_35;
+		Boolean nyhaIIorIII = nyhaRadioGroup.getCheckedRadioButtonId() == R.id.icd_nyha2
+				|| nyhaRadioGroup.getCheckedRadioButtonId() == R.id.icd_nyha3;
+		Boolean nyhaIIIorIV = nyhaRadioGroup.getCheckedRadioButtonId() == R.id.icd_nyha3
+				|| nyhaRadioGroup.getCheckedRadioButtonId() == R.id.icd_nyha4;
 		// no ef or NYHA class needed for secondary prevention
 		if (result == CARDIAC_ARREST || result == SUS_VT) {
 			message = getString(R.string.secondary_prevention_label);
-			message += "\n" + getString(R.string.icd_approved_text);
+			message += CR + getString(R.string.icd_approved_text);
+			if (efLessThan35 && nyhaIIIorIV
+					&& checkBox[QRS_DURATION_LONG].isChecked())
+				message += CR + getString(R.string.crt_approved_text);
 			return message;
 		}
-		message = getString(R.string.primary_prevention_label) + "\n";
+		message = getString(R.string.primary_prevention_label) + CR;
 		// check absolute exclusions since they apply to all other indications
 		if (result == ABSOLUTE_EXCLUSION) {
 			message += getString(R.string.icd_not_approved_text);
-			message += "\n" + getString(R.string.absolute_exclusion);
+			message += CR + getString(R.string.absolute_exclusion);
 			return message;
 		}
 		if (result == FAMILIAL_CONDITION) {
@@ -140,28 +147,67 @@ public class CmsIcd extends RiskScore {
 			return message;
 		}
 		// primary prevention except for familial condition needs ef and NYHA
-		// class
+		// class (because NYHA class IV is an exclusion except for CRT)
 		if (efRadioGroup.getCheckedRadioButtonId() < 0
-				|| nyhaRadioGroup.getCheckedRadioButtonId() < 0) {
+				&& nyhaRadioGroup.getCheckedRadioButtonId() < 0) {
 			message = getString(R.string.icd_no_ef_or_nyha_message);
 			return message;
 		}
-		Boolean indicated = false;
-		if (efRadioGroup.getCheckedRadioButtonId() == 1) {
-
+		if (efRadioGroup.getCheckedRadioButtonId() < 0) {
+			message = getString(R.string.icd_no_ef_message);
+			return message;
 		}
+		if (nyhaRadioGroup.getCheckedRadioButtonId() < 0) {
+			message = getString(R.string.icd_no_nyha_message);
+			return message;
+		}
+		// Now work out possible indications
+		Boolean indicated = false;
+
+		// MADIT II
+		indicated = efLessThan30 && checkBox[ISCHEMIC_CM].isChecked()
+				&& checkBox[MI].isChecked();
+		// MADIT
+		Boolean maditIndication = false;
+		if (!indicated) {
+			indicated = efLessThan35 && checkBox[MI].isChecked()
+					&& checkBox[INDUCIBLE_VT].isChecked();
+			if (indicated)
+				maditIndication = true;
+		}
+		// SCD-Heft Ischemic CM
+		if (!indicated)
+			indicated = efLessThan35 && checkBox[ISCHEMIC_CM].isChecked()
+					&& nyhaIIorIII;
+		// SCD-Heft Nonischemic CM
+		if (!indicated)
+			indicated = efLessThan35 && checkBox[NONISCHEMIC_CM].isChecked()
+					&& nyhaIIorIII && checkBox[LONG_DURATION_CM].isChecked();
+		// Class IV CHF
+		if (!indicated)
+			indicated = checkBox[QRS_DURATION_LONG].isChecked()
+					&& nyhaRadioGroup.getCheckedRadioButtonId() == R.id.icd_nyha4;
 		if (indicated) {
-			if (checkBox[RECENT_MI].isChecked()
-					|| checkBox[RECENT_MI_EPS].isChecked()) {
+			if (checkBox[RECENT_MI].isChecked()) {
 				message += getString(R.string.icd_not_approved_text);
-				message += getString(R.string.post_mi_time_exclusion);
+				message += CR + getString(R.string.post_mi_time_exclusion);
+				indicated = false;
+			} else if (maditIndication && checkBox[RECENT_MI_EPS].isChecked()) {
+				message += getString(R.string.icd_not_approved_text);
+				message += CR + getString(R.string.post_mi_early_eps_exclusion);
+				indicated = false;
 			} else if (checkBox[RECENT_CABG].isChecked()) {
 				message += getString(R.string.icd_not_approved_text);
-				message += getString(R.string.post_revascularization_exclusion);
+				message += CR
+						+ getString(R.string.post_revascularization_exclusion);
+				indicated = false;
 			} else
-				message += "\n" + getString(R.string.icd_approved_text);
+				message += getString(R.string.icd_approved_text);
 		} else
-			message += "\n" + getString(R.string.icd_not_approved_text);
+			message += getString(R.string.icd_not_approved_text);
+		// CRT
+		if (indicated && checkBox[QRS_DURATION_LONG].isChecked() && nyhaIIIorIV)
+			message += CR + getString(R.string.crt_approved_text);
 		return message;
 	}
 

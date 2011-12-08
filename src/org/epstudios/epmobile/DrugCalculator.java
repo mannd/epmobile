@@ -7,12 +7,12 @@ import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.AdapterView.OnItemSelectedListener;
 
 public abstract class DrugCalculator extends EpActivity implements
 		OnClickListener {
@@ -177,7 +177,7 @@ public abstract class DrugCalculator extends EpActivity implements
 		// returns basic creatinine clearance
 		// override for drug-specific message
 		return getString(R.string.creatine_clearance_label) + " = "
-				+ String.valueOf(crCl);
+				+ String.valueOf(crCl) + " ml/min";
 	}
 
 	abstract protected int getDose(double crCl);

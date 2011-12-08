@@ -282,6 +282,7 @@
     <string name="dabigatran_warning_mild">Consider reducing dose of dabigatran to 75 mg twice a day 
 	    when dronederone or systemic ketoconazole is administered with dabigatran.</string>
     <string name="rivaroxaban_calculator_title">Rivaroxaban Calculator</string>
+    <string name="rivaroxaban_dosing_message">"Take dose with evening meal."</string>
     <string name="icd_calculator_title">CMS ICD Criteria</string>
     <string name="short_qt_title">Short QT Syndrome Diagnosis</string>
     <string name="qtc_label">QTc Interval</string>
@@ -354,11 +355,11 @@
 		</string>
 
     <!-- ICD CMS criteria -->
-    <string name="secondary_prevention_label">Secondary Prevention</string>
-    <string name="icd_cardiac_arrest_label">Documented cardiac arrest, not due to transient or reversible cause</string>
+    <string name="secondary_prevention_label">Secondary Prevention.</string>
+    <string name="icd_cardiac_arrest_label">Documented cardiac arrest, without transient or reversible cause</string>
     <string name="icd_sus_vt_label">Documented sustained VT/VF, either spontaneous or induced by EP study, not associated with an acute MI, 
-	     and not due to transient or reversible cause</string>
-    <string name="primary_prevention_label">Primary Prevention</string>
+	     without transient or reversible cause</string>
+    <string name="primary_prevention_label">Primary Prevention.</string>
     <string name="icd_familial_conditions_label">Documented familial or inheritied condition with a high risk of life-threatening VT, such as long QT syndrome or hypertrophic cardiomyopathy</string>
     <string name="icd_nonischemic_cm_label">Nonischemic cardiomyopathy</string>
     <string name="icd_ischemic_cm_label">Ischemic cardiomyopathy</string>
@@ -385,27 +386,38 @@
     <string name="icd_bad_prognosis_label">Non-cardiac disease with likelihood of survival \u003c 1 year</string>
     <string name="icd_no_ef_or_nyha_message">Invalid. You must select an EF and
         NYHA class.</string>
-    <string name="icd_approved_text">ICD implantation meets CMS guidelines.</string>
+    <string name="icd_no_ef_message">Invalid. You must select an EF.</string>
+    <string name="icd_no_nyha_message">Invalid. You must select a NYHA class.</string>
+    <string name="icd_approved_text">ICD implantation appears to meet CMS guidelines.</string>
     <string name="icd_not_approved_text">ICD implantation does NOT meet CMS guidelines.</string>
-    <string name="crt_approved_text">Use of a CRT device may also be indicated.  See "Instructions" for
+    <string name="crt_approved_text">Use of a CRT device may also be indicated. See "Instructions" for
         further information.</string>
     <string name="post_mi_time_exclusion">ICD implantation is too soon post MI.</string>
-    <string name="absolute_exclusion">ICD implantation has absolute exclusion.</string>
-    <string name="brain_damage_exclusion">Irreversible brain damage is an absolute exclusion for ICD implantation
-        according the CMS NCD.</string>
+    <string name="post_mi_early_eps_exclusion">EP Study performed too soon post MI.</string>
+    <string name="absolute_exclusion">ICD implantation has one or more exclusions.</string>
+    <string name="brain_damage_exclusion">Irreversible brain damage is an absolute exclusion 
+        for ICD implantation.</string>
     <string name="post_revascularization_exclusion">ICD implantation is too soon post myocardial revascularization.</string>
-    <string name="cms_icd_instructions">Select the indications that apply to the patient.
-	     Be as complete as possible.  Calculate button will show whether the patient meets
-	     CMS guidelines for Medicare reimbursement.  Although unstated in CMS guidelines, patients
+    <string name="cms_icd_instructions">The Calculate button will show whether the patient is likely 
+         to meet CMS guidelines for Medicare reimbursement.  Note the CMS National Coverage Determination
+         (NCD) is quite detailed and you should be very familiar with it before making a decision 
+	     as to whether a particular patient is likely to be
+	     covered.  This module is only intended as a guide to the NCD and is not definitive.
+	     Additional factors need to be considered.  For example, the NCD definition of 
+	     myocardial infarction must be used. Primary prevention ICD recipients 
+	     must be enrolled in an FDA-approved clinical trial
+	     or in the National ICD Registry.  Although unstated in CMS guidelines, patients
 	     considered for primary prevention ICDs should be on stable, optimal medical
-	     therapy for left ventricular dysfunction.  Note also that the CMS NCD makes a distinction
-	     between EP testing performed for suspected VT (e.g. in a patient with syncope) in Guideline #2
+	     therapy for left ventricular dysfunction.  Note also that the CMS 
+	     makes a distinction between EP testing performed for suspected VT (e.g. in a patient with syncope) in Guideline #2
 	     and EP testing performed for risk stratification (e.g. as in MADIT), which is Guideline #4.
 	     The CMS NCD does not cover approval of CRT devices.  
-	     CRT device approval is subject to Local Coverage Documents and
-        local payers.  Note also that some locales may require QRS duration \u2265 130 msec for CRT coverage.</string>
+	     CRT device approval is subject to Local Coverage Determinations and
+         local payers.  Note that some locales may require
+         QRS duration \u2265 130 msec for CRT coverage.
+         </string>
     <string name="cms_icd_references">Reference: Center for Medicaid and Medicare Services, 
-	     National Coverage Determination Manual, Chapter 1, Part 1, Section 20.4.
+	     National Coverage Determination Manual, Chapter 1, Part 1, Section 20.4, 2005.
 	     </string>
 
 </resources>

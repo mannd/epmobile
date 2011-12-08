@@ -31,7 +31,15 @@ public class Rivaroxaban extends DrugCalculator {
 
 	@Override
 	protected String doseFrequency() {
-		return " mg daily\nwith evening meal";
+		return " mg daily";
+	}
+
+	@Override
+	protected String getMessage(int crCl) {
+		String msg = super.getMessage(crCl);
+		if ((crCl) >= 15)
+			msg += "\n" + getString(R.string.rivaroxaban_dosing_message);
+		return msg;
 	}
 
 }
