@@ -215,6 +215,12 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="@string/cms_icd_key" >
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:autoLink="web"
             android:text="@string/cms_icd_references" >
         </TextView>

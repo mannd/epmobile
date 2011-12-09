@@ -124,14 +124,16 @@ public class CmsIcd extends RiskScore {
 				|| efRadioGroup.getCheckedRadioButtonId() == R.id.icd_ef_lt_35;
 		Boolean nyhaIIorIII = nyhaRadioGroup.getCheckedRadioButtonId() == R.id.icd_nyha2
 				|| nyhaRadioGroup.getCheckedRadioButtonId() == R.id.icd_nyha3;
+		Boolean nyhaIV = nyhaRadioGroup.getCheckedRadioButtonId() == R.id.icd_nyha4;
 		Boolean nyhaIIIorIV = nyhaRadioGroup.getCheckedRadioButtonId() == R.id.icd_nyha3
-				|| nyhaRadioGroup.getCheckedRadioButtonId() == R.id.icd_nyha4;
+				|| nyhaIV;
+		Boolean crtCriteriaMet = nyhaIIIorIV
+				&& checkBox[QRS_DURATION_LONG].isChecked() && efLessThan35;
 		// no ef or NYHA class needed for secondary prevention
 		if (result == CARDIAC_ARREST || result == SUS_VT) {
 			message = getString(R.string.secondary_prevention_label);
 			message += CR + getString(R.string.icd_approved_text);
-			if (efLessThan35 && nyhaIIIorIV
-					&& checkBox[QRS_DURATION_LONG].isChecked())
+			if (crtCriteriaMet)
 				message += CR + getString(R.string.crt_approved_text);
 			return message;
 		}
@@ -144,6 +146,8 @@ public class CmsIcd extends RiskScore {
 		}
 		if (result == FAMILIAL_CONDITION) {
 			message += getString(R.string.icd_approved_text);
+			if (crtCriteriaMet)
+				message += CR + getString(R.string.crt_approved_text);
 			return message;
 		}
 		// primary prevention except for familial condition needs ef and NYHA
@@ -164,9 +168,10 @@ public class CmsIcd extends RiskScore {
 		// Now work out possible indications
 		Boolean indicated = false;
 
-		// MADIT II
-		indicated = efLessThan30 && checkBox[ISCHEMIC_CM].isChecked()
-				&& checkBox[MI].isChecked();
+		// MADIT II -- note MADIT II explicitly excludes class IV,
+		// but Guideline 8 allows class IV if QRS wide
+		indicated = efLessThan30 && checkBox[MI].isChecked()
+				&& (!nyhaIV || crtCriteriaMet);
 		// MADIT
 		Boolean maditIndication = false;
 		if (!indicated) {
@@ -178,15 +183,13 @@ public class CmsIcd extends RiskScore {
 		// SCD-Heft Ischemic CM
 		if (!indicated)
 			indicated = efLessThan35 && checkBox[ISCHEMIC_CM].isChecked()
-					&& nyhaIIorIII;
+					&& checkBox[MI].isChecked()
+					&& (nyhaIIorIII || crtCriteriaMet);
 		// SCD-Heft Nonischemic CM
 		if (!indicated)
 			indicated = efLessThan35 && checkBox[NONISCHEMIC_CM].isChecked()
-					&& nyhaIIorIII && checkBox[LONG_DURATION_CM].isChecked();
-		// Class IV CHF
-		if (!indicated)
-			indicated = checkBox[QRS_DURATION_LONG].isChecked()
-					&& nyhaRadioGroup.getCheckedRadioButtonId() == R.id.icd_nyha4;
+					&& (nyhaIIorIII || crtCriteriaMet)
+					&& checkBox[LONG_DURATION_CM].isChecked();
 		if (indicated) {
 			if (checkBox[RECENT_MI].isChecked()) {
 				message += getString(R.string.icd_not_approved_text);
@@ -201,13 +204,16 @@ public class CmsIcd extends RiskScore {
 				message += CR
 						+ getString(R.string.post_revascularization_exclusion);
 				indicated = false;
-			} else
+			} else if (crtCriteriaMet && nyhaIV) // CRT-ICD must be used for
+													// NYHA IV
+				message += getString(R.string.icd_crt_approved_text);
+			else {
 				message += getString(R.string.icd_approved_text);
+				if (crtCriteriaMet)
+					message += CR + getString(R.string.crt_approved_text);
+			}
 		} else
 			message += getString(R.string.icd_not_approved_text);
-		// CRT
-		if (indicated && checkBox[QRS_DURATION_LONG].isChecked() && nyhaIIIorIV)
-			message += CR + getString(R.string.crt_approved_text);
 		return message;
 	}
 

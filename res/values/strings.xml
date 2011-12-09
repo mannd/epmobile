@@ -247,7 +247,7 @@
     <string name="rvot_vt_label">Nonsustained or sustained VT of RV outflow configuration,
 	LBBB morphology with inferior axis (positive QRS in leads II, III, and aVF and negative
 	in lead aVL) or of unknown axis</string>
-    <string name="pvcs_label">\u003e 500 ventricular exstrasystoles per 24 hours (Holter)
+    <string name="pvcs_label">\u003e 500 ventricular extrasystoles per 24 hours (Holter)
 	</string>
     <string name="family_history_label">VI. Family history</string>
     <string name="first_degree_relative_label">ARVC/D confirmed in a first-degree relative
@@ -277,9 +277,9 @@
     <string name="default_weight_unit_summary">Select default unit for weight</string>
     <string name="creatine_clearance_label">Creatinine Clearance</string>
     <string name="dabigatran_warning_severe">Avoid concomitant use of P-gp inhibitors
-	    (e.g. dronederone).</string>
+	    (e.g. dronedarone).</string>
     <string name="dabigatran_warning_mild">Consider reducing dose of dabigatran to 75 mg twice a day 
-	    when dronederone or systemic ketoconazole is administered with dabigatran.</string>
+	    when dronedarone or systemic ketoconazole is administered with dabigatran.</string>
     <string name="rivaroxaban_calculator_title">Rivaroxaban Calculator</string>
     <string name="rivaroxaban_dosing_message">"Take dose with evening meal."</string>
     <string name="icd_calculator_title">CMS ICD Criteria</string>
@@ -356,14 +356,15 @@
     <!-- ICD CMS criteria -->
     <string name="secondary_prevention_label">Secondary Prevention.</string>
     <string name="icd_cardiac_arrest_label">Documented cardiac arrest, without transient or reversible cause</string>
-    <string name="icd_sus_vt_label">Documented sustained VT/VF, either spontaneous or induced by EP study, not associated with an acute MI, 
-	     without transient or reversible cause</string>
+    <string name="icd_sus_vt_label">Documented sustained VT/VF, either spontaneous or induced at EPS, not associated with an acute MI, 
+	     and without transient or reversible cause</string>
     <string name="primary_prevention_label">Primary Prevention.</string>
-    <string name="icd_familial_conditions_label">Documented familial or inheritied condition with a high risk of life-threatening VT, such as long QT syndrome or hypertrophic cardiomyopathy</string>
+    <string name="icd_familial_conditions_label">Documented familial or inherited condition 
+        with a high risk of life-threatening VT, e.g. Long QT Syndrome or HCM</string>
     <string name="icd_nonischemic_cm_label">Nonischemic cardiomyopathy</string>
     <string name="icd_ischemic_cm_label">Ischemic cardiomyopathy</string>
     <string name="icd_ef_gt_35_label">EF \u003e 35%</string>
-    <string name="icd_ef_lt_35_label">EF \u2264 35%</string>
+    <string name="icd_ef_lt_35_label">EF \u003e 30% and \u2264 35%</string>
     <string name="icd_ef_lt_30_label">EF \u2264 30%</string>
     <string name="icd_mi_label">Documented prior MI</string>
     <string name="icd_nyha1_label">NYHA class I</string>
@@ -389,10 +390,10 @@
     <string name="icd_no_nyha_message">Invalid. You must select a NYHA class.</string>
     <string name="icd_approved_text">ICD implantation appears to meet CMS guidelines.</string>
     <string name="icd_not_approved_text">ICD implantation does NOT meet CMS guidelines.</string>
-    <string name="crt_approved_text">Use of a CRT device may also be indicated. See "Instructions" for
-        further information.</string>
+    <string name="icd_crt_approved_text">CRT-ICD implantation appears to meet CMS guidelines.</string>
+    <string name="crt_approved_text">Use of a CRT-ICD may be indicated.</string>
     <string name="post_mi_time_exclusion">ICD implantation is too soon post MI.</string>
-    <string name="post_mi_early_eps_exclusion">EP Study performed too soon post MI.</string>
+    <string name="post_mi_early_eps_exclusion">EPS performed too soon post MI.</string>
     <string name="absolute_exclusion">ICD implantation has one or more exclusions.</string>
     <string name="brain_damage_exclusion">Irreversible brain damage is an absolute exclusion 
         for ICD implantation.</string>
@@ -415,6 +416,12 @@
          local payers.  Note that some locales may require
          QRS duration \u2265 130 msec for CRT coverage.
          </string>
+    <string name="cms_icd_key">CABG = coronary artery bypass grafting.  CM = cardiomyopathy. 
+        CMS = Centers for Medicare and Medicaid Services.
+        CRT = cardiac resynchronization therapy. EF = ejection fraction. EPS = electrophysiology study. 
+        HCM = hypertrophic cardiomyopathy. ICD = implantable cardioverter defibrillator.
+        MI = myocardial infarction. NYHA = New York Heart Association. PCI = percutaneous coronary intervention. 
+        VT = ventricular tachycardia. VF = ventricular fibrillation.</string>
     <string name="cms_icd_references">Reference: Center for Medicaid and Medicare Services, 
 	     National Coverage Determination Manual, Chapter 1, Part 1, Section 20.4, 2005.
 	     </string>
