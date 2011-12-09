@@ -7,4 +7,5 @@ Changes since v0.7.1
 * Added CMS ICD Criteria module.
 * Added HCM Sudden Death Risk Score module.
 * Risk Scores now grouped.
+* Updated About dialog.
 * Various cosmetic tweaks.
