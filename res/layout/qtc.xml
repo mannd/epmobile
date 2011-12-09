@@ -12,9 +12,12 @@
 		</EditText>
 	</TableRow>
 	<TableRow >
-		<TextView android:id="@+id/textView2" android:text="@string/qt_label"
-			android:textAppearance="?android:attr/textAppearanceMedium" 
-			></TextView>
+
+		<TextView
+		    android:id="@+id/textView2"
+		    android:text="@string/qt_label"
+		    android:textAppearance="?android:attr/textAppearanceMedium" >
+</TextView>
 		<EditText android:id="@+id/qtEditText" 
 			android:text="" android:hint="@string/qt_hint"
 			android:inputType="number">
