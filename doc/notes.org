@@ -113,8 +113,8 @@
 ** 
 * Preparing new version -- IMPORTANT!
   - finish version
-  - update doc/description.txt
   - run git log --pretty=oneline and update changes/x.y.z.txt
+  - update doc/description.txt
   - update screenshots - resize them with GIMP to 320 x 480!
   - IMPORTANT - update AndroidManifest.xml
     - increment android:versionCode
