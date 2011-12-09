@@ -32,30 +32,36 @@
 		<item>"0"</item>
 		<item>"1"</item>
 	</array>
+	<!-- Make sure all lists are in alphabetic order -->
 	<array name="main_index">
-		<item>ARVC/D Diagnosis</item>
-		<item>CHADS\u2082 Score</item>
-		<item>CHA\u2082DS\u2082-VASc Score</item>
-		<item>Cycle Length Calculator</item>
-		<item>Drug Dose Calculators \u25B6</item>
-		<item>HAS-BLED Score</item>
-		<item>Normal EP Values</item>
-		<item>QTc Calculator</item>
-		<item>Short QT Syndrome Diagnosis</item>
-		<item>Warfarin Calculator</item>
-		<item>Wide Complex Tachycardia \u25B6</item>
+		<item>@string/arvc_title</item>
+		<item>@string/icd_calculator_title</item>
+		<item>@string/cycle_length_calculator_title</item>
+		<item>@string/drug_dose_calculator_list_title</item>
+		<item>@string/normal_ep_values_title</item>
+		<item>@string/qtc_calculator_title</item>
+		<item>@string/risk_score_list_title</item>
+		<item>@string/short_qt_title</item>
+		<item>@string/wct_algorithm_list_title</item>
 	</array>
 	<array name="wct_algorithm_list">
 		<!--  <item>ACC Algorithm</item> -->
-		<item>Brugada Algorithm</item>
-		<item>Morphology Criteria</item>
-		<item>R Wave Peak Time Criterion</item>
+		<item>@string/brugada_wct_title</item>
+		<item>@string/morphology_title</item>
+		<item>@string/rwpt_title</item>
 		<!-- <item>Vereckei Algorithm</item> -->
 	</array>
 	<array name="drug_calculator_list">
-	    <item>Dabigatran Calculator</item>
-	    <item>Dofetilide Calculator</item>
-	    <item>Rivaroxaban Calculator</item>
+	    <item>@string/dabigatran_calculator_title</item>
+	    <item>@string/dofetilide_calculator_title</item>
+	    <item>@string/rivaroxaban_calculator_title</item>
+	    <item>@string/warfarin_title</item>
+	</array>
+	<array name="risk_score_list">
+	    <item>@string/chads_title</item>
+		<item>@string/chadsvasc_title</item>
+		<item>@string/hasbled_title</item>
+		<item>@string/hcm_title</item>
 	</array>
 	<array name="interval_rate_labels">
 		<item>RR Interval (msec)</item>

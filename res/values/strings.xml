@@ -1,325 +1,429 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">EP Mobile</string>
-	<string name="about_text">EP Mobile is a package of
-		useful electrophysiology
+
+    <string name="app_name">EP Mobile</string>
+    <string name="about_text">EP Mobile is a package of
+		useful cardiac electrophysiology
 		tools for your Android phone or tablet.
-		Copyright \u00a9 2011 EP Studios, Inc.
-		Licensed under GNU GPL v3.
+		These tools are for reference purposes only
+		and are not meant to substitute for clinical judgment.
+		If you have suggestions or comments, please contact us.
+		\n\nEmail: mannd@epstudiossoftware.com
+		\nWeb: www.epstudiossoftware.com
+		\n\nCopyright \u00a9 2011 EP Studios, Inc.
+		\nLicensed under GNU GPL v3.
   </string>
-	<string name="main_index_title">EP Mobile</string>
-	<string name="about_label">About</string>
-	<string name="about_title">About EP Mobile</string>
-	<string name="dofetilide_label">Dofetilide Calculator</string>
-	<string name="dofetilide_calculator_title">Dofetilide Calculator</string>
-	<string name="dabigatran_calculator_title">Dabigatran Calculator</string>
-	<string name="dabigatran_label">Dabigatran Calculator (US Dosing)</string>
-	<string name="qtc_calculator_title">QTc Calculator</string>
-	<string name="cycle_length_label">Cycle Length Calculator</string>
-	<string name="cycle_length_calculator_title">Cycle Length Calculator</string>
-	<string name="rr_label">RR Interval (msec)</string>
-	<string name="rr_hint">RR (msec)</string>
-	<string name="interval_rate_title">Interval or Rate</string>
-	<string name="interval_rate_summary">Use RR interval or heart rate as default</string>
-
-	<string name="qt_label">QT Interval (msec)</string>
-	<string name="qt_hint">QT (msec)</string>
-	<string name="qtc_result_label">QTc Interval (msec)</string>
-	<string name="calculate_label">Calculate!</string>
-	<string name="clear_label">Clear</string>
-	<string name="cleared">Cleared!</string>
-	<string name="dose_result_label">Dose</string>
-	<string name="weight_hint">Weight (kg)</string>
-	<string name="weight_lb_hint">Weight (lb)</string>
-	<string name="creatinine_hint">Creatinine (mg/dL)</string>
-	<string name="age_hint">Age (yr)</string>
-	<string name="age_label">Age (yr)</string>
-	<string name="weight_label">Weight (kg)</string>
-	<string name="creatinine_label">Creatinine (mg/dL)</string>
-	<string name="creatinine_clearance_label"></string>
-	
-	<string name="male_label">Male</string>
-	<string name="female_label">Female</string>
-	<string name="cl_label">Cycle Length (msec)</string>
-	<string name="cl_hint">CL (msec)</string>
-	<string name="hr_label">Heart Rate (bpm)</string>
-	<string name="hr_hint">HR (bpm)</string>
-	<string name="calculated_result_label"></string>
-	<string name="qtc_formula_title">QTc Formula</string>
-	<string name="qtc_formula_summary">Select the QTc formula</string>
-	<string name="maximum_qtc_title">Maximum QTc</string>
-	<string name="maximum_qtc_summary">Enter the maximum QTc in msec</string>
-	<string name="maximum_qtc_message">This value is used to
+    <string name="main_index_title">EP Mobile</string>
+    <string name="about_label">About</string>
+    <string name="about_title">About EP Mobile</string>
+    <string name="dofetilide_label">Dofetilide Calculator</string>
+    <string name="dofetilide_calculator_title">Dofetilide Calculator</string>
+    <string name="dabigatran_calculator_title">Dabigatran Calculator</string>
+    <string name="dabigatran_label">Dabigatran Calculator (US Dosing)</string>
+    <string name="qtc_calculator_title">QTc Calculator</string>
+    <string name="cycle_length_label">Cycle Length Calculator</string>
+    <string name="cycle_length_calculator_title">Cycle Length Calculator</string>
+    <string name="rr_label">RR Interval (msec)</string>
+    <string name="rr_hint">RR (msec)</string>
+    <string name="interval_rate_title">Interval or Rate</string>
+    <string name="interval_rate_summary">Use RR interval or heart rate as default</string>
+    <string name="qt_label">QT Interval (msec)</string>
+    <string name="qt_hint">QT (msec)</string>
+    <string name="qtc_result_label">QTc (msec)</string>
+    <string name="calculate_label">Calculate!</string>
+    <string name="clear_label">Clear</string>
+    <string name="cleared">Cleared!</string>
+    <string name="dose_result_label">Dose</string>
+    <string name="weight_hint">Weight (kg)</string>
+    <string name="weight_lb_hint">Weight (lb)</string>
+    <string name="creatinine_hint">Creatinine (mg/dL)</string>
+    <string name="age_hint">Age (yr)</string>
+    <string name="age_label">Age (yr)</string>
+    <string name="weight_label">Weight (kg)</string>
+    <string name="creatinine_label">Creatinine (mg/dL)</string>
+    <string name="creatinine_clearance_label"></string>
+    <string name="male_label">Male</string>
+    <string name="female_label">Female</string>
+    <string name="cl_label">Cycle Length (msec)</string>
+    <string name="cl_hint">CL (msec)</string>
+    <string name="hr_label">Heart Rate (bpm)</string>
+    <string name="hr_hint">HR (bpm)</string>
+    <string name="calculated_result_label"></string>
+    <string name="qtc_formula_title">QTc Formula</string>
+    <string name="qtc_formula_summary">Select the QTc formula</string>
+    <string name="maximum_qtc_title">Maximum QTc</string>
+    <string name="maximum_qtc_summary">Enter the maximum QTc in msec</string>
+    <string name="maximum_qtc_message">This value is used to
 		color code (with red) abnormally high QTc values</string>
-	<string name="maximum_qtc_default_value">440</string>
-
-	<string name="settings_label">Settings...</string>
-	<string name="settings_shortcut">s</string>
-	<string name="settings_title">EP Mobile Settings</string>
-	<string name="hasbled_title">HAS-BLED Score</string>
-	<string name="htn_label">Hypertension (systolic BP \u2267 160)</string>
-	<string name="abnormal_renal_label">Abnormal renal function
+    <string name="maximum_qtc_default_value">440</string>
+    <string name="settings_label">Settings...</string>
+    <string name="settings_shortcut">s</string>
+    <string name="settings_title">EP Mobile Settings</string>
+    <string name="hasbled_title">HAS-BLED Score</string>
+    <string name="htn_label">Hypertension (systolic BP \u2267 160)</string>
+    <string name="abnormal_renal_label">Abnormal renal function
 		(dialysis, kidney transplant, Cr \u2267 2.6 mg/dL)</string>
-	<string name="abnormal_liver_label">Abnormal liver function</string>
-	<string name="stroke_label">Previous stroke history</string>
-	<string name="bleeding_label">Major bleeding history</string>
-	<string name="labile_inr_label">Labile INRs (high INRs, or &lt;60%
+    <string name="abnormal_liver_label">Abnormal liver function</string>
+    <string name="stroke_label">Previous stroke history</string>
+    <string name="bleeding_label">Major bleeding history</string>
+    <string name="labile_inr_label">Labile INRs (high INRs, or &lt;60%
 		of time in therapeutic range)</string>
-	<string name="age65_label">Age 65 or over</string>
-	<string name="drug_label">Taking antiplatelet drugs
+    <string name="age65_label">Age 65 or over</string>
+    <string name="drug_label">Taking antiplatelet drugs
 		(e.g. ASA, Plavix)</string>
-	<string name="etoh_label">Alcohol intake (8 or more drinks per week)
+    <string name="etoh_label">Alcohol intake (8 or more drinks per week)
   </string>
-	<string name="normal_hasbled">Low bleeding risk</string>
-	<string name="abnormal_hasbled">High bleeding risk</string>
-	<string name="chads_title">CHADS\u2082 Score</string>
-	<string name="chf_label">Congestive heart failure</string>
-	<string name="age75_label">Age 75 or over</string>
-	<string name="diabetes_label">Diabetes mellitus</string>
-	<string name="low_chads_message">Anti-platelet drug (ASA) recommended
+    <string name="normal_hasbled">Low bleeding risk</string>
+    <string name="abnormal_hasbled">High bleeding risk</string>
+    <string name="chads_title">CHADS\u2082 Score</string>
+    <string name="chf_label">Congestive heart failure</string>
+    <string name="age75_label">Age 75 or over</string>
+    <string name="diabetes_label">Diabetes mellitus</string>
+    <string name="low_chads_message">Anti-platelet drug (ASA) recommended
   </string>
-	<string name="medium_chads_message">Anti-platelet drug or
+    <string name="medium_chads_message">Anti-platelet drug or
 		anticoagulation (warfarin or dabigatran or others) recommended</string>
-	<string name="high_chads_message">
+    <string name="high_chads_message">
 		Anticoagulation (warfarin or dabigitran or others) recommended
   </string>
-	<string name="chadsvasc_title">CHA\u2082DS\u2082-VASc Score</string>
-	<string name="vascular_label">Vascular disease (e.g. PVD, CAD, aortic plaque)
+    <string name="chadsvasc_title">CHA\u2082DS\u2082-VASc Score</string>
+    <string name="vascular_label">Vascular disease (e.g. PVD, CAD, aortic plaque)
 	</string>
-	<string name="low_chadsvasc_message">No antithrombotic therapy or use Aspirin</string>
-	<string name="medium_chadsvasc_message">Oral anticoagulation (warfarin or dabigatran
+    <string name="low_chadsvasc_message">No antithrombotic therapy or use Aspirin</string>
+    <string name="medium_chadsvasc_message">Oral anticoagulation (warfarin or dabigatran
 		or others) or Aspirin (Oral anticoagulant preferred)</string>
-	<string name="high_chadsvasc_message">Oral anticoagulation
+    <string name="high_chadsvasc_message">Oral anticoagulation
 		(warfarin or dabigatran or others)</string>
-	<string name="warfarin_title">Warfarin Calculator</string>
-	<string name="warfarin_label">Warfarin Dose Calculator</string>
-	<string name="tablet_label">Tablet</string>
-	<string name="tablet1">2 mg</string>
-	<string name="tablet2">2.5 mg</string>
-	<string name="tablet3">5 mg</string>
-	<string name="tablet4">7.5 mg</string>
-	<string name="inr_label">INR</string>
-	<string name="weekly_dose_label">Current total warfarin dose per week</string>
-	<string name="inr_hint">INR</string>
-	<string name="weekly_dose_hint">Dose (mg/week)</string>
-	<string name="inr_target_label">INR target</string>
-	<string name="inr_target1">2.0 - 3.0</string>
-	<string name="inr_target2">2.5 - 3.5</string>
-	<string name="default_warfarin_tablet_title">Default Warfarin Tablet</string>
-	<string name="default_warfarin_tablet_summary">Select the default warfarin tablet strength
+    <string name="warfarin_title">Warfarin Calculator</string>
+    <string name="warfarin_label">Warfarin Dose Calculator</string>
+    <string name="tablet_label">Tablet</string>
+    <string name="tablet1">2 mg</string>
+    <string name="tablet2">2.5 mg</string>
+    <string name="tablet3">5 mg</string>
+    <string name="tablet4">7.5 mg</string>
+    <string name="inr_label">INR</string>
+    <string name="weekly_dose_label">Current total warfarin dose per week</string>
+    <string name="inr_hint">INR</string>
+    <string name="weekly_dose_hint">Dose (mg/week)</string>
+    <string name="inr_target_label">INR target</string>
+    <string name="inr_target1">2.0 - 3.0</string>
+    <string name="inr_target2">2.5 - 3.5</string>
+    <string name="default_warfarin_tablet_title">Default Warfarin Tablet</string>
+    <string name="default_warfarin_tablet_summary">Select the default warfarin tablet strength
 	</string>
-	<string name="default_inr_target_title">Default INR Target</string>
-	<string name="default_inr_target_summary">Default INR target range</string>
-	<string name="dose_table_title">Suggested Weekly Warfarin Doses</string>
-	<string name="warfarin_result_title">Suggested Warfarin Dosing</string>
-	<string name="warfarin_reference">Reference: Horton J, Bushwick B: American Family
+    <string name="default_inr_target_title">Default INR Target</string>
+    <string name="default_inr_target_summary">Default INR target range</string>
+    <string name="dose_table_title">Suggested Weekly Warfarin Doses</string>
+    <string name="warfarin_result_title">Suggested Warfarin Dosing</string>
+    <string name="warfarin_reference">Reference: Horton J, Bushwick B: American Family
 		Physician. Feb 1, 1999.
 		http://www.aafp.org/afp/990201ap/635.html</string>
-
-	<string name="wct_algorithm_list_title">Wide Complex Tachycardia \u25B6</string>
-	<string name="wct_algorithm_title">Wide Complex Tachycardia</string>
-
-	<string name="brugada_vt_title">Brugada Criteria SVT vs VT</string>
-	<string name="brugada_wct_title">Brugada Algorithm</string>
-	<string name="brugada_step1">Absence of an RS complex in all precordial leads?
+    <string name="wct_algorithm_list_title">Wide Complex Tachycardia \u25B6</string>
+    <string name="wct_algorithm_title">Wide Complex Tachycardia</string>
+    <string name="brugada_vt_title">Brugada Criteria SVT vs VT</string>
+    <string name="brugada_wct_title">Brugada Algorithm</string>
+    <string name="brugada_step1">Absence of an RS complex in all precordial leads?
 	</string>
-	<string name="brugada_step_2">R to S interval >100 msec in one precordial lead?
+    <string name="brugada_step_2">R to S interval >100 msec in one precordial lead?
 	</string>
-	<string name="brugada_step_3">AV dissociation?</string>
-	<string name="brugada_step_4">Morphology criteria for VT present in both
+    <string name="brugada_step_3">AV dissociation?</string>
+    <string name="brugada_step_4">Morphology criteria for VT present in both
 		precordial leads V1-2 and V6?</string>
-	<string name="vt_result">Wide complex tachycardia is most likely Ventricular
+    <string name="vt_result">Wide complex tachycardia is most likely Ventricular
 		Tachycardia.</string>
-	<string name="svt_result">Wide complex tachycardia is most likely
+    <string name="svt_result">Wide complex tachycardia is most likely
 		Supraventricular Tachycardia.</string>
-	<string name="brugada_reference">REFERENCE: Brugada P, et al. Circ 1991;83:1649.
+    <string name="brugada_reference">REFERENCE: Brugada P, et al. Circ 1991;83:1649.
 	</string>
-
-	<string name="wct_result_label">WCT Result</string>
-	<string name="yes">Yes</string>
-	<string name="no">No</string>
-	<string name="back">Back</string>
-	<string name="morphology_label">Morphology Criteria</string>
-	<string name="broad_r">R &gt; 30 msec in V1 or V2</string>
-	<string name="broad_rs">Onset to nadir S &gt; 60 msec in V1 or V2</string>
-	<string name="notched_s">Notched or slurred S in V1 or V2</string>
-	<string name="q_v6">QR or QS in V6</string>
-	<string name="monophasic_r_v1">Monophasic R in V1</string>
-	<string name="qr_v1">QR in V1</string>
-	<string name="rs_v1">RS in V1</string>
-	<string name="deep_s_v6">R to S ratio &lt; 1 in V6</string>
-	<string name="monophasic_r_v6">Monophasic R in V6</string>
-
-	<string name="rwpt_title">R Wave Peak Time Criterion</string>
-	<string name="rwpt_text">R wave peak time in lead II (RWPT).
+    <string name="wct_result_label">WCT Result</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="back">Back</string>
+    <string name="morphology_label">Morphology Criteria</string>
+    <string name="morphology_title">@string/morphology_label</string>
+    <string name="broad_r">R > 30 msec in V1 or V2</string>
+    <string name="broad_rs">Onset to nadir S > 60 msec in V1 or V2</string>
+    <string name="notched_s">Notched or slurred S in V1 or V2</string>
+    <string name="q_v6">QR or QS in V6</string>
+    <string name="monophasic_r_v1">Monophasic R in V1</string>
+    <string name="qr_v1">QR in V1</string>
+    <string name="rs_v1">RS in V1</string>
+    <string name="deep_s_v6">R to S ratio &lt; 1 in V6</string>
+    <string name="monophasic_r_v6">Monophasic R in V6</string>
+    <string name="rwpt_title">R Wave Peak Time Criterion</string>
+    <string name="rwpt_text">R wave peak time in lead II (RWPT).
 		Measure the onset of the QRS in ECG lead II to the first
 		change in polarity (nadir Q or peak R). RWPT \u2265 50 msec
 		strongly suggests VT (positive likelihood ratio 34.8).
 		Reference: Pava LF, et al. Heart Rhythm 2010;7:922.</string>
-	<string name="rbbb_wct_label">"RBBB" Tachycardia</string>
-	<string name="lbbb_wct_label">"LBBB" Tachycardia</string>
-	<string name="wellens_reference">
+    <string name="rbbb_wct_label">"RBBB" Tachycardia</string>
+    <string name="lbbb_wct_label">"LBBB" Tachycardia</string>
+    <string name="wellens_reference">
 		From Wellens et al. Am J Med 1978;64:27.</string>
-
-	<string name="normal_ep_values_title">Normal EP Values</string>
-	<string name="basic_intervals_label">Basic Conduction Intervals</string>
-	<string name="sinus_node_label">Sinus Node Function</string>
-	<string name="refractory_periods_label">Refractory Periods and Block Cycle Lengths
+    <string name="normal_ep_values_title">Normal EP Values</string>
+    <string name="basic_intervals_label">Basic Conduction Intervals</string>
+    <string name="sinus_node_label">Sinus Node Function</string>
+    <string name="refractory_periods_label">Refractory Periods and Block Cycle Lengths
   </string>
-	<string name="normal_ep_values_reference">Reference: Josephson ME. Clinical Cardiac
+    <string name="normal_ep_values_reference">Reference: Josephson ME. Clinical Cardiac
 		Electrophysiology. Techniques and Interpretations. 2nd Edition 1993.
 		Lea &amp; Febiger.
   </string>
-
-	<string name="arvc_title">ARVC/D Diagnosis</string>
-	<string name="global_dysfunction_label">I. Global or regional dysfunction and structural
+    <string name="arvc_title">ARVC/D Diagnosis</string>
+    <string name="global_dysfunction_label">I. Global or regional dysfunction and structural
 		alterations</string>
-	<string name="major">MAJOR</string>
-	<string name="minor">MINOR</string>
-	<string name="by_echo_label">By 2D echo:</string>
-	<string name="regional_echo_abnormality_label">Regional RV akinesia, dyskinesia, or aneurysm
+    <string name="major">MAJOR</string>
+    <string name="minor">MINOR</string>
+    <string name="by_echo_label">By 2D echo:</string>
+    <string name="regional_echo_abnormality_label">Regional RV akinesia, dyskinesia, or aneurysm
 	</string>
-	<string name="regional_echo_minor_abnormality_label">Regional RV akinesia or dyskinesia</string>
-	<string name="regional_mri_abnormality_label">Regional RV akinesia or dyssynchronous RV
+    <string name="regional_echo_minor_abnormality_label">Regional RV akinesia or dyskinesia</string>
+    <string name="regional_mri_abnormality_label">Regional RV akinesia or dyssynchronous RV
 		contraction</string>
-	<string name="and_one_echo_label">and one of the following (end diastole)...</string>
-	<string name="and_one_label">and one of the following...</string>
-	<string name="major_plax_criteria">PLAX RVOT \u2265 32 mm (corrected for body size
+    <string name="and_one_echo_label">and one of the following (end diastole)...</string>
+    <string name="and_one_label">and one of the following...</string>
+    <string name="major_plax_criteria">PLAX RVOT \u2265 32 mm (corrected for body size
 		[PLAX/BSA] \u2265 19 mm/m\u00b2)</string>
-	<string name="major_psax_criteria">PSAX RVOT \u2265 36 mm (corrected for body size
+    <string name="major_psax_criteria">PSAX RVOT \u2265 36 mm (corrected for body size
 		[PSAX/BSA] \u2265 21 mm/m\u00b2)</string>
-	<string name="fractional_area_criteria">fractional area change \u2264 33%</string>
-	<string name="minor_plax_criteria">PLAX RVOT \u2265 29 to \u003c 32 mm (corrected for
+    <string name="fractional_area_criteria">fractional area change \u2264 33%</string>
+    <string name="minor_plax_criteria">PLAX RVOT \u2265 29 to \u003c 32 mm (corrected for
 		body size
 		[PLAX/BSA] \u2265 16 to \u003c 19 mm/m\u00b2)</string>
-	<string name="minor_psax_criteria">PSAX RVOT \u2265 32 to \u003c 36mm (corrected for
+    <string name="minor_psax_criteria">PSAX RVOT \u2265 32 to \u003c 36mm (corrected for
 		body size
 		[PSAX/BSA] \u2265 18 to \u003c 21 mm/m\u00b2)</string>
-	<string name="fractional_area_minor_criteria">fractional area change \u003e 33%
+    <string name="fractional_area_minor_criteria">fractional area change \u003e 33%
 		and \u2264 40%</string>
-	<string name="by_mri_label">By MRI:</string>
-	<string name="major_mri_volume_criteria">Ratio of RV end-diastolic volume to BSA \u2265 110
+    <string name="by_mri_label">By MRI:</string>
+    <string name="major_mri_volume_criteria">Ratio of RV end-diastolic volume to BSA \u2265 110
 		mL/m\u00b2
 		(male) or \u2265 100 mL/m\u00b2 (female)</string>
-	<string name="major_mri_ef_criteria">RV ejection fraction \u2264 40%</string>
-	<string name="minor_mri_volume_criteria">Ratio of RV end-diastolic volume to BSA \u2265 100
+    <string name="major_mri_ef_criteria">RV ejection fraction \u2264 40%</string>
+    <string name="minor_mri_volume_criteria">Ratio of RV end-diastolic volume to BSA \u2265 100
 		to
 		\u003c 110 mL/m\u00b2 (male) or \u2265 90 to \u003c 100 mL/m\u00b2 (female)
 	</string>
-	<string name="minor_mri_ef_criteria" formatted="false">RV ejection fraction \u003e 40% to \u2264 45%
+    <string formatted="false" name="minor_mri_ef_criteria">RV ejection fraction \u003e 40% to \u2264 45%
 	</string>
-
-	<string name="by_rv_angio_label">By RV Angiography:</string>
-	<string name="tissue_label">II. Tissue characterization of wall</string>
-	<string name="major_residual_myocytes_label" formatted="false">
+    <string name="by_rv_angio_label">By RV Angiography:</string>
+    <string name="tissue_label">II. Tissue characterization of wall</string>
+    <string formatted="false" name="major_residual_myocytes_label">
 		Residual myocytes \u003c 60% by morphometric
 		analysis (or \u003c 50% if estimated) with fibrous replacement of RV
 		free wall myocardium in \u2265 1 sample, with or without fatty
 		replacement of tissue on endomyocardial biopsy</string>
-	<string name="minor_residual_myocytes_label" formatted="false">
+    <string formatted="false" name="minor_residual_myocytes_label">
 		Residual myocytes 60% to 75% by morphometric
 		analysis (or 50% to 65% if estimated) with fibrous replacement of RV
 		free wall myocardium in \u2265 1 sample, with or without fatty
 		replacement of tissue on endomyocardial biopsy</string>
-	<string name="repolarization_label">III. Repolarization abnormalities</string>
-	<string name="major_repolarization_label">TWI (V1, V2, and V3) or beyond in
+    <string name="repolarization_label">III. Repolarization abnormalities</string>
+    <string name="major_repolarization_label">TWI (V1, V2, and V3) or beyond in
 	individuals \u003e 14 yrs (in absence of complete RBBB)</string>
-	<string name="minor_repolarization_no_rbbb_label">TWI in V1 and V2
+    <string name="minor_repolarization_no_rbbb_label">TWI in V1 and V2
 	in individuals \u003e 14 yrs (in absence of complete RBBB) or in V4, V5, V6</string>
-	<string name="minor_repolarization_rbbb_label">TWI in V1-V4 in
+    <string name="minor_repolarization_rbbb_label">TWI in V1-V4 in
 	individuals \u003e 14 yrs in presence of complete RBBB</string>
-	<string name="depolarization_label">IV. Depolarization/conduction abnormalities
-	</string>	
-	<string name="major_depolarization_label">Epsilon wave (reproducible low-amp signals between
-	end of QRS complex to onset of T wave) in right precordial leads (V1-V3)</string>
-	<string name="saecg_label">LP by SAECG in \u2265 1 of 3 parameters in 
-	absence of QRS duration of \u2265 110 msec on standard ECG</string>
-	<string name="filtered_qrs_label">Filtered QRS duration (fQRS) \u2265 114 msec</string>
-	<string name="duration_terminal_qrs_label">Duration of terminal QRS \u003c 40 \u03bcV
-	(low-amplitude signal duration) \u2265 38 msec</string>
-	<string name="root_mean_square_label">Root-mean-square voltage of terminal 40 msec \u2264 20 \u03bcV
+    <string name="depolarization_label">IV. Depolarization/conduction abnormalities
 	</string>
-	<string name="terminal_activation_label">Terminal activation duration</string>
-	<string name="terminal_activation_duration_label">Terminal activation duration of QRS
+    <string name="major_depolarization_label">Epsilon wave (reproducible low-amp signals between
+	end of QRS complex to onset of T wave) in right precordial leads (V1-V3)</string>
+    <string name="saecg_label">LP by SAECG in \u2265 1 of 3 parameters in 
+	absence of QRS duration of \u2265 110 msec on standard ECG</string>
+    <string name="filtered_qrs_label">Filtered QRS duration (fQRS) \u2265 114 msec</string>
+    <string name="duration_terminal_qrs_label">Duration of terminal QRS \u003c 40 \u03bcV
+	(low-amplitude signal duration) \u2265 38 msec</string>
+    <string name="root_mean_square_label">Root-mean-square voltage of terminal 40 msec \u2264 20 \u03bcV
+	</string>
+    <string name="terminal_activation_label">Terminal activation duration</string>
+    <string name="terminal_activation_duration_label">Terminal activation duration of QRS
 	\u2265 55 msec measure from the nadir of the S wave to the end of the QRS including
-	R\', in V1, V2, or V3, in the absence of complete RBBB</string> 
-	<string name="arrhythmias_label">V. Arrhythmias</string>
-	<string name="major_arrhythmias_label">Nonsustained or sustained VT of LBBB morphology
+	R\', in V1, V2, or V3, in the absence of complete RBBB</string>
+    <string name="arrhythmias_label">V. Arrhythmias</string>
+    <string name="major_arrhythmias_label">Nonsustained or sustained VT of LBBB morphology
 	with superior axis (negative or indeterminate QRS in leads II, III, and aVF and
 	positive in lead aVL)</string>
-	<string name="rvot_vt_label">Nonsustained or sustained VT of RV outflow configuration,
+    <string name="rvot_vt_label">Nonsustained or sustained VT of RV outflow configuration,
 	LBBB morphology with inferior axis (positive QRS in leads II, III, and aVF and negative
 	in lead aVL) or of unknown axis</string>
-	<string name="pvcs_label">\u003e 500 ventricular exstrasystoles per 24 hours (Holter)
+    <string name="pvcs_label">\u003e 500 ventricular extrasystoles per 24 hours (Holter)
 	</string>
-	<string name="family_history_label">VI. Family history</string>
-	<string name="first_degree_relative_label">ARVC/D confirmed in a first-degree relative
+    <string name="family_history_label">VI. Family history</string>
+    <string name="first_degree_relative_label">ARVC/D confirmed in a first-degree relative
 	who meets current Task Force criteria</string>
-	<string name="pathology_label">ARVC/D confirmed pathologically at autopsy or surgery 
+    <string name="pathology_label">ARVC/D confirmed pathologically at autopsy or surgery 
 	in a first-degree relative</string>
-	<string name="genetic_label">Identification of a pathogenic mutation categorized
+    <string name="genetic_label">Identification of a pathogenic mutation categorized
 	as associated or probably associated with ARVC/D in the patient under evaluation
 	</string>
-	<string name="possible_family_history_label">History of ARVC/D in a first-degree
+    <string name="possible_family_history_label">History of ARVC/D in a first-degree
 	relative in whom it is not possible or practical to determine whether the family
 	member meets current Task Force criteria</string>
-	<string name="family_history_sudden_death_label">Premature sudden death (\u003c 35
+    <string name="family_history_sudden_death_label">Premature sudden death (\u003c 35
 	years of age) due to suspected ARVC/D in a first-degree relative</string>
-	<string name="second_degree_relative_label">ARVC/D confirmed pathologically or by 
+    <string name="second_degree_relative_label">ARVC/D confirmed pathologically or by 
 	current Task Force Criteria in a second-degree relative</string>
-
-	<string name="arvc_key">BSA = body surface area. PLAX = parasternal long
+    <string name="arvc_key">BSA = body surface area. PLAX = parasternal long
 		axis view. PSAX = parasternal short
 		axis view. RVOT = RV outflow tract.</string>
-
-	<string name="arvc_reference">Reference: Marcus FI et al. Circulation
+    <string name="arvc_reference">Reference: Marcus FI et al. Circulation
 		2010;121:1533.
 		http://circ.ahajournals.org/content/121/13/1533.long</string>
-		
-	<string name="qtc_settings">QTc Settings</string>
-	<string name="warfarin_settings">Warfarin Settings</string>
-	<string name="drug_calculator_settings">Drug Calculator Settings</string>
-	<string name="default_weight_unit_title">Default Weight Unit</string>
-	<string name="default_weight_unit_summary">Select default unit for weight</string>
-	
-	<string name="creatine_clearance_label">Creatinine Clearance</string>
-	<string name="dabigatran_warning_severe">Avoid concomitant use of P-gp inhibitors
-	    (e.g. dronederone).</string>
-	<string name="dabigatran_warning_mild">Consider reducing dose of dabigatran to 75 mg twice a day 
-	    when dronederone or systemic ketoconazole is administered with dabigatran.</string>
-	    
-	<string name="rivaroxaban_calculator_title">Rivaroxaban Calculator</string>
-
-	<string name="short_qt_title">Short QT Syndrome Diagnosis</string>
-	<string name="qtc_label">QTc Interval</string>
-	<string name="short_qt_label">\u003c 370 msec</string>
-	<string name="shorter_qt_label">\u003c 350 msec</string>
-	<string name="shortest_qt_label">\u003c 330 msec</string>
-	<string name="jt_label">Jpoint-Tpeak Interval</string>
-	<string name="short_jt_label">\u003c 120 msec</string>
-	<string name="clinical_history_label">Clinical History</string>
-	<string name="sudden_cardiac_arrest_label">Sudden cardiac arrest</string>
-	<string name="polymorphic_vt_label">Polymorphic VT or VF</string>
-	<string name="unexplained_syncope_label">Unexplained syncope</string>
-	<string name="afb_label">Atrial fibrillation</string>
-	<string name="family_hx_label">Family History</string>
-	<string name="relative_with_sqts_label">1st or 2nd degree relative with SQTS</string>
-	<string name="relative_with_sd_label">1st or 2nd degree relative with sudden death</string>
-	<string name="sids_label">Sudden infant death syndrome</string>
-	<string name="genotype_label">Genotype</string>
-	<string name="genotype_positive_label">Genotype positive</string>
-	<string name="mutation_label">Mutation of undetermined significance
+    <string name="qtc_settings">QTc Settings</string>
+    <string name="warfarin_settings">Warfarin Settings</string>
+    <string name="drug_calculator_settings">Drug Calculator Settings</string>
+    <string name="default_weight_unit_title">Default Weight Unit</string>
+    <string name="default_weight_unit_summary">Select default unit for weight</string>
+    <string name="creatine_clearance_label">Creatinine Clearance</string>
+    <string name="dabigatran_warning_severe">Avoid concomitant use of P-gp inhibitors
+	    (e.g. dronedarone).</string>
+    <string name="dabigatran_warning_mild">Consider reducing dose of dabigatran to 75 mg twice a day 
+	    when dronedarone or systemic ketoconazole is administered with dabigatran.</string>
+    <string name="rivaroxaban_calculator_title">Rivaroxaban Calculator</string>
+    <string name="rivaroxaban_dosing_message">"Take dose with evening meal."</string>
+    <string name="icd_calculator_title">CMS ICD Criteria</string>
+    <string name="short_qt_title">Short QT Syndrome Diagnosis</string>
+    <string name="qtc_label">QTc Interval</string>
+    <string name="short_qt_label">\u003c 370 msec</string>
+    <string name="shorter_qt_label">\u003c 350 msec</string>
+    <string name="shortest_qt_label">\u003c 330 msec</string>
+    <string name="jt_label">Jpoint-Tpeak Interval</string>
+    <string name="short_jt_label">\u003c 120 msec</string>
+    <string name="clinical_history_label">Clinical History</string>
+    <string name="sudden_cardiac_arrest_label">Sudden cardiac arrest</string>
+    <string name="polymorphic_vt_label">Polymorphic VT or VF</string>
+    <string name="unexplained_syncope_label">Unexplained syncope</string>
+    <string name="afb_label">Atrial fibrillation</string>
+    <string name="family_hx_label">Family History</string>
+    <string name="relative_with_sqts_label">1st or 2nd degree relative with SQTS</string>
+    <string name="relative_with_sd_label">1st or 2nd degree relative with sudden death</string>
+    <string name="sids_label">Sudden infant death syndrome</string>
+    <string name="genotype_label">Genotype</string>
+    <string name="genotype_positive_label">Genotype positive</string>
+    <string name="mutation_label">Mutation of undetermined significance
 	    in a culprit gene</string>
-	<string name="sqts_reference">Gollob M, et al. J Am Coll Cardiol 2011;57:802.</string>
-	<string name="instructions_label">Instructions</string>
-	<string name="sqts_instructions">Electrocardiogram must be recorded in the absence of modifiers
+    <string name="sqts_reference">Gollob M, et al. J Am Coll Cardiol 2011;57:802.</string>
+    <string name="instructions_label">Instructions</string>
+    <string name="sqts_instructions">Electrocardiogram must be recorded in the absence of modifiers
 	    known to shorten the QT.  Jpoint-Tpeak interval must be measured in the precordial lead
 	    with the greatest amplitude T-wave.  Clinical history: events must occur in the absence of
 	    an identifiable etiology, including structural heart disease.  Note that at least one ECG
 	    manifestation must be present in order to get additional points.</string>
-	    
-	<string name="drug_dose_calculator_list_title">Drug Dose Calculators \u25B6</string>
-	<string name="drug_dose_calculators_title">Drug Dose Calculators</string>
+    <string name="drug_dose_calculator_list_title">Drug Dose Calculators \u25B6</string>
+    <string name="drug_dose_calculators_title">Drug Dose Calculators</string>
+    <string name="risk_score_list_title">Risk Scores \u25B6</string>
+    <string name="risk_scores_title">Risk Scores</string>
+
+    <!-- HCM -->
+    <string name="hcm_title">HCM Sudden Death Risk Score</string>
+    <!-- Major risk factors -->
+    <string name="cardiac_arrest_label">Cardiac arrest (VF)</string>
+    <string name="spontaneous_vt_label">Spontaneous sustained VT</string>
+    <string name="family_hx_sd_label">Family history of premature SD</string>
+    <!-- unexplained_syncope_label -->
+    <string name="lv_thickness_label">LV thickness \u2265 30 mm</string>
+    <string name="abnormal_exercise_bp_label">Abnormal exercise BP</string>
+    <string name="nonsustained_vt_label">Nonsustained VT (Holter)</string>
+    <!-- Minor risk factors -->
+    <!-- afb_label -->
+    <string name="myocardial_ischemia_label">Myocardial ischemia</string>
+    <string name="lv_outflow_obstruction_label">LV outflow obstruction</string>
+    <string name="high_risk_mutation_label">High-risk mutation</string>
+    <string name="hcm_highest_risk_sd_text">Survivors of cardiac arrest and patients
+	    with spontaneous sustained VT are considered at very high risk for SD and are
+	    ICD candidates</string>
+    <string name="hcm_high_risk_text">Patients with 2 or more major risk factors are
+	    considered at high risk and should be considered for ICD implantation.</string>
+    <string name="hcm_intermediate_risk_text">Patients with 1 major risk factor have 
+	    increased risk for SD and recommendations should be individualized.
+	    Factors such as the nature of the risk factor (e.g. SD in an immediate family
+	    member with HCM), young age (which confers greater risk) and presence of minor risk
+	    factors should be considered.  ICD implantation can be considered depending
+	    on these factors.</string>
+    <string name="hcm_low_risk_text">Patients without any major risk factors (even if
+	    minor risk factors are present) are considered to be at low risk for SD.
+	    ICD implantation is not recommended.</string>
+    <string name="hcm_key">BP = blood pressure. VF = ventricular fibrillation.  VT = ventricular tachycardia.
+	    SD = unexpected sudden death.  Abnormal exercise BP = failure to augment and maintain systolic
+	    BP \u003e 25 mm Hg with exercise.</string>
+    <string name="hcm_reference">References: Maron B et al.  Eur Heart J 2003:1965.
+	    http://eurheartj.oxfordjournals.org/content/24/21/1965.full
+	    McKenna WJ et al. Heart 2002;87:169.
+	    http://heart.bmj.com/content/87/2/169.full
+		</string>
+
+    <!-- ICD CMS criteria -->
+    <string name="secondary_prevention_label">Secondary Prevention.</string>
+    <string name="icd_cardiac_arrest_label">Documented cardiac arrest, without transient or reversible cause</string>
+    <string name="icd_sus_vt_label">Documented sustained VT/VF, either spontaneous or induced at EPS, not associated with an acute MI, 
+	     and without transient or reversible cause</string>
+    <string name="primary_prevention_label">Primary Prevention.</string>
+    <string name="icd_familial_conditions_label">Documented familial or inherited condition 
+        with a high risk of life-threatening VT, e.g. Long QT Syndrome or HCM</string>
+    <string name="icd_nonischemic_cm_label">Nonischemic cardiomyopathy</string>
+    <string name="icd_ischemic_cm_label">Ischemic cardiomyopathy</string>
+    <string name="icd_ef_gt_35_label">EF \u003e 35%</string>
+    <string name="icd_ef_lt_35_label">EF \u003e 30% and \u2264 35%</string>
+    <string name="icd_ef_lt_30_label">EF \u2264 30%</string>
+    <string name="icd_mi_label">Documented prior MI</string>
+    <string name="icd_nyha1_label">NYHA class I</string>
+    <string name="icd_nyha2_label">NYHA class II</string>
+    <string name="icd_nyha3_label">NYHA class III</string>
+    <string name="icd_nyha4_label">NHYA class IV</string>
+    <string name="icd_short_duration_cm_label">CM duration \u003c 3 months</string>
+    <string name="icd_long_duration_cm_label">CM duration \u2265 3 months</string>
+    <string name="icd_inducible_vt_label">Inducible sustained VT/VF at EPS</string>
+    <string name="icd_qrs_duration_short_label">QRS duration \u003c 120 msec</string>
+    <string name="icd_qrs_duration_long_label">QRS duration \u2265 120 msec</string>
+    <string name="exclusions_label">Exclusions</string>
+    <string name="icd_cardiogenic_shock_label">Cardiogenic shock or symptomatic hypotension</string>
+    <string name="icd_recent_cabg_label">CABG or PCI within past 3 months</string>
+    <string name="icd_recent_mi_label">Acute MI within past 40 days</string>
+    <string name="icd_recent_mi_eps_label">EPS performed within 4 weeks post-MI</string>
+    <string name="icd_revascularization_candidate_label">Symptoms or findings that would make patient a candidate for revascularization</string>
+    <string name="icd_brain_damage_label">Irreversible brain damage from preexisting cerebral disease</string>
+    <string name="icd_bad_prognosis_label">Non-cardiac disease with likelihood of survival \u003c 1 year</string>
+    <string name="icd_no_ef_or_nyha_message">Invalid. You must select an EF and
+        NYHA class.</string>
+    <string name="icd_no_ef_message">Invalid. You must select an EF.</string>
+    <string name="icd_no_nyha_message">Invalid. You must select a NYHA class.</string>
+    <string name="icd_approved_text">ICD implantation appears to meet CMS guidelines.</string>
+    <string name="icd_not_approved_text">ICD implantation does NOT meet CMS guidelines.</string>
+    <string name="icd_crt_approved_text">CRT-ICD implantation appears to meet CMS guidelines.</string>
+    <string name="crt_approved_text">Use of a CRT-ICD may be indicated.</string>
+    <string name="post_mi_time_exclusion">ICD implantation is too soon post MI.</string>
+    <string name="post_mi_early_eps_exclusion">EPS performed too soon post MI.</string>
+    <string name="absolute_exclusion">ICD implantation has one or more exclusions.</string>
+    <string name="brain_damage_exclusion">Irreversible brain damage is an absolute exclusion 
+        for ICD implantation.</string>
+    <string name="post_revascularization_exclusion">ICD implantation is too soon post myocardial revascularization.</string>
+    <string name="cms_icd_instructions">The Calculate button will show whether the patient is likely 
+         to meet CMS guidelines for Medicare reimbursement.  Note the CMS National Coverage Determination
+         (NCD) is quite detailed and you should be very familiar with it before making a decision 
+	     as to whether a particular patient is likely to be
+	     covered.  This module is only intended as a guide to the NCD and is not definitive.
+	     Additional factors need to be considered.  For example, the NCD definition of 
+	     myocardial infarction must be used. Primary prevention ICD recipients 
+	     must be enrolled in an FDA-approved clinical trial
+	     or in the National ICD Registry.  Although unstated in CMS guidelines, patients
+	     considered for primary prevention ICDs should be on stable, optimal medical
+	     therapy for left ventricular dysfunction.  Note also that the CMS 
+	     makes a distinction between EP testing performed for suspected VT (e.g. in a patient with syncope) in Guideline #2
+	     and EP testing performed for risk stratification (e.g. as in MADIT), which is Guideline #4.
+	     The CMS NCD does not cover approval of CRT devices.  
+	     CRT device approval is subject to Local Coverage Determinations and
+         local payers.  Note that some locales may require
+         QRS duration \u2265 130 msec for CRT coverage.
+         </string>
+    <string name="cms_icd_key">CABG = coronary artery bypass grafting.  CM = cardiomyopathy. 
+        CMS = Centers for Medicare and Medicaid Services.
+        CRT = cardiac resynchronization therapy. EF = ejection fraction. EPS = electrophysiology study. 
+        HCM = hypertrophic cardiomyopathy. ICD = implantable cardioverter defibrillator.
+        MI = myocardial infarction. NYHA = New York Heart Association. PCI = percutaneous coronary intervention. 
+        VT = ventricular tachycardia. VF = ventricular fibrillation.</string>
+    <string name="cms_icd_references">Reference: Center for Medicaid and Medicare Services, 
+	     National Coverage Determination Manual, Chapter 1, Part 1, Section 20.4, 2005.
+	     </string>
 
 </resources>
-

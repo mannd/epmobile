@@ -14,7 +14,7 @@
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */   
+ */
 
 package org.epstudios.epmobile;
 
@@ -32,25 +32,25 @@ import android.widget.RadioGroup;
 
 public class Warfarin extends EpActivity implements OnClickListener {
 	@Override
-	protected void onCreate(Bundle savedInstanceState)  {
+	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.warfarin);
-		
+
 		View calculateDoseButton = findViewById(R.id.calculate_dose_button);
 		calculateDoseButton.setOnClickListener(this);
 		View clearButton = findViewById(R.id.clear_button);
 		clearButton.setOnClickListener(this);
-		
+
 		tabletRadioGroup = (RadioGroup) findViewById(R.id.tabletRadioGroup);
 		inrTargetRadioGroup = (RadioGroup) findViewById(R.id.inrTargetRadioGroup);
 		inrEditText = (EditText) findViewById(R.id.inrEditText);
 		weeklyDoseEditText = (EditText) findViewById(R.id.weeklyDoseEditText);
-		
+
 		doseChange = new DoseChange(0, 0, "", Direction.INCREASE);
-		
+
 		clearEntries();
 	}
-	
+
 	private RadioGroup tabletRadioGroup;
 	private RadioGroup inrTargetRadioGroup;
 	private EditText inrEditText;
@@ -58,10 +58,15 @@ public class Warfarin extends EpActivity implements OnClickListener {
 	private String defaultWarfarinTablet;
 	private String defaultInrTarget;
 	private double lowRange, highRange;
-	
-	private enum TargetRange { LOW_RANGE, HIGH_RANGE }
-	private enum Direction { INCREASE, DECREASE }
-	
+
+	private enum TargetRange {
+		LOW_RANGE, HIGH_RANGE
+	}
+
+	private enum Direction {
+		INCREASE, DECREASE
+	}
+
 	private class DoseChange {
 		public DoseChange(int lowEnd, int highEnd, String message,
 				Direction direction) {
@@ -76,9 +81,9 @@ public class Warfarin extends EpActivity implements OnClickListener {
 		private String message;
 		private Direction direction;
 	}
-	
+
 	public DoseChange doseChange;
-	
+
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
@@ -90,11 +95,13 @@ public class Warfarin extends EpActivity implements OnClickListener {
 			break;
 		}
 	}
-	
-	public static double getNewDoseFromPercentage(double percent, double oldDose, Boolean increase) {
-		return Math.round(oldDose + (increase ? oldDose * percent : -oldDose * percent));
+
+	public static double getNewDoseFromPercentage(double percent,
+			double oldDose, Boolean increase) {
+		return Math.round(oldDose
+				+ (increase ? oldDose * percent : -oldDose * percent));
 	}
-	
+
 	private double getTabletDose() {
 		double dose = 5.0;
 		int id = tabletRadioGroup.getCheckedRadioButtonId();
@@ -114,23 +121,25 @@ public class Warfarin extends EpActivity implements OnClickListener {
 		}
 		return dose;
 	}
-	
+
 	private double getWeeklyDose() {
 		try {
-			double weeklyDose = Double.parseDouble(weeklyDoseEditText.getText().toString());
+			double weeklyDose = Double.parseDouble(weeklyDoseEditText.getText()
+					.toString());
 			return weeklyDose;
-		}
-		catch (NumberFormatException e) {
+		} catch (NumberFormatException e) {
 			return 0.0;
 		}
-		
+
 	}
-	
+
 	public static Boolean weeklyDoseIsSane(double dose, double tabletSize) {
-		// need to make sure not only dose is sane, but max change to dose is sane
-		return dose - 0.2 * dose >= 7 * 0.5 * tabletSize && dose + 0.2 * dose <= 7 * 1.5 * tabletSize;
+		// need to make sure not only dose is sane, but max change to dose is
+		// sane
+		return dose - 0.2 * dose >= 7 * 0.5 * tabletSize
+				&& dose + 0.2 * dose <= 7 * 1.5 * tabletSize;
 	}
-	
+
 	private void calculateResult() {
 		String message = "";
 		Boolean showDoses = false;
@@ -152,38 +161,36 @@ public class Warfarin extends EpActivity implements OnClickListener {
 						message = message + "Increase ";
 					else
 						message = message + "Decrease ";
-					message = message + 
-						"weekly dose by " + String.valueOf(doseChange.lowEnd) +
-						"% to " + String.valueOf(doseChange.highEnd) + "%.";
+					message = message + "weekly dose by "
+							+ String.valueOf(doseChange.lowEnd) + "% to "
+							+ String.valueOf(doseChange.highEnd) + "%.";
 					if (weeklyDoseIsSane(getWeeklyDose(), getTabletDose()))
 						showDoses = true;
 				}
 			}
 			displayResult(message, showDoses);
-		}
-		catch (NumberFormatException e) {
+		} catch (NumberFormatException e) {
 			message = "Invalid Entry";
 			displayResult(message, false);
 		}
 	}
-	
+
 	private Boolean inrTherapeutic(double inr) {
 		return lowRange <= inr && inr <= highRange;
 	}
-	
+
 	private void getRange() {
 		// assumes only 2 ranges
 		TargetRange range = getTargetRange();
 		if (range == TargetRange.LOW_RANGE) {
 			lowRange = 2.0;
 			highRange = 3.0;
-		}
-		else {			// TargetRange.HIGH_RANGE
+		} else { // TargetRange.HIGH_RANGE
 			lowRange = 2.5;
 			highRange = 3.5;
 		}
 	}
-	
+
 	private TargetRange getTargetRange() {
 		if (inrTargetRadioGroup.getCheckedRadioButtonId() == R.id.inrTarget1)
 			return TargetRange.LOW_RANGE;
@@ -192,7 +199,7 @@ public class Warfarin extends EpActivity implements OnClickListener {
 		else
 			return TargetRange.LOW_RANGE;
 	}
-	
+
 	private DoseChange percentDoseChange(double inr) {
 		// uses Horton et al. Am Fam Physician 1999 algorithm,
 		// modified to specify specific % based on subdividing inr into ranges
@@ -202,9 +209,8 @@ public class Warfarin extends EpActivity implements OnClickListener {
 		else if (range == TargetRange.HIGH_RANGE)
 			return percentDoseChangeHighRange(inr);
 		else
-			return new DoseChange(0, 0, "", Direction.INCREASE);	// error!
+			return new DoseChange(0, 0, "", Direction.INCREASE); // error!
 	}
-	
 
 	private DoseChange percentDoseChangeHighRange(double inr) {
 		DoseChange doseChange = new DoseChange(0, 0, "", Direction.INCREASE);
@@ -212,30 +218,26 @@ public class Warfarin extends EpActivity implements OnClickListener {
 			doseChange.lowEnd = 10;
 			doseChange.highEnd = 20;
 			doseChange.message = "Give additional dose.";
-		}
-		else if (inr >= 2.0 && inr < 2.5) {
+		} else if (inr >= 2.0 && inr < 2.5) {
 			doseChange.lowEnd = 5;
 			doseChange.highEnd = 15;
 			doseChange.direction = Direction.INCREASE;
-		}
-		else if (inr > 3.5 && inr < 4.6) {
+		} else if (inr > 3.5 && inr < 4.6) {
 			doseChange.lowEnd = 5;
 			doseChange.highEnd = 15;
 			doseChange.direction = Direction.DECREASE;
-		}
-		else if (inr >= 4.6 && inr < 5.2) {
+		} else if (inr >= 4.6 && inr < 5.2) {
 			doseChange.lowEnd = 10;
 			doseChange.highEnd = 20;
 			doseChange.message = "Withhold no dose or one dose.";
 			doseChange.direction = Direction.DECREASE;
-		}		
-		else if (inr > 5.2) {
+		} else if (inr > 5.2) {
 			doseChange.lowEnd = 10;
 			doseChange.highEnd = 20;
 			doseChange.message = "Withhold no dose to two doses.";
 			doseChange.direction = Direction.DECREASE;
 		}
-		
+
 		return doseChange;
 	}
 
@@ -244,19 +246,16 @@ public class Warfarin extends EpActivity implements OnClickListener {
 		if (inr < 2.0) {
 			doseChange.lowEnd = 5;
 			doseChange.highEnd = 20;
-		}
-		else if (inr >= 3.0 && inr < 3.6) {
+		} else if (inr >= 3.0 && inr < 3.6) {
 			doseChange.lowEnd = 5;
 			doseChange.highEnd = 15;
 			doseChange.direction = Direction.DECREASE;
-		}
-		else if (inr >= 3.6 && inr <= 4) {
+		} else if (inr >= 3.6 && inr <= 4) {
 			doseChange.lowEnd = 10;
 			doseChange.highEnd = 15;
 			doseChange.message = "Withhold no dose or one dose.";
 			doseChange.direction = Direction.DECREASE;
-		}
-		else if (inr > 4) {
+		} else if (inr > 4) {
 			doseChange.lowEnd = 10;
 			doseChange.highEnd = 20;
 			doseChange.message = "Withhold no dose or one dose.";
@@ -267,7 +266,7 @@ public class Warfarin extends EpActivity implements OnClickListener {
 
 	private void displayResult(String message, Boolean showDoses) {
 		AlertDialog dialog = new AlertDialog.Builder(this).create();
-		
+
 		dialog.setMessage(message);
 		dialog.setTitle(getString(R.string.warfarin_result_title));
 		dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Reset",
@@ -280,45 +279,48 @@ public class Warfarin extends EpActivity implements OnClickListener {
 		dialog.setButton(DialogInterface.BUTTON_NEUTRAL, "Don't Reset",
 				new DialogInterface.OnClickListener() {
 					@Override
-					public void onClick(DialogInterface dialog, int which) {}
-				});
-		if (showDoses) {
-		dialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Dosing", 
-				new DialogInterface.OnClickListener() {
-					@Override
 					public void onClick(DialogInterface dialog, int which) {
-						// TODO Auto-generated method stub
-						displayDoses();
 					}
 				});
+		if (showDoses) {
+			dialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Dosing",
+					new DialogInterface.OnClickListener() {
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+							// TODO Auto-generated method stub
+							displayDoses();
+						}
+					});
 		}
 		dialog.show();
 	}
-	
+
 	private void displayDoses() {
 		saveDoseChange();
 		Intent i = new Intent(this, DoseTable.class);
 		startActivity(i);
 	}
-	
+
 	private void saveDoseChange() {
 		// save in Preferences
-		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+		SharedPreferences prefs = PreferenceManager
+				.getDefaultSharedPreferences(getBaseContext());
 		Editor editor = prefs.edit();
 		editor.putInt("lowEnd", doseChange.lowEnd);
 		editor.putInt("highEnd", doseChange.highEnd);
-		editor.putBoolean("increase", doseChange.direction == Direction.INCREASE);
+		editor.putBoolean("increase",
+				doseChange.direction == Direction.INCREASE);
 		editor.putFloat("tabletDose", (float) getTabletDose());
 		editor.putFloat("weeklyDose", (float) getWeeklyDose());
 		editor.commit();
 	}
-	
+
 	private void clearEntries() {
 		inrEditText.setText(null);
 		weeklyDoseEditText.setText(null);
 		getPrefs();
 		int defaultId = Integer.parseInt(defaultWarfarinTablet);
-		int id = 2;  // 5 mg default default
+		int id = 2; // 5 mg default default
 		switch (defaultId) {
 		case 0:
 			id = R.id.tablet1;
@@ -346,11 +348,19 @@ public class Warfarin extends EpActivity implements OnClickListener {
 		}
 		inrTargetRadioGroup.check(id);
 	}
-	
+
 	private void getPrefs() {
-		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-		defaultWarfarinTablet = prefs.getString("default_warfarin_tablet", "2");	// 2 = 5 mg dose
-		defaultInrTarget = prefs.getString("default_inr_target", "0"); 	// 0 = 2.0 - 3.0 target
+		SharedPreferences prefs = PreferenceManager
+				.getDefaultSharedPreferences(getBaseContext());
+		defaultWarfarinTablet = prefs.getString("default_warfarin_tablet", "2"); // 2
+																					// =
+																					// 5
+																					// mg
+																					// dose
+		defaultInrTarget = prefs.getString("default_inr_target", "0"); // 0 =
+																		// 2.0 -
+																		// 3.0
+																		// target
 	}
 
 }

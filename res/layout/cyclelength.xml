@@ -1,46 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="match_parent" android:background="@color/background"
-	android:layout_height="match_parent" android:orientation="vertical">
- 	<TableLayout
-  		android:layout_height="wrap_content"
-  		android:layout_width="wrap_content"
-  		android:layout_gravity="center"
-  		android:stretchColumns="*">
-  		<TableRow>
-  			<RadioGroup android:id="@+id/intervalRateRadioGroup"
-				android:layout_width="wrap_content" android:layout_height="wrap_content">
-				<RadioButton android:layout_height="wrap_content"
-					android:text="@string/cl_label" android:layout_width="wrap_content"
-					android:id="@+id/cl_button" android:checked="true">
-				</RadioButton>
-				<RadioButton android:layout_height="wrap_content"
-					android:text="@string/hr_label" android:layout_width="wrap_content"
-					android:id="@+id/hr_button">
-				</RadioButton>
-			</RadioGroup>			
-			<EditText android:id="@+id/inputEditText" android:text=""
-				android:hint="@string/cl_hint"
-				android:inputType="number"
-				android:layout_width="wrap_content" android:layout_height="wrap_content"
-				android:layout_weight="1"></EditText>
-	  	</TableRow>
-  		
-  	</TableLayout>	
-	<LinearLayout android:layout_width="match_parent"
-		android:id="@+id/linearLayout3" android:layout_height="wrap_content">
-		<Button android:text="@string/calculate_label" 
-			android:id="@+id/calculate_result_button"
-			android:layout_width="wrap_content" android:layout_height="wrap_content"
-			android:layout_weight="1"></Button>
-		<TextView android:id="@+id/calculated_result" 
-			android:text="@string/calculated_result_label"
-			android:textSize="20sp"
-			android:textColor="@color/neutral_text"
-			android:layout_width="wrap_content" android:layout_height="wrap_content"
-			android:layout_weight="1"></TextView>
-		<Button android:text="@string/clear_label" android:id="@+id/clear_button" 
-			android:layout_width="wrap_content" 
-			android:layout_height="wrap_content"></Button>
-	</LinearLayout>
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical" >
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:stretchColumns="*" >
+
+        <TableRow >
+
+            <RadioGroup
+                android:id="@+id/intervalRateRadioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <RadioButton
+                    android:id="@+id/cl_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/cl_label" >
+                </RadioButton>
+
+                <RadioButton
+                    android:id="@+id/hr_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hr_label" >
+                </RadioButton>
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/inputEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/cl_hint"
+                android:inputType="number"
+                android:text="" >
+            </EditText>
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/calculate_result_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/calculate_label" >
+        </Button>
+
+        <TextView
+            android:id="@+id/calculated_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/calculated_result_label"
+            android:textColor="@color/neutral_text"
+            android:textSize="20sp" >
+        </TextView>
+
+        <Button
+            android:id="@+id/clear_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/clear_label" >
+        </Button>
+    </LinearLayout>
+
 </LinearLayout>

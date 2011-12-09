@@ -14,7 +14,7 @@
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */   
+ */
 
 package org.epstudios.epmobile;
 
@@ -32,50 +32,52 @@ import android.widget.CheckBox;
 import android.widget.Spinner;
 import android.widget.AdapterView.OnItemSelectedListener;
 
-public class BrugadaMorphologyCriteria extends EpActivity implements OnClickListener {
+public class BrugadaMorphologyCriteria extends EpActivity implements
+		OnClickListener {
 	@Override
-	protected void onCreate(Bundle savedInstanceState)  {
+	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.wctmorphologycriteria);
-		
+
 		View calculateButton = findViewById(R.id.calculate_button);
-        calculateButton.setOnClickListener(this);
-        View clearButton = findViewById(R.id.clear_button);
-        clearButton.setOnClickListener(this);
-		
-        bbbSpinner = (Spinner) findViewById(R.id.bbb_spinner);
-        
-        setAdapters();
-        
-        lbbbCheckBox = new CheckBox[4];
-        lbbbCheckBox[0] = (CheckBox) findViewById(R.id.broad_r);
-        lbbbCheckBox[1] = (CheckBox) findViewById(R.id.broad_rs);
-        lbbbCheckBox[2] = (CheckBox) findViewById(R.id.notched_s);
-        lbbbCheckBox[3] = (CheckBox) findViewById(R.id.lbbb_q_v6);
-        
-        rbbbCheckBox = new CheckBox[6];
-        rbbbCheckBox[0] = (CheckBox) findViewById(R.id.monophasic_r_v1);
-        rbbbCheckBox[1] = (CheckBox) findViewById(R.id.qr_v1);
-        rbbbCheckBox[2] = (CheckBox) findViewById(R.id.rs_v1);
-        rbbbCheckBox[3] = (CheckBox) findViewById(R.id.deep_s_v6);
-        rbbbCheckBox[4] = (CheckBox) findViewById(R.id.rbbb_q_v6);
-        rbbbCheckBox[5] = (CheckBox) findViewById(R.id.monophasic_r_v6);
-        
-        clearEntries();
+		calculateButton.setOnClickListener(this);
+		View clearButton = findViewById(R.id.clear_button);
+		clearButton.setOnClickListener(this);
+
+		bbbSpinner = (Spinner) findViewById(R.id.bbb_spinner);
+
+		setAdapters();
+
+		lbbbCheckBox = new CheckBox[4];
+		lbbbCheckBox[0] = (CheckBox) findViewById(R.id.broad_r);
+		lbbbCheckBox[1] = (CheckBox) findViewById(R.id.broad_rs);
+		lbbbCheckBox[2] = (CheckBox) findViewById(R.id.notched_s);
+		lbbbCheckBox[3] = (CheckBox) findViewById(R.id.lbbb_q_v6);
+
+		rbbbCheckBox = new CheckBox[6];
+		rbbbCheckBox[0] = (CheckBox) findViewById(R.id.monophasic_r_v1);
+		rbbbCheckBox[1] = (CheckBox) findViewById(R.id.qr_v1);
+		rbbbCheckBox[2] = (CheckBox) findViewById(R.id.rs_v1);
+		rbbbCheckBox[3] = (CheckBox) findViewById(R.id.deep_s_v6);
+		rbbbCheckBox[4] = (CheckBox) findViewById(R.id.rbbb_q_v6);
+		rbbbCheckBox[5] = (CheckBox) findViewById(R.id.monophasic_r_v6);
+
+		clearEntries();
 	}
-	
-	private enum Bbb {LBBB, RBBB}
-	
+
+	private enum Bbb {
+		LBBB, RBBB
+	}
+
 	private Spinner bbbSpinner;
-	
+
 	private OnItemSelectedListener itemListener;
 	private CheckBox[] lbbbCheckBox;
 	private CheckBox[] rbbbCheckBox;
-	
-	
+
 	private void setAdapters() {
-		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-				R.array.bbb_labels, android.R.layout.simple_spinner_item);
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+				this, R.array.bbb_labels, android.R.layout.simple_spinner_item);
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		bbbSpinner.setAdapter(adapter);
 		itemListener = new OnItemSelectedListener() {
@@ -83,16 +85,17 @@ public class BrugadaMorphologyCriteria extends EpActivity implements OnClickList
 					int position, long id) {
 				updateBbbSelection();
 			}
+
 			public void onNothingSelected(AdapterView<?> parent) {
 				// do nothing
 			}
-		
+
 		};
-		
+
 		bbbSpinner.setOnItemSelectedListener(itemListener);
 
 	}
-	
+
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
@@ -104,14 +107,14 @@ public class BrugadaMorphologyCriteria extends EpActivity implements OnClickList
 			break;
 		}
 	}
-	
+
 	private void calculateResult() {
-		if (bothLeadsHaveEntries())  	
+		if (bothLeadsHaveEntries())
 			displayVtResult();
 		else
 			displaySvtResult();
 	}
-	
+
 	private Boolean bothLeadsHaveEntries() {
 		Set<Integer> lbbbV1 = new HashSet<Integer>();
 		Set<Integer> lbbbV6 = new HashSet<Integer>();
@@ -143,19 +146,18 @@ public class BrugadaMorphologyCriteria extends EpActivity implements OnClickList
 		}
 		return inV1 && inV6;
 	}
-	
+
 	private void updateBbbSelection() {
 		Bbb bbbSelection = getBbbSelection();
 		if (bbbSelection.equals(Bbb.LBBB)) {
 			hideRbbbEntries();
 			showLbbbEntries();
-		}
-		else {
+		} else {
 			hideLbbbEntries();
 			showRbbbEntries();
 		}
 	}
-	
+
 	private void displayVtResult() {
 		AlertDialog dialog = new AlertDialog.Builder(this).create();
 		String sens = ".987";
@@ -182,7 +184,7 @@ public class BrugadaMorphologyCriteria extends EpActivity implements OnClickList
 				});
 		dialog.show();
 	}
-	
+
 	private void displaySvtResult() {
 		AlertDialog dialog = new AlertDialog.Builder(this).create();
 		String message;
@@ -207,7 +209,7 @@ public class BrugadaMorphologyCriteria extends EpActivity implements OnClickList
 				});
 		dialog.show();
 	}
-	
+
 	private Bbb getBbbSelection() {
 		String result = bbbSpinner.getSelectedItem().toString();
 		if (result.startsWith("R"))
@@ -215,41 +217,40 @@ public class BrugadaMorphologyCriteria extends EpActivity implements OnClickList
 		else
 			return Bbb.LBBB;
 	}
-	
+
 	private void hideLbbbEntries() {
 		hideEntries(lbbbCheckBox);
 	}
-	
+
 	private void showLbbbEntries() {
 		showEntries(lbbbCheckBox);
 	}
-	
+
 	private void hideRbbbEntries() {
 		hideEntries(rbbbCheckBox);
 	}
-	
+
 	private void showRbbbEntries() {
 		showEntries(rbbbCheckBox);
 	}
-	
+
 	private void hideEntries(CheckBox[] cb) {
 		clearEntries();
 		for (int i = 0; i < cb.length; i++)
 			cb[i].setVisibility(View.GONE);
 	}
-	
+
 	private void showEntries(CheckBox[] cb) {
 		clearEntries();
 		for (int i = 0; i < cb.length; i++)
 			cb[i].setVisibility(View.VISIBLE);
 	}
-	
+
 	private void clearEntries() {
 		for (int i = 0; i < lbbbCheckBox.length; i++)
 			lbbbCheckBox[i].setChecked(false);
 		for (int i = 0; i < rbbbCheckBox.length; i++)
 			rbbbCheckBox[i].setChecked(false);
 	}
-
 
 }

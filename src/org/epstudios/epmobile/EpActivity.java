@@ -14,7 +14,7 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/   
+ */
 
 package org.epstudios.epmobile;
 
@@ -25,26 +25,26 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 //adds option menu functions
-public abstract class EpActivity  extends Activity {
- @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-    	super.onCreateOptionsMenu(menu);
-    	MenuInflater inflater = getMenuInflater();
-    	inflater.inflate(R.menu.menu, menu);
-    	return true;
-    }
-    
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-    	switch (item.getItemId()) {
-    	case R.id.settings:
-    		startActivity(new Intent(this, Prefs.class));
-    		return true;
-    	case R.id.about:
-    		startActivity(new Intent(this, About.class));
-    		return true;
-    	}
-    	return false;
-    }
+public abstract class EpActivity extends Activity {
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		super.onCreateOptionsMenu(menu);
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.menu, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.settings:
+			startActivity(new Intent(this, Prefs.class));
+			return true;
+		case R.id.about:
+			startActivity(new Intent(this, About.class));
+			return true;
+		}
+		return false;
+	}
 
 }
