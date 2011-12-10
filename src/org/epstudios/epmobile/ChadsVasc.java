@@ -61,7 +61,7 @@ public class ChadsVasc extends RiskScore {
 		}
 		displayResult(result);
 	}
-	
+
 	@Override
 	protected String getDialogTitle() {
 		return getString(R.string.chadsvasc_title);
@@ -82,37 +82,36 @@ public class ChadsVasc extends RiskScore {
 			risk = "0";
 			break;
 		case 1:
-			risk = "0.7";
+			risk = "1.3";
 			break;
 		case 2:
-			risk = "1.9";
+			risk = "2.2";
 			break;
 		case 3:
-			risk = "4.7";
+			risk = "3.2";
 			break;
 		case 4:
-			risk = "2.3";
+			risk = "4.0";
 			break;
 		case 5:
-			risk = "3.9";
+			risk = "6.7";
 			break;
 		case 6:
-			risk = "4.5";
+			risk = "9.8";
 			break;
 		case 7:
-			risk = "10.1";
+			risk = "9.6";
 			break;
 		case 8:
-			risk = "14.2";
+			risk = "6.7";
 			break;
 		case 9:
-			risk = "100";
+			risk = "15.2";
 			break;
 		}
 		risk = "Annual stroke risk is " + risk + "%";
-		message = "CHA\u2082DS\u2082-VASc score = " + result + "\n"
-				+ message + "\n" + risk
-				+ "\nReference: Gregory YHL et al. CHEST 2010 137:263";
+		message = "CHA\u2082DS\u2082-VASc score = " + result + "\n" + message
+				+ "\n" + risk + "\nReference: Lip GY et al. Stroke 2010";
 		return message;
 	}
 
