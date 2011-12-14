@@ -20,18 +20,18 @@ package org.epstudios.epmobile;
 
 import org.epstudios.epmobile.QtcCalculator.QtcFormula;
 
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.content.SharedPreferences;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.EditText;
 import android.widget.Toast;
 
 public class Qtc extends EpActivity implements OnClickListener {
