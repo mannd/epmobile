@@ -203,6 +203,10 @@
             android:label="@string/drug_dose_calculators_title"
             android:name=".DrugDoseCalculatorList" >
         </activity>
+        <activity
+            android:label="@string/hemorrhages_title"
+            android:name=".Hemorrhages" >
+        </activity>
     </application>
 
 </manifest>
