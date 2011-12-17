@@ -446,5 +446,6 @@
     <string name="fall_risk_label">Elevated risk of fall including neuropsychiatric disease (Alzheimer, Parkinson,
 	    schizophrenia, etc.)</string>
     <string name="stroke_hemorrhages_label">Stroke</string>
+    <string name="wpw_title">WPW Pathway Localization</string>
 
 </resources>

@@ -322,3 +322,20 @@
   |-------------------------+----------|
 
   
+* WPW Arruda algorithm
+** Locations
+   - LPL
+   - LL
+   - LAL
+   - LP
+   - PSTA
+   - L FREE WALL
+   - SUBEPICARDIAL
+   - PSMA
+   - AS
+   - MSTA
+   - RA
+   - RAL
+   - RL
+   - RP
+   - RPL

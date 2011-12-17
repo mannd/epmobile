@@ -44,6 +44,7 @@
         <item>@string/risk_score_list_title</item>
         <item>@string/short_qt_title</item>
         <item>@string/wct_algorithm_list_title</item>
+        <item>@string/wpw_title</item>
     </array>
     <array name="wct_algorithm_list">
 
