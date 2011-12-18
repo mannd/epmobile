@@ -18,6 +18,8 @@
 
 package org.epstudios.epmobile;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -32,6 +34,7 @@ public class WpwArruda extends EpActivity implements OnClickListener {
 	private Button morphologyButton;
 	private TextView stepTextView;
 	private static int step = 1;
+	private static int priorStep = 1;
 
 	protected final boolean modifiedArruda = false;
 
@@ -75,6 +78,7 @@ public class WpwArruda extends EpActivity implements OnClickListener {
 	}
 
 	protected void getYesResult() {
+		priorStep = step;
 		switch (step) {
 		case 1:
 			if (modifiedArruda)
@@ -120,6 +124,7 @@ public class WpwArruda extends EpActivity implements OnClickListener {
 	}
 
 	protected void getNoResult() {
+		priorStep = step;
 		switch (step) {
 		case 1:
 			step = 13;
@@ -163,36 +168,7 @@ public class WpwArruda extends EpActivity implements OnClickListener {
 	}
 
 	private void getBackResult() {
-		switch (step) {
-		case 1:
-		case 2:
-		case 6:
-		case 13:
-			step = 1;
-			break;
-		case 7:
-			step = 6;
-			break;
-		case 8:
-			step = 7;
-			break;
-		case 15:
-			step = 13;
-			break;
-		case 16:
-		case 24:
-			step = 15;
-			break;
-		case 18:
-			step = 16;
-			break;
-		case 20:
-			step = 18;
-			break;
-		case 27:
-			step = 24;
-			break;
-		}
+		step = priorStep;
 		gotoStep();
 	}
 
@@ -256,8 +232,84 @@ public class WpwArruda extends EpActivity implements OnClickListener {
 	}
 
 	private void showResult() {
-		// display map
-		step = 1;
-		gotoStep();
+		AlertDialog dialog = new AlertDialog.Builder(this).create();
+		String message = getString(R.string.ap_location_message);
+		switch (step) {
+		case 9:
+			message += getString(R.string.lpl_ll_location);
+			break;
+		case 10:
+			message += getString(R.string.ll_location);
+			break;
+		case 11:
+			message += getString(R.string.lal_location);
+			break;
+		case 12:
+			message += getString(R.string.lp_psta_location);
+			break;
+		case 4:
+			message += getString(R.string.lp_lpl_location);
+			break;
+		case 5:
+			message += getString(R.string.ll_lal_location);
+			break;
+		case 14:
+			message += getString(R.string.subepicardial_location);
+			break;
+		case 19:
+			message += getString(R.string.psta_psma_location);
+			break;
+		case 21:
+			message += getString(R.string.as_location);
+			break;
+		case 23:
+			message += getString(R.string.psta_location);
+			break;
+		case 22:
+			message += getString(R.string.msta_location);
+			break;
+		case 30:
+			message += getString(R.string.ra_ral_location);
+			break;
+		case 29:
+			message += getString(R.string.rl_location);
+			break;
+		case 28:
+			message += getString(R.string.rp_rpl_location);
+			break;
+		}
+		dialog.setMessage(message);
+		dialog.setTitle(getString(R.string.pathway_location_label));
+		dialog.setButton(DialogInterface.BUTTON_POSITIVE,
+				getString(R.string.done_label),
+				new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						finish();
+					}
+				});
+		dialog.setButton(DialogInterface.BUTTON_NEGATIVE,
+				getString(R.string.reset_label),
+				new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						step = 1;
+						priorStep = 1;
+						gotoStep();
+					}
+				});
+		dialog.setButton(DialogInterface.BUTTON_NEUTRAL,
+				getString(R.string.show_map_label),
+				new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						// show map;
+						step = 1;
+						priorStep = 1;
+						gotoStep();
+					}
+				});
+		dialog.show();
+
 	}
 }
