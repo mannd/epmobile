@@ -253,6 +253,9 @@ public class WpwArruda extends EpActivity implements OnClickListener {
 	private void showResult() {
 		AlertDialog dialog = new AlertDialog.Builder(this).create();
 		message = "";
+		location1 = ""; // need to reset locations or they will be "remembered"
+						// by map
+		location2 = "";
 		switch (step) {
 		case 9:
 			message += getString(R.string.lpl_ll_location);
