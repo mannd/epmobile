@@ -122,7 +122,7 @@
     <string name="wct_algorithm_title">Wide Complex Tachycardia</string>
     <string name="brugada_vt_title">Brugada Criteria SVT vs VT</string>
     <string name="brugada_wct_title">Brugada Algorithm</string>
-    <string name="brugada_step1">Absence of an RS complex in all precordial leads?
+    <string name="brugada_step_1">Absence of an RS complex in all precordial leads?
 	</string>
     <string name="brugada_step_2">R to S interval >100 msec in one precordial lead?
 	</string>
@@ -139,6 +139,8 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="back">Back</string>
+    <string name="done_label">Done</string>
+    <string name="reset_label">Reset</string>
     <string name="morphology_label">Morphology Criteria</string>
     <string name="morphology_title">@string/morphology_label</string>
     <string name="broad_r">R > 30 msec in V1 or V2</string>
@@ -446,5 +448,35 @@
     <string name="fall_risk_label">Elevated risk of fall including neuropsychiatric disease (Alzheimer, Parkinson,
 	    schizophrenia, etc.)</string>
     <string name="stroke_hemorrhages_label">Stroke</string>
+    <string name="wpw_title">WPW Pathway Localization</string>
+    <string name="arruda_step_1">Lead I \u00b1 or -\n or V1 R/S \u2265 1?</string>
+    <string name="arruda_step_2_3">Pathway is Left Free Wall\nLead aVF + ?</string>
+    <string name="arruda_step_6_7">Pathway is Left Free Wall\nLead I \u00b1 or Lead V1 S \u00b1 ?</string>
+    <string name="arruda_step_8a">Lead V1 + ?</string>
+    <string name="arruda_step_8b">Lead V1 \u00b1 ?</string>
+    <string name="arruda_step_13">Lead II - ?</string>
+    <string name="arruda_step_15">Lead V1 \u00b1 or - ?</string>
+    <string name="arruda_step_16_17">Pathway is Septal\nLead aVF - ?</string>
+    <string name="arruda_step_18">Lead aVF \u00b1 ?</string>
+    <string name="arruda_step_20">Lead III R \u2265 S ?</string>
+    <string name="arruda_step_24_25_26">Pathway is Right Free Wall\nLead aVF + ?</string>
+    <string name="arruda_step_27">Lead II + ?</string>
+    <string name="pathway_location_label">Accessory Pathway Location</string>
+    <string name="show_map_label">Show Map</string>
+    <string name="ap_location_message">Accessory pathway location:\n</string>
+    <string name="lpl_ll_location">Left Posterolateral or Left Lateral</string>
+    <string name="ll_location">Left Lateral</string>
+    <string name="lal_location">Left Anterolateral</string>
+    <string name="lp_psta_location">Left Posterior or Posteroseptal Tricuspid Annulus</string>
+    <string name="lp_lpl_location">Left Posterior or Left Posterolateral</string>
+    <string name="ll_lal_location">Left Lateral or Left Anterolateral</string>
+    <string name="subepicardial_location">Subepicardial.  Coronary Sinus or Middle Cardiac Vein</string>
+    <string name="psta_psma_location">Posteroseptal Tricuspid Annulus or Posteroseptal Mitral Annulus</string>
+    <string name="as_location">Anteroseptal</string>
+    <string name="psta_location">Posteroseptal Tricuspid Annulus</string>
+    <string name="msta_location">Mid-septal Tricuspid Annulus</string>
+    <string name="rp_rpl_location">Right Posterior or Right Posterolateral</string>
+    <string name="ra_ral_location">Right Anterior or Right Anterolateral</string>
+    <string name="rl_location">Right Lateral</string>
 
 </resources>

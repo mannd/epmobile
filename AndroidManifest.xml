@@ -207,6 +207,10 @@
             android:label="@string/hemorrhages_title"
             android:name=".Hemorrhages" >
         </activity>
+        <activity
+            android:label="@string/wpw_title"
+            android:name="WpwArruda" >
+        </activity>
     </application>
 
 </manifest>
