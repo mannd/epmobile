@@ -44,7 +44,7 @@
         <item>@string/risk_score_list_title</item>
         <item>@string/short_qt_title</item>
         <item>@string/wct_algorithm_list_title</item>
-        <item>@string/wpw_title</item>
+        <item>@string/wpw_algorithm_list_title</item>
     </array>
     <array name="wct_algorithm_list">
 
@@ -53,6 +53,11 @@
         <item>@string/morphology_title</item>
         <item>@string/rwpt_title</item>
         <!-- <item>Vereckei Algorithm</item> -->
+    </array>
+    <array name="wpw_algorithm_list">
+        <item>@string/arruda_title</item>
+        <item>@string/modified_arruda_title</item>
+        <item>@string/milstein_title</item>
     </array>
     <array name="drug_calculator_list">
         <item>@string/dabigatran_calculator_title</item>

@@ -208,8 +208,12 @@
             android:name=".Hemorrhages" >
         </activity>
         <activity
-            android:label="@string/wpw_title"
-            android:name="WpwArruda" >
+            android:label="@string/wpw_algorithm_title"
+            android:name=".WpwAlgorithmList" >
+        </activity>
+        <activity
+            android:label="@string/arruda_title"
+            android:name=".WpwArruda" >
         </activity>
     </application>
 

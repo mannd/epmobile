@@ -448,7 +448,11 @@
     <string name="fall_risk_label">Elevated risk of fall including neuropsychiatric disease (Alzheimer, Parkinson,
 	    schizophrenia, etc.)</string>
     <string name="stroke_hemorrhages_label">Stroke</string>
-    <string name="wpw_title">WPW Pathway Localization</string>
+    <string name="wpw_algorithm_title">WPW Pathway Location</string>
+    <string name="wpw_algorithm_list_title">WPW Pathway Location \u25b6</string>
+    <string name="arruda_title">Arruda Algorithm</string>
+    <string name="modified_arruda_title">Modified Arruda Algorithm</string>
+    <string name="milstein_title">Milstein Algorithm</string>
     <string name="arruda_step_1">Lead I \u00b1 or -\n or V1 R/S \u2265 1?</string>
     <string name="arruda_step_2_3">Pathway is Left Free Wall\nLead aVF + ?</string>
     <string name="arruda_step_6_7">Pathway is Left Free Wall\nLead I \u00b1 or Lead V1 S \u00b1 ?</string>
@@ -470,7 +474,7 @@
     <string name="lp_psta_location">Left Posterior or Posteroseptal Tricuspid Annulus</string>
     <string name="lp_lpl_location">Left Posterior or Left Posterolateral</string>
     <string name="ll_lal_location">Left Lateral or Left Anterolateral</string>
-    <string name="subepicardial_location">Subepicardial.  Coronary Sinus or Middle Cardiac Vein</string>
+    <string name="subepicardial_location">Epicardial: Coronary Sinus or Middle Cardiac Vein</string>
     <string name="psta_psma_location">Posteroseptal Tricuspid Annulus or Posteroseptal Mitral Annulus</string>
     <string name="as_location">Anteroseptal</string>
     <string name="psta_location">Posteroseptal Tricuspid Annulus</string>

@@ -66,7 +66,8 @@ public class EpMobile extends EpListActivity {
 				else if (selection
 						.equals(getString(R.string.risk_score_list_title)))
 					riskScores();
-				else if (selection.equals(getString(R.string.wpw_title)))
+				else if (selection
+						.equals(getString(R.string.wpw_algorithm_list_title)))
 					wpw();
 			}
 		});
@@ -118,7 +119,7 @@ public class EpMobile extends EpListActivity {
 	}
 
 	private void wpw() {
-		Intent i = new Intent(this, WpwArruda.class);
+		Intent i = new Intent(this, WpwAlgorithmList.class);
 		startActivity(i);
 	}
 }
