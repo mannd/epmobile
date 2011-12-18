@@ -336,9 +336,6 @@ public class WpwArruda extends EpActivity implements OnClickListener {
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-						step = 1;
-						priorStep = 1;
-						gotoStep();
 					}
 				});
 		dialog.setButton(DialogInterface.BUTTON_NEUTRAL,
@@ -347,12 +344,13 @@ public class WpwArruda extends EpActivity implements OnClickListener {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						showMap();
-						step = 1;
-						priorStep = 1;
-						gotoStep();
+
 					}
 				});
 		dialog.show();
+		step = 1;
+		priorStep = 1;
+		gotoStep();
 
 	}
 
