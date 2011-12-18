@@ -219,6 +219,10 @@
             android:label="@string/av_annulus_map_title"
             android:name=".AvAnnulusMap" >
         </activity>
+        <activity
+            android:label="@string/modified_arruda_title"
+            android:name=".WpwModifiedArruda" >
+        </activity>
     </application>
 
 </manifest>

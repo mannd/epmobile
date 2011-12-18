@@ -52,10 +52,16 @@ public class WpwArruda extends EpActivity implements OnClickListener {
 	private String message;
 	private String location1 = "";
 	private String location2 = "";
-	private static int step = 1;
-	private static int priorStep = 1;
+	private int step = 1;
+	// these ints implement a back buffer
+	private int priorStep = 1;
+	private int priorStep1 = 1;
+	private int priorStep2 = 1;
+	private int priorStep3 = 1;
+	private int priorStep4 = 1;
+	private int priorStep5 = 1;
 
-	protected final boolean modifiedArruda = false;
+	protected boolean modifiedArruda = false;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +79,7 @@ public class WpwArruda extends EpActivity implements OnClickListener {
 													// to an instructions button
 		stepTextView = (TextView) findViewById(R.id.stepTextView);
 
-		step = 1; // needed to reset this when activity starts
+		// step = 1; // needed to reset this when activity starts
 		step1();
 	}
 
@@ -97,7 +103,7 @@ public class WpwArruda extends EpActivity implements OnClickListener {
 	}
 
 	protected void getYesResult() {
-		priorStep = step;
+		adjustStepsForward();
 		switch (step) {
 		case 1:
 			if (modifiedArruda)
@@ -143,7 +149,7 @@ public class WpwArruda extends EpActivity implements OnClickListener {
 	}
 
 	protected void getNoResult() {
-		priorStep = step;
+		adjustStepsForward();
 		switch (step) {
 		case 1:
 			step = 13;
@@ -186,9 +192,32 @@ public class WpwArruda extends EpActivity implements OnClickListener {
 		gotoStep();
 	}
 
+	// bug! can only go back one step
 	private void getBackResult() {
-		step = priorStep;
+		adjustStepsBackward();
 		gotoStep();
+	}
+
+	private void adjustStepsForward() {
+		priorStep5 = priorStep4;
+		priorStep4 = priorStep3;
+		priorStep3 = priorStep2;
+		priorStep2 = priorStep1;
+		priorStep1 = priorStep;
+		priorStep = step;
+	}
+
+	private void adjustStepsBackward() {
+		step = priorStep;
+		priorStep = priorStep1;
+		priorStep1 = priorStep2;
+		priorStep2 = priorStep3;
+		priorStep3 = priorStep4;
+		priorStep4 = priorStep5;
+	}
+
+	private void resetSteps() {
+		priorStep5 = priorStep4 = priorStep3 = priorStep2 = priorStep1 = priorStep = step = 1;
 	}
 
 	protected void gotoStep() {
@@ -322,6 +351,7 @@ public class WpwArruda extends EpActivity implements OnClickListener {
 			break;
 		}
 		dialog.setMessage(message);
+		dialog.setCanceledOnTouchOutside(false);
 		dialog.setTitle(getString(R.string.pathway_location_label));
 		dialog.setButton(DialogInterface.BUTTON_POSITIVE,
 				getString(R.string.done_label),
@@ -336,6 +366,8 @@ public class WpwArruda extends EpActivity implements OnClickListener {
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
+						resetSteps();
+						gotoStep();
 					}
 				});
 		dialog.setButton(DialogInterface.BUTTON_NEUTRAL,
@@ -344,14 +376,11 @@ public class WpwArruda extends EpActivity implements OnClickListener {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						showMap();
-
+						resetSteps();
+						gotoStep();
 					}
 				});
 		dialog.show();
-		step = 1;
-		priorStep = 1;
-		gotoStep();
-
 	}
 
 	private void showMap() {

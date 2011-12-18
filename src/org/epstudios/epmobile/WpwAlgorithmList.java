@@ -59,8 +59,8 @@ public class WpwAlgorithmList extends EpListActivity {
 	}
 
 	private void modifiedArrudaAlgorithm() {
-		// Intent i = new Intent(this, WctMorphologyCriteria.class);
-		// startActivity(i);
+		Intent i = new Intent(this, WpwModifiedArruda.class);
+		startActivity(i);
 	}
 
 	private void milsteinAlgorithm() {
