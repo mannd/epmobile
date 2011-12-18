@@ -20,6 +20,7 @@ package org.epstudios.epmobile;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -28,11 +29,29 @@ import android.widget.TextView;
 
 // Supports both Arruda and modified Arruda algorithms
 public class WpwArruda extends EpActivity implements OnClickListener {
+	public final static String AS = "AS";
+	public final static String LPL = "LPL";
+	public final static String LL = "LL";
+	public final static String LAL = "LAL";
+	public final static String LP = "LP";
+	public final static String PSTA = "PSTA";
+	public final static String SUBEPI = "SUBEPI";
+	public final static String PSMA = "PSMA";
+	public final static String MSTA = "MSTA";
+	public final static String RA = "RA";
+	public final static String RAL = "RAL";
+	public final static String RL = "RL";
+	public final static String RP = "RP";
+	public final static String RPL = "RPL";
+
 	private Button yesButton;
 	private Button noButton;
 	private Button backButton;
 	private Button morphologyButton;
 	private TextView stepTextView;
+	private String message;
+	private String location1 = "";
+	private String location2 = "";
 	private static int step = 1;
 	private static int priorStep = 1;
 
@@ -233,49 +252,70 @@ public class WpwArruda extends EpActivity implements OnClickListener {
 
 	private void showResult() {
 		AlertDialog dialog = new AlertDialog.Builder(this).create();
-		String message = getString(R.string.ap_location_message);
+		message = "";
 		switch (step) {
 		case 9:
 			message += getString(R.string.lpl_ll_location);
+			location1 = LPL;
+			location2 = LL;
 			break;
 		case 10:
 			message += getString(R.string.ll_location);
+			location1 = LL;
 			break;
 		case 11:
 			message += getString(R.string.lal_location);
+			location1 = LAL;
 			break;
 		case 12:
 			message += getString(R.string.lp_psta_location);
+			location1 = LP;
+			location2 = PSTA;
 			break;
 		case 4:
 			message += getString(R.string.lp_lpl_location);
+			location1 = LP;
+			location2 = LPL;
 			break;
 		case 5:
 			message += getString(R.string.ll_lal_location);
+			location1 = LL;
+			location2 = LAL;
 			break;
 		case 14:
 			message += getString(R.string.subepicardial_location);
+			location1 = SUBEPI;
 			break;
 		case 19:
 			message += getString(R.string.psta_psma_location);
+			location1 = PSTA;
+			location2 = PSMA;
 			break;
 		case 21:
 			message += getString(R.string.as_location);
+			location1 = AS;
 			break;
 		case 23:
 			message += getString(R.string.psta_location);
+			location1 = PSTA;
 			break;
 		case 22:
 			message += getString(R.string.msta_location);
+			location1 = MSTA;
 			break;
 		case 30:
 			message += getString(R.string.ra_ral_location);
+			location1 = RA;
+			location2 = RAL;
 			break;
 		case 29:
 			message += getString(R.string.rl_location);
+			location1 = RL;
 			break;
 		case 28:
 			message += getString(R.string.rp_rpl_location);
+			location1 = RP;
+			location2 = RPL;
 			break;
 		}
 		dialog.setMessage(message);
@@ -303,7 +343,7 @@ public class WpwArruda extends EpActivity implements OnClickListener {
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-						// show map;
+						showMap();
 						step = 1;
 						priorStep = 1;
 						gotoStep();
@@ -311,5 +351,13 @@ public class WpwArruda extends EpActivity implements OnClickListener {
 				});
 		dialog.show();
 
+	}
+
+	private void showMap() {
+		Intent i = new Intent(this, AvAnnulusMap.class);
+		i.putExtra("message", message);
+		i.putExtra("location1", location1);
+		i.putExtra("location2", location2);
+		startActivity(i);
 	}
 }

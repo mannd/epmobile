@@ -482,5 +482,6 @@
     <string name="rp_rpl_location">Right Posterior or Right Posterolateral</string>
     <string name="ra_ral_location">Right Anterior or Right Anterolateral</string>
     <string name="rl_location">Right Lateral</string>
+    <string name="av_annulus_map_title">Accessory Pathway Location</string>
 
 </resources>
