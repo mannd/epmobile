@@ -319,9 +319,9 @@
   | ≤                       | \u2264   |
   | ≥                       | \u2265   |
   | subscript 2             | \u2082   |
+  | ±                       | \u00b1   |
   |-------------------------+----------|
-
-  
+  - insert unicode char in emacs: C-x 8 RET name of char or code number
 * WPW Arruda algorithm
 ** Locations
    - LPL

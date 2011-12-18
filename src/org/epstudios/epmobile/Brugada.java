@@ -67,7 +67,7 @@ public class Brugada extends EpActivity implements OnClickListener {
 	}
 
 	private void step1() {
-		stepTextView.setText(getString(R.string.brugada_step1));
+		stepTextView.setText(getString(R.string.brugada_step_1));
 		backButton.setEnabled(false);
 	}
 

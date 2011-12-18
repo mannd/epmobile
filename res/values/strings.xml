@@ -122,7 +122,7 @@
     <string name="wct_algorithm_title">Wide Complex Tachycardia</string>
     <string name="brugada_vt_title">Brugada Criteria SVT vs VT</string>
     <string name="brugada_wct_title">Brugada Algorithm</string>
-    <string name="brugada_step1">Absence of an RS complex in all precordial leads?
+    <string name="brugada_step_1">Absence of an RS complex in all precordial leads?
 	</string>
     <string name="brugada_step_2">R to S interval >100 msec in one precordial lead?
 	</string>
@@ -447,5 +447,17 @@
 	    schizophrenia, etc.)</string>
     <string name="stroke_hemorrhages_label">Stroke</string>
     <string name="wpw_title">WPW Pathway Localization</string>
+    <string name="arruda_step_1">Lead I \u00b1 or -\n or V1 R/S \u2265 1?</string>
+    <string name="arruda_step_2_3">Pathway is Left Free Wall\nLead aVF + ?</string>
+    <string name="arruda_step_6_7">Pathway is Left Free Wall\nLead I \u00b1 or Lead V1 S \u00b1 ?</string>
+    <string name="arruda_step_8a">Lead V1 + ?</string>
+    <string name="arruda_step_8b">Lead V1 \u00b1 ?</string>
+    <string name="arruda_step_13">Lead II - ?</string>
+    <string name="arruda_step_15">Lead V1 \u00b1 or - ?</string>
+    <string name="arruda_step_16_17">Pathway is Septal\nLead aVF - ?</string>
+    <string name="arruda_step_18">Lead aVF \u00b1 ?</string>
+    <string name="arruda_step_20">Lead III R \u2265 S ?</string>
+    <string name="arruda_step_24_25_26">Pathway is Right Free Wall\nLead aVF + ?</string>
+    <string name="arruda_step_27">Lead II + ?</string>
 
 </resources>
