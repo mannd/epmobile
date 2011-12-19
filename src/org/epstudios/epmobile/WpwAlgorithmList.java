@@ -49,6 +49,9 @@ public class WpwAlgorithmList extends EpListActivity {
 					modifiedArrudaAlgorithm();
 				else if (selection.equals(getString(R.string.milstein_title)))
 					milsteinAlgorithm();
+				else if (selection
+						.equals(getString(R.string.anatomy_av_annulus_title)))
+					avAnnulusMap();
 			}
 		});
 	}
@@ -65,6 +68,11 @@ public class WpwAlgorithmList extends EpListActivity {
 
 	private void milsteinAlgorithm() {
 		Intent i = new Intent(this, WpwMilstein.class);
+		startActivity(i);
+	}
+
+	private void avAnnulusMap() {
+		Intent i = new Intent(this, AvAnnulusMap.class);
 		startActivity(i);
 	}
 

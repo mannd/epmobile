@@ -34,7 +34,8 @@ public class AvAnnulusMap extends EpActivity {
 			location2 = extras.getString("location2");
 			setApLocation(location1);
 			setApLocation(location2);
-		}
+		} else
+			setTitle(getString(R.string.anatomy_av_annulus_title));
 	}
 
 	private void setApLocation(String location) {

@@ -33,7 +33,10 @@
         <item>"0"</item>
         <item>"1"</item>
     </array>
-    <!-- Make sure all lists are in alphabetic order -->
+    <!--
+    Make sure all lists are in alphabetic order.  The order
+    below may change if the strings are translated into a different language.
+    -->
     <array name="main_index">
         <item>@string/arvc_title</item>
         <item>@string/icd_calculator_title</item>
@@ -55,6 +58,7 @@
         <!-- <item>Vereckei Algorithm</item> -->
     </array>
     <array name="wpw_algorithm_list">
+        <item>@string/anatomy_av_annulus_title</item>
         <item>@string/arruda_title</item>
         <item>@string/modified_arruda_title</item>
         <item>@string/milstein_title</item>

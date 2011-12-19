@@ -490,5 +490,6 @@
     <string name="milstein_step_4">Rs or RS in V1, V2, or V3?</string>
     <string name="milstein_step_6">QRS axis \u003e 30\u00b0</string>
     <string name="milstein_step_7">Rs or RS in V1 or V2</string>
+    <string name="anatomy_av_annulus_title">Anatomy of AV Annulus</string>
 
 </resources>
