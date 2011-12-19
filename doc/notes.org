@@ -112,14 +112,15 @@
   |------+---------+---------|
 ** 
 * Preparing new version -- IMPORTANT!
-  - finish version
-  - run git log --pretty=oneline and update changes/x.y.z.txt
-  - update doc/description.txt
-  - update screenshots - resize them with GIMP to 320 x 480!
+  - finish version, commit.
+  - git flow feature start v0.x
   - IMPORTANT - update AndroidManifest.xml
     - increment android:versionCode
     - change android:versionName
+  - run git log --pretty=oneline and update changes/x.y.z.txt
   - git add changes/x.y.z.txt
+  - update doc/description.txt
+  - update screenshots - resize them with GIMP to 320 x 480!
   - git commit
   - git tag vX.Y.Z
   - git push --tags origin master
