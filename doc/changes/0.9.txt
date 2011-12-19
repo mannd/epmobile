@@ -1,0 +1,11 @@
+EP Mobile v0.9 Release Notes
+
+Changes since v0.8
+
+* Updated ChadsVasc risk percentages and reference.
+* Added HEMORR2HAGES bleeding risk score.
+* Added WPW Pathway Location group.
+* Added Arruda algorithm.
+* Added Modified Arruda algorithm.
+* Added Milstein algorithm.
+* Added Anatomy of AV Annulus map.

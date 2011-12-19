@@ -22,97 +22,87 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 
-public class ChadsVasc extends RiskScore {
+public class Hemorrhages extends RiskScore {
+	final static private int REBLEED = 5; // this is the only risk worth 2
+											// points
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.chadsvasc);
+		setContentView(R.layout.hemorrhages);
 
 		View calculateButton = findViewById(R.id.calculate_button);
 		calculateButton.setOnClickListener(this);
 		View clearButton = findViewById(R.id.clear_button);
 		clearButton.setOnClickListener(this);
 
-		checkBox = new CheckBox[8];
+		checkBox = new CheckBox[11];
 
-		checkBox[0] = (CheckBox) findViewById(R.id.chf);
-		checkBox[1] = (CheckBox) findViewById(R.id.hypertension);
-		checkBox[2] = (CheckBox) findViewById(R.id.age75);
-		checkBox[3] = (CheckBox) findViewById(R.id.diabetes);
-		checkBox[4] = (CheckBox) findViewById(R.id.stroke);
-		checkBox[5] = (CheckBox) findViewById(R.id.vascular);
-		checkBox[6] = (CheckBox) findViewById(R.id.age65);
-		checkBox[7] = (CheckBox) findViewById(R.id.female);
+		checkBox[0] = (CheckBox) findViewById(R.id.hepatic_or_renal_disease);
+		checkBox[1] = (CheckBox) findViewById(R.id.etoh);
+		checkBox[2] = (CheckBox) findViewById(R.id.malignancy);
+		checkBox[3] = (CheckBox) findViewById(R.id.older);
+		checkBox[4] = (CheckBox) findViewById(R.id.platelet);
+		checkBox[REBLEED] = (CheckBox) findViewById(R.id.rebleeding);
+		checkBox[6] = (CheckBox) findViewById(R.id.htn_uncontrolled);
+		checkBox[7] = (CheckBox) findViewById(R.id.anemia);
+		checkBox[8] = (CheckBox) findViewById(R.id.genetic_factors);
+		checkBox[9] = (CheckBox) findViewById(R.id.fall_risk);
+		checkBox[10] = (CheckBox) findViewById(R.id.stroke);
 	}
 
 	@Override
 	protected void calculateResult() {
 		int result = 0;
-		// correct checking both age checkboxes
-		if (checkBox[2].isChecked() && checkBox[6].isChecked())
-			checkBox[6].setChecked(false);
 		for (int i = 0; i < checkBox.length; i++) {
-			if (checkBox[i].isChecked()) {
-				if (i == 4 || i == 2) // stroke, age>75 = 2 points
-					result = result + 2;
+			if (checkBox[i].isChecked())
+				if (i == REBLEED)
+					result += 2;
 				else
 					result++;
-			}
 		}
 		displayResult(result);
 	}
 
 	@Override
-	protected String getDialogTitle() {
-		return getString(R.string.chadsvasc_title);
-	}
-
-	@Override
 	protected String getResultMessage(int result) {
 		String message;
-		if (result < 1)
-			message = getString(R.string.low_chadsvasc_message);
-		else if (result == 1)
-			message = getString(R.string.medium_chadsvasc_message);
+		if (result < 2)
+			message = getString(R.string.low_risk_hemorrhages);
+		else if (result < 4)
+			message = getString(R.string.intermediate_risk_hemorrhages);
 		else
-			message = getString(R.string.high_chadsvasc_message);
+			// result >= 4
+			message = getString(R.string.high_risk_hemorrhages);
 		String risk = "";
 		switch (result) {
 		case 0:
-			risk = "0";
+			risk = "1.9";
 			break;
 		case 1:
-			risk = "1.3";
+			risk = "2.5";
 			break;
 		case 2:
-			risk = "2.2";
+			risk = "5.3";
 			break;
 		case 3:
-			risk = "3.2";
+			risk = "8.4";
 			break;
 		case 4:
-			risk = "4.0";
-			break;
-		case 5:
-			risk = "6.7";
-			break;
-		case 6:
-			risk = "9.8";
-			break;
-		case 7:
-			risk = "9.6";
-			break;
-		case 8:
-			risk = "6.7";
-			break;
-		case 9:
-			risk = "15.2";
+			risk = "10.4";
 			break;
 		}
-		risk = "Annual stroke risk is " + risk + "%";
-		message = "CHA\u2082DS\u2082-VASc score = " + result + "\n" + message
-				+ "\n" + risk + "\nReference: Lip GY et al. Stroke 2010";
+		if (result >= 5)
+			risk = "12.3";
+		risk = "Bleeding risk is " + risk + " bleeds per 100 patient-years";
+		message = getString(R.string.hemorrhages_title) + " = " + result + "\n"
+				+ message + "\n" + risk + "\n"
+				+ getString(R.string.hemorrhages_reference);
 		return message;
+	}
+
+	protected String getDialogTitle() {
+		return getString(R.string.hemorrhages_title);
 	}
 
 }

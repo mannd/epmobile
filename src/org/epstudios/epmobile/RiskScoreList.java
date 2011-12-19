@@ -4,10 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.AdapterView.OnItemClickListener;
 
 public class RiskScoreList extends EpListActivity {
 	@Override
@@ -32,10 +32,13 @@ public class RiskScoreList extends EpListActivity {
 					hasBledScore();
 				else if (selection.equals(getString(R.string.hcm_title)))
 					hcmScore();
+				else if (selection
+						.equals(getString(R.string.hemorrhages_title)))
+					hemorrhagesScore();
 			}
 		});
 	}
-	
+
 	private void hasBledScore() {
 		Intent i = new Intent(this, HasBled.class);
 		startActivity(i);
@@ -50,12 +53,15 @@ public class RiskScoreList extends EpListActivity {
 		Intent i = new Intent(this, ChadsVasc.class);
 		startActivity(i);
 	}
-	
+
 	private void hcmScore() {
 		Intent i = new Intent(this, Hcm.class);
 		startActivity(i);
 	}
 
-
+	private void hemorrhagesScore() {
+		Intent i = new Intent(this, Hemorrhages.class);
+		startActivity(i);
+	}
 
 }
