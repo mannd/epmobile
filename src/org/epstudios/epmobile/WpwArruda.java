@@ -46,13 +46,13 @@ public class WpwArruda extends EpActivity implements OnClickListener {
 
 	private Button yesButton;
 	private Button noButton;
-	private Button backButton;
+	protected Button backButton;
 	private Button morphologyButton;
-	private TextView stepTextView;
-	private String message;
-	private String location1 = "";
-	private String location2 = "";
-	private int step = 1;
+	protected TextView stepTextView;
+	protected String message;
+	protected String location1 = "";
+	protected String location2 = "";
+	protected int step = 1;
 	// these ints implement a back buffer
 	private int priorStep = 1;
 	private int priorStep1 = 1;
@@ -79,7 +79,6 @@ public class WpwArruda extends EpActivity implements OnClickListener {
 													// to an instructions button
 		stepTextView = (TextView) findViewById(R.id.stepTextView);
 
-		// step = 1; // needed to reset this when activity starts
 		step1();
 	}
 
@@ -97,7 +96,7 @@ public class WpwArruda extends EpActivity implements OnClickListener {
 		}
 	}
 
-	private void step1() {
+	protected void step1() {
 		stepTextView.setText(getString(R.string.arruda_step_1));
 		backButton.setEnabled(false);
 	}
@@ -192,13 +191,12 @@ public class WpwArruda extends EpActivity implements OnClickListener {
 		gotoStep();
 	}
 
-	// bug! can only go back one step
 	private void getBackResult() {
 		adjustStepsBackward();
 		gotoStep();
 	}
 
-	private void adjustStepsForward() {
+	protected void adjustStepsForward() {
 		priorStep5 = priorStep4;
 		priorStep4 = priorStep3;
 		priorStep3 = priorStep2;
@@ -207,7 +205,7 @@ public class WpwArruda extends EpActivity implements OnClickListener {
 		priorStep = step;
 	}
 
-	private void adjustStepsBackward() {
+	protected void adjustStepsBackward() {
 		step = priorStep;
 		priorStep = priorStep1;
 		priorStep1 = priorStep2;
@@ -279,12 +277,47 @@ public class WpwArruda extends EpActivity implements OnClickListener {
 			backButton.setEnabled(true);
 	}
 
-	private void showResult() {
+	protected void showResult() {
 		AlertDialog dialog = new AlertDialog.Builder(this).create();
 		message = "";
 		location1 = ""; // need to reset locations or they will be "remembered"
 						// by map
 		location2 = "";
+		setMessageAndLocation();
+		dialog.setMessage(message);
+		dialog.setCanceledOnTouchOutside(false);
+		dialog.setTitle(getString(R.string.pathway_location_label));
+		dialog.setButton(DialogInterface.BUTTON_POSITIVE,
+				getString(R.string.done_label),
+				new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						finish();
+					}
+				});
+		dialog.setButton(DialogInterface.BUTTON_NEGATIVE,
+				getString(R.string.reset_label),
+				new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						resetSteps();
+						gotoStep();
+					}
+				});
+		dialog.setButton(DialogInterface.BUTTON_NEUTRAL,
+				getString(R.string.show_map_label),
+				new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						showMap();
+						resetSteps();
+						gotoStep();
+					}
+				});
+		dialog.show();
+	}
+
+	protected void setMessageAndLocation() {
 		switch (step) {
 		case 9:
 			message += getString(R.string.lpl_ll_location);
@@ -350,37 +383,6 @@ public class WpwArruda extends EpActivity implements OnClickListener {
 			location2 = RPL;
 			break;
 		}
-		dialog.setMessage(message);
-		dialog.setCanceledOnTouchOutside(false);
-		dialog.setTitle(getString(R.string.pathway_location_label));
-		dialog.setButton(DialogInterface.BUTTON_POSITIVE,
-				getString(R.string.done_label),
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						finish();
-					}
-				});
-		dialog.setButton(DialogInterface.BUTTON_NEGATIVE,
-				getString(R.string.reset_label),
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						resetSteps();
-						gotoStep();
-					}
-				});
-		dialog.setButton(DialogInterface.BUTTON_NEUTRAL,
-				getString(R.string.show_map_label),
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						showMap();
-						resetSteps();
-						gotoStep();
-					}
-				});
-		dialog.show();
 	}
 
 	private void showMap() {

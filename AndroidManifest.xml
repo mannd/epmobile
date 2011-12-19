@@ -223,6 +223,10 @@
             android:label="@string/modified_arruda_title"
             android:name=".WpwModifiedArruda" >
         </activity>
+        <activity
+            android:label="@string/milstein_title"
+            android:name=".WpwMilstein" >
+        </activity>
     </application>
 
 </manifest>

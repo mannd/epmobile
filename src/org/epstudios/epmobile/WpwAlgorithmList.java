@@ -64,8 +64,8 @@ public class WpwAlgorithmList extends EpListActivity {
 	}
 
 	private void milsteinAlgorithm() {
-		// Intent i = new Intent(this, Rwpt.class);
-		// startActivity(i);
+		Intent i = new Intent(this, WpwMilstein.class);
+		startActivity(i);
 	}
 
 }

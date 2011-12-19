@@ -482,6 +482,13 @@
     <string name="rp_rpl_location">Right Posterior or Right Posterolateral</string>
     <string name="ra_ral_location">Right Anterior or Right Anterolateral</string>
     <string name="rl_location">Right Lateral</string>
+    <string name="undetermined_location">Undetermined Location</string>
     <string name="av_annulus_map_title">Accessory Pathway Location</string>
+    <string name="milstein_step_1">Q or isoelectric delta wave in Leads I, aVL, or V6?</string>
+    <string name="milstein_step_2_5">LBBB (+ QRS \u2265 90 msec in Lead I and rS in V1 and V2)?</string>
+    <string name="milstein_step_3">Q or isoelectric delta wave two of Leads II, III, aVF?</string>
+    <string name="milstein_step_4">Rs or RS in V1, V2, or V3?</string>
+    <string name="milstein_step_6">QRS axis \u003e 30\u00b0</string>
+    <string name="milstein_step_7">Rs or RS in V1 or V2</string>
 
 </resources>
