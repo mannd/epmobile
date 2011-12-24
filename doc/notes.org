@@ -127,6 +127,7 @@
   - make/sign epmobile.apk, save it in dev/epmobileapp/vX.Y.Z/
   - on market.android.com update product details
   - upload apk, deactivate old one
+  - Tweet It!
   - DONE!
 * Style
 ** General
