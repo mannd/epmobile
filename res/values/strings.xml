@@ -492,6 +492,7 @@
     <string name="milstein_step_7">Rs or RS in V1 or V2</string>
     <string name="anatomy_av_annulus_title">Anatomy of AV Annulus</string>
     <!-- Long QT -->
+    <string name="long_qt_syndrome_diagnosis_title">Long QT Syndrome Diagnosis</string>
     <string name="ecg_findings_label">ECG Findings</string>
     <string name="longest_qt_label">QTc \u2265 480 msec</string>
     <string name="longer_qt_label">QTc 460-470 msec</string>
@@ -508,7 +509,8 @@
     <string name="family_hx_scd_label">Unexplained SCD \u003c age 30 in immediate family</string>
     <string name="lqts_key">ECG findings in absence of medications that affect ECG, 
         LQTS = long QT syndrome, QTc calculated by Bazett formula,
-        *resting heart rate below 2nd percentile for age.</string>
+        SCD = sudden cardiac death, *resting heart rate below 2nd percentile for age.
+        Note: the same family member cannot be counted more than once.</string>
     <string name="lqts_reference">Schwartz PJ et al.  Circulation 1993;88:782.
         http://circ.ahajournals.org/content/88/2/782.citation</string>
 

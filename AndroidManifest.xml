@@ -227,6 +227,10 @@
             android:label="@string/milstein_title"
             android:name=".WpwMilstein" >
         </activity>
+        <activity
+            android:label="@string/long_qt_syndrome_diagnosis_title"
+            android:name=".LongQt" >
+        </activity>
     </application>
 
 </manifest>
