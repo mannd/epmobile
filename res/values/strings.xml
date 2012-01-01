@@ -356,11 +356,11 @@
 		</string>
 
     <!-- ICD CMS criteria -->
-    <string name="secondary_prevention_label">Secondary Prevention.</string>
+    <string name="secondary_prevention_label">Secondary Prevention</string>
     <string name="icd_cardiac_arrest_label">Documented cardiac arrest, without transient or reversible cause</string>
     <string name="icd_sus_vt_label">Documented sustained VT/VF, either spontaneous or induced at EPS, not associated with an acute MI, 
 	     and without transient or reversible cause</string>
-    <string name="primary_prevention_label">Primary Prevention.</string>
+    <string name="primary_prevention_label">Primary Prevention</string>
     <string name="icd_familial_conditions_label">Documented familial or inherited condition 
         with a high risk of life-threatening VT, e.g. Long QT Syndrome or HCM</string>
     <string name="icd_nonischemic_cm_label">Nonischemic cardiomyopathy</string>
@@ -491,5 +491,25 @@
     <string name="milstein_step_6">QRS axis \u003e +30\u00b0</string>
     <string name="milstein_step_7">Rs or RS in V1 or V2</string>
     <string name="anatomy_av_annulus_title">Anatomy of AV Annulus</string>
+    <!-- Long QT -->
+    <string name="ecg_findings_label">ECG Findings</string>
+    <string name="longest_qt_label">QTc \u2265 480 msec</string>
+    <string name="longer_qt_label">QTc 460-470 msec</string>
+    <string name="long_qt_label">QTc 450 msec (in males)</string>
+    <string name="torsade_label">Torsade de pointes</string>
+    <string name="t_wave_alternans_label">T-Wave alternans</string>
+    <string name="notched_t_wave_label">Notched T wave in 3 leads</string>
+    <string name="low_hr_label">Low heart rate for age*</string>
+    <string name="clinical_hx_label">Clinical History</string>
+    <string name="syncope_with_stress_label">Syncope with stress</string>
+    <string name="syncope_without_stress_label">Syncope without stress</string>
+    <string name="congenital_deafness_label">Congenital deafness</string>
+    <string name="family_hx_lqt_label">Family members with definite LQTS</string>
+    <string name="family_hx_scd_label">Unexplained SCD \u003c age 30 in immediate family</string>
+    <string name="lqts_key">ECG findings in absence of medications that affect ECG, 
+        LQTS = long QT syndrome, QTc calculated by Bazett formula,
+        *resting heart rate below 2nd percentile for age.</string>
+    <string name="lqts_reference">Schwartz PJ et al.  Circulation 1993;88:782.
+        http://circ.ahajournals.org/content/88/2/782.citation</string>
 
 </resources>
