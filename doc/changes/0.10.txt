@@ -1,0 +1,6 @@
+EP Mobile v0.10 Release Notes
+
+Changes since v0.9
+
+* Added Long QT Diagnosis module.
+* Corrected variations in text sizes in similar modules.
