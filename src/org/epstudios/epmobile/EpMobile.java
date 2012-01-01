@@ -69,6 +69,9 @@ public class EpMobile extends EpListActivity {
 				else if (selection
 						.equals(getString(R.string.wpw_algorithm_list_title)))
 					wpw();
+				else if (selection
+						.equals(getString(R.string.long_qt_syndrome_diagnosis_title)))
+					longQt();
 			}
 		});
 	}
@@ -120,6 +123,11 @@ public class EpMobile extends EpListActivity {
 
 	private void wpw() {
 		Intent i = new Intent(this, WpwAlgorithmList.class);
+		startActivity(i);
+	}
+
+	private void longQt() {
+		Intent i = new Intent(this, LongQt.class);
 		startActivity(i);
 	}
 }
