@@ -42,6 +42,7 @@
         <item>@string/icd_calculator_title</item>
         <item>@string/cycle_length_calculator_title</item>
         <item>@string/drug_dose_calculator_list_title</item>
+        <item>@string/long_qt_syndrome_diagnosis_title</item>
         <item>@string/normal_ep_values_title</item>
         <item>@string/qtc_calculator_title</item>
         <item>@string/risk_score_list_title</item>
