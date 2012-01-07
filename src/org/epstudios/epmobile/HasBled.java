@@ -18,21 +18,16 @@
 
 package org.epstudios.epmobile;
 
-import android.os.Bundle;
-import android.view.View;
 import android.widget.CheckBox;
 
 public class HasBled extends RiskScore {
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+	protected void setContentView() {
 		setContentView(R.layout.hasbled);
+	}
 
-		View calculateButton = findViewById(R.id.calculate_button);
-		calculateButton.setOnClickListener(this);
-		View clearButton = findViewById(R.id.clear_button);
-		clearButton.setOnClickListener(this);
-
+	@Override
+	protected void init() {
 		checkBox = new CheckBox[9];
 
 		checkBox[0] = (CheckBox) findViewById(R.id.hypertension);
@@ -55,7 +50,7 @@ public class HasBled extends RiskScore {
 		}
 		displayResult(result);
 	}
-	
+
 	@Override
 	protected String getResultMessage(int result) {
 		String message;
@@ -88,14 +83,12 @@ public class HasBled extends RiskScore {
 			risk = "> 12.50";
 			break;
 		}
-		risk = "Bleeding risk is " + risk + 
-				" bleeds per 100 patient-years";
-		message = "HAS-BLED score = " + result + "\n" + 
-				message + "\n" + risk + 
-				"\nREFERENCE: Pisters R et al. Chest 2010 138:1093.";
+		risk = "Bleeding risk is " + risk + " bleeds per 100 patient-years";
+		message = "HAS-BLED score = " + result + "\n" + message + "\n" + risk
+				+ "\nREFERENCE: Pisters R et al. Chest 2010 138:1093.";
 		return message;
 	}
-	
+
 	protected String getDialogTitle() {
 		return getString(R.string.hasbled_title);
 	}

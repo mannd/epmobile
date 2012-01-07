@@ -18,21 +18,16 @@
 
 package org.epstudios.epmobile;
 
-import android.os.Bundle;
-import android.view.View;
 import android.widget.CheckBox;
 
 public class Chads extends RiskScore {
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+	protected void setContentView() {
 		setContentView(R.layout.chads);
+	}
 
-		View calculateButton = findViewById(R.id.calculate_button);
-		calculateButton.setOnClickListener(this);
-		View clearButton = findViewById(R.id.clear_button);
-		clearButton.setOnClickListener(this);
-
+	@Override
+	protected void init() {
 		checkBox = new CheckBox[5];
 
 		checkBox[0] = (CheckBox) findViewById(R.id.chf);
@@ -56,12 +51,11 @@ public class Chads extends RiskScore {
 		displayResult(result);
 	}
 
-	
 	@Override
 	protected String getDialogTitle() {
 		return getString(R.string.chads_title);
 	}
-	
+
 	@Override
 	protected String getResultMessage(int result) {
 		String message;
@@ -96,10 +90,9 @@ public class Chads extends RiskScore {
 			break;
 		}
 		risk = "Annual stroke risk is " + risk + "%";
-		message = "CHADS\u2082 score = " + result + "\n" + message
-				+ "\n" + risk
-				+ "\nReference: Gage BF et al. JAMA 2001 285:2864.";
+		message = "CHADS\u2082 score = " + result + "\n" + message + "\n"
+				+ risk + "\nReference: Gage BF et al. JAMA 2001 285:2864.";
 		return message;
-		
+
 	}
 }

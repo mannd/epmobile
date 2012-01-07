@@ -11,15 +11,16 @@ public class CmsIcd extends RiskScore {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.cmsicd);
 
-		View calculateButton = findViewById(R.id.calculate_button);
-		calculateButton.setOnClickListener(this);
-		View clearButton = findViewById(R.id.clear_button);
-		clearButton.setOnClickListener(this);
 		View instructionsButton = findViewById(R.id.instructions_button);
 		instructionsButton.setOnClickListener(this);
+	}
 
+	protected void setContentView() {
+		setContentView(R.layout.cmsicd);
+	}
+
+	protected void init() {
 		checkBox = new CheckBox[16];
 
 		checkBox[0] = (CheckBox) findViewById(R.id.icd_cardiac_arrest);
@@ -42,8 +43,6 @@ public class CmsIcd extends RiskScore {
 
 		efRadioGroup = (RadioGroup) findViewById(R.id.icd_ef_radio_group);
 		nyhaRadioGroup = (RadioGroup) findViewById(R.id.icd_nyha_radio_group);
-
-		clearEntries();
 	}
 
 	private static final int CARDIAC_ARREST = 0;

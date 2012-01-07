@@ -18,21 +18,16 @@
 
 package org.epstudios.epmobile;
 
-import android.os.Bundle;
-import android.view.View;
 import android.widget.CheckBox;
 
 public class ChadsVasc extends RiskScore {
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+	protected void setContentView() {
 		setContentView(R.layout.chadsvasc);
+	}
 
-		View calculateButton = findViewById(R.id.calculate_button);
-		calculateButton.setOnClickListener(this);
-		View clearButton = findViewById(R.id.clear_button);
-		clearButton.setOnClickListener(this);
-
+	@Override
+	protected void init() {
 		checkBox = new CheckBox[8];
 
 		checkBox[0] = (CheckBox) findViewById(R.id.chf);
