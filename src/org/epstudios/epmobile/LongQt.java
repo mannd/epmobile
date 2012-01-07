@@ -127,10 +127,6 @@ public class LongQt extends EpActivity implements OnClickListener {
 		dialog.show();
 	}
 
-	private void displayInstructions() {
-
-	}
-
 	private void clearEntries() {
 		qtcRadioGroup.clearCheck();
 		torsadeCheckBox.setChecked(false);
