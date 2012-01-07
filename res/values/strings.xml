@@ -82,9 +82,9 @@
     <string name="low_chads_message">Anti-platelet drug (ASA) recommended
   </string>
     <string name="medium_chads_message">Anti-platelet drug or
-		anticoagulation (warfarin or dabigatran or others) recommended</string>
+		anticoagulation (warfarin, dabigatran or rivaroxaban) recommended</string>
     <string name="high_chads_message">
-		Anticoagulation (warfarin or dabigitran or others) recommended
+		Anticoagulation (warfarin, dabigitran or rivaroxaban) recommended
   </string>
     <string name="chadsvasc_title">CHA\u2082DS\u2082-VASc Score</string>
     <string name="vascular_label">Vascular disease (e.g. PVD, CAD, aortic plaque)
@@ -513,5 +513,15 @@
         Note: the same family member cannot be counted more than once.</string>
     <string name="lqts_reference">Schwartz PJ et al.  Circulation 1993;88:782.
         http://circ.ahajournals.org/content/88/2/782.citation</string>
+    <!-- ARVC 1994 criteria -->
+    <string name="arvc_old_title">ARVC/D 1994 Criteria</string>
+    <string name="arvc_old_rv_dilatation">Severe dilataion and reduction
+        of RVEF with no or only mild LV impairment</string>
+    <string name="arvc_old_rv_aneurysms">Localized RV aneurysms (akinetic
+        or dyskinetic areas with diastolic bulging)</string>
+    <string name="arvc_old_rv_segmental_dilatation">Sever segmental dilatation
+	    of the RF</string>
+    <string name="arvc_old_reference">WJ McKenna et al.  Br Heart J. 1994;71:215.
+ 	    http://www.ncbi.nlm.nih.gov/sites/ppmc/articles/PMC483655/</string>
 
 </resources>

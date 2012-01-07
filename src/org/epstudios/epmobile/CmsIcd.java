@@ -100,7 +100,8 @@ public class CmsIcd extends RiskScore {
 			result = FAMILIAL_CONDITION;
 		else
 			result = POSSIBLE_INDICATION;
-		displayResult(result);
+		displayResult(getResultMessage(result),
+				getString(R.string.icd_calculator_title));
 	}
 
 	private Boolean absoluteExclusion() {
@@ -109,8 +110,7 @@ public class CmsIcd extends RiskScore {
 				|| checkBox[BAD_PROGNOSIS].isChecked();
 	}
 
-	@Override
-	protected String getResultMessage(int result) {
+	private String getResultMessage(int result) {
 		String message = "";
 		if (result == BRAIN_DAMAGE) {
 			message += getString(R.string.icd_not_approved_text);
@@ -214,11 +214,6 @@ public class CmsIcd extends RiskScore {
 		} else
 			message += getString(R.string.icd_not_approved_text);
 		return message;
-	}
-
-	@Override
-	protected String getDialogTitle() {
-		return getString(R.string.icd_calculator_title);
 	}
 
 	@Override

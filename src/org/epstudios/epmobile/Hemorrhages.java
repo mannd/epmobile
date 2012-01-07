@@ -56,11 +56,11 @@ public class Hemorrhages extends RiskScore {
 				else
 					result++;
 		}
-		displayResult(result);
+		displayResult(getResultMessage(result),
+				getString(R.string.hemorrhages_title));
 	}
 
-	@Override
-	protected String getResultMessage(int result) {
+	private String getResultMessage(int result) {
 		String message;
 		if (result < 2)
 			message = getString(R.string.low_risk_hemorrhages);
@@ -94,10 +94,6 @@ public class Hemorrhages extends RiskScore {
 				+ message + "\n" + risk + "\n"
 				+ getString(R.string.hemorrhages_reference);
 		return message;
-	}
-
-	protected String getDialogTitle() {
-		return getString(R.string.hemorrhages_title);
 	}
 
 }

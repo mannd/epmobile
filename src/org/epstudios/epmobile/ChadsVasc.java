@@ -54,16 +54,11 @@ public class ChadsVasc extends RiskScore {
 					result++;
 			}
 		}
-		displayResult(result);
+		displayResult(getResultMessage(result),
+				getString(R.string.chadsvasc_title));
 	}
 
-	@Override
-	protected String getDialogTitle() {
-		return getString(R.string.chadsvasc_title);
-	}
-
-	@Override
-	protected String getResultMessage(int result) {
+	private String getResultMessage(int result) {
 		String message;
 		if (result < 1)
 			message = getString(R.string.low_chadsvasc_message);

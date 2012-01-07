@@ -48,16 +48,10 @@ public class Chads extends RiskScore {
 					result++;
 			}
 		}
-		displayResult(result);
+		displayResult(getResultMessage(result), getString(R.string.chads_title));
 	}
 
-	@Override
-	protected String getDialogTitle() {
-		return getString(R.string.chads_title);
-	}
-
-	@Override
-	protected String getResultMessage(int result) {
+	private String getResultMessage(int result) {
 		String message;
 		if (result < 1)
 			message = getString(R.string.low_chads_message);

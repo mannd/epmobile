@@ -48,11 +48,11 @@ public class HasBled extends RiskScore {
 			if (checkBox[i].isChecked())
 				result++;
 		}
-		displayResult(result);
+		displayResult(getResultMessage(result),
+				getString(R.string.hasbled_title));
 	}
 
-	@Override
-	protected String getResultMessage(int result) {
+	private String getResultMessage(int result) {
 		String message;
 		if (result < 3)
 			message = getString(R.string.normal_hasbled);
@@ -87,10 +87,6 @@ public class HasBled extends RiskScore {
 		message = "HAS-BLED score = " + result + "\n" + message + "\n" + risk
 				+ "\nREFERENCE: Pisters R et al. Chest 2010 138:1093.";
 		return message;
-	}
-
-	protected String getDialogTitle() {
-		return getString(R.string.hasbled_title);
 	}
 
 }

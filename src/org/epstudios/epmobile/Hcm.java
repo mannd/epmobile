@@ -95,16 +95,10 @@ public class Hcm extends RiskScore {
 				if (checkBox[i].isChecked())
 					minor_risks++;
 		}
-		displayResult(result);
+		displayResult(getResultMessage(result), getString(R.string.hcm_title));
 	}
 
-	@Override
-	protected String getDialogTitle() {
-		return getString(R.string.hcm_title);
-	}
-
-	@Override
-	protected String getResultMessage(int result) {
+	private String getResultMessage(int result) {
 		String message = "";
 		if (result == HIGHEST_RISK_SCORE)
 			message = getString(R.string.hcm_highest_risk_sd_text);
