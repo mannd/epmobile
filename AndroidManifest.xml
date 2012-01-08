@@ -92,7 +92,15 @@
         </activity>
         <activity
             android:label="@string/arvc_title"
+            android:name=".ArvcList" >
+        </activity>
+        <activity
+            android:label="@string/arvc_2010_criteria_title"
             android:name=".Arvc" >
+        </activity>
+        <activity
+            android:label="@string/arvc_old_criteria_title"
+            android:name=".ArvcOld" >
         </activity>
         <activity
             android:label="@string/rivaroxaban_calculator_title"
@@ -117,91 +125,6 @@
         <activity
             android:label="@string/icd_calculator_title"
             android:name=".CmsIcd" >
-        </activity>
-        <activity
-            android:label="@string/about_title"
-            android:name=".About"
-            android:theme="@android:style/Theme.Dialog" >
-        </activity>
-        <activity
-            android:label="@string/qtc_calculator_title"
-            android:name=".Qtc" >
-        </activity>
-        <activity
-            android:label="@string/dofetilide_label"
-            android:name=".Dofetilide" >
-        </activity>
-        <activity
-            android:label="@string/cycle_length_label"
-            android:name=".CycleLength" >
-        </activity>
-        <activity
-            android:label="@string/settings_title"
-            android:name=".Prefs" >
-        </activity>
-        <activity
-            android:label="@string/hasbled_title"
-            android:name=".HasBled" >
-        </activity>
-        <activity
-            android:label="@string/chads_title"
-            android:name=".Chads" >
-        </activity>
-        <activity
-            android:label="@string/chadsvasc_title"
-            android:name=".ChadsVasc" >
-        </activity>
-        <activity
-            android:label="@string/dabigatran_label"
-            android:name=".Dabigatran" >
-        </activity>
-        <activity
-            android:label="@string/warfarin_label"
-            android:name=".Warfarin" >
-        </activity>
-        <activity
-            android:label="@string/dose_table_title"
-            android:name=".DoseTable" >
-        </activity>
-        <activity
-            android:label="@string/brugada_vt_title"
-            android:name=".Brugada" >
-        </activity>
-        <activity
-            android:label="@string/wct_algorithm_title"
-            android:name=".WctAlgorithmList" >
-        </activity>
-        <activity
-            android:label="@string/morphology_label"
-            android:name=".WctMorphologyCriteria" >
-        </activity>
-        <activity
-            android:label="@string/rwpt_title"
-            android:name=".Rwpt" >
-        </activity>
-        <activity
-            android:label="@string/morphology_label"
-            android:name=".BrugadaMorphologyCriteria" >
-        </activity>
-        <activity
-            android:label="@string/normal_ep_values_title"
-            android:name=".NormalEpValues" >
-        </activity>
-        <activity
-            android:label="@string/arvc_title"
-            android:name=".Arvc" >
-        </activity>
-        <activity
-            android:label="@string/rivaroxaban_calculator_title"
-            android:name=".Rivaroxaban" >
-        </activity>
-        <activity
-            android:label="@string/short_qt_title"
-            android:name=".ShortQt" >
-        </activity>
-        <activity
-            android:label="@string/drug_dose_calculators_title"
-            android:name=".DrugDoseCalculatorList" >
         </activity>
         <activity
             android:label="@string/hemorrhages_title"

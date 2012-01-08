@@ -171,7 +171,9 @@
 		Electrophysiology. Techniques and Interpretations. 2nd Edition 1993.
 		Lea &amp; Febiger.
   </string>
+    <string name="arvc_list_title">ARVC/D Diagnosis \u25b6</string>
     <string name="arvc_title">ARVC/D Diagnosis</string>
+    <string name="arvc_2010_criteria_title">ARVC/D 2010 Diagnostic Criteria</string>
     <string name="global_dysfunction_label">I. Global or regional dysfunction and structural
 		alterations</string>
     <string name="major">MAJOR</string>
@@ -514,14 +516,35 @@
     <string name="lqts_reference">Schwartz PJ et al.  Circulation 1993;88:782.
         http://circ.ahajournals.org/content/88/2/782.citation</string>
     <!-- ARVC 1994 criteria -->
-    <string name="arvc_old_title">ARVC/D 1994 Criteria</string>
-    <string name="arvc_old_rv_dilatation">Severe dilataion and reduction
+    <string name="arvc_old_criteria_title">ARVC/D 1994 Diagnostic Criteria</string>
+    <string name="arvc_old_rv_dilatation">Severe dilatation and reduction
         of RVEF with no or only mild LV impairment</string>
     <string name="arvc_old_rv_aneurysms">Localized RV aneurysms (akinetic
         or dyskinetic areas with diastolic bulging)</string>
-    <string name="arvc_old_rv_segmental_dilatation">Sever segmental dilatation
-	    of the RF</string>
-    <string name="arvc_old_reference">WJ McKenna et al.  Br Heart J. 1994;71:215.
+    <string name="arvc_old_rv_segmental_dilatation">Severe segmental dilatation
+	    of the RV</string>
+    <string name="arvc_old_mild_rv_dilatation">Mild global RV dilatation and/or
+	    EF reduction with normal LV</string>
+    <string name="arvc_old_mild_rv_segmental_dilatation">Mild segmental dilatation of
+	    the RV</string>
+    <string name="arvc_old_regional_rv_hypokinesia">Regional RV hypokinesia</string>
+    <string name="arvc_old_fatty_replacement">Fibrofatty replacement of myocardium
+	    on endomyocardial biopsy</string>
+    <string name="arvc_old_twi"> T wave inversion in leads V2 and V3,
+	    with age \u003e 12 yrs, in absence of RBBB</string>
+    <string name="arvc_old_epsilon_waves">Epsilon waves or localized prolongation
+	    (> 110 msec) of QRS complex in leads V1 to V3</string>
+    <string name="arvc_old_late_potentials">Late potentials on SAECG</string>
+    <string name="arvc_old_lbbb">Sustained or nonsustained ventricular tachycardia
+	    with LBBB morphology on ECG, Holter or treadmill test</string>
+    <string name="arvc_old_pvcs">> 1000 ventricular extrasystoles per 24 hours</string>
+    <string name="arvc_old_familial_disease">Familial ARVC/D confirmed at
+	    autopsy or surgery</string>
+    <string name="arvc_old_family_hx_scd">Family history of sudden death
+	    (&lt; 35 yrs) due to suspected ARVC/D</string>
+    <string name="arvc_old_family_hx">Family history of ARVC/D based on these
+	    criteria</string>
+    <string name="arvc_old_reference">Reference: WJ McKenna et al.  Br Heart J. 1994;71:215.
  	    http://www.ncbi.nlm.nih.gov/sites/ppmc/articles/PMC483655/</string>
 
 </resources>

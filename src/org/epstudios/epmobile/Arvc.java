@@ -171,7 +171,7 @@ public class Arvc extends DiagnosticScore {
 			minorCount++;
 
 		displayResult(getResultMessage(majorCount, minorCount),
-				getString(R.string.arvc_title));
+				getString(R.string.arvc_2010_criteria_title));
 	}
 
 	private String getResultMessage(int major, int minor) {

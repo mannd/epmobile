@@ -38,7 +38,7 @@
     below may change if the strings are translated into a different language.
     -->
     <array name="main_index">
-        <item>@string/arvc_title</item>
+        <item>@string/arvc_list_title</item>
         <item>@string/icd_calculator_title</item>
         <item>@string/cycle_length_calculator_title</item>
         <item>@string/drug_dose_calculator_list_title</item>
@@ -76,6 +76,10 @@
         <item>@string/hasbled_title</item>
         <item>@string/hemorrhages_title</item>
         <item>@string/hcm_title</item>
+    </array>
+    <array name="arvc_criteria_list">
+        <item>@string/arvc_old_criteria_title</item>
+        <item>@string/arvc_2010_criteria_title</item>
     </array>
     <array name="interval_rate_labels">
         <item>RR Interval (msec)</item>
