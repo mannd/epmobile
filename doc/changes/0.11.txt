@@ -1,0 +1,7 @@
+EP Mobile v0.11 Release Notes
+
+Changes since v0.10
+
+* Added 1994 ARVC/D diagnostic criteria (simpler than 2010 criteria).
+* Fixed wrong title in Long QT Syndrome result dialog box.
+* Minor refactoring and formatting fixes.
