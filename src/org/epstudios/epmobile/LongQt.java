@@ -122,7 +122,7 @@ public class LongQt extends EpActivity implements OnClickListener {
 					public void onClick(DialogInterface dialog, int which) {
 					}
 				});
-		dialog.setTitle(getString(R.string.short_qt_title));
+		dialog.setTitle(getString(R.string.long_qt_syndrome_diagnosis_title));
 
 		dialog.show();
 	}

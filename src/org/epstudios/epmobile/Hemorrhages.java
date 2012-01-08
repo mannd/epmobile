@@ -18,8 +18,6 @@
 
 package org.epstudios.epmobile;
 
-import android.os.Bundle;
-import android.view.View;
 import android.widget.CheckBox;
 
 public class Hemorrhages extends RiskScore {
@@ -27,15 +25,12 @@ public class Hemorrhages extends RiskScore {
 											// points
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+	protected void setContentView() {
 		setContentView(R.layout.hemorrhages);
+	}
 
-		View calculateButton = findViewById(R.id.calculate_button);
-		calculateButton.setOnClickListener(this);
-		View clearButton = findViewById(R.id.clear_button);
-		clearButton.setOnClickListener(this);
-
+	@Override
+	protected void init() {
 		checkBox = new CheckBox[11];
 
 		checkBox[0] = (CheckBox) findViewById(R.id.hepatic_or_renal_disease);
@@ -61,11 +56,11 @@ public class Hemorrhages extends RiskScore {
 				else
 					result++;
 		}
-		displayResult(result);
+		displayResult(getResultMessage(result),
+				getString(R.string.hemorrhages_title));
 	}
 
-	@Override
-	protected String getResultMessage(int result) {
+	private String getResultMessage(int result) {
 		String message;
 		if (result < 2)
 			message = getString(R.string.low_risk_hemorrhages);
@@ -99,10 +94,6 @@ public class Hemorrhages extends RiskScore {
 				+ message + "\n" + risk + "\n"
 				+ getString(R.string.hemorrhages_reference);
 		return message;
-	}
-
-	protected String getDialogTitle() {
-		return getString(R.string.hemorrhages_title);
 	}
 
 }

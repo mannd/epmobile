@@ -34,7 +34,7 @@ public class Hcm extends RiskScore {
 		clearButton.setOnClickListener(this);
 
 		checkBox = new CheckBox[11];
-		
+
 		// super bad
 		checkBox[0] = (CheckBox) findViewById(R.id.cardiac_arrest);
 		checkBox[1] = (CheckBox) findViewById(R.id.spontaneous_vt);
@@ -50,18 +50,43 @@ public class Hcm extends RiskScore {
 		checkBox[9] = (CheckBox) findViewById(R.id.lv_outflow_obstruction);
 		checkBox[10] = (CheckBox) findViewById(R.id.high_risk_mutation);
 	}
-	
-	final int HIGHEST_RISK_SCORE = 100;    // can't happen by calculation
-	int minor_risks;                       // need to keep this at class level
+
+	@Override
+	protected void setContentView() {
+		setContentView(R.layout.hcm);
+	}
+
+	@Override
+	protected void init() {
+		checkBox = new CheckBox[11];
+
+		// super bad
+		checkBox[0] = (CheckBox) findViewById(R.id.cardiac_arrest);
+		checkBox[1] = (CheckBox) findViewById(R.id.spontaneous_vt);
+		// major risks
+		checkBox[2] = (CheckBox) findViewById(R.id.family_hx_sd);
+		checkBox[3] = (CheckBox) findViewById(R.id.unexplained_syncope);
+		checkBox[4] = (CheckBox) findViewById(R.id.lv_thickness);
+		checkBox[5] = (CheckBox) findViewById(R.id.abnormal_exercise_bp);
+		checkBox[6] = (CheckBox) findViewById(R.id.nonsustained_vt);
+		// minor risks
+		checkBox[7] = (CheckBox) findViewById(R.id.afb);
+		checkBox[8] = (CheckBox) findViewById(R.id.myocardial_ischemia);
+		checkBox[9] = (CheckBox) findViewById(R.id.lv_outflow_obstruction);
+		checkBox[10] = (CheckBox) findViewById(R.id.high_risk_mutation);
+	}
+
+	final int HIGHEST_RISK_SCORE = 100; // can't happen by calculation
+	int minor_risks; // need to keep this at class level
 	final int firstMajorRisk = 2;
 	final int firstMinorRisk = 7;
-	
+
 	@Override
 	protected void calculateResult() {
 		int result = 0;
 		minor_risks = 0;
 		if (checkBox[0].isChecked() || checkBox[1].isChecked())
-			result = HIGHEST_RISK_SCORE;  // CA or spont VT
+			result = HIGHEST_RISK_SCORE; // CA or spont VT
 		else {
 			for (int i = firstMajorRisk; i < firstMinorRisk; ++i)
 				if (checkBox[i].isChecked())
@@ -70,16 +95,10 @@ public class Hcm extends RiskScore {
 				if (checkBox[i].isChecked())
 					minor_risks++;
 		}
-		displayResult(result);
+		displayResult(getResultMessage(result), getString(R.string.hcm_title));
 	}
-	
-	@Override
-	protected String getDialogTitle() {
-		return getString(R.string.hcm_title);
-	}
-	
-	@Override
-	protected String getResultMessage(int result) {
+
+	private String getResultMessage(int result) {
 		String message = "";
 		if (result == HIGHEST_RISK_SCORE)
 			message = getString(R.string.hcm_highest_risk_sd_text);
@@ -93,8 +112,8 @@ public class Hcm extends RiskScore {
 			else if (result == 0)
 				message += getString(R.string.hcm_low_risk_text);
 		}
-			
+
 		return message;
-	
+
 	}
 }

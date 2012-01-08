@@ -18,57 +18,10 @@
 
 package org.epstudios.epmobile;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.os.Bundle;
-import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.CheckBox;
 import android.widget.RadioGroup;
 
-public class Arvc extends EpActivity implements OnClickListener {
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.arvcdiagnosis);
-
-		View calculateButton = findViewById(R.id.calculate_button);
-		calculateButton.setOnClickListener(this);
-		View clearButton = findViewById(R.id.clear_button);
-		clearButton.setOnClickListener(this);
-
-		regionalEchoAbnormalityCheckBox = (CheckBox) findViewById(R.id.regional_echo_abnormality);
-		echoMajorRadioGroup = (RadioGroup) findViewById(R.id.echo_major_radio_group);
-		regionalMriAbnormalityCheckBox = (CheckBox) findViewById(R.id.regional_mri_abnormality);
-		mriMajorRadioGroup = (RadioGroup) findViewById(R.id.mri_major_radio_group);
-		regionalRvAngioAbnormalityCheckBox = (CheckBox) findViewById(R.id.regional_rv_angio_abnormality);
-		regionalEchoMinorAbnormalityCheckBox = (CheckBox) findViewById(R.id.regional_echo_minor_abnormality);
-		echoMinorRadioGroup = (RadioGroup) findViewById(R.id.echo_minor_radio_group);
-		minorRegionalMriAbnormalityCheckBox = (CheckBox) findViewById(R.id.minor_regional_mri_abnormality);
-		mriMinorRadioGroup = (RadioGroup) findViewById(R.id.mri_minor_radio_group);
-		majorResidualMyocytesCheckBox = (CheckBox) findViewById(R.id.major_residual_myocytes);
-		minorResidualMyocytesCheckBox = (CheckBox) findViewById(R.id.minor_residual_myocytes);
-		majorRepolarizationCheckBox = (CheckBox) findViewById(R.id.major_repolarization);
-		minorRepolarizationNoRbbbCheckBox = (CheckBox) findViewById(R.id.minor_repolarization_no_rbbb);
-		minorRepolarizationRbbbCheckBox = (CheckBox) findViewById(R.id.minor_repolarization_rbbb);
-		majorDepolarizationCheckBox = (CheckBox) findViewById(R.id.major_depolarization);
-		filteredQrsCheckBox = (CheckBox) findViewById(R.id.filtered_qrs);
-		durationTerminalQrsCheckBox = (CheckBox) findViewById(R.id.duration_terminal_qrs);
-		rootMeanSquareCheckBox = (CheckBox) findViewById(R.id.root_mean_square);
-		terminalActivationDurationCheckBox = (CheckBox) findViewById(R.id.terminal_activation_duration);
-		majorArrhythmiasCheckBox = (CheckBox) findViewById(R.id.major_arrhythmias);
-		rvotVtCheckBox = (CheckBox) findViewById(R.id.rvot_vt);
-		pvcsCheckBox = (CheckBox) findViewById(R.id.pvcs);
-		firstDegreeRelativeCheckBox = (CheckBox) findViewById(R.id.first_degree_relative);
-		pathologyCheckBox = (CheckBox) findViewById(R.id.pathology);
-		geneticCheckBox = (CheckBox) findViewById(R.id.genetic);
-		possibleFamilyHistoryCheckBox = (CheckBox) findViewById(R.id.possible_family_history);
-		familyHistorySuddenDeathCheckBox = (CheckBox) findViewById(R.id.family_history_sudden_death);
-		secondDegreeRelativeCheckBox = (CheckBox) findViewById(R.id.second_degree_relative);
-
-		clearEntries();
-
-	}
+public class Arvc extends DiagnosticScore {
 
 	// Algorithm
 	// definite: 2 major or (1 major + 2 minor) or 4 minor
@@ -138,18 +91,44 @@ public class Arvc extends EpActivity implements OnClickListener {
 	private CheckBox familyHistorySuddenDeathCheckBox;
 	private CheckBox secondDegreeRelativeCheckBox;
 
-	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.calculate_button:
-			calculateResult();
-			break;
-		case R.id.clear_button:
-			clearEntries();
-			break;
-		}
+	@Override
+	protected void setContentView() {
+		setContentView(R.layout.arvcdiagnosis);
 	}
 
-	private void calculateResult() {
+	@Override
+	protected void init() {
+		regionalEchoAbnormalityCheckBox = (CheckBox) findViewById(R.id.regional_echo_abnormality);
+		echoMajorRadioGroup = (RadioGroup) findViewById(R.id.echo_major_radio_group);
+		regionalMriAbnormalityCheckBox = (CheckBox) findViewById(R.id.regional_mri_abnormality);
+		mriMajorRadioGroup = (RadioGroup) findViewById(R.id.mri_major_radio_group);
+		regionalRvAngioAbnormalityCheckBox = (CheckBox) findViewById(R.id.regional_rv_angio_abnormality);
+		regionalEchoMinorAbnormalityCheckBox = (CheckBox) findViewById(R.id.regional_echo_minor_abnormality);
+		echoMinorRadioGroup = (RadioGroup) findViewById(R.id.echo_minor_radio_group);
+		minorRegionalMriAbnormalityCheckBox = (CheckBox) findViewById(R.id.minor_regional_mri_abnormality);
+		mriMinorRadioGroup = (RadioGroup) findViewById(R.id.mri_minor_radio_group);
+		majorResidualMyocytesCheckBox = (CheckBox) findViewById(R.id.major_residual_myocytes);
+		minorResidualMyocytesCheckBox = (CheckBox) findViewById(R.id.minor_residual_myocytes);
+		majorRepolarizationCheckBox = (CheckBox) findViewById(R.id.major_repolarization);
+		minorRepolarizationNoRbbbCheckBox = (CheckBox) findViewById(R.id.minor_repolarization_no_rbbb);
+		minorRepolarizationRbbbCheckBox = (CheckBox) findViewById(R.id.minor_repolarization_rbbb);
+		majorDepolarizationCheckBox = (CheckBox) findViewById(R.id.major_depolarization);
+		filteredQrsCheckBox = (CheckBox) findViewById(R.id.filtered_qrs);
+		durationTerminalQrsCheckBox = (CheckBox) findViewById(R.id.duration_terminal_qrs);
+		rootMeanSquareCheckBox = (CheckBox) findViewById(R.id.root_mean_square);
+		terminalActivationDurationCheckBox = (CheckBox) findViewById(R.id.terminal_activation_duration);
+		majorArrhythmiasCheckBox = (CheckBox) findViewById(R.id.major_arrhythmias);
+		rvotVtCheckBox = (CheckBox) findViewById(R.id.rvot_vt);
+		pvcsCheckBox = (CheckBox) findViewById(R.id.pvcs);
+		firstDegreeRelativeCheckBox = (CheckBox) findViewById(R.id.first_degree_relative);
+		pathologyCheckBox = (CheckBox) findViewById(R.id.pathology);
+		geneticCheckBox = (CheckBox) findViewById(R.id.genetic);
+		possibleFamilyHistoryCheckBox = (CheckBox) findViewById(R.id.possible_family_history);
+		familyHistorySuddenDeathCheckBox = (CheckBox) findViewById(R.id.family_history_sudden_death);
+		secondDegreeRelativeCheckBox = (CheckBox) findViewById(R.id.second_degree_relative);
+	}
+
+	protected void calculateResult() {
 		int majorCount = 0;
 		int minorCount = 0;
 		if (regionalEchoAbnormalityCheckBox.isChecked()
@@ -191,13 +170,12 @@ public class Arvc extends EpActivity implements OnClickListener {
 				|| secondDegreeRelativeCheckBox.isChecked())
 			minorCount++;
 
-		displayResult(majorCount, minorCount);
+		displayResult(getResultMessage(majorCount, minorCount),
+				getString(R.string.arvc_2010_criteria_title));
 	}
 
-	private void displayResult(int major, int minor) {
-		AlertDialog dialog = new AlertDialog.Builder(this).create();
-		String message;
-		message = "Major = " + major + "\n" + "Minor = " + minor + "\n";
+	private String getResultMessage(int major, int minor) {
+		String message = "Major = " + major + "\n" + "Minor = " + minor + "\n";
 		if (major >= 2 || major == 1 && minor >= 2 || minor >= 4)
 			message = message + "Definite diagnosis of ARVC/D";
 		else if (major == 1 && minor >= 1 || minor == 3)
@@ -206,26 +184,11 @@ public class Arvc extends EpActivity implements OnClickListener {
 			message = message + "Possible diagnosis of ARVC/D";
 		else
 			message = message + "Not diagnostic of ARVC/D";
-		dialog.setMessage(message);
-		dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Reset",
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						clearEntries();
-					}
-				});
-		dialog.setButton(DialogInterface.BUTTON_NEUTRAL, "Don't Reset",
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-					}
-				});
-		dialog.setTitle(getString(R.string.arvc_title));
-
-		dialog.show();
+		return message;
 	}
 
-	private void clearEntries() {
+	@Override
+	protected void clearEntries() {
 		regionalEchoAbnormalityCheckBox.setChecked(false);
 		echoMajorRadioGroup.clearCheck();
 		regionalMriAbnormalityCheckBox.setChecked(false);
@@ -254,6 +217,5 @@ public class Arvc extends EpActivity implements OnClickListener {
 		possibleFamilyHistoryCheckBox.setChecked(false);
 		familyHistorySuddenDeathCheckBox.setChecked(false);
 		secondDegreeRelativeCheckBox.setChecked(false);
-
 	}
 }

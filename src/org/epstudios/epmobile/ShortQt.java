@@ -132,11 +132,12 @@ public class ShortQt extends EpActivity implements OnClickListener {
 		AlertDialog dialog = new AlertDialog.Builder(this).create();
 		String message = "Score = " + score + "\n";
 		if (score >= 4)
-			message += "High probability of SQTS";
+			message += "High probability";
 		else if (score == 3)
-			message += "Intermediate probability of SQTS";
+			message += "Intermediate probability";
 		else if (score <= 2)
-			message += "Low probability of SQTS";
+			message += "Low probability";
+		message += " of Short QT Syndrome";
 		dialog.setMessage(message);
 		dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Reset",
 				new DialogInterface.OnClickListener() {
