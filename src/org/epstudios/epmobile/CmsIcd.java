@@ -11,15 +11,16 @@ public class CmsIcd extends RiskScore {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.cmsicd);
 
-		View calculateButton = findViewById(R.id.calculate_button);
-		calculateButton.setOnClickListener(this);
-		View clearButton = findViewById(R.id.clear_button);
-		clearButton.setOnClickListener(this);
 		View instructionsButton = findViewById(R.id.instructions_button);
 		instructionsButton.setOnClickListener(this);
+	}
 
+	protected void setContentView() {
+		setContentView(R.layout.cmsicd);
+	}
+
+	protected void init() {
 		checkBox = new CheckBox[16];
 
 		checkBox[0] = (CheckBox) findViewById(R.id.icd_cardiac_arrest);
@@ -42,8 +43,6 @@ public class CmsIcd extends RiskScore {
 
 		efRadioGroup = (RadioGroup) findViewById(R.id.icd_ef_radio_group);
 		nyhaRadioGroup = (RadioGroup) findViewById(R.id.icd_nyha_radio_group);
-
-		clearEntries();
 	}
 
 	private static final int CARDIAC_ARREST = 0;
@@ -101,7 +100,8 @@ public class CmsIcd extends RiskScore {
 			result = FAMILIAL_CONDITION;
 		else
 			result = POSSIBLE_INDICATION;
-		displayResult(result);
+		displayResult(getResultMessage(result),
+				getString(R.string.icd_calculator_title));
 	}
 
 	private Boolean absoluteExclusion() {
@@ -110,8 +110,7 @@ public class CmsIcd extends RiskScore {
 				|| checkBox[BAD_PROGNOSIS].isChecked();
 	}
 
-	@Override
-	protected String getResultMessage(int result) {
+	private String getResultMessage(int result) {
 		String message = "";
 		if (result == BRAIN_DAMAGE) {
 			message += getString(R.string.icd_not_approved_text);
@@ -215,11 +214,6 @@ public class CmsIcd extends RiskScore {
 		} else
 			message += getString(R.string.icd_not_approved_text);
 		return message;
-	}
-
-	@Override
-	protected String getDialogTitle() {
-		return getString(R.string.icd_calculator_title);
 	}
 
 	@Override

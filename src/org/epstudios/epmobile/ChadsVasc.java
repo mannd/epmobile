@@ -18,21 +18,16 @@
 
 package org.epstudios.epmobile;
 
-import android.os.Bundle;
-import android.view.View;
 import android.widget.CheckBox;
 
 public class ChadsVasc extends RiskScore {
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+	protected void setContentView() {
 		setContentView(R.layout.chadsvasc);
+	}
 
-		View calculateButton = findViewById(R.id.calculate_button);
-		calculateButton.setOnClickListener(this);
-		View clearButton = findViewById(R.id.clear_button);
-		clearButton.setOnClickListener(this);
-
+	@Override
+	protected void init() {
 		checkBox = new CheckBox[8];
 
 		checkBox[0] = (CheckBox) findViewById(R.id.chf);
@@ -59,16 +54,11 @@ public class ChadsVasc extends RiskScore {
 					result++;
 			}
 		}
-		displayResult(result);
+		displayResult(getResultMessage(result),
+				getString(R.string.chadsvasc_title));
 	}
 
-	@Override
-	protected String getDialogTitle() {
-		return getString(R.string.chadsvasc_title);
-	}
-
-	@Override
-	protected String getResultMessage(int result) {
+	private String getResultMessage(int result) {
 		String message;
 		if (result < 1)
 			message = getString(R.string.low_chadsvasc_message);

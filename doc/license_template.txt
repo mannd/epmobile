@@ -1,5 +1,5 @@
 /*  EP Mobile -- Mobile tools for electrophysiologists
-    Copyright (C) 2011 EP Studios, Inc.
+    Copyright (C) 2012 EP Studios, Inc.
     www.epstudiossoftware.com
 
     This program is free software: you can redistribute it and/or modify

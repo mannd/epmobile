@@ -3,7 +3,7 @@
 ** DONE Dofetilide Calculator
 ** DONE QTc Calculator
 ** DONE CL/HR Converter
-** TODO WPW Accessory Pathway localizer
+** DONE WPW Accessory Pathway localizer
 *** Milstein et al.  PACE 10:555, 1987.
 *** Arruda 1998
 ** DONE VT vs SVT Brugada algorithm
@@ -62,7 +62,7 @@
 ** TODO LVH
 ** DONE Normal EP Values
 ** TODO EP Glossary
-** TODO CMS ICD criteria
+** DONE CMS ICD criteria
 ** TODO LQTS criteria
 ** TODO ACC WCT algorithm
 ** TODO Creatinine Clearance calculator
@@ -113,7 +113,7 @@
 ** 
 * Preparing new version -- IMPORTANT!
   - finish version, commit.
-  - git flow feature start v0.x
+  - git flow release start v0.x
   - IMPORTANT - update AndroidManifest.xml
     - increment android:versionCode
     - change android:versionName
@@ -122,7 +122,7 @@
   - update doc/description.txt
   - update screenshots - resize them with GIMP to 320 x 480!
   - git commit
-  - git flow feature finish v0.x
+  - git flow release finish v0.x
   - git push --tags origin master
   - make/sign epmobile.apk, save it in dev/epmobileapp/vX.Y.Z/
   - on market.android.com update product details
