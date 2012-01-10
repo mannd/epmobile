@@ -547,4 +547,35 @@
     <string name="arvc_old_reference">Reference: WJ McKenna et al.  Br Heart J. 1994;71:215.
  	    http://www.ncbi.nlm.nih.gov/sites/ppmc/articles/PMC483655/</string>
 
+    <!-- LVH -->
+    <string name="lvh_list_title">Left Ventricular Hypertrophy \u25b6</string>
+    <string name="lvh_title">Left Ventricular Hypertrophy</string>
+    <string name="estes_criteria_title">Romhilt-Estes LVH Score</string>
+    <string name="other_lvh_criteria_title">LVH Voltage Criteria</string>
+    <string name="sokolow_label">Sokolow-Lyon Index</string>
+    <string name="sokolow_s_plus_r_label">S in V1 + R in V5 or V6</string>
+    <string name="sokolow_s_plus_r_result">\u2265 35 mm</string>
+    <string name="sokolow_r_in_avl_label">R in aVL</string>
+    <string name="sokolow_r_in_avl_result">\u2265 11 mm</string>
+    <string name="cornell_label">Cornell Voltage Criteria</string>
+    <string name="cornell_men_label">S in V3 + R in aVL (men)</string>
+    <string name="cornell_men_result">> 28 mm</string>
+    <string name="cornell_women_label">S in V3 + R in avL (women)</string>
+    <string name="cornell_women_result">> 20 mm</string>
+    <string name="other_voltage_criteria_label">Other Voltage Criteria</string>
+    <string name="other_lvh_lead_i_label">Lead I: R wave</string>
+    <string name="other_lvh_lead_i_result">> 14 mm</string>
+    <string name="other_lvh_lead_avr_label">Lead aVR: S wave</string>
+    <string name="other_lvh_lead_avr_result">> 15 mm</string>
+    <string name="other_lvh_lead_avl_label">Lead aVL: R wave</string>
+    <string name="other_lvh_lead_avl_result">> 12 mm</string>
+    <string name="other_lvh_lead_avf_label">Lead aVF: R wave</string>
+    <string name="other_lvh_lead_avf_result">> 21 mm</string>
+    <string name="other_lvh_lead_v5_label">Lead V5: R wave</string>
+    <string name="other_lvh_lead_v5_result">> 26 mm</string>
+    <string name="other_lvh_lead_v6_label">Lead V6: R wave</string>
+    <string name="other_lvh_lead_v6_result">> 20 mm</string>
+    <string name="other_lvh_reference">Reference: BP Hsieh et al. Am Heart J 2005;150:161.
+         </string>
+
 </resources>
