@@ -1,7 +1,8 @@
-EP Mobile provides cardiology tools for cardiac electrophysiologists, cardiologists, internists, emergency room physicians, medical students, nurses, technicians, and other health care workers who deal with cardiac arrhythmias. This is a work in progress. New modules will be added every few weeks, so be sure and keep the program updated.  EP Mobile -- The Swiss Army Knife of Electrophysiology!
+EP Mobile provides cardiology tools for cardiac electrophysiologists, cardiologists, internists, emergency room physicians, medical students, nurses, technicians, and other health care workers who deal with cardiac arrhythmias. This is a work in progress. New modules will be added every few weeks, so be sure and keep the program updated.  If you have suggestions or complaints, please email us! EP Mobile -- The Swiss Army Knife of Electrophysiology!
 
 Current features: 
-- NEW! ARVC/D 1994 diagnostic criteria
+- NEW! LVH ECG criteria, including Romhilt-Estes and others
+- ARVC/D 1994 diagnostic criteria
 - Long QT syndrome diagnosis
 - WPW accessory pathway location algorithms (Arruda,
   Modified Arruda, and Milstein)
