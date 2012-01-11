@@ -560,22 +560,38 @@
     <string name="cornell_label">Cornell Voltage Criteria</string>
     <string name="cornell_men_label">S in V3 + R in aVL (men)</string>
     <string name="cornell_men_result">> 28 mm</string>
-    <string name="cornell_women_label">S in V3 + R in avL (women)</string>
+    <string name="cornell_women_label">S in V3 + R in aVL (women)</string>
     <string name="cornell_women_result">> 20 mm</string>
-    <string name="other_voltage_criteria_label">Other Voltage Criteria</string>
-    <string name="other_lvh_lead_i_label">Lead I: R wave</string>
-    <string name="other_lvh_lead_i_result">> 14 mm</string>
+    <string name="other_voltage_criteria_label">Minnesota Code 3.1</string>
+    <string name="other_lvh_lead_i_label">R in I, II, III, or aVF</string>
+    <string name="other_lvh_lead_i_result">> 20 mm</string>
     <string name="other_lvh_lead_avr_label">Lead aVR: S wave</string>
     <string name="other_lvh_lead_avr_result">> 15 mm</string>
-    <string name="other_lvh_lead_avl_label">Lead aVL: R wave</string>
+    <string name="other_lvh_lead_avl_label">R in aVL</string>
     <string name="other_lvh_lead_avl_result">> 12 mm</string>
     <string name="other_lvh_lead_avf_label">Lead aVF: R wave</string>
     <string name="other_lvh_lead_avf_result">> 21 mm</string>
-    <string name="other_lvh_lead_v5_label">Lead V5: R wave</string>
+    <string name="other_lvh_lead_v5_label">R in V5 or V6</string>
     <string name="other_lvh_lead_v5_result">> 26 mm</string>
     <string name="other_lvh_lead_v6_label">Lead V6: R wave</string>
     <string name="other_lvh_lead_v6_result">> 20 mm</string>
+    <string name="other_lvh_key">LVH present if any of above voltage criteria met.</string>
     <string name="other_lvh_reference">Reference: BP Hsieh et al. Am Heart J 2005;150:161.
          </string>
+    <string name="estes_title">Romhilt-Estes Point Score</string>
+    <string name="estes_voltage_label">Any limb-lead R or S \u2265 20 mm
+        or S V1 or V2 \u2265 30 mm or R V5 or V6 \u2265 30 mm</string>
+    <string name="estes_strain_without_dig_label">Left ventricular strain pattern without digitalis</string>
+    <string name="estes_strain_with_dig_label">Left ventricular strain pattern with digitalis</string>
+    <string name="estes_lae_label">Left atrial enlargement</string>
+    <string name="estes_lad_label">Left axis deviation \u2265 -30\u00b0</string>
+    <string name="estes_qrs_duration_label">QRS duration \u2265 90 msec</string>
+    <string name="estes_intrinsicoid_label">Intrinsicoid QRS deflection of \u2265 50 msec in V5 or V6</string>
+    <string name="estes_no_lvh_message">Left Ventricular Hypertrophy not present</string>
+    <string name="estes_probable_lvh_message">Probable Left Ventricular Hypertrophy</string>
+    <string name="estes_definite_lvh_message">Definite Left Ventricular Hypertrophy</string>
+    <string name="estes_key">Left ventricular strain = ST-J point depression \u2265 1 mm and inverted T wave in lead V5.
+	    Left atrial enlargement = P terminal force in V1 > 1 mm or 40 msec.
+	    </string>
 
 </resources>

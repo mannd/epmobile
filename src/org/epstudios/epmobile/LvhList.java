@@ -52,7 +52,7 @@ public class LvhList extends EpListActivity {
 	}
 
 	private void estes() {
-		Intent i = new Intent(this, Arvc.class);
+		Intent i = new Intent(this, Estes.class);
 		startActivity(i);
 	}
 

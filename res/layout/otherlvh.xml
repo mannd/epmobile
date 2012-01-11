@@ -115,22 +115,6 @@
 
             <TextView
                 android:padding="3dip"
-                android:text="@string/other_lvh_lead_avr_label"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/green" />
-
-            <TextView
-                android:gravity="right"
-                android:padding="3dip"
-                android:text="@string/other_lvh_lead_avr_result"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/yellow" />
-        </TableRow>
-
-        <TableRow >
-
-            <TextView
-                android:padding="3dip"
                 android:text="@string/other_lvh_lead_avl_label"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/green" />
@@ -139,22 +123,6 @@
                 android:gravity="right"
                 android:padding="3dip"
                 android:text="@string/other_lvh_lead_avl_result"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/yellow" />
-        </TableRow>
-
-        <TableRow >
-
-            <TextView
-                android:padding="3dip"
-                android:text="@string/other_lvh_lead_avf_label"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/green" />
-
-            <TextView
-                android:gravity="right"
-                android:padding="3dip"
-                android:text="@string/other_lvh_lead_avf_result"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/yellow" />
         </TableRow>
@@ -175,21 +143,13 @@
                 android:textColor="@color/yellow" />
         </TableRow>
 
-        <TableRow >
+        <TextView
+            android:padding="3dip"
+            android:text="@string/other_lvh_key" />
 
-            <TextView
-                android:padding="3dip"
-                android:text="@string/other_lvh_lead_v6_label"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/green" />
-
-            <TextView
-                android:gravity="right"
-                android:padding="3dip"
-                android:text="@string/other_lvh_lead_v6_result"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/yellow" />
-        </TableRow>
+        <TextView
+            android:padding="3dip"
+            android:text="@string/other_lvh_reference" />
     </TableLayout>
 
 </ScrollView>
