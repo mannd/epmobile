@@ -27,12 +27,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class ArvcList extends EpListActivity {
+public class LvhList extends EpListActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-				this, R.array.arvc_criteria_list,
+				this, R.array.lvh_criteria_list,
 				android.R.layout.simple_list_item_1);
 		setListAdapter(adapter);
 		ListView lv = getListView();
@@ -42,24 +42,22 @@ public class ArvcList extends EpListActivity {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				CharSequence selection = ((TextView) view).getText();
-				if (selection
-						.equals(getString(R.string.arvc_2010_criteria_title)))
-					arvc2010();
+				if (selection.equals(getString(R.string.estes_criteria_title)))
+					estes();
 				else if (selection
-						.equals(getString(R.string.arvc_old_criteria_title)))
-					arvcOld();
+						.equals(getString(R.string.other_lvh_criteria_title)))
+					otherLvh();
 			}
 		});
 	}
 
-	private void arvc2010() {
-		Intent i = new Intent(this, Arvc.class);
+	private void estes() {
+		Intent i = new Intent(this, Estes.class);
 		startActivity(i);
 	}
 
-	private void arvcOld() {
-		Intent i = new Intent(this, ArvcOld.class);
+	private void otherLvh() {
+		Intent i = new Intent(this, LvhVoltage.class);
 		startActivity(i);
 	}
-
 }

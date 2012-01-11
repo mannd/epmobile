@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.epstudios.epmobile"
-    android:versionCode="13"
-    android:versionName="0.11" >
+    android:versionCode="14"
+    android:versionName="0.12" >
 
     <uses-sdk
         android:minSdkVersion="7"
@@ -153,6 +153,18 @@
         <activity
             android:label="@string/long_qt_syndrome_diagnosis_title"
             android:name=".LongQt" >
+        </activity>
+        <activity
+            android:label="@string/lvh_title"
+            android:name=".LvhList" >
+        </activity>
+        <activity
+            android:label="@string/other_lvh_criteria_title"
+            android:name=".LvhVoltage" >
+        </activity>
+        <activity
+            android:label="@string/estes_criteria_title"
+            android:name=".Estes" >
         </activity>
     </application>
 
