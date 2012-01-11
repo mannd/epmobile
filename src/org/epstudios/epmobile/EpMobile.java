@@ -72,6 +72,8 @@ public class EpMobile extends EpListActivity {
 				else if (selection
 						.equals(getString(R.string.long_qt_syndrome_diagnosis_title)))
 					longQt();
+				else if (selection.equals(getString(R.string.lvh_list_title)))
+					lvhList();
 			}
 		});
 	}
@@ -128,6 +130,11 @@ public class EpMobile extends EpListActivity {
 
 	private void longQt() {
 		Intent i = new Intent(this, LongQt.class);
+		startActivity(i);
+	}
+
+	private void lvhList() {
+		Intent i = new Intent(this, LvhList.class);
 		startActivity(i);
 	}
 }

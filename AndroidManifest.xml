@@ -154,6 +154,18 @@
             android:label="@string/long_qt_syndrome_diagnosis_title"
             android:name=".LongQt" >
         </activity>
+        <activity
+            android:label="@string/lvh_title"
+            android:name=".LvhList" >
+        </activity>
+        <activity
+            android:label="@string/other_lvh_criteria_title"
+            android:name=".LvhVoltage" >
+        </activity>
+        <activity
+            android:label="@string/estes_criteria_title"
+            android:name=".Estes" >
+        </activity>
     </application>
 
 </manifest>
