@@ -590,8 +590,25 @@
     <string name="estes_no_lvh_message">Left Ventricular Hypertrophy not present</string>
     <string name="estes_probable_lvh_message">Probable Left Ventricular Hypertrophy</string>
     <string name="estes_definite_lvh_message">Definite Left Ventricular Hypertrophy</string>
-    <string name="estes_key">Left ventricular strain = ST-J point depression \u2265 1 mm and inverted T wave in lead V5.
-	    Left atrial enlargement = P terminal force in V1 > 1 mm or 40 msec.
-	    </string>
+    <string name="estes_key">Left ventricular strain = ST-J point
+    depression \u2265 1 mm and inverted T wave in lead V5.  Left
+    atrial enlargement = P terminal force in V1 > 1 mm or 40 msec.</string>
+    <!-- Long QT Subtypes -->
+    <string name="lqt_syndrome_title">Long QT Syndrome \u25b6</string>
+    <string name="lqt_syndrome_label">Long QT Syndrome</string>
+    <string name="lqt_subtypes_title">Long QT Subtypes</string>
+    <string name="lqt_subtypes_type_label">Subtype</string>
+    <string name="lqt_subtypes_frequency_label">Frequency</string>
+    <string name="lqt_subtypes_gene_label">Gene</string>
+    <string name="lqt_subtypes_channel_label">Ion Channel</string>
+    <string name="lqt_subtypes_ecg_label">ECG</string>
+    <string name="lqt_subtypes_features_label">Features</string>
+    <string name="lqt_subtypes_1_name">LQTS 1</string>
+    <string name="lqt_subtypes_1_frequency">30-35%</string>
+    <string name="lqt_subtypes_1_gene">11p15.5\nKVLQT1</string>
+    <string name="lqt_subtypes_1_channel">iks</string>
+    <string name="lqt_subtypes_1_ecg">broad T wave</string>
+    <string name="lqt_subtypes_1_features">episodes with stress, exercise, swimming; failure
+    of QT to shorten with exercise</string>
 
 </resources>

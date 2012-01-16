@@ -166,6 +166,14 @@
             android:label="@string/estes_criteria_title"
             android:name=".Estes" >
         </activity>
+        <activity
+            android:label="@string/lqt_syndrome_label"
+            android:name=".LongQtList" >
+        </activity>
+        <activity
+            android:label="@string/lqt_subtypes_title"
+            android:name=".LongQtSubtypes" >
+        </activity>
     </application>
 
 </manifest>

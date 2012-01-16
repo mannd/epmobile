@@ -70,7 +70,7 @@ public class EpMobile extends EpListActivity {
 						.equals(getString(R.string.wpw_algorithm_list_title)))
 					wpw();
 				else if (selection
-						.equals(getString(R.string.long_qt_syndrome_diagnosis_title)))
+						.equals(getString(R.string.lqt_syndrome_title)))
 					longQt();
 				else if (selection.equals(getString(R.string.lvh_list_title)))
 					lvhList();
@@ -129,7 +129,7 @@ public class EpMobile extends EpListActivity {
 	}
 
 	private void longQt() {
-		Intent i = new Intent(this, LongQt.class);
+		Intent i = new Intent(this, LongQtList.class);
 		startActivity(i);
 	}
 
