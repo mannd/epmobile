@@ -59,11 +59,11 @@
 ** TODO Epicardial vs endocardial VT
 ** TODO Mitral annular VT
 ** TODO Brugada ECG types
-** TODO LVH
+** DONE LVH
 ** DONE Normal EP Values
 ** TODO EP Glossary
 ** DONE CMS ICD criteria
-** TODO LQTS criteria
+** DONE LQTS criteria
 ** TODO ACC WCT algorithm
 ** TODO Creatinine Clearance calculator
 * Menu
@@ -88,7 +88,7 @@
    Still have a mixture of strings in strings.xml and in code.  All
    strings (except maybe some numbers) should be in strings.xml.
 ** Grouping
-*** TODO add Warfarin dose calculator to Drug Dose Calculators group
+*** DONE add Warfarin dose calculator to Drug Dose Calculators group
 *** ? other groups
     - Risk Scores
     - Diagnostic Scores
