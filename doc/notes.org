@@ -344,3 +344,51 @@
    - RP
    - RPL
 * DONE add transparent backgrounds to png
+* New Main Menu
+** Calculators
+*** TODO Creatinine Clearance Calculator
+*** Cycle Length Calculator
+*** Drug Dose Calculators
+**** Dabigatran Calculator
+**** Dofetilide Calculator
+**** Rovaroxaban Calculator
+**** Warfarin Calculator
+*** QTc Calculator
+** Risk Scores
+*** CHADS2 Score
+*** CHADS-VASc Score
+*** HAS-BLED Score
+*** HEMORRHAGES Score
+*** HCM Sudden Death Risk Score
+** Reference
+*** CMS Criteria
+*** TODO EP Glossary
+*** Normal EP Values
+*** TODO ParaHisian Pacing
+*** TODO RVA vs RVS Pacing
+** Syndromes
+*** ARVC/D
+**** ARVC/D 1994 Diagnostic Criteria
+**** ARVC/D 2010 Diagnostic Criteria
+*** Brugada
+*** Left Ventricular Hypertrophy
+**** Romhilt-Estes LVH Score
+**** LVH Voltage Criteria
+*** Long QT Syndrome
+**** Long QT Syndrome Diagnosis
+**** Long QT Subtypes
+**** Long QT ECG
+*** Short QT Syndrome Diagnosis
+*** TODO Ventricular Tachycardia
+**** TODO Epicardial VT Criteria
+**** TODO Outflow Tract VT
+**** TODO Mitral Annular VT
+*** Wide Complex Tachycardia
+**** Brugada Algorithm
+**** Morphology Criteria
+**** R Wave Peak Time Criterion
+*** WPW Pathway Location
+**** Anatomy of AV Annulus
+**** Arruda Algorithm
+**** Modified Arruda Algorithm
+**** Milstein Algorithm
