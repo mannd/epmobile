@@ -610,5 +610,7 @@
     <string name="lqt_subtypes_1_ecg">broad T wave</string>
     <string name="lqt_subtypes_1_features">episodes with stress, exercise, swimming; failure
     of QT to shorten with exercise</string>
+    <string name="lqt_ecg_title">Long QT ECG Patterns</string>
+    <string name="brugada_ecg_title">Brugada ECG Patterns</string>
 
 </resources>

@@ -48,6 +48,8 @@ public class LongQtList extends EpListActivity {
 				else if (selection
 						.equals(getString(R.string.lqt_subtypes_title)))
 					lqtSubtypes();
+				else if (selection.equals(getString(R.string.lqt_ecg_title)))
+					lqtEcg();
 			}
 		});
 	}
@@ -59,6 +61,11 @@ public class LongQtList extends EpListActivity {
 
 	private void lqtSubtypes() {
 		Intent i = new Intent(this, LongQtSubtypes.class);
+		startActivity(i);
+	}
+
+	private void lqtEcg() {
+		Intent i = new Intent(this, LongQtEcg.class);
 		startActivity(i);
 	}
 

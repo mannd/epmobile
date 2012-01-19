@@ -39,6 +39,7 @@
     -->
     <array name="main_index">
         <item>@string/arvc_list_title</item>
+        <item>@string/brugada_ecg_title</item>
         <item>@string/icd_calculator_title</item>
         <item>@string/cycle_length_calculator_title</item>
         <item>@string/drug_dose_calculator_list_title</item>
@@ -89,6 +90,7 @@
     <array name="lqts_list">
         <item>@string/long_qt_syndrome_diagnosis_title</item>
         <item>@string/lqt_subtypes_title</item>
+        <item>@string/lqt_ecg_title</item>
     </array>
     <array name="interval_rate_labels">
         <item>RR Interval (msec)</item>

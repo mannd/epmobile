@@ -74,6 +74,9 @@ public class EpMobile extends EpListActivity {
 					longQt();
 				else if (selection.equals(getString(R.string.lvh_list_title)))
 					lvhList();
+				else if (selection
+						.equals(getString(R.string.brugada_ecg_title)))
+					brugadaEcg();
 			}
 		});
 	}
@@ -135,6 +138,11 @@ public class EpMobile extends EpListActivity {
 
 	private void lvhList() {
 		Intent i = new Intent(this, LvhList.class);
+		startActivity(i);
+	}
+
+	private void brugadaEcg() {
+		Intent i = new Intent(this, BrugadaEcg.class);
 		startActivity(i);
 	}
 }
