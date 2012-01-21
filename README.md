@@ -24,10 +24,18 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+The [AV annulus figure](http://en.wikipedia.org/wiki/File:Gray495.png)
+is modified from Gray's Anatomy 20th edition, which is in the public
+domain (copyright from 1918 expired).
 
+The Brugada syndrome ECG pattern figure is from
+[Napolitano C, Priori SG. Brugada syndrome. Orphanet J Rare Dis. 1, 35. 2006. doi:10.1186/1750-1172-1-35](http://www.ncbi.nlm.nih.gov/pubmed/16972995?dopt=Abstract).
+It is licensed under the
+[Creative Commons Attribution 2.0 Generic License](http://creativecommons.org/licenses/by/2.0/deed.en).
 
 ## Author
 David Mann
-[mannd@epstudiossoftware.com](mailto:mannd@epstudiossoftware.com)  
-[http://www.epstudiossoftware.com](http://www/epstudiossoftware.com)   
+
+Email: [mannd@epstudiossoftware.com](mailto:mannd@epstudiossoftware.com)  
+Website: [http://www.epstudiossoftware.com](http://www/epstudiossoftware.com)   
 
