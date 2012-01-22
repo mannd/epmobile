@@ -590,8 +590,41 @@
     <string name="estes_no_lvh_message">Left Ventricular Hypertrophy not present</string>
     <string name="estes_probable_lvh_message">Probable Left Ventricular Hypertrophy</string>
     <string name="estes_definite_lvh_message">Definite Left Ventricular Hypertrophy</string>
-    <string name="estes_key">Left ventricular strain = ST-J point depression \u2265 1 mm and inverted T wave in lead V5.
-	    Left atrial enlargement = P terminal force in V1 > 1 mm or 40 msec.
-	    </string>
+    <string name="estes_key">Left ventricular strain = ST-J point
+    depression \u2265 1 mm and inverted T wave in lead V5.  Left
+    atrial enlargement = P terminal force in V1 > 1 mm or 40 msec.</string>
+    <!-- Long QT Subtypes -->
+    <string name="lqt_syndrome_title">Long QT Syndrome \u25b6</string>
+    <string name="lqt_syndrome_label">Long QT Syndrome</string>
+    <string name="lqt_subtypes_title">Long QT Subtypes</string>
+    <string name="lqt_subtypes_type_label">Subtype</string>
+    <string name="lqt_subtypes_frequency_label">Frequency</string>
+    <string name="lqt_subtypes_gene_label">Gene</string>
+    <string name="lqt_subtypes_channel_label">Ion Channel</string>
+    <string name="lqt_subtypes_ecg_label">ECG</string>
+    <string name="lqt_subtypes_features_label">Features</string>
+    <string name="lqt_subtypes_1_name">LQTS 1</string>
+    <string name="lqt_subtypes_1_description">Frequency: 30-35%\nLocus: 11p15.5\nGene: KVLQT2 (KCNQ1)\nChannel: 
+        IKs\nECG: Broad T wave\nFeatures: Episodes with stress, exercise, swimming, diving; failure
+    	of QT to shorten with exercise
+    </string>
+    <string name="lqt_subtypes_2_name">LQTS 2</string>
+    <string name="lqt_subtypes_2_description">Frequency: 25-30%\nLocus: 7q35-36\nGene: HERG\nChannel:
+    	IKr\nECG: Split or low amplitude late T wave\nFeatures: Triggered by loud noises, alarms</string>
+    <string name="lqt_subtypes_3_name">LQTS 3</string>
+    <string name="lqt_subtypes_3_description">Frequency: 5-10%\nLocus: 3p21-24\nGene: SCN5A\nChannel:
+        INa\nECG: Late onset biphasic or peaked T wave\nFeatures: Associated with bradycardia
+        </string>
+    <string name="lqt_subtypes_4_name">LQTS 4</string>
+    <string name="lqt_subtypes_4_description">Frequency: 1-2%\nLocus: 4q25-27\nGene: ANKB\nChannel:
+    	INaKATP, INaCa exchange\nECG: Variable QT prolongaton\nFeatures: No specific features</string>
+    <string name="lqt_subtypes_5_name">LQTS 4 - 11</string>
+    <string name="lqt_subtypes_5_description">Remaining subtypes all &lt;1% frequency (some just single families)
+   	    without distinguishing features.  One exception is LQTS 8 which affects the ICaL channel, has
+   	    alternating T waves on ECG, and is associated with Timothy Syndrome.</string>
+    <string name="lqt_subtypes_reference">\nReferences:\nhttp://www.geneticheartdisease.org/lqts_gene_table.htm\n
+        http://en.ecgpedia.org/wiki/Long_QT_Syndrome</string>
+    <string name="lqt_ecg_title">Long QT ECG Patterns</string>
+    <string name="brugada_ecg_title">Brugada ECG Patterns</string>
 
 </resources>

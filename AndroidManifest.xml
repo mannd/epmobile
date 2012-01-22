@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.epstudios.epmobile"
-    android:versionCode="14"
-    android:versionName="0.12" >
+    android:versionCode="15"
+    android:versionName="0.13" >
 
     <uses-sdk
         android:minSdkVersion="7"
@@ -165,6 +165,22 @@
         <activity
             android:label="@string/estes_criteria_title"
             android:name=".Estes" >
+        </activity>
+        <activity
+            android:label="@string/lqt_syndrome_label"
+            android:name=".LongQtList" >
+        </activity>
+        <activity
+            android:label="@string/lqt_subtypes_title"
+            android:name=".LongQtSubtypes" >
+        </activity>
+        <activity
+            android:label="@string/lqt_ecg_title"
+            android:name=".LongQtEcg" >
+        </activity>
+        <activity
+            android:label="@string/brugada_ecg_title"
+            android:name=".BrugadaEcg" >
         </activity>
     </application>
 
