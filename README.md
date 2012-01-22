@@ -27,7 +27,7 @@ The [AV annulus figure](http://en.wikipedia.org/wiki/File:Gray495.png)
 is modified from Gray's Anatomy 20th edition, which is in the public
 domain (copyright from 1918 expired).
 
-The wide complex tachycardia ECG patterns were redrawn and relabeled from [ECGpedia.org](http://en.ecgpedia.org/wiki/Approach_to_the_Wide_Complex_Tachycardia), courtesy of Dr. De Voogt and ECGpedia.org.  They are licensed under the [Creative Commons Attribution-NonCommercial 3.0 Netherlands (CC BY-NC 3.0)](http://creativecommons.org/licenses/by-nc/3.0/nl/deed.en_GB).
+The wide complex tachycardia ECG patterns were redrawn and relabeled from [ECGpedia.org](http://en.ecgpedia.org/wiki/Approach_to_the_Wide_Complex_Tachycardia), and the long QT ECG patterns were from [the same source](http://en.ecgpedia.org/wiki/Long_QT_Syndrome), both courtesy of Dr. De Voogt and ECGpedia.org.  They are licensed under the [Creative Commons Attribution-NonCommercial 3.0 Netherlands (CC BY-NC 3.0)](http://creativecommons.org/licenses/by-nc/3.0/nl/deed.en_GB).
 
 The Brugada syndrome ECG pattern figure is from
 [Napolitano C, Priori SG. Brugada syndrome. Orphanet J Rare Dis. 1, 35. 2006. doi:10.1186/1750-1172-1-35](http://www.ncbi.nlm.nih.gov/pubmed/16972995?dopt=Abstract).
