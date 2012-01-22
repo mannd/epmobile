@@ -1,0 +1,18 @@
+EP Mobile v0.13 Release Notes
+
+Changes since v0.12
+
+* Added Long QT Subtypes module.
+
+* Added Long QT ECG Patterns module.
+
+* Long QT Diagnosis is now a list.
+
+* Added Brugada Syndrome ECG Patterns module.
+
+* Fixed errors in wide complex tachycardia figures.
+
+* Changed AV annulus figure, using public domain figure.
+
+* Changed README.md (in source code at GitHub) to credit figure sources.
+
