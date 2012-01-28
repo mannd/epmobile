@@ -618,7 +618,7 @@
     <string name="lqt_subtypes_4_name">LQTS 4</string>
     <string name="lqt_subtypes_4_description">Frequency: 1-2%\nLocus: 4q25-27\nGene: ANKB\nChannel:
     	INaKATP, INaCa exchange\nECG: Variable QT prolongaton\nFeatures: No specific features</string>
-    <string name="lqt_subtypes_5_name">LQTS 4 - 11</string>
+    <string name="lqt_subtypes_5_name">LQTS 5 - 11</string>
     <string name="lqt_subtypes_5_description">Remaining subtypes all &lt;1% frequency (some just single families)
    	    without distinguishing features.  One exception is LQTS 8 which affects the ICaL channel, has
    	    alternating T waves on ECG, and is associated with Timothy Syndrome.</string>
