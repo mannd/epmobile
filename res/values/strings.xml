@@ -119,7 +119,7 @@
     <string name="warfarin_reference">Reference: Horton J, Bushwick B: American Family
 		Physician. Feb 1, 1999.
 		http://www.aafp.org/afp/990201ap/635.html</string>
-    <string name="wct_algorithm_list_title">Wide Complex Tachycardia \u25B6</string>
+    <string name="wct_algorithm_list_title">Wide Complex Tachycardia</string>
     <string name="wct_algorithm_title">Wide Complex Tachycardia</string>
     <string name="brugada_vt_title">Brugada Criteria SVT vs VT</string>
     <string name="brugada_wct_title">Brugada Algorithm</string>
@@ -315,9 +315,9 @@
 	    with the greatest amplitude T-wave.  Clinical history: events must occur in the absence of
 	    an identifiable etiology, including structural heart disease.  Note that at least one ECG
 	    manifestation must be present in order to get additional points.</string>
-    <string name="drug_dose_calculator_list_title">Drug Dose Calculators \u25B6</string>
+    <string name="drug_dose_calculator_list_title">Drug Dose Calculators</string>
     <string name="drug_dose_calculators_title">Drug Dose Calculators</string>
-    <string name="risk_score_list_title">Risk Scores \u25B6</string>
+    <string name="risk_score_list_title">Risk Scores</string>
     <string name="risk_scores_title">Risk Scores</string>
 
     <!-- HCM -->
