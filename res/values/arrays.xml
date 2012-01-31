@@ -38,19 +38,28 @@
     below may change if the strings are translated into a different language.
     -->
     <array name="main_index">
+        <item>@string/calculator_list_title</item>
+        <item>@string/diagnosis_list_title</item>
+        <item>@string/reference_list_title</item>
+        <item>@string/risk_score_list_title</item>
+    </array>
+    <array name="diagnosis_list">
         <item>@string/arvc_list_title</item>
         <item>@string/brugada_ecg_title</item>
-        <item>@string/icd_calculator_title</item>
-        <item>@string/cycle_length_calculator_title</item>
-        <item>@string/drug_dose_calculator_list_title</item>
         <item>@string/lvh_list_title</item>
         <item>@string/lqt_syndrome_title</item>
-        <item>@string/normal_ep_values_title</item>
-        <item>@string/qtc_calculator_title</item>
-        <item>@string/risk_score_list_title</item>
         <item>@string/short_qt_title</item>
         <item>@string/wct_algorithm_list_title</item>
         <item>@string/wpw_algorithm_list_title</item>
+    </array>
+    <array name="calculator_list">
+        <item>@string/cycle_length_calculator_title</item>
+        <item>@string/drug_dose_calculator_list_title</item>
+        <item>@string/qtc_calculator_title</item>
+    </array>
+    <array name="reference_list">
+        <item>@string/icd_calculator_title</item>
+        <item>@string/normal_ep_values_title</item>
     </array>
     <array name="wct_algorithm_list">
 
@@ -84,8 +93,8 @@
         <item>@string/arvc_2010_criteria_title</item>
     </array>
     <array name="lvh_criteria_list">
-        <item>@string/estes_criteria_title</item>
         <item>@string/other_lvh_criteria_title</item>
+        <item>@string/estes_criteria_title</item>
     </array>
     <array name="lqts_list">
         <item>@string/long_qt_syndrome_diagnosis_title</item>

@@ -182,6 +182,18 @@
             android:label="@string/brugada_ecg_title"
             android:name=".BrugadaEcg" >
         </activity>
+        <activity
+            android:label="@string/diagnosis_title"
+            android:name=".DiagnosisList" >
+        </activity>
+        <activity
+            android:label="@string/calculator_title"
+            android:name=".CalculatorList" >
+        </activity>
+        <activity
+            android:label="@string/reference_title"
+            android:name=".ReferenceList" >
+        </activity>
     </application>
 
 </manifest>

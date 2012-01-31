@@ -41,83 +41,28 @@ public class EpMobile extends EpListActivity {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				CharSequence selection = ((TextView) view).getText();
-				if (selection
-						.equals(getString(R.string.cycle_length_calculator_title)))
-					intervalRateCalculator();
+				if (selection.equals(getString(R.string.calculator_list_title)))
+					calculatorList();
 				else if (selection
-						.equals(getString(R.string.qtc_calculator_title)))
-					qtcCalculator();
-				else if (selection
-						.equals(getString(R.string.wct_algorithm_list_title)))
-					wctAlgorithm();
-				else if (selection
-						.equals(getString(R.string.normal_ep_values_title)))
-					normalEpValues();
-				else if (selection.equals(getString(R.string.arvc_list_title)))
-					arvc();
-				else if (selection.equals(getString(R.string.short_qt_title)))
-					shortQt();
-				else if (selection
-						.equals(getString(R.string.drug_dose_calculator_list_title)))
-					drugDoseCalculators();
-				else if (selection
-						.equals(getString(R.string.icd_calculator_title)))
-					icdCalculator();
+						.equals(getString(R.string.reference_list_title)))
+					referenceList();
 				else if (selection
 						.equals(getString(R.string.risk_score_list_title)))
 					riskScores();
 				else if (selection
-						.equals(getString(R.string.wpw_algorithm_list_title)))
-					wpw();
-				else if (selection
-						.equals(getString(R.string.lqt_syndrome_title)))
-					longQt();
-				else if (selection.equals(getString(R.string.lvh_list_title)))
-					lvhList();
-				else if (selection
-						.equals(getString(R.string.brugada_ecg_title)))
-					brugadaEcg();
+						.equals(getString(R.string.diagnosis_list_title)))
+					diagnosisList();
 			}
 		});
 	}
 
-	private void qtcCalculator() {
-		Intent i = new Intent(this, Qtc.class);
+	private void calculatorList() {
+		Intent i = new Intent(this, CalculatorList.class);
 		startActivity(i);
 	}
 
-	private void intervalRateCalculator() {
-		Intent i = new Intent(this, CycleLength.class);
-		startActivity(i);
-	}
-
-	private void wctAlgorithm() {
-		Intent i = new Intent(this, WctAlgorithmList.class);
-		startActivity(i);
-	}
-
-	private void normalEpValues() {
-		Intent i = new Intent(this, NormalEpValues.class);
-		startActivity(i);
-	}
-
-	private void arvc() {
-		Intent i = new Intent(this, ArvcList.class);
-		startActivity(i);
-	}
-
-	private void shortQt() {
-		Intent i = new Intent(this, ShortQt.class);
-		startActivity(i);
-	}
-
-	private void drugDoseCalculators() {
-		Intent i = new Intent(this, DrugDoseCalculatorList.class);
-		startActivity(i);
-	}
-
-	private void icdCalculator() {
-		Intent i = new Intent(this, CmsIcd.class);
+	private void diagnosisList() {
+		Intent i = new Intent(this, DiagnosisList.class);
 		startActivity(i);
 	}
 
@@ -126,23 +71,9 @@ public class EpMobile extends EpListActivity {
 		startActivity(i);
 	}
 
-	private void wpw() {
-		Intent i = new Intent(this, WpwAlgorithmList.class);
+	private void referenceList() {
+		Intent i = new Intent(this, ReferenceList.class);
 		startActivity(i);
 	}
 
-	private void longQt() {
-		Intent i = new Intent(this, LongQtList.class);
-		startActivity(i);
-	}
-
-	private void lvhList() {
-		Intent i = new Intent(this, LvhList.class);
-		startActivity(i);
-	}
-
-	private void brugadaEcg() {
-		Intent i = new Intent(this, BrugadaEcg.class);
-		startActivity(i);
-	}
 }

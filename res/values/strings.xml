@@ -626,5 +626,11 @@
         http://en.ecgpedia.org/wiki/Long_QT_Syndrome</string>
     <string name="lqt_ecg_title">Long QT ECG Patterns</string>
     <string name="brugada_ecg_title">Brugada ECG Patterns</string>
+    <string name="calculator_list_title">Calculators \u25b6</string>
+    <string name="calculator_title">Calculators</string>
+    <string name="diagnosis_list_title">Diagnosis \u25b6</string>
+    <string name="diagnosis_title">Diagnosis</string>
+    <string name="reference_list_title">Reference \u25b6</string>
+    <string name="reference_title">Reference</string>
 
 </resources>
