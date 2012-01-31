@@ -72,8 +72,8 @@
     <array name="wpw_algorithm_list">
         <item>@string/anatomy_av_annulus_title</item>
         <item>@string/arruda_title</item>
-        <item>@string/modified_arruda_title</item>
         <item>@string/milstein_title</item>
+        <item>@string/modified_arruda_title</item>
     </array>
     <array name="drug_calculator_list">
         <item>@string/dabigatran_calculator_title</item>
