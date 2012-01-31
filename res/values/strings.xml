@@ -172,7 +172,7 @@
 		Electrophysiology. Techniques and Interpretations. 2nd Edition 1993.
 		Lea &amp; Febiger.
   </string>
-    <string name="arvc_list_title">ARVC/D Diagnosis \u25b6</string>
+    <string name="arvc_list_title">ARVC/D Diagnosis</string>
     <string name="arvc_title">ARVC/D Diagnosis</string>
     <string name="arvc_2010_criteria_title">ARVC/D 2010 Diagnostic Criteria</string>
     <string name="global_dysfunction_label">I. Global or regional dysfunction and structural
@@ -452,7 +452,7 @@
 	    schizophrenia, etc.)</string>
     <string name="stroke_hemorrhages_label">Stroke</string>
     <string name="wpw_algorithm_title">WPW Pathway Location</string>
-    <string name="wpw_algorithm_list_title">WPW Pathway Location \u25b6</string>
+    <string name="wpw_algorithm_list_title">WPW Pathway Location</string>
     <string name="arruda_title">Arruda Algorithm</string>
     <string name="modified_arruda_title">Modified Arruda Algorithm</string>
     <string name="milstein_title">Milstein Algorithm</string>
@@ -549,7 +549,7 @@
  	    http://www.ncbi.nlm.nih.gov/sites/ppmc/articles/PMC483655/</string>
 
     <!-- LVH -->
-    <string name="lvh_list_title">Left Ventricular Hypertrophy \u25b6</string>
+    <string name="lvh_list_title">Left Ventricular Hypertrophy</string>
     <string name="lvh_title">Left Ventricular Hypertrophy</string>
     <string name="estes_criteria_title">Romhilt-Estes LVH Score</string>
     <string name="other_lvh_criteria_title">LVH Voltage Criteria</string>
@@ -595,7 +595,7 @@
     depression \u2265 1 mm and inverted T wave in lead V5.  Left
     atrial enlargement = P terminal force in V1 > 1 mm or 40 msec.</string>
     <!-- Long QT Subtypes -->
-    <string name="lqt_syndrome_title">Long QT Syndrome \u25b6</string>
+    <string name="lqt_syndrome_title">Long QT Syndrome</string>
     <string name="lqt_syndrome_label">Long QT Syndrome</string>
     <string name="lqt_subtypes_title">Long QT Subtypes</string>
     <string name="lqt_subtypes_type_label">Subtype</string>
@@ -627,11 +627,11 @@
         http://en.ecgpedia.org/wiki/Long_QT_Syndrome</string>
     <string name="lqt_ecg_title">Long QT ECG Patterns</string>
     <string name="brugada_ecg_title">Brugada ECG Patterns</string>
-    <string name="calculator_list_title">Calculators \u25b6</string>
+    <string name="calculator_list_title">Calculators</string>
     <string name="calculator_title">Calculators</string>
-    <string name="diagnosis_list_title">Diagnosis \u25b6</string>
+    <string name="diagnosis_list_title">Diagnosis</string>
     <string name="diagnosis_title">Diagnosis</string>
-    <string name="reference_list_title">Reference \u25b6</string>
+    <string name="reference_list_title">Reference</string>
     <string name="reference_title">Reference</string>
 
 </resources>
