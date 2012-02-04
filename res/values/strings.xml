@@ -633,5 +633,7 @@
     <string name="diagnosis_title">Diagnosis</string>
     <string name="reference_list_title">Reference</string>
     <string name="reference_title">Reference</string>
-
+	<string name="error_dialog_title">Error</string>
+	<string name="estes_contradiction_message">You have selected strain pattern
+	    with and without digitalis.  Please select one or the other, not both.</string>
 </resources>

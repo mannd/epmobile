@@ -1,5 +1,6 @@
 package org.epstudios.epmobile;
 
+import android.app.AlertDialog;
 import android.widget.CheckBox;
 
 public class Estes extends RiskScore {
@@ -13,6 +14,14 @@ public class Estes extends RiskScore {
 
 	@Override
 	protected void calculateResult() {
+		if (checkBox[STRAIN_WITHOUT_DIG].isChecked()
+				&& checkBox[STRAIN_WITH_DIG].isChecked()) {
+			AlertDialog dialog = new AlertDialog.Builder(this).create();
+			dialog.setMessage(getString(R.string.estes_contradiction_message));
+			dialog.setTitle(getString(R.string.error_dialog_title));
+			dialog.show();
+			return;
+		}
 		int result = 0;
 		for (int i = 0; i < checkBox.length; i++) {
 			if (checkBox[i].isChecked()) {
