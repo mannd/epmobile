@@ -57,7 +57,7 @@
     <string name="maximum_qtc_message">This value is used to
 		color code (with red) abnormally high QTc values</string>
     <string name="maximum_qtc_default_value">440</string>
-    <string name="settings_label">Settings...</string>
+    <string name="settings_label">Settings&#8230;</string>
     <string name="settings_shortcut">s</string>
     <string name="settings_title">EP Mobile Settings</string>
     <string name="hasbled_title">HAS-BLED Score</string>
@@ -107,8 +107,8 @@
     <string name="inr_hint">INR</string>
     <string name="weekly_dose_hint">Dose (mg/week)</string>
     <string name="inr_target_label">INR target</string>
-    <string name="inr_target1">2.0 - 3.0</string>
-    <string name="inr_target2">2.5 - 3.5</string>
+    <string name="inr_target1">2.0 &#8211; 3.0</string>
+    <string name="inr_target2">2.5 &#8211; 3.5</string>
     <string name="default_warfarin_tablet_title">Default Warfarin Tablet</string>
     <string name="default_warfarin_tablet_summary">Select the default warfarin tablet strength
 	</string>
@@ -185,8 +185,8 @@
     <string name="regional_echo_minor_abnormality_label">Regional RV akinesia or dyskinesia</string>
     <string name="regional_mri_abnormality_label">Regional RV akinesia or dyssynchronous RV
 		contraction</string>
-    <string name="and_one_echo_label">and one of the following (end diastole)...</string>
-    <string name="and_one_label">and one of the following...</string>
+    <string name="and_one_echo_label">and one of the following (end diastole)&#8230;</string>
+    <string name="and_one_label">and one of the following&#8230;</string>
     <string name="major_plax_criteria">PLAX RVOT \u2265 32 mm (corrected for body size
 		[PLAX/BSA] \u2265 19 mm/m\u00b2)</string>
     <string name="major_psax_criteria">PSAX RVOT \u2265 36 mm (corrected for body size
@@ -498,10 +498,10 @@
     <string name="long_qt_syndrome_diagnosis_title">Long QT Syndrome Diagnosis</string>
     <string name="ecg_findings_label">ECG Findings</string>
     <string name="longest_qt_label">QTc \u2265 480 msec</string>
-    <string name="longer_qt_label">QTc 460-470 msec</string>
+    <string name="longer_qt_label">QTc 460&#8211;470 msec</string>
     <string name="long_qt_label">QTc 450 msec (in males)</string>
     <string name="torsade_label">Torsade de pointes</string>
-    <string name="t_wave_alternans_label">T-Wave alternans</string>
+    <string name="t_wave_alternans_label">T wave alternans</string>
     <string name="notched_t_wave_label">Notched T wave in 3 leads</string>
     <string name="low_hr_label">Low heart rate for age*</string>
     <string name="clinical_hx_label">Clinical History</string>
@@ -619,7 +619,7 @@
     <string name="lqt_subtypes_4_name">LQTS 4</string>
     <string name="lqt_subtypes_4_description">Frequency: 1-2%\nLocus: 4q25-27\nGene: ANKB\nChannel:
     	INaKATP, INaCa exchange\nECG: Variable QT prolongaton\nFeatures: No specific features</string>
-    <string name="lqt_subtypes_5_name">LQTS 5 - 11</string>
+    <string name="lqt_subtypes_5_name">LQTS 5 &#8211; 11</string>
     <string name="lqt_subtypes_5_description">Remaining subtypes all &lt;1% frequency (some just single families)
    	    without distinguishing features.  One exception is LQTS 8 which affects the ICaL channel, has
    	    alternating T waves on ECG, and is associated with Timothy Syndrome.</string>

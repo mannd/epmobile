@@ -5,17 +5,13 @@
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="wrap_content" >
 
         <TextView
-            android:background="@android:color/background_light"
-            android:padding="3dip"
-            android:text="@string/global_dysfunction_label"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@android:color/black" />
+            style="@style/Header1"
+            android:text="@string/global_dysfunction_label" />
 
         <TextView
-            android:background="@android:color/background_dark"
             android:padding="3dip"
             android:text="@string/major"
             android:textColor="@android:color/white" />
@@ -148,7 +144,7 @@
             </RadioButton>
 
             <RadioButton
-                android:id="@+id/fractional_area_criteria"
+                android:id="@+id/echo_fractional_area_criteria"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/fractional_area_criteria" >
@@ -191,11 +187,8 @@
         </RadioGroup>
 
         <TextView
-            android:background="@android:color/background_light"
-            android:padding="3dip"
-            android:text="@string/tissue_label"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@android:color/black" />
+            style="@style/Header1"
+            android:text="@string/tissue_label" />
 
         <TextView
             android:background="@android:color/background_dark"
@@ -222,11 +215,8 @@
             android:text="@string/minor_residual_myocytes_label" />
 
         <TextView
-            android:background="@android:color/background_light"
-            android:padding="3dip"
-            android:text="@string/repolarization_label"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@android:color/black" />
+            style="@style/Header1"
+            android:text="@string/repolarization_label" />
 
         <TextView
             android:background="@android:color/background_dark"
@@ -259,11 +249,8 @@
             android:text="@string/minor_repolarization_rbbb_label" />
 
         <TextView
-            android:background="@android:color/background_light"
-            android:padding="3dip"
-            android:text="@string/depolarization_label"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@android:color/black" />
+            style="@style/Header1"
+            android:text="@string/depolarization_label" />
 
         <TextView
             android:background="@android:color/background_dark"
@@ -318,11 +305,8 @@
             android:text="@string/terminal_activation_duration_label" />
 
         <TextView
-            android:background="@android:color/background_light"
-            android:padding="3dip"
-            android:text="@string/arrhythmias_label"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@android:color/black" />
+            style="@style/Header1"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView
             android:background="@android:color/background_dark"
@@ -355,11 +339,8 @@
             android:text="@string/pvcs_label" />
 
         <TextView
-            android:background="@android:color/background_light"
-            android:padding="3dip"
-            android:text="@string/family_history_label"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@android:color/black" />
+            style="@style/Header1"
+            android:text="@string/family_history_label" />
 
         <TextView
             android:background="@android:color/background_dark"
