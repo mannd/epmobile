@@ -113,10 +113,6 @@
         <item>LBBB Morphology</item>
         <item>RBBB Morphology</item>
     </array>
-    <array name="bbb_values">
-        <item>LBBB</item>
-        <item>RBBB</item>
-    </array>
     <array name="weight_unit_labels">
         <item>Weight (kg)</item>
         <item>Weight (lb)</item>

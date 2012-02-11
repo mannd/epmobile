@@ -108,7 +108,7 @@
 
             <RadioButton
                 android:id="@+id/echo_fractional_area_criteria"
-                android:text="@string/fractional_area_criteria" >
+                android:text="@string/fractional_area_minor_criteria" >
             </RadioButton>
         </RadioGroup>
 

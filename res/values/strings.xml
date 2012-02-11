@@ -32,14 +32,12 @@
     <string name="qtc_result_label">QTc (msec)</string>
     <string name="calculate_label">Calculate!</string>
     <string name="clear_label">Clear</string>
-    <string name="cleared">Cleared!</string>
     <string name="dose_result_label">Dose</string>
     <string name="weight_hint">Weight (kg)</string>
     <string name="weight_lb_hint">Weight (lb)</string>
     <string name="creatinine_hint">Creatinine (mg/dL)</string>
     <string name="age_hint">Age (yr)</string>
     <string name="age_label">Age (yr)</string>
-    <string name="weight_label">Weight (kg)</string>
     <string name="creatinine_label">Creatinine (mg/dL)</string>
     <string name="creatinine_clearance_label"></string>
     <string name="male_label">Male</string>
@@ -445,7 +443,6 @@
     <string name="arruda_step_27">Lead II + ?</string>
     <string name="pathway_location_label">Accessory Pathway Location</string>
     <string name="show_map_label">Show Map</string>
-    <string name="ap_location_message">Accessory pathway location:\n</string>
     <string name="lpl_ll_location">Left Posterolateral or Left Lateral</string>
     <string name="ll_location">Left Lateral</string>
     <string name="lal_location">Left Anterolateral</string>
@@ -553,7 +550,6 @@
     <string name="other_lvh_lead_v6_result">> 20 mm</string>
     <string name="other_lvh_key">LVH present if any of above voltage criteria met.</string>
     <string name="other_lvh_reference">Reference: BP Hsieh et al. Am Heart J 2005;150:161.</string>
-    <string name="estes_title">Romhilt-Estes Point Score</string>
     <string name="estes_voltage_label">Any limb-lead R or S \u2265 20 mm
         or S V1 or V2 \u2265 30 mm or R V5 or V6 \u2265 30 mm</string>
     <string name="estes_strain_without_dig_label">Left ventricular strain pattern without digitalis</string>
