@@ -599,15 +599,18 @@
         http://en.ecgpedia.org/wiki/Long_QT_Syndrome</string>
     <string name="lqt_ecg_title">Long QT ECG Patterns</string>
     <string name="brugada_ecg_title">Brugada ECG Patterns</string>
-    <string name="text_label">Text</string>
+    <string name="text_label">Notes</string>
+    <string name="brugada_ecg_description_title">Brugada Syndrome\nST-T Abnormalities in V1-V3</string>
     <string name="brugada_ecg_description">Type 1: Coved ST elevation with \u2265 2 mm
         J-point elevation and gradually descending ST segment followed by negative T wave.  Considered
         diagnostic of Brugada syndrome if occurs spontaneously or induced by drug challenge.\n\nType 2: 
         Saddle back pattern with \u2265 2 mm J-point elevation and \u2265
         1 mm ST elevation with a positive or biphasic T wave.  Occasionally seen in healthy
-        subjects.\n\nType 3: Either coved or saddle back pattern 
+        subjects.\n\nType 3: Saddle back pattern 
         with &lt; 2 mm J point elevation and &lt;
-        1 mm ST elevation.  Common in healthy subjects.</string>
+        1 mm ST elevation with positive T wave.  Not uncommon in healthy subjects.</string>
+    <string name="brugada_ecg_reference">Reference:
+        http://circ.ahajournals.org/content/106/19/2514.full#F1</string>
     <string name="calculator_list_title">Calculators</string>
     <string name="calculator_title">Calculators</string>
     <string name="diagnosis_list_title">Diagnosis</string>
