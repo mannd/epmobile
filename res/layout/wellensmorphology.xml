@@ -19,6 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
+            android:contentDescription="@string/morphology_label"
             android:src="@drawable/lbbbmorphology" >
         </ImageView>
 
@@ -31,6 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
+            android:contentDescription="@string/morphology_label"
             android:src="@drawable/rbbbmorphology" >
         </ImageView>
 

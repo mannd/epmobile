@@ -23,7 +23,6 @@
     <string name="qtc_calculator_title">QTc Calculator</string>
     <string name="cycle_length_label">Cycle Length Calculator</string>
     <string name="cycle_length_calculator_title">Cycle Length Calculator</string>
-    <string name="rr_label">RR Interval (msec)</string>
     <string name="rr_hint">RR (msec)</string>
     <string name="interval_rate_title">Interval or Rate</string>
     <string name="interval_rate_summary">Use RR interval or heart rate as default</string>
@@ -351,10 +350,8 @@
     <string name="icd_nyha2_label">NYHA class II</string>
     <string name="icd_nyha3_label">NYHA class III</string>
     <string name="icd_nyha4_label">NHYA class IV</string>
-    <string name="icd_short_duration_cm_label">CM duration \u003c 3 months</string>
     <string name="icd_long_duration_cm_label">CM duration \u2265 3 months</string>
     <string name="icd_inducible_vt_label">Inducible sustained VT/VF at EPS</string>
-    <string name="icd_qrs_duration_short_label">QRS duration \u003c 120 msec</string>
     <string name="icd_qrs_duration_long_label">QRS duration \u2265 120 msec</string>
     <string name="exclusions_label">Exclusions</string>
     <string name="icd_cardiogenic_shock_label">Cardiogenic shock or symptomatic hypotension</string>
@@ -538,16 +535,10 @@
     <string name="other_voltage_criteria_label">Minnesota Code 3.1</string>
     <string name="other_lvh_lead_i_label">R in I, II, III, or aVF</string>
     <string name="other_lvh_lead_i_result">> 20 mm</string>
-    <string name="other_lvh_lead_avr_label">Lead aVR: S wave</string>
-    <string name="other_lvh_lead_avr_result">> 15 mm</string>
     <string name="other_lvh_lead_avl_label">R in aVL</string>
     <string name="other_lvh_lead_avl_result">> 12 mm</string>
-    <string name="other_lvh_lead_avf_label">Lead aVF: R wave</string>
-    <string name="other_lvh_lead_avf_result">> 21 mm</string>
     <string name="other_lvh_lead_v5_label">R in V5 or V6</string>
     <string name="other_lvh_lead_v5_result">> 26 mm</string>
-    <string name="other_lvh_lead_v6_label">Lead V6: R wave</string>
-    <string name="other_lvh_lead_v6_result">> 20 mm</string>
     <string name="other_lvh_key">LVH present if any of above voltage criteria met.</string>
     <string name="other_lvh_reference">Reference: BP Hsieh et al. Am Heart J 2005;150:161.</string>
     <string name="estes_voltage_label">Any limb-lead R or S \u2265 20 mm
@@ -568,12 +559,6 @@
     <string name="lqt_syndrome_title">Long QT Syndrome</string>
     <string name="lqt_syndrome_label">Long QT Syndrome</string>
     <string name="lqt_subtypes_title">Long QT Subtypes</string>
-    <string name="lqt_subtypes_type_label">Subtype</string>
-    <string name="lqt_subtypes_frequency_label">Frequency</string>
-    <string name="lqt_subtypes_gene_label">Gene</string>
-    <string name="lqt_subtypes_channel_label">Ion Channel</string>
-    <string name="lqt_subtypes_ecg_label">ECG</string>
-    <string name="lqt_subtypes_features_label">Features</string>
     <string name="lqt_subtypes_1_name">LQTS 1</string>
     <string name="lqt_subtypes_1_description">Frequency: 30-35%\nLocus: 11p15.5\nGene: KVLQT2 (KCNQ1)\nChannel: 
         IKs\nECG: Broad T wave\nFeatures: Episodes with stress, exercise, swimming, diving; failure
