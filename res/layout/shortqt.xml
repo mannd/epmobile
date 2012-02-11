@@ -6,17 +6,12 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical" >
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/background_light"
-            android:padding="3dip"
-            android:text="@string/qtc_label"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@android:color/black" />
+            style="@style/Header1"
+            android:text="@string/qtc_label" />
 
         <RadioGroup
             android:id="@+id/qtc_radio_group"
@@ -46,13 +41,8 @@
         </RadioGroup>
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/background_light"
-            android:padding="3dip"
-            android:text="@string/jt_label"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@android:color/black" />
+            style="@style/Header1"
+            android:text="@string/jt_label" />
 
         <CheckBox
             android:id="@+id/short_jt"
@@ -61,13 +51,8 @@
             android:text="@string/short_jt_label" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/background_light"
-            android:padding="3dip"
-            android:text="@string/clinical_history_label"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@android:color/black" />
+            style="@style/Header1"
+            android:text="@string/clinical_history_label" />
 
         <CheckBox
             android:id="@+id/sudden_cardiac_arrest"
@@ -94,13 +79,8 @@
             android:text="@string/afb_label" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/background_light"
-            android:padding="3dip"
-            android:text="@string/family_hx_label"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@android:color/black" />
+            style="@style/Header1"
+            android:text="@string/family_hx_label" />
 
         <CheckBox
             android:id="@+id/relative_with_sqts"
@@ -121,13 +101,8 @@
             android:text="@string/sids_label" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/background_light"
-            android:padding="3dip"
-            android:text="@string/genotype_label"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@android:color/black" />
+            style="@style/Header1"
+            android:text="@string/genotype_label" />
 
         <CheckBox
             android:id="@+id/genotype_positive"

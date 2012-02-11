@@ -117,7 +117,7 @@
     <string name="brugada_vt_title">Brugada Criteria SVT vs VT</string>
     <string name="brugada_wct_title">Brugada Algorithm</string>
     <string name="brugada_step_1">Absence of an RS complex in all precordial leads?</string>
-    <string name="brugada_step_2">R to S interval >100 msec in one precordial lead?</string>
+    <string name="brugada_step_2">R to S interval > 100 msec in one precordial lead?</string>
     <string name="brugada_step_3">AV dissociation?</string>
     <string name="brugada_step_4">Morphology criteria for VT present in both
 		precordial leads V1-2 and V6?</string>

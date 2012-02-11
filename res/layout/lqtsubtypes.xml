@@ -5,17 +5,12 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical" >
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/background_light"
-            android:padding="3dip"
-            android:text="@string/lqt_subtypes_1_name"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@android:color/black" />
+            style="@style/Header1"
+            android:text="@string/lqt_subtypes_1_name" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -24,13 +19,8 @@
             android:text="@string/lqt_subtypes_1_description" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/background_light"
-            android:padding="3dip"
-            android:text="@string/lqt_subtypes_2_name"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@android:color/black" />
+            style="@style/Header1"
+            android:text="@string/lqt_subtypes_2_name" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -39,13 +29,8 @@
             android:text="@string/lqt_subtypes_2_description" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/background_light"
-            android:padding="3dip"
-            android:text="@string/lqt_subtypes_3_name"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@android:color/black" />
+            style="@style/Header1"
+            android:text="@string/lqt_subtypes_3_name" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -54,13 +39,8 @@
             android:text="@string/lqt_subtypes_3_description" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/background_light"
-            android:padding="3dip"
-            android:text="@string/lqt_subtypes_4_name"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@android:color/black" />
+            style="@style/Header1"
+            android:text="@string/lqt_subtypes_4_name" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -69,13 +49,8 @@
             android:text="@string/lqt_subtypes_4_description" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/background_light"
-            android:padding="3dip"
-            android:text="@string/lqt_subtypes_5_name"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@android:color/black" />
+            style="@style/Header1"
+            android:text="@string/lqt_subtypes_5_name" />
 
         <TextView
             android:layout_width="wrap_content"
