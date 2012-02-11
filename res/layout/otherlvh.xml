@@ -9,13 +9,10 @@
         android:stretchColumns="*" >
 
         <TextView
-            android:background="@android:color/background_light"
-            android:padding="3dip"
-            android:text="@string/sokolow_label"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@android:color/black" />
+            style="@syle/Header1"
+            android:text="@string/sokolow_label" />
 
-        <TableRow >
+        <TableRow>
 
             <TextView
                 android:padding="3dip"
@@ -31,7 +28,7 @@
                 android:textColor="@color/yellow" />
         </TableRow>
 
-        <TableRow >
+        <TableRow>
 
             <TextView
                 android:padding="3dip"
@@ -55,7 +52,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@android:color/black" />
 
-        <TableRow >
+        <TableRow>
 
             <TextView
                 android:padding="3dip"
@@ -71,7 +68,7 @@
                 android:textColor="@color/yellow" />
         </TableRow>
 
-        <TableRow >
+        <TableRow>
 
             <TextView
                 android:padding="3dip"
@@ -95,7 +92,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@android:color/black" />
 
-        <TableRow >
+        <TableRow>
 
             <TextView
                 android:padding="3dip"
@@ -111,7 +108,7 @@
                 android:textColor="@color/yellow" />
         </TableRow>
 
-        <TableRow >
+        <TableRow>
 
             <TextView
                 android:padding="3dip"
@@ -127,7 +124,7 @@
                 android:textColor="@color/yellow" />
         </TableRow>
 
-        <TableRow >
+        <TableRow>
 
             <TextView
                 android:padding="3dip"
