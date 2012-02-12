@@ -601,5 +601,39 @@
     <string name="error_dialog_title">Error</string>
     <string name="estes_contradiction_message">You have selected strain pattern
 	    with and without digitalis.  Please select one or the other, not both.</string>
+    <string name="day_label">Day</string>
+    <string name="sun_label">SUN</string>
+    <string name="mon_label">MON</string>
+    <string name="tue_label">TUE</string>
+    <string name="wed_label">WED</string>
+    <string name="thu_label">THU</string>
+    <string name="fri_label">FRI</string>
+    <string name="sat_label">SAT</string>
+    <string name="total_label">TOTAL</string>
+    <string name="ah">AH</string>
+    <string name="ah_normal">50–125 msec</string>
+    <string name="hv">HV</string>
+    <string name="hv_normal">35–55 msec</string>
+    <string name="h_duration">H duration</string>
+    <string name="h_duration_normal">10–25 msec</string>
+    <string name="sact">SACT</string>
+    <string name="sact_normal">45–125 msec</string>
+    <string name="csnrt">CSNRT</string>
+    <string name="csnrt_normal">&lt;550 msec</string>
+    <string name="srt_scl">SRT/SCL%</string>
+    <string name="srt_scl_normal">&lt;150%</string>
+    <string name="aerp">Atrial ERP</string>
+    <string name="aerp_normal">170–300 msec</string>
+    <string name="avn_bcl">AV Node Block CL</string>
+    <string name="avn_bcl_normal">350–500 msec</string>
+    <string name="avn_erp">AV Node ERP</string>
+    <string name="avn_erp_normal">230–425 msec</string>
+    <string name="avn_frp">AV Node FRP</string>
+    <string name="avn_frp_normal">300–525 msec</string>
+    <string name="hps_erp">HPS ERP</string>
+    <string name="hps_erp_normal">330–450 msec</string>
+    <string name="verp">Ventricular ERP</string>
+    <string name="verp_normal">170–290 msec</string>
+    <string name="step_1">Step1</string>
 
 </resources>

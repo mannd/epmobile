@@ -14,7 +14,7 @@
             <TextView
                 android:layout_column="1"
                 android:padding="3dip"
-                android:text="Day"
+                android:text="@string/day_label"
                 android:textColor="@color/yellow" />
 
             <TextView
@@ -24,7 +24,7 @@
 
             <TextView
                 android:padding="3dip"
-                android:text="Day"
+                android:text="@string/day_label"
                 android:textColor="@color/yellow" />
 
             <TextView
@@ -42,7 +42,7 @@
             <TextView
                 android:layout_column="1"
                 android:padding="3dip"
-                android:text="SUN"
+                android:text="@string/sun_label"
                 android:textColor="@color/cyan" />
 
             <TextView
@@ -51,7 +51,7 @@
 
             <TextView
                 android:padding="3dip"
-                android:text="SUN"
+                android:text="@string/sun_label"
                 android:textColor="@color/cyan" />
 
             <TextView
@@ -64,7 +64,7 @@
             <TextView
                 android:layout_column="1"
                 android:padding="3dip"
-                android:text="MON"
+                android:text="@string/mon_label"
                 android:textColor="@color/cyan" />
 
             <TextView
@@ -73,7 +73,7 @@
 
             <TextView
                 android:padding="3dip"
-                android:text="MON"
+                android:text="@string/mon_label"
                 android:textColor="@color/cyan" />
 
             <TextView
@@ -86,7 +86,7 @@
             <TextView
                 android:layout_column="1"
                 android:padding="3dip"
-                android:text="TUE"
+                android:text="@string/tue_label"
                 android:textColor="@color/cyan" />
 
             <TextView
@@ -95,7 +95,7 @@
 
             <TextView
                 android:padding="3dip"
-                android:text="TUE"
+                android:text="@string/tue_label"
                 android:textColor="@color/cyan" />
 
             <TextView
@@ -108,7 +108,7 @@
             <TextView
                 android:layout_column="1"
                 android:padding="3dip"
-                android:text="WED"
+                android:text="@string/wed_label"
                 android:textColor="@color/cyan" />
 
             <TextView
@@ -117,7 +117,7 @@
 
             <TextView
                 android:padding="3dip"
-                android:text="WED"
+                android:text="@string/wed_label"
                 android:textColor="@color/cyan" />
 
             <TextView
@@ -130,7 +130,7 @@
             <TextView
                 android:layout_column="1"
                 android:padding="3dip"
-                android:text="THU"
+                android:text="@string/thu_label"
                 android:textColor="@color/cyan" />
 
             <TextView
@@ -139,7 +139,7 @@
 
             <TextView
                 android:padding="3dip"
-                android:text="THU"
+                android:text="@string/thu_label"
                 android:textColor="@color/cyan" />
 
             <TextView
@@ -152,7 +152,7 @@
             <TextView
                 android:layout_column="1"
                 android:padding="3dip"
-                android:text="FRI"
+                android:text="@string/fri_label"
                 android:textColor="@color/cyan" />
 
             <TextView
@@ -161,7 +161,7 @@
 
             <TextView
                 android:padding="3dip"
-                android:text="FRI"
+                android:text="@string/fri_label"
                 android:textColor="@color/cyan" />
 
             <TextView
@@ -174,7 +174,7 @@
             <TextView
                 android:layout_column="1"
                 android:padding="3dip"
-                android:text="SAT"
+                android:text="@string/sat_label"
                 android:textColor="@color/cyan" />
 
             <TextView
@@ -183,7 +183,7 @@
 
             <TextView
                 android:padding="3dip"
-                android:text="SAT"
+                android:text="@string/sat_label"
                 android:textColor="@color/cyan" />
 
             <TextView
@@ -199,7 +199,7 @@
 
             <TextView
                 android:layout_column="1"
-                android:text="TOTAL"
+                android:text="@string/total_label"
                 android:textColor="@color/yellow" />
 
             <TextView
@@ -210,7 +210,7 @@
 
             <TextView
                 android:layout_column="3"
-                android:text="TOTAL"
+                android:text="@string/total_label"
                 android:textColor="@color/yellow" />
 
             <TextView
