@@ -354,19 +354,7 @@
 **** Rovaroxaban Calculator
 **** Warfarin Calculator
 *** QTc Calculator
-** Risk Scores
-*** CHADS2 Score
-*** CHADS-VASc Score
-*** HAS-BLED Score
-*** HEMORRHAGES Score
-*** HCM Sudden Death Risk Score
-** Reference
-*** CMS Criteria
-*** TODO EP Glossary
-*** Normal EP Values
-*** TODO ParaHisian Pacing
-*** TODO RVA vs RVS Pacing
-** Syndromes
+** Diagnosis
 *** ARVC/D
 **** ARVC/D 1994 Diagnostic Criteria
 **** ARVC/D 2010 Diagnostic Criteria
@@ -392,3 +380,28 @@
 **** Arruda Algorithm
 **** Modified Arruda Algorithm
 **** Milstein Algorithm
+** Reference
+*** CMS Criteria
+*** TODO EP Glossary
+*** Normal EP Values
+*** TODO ParaHisian Pacing
+*** TODO RVA vs RVS Pacing
+** Risk Scores
+*** CHADS2 Score
+*** CHADS-VASc Score
+*** HAS-BLED Score
+*** HEMORRHAGES Score
+*** HCM Sudden Death Risk Score
+* VT Patterns
+** Epicardial vs Endocardial
+*** Bazan et al.http://www.ncbi.nlm.nih.gov/pubmed/17018339 
+    - epicardial vs endocardial RV
+    - Q or QS pattern in sites of origin
+    - No predictor for RVOT epi vs endo
+    - LV epi vs endo patterns not predictive:
+      - pseudo-delta wave >= 34 ms
+      - intrinsicoid deflection time >= 85 ms
+      - RS complex >= 121 ms.
+** RVOT vs LVOT
+** Fasicular VT
+** Mitral annular VT

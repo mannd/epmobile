@@ -5,142 +5,97 @@
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:stretchColumns="*" >
 
         <TextView
-            android:background="@android:color/background_light"
-            android:padding="3dip"
-            android:text="@string/sokolow_label"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@android:color/black" />
+            style="@style/Header1"
+            android:text="@string/sokolow_label" />
 
-        <TableRow >
+        <TableRow>
 
             <TextView
-                android:padding="3dip"
-                android:text="@string/sokolow_s_plus_r_label"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/green" />
+                style="@style/LeftColumnLabel"
+                android:text="@string/sokolow_s_plus_r_label" />
 
             <TextView
-                android:gravity="right"
-                android:padding="3dip"
-                android:text="@string/sokolow_s_plus_r_result"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/yellow" />
+                style="@style/RightColumnValue"
+                android:text="@string/sokolow_s_plus_r_result" />
         </TableRow>
 
-        <TableRow >
+        <TableRow>
 
             <TextView
+                style="@style/LeftColumnLabel"
                 android:padding="3dip"
-                android:text="@string/sokolow_r_in_avl_label"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/green" />
+                android:text="@string/sokolow_r_in_avl_label" />
 
             <TextView
-                android:gravity="right"
-                android:padding="3dip"
-                android:text="@string/sokolow_r_in_avl_result"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/yellow" />
+                style="@style/RightColumnValue"
+                android:text="@string/sokolow_r_in_avl_result" />
         </TableRow>
 
         <TextView
-            android:id="@+id/textView4"
-            android:background="@android:color/background_light"
-            android:padding="3dip"
-            android:text="@string/cornell_label"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@android:color/black" />
+            style="@style/Header1"
+            android:text="@string/cornell_label" />
 
-        <TableRow >
+        <TableRow>
 
             <TextView
-                android:padding="3dip"
-                android:text="@string/cornell_men_label"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/green" />
+                style="@style/LeftColumnLabel"
+                android:text="@string/cornell_men_label" />
 
             <TextView
-                android:gravity="right"
-                android:padding="3dip"
-                android:text="@string/cornell_men_result"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/yellow" />
+                style="@style/RightColumnValue"
+                android:text="@string/cornell_men_result" />
         </TableRow>
 
-        <TableRow >
+        <TableRow>
 
             <TextView
-                android:padding="3dip"
-                android:text="@string/cornell_women_label"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/green" />
+                style="@style/LeftColumnLabel"
+                android:text="@string/cornell_women_label" />
 
             <TextView
-                android:gravity="right"
-                android:padding="3dip"
-                android:text="@string/cornell_women_result"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/yellow" />
+                style="@style/RightColumnValue"
+                android:text="@string/cornell_women_result" />
         </TableRow>
 
         <TextView
-            android:id="@+id/textView7"
-            android:background="@android:color/background_light"
-            android:padding="3dip"
-            android:text="@string/other_voltage_criteria_label"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@android:color/black" />
+            style="@style/Header1"
+            android:text="@string/other_voltage_criteria_label" />
 
-        <TableRow >
+        <TableRow>
 
             <TextView
-                android:padding="3dip"
-                android:text="@string/other_lvh_lead_i_label"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/green" />
+                style="@style/LeftColumnLabel"
+                android:text="@string/other_lvh_lead_i_label" />
 
             <TextView
-                android:gravity="right"
-                android:padding="3dip"
-                android:text="@string/other_lvh_lead_i_result"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/yellow" />
+                style="@style/RightColumnValue"
+                android:text="@string/other_lvh_lead_i_result" />
         </TableRow>
 
-        <TableRow >
+        <TableRow>
 
             <TextView
-                android:padding="3dip"
-                android:text="@string/other_lvh_lead_avl_label"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/green" />
+                style="@style/LeftColumnLabel"
+                android:text="@string/other_lvh_lead_avl_label" />
 
             <TextView
-                android:gravity="right"
-                android:padding="3dip"
-                android:text="@string/other_lvh_lead_avl_result"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/yellow" />
+                style="@style/RightColumnValue"
+                android:text="@string/other_lvh_lead_avl_result" />
         </TableRow>
 
-        <TableRow >
+        <TableRow>
 
             <TextView
-                android:padding="3dip"
-                android:text="@string/other_lvh_lead_v5_label"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/green" />
+                style="@style/LeftColumnLabel"
+                android:text="@string/other_lvh_lead_v5_label" />
 
             <TextView
-                android:gravity="right"
-                android:padding="3dip"
-                android:text="@string/other_lvh_lead_v5_result"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/yellow" />
+                style="@style/RightColumnValue"
+                android:text="@string/other_lvh_lead_v5_result" />
         </TableRow>
 
         <TextView
