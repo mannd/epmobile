@@ -124,10 +124,11 @@
   - git commit
   - git flow release finish v0.x
   - git push --tags origin master
+  - refresh eclipse epmobile
   - make/sign epmobile.apk, save it in dev/epmobileapp/vX.Y.Z/
   - on market.android.com update product details
   - upload apk, deactivate old one
-  - Tweet It!
+  - Tweet It! (after confirming it's on the Market)
   - DONE!
 * Style
 ** General
@@ -402,6 +403,26 @@
       - pseudo-delta wave >= 34 ms
       - intrinsicoid deflection time >= 85 ms
       - RS complex >= 121 ms.
+	- RV epicardial vs endocardial VT
+	- LV criteria for epicardial
+	  - Pseudo-delta wave (>= 34 ms)
+	  - intrinsicoid deflection time >= 85 ms
+	  - RS complex >= 121 ms
+	- Above criteria do not identify RV epicardial origin
+*** Berruezo A et al.  http://circ.ahajournals.org/content/109/15/1842.full
+    Circulation 2004;109:1842-1847
+    - Pseudo delta: earliest V activation to earliest fast deflection
+      in any precordial lead.
+    - Intrinsicoid Deflection Time: earliest V activation to peak of R
+      wave in V2.
+    - Shortest RS complex: earliest V activation to nadir of
+      first S wave in any precordial lead.
+    - QRS duration: earliest V activation to offset of QRS in
+      precordial leads.
+    - Proposed criteria
+      - pseudodelta >= 34 ms Sens 83%, Spec 95%
+      - intrinsicoid deflection time >= 85 ms Sens 87% Spec 90%
+      - RS complex duration >= 121 ms Sens 76% Spec 85% for epi VT
 ** RVOT vs LVOT
 ** Fasicular VT
 ** Mitral annular VT
