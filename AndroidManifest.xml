@@ -194,6 +194,10 @@
             android:name=".ReferenceList"
             android:label="@string/reference_title" >
         </activity>
+        <activity
+            android:name=".VtList"
+            android:label="@string/vt_list_title" >
+        </activity>
     </application>
 
 </manifest>

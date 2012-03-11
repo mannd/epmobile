@@ -58,7 +58,7 @@
 ** DONE SQTS diagnosis
 ** TODO Epicardial vs endocardial VT
 ** TODO Mitral annular VT
-** TODO Brugada ECG types
+** DONE Brugada ECG types
 ** DONE LVH
 ** DONE Normal EP Values
 ** TODO EP Glossary
@@ -66,6 +66,8 @@
 ** DONE LQTS criteria
 ** TODO ACC WCT algorithm
 ** TODO Creatinine Clearance calculator
+** TODO Para-Hisian pacing guide
+** TODO Apical vs septal pacing guide
 * Menu
 ** units
 *** msec or sec
@@ -424,5 +426,7 @@
       - intrinsicoid deflection time >= 85 ms Sens 87% Spec 90%
       - RS complex duration >= 121 ms Sens 76% Spec 85% for epi VT
 ** RVOT vs LVOT
-** Fasicular VT
+** Fasicular VT/Idiopathic LVT
 ** Mitral annular VT
+   http://www.sciencedirect.com/science/article/pii/S0735109704025094
+   Tada H et al.  JACC 2005;45:877-886

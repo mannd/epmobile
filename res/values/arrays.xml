@@ -49,6 +49,7 @@
         <item>@string/lvh_list_title</item>
         <item>@string/lqt_syndrome_title</item>
         <item>@string/short_qt_title</item>
+        <item>@string/vt_list_title</item>
         <item>@string/wct_algorithm_list_title</item>
         <item>@string/wpw_algorithm_list_title</item>
     </array>
@@ -100,6 +101,12 @@
         <item>@string/long_qt_syndrome_diagnosis_title</item>
         <item>@string/lqt_subtypes_title</item>
         <item>@string/lqt_ecg_title</item>
+    </array>
+    <array name="vt_list">
+        <item>@string/epicardial_vt_title</item>
+        <item>@string/idiopathic_lvt_title</item>
+        <item>@string/mitral_annular_vt_title</item>
+        <item>@string/outflow_tract_vt_title</item>
     </array>
     <array name="interval_rate_labels">
         <item>RR Interval (msec)</item>

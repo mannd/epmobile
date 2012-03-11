@@ -42,8 +42,15 @@ public class DiagnosisList extends EpListActivity {
 				else if (selection
 						.equals(getString(R.string.brugada_ecg_title)))
 					brugadaEcg();
+				else if (selection.equals(getString(R.string.vt_list_title)))
+					vtList();
 			}
 		});
+	}
+
+	protected void vtList() {
+		Intent i = new Intent(this, VtList.class);
+		startActivity(i);
 	}
 
 	private void wctAlgorithm() {

@@ -635,5 +635,10 @@
     <string name="verp">Ventricular ERP</string>
     <string name="verp_normal">170–290 msec</string>
     <string name="step_1">Step1</string>
+    <string name="vt_list_title">Ventricular Tachycardia</string>
+    <string name="epicardial_vt_title">Epicardial vs Endocardial VT</string>
+    <string name="outflow_tract_vt_title">RV vs LV Outflow Tract Tachycardia</string>
+    <string name="idiopathic_lvt_title">Idiopathic LV Tachycardia</string>
+    <string name="mitral_annular_vt_title">Mitral Annular VT</string>
 
 </resources>
