@@ -1,5 +1,6 @@
 package org.epstudios.epmobile;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -37,8 +38,8 @@ public class VtList extends EpListActivity {
 	}
 
 	protected void epicardialVt() {
-		// TODO Auto-generated method stub
-
+		Intent i = new Intent(this, EpiVt.class);
+		startActivity(i);
 	}
 
 }

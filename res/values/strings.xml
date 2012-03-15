@@ -640,5 +640,15 @@
     <string name="outflow_tract_vt_title">RV vs LV Outflow Tract Tachycardia</string>
     <string name="idiopathic_lvt_title">Idiopathic LV Tachycardia</string>
     <string name="mitral_annular_vt_title">Mitral Annular VT</string>
+    <string name="epivt_text" formatted="false">Pseudo-delta wave (\u0394): Measured from earliest
+        ventricular activation to the earliest fast deflection in any 
+        precordial lead. Pseudo-delta wave \u2265 34 msec predicts epicardial origin 
+        (Sens 83%, Spec 95%).\n\nIntrinsicoid deflection time (ID): Measured from 
+        earliest ventricular activation to
+        the peak of the R wave in V2. ID of \u2265 85 msec predicts epicardial origin
+        (Sens 87%, Spec 90%).\n\nShortest RS complex (RS): Measured from the earliest
+        ventricular activation to the nadir of the first S wave in any precordial lead.
+        RS \u2265 121 msec predicts epicardial origin (Sens 76%, Spec 85%)\n\nReference:
+        http://circ.ahajournals.org/content/109/15/1842.full</string>
 
 </resources>

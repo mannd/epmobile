@@ -329,6 +329,8 @@
   | degree °                | \u00b0   |
   |-------------------------+----------|
   - insert unicode char in emacs: C-x 8 RET name of char or code number
+  - Note, necessary to add formatted="false" to string tag if using
+    more than 2 % symbols in a string (bug).
 * WPW Arruda algorithm
 ** Locations
    - LPL

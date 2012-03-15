@@ -198,6 +198,10 @@
             android:name=".VtList"
             android:label="@string/vt_list_title" >
         </activity>
+        <activity
+            android:name=".EpiVt"
+            android:label="@string/epicardial_vt_title" >
+        </activity>
     </application>
 
 </manifest>
