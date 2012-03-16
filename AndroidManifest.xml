@@ -202,6 +202,10 @@
             android:name=".EpiVt"
             android:label="@string/epicardial_vt_title" >
         </activity>
+        <activity
+            android:name=".OutflowVt"
+            android:label="@string/outflow_tract_vt_title" >
+        </activity>
     </application>
 
 </manifest>

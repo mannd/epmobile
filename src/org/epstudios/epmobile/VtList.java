@@ -33,8 +33,8 @@ public class VtList extends EpListActivity {
 	}
 
 	protected void outflowTractVt() {
-		// TODO Auto-generated method stub
-
+		Intent i = new Intent(this, OutflowVt.class);
+		startActivity(i);
 	}
 
 	protected void epicardialVt() {

@@ -637,7 +637,7 @@
     <string name="step_1">Step1</string>
     <string name="vt_list_title">Ventricular Tachycardia</string>
     <string name="epicardial_vt_title">Epicardial vs Endocardial VT</string>
-    <string name="outflow_tract_vt_title">RV vs LV Outflow Tract Tachycardia</string>
+    <string name="outflow_tract_vt_title">Outflow Tract VT Location</string>
     <string name="idiopathic_lvt_title">Idiopathic LV Tachycardia</string>
     <string name="mitral_annular_vt_title">Mitral Annular VT</string>
     <string name="epivt_text" formatted="false">Pseudo-delta wave (\u0394): Measured from earliest
@@ -650,5 +650,13 @@
         ventricular activation to the nadir of the first S wave in any precordial lead.
         RS \u2265 121 msec predicts epicardial origin (Sens 76%, Spec 85%)\n\nReference:
         http://circ.ahajournals.org/content/109/15/1842.full</string>
+    <string name="outflow_vt_step_1">QRS Transition (first precordial lead with R > S) V4 or later?</string>
+    <string name="outflow_vt_step_2">QRS duration \u2265 140 msec or R wave notching in inferior leads?</string>
+    <string name="outflow_vt_step_3">Negative or isoelectric QRS in I?</string>
+    <string name="outflow_vt_step_4">Positive or isoelectric QRS in aVL?</string>
+    <string name="outflow_vt_step_6">QRS Transition in V3?</string>
+    <string name="outflow_vt_step_7">VT Location may be right or left sided.  Select
+        Yes to find predicted RV location, No to find predicted LV location.</string>
+    <string name="outflow_vt_location_label">Proposed VT Location</string>
 
 </resources>
