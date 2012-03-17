@@ -33,6 +33,7 @@ public class OutflowVt extends EpActivity implements OnClickListener {
 	private Button morphologyButton;
 	protected TextView stepTextView;
 
+	protected boolean mitralAnnularVt = false;
 	protected int step = 1;
 	private int priorStep = 1;
 	private int priorStep1 = 1;
@@ -46,10 +47,19 @@ public class OutflowVt extends EpActivity implements OnClickListener {
 	private boolean isRvot = false;
 	private boolean isLvot = false;
 	private boolean isIndeterminate = false;
-	private boolean isSupravalvular = false;
+	private boolean isSupraValvular = false;
 	private boolean isRvFreeWall = false;
 	private boolean isAnterior = false;
 	private boolean isCaudal = false;
+
+	private final int lateTransitionStep = 1;
+	private final int freeWallStep = 2;
+	private final int anteriorLocationStep = 3;
+	private final int caudalLocationStep = 4;
+	private final int showResultStep = 5;
+	private final int v3TransitionStep = 6;
+	private final int indeterminateLocationStep = 7;
+	private final int v2TransitionStep = 8;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -91,25 +101,25 @@ public class OutflowVt extends EpActivity implements OnClickListener {
 	private void getNoResult() {
 		adjustStepsForward();
 		switch (step) {
-		case 1:
-			step = 6;
+		case lateTransitionStep:
+			step = v3TransitionStep;
 			break;
-		case 2:
+		case freeWallStep:
 			isRvFreeWall = false;
-			step = 3;
+			step = anteriorLocationStep;
 			break;
-		case 3:
+		case anteriorLocationStep:
 			isAnterior = false;
-			step = 4;
+			step = caudalLocationStep;
 			break;
-		case 4:
+		case caudalLocationStep:
 			isCaudal = false;
-			step = 5;
+			step = showResultStep;
 			break;
-		case 6:
-			step = 7;
+		case v3TransitionStep:
+			step = v2TransitionStep;
 			break;
-		case 7:
+		case indeterminateLocationStep:
 			isLvot = true;
 			isIndeterminate = true;
 			break;
@@ -120,29 +130,31 @@ public class OutflowVt extends EpActivity implements OnClickListener {
 	protected void getYesResult() {
 		adjustStepsForward();
 		switch (step) {
-		case 1:
+		case lateTransitionStep:
 			isRvot = true;
-			step = 2;
+			isIndeterminate = false;
+			step = freeWallStep;
 			break;
-		case 2:
+		case freeWallStep:
 			isRvFreeWall = true;
-			step = 3;
+			step = anteriorLocationStep;
 			break;
-		case 3:
+		case anteriorLocationStep:
 			isAnterior = true;
-			step = 4;
+			step = caudalLocationStep;
 			break;
-		case 4:
+		case caudalLocationStep:
 			isCaudal = true;
-			step = 5;
+			step = showResultStep;
 			break;
-		case 6:
-			step = 7;
+		case v3TransitionStep:
+			step = indeterminateLocationStep;
 			break;
-		case 7:
+		case indeterminateLocationStep:
 			isRvot = true;
 			isIndeterminate = true;
-			step = 2;
+			isRvFreeWall = false;
+			step = anteriorLocationStep;
 			break;
 		}
 		gotoStep();
@@ -171,40 +183,52 @@ public class OutflowVt extends EpActivity implements OnClickListener {
 	}
 
 	private void resetSteps() {
-		priorStep7 = priorStep6 = priorStep5 = priorStep4 = priorStep3 = priorStep2 = priorStep1 = priorStep = step = 1;
+		priorStep7 = priorStep6 = priorStep5 = priorStep4 = 1;
+		priorStep3 = priorStep2 = priorStep1 = priorStep = step = 1;
 	}
 
 	protected void step1() {
-		stepTextView.setText(getString(R.string.outflow_vt_step_1));
+		// if (mitralAnnularVt)
+		// stepTextView.setText(getString(R.string.mitral_annular_vt_step_1));
+		// else
+		stepTextView
+				.setText(getString(R.string.outflow_vt_late_transition_step));
 		backButton.setEnabled(false);
 	}
 
 	protected void gotoStep() {
 		switch (step) {
-		case 1:
+		case lateTransitionStep:
 			step1();
 			break;
-		case 2:
-			stepTextView.setText(getString(R.string.outflow_vt_step_2));
+		case freeWallStep:
+			stepTextView.setText(getString(R.string.outflow_vt_free_wall_step));
 			break;
-		case 3:
-			stepTextView.setText(getString(R.string.outflow_vt_step_3));
+		case anteriorLocationStep:
+			stepTextView
+					.setText(getString(R.string.outflow_vt_anterior_location_step));
 			break;
-		case 4:
-			stepTextView.setText(getString(R.string.outflow_vt_step_4));
+		case caudalLocationStep:
+			stepTextView
+					.setText(getString(R.string.outflow_vt_caudal_location_step));
 			break;
-		case 5:
+		case showResultStep:
 			showResult();
 			break;
-		case 6:
-			stepTextView.setText(getString(R.string.outflow_vt_step_6));
+		case v3TransitionStep:
+			stepTextView
+					.setText(getString(R.string.outflow_vt_v3_transition_step));
 			break;
-		case 7:
-			stepTextView.setText(getString(R.string.outflow_vt_step_7));
+		case indeterminateLocationStep:
+			stepTextView
+					.setText(getString(R.string.outflow_vt_indeterminate_location_step));
 			break;
-
+		case v2TransitionStep:
+			stepTextView
+					.setText(getString(R.string.outflow_vt_v2_transition_step));
+			break;
 		}
-		if (step != 1)
+		if (step != lateTransitionStep)
 			backButton.setEnabled(true);
 	}
 
@@ -237,8 +261,9 @@ public class OutflowVt extends EpActivity implements OnClickListener {
 
 	protected String getMessage() {
 		String message = new String();
-		message += "Note: Location (RV vs LV) is indeterminate. "
-				+ "Results reflect one possible localization.\n";
+		if (isIndeterminate)
+			message += "Note: Location (RV vs LV) is indeterminate. "
+					+ "Results reflect one possible localization.\n";
 		if (isRvot) {
 			message += "Right Ventricular Outflow Tract";
 			message += isRvFreeWall ? "\nFree wall" : "\nSeptal";

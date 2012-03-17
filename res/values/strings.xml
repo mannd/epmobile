@@ -650,13 +650,14 @@
         ventricular activation to the nadir of the first S wave in any precordial lead.
         RS \u2265 121 msec predicts epicardial origin (Sens 76%, Spec 85%)\n\nReference:
         http://circ.ahajournals.org/content/109/15/1842.full</string>
-    <string name="outflow_vt_step_1">QRS Transition (first precordial lead with R > S) V4 or later?</string>
-    <string name="outflow_vt_step_2">QRS duration \u2265 140 msec or R wave notching in inferior leads?</string>
-    <string name="outflow_vt_step_3">Negative or isoelectric QRS in I?</string>
-    <string name="outflow_vt_step_4">Positive or isoelectric QRS in aVL?</string>
-    <string name="outflow_vt_step_6">QRS Transition in V3?</string>
-    <string name="outflow_vt_step_7">VT Location may be right or left sided.  Select
+    <string name="outflow_vt_late_transition_step">QRS transition (first precordial lead with R > S) V4 or later?</string>
+    <string name="outflow_vt_free_wall_step">QRS duration \u2265 140 msec or R wave notching in inferior leads?</string>
+    <string name="outflow_vt_anterior_location_step">Negative or isoelectric QRS in I?</string>
+    <string name="outflow_vt_caudal_location_step">Positive or isoelectric QRS in aVL?</string>
+    <string name="outflow_vt_v3_transition_step">QRS transition in V3?</string>
+    <string name="outflow_vt_indeterminate_location_step">VT location may be right or left sided.  Select
         Yes to find predicted RV location, No to find predicted LV location.</string>
+    <string name="outflow_vt_v2_transition_step">QRS transition in V2?</string>
     <string name="outflow_vt_location_label">Proposed VT Location</string>
 
 </resources>
