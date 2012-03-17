@@ -656,8 +656,19 @@
     <string name="outflow_vt_caudal_location_step">Positive or isoelectric QRS in aVL?</string>
     <string name="outflow_vt_v3_transition_step">QRS transition in V3?</string>
     <string name="outflow_vt_indeterminate_location_step">VT location may be right or left sided.  Select
-        Yes to find predicted RV location, No to find predicted LV location.</string>
-    <string name="outflow_vt_v2_transition_step">QRS transition in V2?</string>
+        RV to find predicted RV location, LV to find predicted LV location.</string>
+    <string name="outflow_vt_supravalvular_step">Absent S in V5 or V6?</string>
     <string name="outflow_vt_location_label">Proposed VT Location</string>
+    <string name="rv_label">RV</string>
+    <string name="lv_label">LV</string>
+    <string name="outflow_vt_instructions">Ventricular Tachycardia (VT) can arise from either the right
+        or left ventricular outflow tract (RVOT or LVOT).  Outflow tract VT has a vertical axis and
+        a left bundle branch block pattern in the precordial leads.  The earlier the precordial transition lead,
+        the more likely the VT is from the LVOT.  If the precordial transition is in lead V3
+        it is not possible to use an algorithm to determine from which ventricle the VT arises.
+        See Tanner et al. JACC 2005;45:418. http://content.onlinejacc.org/cgi/content/short/45/3/418.
+        \nThis algorithm was developed from Joshi S and Wilber DJ, J Cardiovasc Electrophysiol 2005;16:Suppl I:S52,
+        Bala r and Marchlinski FE, Heart Rhythm 2007;4:366, and Srivathsan K et al. Indian Pacing Electrophysiol J
+        2005;5:106. http://cogprints.org/4219/1/srivathsan.htm</string>
 
 </resources>

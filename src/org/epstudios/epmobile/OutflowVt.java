@@ -21,6 +21,9 @@ package org.epstudios.epmobile;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.method.LinkMovementMethod;
+import android.text.util.Linkify;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -30,7 +33,7 @@ public class OutflowVt extends EpActivity implements OnClickListener {
 	private Button yesButton;
 	private Button noButton;
 	protected Button backButton;
-	private Button morphologyButton;
+	private Button instructionsButton;
 	protected TextView stepTextView;
 
 	protected boolean mitralAnnularVt = false;
@@ -56,10 +59,9 @@ public class OutflowVt extends EpActivity implements OnClickListener {
 	private final int freeWallStep = 2;
 	private final int anteriorLocationStep = 3;
 	private final int caudalLocationStep = 4;
-	private final int showResultStep = 5;
 	private final int v3TransitionStep = 6;
 	private final int indeterminateLocationStep = 7;
-	private final int v2TransitionStep = 8;
+	private final int supraValvularStep = 9;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -72,8 +74,9 @@ public class OutflowVt extends EpActivity implements OnClickListener {
 		noButton.setOnClickListener(this);
 		backButton = (Button) findViewById(R.id.back_button);
 		backButton.setOnClickListener(this);
-		morphologyButton = (Button) findViewById(R.id.morphology_button);
-		morphologyButton.setVisibility(View.GONE);
+		instructionsButton = (Button) findViewById(R.id.morphology_button);
+		instructionsButton.setOnClickListener(this);
+		instructionsButton.setText(getString(R.string.instructions_label));
 		stepTextView = (TextView) findViewById(R.id.stepTextView);
 		step1();
 
@@ -90,7 +93,22 @@ public class OutflowVt extends EpActivity implements OnClickListener {
 		case R.id.back_button:
 			getBackResult();
 			break;
+		case R.id.morphology_button:
+			displayInstructions();
+			break;
 		}
+	}
+
+	private void displayInstructions() {
+		AlertDialog dialog = new AlertDialog.Builder(this).create();
+		final SpannableString message = new SpannableString(
+				getString(R.string.outflow_vt_instructions));
+		Linkify.addLinks(message, Linkify.WEB_URLS);
+		dialog.setMessage(message);
+		dialog.setTitle(getString(R.string.outflow_tract_vt_title));
+		dialog.show();
+		((TextView) dialog.findViewById(android.R.id.message))
+				.setMovementMethod(LinkMovementMethod.getInstance());
 	}
 
 	private void getBackResult() {
@@ -114,15 +132,24 @@ public class OutflowVt extends EpActivity implements OnClickListener {
 			break;
 		case caudalLocationStep:
 			isCaudal = false;
-			step = showResultStep;
+			showResult();
 			break;
 		case v3TransitionStep:
-			step = v2TransitionStep;
+			isLvot = true;
+			isRvot = false;
+			isIndeterminate = false;
+			step = supraValvularStep;
 			break;
 		case indeterminateLocationStep:
 			isLvot = true;
+			isRvot = false;
 			isIndeterminate = true;
+			step = supraValvularStep;
 			break;
+
+		case supraValvularStep:
+			isSupraValvular = false;
+			showResult();
 		}
 		gotoStep();
 	}
@@ -133,6 +160,7 @@ public class OutflowVt extends EpActivity implements OnClickListener {
 		case lateTransitionStep:
 			isRvot = true;
 			isIndeterminate = false;
+			isLvot = false;
 			step = freeWallStep;
 			break;
 		case freeWallStep:
@@ -145,16 +173,21 @@ public class OutflowVt extends EpActivity implements OnClickListener {
 			break;
 		case caudalLocationStep:
 			isCaudal = true;
-			step = showResultStep;
+			showResult();
 			break;
 		case v3TransitionStep:
 			step = indeterminateLocationStep;
 			break;
 		case indeterminateLocationStep:
 			isRvot = true;
+			isLvot = false;
 			isIndeterminate = true;
 			isRvFreeWall = false;
 			step = anteriorLocationStep;
+			break;
+		case supraValvularStep:
+			isSupraValvular = true;
+			showResult();
 			break;
 		}
 		gotoStep();
@@ -187,16 +220,23 @@ public class OutflowVt extends EpActivity implements OnClickListener {
 		priorStep3 = priorStep2 = priorStep1 = priorStep = step = 1;
 	}
 
+	private void resetButtons() {
+		yesButton.setText(getString(R.string.yes));
+		noButton.setText(getString(R.string.no));
+	}
+
 	protected void step1() {
-		// if (mitralAnnularVt)
-		// stepTextView.setText(getString(R.string.mitral_annular_vt_step_1));
-		// else
 		stepTextView
 				.setText(getString(R.string.outflow_vt_late_transition_step));
 		backButton.setEnabled(false);
+		instructionsButton.setVisibility(View.VISIBLE);
 	}
 
 	protected void gotoStep() {
+		if (step != indeterminateLocationStep)
+			resetButtons();
+		if (step > 1)
+			instructionsButton.setVisibility(View.GONE);
 		switch (step) {
 		case lateTransitionStep:
 			step1();
@@ -212,9 +252,6 @@ public class OutflowVt extends EpActivity implements OnClickListener {
 			stepTextView
 					.setText(getString(R.string.outflow_vt_caudal_location_step));
 			break;
-		case showResultStep:
-			showResult();
-			break;
 		case v3TransitionStep:
 			stepTextView
 					.setText(getString(R.string.outflow_vt_v3_transition_step));
@@ -222,10 +259,12 @@ public class OutflowVt extends EpActivity implements OnClickListener {
 		case indeterminateLocationStep:
 			stepTextView
 					.setText(getString(R.string.outflow_vt_indeterminate_location_step));
+			yesButton.setText(getString(R.string.rv_label));
+			noButton.setText(getString(R.string.lv_label));
 			break;
-		case v2TransitionStep:
+		case supraValvularStep:
 			stepTextView
-					.setText(getString(R.string.outflow_vt_v2_transition_step));
+					.setText(getString(R.string.outflow_vt_supravalvular_step));
 			break;
 		}
 		if (step != lateTransitionStep)
@@ -270,8 +309,12 @@ public class OutflowVt extends EpActivity implements OnClickListener {
 			message += isAnterior ? "\nAnterior" : "\nPosterior";
 			message += isCaudal ? "\nCaudal (> 2 cm from PV)"
 					: "\nCranial (< 2 cm from PV)";
+		} else if (isLvot) {
+			message += "Left Ventricular Outflow Tract";
+			message += isSupraValvular ? "\nSupravalvular (aortic cusp)"
+					: "\nSubvalvular";
 		} else
-			message = "Not RVOT";
+			message = "Location cannot be predicted.";
 		return message;
 	}
 }
