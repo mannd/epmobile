@@ -206,6 +206,10 @@
             android:name=".OutflowVt"
             android:label="@string/outflow_tract_vt_title" >
         </activity>
+        <activity
+            android:name=".MitralAnnularVt"
+            android:label="@string/mitral_annular_vt_title" >
+        </activity>
     </application>
 
 </manifest>

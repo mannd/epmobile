@@ -28,6 +28,9 @@ public class VtList extends EpListActivity {
 				else if (selection
 						.equals(getString(R.string.outflow_tract_vt_title)))
 					outflowTractVt();
+				else if (selection
+						.equals(getString(R.string.mitral_annular_vt_title)))
+					mitralAnnularVt();
 			}
 		});
 	}
@@ -39,6 +42,11 @@ public class VtList extends EpListActivity {
 
 	protected void epicardialVt() {
 		Intent i = new Intent(this, EpiVt.class);
+		startActivity(i);
+	}
+
+	protected void mitralAnnularVt() {
+		Intent i = new Intent(this, MitralAnnularVt.class);
 		startActivity(i);
 	}
 

@@ -304,17 +304,17 @@ public class OutflowVt extends EpActivity implements OnClickListener {
 			message += "Note: Location (RV vs LV) is indeterminate. "
 					+ "Results reflect one possible localization.\n";
 		if (isRvot) {
-			message += "Right Ventricular Outflow Tract";
+			message += getString(R.string.rvot_label);
 			message += isRvFreeWall ? "\nFree wall" : "\nSeptal";
 			message += isAnterior ? "\nAnterior" : "\nPosterior";
 			message += isCaudal ? "\nCaudal (> 2 cm from PV)"
 					: "\nCranial (< 2 cm from PV)";
 		} else if (isLvot) {
-			message += "Left Ventricular Outflow Tract";
-			message += isSupraValvular ? "\nSupravalvular (aortic cusp)"
-					: "\nSubvalvular";
+			message += getString(R.string.lvot_label);
+			message += isSupraValvular ? getString(R.string.cusp_vt_label)
+					: getString(R.string.mitral_annular_vt_label);
 		} else
-			message = "Location cannot be predicted.";
+			message = getString(R.string.indeterminate_location);
 		return message;
 	}
 }

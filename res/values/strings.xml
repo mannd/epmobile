@@ -661,7 +661,16 @@
     <string name="outflow_vt_location_label">Proposed VT Location</string>
     <string name="rv_label">RV</string>
     <string name="lv_label">LV</string>
-    <string name="outflow_vt_instructions">Ventricular Tachycardia (VT) can arise from either the right
+    <string name="rvot_label">Right Ventricular Outflow Tract</string>
+    <string name="lvot_label">Left Ventricular Outflow Tract</string>
+    <string name="cusp_vt_label">\nSupravalvular (aortic cusp) Location.\nTransition 
+        is in V2 or V3 with origin in the right coronary cusp, and in V1 or V2 in the left coronary cusp.
+        Left coronary cusp VT is often associated with a W- or M-shaped pattern in V1.</string>
+    <string name="mitral_annular_vt_label">\nSubvavular Location.\nVT from the aorto-mitral 
+        continuity often has a qR pattern in V1.  VT from the mitral annulus has an R in V1.</string>
+    <string name="indeterminate_location">Location cannot be determined.</string>
+    <string name="outflow_vt_instructions">Ventricular tachycardia and premature ventricular complexes
+ 		can arise from either the right
         or left ventricular outflow tract (RVOT or LVOT).  Outflow tract VT has a vertical axis and
         a left bundle branch block pattern in the precordial leads.  The earlier the precordial transition lead,
         the more likely the VT is from the LVOT.  If the precordial transition is in lead V3
@@ -670,5 +679,10 @@
         \nThis algorithm was developed from Joshi S and Wilber DJ, J Cardiovasc Electrophysiol 2005;16:Suppl I:S52,
         Bala r and Marchlinski FE, Heart Rhythm 2007;4:366, and Srivathsan K et al. Indian Pacing Electrophysiol J
         2005;5:106. http://cogprints.org/4219/1/srivathsan.htm</string>
+    <string name="mitral_annular_vt_instructions">Ventricular tachycardia and premature ventricular
+		complexes arising from the mitral annulus almost always have a precordial QRS transition (first
+		precordial lead with R > S) in V1 (rarely in V2).
+		An R or Rs is present in V2 to V6 and V6 always has an R wave.
+		Reference: Tada H et al.  JACC 2005;45:877.</string>
 
 </resources>

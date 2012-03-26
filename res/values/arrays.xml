@@ -105,6 +105,7 @@
     <array name="vt_list">
         <item>@string/epicardial_vt_title</item>
         <item>@string/outflow_tract_vt_title</item>
+        <item>@string/mitral_annular_vt_title</item>
     </array>
     <array name="interval_rate_labels">
         <item>RR Interval (msec)</item>
