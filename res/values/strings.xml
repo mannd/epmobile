@@ -639,7 +639,7 @@
     <string name="epicardial_vt_title">Epicardial vs Endocardial VT</string>
     <string name="outflow_tract_vt_title">Outflow Tract VT Location</string>
     <string name="idiopathic_lvt_title">Idiopathic LV Tachycardia</string>
-    <string name="mitral_annular_vt_title">Mitral Annular VT</string>
+    <string name="mitral_annular_vt_title">Mitral Annular VT Location</string>
     <string name="epivt_text" formatted="false">Pseudo-delta wave (\u0394): Measured from earliest
         ventricular activation to the earliest fast deflection in any 
         precordial lead. Pseudo-delta wave \u2265 34 msec predicts epicardial origin 
@@ -679,10 +679,15 @@
         \nThis algorithm was developed from Joshi S and Wilber DJ, J Cardiovasc Electrophysiol 2005;16:Suppl I:S52,
         Bala r and Marchlinski FE, Heart Rhythm 2007;4:366, and Srivathsan K et al. Indian Pacing Electrophysiol J
         2005;5:106. http://cogprints.org/4219/1/srivathsan.htm</string>
-    <string name="mitral_annular_vt_instructions">Ventricular tachycardia and premature ventricular
+    <string name="mitral_annular_vt_instructions">Idiopathic ventricular tachycardia and premature ventricular
 		complexes arising from the mitral annulus almost always have a precordial QRS transition (first
 		precordial lead with R > S) in V1 (rarely in V2).
-		An R or Rs is present in V2 to V6 and V6 always has an R wave.
+		An R or Rs is present in V2 to V6 and V6 always has an R wave.  Use this module to predict the
+		location of mitral annular VT based on the VT ECG.
 		Reference: Tada H et al.  JACC 2005;45:877.</string>
+    <string name="mavt_positive_qrs_inferior_leads_step">Positive QRS in inferior leads?</string>
+    <string name="mavt_notching_r_inferior_leads_step">Notching in R wave in inferior leads?</string>
+    <string name="mavt_notching_q_inferior_leads_step">Notching of Q wave in inferior leads,
+        no Q or S wave in V1, and transition in V1?</string>
 
 </resources>
