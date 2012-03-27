@@ -638,7 +638,6 @@
     <string name="vt_list_title">Ventricular Tachycardia</string>
     <string name="epicardial_vt_title">Epicardial vs Endocardial VT</string>
     <string name="outflow_tract_vt_title">Outflow Tract VT Location</string>
-    <string name="idiopathic_lvt_title">Idiopathic LV Tachycardia</string>
     <string name="mitral_annular_vt_title">Mitral Annular VT Location</string>
     <string name="epivt_text" formatted="false">Pseudo-delta wave (\u0394): Measured from earliest
         ventricular activation to the earliest fast deflection in any 
@@ -685,9 +684,9 @@
 		http://circ.ahajournals.org/content/92/12/3481.long)
 		Reference: Tada H et al.  JACC 2005;45:877.</string>
     <string name="mavt_initial_step">Precordial transition (first precordial lead with R > S) in V1 or V2
-	    and R or Rs pattern in V2 to V5 (R/S > 3 in V2-V4)?</string>
+	    with R or Rs pattern in V2 to V5 (R/S > 3 in V2-V4)?</string>
     <string name="mavt_positive_qrs_inferior_leads_step">Positive QRS in inferior leads?</string>
-    <string name="mavt_notching_r_inferior_leads_step">Notching in R wave in inferior leads?</string>
+    <string name="mavt_notching_r_inferior_leads_step">Notching of R wave in inferior leads?</string>
     <string name="mavt_notching_q_inferior_leads_step">Notching of Q wave in inferior leads,
         no Q or S wave in V1, and transition in V1?</string>
     <string name="mavt_anterolateral_label">Anterolateral Mitral Annulus</string>

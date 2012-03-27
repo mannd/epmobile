@@ -221,6 +221,7 @@ public class MitralAnnularVt extends EpActivity implements OnClickListener {
 		String message = getMessage();
 		dialog.setMessage(message);
 		dialog.setCanceledOnTouchOutside(false);
+		dialog.setCancelable(false);
 		dialog.setTitle(getString(R.string.outflow_vt_location_label));
 		dialog.setButton(DialogInterface.BUTTON_POSITIVE,
 				getString(R.string.done_label),

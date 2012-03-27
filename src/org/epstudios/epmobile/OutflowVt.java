@@ -276,6 +276,7 @@ public class OutflowVt extends EpActivity implements OnClickListener {
 		String message = getMessage();
 		dialog.setMessage(message);
 		dialog.setCanceledOnTouchOutside(false);
+		dialog.setCancelable(false);
 		dialog.setTitle(getString(R.string.outflow_vt_location_label));
 		dialog.setButton(DialogInterface.BUTTON_POSITIVE,
 				getString(R.string.done_label),
@@ -307,8 +308,8 @@ public class OutflowVt extends EpActivity implements OnClickListener {
 			message += getString(R.string.rvot_label);
 			message += isRvFreeWall ? "\nFree wall" : "\nSeptal";
 			message += isAnterior ? "\nAnterior" : "\nPosterior";
-			message += isCaudal ? "\nCaudal (> 2 cm from PV)"
-					: "\nCranial (< 2 cm from PV)";
+			message += isCaudal ? "\nCaudal (> 2 cm from pulmonic valve)"
+					: "\nCranial (< 2 cm from pulmonic valve)";
 		} else if (isLvot) {
 			message += getString(R.string.lvot_label);
 			message += isSupraValvular ? getString(R.string.cusp_vt_label)

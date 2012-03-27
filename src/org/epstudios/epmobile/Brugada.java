@@ -147,6 +147,8 @@ public class Brugada extends EpActivity implements OnClickListener {
 		message = message + getString(R.string.brugada_reference);
 		dialog.setMessage(message);
 		dialog.setTitle(getString(R.string.wct_result_label));
+		dialog.setCanceledOnTouchOutside(false);
+		dialog.setCancelable(false);
 		dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Done",
 				new DialogInterface.OnClickListener() {
 					@Override
