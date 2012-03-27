@@ -47,15 +47,16 @@ public class MitralAnnularVt extends EpActivity implements OnClickListener {
 	private int priorStep6 = 1;
 	private int priorStep7 = 1;
 
+	private boolean isNotMitralAnnular = false;
 	private boolean isAnteroLateral = false;
 	private boolean isAnteroMedial = false;
 	private boolean isPosterior = false;
 	private boolean isPosteroSeptal = false;
 
-	private final int positiveQrsInferiorLeadsStep = 1;
-	private final int notchingRInferiorLeadsStep = 2;
-	private final int notchingQInferiorLeadsStep = 3;
-	private final int caudalLocationStep = 4;
+	private final int initialStep = 1;
+	private final int positiveQrsInferiorLeadsStep = 2;
+	private final int notchingRInferiorLeadsStep = 3;
+	private final int notchingQInferiorLeadsStep = 4;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -113,6 +114,10 @@ public class MitralAnnularVt extends EpActivity implements OnClickListener {
 	private void getNoResult() {
 		adjustStepsForward();
 		switch (step) {
+		case initialStep:
+			isNotMitralAnnular = true;
+			showResult();
+			break;
 		case positiveQrsInferiorLeadsStep:
 			step = notchingQInferiorLeadsStep;
 			break;
@@ -131,6 +136,9 @@ public class MitralAnnularVt extends EpActivity implements OnClickListener {
 	protected void getYesResult() {
 		adjustStepsForward();
 		switch (step) {
+		case initialStep:
+			step = positiveQrsInferiorLeadsStep;
+			break;
 		case positiveQrsInferiorLeadsStep:
 			step = notchingRInferiorLeadsStep;
 			break;
@@ -139,7 +147,7 @@ public class MitralAnnularVt extends EpActivity implements OnClickListener {
 			showResult();
 			break;
 		case notchingQInferiorLeadsStep:
-			isAnteroMedial = true;
+			isPosterior = true;
 			showResult();
 			break;
 		}
@@ -173,9 +181,13 @@ public class MitralAnnularVt extends EpActivity implements OnClickListener {
 		priorStep3 = priorStep2 = priorStep1 = priorStep = step = 1;
 	}
 
+	private void resetResult() {
+		isAnteroLateral = isAnteroMedial = false;
+		isNotMitralAnnular = isPosterior = isPosteroSeptal = false;
+	}
+
 	protected void step1() {
-		stepTextView
-				.setText(getString(R.string.mavt_positive_qrs_inferior_leads_step));
+		stepTextView.setText(getString(R.string.mavt_initial_step));
 		backButton.setEnabled(false);
 		instructionsButton.setVisibility(View.VISIBLE);
 	}
@@ -184,8 +196,12 @@ public class MitralAnnularVt extends EpActivity implements OnClickListener {
 		if (step > 1)
 			instructionsButton.setVisibility(View.GONE);
 		switch (step) {
-		case positiveQrsInferiorLeadsStep:
+		case initialStep:
 			step1();
+			break;
+		case positiveQrsInferiorLeadsStep:
+			stepTextView
+					.setText(getString(R.string.mavt_positive_qrs_inferior_leads_step));
 			break;
 		case notchingRInferiorLeadsStep:
 			stepTextView
@@ -196,7 +212,7 @@ public class MitralAnnularVt extends EpActivity implements OnClickListener {
 					.setText(getString(R.string.mavt_notching_q_inferior_leads_step));
 			break;
 		}
-		if (step != positiveQrsInferiorLeadsStep)
+		if (step != initialStep)
 			backButton.setEnabled(true);
 	}
 
@@ -220,6 +236,7 @@ public class MitralAnnularVt extends EpActivity implements OnClickListener {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						resetSteps();
+						resetResult();
 						gotoStep();
 					}
 				});
@@ -229,14 +246,16 @@ public class MitralAnnularVt extends EpActivity implements OnClickListener {
 
 	protected String getMessage() {
 		String message = new String();
-		if (isAnteroLateral)
-			message += "Anterolateral Location";
+		if (isNotMitralAnnular)
+			message += getString(R.string.mavt_not_mitral_annular_label);
+		else if (isAnteroLateral)
+			message += getString(R.string.mavt_anterolateral_label);
 		else if (isAnteroMedial)
-			message += "Anteromedial Location";
+			message += getString(R.string.mavt_anteromedial_label);
 		else if (isPosterior)
-			message += "Posterior Location";
+			message += getString(R.string.mavt_posterior_label);
 		else if (isPosteroSeptal)
-			message += "Posteroseptal Location";
+			message += getString(R.string.mavt_posteroseptal_label);
 		else
 			message = getString(R.string.indeterminate_location);
 		return message;

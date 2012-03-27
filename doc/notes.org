@@ -440,7 +440,7 @@
      - LV
        - RS ratio >= 1 in V1 or V2
    - Tada JACC Mitral annular VT
-     - Transition < V2 and R or Rs in V2 to V3 (R/S > 3 in V2-V4) = MAVT
+     - Transition < V2 and R or Rs in V2 to V6 (R/S > 3 in V2-V4) = MAVT
      - + QRS in inferior leads
        - yes: Notching in R wave inferior leads
 	 - yes: anterolateral

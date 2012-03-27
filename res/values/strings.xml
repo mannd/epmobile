@@ -679,19 +679,22 @@
         \nThis algorithm was developed from Joshi S and Wilber DJ, J Cardiovasc Electrophysiol 2005;16:Suppl I:S52,
         Bala r and Marchlinski FE, Heart Rhythm 2007;4:366, and Srivathsan K et al. Indian Pacing Electrophysiol J
         2005;5:106. http://cogprints.org/4219/1/srivathsan.htm</string>
-    <string name="mitral_annular_vt_instructions">Idiopathic ventricular tachycardia and premature ventricular
-		complexes arising from the mitral annulus almost always have a precordial QRS transition (first
-		precordial lead with R > S) in V1 (rarely in V2).
-		An R or Rs is present in V2 to V6 and V6 always has an R wave.  Use this module to predict the
-		location of mitral annular VT based on the VT ECG.
+    <string name="mitral_annular_vt_instructions" formatted="false"> Use this module to predict the
+		location of idiopathic mitral annular VT or PVCs based on the ECG.  Note that this module does not deal with
+		mitral isthmus VT in the setting of inferior infarction (see Wilber D et al. Circulation 1995;92:3481
+		http://circ.ahajournals.org/content/92/12/3481.long)
 		Reference: Tada H et al.  JACC 2005;45:877.</string>
+    <string name="mavt_initial_step">Precordial transition (first precordial lead with R > S) in V1 or V2
+	    and R or Rs pattern in V2 to V5 (R/S > 3 in V2-V4)?</string>
     <string name="mavt_positive_qrs_inferior_leads_step">Positive QRS in inferior leads?</string>
     <string name="mavt_notching_r_inferior_leads_step">Notching in R wave in inferior leads?</string>
     <string name="mavt_notching_q_inferior_leads_step">Notching of Q wave in inferior leads,
         no Q or S wave in V1, and transition in V1?</string>
-    <string name="anterolateral_label">Anterolateral</string>
-    <string name="anteromedial_label">Anteromedial</string>
-    <string name="posterior_label">Posterior</string>
-    <string name="posteroseptal_label">Posteroseptal</string>
+    <string name="mavt_anterolateral_label">Anterolateral Mitral Annulus</string>
+    <string name="mavt_anteromedial_label">Anteromedial Mitral Annulus</string>
+    <string name="mavt_posterior_label">Posterior Mitral Annulus</string>
+    <string name="mavt_posteroseptal_label">Posteroseptal Mitral Annulus</string>
+    <string name="mavt_not_mitral_annular_label">QRS morphology suggests VT or PVCs are NOT
+        arising from the mitral annulus</string>
 
 </resources>
