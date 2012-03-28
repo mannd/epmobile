@@ -571,7 +571,7 @@
         INa\nECG: Late onset biphasic or peaked T wave\nFeatures: Associated with bradycardia</string>
     <string name="lqt_subtypes_4_name">LQTS 4</string>
     <string name="lqt_subtypes_4_description">Frequency: 1-2%\nLocus: 4q25-27\nGene: ANKB\nChannel:
-    	INaKATP, INaCa exchange\nECG: Variable QT prolongaton\nFeatures: No specific features</string>
+    	INaKATP, INaCa exchange\nECG: Variable QT prolongation\nFeatures: No specific features</string>
     <string name="lqt_subtypes_5_name">LQTS 5 – 11</string>
     <string name="lqt_subtypes_5_description">Remaining subtypes all &lt;1% frequency (some just single families)
    	    without distinguishing features.  One exception is LQTS 8 which affects the ICaL channel, has
@@ -665,7 +665,7 @@
     <string name="cusp_vt_label">\nSupravalvular (aortic cusp) Location.\nTransition 
         is in V2 or V3 with origin in the right coronary cusp, and in V1 or V2 in the left coronary cusp.
         Left coronary cusp VT is often associated with a W- or M-shaped pattern in V1.</string>
-    <string name="mitral_annular_vt_label">\nSubvavular Location.\nVT from the aorto-mitral 
+    <string name="mitral_annular_vt_label">\nSubvalvular Location.\nVT from the aorto-mitral 
         continuity often has a qR pattern in V1.  VT from the mitral annulus has an R in V1.</string>
     <string name="indeterminate_location">Location cannot be determined.</string>
     <string name="outflow_vt_instructions">Ventricular tachycardia and premature ventricular complexes
