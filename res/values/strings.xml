@@ -571,7 +571,7 @@
         INa\nECG: Late onset biphasic or peaked T wave\nFeatures: Associated with bradycardia</string>
     <string name="lqt_subtypes_4_name">LQTS 4</string>
     <string name="lqt_subtypes_4_description">Frequency: 1-2%\nLocus: 4q25-27\nGene: ANKB\nChannel:
-    	INaKATP, INaCa exchange\nECG: Variable QT prolongaton\nFeatures: No specific features</string>
+    	INaKATP, INaCa exchange\nECG: Variable QT prolongation\nFeatures: No specific features</string>
     <string name="lqt_subtypes_5_name">LQTS 5 – 11</string>
     <string name="lqt_subtypes_5_description">Remaining subtypes all &lt;1% frequency (some just single families)
    	    without distinguishing features.  One exception is LQTS 8 which affects the ICaL channel, has
@@ -635,5 +635,65 @@
     <string name="verp">Ventricular ERP</string>
     <string name="verp_normal">170–290 msec</string>
     <string name="step_1">Step1</string>
+    <string name="vt_list_title">Ventricular Tachycardia</string>
+    <string name="epicardial_vt_title">Epicardial vs Endocardial VT</string>
+    <string name="outflow_tract_vt_title">Outflow Tract VT Location</string>
+    <string name="mitral_annular_vt_title">Mitral Annular VT Location</string>
+    <string name="epivt_text" formatted="false">Pseudo-delta wave (\u0394): Measured from earliest
+        ventricular activation to the earliest fast deflection in any 
+        precordial lead. Pseudo-delta wave \u2265 34 msec predicts epicardial origin 
+        (Sens 83%, Spec 95%).\n\nIntrinsicoid deflection time (ID): Measured from 
+        earliest ventricular activation to
+        the peak of the R wave in V2. ID of \u2265 85 msec predicts epicardial origin
+        (Sens 87%, Spec 90%).\n\nShortest RS complex (RS): Measured from the earliest
+        ventricular activation to the nadir of the first S wave in any precordial lead.
+        RS \u2265 121 msec predicts epicardial origin (Sens 76%, Spec 85%)\n\nReference:
+        http://circ.ahajournals.org/content/109/15/1842.full</string>
+    <string name="outflow_vt_late_transition_step">QRS transition (first precordial lead with R > S) V4 or later?</string>
+    <string name="outflow_vt_free_wall_step">QRS duration \u2265 140 msec or R wave notching in inferior leads?</string>
+    <string name="outflow_vt_anterior_location_step">Negative or isoelectric QRS in I?</string>
+    <string name="outflow_vt_caudal_location_step">Positive or isoelectric QRS in aVL?</string>
+    <string name="outflow_vt_v3_transition_step">QRS transition in V3?</string>
+    <string name="outflow_vt_indeterminate_location_step">VT location may be right or left sided.  Select
+        RV to find predicted RV location, LV to find predicted LV location.</string>
+    <string name="outflow_vt_supravalvular_step">Absent S in V5 or V6?</string>
+    <string name="outflow_vt_location_label">Proposed VT Location</string>
+    <string name="rv_label">RV</string>
+    <string name="lv_label">LV</string>
+    <string name="rvot_label">Right Ventricular Outflow Tract</string>
+    <string name="lvot_label">Left Ventricular Outflow Tract</string>
+    <string name="cusp_vt_label">\nSupravalvular (aortic cusp) Location.\nTransition 
+        is in V2 or V3 with origin in the right coronary cusp, and in V1 or V2 in the left coronary cusp.
+        Left coronary cusp VT is often associated with a W- or M-shaped pattern in V1.</string>
+    <string name="mitral_annular_vt_label">\nSubvalvular Location.\nVT from the aorto-mitral 
+        continuity often has a qR pattern in V1.  VT from the mitral annulus has an R in V1.</string>
+    <string name="indeterminate_location">Location cannot be determined.</string>
+    <string name="outflow_vt_instructions">Ventricular tachycardia and premature ventricular complexes
+ 		can arise from either the right
+        or left ventricular outflow tract (RVOT or LVOT).  Outflow tract VT has a vertical axis and
+        a left bundle branch block pattern in the precordial leads.  The earlier the precordial transition lead,
+        the more likely the VT is from the LVOT.  If the precordial transition is in lead V3
+        it is not possible to use an algorithm to determine from which ventricle the VT arises.
+        See Tanner et al. JACC 2005;45:418. http://content.onlinejacc.org/cgi/content/short/45/3/418.
+        \nThis algorithm was developed from Joshi S and Wilber DJ, J Cardiovasc Electrophysiol 2005;16:Suppl I:S52,
+        Bala r and Marchlinski FE, Heart Rhythm 2007;4:366, and Srivathsan K et al. Indian Pacing Electrophysiol J
+        2005;5:106. http://cogprints.org/4219/1/srivathsan.htm</string>
+    <string name="mitral_annular_vt_instructions" formatted="false"> Use this module to predict the
+		location of idiopathic mitral annular VT or PVCs based on the ECG.  Note that this module does not deal with
+		mitral isthmus VT in the setting of inferior infarction (see Wilber D et al. Circulation 1995;92:3481
+		http://circ.ahajournals.org/content/92/12/3481.long)
+		Reference: Tada H et al.  JACC 2005;45:877.</string>
+    <string name="mavt_initial_step">Precordial transition (first precordial lead with R > S) in V1 or V2
+	    with R or Rs pattern in V2 to V5 (R/S > 3 in V2-V4)?</string>
+    <string name="mavt_positive_qrs_inferior_leads_step">Positive QRS in inferior leads?</string>
+    <string name="mavt_notching_r_inferior_leads_step">Notching of R wave in inferior leads?</string>
+    <string name="mavt_notching_q_inferior_leads_step">Notching of Q wave in inferior leads,
+        no Q or S wave in V1, and transition in V1?</string>
+    <string name="mavt_anterolateral_label">Anterolateral Mitral Annulus</string>
+    <string name="mavt_anteromedial_label">Anteromedial Mitral Annulus</string>
+    <string name="mavt_posterior_label">Posterior Mitral Annulus</string>
+    <string name="mavt_posteroseptal_label">Posteroseptal Mitral Annulus</string>
+    <string name="mavt_not_mitral_annular_label">QRS morphology suggests VT or PVCs are NOT
+        arising from the mitral annulus</string>
 
 </resources>

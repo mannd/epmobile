@@ -58,7 +58,7 @@
 ** DONE SQTS diagnosis
 ** TODO Epicardial vs endocardial VT
 ** TODO Mitral annular VT
-** TODO Brugada ECG types
+** DONE Brugada ECG types
 ** DONE LVH
 ** DONE Normal EP Values
 ** TODO EP Glossary
@@ -66,6 +66,8 @@
 ** DONE LQTS criteria
 ** TODO ACC WCT algorithm
 ** TODO Creatinine Clearance calculator
+** TODO Para-Hisian pacing guide
+** TODO Apical vs septal pacing guide
 * Menu
 ** units
 *** msec or sec
@@ -113,7 +115,7 @@
 ** 
 * Preparing new version -- IMPORTANT!
   - finish version, commit.
-  - git flow release start v0.x
+  - git flow release start vx.y
   - IMPORTANT - update AndroidManifest.xml
     - increment android:versionCode
     - change android:versionName
@@ -124,10 +126,11 @@
   - git commit
   - git flow release finish v0.x
   - git push --tags origin master
+  - refresh eclipse epmobile
   - make/sign epmobile.apk, save it in dev/epmobileapp/vX.Y.Z/
   - on market.android.com update product details
   - upload apk, deactivate old one
-  - Tweet It!
+  - Tweet It! (after confirming it's on the Market)
   - DONE!
 * Style
 ** General
@@ -326,6 +329,8 @@
   | degree °                | \u00b0   |
   |-------------------------+----------|
   - insert unicode char in emacs: C-x 8 RET name of char or code number
+  - Note, necessary to add formatted="false" to string tag if using
+    more than 2 % symbols in a string (bug).
 * WPW Arruda algorithm
 ** Locations
    - LPL
@@ -402,6 +407,70 @@
       - pseudo-delta wave >= 34 ms
       - intrinsicoid deflection time >= 85 ms
       - RS complex >= 121 ms.
+	- RV epicardial vs endocardial VT
+	- LV criteria for epicardial
+	  - Pseudo-delta wave (>= 34 ms)
+	  - intrinsicoid deflection time >= 85 ms
+	  - RS complex >= 121 ms
+	- Above criteria do not identify RV epicardial origin
+*** Berruezo A et al.  http://circ.ahajournals.org/content/109/15/1842.full
+    Circulation 2004;109:1842-1847
+    - Pseudo delta: earliest V activation to earliest fast deflection
+      in any precordial lead.
+    - Intrinsicoid Deflection Time: earliest V activation to peak of R
+      wave in V2.
+    - Shortest RS complex: earliest V activation to nadir of
+      first S wave in any precordial lead.
+    - QRS duration: earliest V activation to offset of QRS in
+      precordial leads.
+    - Proposed criteria
+      - pseudodelta >= 34 ms Sens 83%, Spec 95%
+      - intrinsicoid deflection time >= 85 ms Sens 87% Spec 90%
+      - RS complex duration >= 121 ms Sens 76% Spec 85% for epi VT
 ** RVOT vs LVOT
-** Fasicular VT
+   - Joshi and Wilber
+     - Free wall vs septal
+       - QRS >= 140 msec
+       - R wave notching in inferior leads
+       - V3 R/S ratio <= 1
+     - Anterior vs posterior
+       - negative or isoelectric QRS in I
+     - Caudal (> 2 cm from PV)
+       - isoelectric or + QRS in avL
+     - LV
+       - RS ratio >= 1 in V1 or V2
+   - Tada JACC Mitral annular VT
+     - Transition < V2 and R or Rs in V2 to V6 (R/S > 3 in V2-V4) = MAVT
+     - + QRS in inferior leads
+       - yes: Notching in R wave inferior leads
+	 - yes: anterolateral
+	 - no: anteromedial
+       - no: Notching of Q wave in inferior leads and no q or s wave
+         in V1 and transition < V1
+	 - yes: posterior
+	 - no: posteroseptal
+   - Srivathsan Indian Pacing J
+     - LBBB pattern (transition V3 or later)
+       - yes: RVOT but see above
+       - no: ie transition V1 or V2, S in I
+	 - absent S in V5 or V6: supravalvular LVOT
+	 - present: infravalvular
+*** Proposed algorithm
+    - Enter transition lead (first lead R > S)
+      - V1 V2 V3 V4 or later
+    - V3, V4 or later
+      - RVOT, possible RVOT or LVOT if V3
+	- QRS >= 140 ms or R wave notching inferior leads and V4 transition
+	  - Is free wall, otherwise septal
+	- negative or iso QRS in I
+	  - Anterior, otherwise posterior
+	- iso or - QRS in avL
+	  - caudal vs cranial
+      - V2 or V1 transition
+	- V1 transition and R or Rs in V2 to V3 (R/S > 3 in V2-V4)
+	  - MAVT: use above algorithm
+	- 
+** Fasicular VT/Idiopathic LVT
 ** Mitral annular VT
+   http://www.sciencedirect.com/science/article/pii/S0735109704025094
+   Tada H et al.  JACC 2005;45:877-886

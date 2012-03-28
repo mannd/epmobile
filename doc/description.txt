@@ -1,8 +1,14 @@
-EP Mobile provides cardiology tools for cardiac electrophysiologists, cardiologists, internists, emergency room physicians, medical students, nurses, technicians, and other health care workers who deal with cardiac arrhythmias.  If you have suggestions, features you'd like to see, or complaints, please email us! EP Mobile -- The Swiss Army Knife of Electrophysiology!
+EP Mobile provides cardiology tools for cardiac electrophysiologists, cardiologists, internists, emergency room physicians, medical students, nurses, technicians, and other health care workers who deal with cardiac arrhythmias.  This update adds a set of tools to help locate the origin of ventricular tachycardia or PVCs.  
+
+If you have suggestions, features you'd like to see, or complaints, please email us! 
+
+EP Mobile -- The Swiss Army Knife of Electrophysiology!
 
 Current features: 
-- NEW! Restructured menu lists
-- NEW! Brugada ECG descriptions
+- NEW! Epicardial vs endocardial VT
+- NEW! Outflow tract VT location
+- NEW! Mitral annulus VT location
+- Brugada ECG descriptions
 - Long QT subtypes and ECG patterns
 - Brugada Syndrome ECG patterns
 - LVH ECG criteria, including Romhilt-Estes and others
@@ -14,8 +20,7 @@ Current features:
 - CMS (Medicare) ICD guidelines calculator
 - Hypertrophic Cardiomyopathy risk score calculator
 - Dofetilide (Tikosyn) dose calculator
-- QTc calculator
-- Choose QTc formula (Bazett, Fridericia, Sagie or Hodges)
+- QTc calculator (Bazett, Fridericia, Sagie or Hodges)
 - Cycle length to heart rate calculator
 - Atrial fibrillation risk scores (CHADS, CHADS-VASc, HAS-BLED)
 - Dabigatran (Pradaxa) dose calculator
