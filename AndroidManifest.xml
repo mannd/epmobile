@@ -210,6 +210,10 @@
             android:name=".MitralAnnularVt"
             android:label="@string/mitral_annular_vt_title" >
         </activity>
+        <activity
+            android:name=".Sotalol"
+            android:label="@string/sotalol_calculator_title" >
+        </activity>
     </application>
 
 </manifest>

@@ -21,7 +21,7 @@ package org.epstudios.epmobile;
 public class Rivaroxaban extends DrugCalculator {
 
 	@Override
-	protected int getDose(double crCl) {
+	protected int getDose(int crCl) {
 		if (crCl > 50)
 			return 20;
 		if (crCl >= 15)
@@ -30,7 +30,7 @@ public class Rivaroxaban extends DrugCalculator {
 	}
 
 	@Override
-	protected String doseFrequency() {
+	protected String doseFrequency(int crCl) {
 		return " mg daily";
 	}
 

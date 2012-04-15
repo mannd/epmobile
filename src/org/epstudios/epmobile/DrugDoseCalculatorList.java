@@ -51,9 +51,12 @@ public class DrugDoseCalculatorList extends EpListActivity {
 				else if (selection
 						.equals(getString(R.string.rivaroxaban_calculator_title)))
 					rivaroxabanCalculator();
-				else if (selection
-						.equals(getString(R.string.warfarin_title)))
+				else if (selection.equals(getString(R.string.warfarin_title)))
 					warfarinCalculator();
+				else if (selection
+						.equals(getString(R.string.sotalol_calculator_title)))
+					sotalolCalculator();
+
 			}
 		});
 	}
@@ -72,9 +75,14 @@ public class DrugDoseCalculatorList extends EpListActivity {
 		Intent i = new Intent(this, Rivaroxaban.class);
 		startActivity(i);
 	}
-	
+
 	private void warfarinCalculator() {
 		Intent i = new Intent(this, Warfarin.class);
+		startActivity(i);
+	}
+
+	private void sotalolCalculator() {
+		Intent i = new Intent(this, Sotalol.class);
 		startActivity(i);
 	}
 

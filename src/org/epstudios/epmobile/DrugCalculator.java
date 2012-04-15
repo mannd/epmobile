@@ -139,15 +139,16 @@ public abstract class DrugCalculator extends EpActivity implements
 			} else {
 				calculatedDoseTextView.setTextColor(Color.LTGRAY);
 				calculatedDoseTextView.setText(String.valueOf(dose)
-						+ doseFrequency());
+						+ doseFrequency(cc));
 			}
 		} catch (NumberFormatException e) {
 			calculatedDoseTextView.setText("Invalid!");
 			calculatedDoseTextView.setTextColor(Color.RED);
+			ccTextView.setText(R.string.creatinine_clearance_label);
 		}
 	}
 
-	protected String doseFrequency() {
+	protected String doseFrequency(int crCl) {
 		return " mg BID";
 	}
 
@@ -180,6 +181,6 @@ public abstract class DrugCalculator extends EpActivity implements
 				+ String.valueOf(crCl) + " ml/min";
 	}
 
-	abstract protected int getDose(double crCl);
+	abstract protected int getDose(int crCl);
 
 }

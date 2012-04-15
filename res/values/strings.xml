@@ -695,5 +695,9 @@
     <string name="mavt_posteroseptal_label">Posteroseptal Mitral Annulus</string>
     <string name="mavt_not_mitral_annular_label">QRS morphology suggests VT or PVCs are NOT
         arising from the mitral annulus</string>
+    <string name="sotalol_calculator_title">Sotalol Calculator</string>
+    <string name="sotalol_dosing_message">This is the recommended starting dose for treatment of atrial fibrillation.
+        Initial QT should be &lt; 450 msec (package insert specifies QT, not QTc).  If QT remains &lt; 500 msec
+        dose can be increased to 120 mg or 160</string>
 
 </resources>
