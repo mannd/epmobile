@@ -1,0 +1,8 @@
+EP Mobile v1.2 Release Notes
+
+Changes since v1.1
+
+* Added Sotalol Dose Calculator.
+
+* Fixed typo in Long QT Subtypes module.
+
