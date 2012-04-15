@@ -80,6 +80,7 @@
         <item>@string/dabigatran_calculator_title</item>
         <item>@string/dofetilide_calculator_title</item>
         <item>@string/rivaroxaban_calculator_title</item>
+        <item>@string/sotalol_calculator_title</item>
         <item>@string/warfarin_title</item>
     </array>
     <array name="risk_score_list">

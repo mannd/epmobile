@@ -560,7 +560,7 @@
     <string name="lqt_syndrome_label">Long QT Syndrome</string>
     <string name="lqt_subtypes_title">Long QT Subtypes</string>
     <string name="lqt_subtypes_1_name">LQTS 1</string>
-    <string name="lqt_subtypes_1_description">Frequency: 30-35%\nLocus: 11p15.5\nGene: KVLQT2 (KCNQ1)\nChannel: 
+    <string name="lqt_subtypes_1_description">Frequency: 30-35%\nLocus: 11p15.5\nGene: KVLQT1 (KCNQ1)\nChannel: 
         IKs\nECG: Broad T wave\nFeatures: Episodes with stress, exercise, swimming, diving; failure
     	of QT to shorten with exercise</string>
     <string name="lqt_subtypes_2_name">LQTS 2</string>
@@ -695,5 +695,9 @@
     <string name="mavt_posteroseptal_label">Posteroseptal Mitral Annulus</string>
     <string name="mavt_not_mitral_annular_label">QRS morphology suggests VT or PVCs are NOT
         arising from the mitral annulus</string>
+    <string name="sotalol_calculator_title">Sotalol Calculator</string>
+    <string name="sotalol_dosing_message">This is the recommended starting dose for treatment of atrial fibrillation.
+        Initial QT should be &lt; 450 msec (package insert specifies QT, not QTc).  If QT remains &lt; 500 msec
+        dose can be increased to 120 mg or 160</string>
 
 </resources>

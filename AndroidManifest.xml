@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.epstudios.epmobile"
-    android:versionCode="17"
-    android:versionName="1.1" >
+    android:versionCode="18"
+    android:versionName="1.2" >
 
     <uses-sdk
         android:minSdkVersion="7"
@@ -209,6 +209,10 @@
         <activity
             android:name=".MitralAnnularVt"
             android:label="@string/mitral_annular_vt_title" >
+        </activity>
+        <activity
+            android:name=".Sotalol"
+            android:label="@string/sotalol_calculator_title" >
         </activity>
     </application>
 

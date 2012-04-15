@@ -1,5 +1,5 @@
 /*  EP Mobile -- Mobile tools for electrophysiologists
-    Copyright (C) 2011 EP Studios, Inc.
+    Copyright (C) 2012 EP Studios, Inc.
     www.epstudiossoftware.com
 
     This program is free software: you can redistribute it and/or modify
@@ -18,31 +18,31 @@
 
 package org.epstudios.epmobile;
 
-import android.graphics.Color;
-
-public class Dabigatran extends DrugCalculator {
+public class Sotalol extends DrugCalculator {
 
 	@Override
-	protected String getMessage(int crCl) {
-		String msg = super.getMessage(crCl) + "\n";
-		if ((crCl >= 15) && (crCl <= 30)) {
-			msg += getString(R.string.dabigatran_warning_severe);
-			ccTextView.setTextColor(Color.parseColor("#ffa500"));
-		} else if ((crCl > 30) && (crCl <= 50)) {
-			msg += getString(R.string.dabigatran_warning_mild);
-			ccTextView.setTextColor(Color.YELLOW);
-		} else
-			ccTextView.setTextColor(Color.WHITE);
-		return msg;
-	}
-
-	@Override
-	protected int getDose(int crClr) {
-		if (crClr >= 30)
-			return 150;
-		if (crClr >= 15)
-			return 75;
+	protected int getDose(int crCl) {
+		if (crCl >= 40)
+			return 80;
 		return 0;
 	}
 
+	@Override
+	protected String doseFrequency(int crCl) {
+		if (crCl > 60)
+			return " mg BID";
+		if (crCl >= 40)
+			return " mg daily";
+		return "";
+	}
+
+	@Override
+	protected String getMessage(int crCl) {
+		String msg = super.getMessage(crCl);
+		if (crCl >= 40) {
+			msg += "\n" + getString(R.string.sotalol_dosing_message);
+			msg += doseFrequency(crCl) + ".";
+		}
+		return msg;
+	}
 }

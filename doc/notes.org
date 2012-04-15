@@ -474,3 +474,145 @@
 ** Mitral annular VT
    http://www.sciencedirect.com/science/article/pii/S0735109704025094
    Tada H et al.  JACC 2005;45:877-886
+* Drugs
+** Amiodarone
+*** Metabolism
+    - CYP3A4, CYP2C8
+    - Also inhibits CYP3A4
+    - active metabolite N-desethylamiodarone (DEA)
+*** Pregnancy
+    - cross placenta
+    - appears in breast milk
+*** Renal Failure
+    Not dialyzable
+*** Drug levels not useful
+*** Half-life
+    20 - 47 days (DEA same or longer)
+*** Side-effects
+**** IV amio
+     - hypotension
+     - bradycardia
+     - hepatic injury
+     - proarrhythmia
+       - with fluoroquinolones, macrolide antibiotics, azoles
+     - acute onset pulmonary toxicity, ARDS
+**** Oral amio
+*** Drug interactions
+**** CYP3A inhibitors increase amio concentration
+     - protease inhibitors
+     - Cimetidine
+     - grapefruit juice
+**** Amio inhibits certain CYP450 enzymes, increasing other drug concentrations
+     - cyclosporine (CYP3A4)
+     - simvastatin (CYP3A4)
+     - digoxin levels increase 70% in one day
+     - propranolol (CYP3A4 inhibitor)
+     - verapamil (CYP3A4 substrate)
+     - diltiazem (CYP3A4 inhibitor)
+     - warfarin (CYP3A4 and CYP2C9 substrate)
+       - increases PT 100% after 3-4 days
+       - reduce warfarin dose 1/3 to 1/2
+     - rifampin (CYP3A4 inducer) reduces amio levels
+     - St. John's wort (CYP3A4 inducer) reduces amio levels
+     - Misc
+       - fentanyl, dextromethorphan, cholestyramine, disopyramide
+       - fluroroquinolones, macrolide antibiotics, azoles
+     - 
+** Drug Interaction Module
+*** Layout?
+    - Contraindicated drug list
+    - Drugs that increase drug levels
+    - Drugs that decrease drug level
+    - Increase levels of drugs
+    - Decrease levels of drugs
+*** Example: Amiodarone
+    - Contraindicated
+    - Drugs that increase amiodarone levels
+      - CYP3A4 inhibitors
+	- protease inhibitors (e.g. indinavir)
+	- loratadine
+	- cimetidine
+	- trazadone
+	- grapefruit juice
+    - Drugs that reduce amiodarone levels
+      - rifampin
+      - St. John's wart
+    - Misc interactions
+      - fentanyl
+      - lidocaine
+      - dextroethrophan
+      - cholestyramine
+      - volatile anesthetic agents
+    - Amiodarone increases drug effects
+      - inhalation anesthetics
+      - flecainide
+      - phenytoin
+      - (quinidine, procainamide, all AADS)
+      - Coumadin - reduce dose 1/3 to 1/2 with amio
+      - BBs (pharmacodynamic effect)
+      - digoxin - reduce dose by at least 50%
+      - diuretics (hypokalemia)
+      - fluoroquinolones, macrolide antibiotics, azoles
+      - cyclosporine
+      - simvastatin
+      - atorvastatin
+      - digoxin
+      - propranolol
+      - verapamil
+      - diltiazem
+      - warfarin
+      - clopidogrel
+*** Multaq
+    - CYP3A inhibitor
+      - increases statins
+      - increases CCB
+      - increases propranolol
+      - increases digoxin
+      - no warfarin effect
+    - Contraindicated
+      - strong CYP3A inhibitors
+	- ketoconazole
+	- cyclosporine
+	- clarithromycin
+      - QT prolonging drugs
+    - increase Multaq levels
+      - CYP3A inhibitors
+	- Grapefruit juice
+	- verapamil, diltiazem
+    - increases drug levels
+      - digoxin
+      - CCBs
+      - BBs
+      - statins
+*** Pradaxa
+    - metabolized by P-gp
+    - not metabolized by CYP450 enzymes
+    - reduce dose to 75 mg bid when dronederone or ketoconazole
+      administered and CrCl 30-50 mL/min
+    - increase Pradaxa levels
+      - dronederone
+      - ketoconazole
+      - verapamil (probably not clinically important)
+      - no important effect from amiodarone
+*** Tikosyn
+    - iKr blocker
+    - Renal excretion, small metabolism by CYP3A4
+    - Contraindications
+      - cimetidine
+      - verapamil
+      - ketoconazole
+      - trimethoprim with or without sulfamethoxazole
+      - HCTZ
+*** Warfarin
+    - multiple CYP450 enzymes involved in metabolism, esp CYP2C9
+    - some common/cardiac drugs that interact
+      - amiodarone, cipro, mexiletine, BCPs, propafenone, propranolol,
+        verapmil, amlodipine, atorvastatin, cimetidine, diltiazem
+*** sotalol
+    - not metabolized, only renally excreted unchanged
+    - AFB package insert dosing
+      - do not start if QTc > 450 msec
+      - 80 mg BID if CrCl > 60 ml/min, 80 mg once daily if 40-60.
+        Contraindicated if CrCl < 40.  
+      - can increase to 120 mg or 160 mg if QTc < 500 ms
+      - 3 days recommended for hospitalization
