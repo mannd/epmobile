@@ -99,9 +99,9 @@
         <item>@string/estes_criteria_title</item>
     </array>
     <array name="lqts_list">
-        <item>@string/long_qt_syndrome_diagnosis_title</item>
-        <item>@string/lqt_subtypes_title</item>
         <item>@string/lqt_ecg_title</item>
+        <item>@string/lqt_subtypes_title</item>
+        <item>@string/long_qt_syndrome_diagnosis_title</item>
     </array>
     <array name="vt_list">
         <item>@string/epicardial_vt_title</item>
