@@ -618,9 +618,9 @@
     <string name="h_duration_normal">10–25 msec</string>
     <string name="sact">SACT</string>
     <string name="sact_normal">45–125 msec</string>
-    <string name="csnrt">CSNRT</string>
+    <string name="csnrt">Corrected SNRT</string>
     <string name="csnrt_normal">&lt;550 msec</string>
-    <string name="srt_scl">SRT/SCL%</string>
+    <string name="srt_scl">SNRT/SCL%</string>
     <string name="srt_scl_normal">&lt;150%</string>
     <string name="aerp">Atrial ERP</string>
     <string name="aerp_normal">170–300 msec</string>
