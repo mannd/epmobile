@@ -86,7 +86,7 @@
 		or others) or Aspirin (Oral anticoagulant preferred)</string>
     <string name="high_chadsvasc_message">Oral anticoagulation
 		(warfarin or dabigatran or others)</string>
-    <string name="warfarin_title">Warfarin Calculator</string>
+    <string name="warfarin_title">Warfarin Clinic</string>
     <string name="warfarin_label">Warfarin Dose Calculator</string>
     <string name="tablet_label">Tablet</string>
     <string name="tablet1">2 mg</string>
