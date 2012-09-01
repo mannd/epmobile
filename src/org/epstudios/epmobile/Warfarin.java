@@ -40,6 +40,8 @@ public class Warfarin extends EpActivity implements OnClickListener {
 		calculateDoseButton.setOnClickListener(this);
 		View clearButton = findViewById(R.id.clear_button);
 		clearButton.setOnClickListener(this);
+		View instructionsButton = findViewById(R.id.instructions_button);
+		instructionsButton.setOnClickListener(this);
 
 		tabletRadioGroup = (RadioGroup) findViewById(R.id.tabletRadioGroup);
 		inrTargetRadioGroup = (RadioGroup) findViewById(R.id.inrTargetRadioGroup);
@@ -93,7 +95,18 @@ public class Warfarin extends EpActivity implements OnClickListener {
 		case R.id.clear_button:
 			clearEntries();
 			break;
+		case R.id.instructions_button:
+			displayInstructions();
+			break;
 		}
+	}
+
+	private void displayInstructions() {
+		AlertDialog dialog = new AlertDialog.Builder(this).create();
+		String message = getString(R.string.warfarin_instructions);
+		dialog.setMessage(message);
+		dialog.setTitle(getString(R.string.warfarin_title));
+		dialog.show();
 	}
 
 	public static double getNewDoseFromPercentage(double percent,

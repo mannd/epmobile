@@ -219,13 +219,6 @@
                 android:padding="3dip"
                 android:textColor="@color/green" />
         </TableRow>
-
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:autoLink="web"
-            android:padding="3dip"
-            android:text="@string/warfarin_reference" />
     </TableLayout>
 
 </ScrollView>
