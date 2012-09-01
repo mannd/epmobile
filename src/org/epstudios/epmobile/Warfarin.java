@@ -170,13 +170,24 @@ public class Warfarin extends EpActivity implements OnClickListener {
 				else {
 					if (doseChange.message != null)
 						message = doseChange.message + "\n";
-					if (doseChange.direction == Direction.INCREASE)
+					boolean increaseDose = (doseChange.direction == Direction.INCREASE);
+					if (increaseDose)
 						message = message + "Increase ";
 					else
 						message = message + "Decrease ";
+					double lowEndDose = DoseCalculator
+							.getNewDoseFromPercentage(
+									doseChange.lowEnd / 100.0, getWeeklyDose(),
+									increaseDose);
+					double highEndDose = DoseCalculator
+							.getNewDoseFromPercentage(
+									doseChange.highEnd / 100.0,
+									getWeeklyDose(), increaseDose);
 					message = message + "weekly dose by "
-							+ String.valueOf(doseChange.lowEnd) + "% to "
-							+ String.valueOf(doseChange.highEnd) + "%.";
+							+ String.valueOf(doseChange.lowEnd) + "% ("
+							+ String.valueOf(lowEndDose) + " mg/wk) to "
+							+ String.valueOf(doseChange.highEnd) + "% ("
+							+ String.valueOf(highEndDose) + " mg/wk).";
 					if (weeklyDoseIsSane(getWeeklyDose(), getTabletDose()))
 						showDoses = true;
 				}

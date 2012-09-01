@@ -32,6 +32,12 @@ public class DoseCalculator {
 		this.weeklyDose = weeklyDose;
 	}
 
+	public static double getNewDoseFromPercentage(double percent,
+			double oldDose, boolean isIncrease) {
+		return Math.round(oldDose
+				+ (isIncrease ? oldDose * percent : -oldDose * percent));
+	}
+
 	public double[] weeklyDoses() {
 		double result[] = new double[NUM_DAYS];
 		// zeros are bad
