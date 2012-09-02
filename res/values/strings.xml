@@ -86,7 +86,7 @@
 		or others) or Aspirin (Oral anticoagulant preferred)</string>
     <string name="high_chadsvasc_message">Oral anticoagulation
 		(warfarin or dabigatran or others)</string>
-    <string name="warfarin_title">Warfarin Calculator</string>
+    <string name="warfarin_title">Warfarin Clinic</string>
     <string name="warfarin_label">Warfarin Dose Calculator</string>
     <string name="tablet_label">Tablet</string>
     <string name="tablet1">2 mg</string>
@@ -618,9 +618,9 @@
     <string name="h_duration_normal">10–25 msec</string>
     <string name="sact">SACT</string>
     <string name="sact_normal">45–125 msec</string>
-    <string name="csnrt">CSNRT</string>
+    <string name="csnrt">Corrected SNRT</string>
     <string name="csnrt_normal">&lt;550 msec</string>
-    <string name="srt_scl">SRT/SCL%</string>
+    <string name="srt_scl">SNRT/SCL%</string>
     <string name="srt_scl_normal">&lt;150%</string>
     <string name="aerp">Atrial ERP</string>
     <string name="aerp_normal">170–300 msec</string>
@@ -699,5 +699,25 @@
     <string name="sotalol_dosing_message">This is the recommended starting dose for treatment of atrial fibrillation.
         Initial QT should be &lt; 450 msec (package insert specifies QT, not QTc).  If QT remains &lt; 500 msec
         dose can be increased to 120 mg or 160</string>
+    <string name="warfarin_instructions">This calculator can be used to adjust the 
+		warfarin dose when a patient is on a stable weekly dosing schedule.  
+		It should not be used when first starting warfarin.  Select the tablet dose 
+		the patient uses and the target INR.  Enter the measured INR and the total 
+		number of mg the patient is taking per week (e.g. a patient taking 5 mg daily 
+		takes 5 x 7 = 35 mg of warfarin per week).  The calculator will determine 
+		the percentage weekly dose increase or decrease that is likely to bring the 
+		INR back into the target range.  When it is feasible, the calculator will 
+		suggest the number of tablets to take each day of the week to achieve the INR goal.  
+		An upper and lower range of dosing will be given; in some cases, 
+		when dosing changes are small, the upper and lower range will be identical.  
+		When there is a range of doses, you might decide to use the higher or 
+		lower dose depending on other factors, such as the patient\'s previous response 
+		to dosing changes or the patient\'s age.  Warfarin dosing is not an exact science!</string>
+    <string name="default_creatinine_unit_title">Default Creatinine Unit</string>
+    <string name="default_creatinine_unit_summary">Select default unit for creatinine</string>
+    <string name="creatinine_mg_per_dl">Cr (mg/dL)</string>
+    <string name="creatinine_mmol_per_l">Cr (\u00B5mol/L)</string>
+    <string name="creatinine_mg_hint">Creatinine (mg/dL)</string>
+    <string name="creatinine_mmol_hint">Creatinine (\u00B5mol/L)</string>
 
 </resources>

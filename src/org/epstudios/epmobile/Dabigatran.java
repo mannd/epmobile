@@ -38,7 +38,7 @@ public class Dabigatran extends DrugCalculator {
 
 	@Override
 	protected int getDose(int crClr) {
-		if (crClr >= 30)
+		if (crClr > 30)
 			return 150;
 		if (crClr >= 15)
 			return 75;

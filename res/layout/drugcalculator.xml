@@ -70,13 +70,7 @@
 
             <TableRow>
 
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/creatinine_label"
-                    android:textAppearance="?android:attr/textAppearanceMedium" >
-                </TextView>
+                <Spinner android:id="@+id/creatinine_spinner" />
 
                 <EditText
                     android:id="@+id/creatinineEditText"

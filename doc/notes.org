@@ -516,8 +516,10 @@
      - St. John's wort (CYP3A4 inducer) reduces amio levels
      - Misc
        - fentanyl, dextromethorphan, cholestyramine, disopyramide
-       - fluroroquinolones, macrolide antibiotics, azoles
-     - 
+       - fluroroquinolones (levofloxacin, ciprofloxacin, etc.),
+         macrolide antibiotics (erythromycin, clarithromycin, but not
+         azithromycin (does not inhibit CYP3A4), azoles
+         (e.g. ketoconazole)
 ** Drug Interaction Module
 *** Layout?
     - Contraindicated drug list
@@ -530,7 +532,7 @@
     - Drugs that increase amiodarone levels
       - CYP3A4 inhibitors
 	- protease inhibitors (e.g. indinavir)
-	- loratadine
+	- loratadine (Claritin)
 	- cimetidine
 	- trazadone
 	- grapefruit juice
@@ -568,7 +570,9 @@
       - increases CCB
       - increases propranolol
       - increases digoxin
-      - no warfarin effect
+      - no warfarin 
+    - Also inhibits P-glycoprotein (P-gp) transport
+     - increases digoxin level, BB and CCB levels
     - Contraindicated
       - strong CYP3A inhibitors
 	- ketoconazole

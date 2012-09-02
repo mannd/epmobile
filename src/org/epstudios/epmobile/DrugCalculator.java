@@ -38,6 +38,7 @@ public abstract class DrugCalculator extends EpActivity implements
 		ageEditText = (EditText) findViewById(R.id.ageEditText);
 		sexRadioGroup = (RadioGroup) findViewById(R.id.sexRadioGroup);
 		weightSpinner = (Spinner) findViewById(R.id.weight_spinner);
+		creatinineSpinner = (Spinner) findViewById(R.id.creatinine_spinner);
 
 		getPrefs();
 		setAdapters();
@@ -48,6 +49,10 @@ public abstract class DrugCalculator extends EpActivity implements
 		KG, LB
 	};
 
+	private enum CreatinineUnit {
+		MG, MMOL
+	};
+
 	private TextView calculatedDoseTextView;
 	private EditText weightEditText;
 	private EditText creatinineEditText;
@@ -55,12 +60,17 @@ public abstract class DrugCalculator extends EpActivity implements
 	private EditText ageEditText;
 	protected TextView ccTextView; // cc == Creatinine Clearance
 	private Spinner weightSpinner;
+	private Spinner creatinineSpinner;
 	private OnItemSelectedListener itemListener;
+	private OnItemSelectedListener creatItemListener;
 
 	private final static int KG_SELECTION = 0;
 	private final static int LB_SELECTION = 1;
+	private final static int MG_SELECTION = 0;
+	private final static int MMOL_SELECTION = 1;
 
 	private WeightUnit defaultWeightUnitSelection = WeightUnit.KG;
+	private CreatinineUnit defaultCreatinineUnitSelection = CreatinineUnit.MG;
 
 	public void onClick(View v) {
 		switch (v.getId()) {
@@ -95,7 +105,32 @@ public abstract class DrugCalculator extends EpActivity implements
 
 		};
 
+		creatinineSpinner.setOnItemSelectedListener(itemListener);
+
+		ArrayAdapter<CharSequence> creatAdapter = ArrayAdapter
+				.createFromResource(this, R.array.creatinine_unit_labels,
+						android.R.layout.simple_spinner_item);
+		creatAdapter
+				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		creatinineSpinner.setAdapter(creatAdapter);
+		if (defaultCreatinineUnitSelection.equals(CreatinineUnit.MG))
+			creatinineSpinner.setSelection(MG_SELECTION);
+		else
+			creatinineSpinner.setSelection(MMOL_SELECTION);
+		creatItemListener = new OnItemSelectedListener() {
+			public void onItemSelected(AdapterView<?> parent, View v,
+					int position, long id) {
+				updateCreatinineUnitSelection();
+			}
+
+			public void onNothingSelected(AdapterView<?> parent) {
+				// do nothing
+			}
+
+		};
+
 		weightSpinner.setOnItemSelectedListener(itemListener);
+		creatinineSpinner.setOnItemSelectedListener(creatItemListener);
 	}
 
 	private void updateWeightUnitSelection() {
@@ -108,10 +143,27 @@ public abstract class DrugCalculator extends EpActivity implements
 
 	private WeightUnit getWeightUnitSelection() {
 		int result = weightSpinner.getSelectedItemPosition();
-		if (result == 0)
+		if (result == KG_SELECTION)
 			return WeightUnit.KG;
 		else
 			return WeightUnit.LB;
+	}
+
+	private void updateCreatinineUnitSelection() {
+		CreatinineUnit creatinineUnitSelection = getCreatinineUnitSelection();
+		if (creatinineUnitSelection.equals(CreatinineUnit.MG))
+			creatinineEditText.setHint(getString(R.string.creatinine_mg_hint));
+		else
+			creatinineEditText
+					.setHint(getString(R.string.creatinine_mmol_hint));
+	}
+
+	private CreatinineUnit getCreatinineUnitSelection() {
+		int result = creatinineSpinner.getSelectedItemPosition();
+		if (result == MG_SELECTION)
+			return CreatinineUnit.MG;
+		else
+			return CreatinineUnit.MMOL;
 	}
 
 	private void calculateDose() {
@@ -125,8 +177,9 @@ public abstract class DrugCalculator extends EpActivity implements
 				weight = UnitConverter.lbsToKgs(weight);
 			double creatinine = Double.parseDouble(creatinineText.toString());
 			double age = Double.parseDouble(ageText.toString());
+			boolean useMmolUnits = (getCreatinineUnitSelection() == CreatinineUnit.MMOL);
 			int cc = CreatinineClearance.calculate(isMale, age, weight,
-					creatinine);
+					creatinine, useMmolUnits);
 			ccTextView.setTextColor(Color.WHITE); // reset to white here; text
 													// colored later
 			String ccMessage = getMessage(cc);
@@ -172,6 +225,12 @@ public abstract class DrugCalculator extends EpActivity implements
 			defaultWeightUnitSelection = WeightUnit.KG;
 		else
 			defaultWeightUnitSelection = WeightUnit.LB;
+		String creatinineUnitPreference = prefs.getString(
+				"default_creatinine_unit", "MG");
+		if (creatinineUnitPreference.equals("MG"))
+			defaultCreatinineUnitSelection = CreatinineUnit.MG;
+		else
+			defaultCreatinineUnitSelection = CreatinineUnit.MMOL;
 	}
 
 	protected String getMessage(int crCl) {

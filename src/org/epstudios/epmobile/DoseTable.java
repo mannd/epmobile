@@ -39,8 +39,8 @@ public class DoseTable extends EpActivity implements OnClickListener {
 		tabletDose = prefs.getFloat("tabletDose", 0);
 		double weeklyDose = prefs.getFloat("weeklyDose", 0);
 
-		this.setTitle("Suggested dosing using " + String.valueOf(tabletDose)
-				+ " mg tabs");
+		this.setTitle("Warfarin Dose (" + String.valueOf(tabletDose)
+				+ " mg tabs)");
 		TextView percent1TextView = (TextView) findViewById(R.id.percent1);
 		percent1TextView.setText(String.valueOf(lowEnd) + "% "
 				+ (increase ? "Increase" : "Decrease"));

@@ -99,9 +99,9 @@
         <item>@string/estes_criteria_title</item>
     </array>
     <array name="lqts_list">
-        <item>@string/long_qt_syndrome_diagnosis_title</item>
-        <item>@string/lqt_subtypes_title</item>
         <item>@string/lqt_ecg_title</item>
+        <item>@string/lqt_subtypes_title</item>
+        <item>@string/long_qt_syndrome_diagnosis_title</item>
     </array>
     <array name="vt_list">
         <item>@string/epicardial_vt_title</item>
@@ -127,6 +127,14 @@
     <array name="weight_unit_values">
         <item>KG</item>
         <item>LB</item>
+    </array>
+    <array name="creatinine_unit_labels">
+        <item>@string/creatinine_mg_per_dl</item>
+        <item>@string/creatinine_mmol_per_l</item>
+    </array>
+    <array name="creatinine_unit_values">
+        <item>MG</item>
+        <item>MMOL</item>
     </array>
 
 </resources>

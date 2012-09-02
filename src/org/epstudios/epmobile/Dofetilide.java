@@ -24,9 +24,9 @@ public class Dofetilide extends DrugCalculator {
 	protected int getDose(int crClr) {
 		if (crClr > 60)
 			return 500;
-		if (crClr > 40)
+		if (crClr >= 40)
 			return 250;
-		if (crClr > 20)
+		if (crClr >= 20)
 			return 125;
 		return 0;
 	}

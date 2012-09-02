@@ -22,10 +22,10 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.RadioGroup;
-import android.widget.RadioButton;
-import android.widget.TextView;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 
 public class CycleLength extends EpActivity implements OnClickListener {
 	@Override
@@ -84,7 +84,7 @@ public class CycleLength extends EpActivity implements OnClickListener {
 			int result = Integer.parseInt(resultText.toString());
 			if (result == 0)
 				throw new NumberFormatException();
-			result = 60000 / result;
+			result = calculate(result);
 			if (intervalRateRadioGroup.getCheckedRadioButtonId() == R.id.cl_button)
 				resultTextView.setText("HR = " + String.valueOf(result)
 						+ " bpm");
@@ -95,6 +95,12 @@ public class CycleLength extends EpActivity implements OnClickListener {
 			resultTextView.setText("Invalid!");
 			resultTextView.setTextColor(Color.RED);
 		}
+	}
+
+	public static int calculate(int value) {
+		// assumes 0 has been weeded out before calling
+		assert (value != 0);
+		return (int) Math.round(60000.0 / value);
 	}
 
 	private void clearEntries() {

@@ -1,0 +1,22 @@
+EP Mobile v1.3 Release Notes
+
+Changes since v1.2
+
+* Fixed endless loop bug in Warfarin dose table calculator that could crash program.
+
+* Warfarin dose tables now generated for much wider range of doses.
+
+* Calculated doses are given along with percentage dose changes in Warfarin calculator.
+
+* Warfarin Calculator renamed Warfarin Clinic.
+
+* Instructions added to Warfarin Calculator/Clinic.
+
+* Added option for micromol/L units for creatinine in drug dose calculators and in settings.
+
+* Cycle Length Calculator now rounds instead of truncates result.
+
+* Dabigatran and Dofetilide Calculators now give more accurate results when creatinine clearance is on a boundary between dose possibilities.
+
+* Some other minor cosmetic changes.
+

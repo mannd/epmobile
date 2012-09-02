@@ -5,7 +5,7 @@ If you have suggestions, features you'd like to see, or complaints, please email
 EP Mobile -- The Swiss Army Knife of Electrophysiology!
 
 Current features: 
-- NEW! Sotalol dose calculator
+- Sotalol dose calculator
 - Epicardial vs endocardial VT
 - Outflow tract VT location
 - Mitral annulus VT location
