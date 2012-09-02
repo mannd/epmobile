@@ -124,10 +124,11 @@
   - update doc/description.txt
   - update screenshots - resize them with GIMP to 320 x 480!
   - git commit
-  - git flow release finish v0.x
+  - git flow release finish vx.y
   - git push --tags origin master
+  - git push origin develop
   - refresh eclipse epmobile
-  - make/sign epmobile.apk, save it in dev/epmobileapp/vX.Y.Z/
+  - make/sign epmobile.apk, save it in dev/epmobileapp/later_verisons/vX.Y.Z/
   - on market.android.com update product details
   - upload apk, deactivate old one
   - Tweet It! (after confirming it's on the Market)
