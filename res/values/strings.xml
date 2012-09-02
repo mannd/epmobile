@@ -715,7 +715,9 @@
 		to dosing changes or the patient\'s age.  Warfarin dosing is not an exact science!</string>
     <string name="default_creatinine_unit_title">Default Creatinine Unit</string>
     <string name="default_creatinine_unit_summary">Select default unit for creatinine</string>
-    <string name="creatinine_mg_per_dl">Creatinine (mg/dL)</string>
-    <string name="creatinine_mmol_per_l">Creatinine (\u00B5mol/L)</string>
+    <string name="creatinine_mg_per_dl">Cr (mg/dL)</string>
+    <string name="creatinine_mmol_per_l">Cr (\u00B5mol/L)</string>
+    <string name="creatinine_mg_hint">Creatinine (mg/dL)</string>
+    <string name="creatinine_mmol_hint">Creatinine (\u00B5mol/L)</string>
 
 </resources>

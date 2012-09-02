@@ -23,7 +23,8 @@ public class CreatinineClearance {
 				crClr = crClr * 1.0447;
 			crClr = crClr / creatinine;
 		}
-		return crClr;
+		// don't allow negative creatinine clearance
+		return (crClr < 0) ? 0 : crClr;
 	}
 
 }
