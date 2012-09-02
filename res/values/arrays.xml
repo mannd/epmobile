@@ -128,5 +128,13 @@
         <item>KG</item>
         <item>LB</item>
     </array>
+    <array name="creatinine_unit_labels">
+        <item>@string/creatinine_mg_per_dl</item>
+        <item>@string/creatinine_mmol_per_l</item>
+    </array>
+    <array name="creatinine_unit_values">
+        <item>MG</item>
+        <item>MMOL</item>
+    </array>
 
 </resources>
