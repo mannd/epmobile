@@ -147,10 +147,7 @@ public class Warfarin extends EpActivity implements OnClickListener {
 	}
 
 	public static Boolean weeklyDoseIsSane(double dose, double tabletSize) {
-		// need to make sure not only dose is sane, but max change to dose is
-		// sane
-		return dose - 0.2 * dose >= 7 * 0.5 * tabletSize
-				&& dose + 0.2 * dose <= 7 * 1.5 * tabletSize;
+		return dose > (4 * 0.5 * tabletSize) && dose < (2 * tabletSize * 7);
 	}
 
 	private void calculateResult() {
