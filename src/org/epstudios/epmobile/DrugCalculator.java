@@ -126,7 +126,7 @@ public abstract class DrugCalculator extends EpActivity implements
 			double creatinine = Double.parseDouble(creatinineText.toString());
 			double age = Double.parseDouble(ageText.toString());
 			int cc = CreatinineClearance.calculate(isMale, age, weight,
-					creatinine);
+					creatinine, false);
 			ccTextView.setTextColor(Color.WHITE); // reset to white here; text
 													// colored later
 			String ccMessage = getMessage(cc);
