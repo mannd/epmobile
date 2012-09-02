@@ -53,7 +53,7 @@ public class DoseCalculator {
 
 	}
 
-	public double[] tryDoses(double[] doses, Order order, int nextDay) {
+	public void tryDoses(double[] doses, Order order, int nextDay) {
 		// recursive algorithm, finds closest dose (1st >= target)
 		boolean allowZeroDoses = false;
 		if (order == Order.DECREASE) {
@@ -76,7 +76,7 @@ public class DoseCalculator {
 			while (actualWeeklyDose(doses) < weeklyDose) {
 				// check for all double tablets, we're done
 				if (allDoubleTablets(doses)) {
-					return doses;
+					return;
 				}
 				double value = doses[nextDay];
 				if (value < 2.0)
@@ -87,7 +87,6 @@ public class DoseCalculator {
 				tryDoses(doses, order, nextDay);
 			}
 		}
-		return doses;
 	}
 
 	private Boolean allHalfTablets(double[] doses) {
