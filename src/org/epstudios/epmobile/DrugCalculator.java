@@ -14,7 +14,7 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public abstract class DrugCalculator extends EpActivity implements
+public abstract class DrugCalculator extends EpDrugCalculatorActivity implements
 		OnClickListener {
 
 	public DrugCalculator() {
