@@ -20,6 +20,7 @@ package org.epstudios.epmobile;
 
 import android.app.ListActivity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -45,6 +46,12 @@ public abstract class EpListActivity extends ListActivity {
 			return true;
 		}
 		return false;
+	}
+
+	@Override
+	protected void onCreate(Bundle saveInstanceState) {
+		getActionBar().setDisplayHomeAsUpEnabled(true);
+		super.onCreate(saveInstanceState);
 	}
 
 }
