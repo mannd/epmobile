@@ -554,7 +554,7 @@
     <string name="estes_definite_lvh_message">Definite Left Ventricular Hypertrophy</string>
     <string name="estes_key">Left ventricular strain = ST-J point
     depression \u2265 1 mm and inverted T wave in lead V5.  Left
-    atrial enlargement = P terminal force in V1 > 1 mm or 40 msec.</string>
+    atrial enlargement = P terminal force in V1 \u2265 1 mm deep and \u2265 40 msec wide.</string>
     <!-- Long QT Subtypes -->
     <string name="lqt_syndrome_title">Long QT Syndrome</string>
     <string name="lqt_syndrome_label">Long QT Syndrome</string>
