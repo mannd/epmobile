@@ -62,9 +62,9 @@ public class DoseCalculator {
 				if (allHalfTablets(doses)) {
 					allowZeroDoses = true;
 				}
-				double value = doses[nextDay];
+				double value = doses[orderedDays[nextDay]];
 				if (allowZeroDoses && value > 0.0 || value > 0.5)
-					doses[orderedDays[nextDay]] = doses[orderedDays[nextDay]] - 0.5;
+					doses[orderedDays[nextDay]] = value - 0.5;
 				++nextDay;
 				if (nextDay > NUM_DAYS - 1)
 					nextDay = 0;
@@ -78,9 +78,9 @@ public class DoseCalculator {
 				if (allDoubleTablets(doses)) {
 					return;
 				}
-				double value = doses[nextDay];
+				double value = doses[orderedDays[nextDay]];
 				if (value < 2.0)
-					doses[orderedDays[nextDay]] = doses[orderedDays[nextDay]] + 0.5;
+					doses[orderedDays[nextDay]] = value + 0.5;
 				++nextDay;
 				if (nextDay > NUM_DAYS - 1)
 					nextDay = 0;
