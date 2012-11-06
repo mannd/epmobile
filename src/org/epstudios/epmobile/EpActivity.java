@@ -20,6 +20,7 @@ package org.epstudios.epmobile;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -45,6 +46,14 @@ public abstract class EpActivity extends Activity {
 			return true;
 		}
 		return false;
+	}
+
+	@Override
+	protected void onCreate(Bundle saveInstanceState) {
+		super.onCreate(saveInstanceState);
+		int versionNumber = Integer.valueOf(android.os.Build.VERSION.SDK);
+		if (versionNumber >= 11)
+			getActionBar().setDisplayHomeAsUpEnabled(true);
 	}
 
 }

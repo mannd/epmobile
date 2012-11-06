@@ -18,33 +18,31 @@
 
 package org.epstudios.epmobile;
 
-import android.app.ListActivity;
 import android.content.Intent;
-import android.view.Menu;
-import android.view.MenuInflater;
+import android.os.Bundle;
 import android.view.MenuItem;
 
-// adds option menu functions
-public abstract class EpListActivity extends ListActivity {
+public abstract class EpListActivity extends EpMainListActivity {
+	// adds up button
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		super.onCreateOptionsMenu(menu);
-		MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.menu, menu);
-		return true;
+	protected void onCreate(Bundle saveInstanceState) {
+		super.onCreate(saveInstanceState);
+		int versionNumber = Integer.valueOf(android.os.Build.VERSION.SDK);
+		if (versionNumber >= 11)
+			getActionBar().setDisplayHomeAsUpEnabled(true);
 	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-		case R.id.settings:
-			startActivity(new Intent(this, Prefs.class));
-			return true;
-		case R.id.about:
-			startActivity(new Intent(this, About.class));
+		case android.R.id.home:
+			Intent parentActivityIntent = new Intent(this, EpMobile.class);
+			parentActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+					| Intent.FLAG_ACTIVITY_NEW_TASK);
+			startActivity(parentActivityIntent);
+			finish();
 			return true;
 		}
-		return false;
+		return super.onOptionsItemSelected(item);
 	}
-
 }

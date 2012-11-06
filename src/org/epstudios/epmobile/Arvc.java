@@ -18,10 +18,26 @@
 
 package org.epstudios.epmobile;
 
+import android.content.Intent;
+import android.view.MenuItem;
 import android.widget.CheckBox;
 import android.widget.RadioGroup;
 
 public class Arvc extends DiagnosticScore {
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case android.R.id.home:
+			Intent parentActivityIntent = new Intent(this, ArvcList.class);
+			parentActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+					| Intent.FLAG_ACTIVITY_NEW_TASK);
+			startActivity(parentActivityIntent);
+			finish();
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
+	}
 
 	// Algorithm
 	// definite: 2 major or (1 major + 2 minor) or 4 minor
