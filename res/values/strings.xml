@@ -21,8 +21,8 @@
     <string name="dabigatran_calculator_title">Dabigatran Calculator</string>
     <string name="dabigatran_label">Dabigatran Calculator</string>
     <string name="qtc_calculator_title">QTc Calculator</string>
-    <string name="cycle_length_label">Cycle Length Calculator</string>
-    <string name="cycle_length_calculator_title">Cycle Length Calculator</string>
+    <string name="cycle_length_label">Interval/Rate Conversion</string>
+    <string name="cycle_length_calculator_title">Interval/Rate Conversion</string>
     <string name="rr_hint">RR (msec)</string>
     <string name="interval_rate_title">Interval or Rate</string>
     <string name="interval_rate_summary">Use RR interval or heart rate as default</string>
@@ -41,10 +41,10 @@
     <string name="creatinine_clearance_label"></string>
     <string name="male_label">Male</string>
     <string name="female_label">Female</string>
-    <string name="cl_label">Cycle Length (msec)</string>
-    <string name="cl_hint">CL (msec)</string>
-    <string name="hr_label">Heart Rate (bpm)</string>
-    <string name="hr_hint">HR (bpm)</string>
+    <string name="cl_label">Interval to Rate</string>
+    <string name="cl_hint">Interval (msec)</string>
+    <string name="hr_label">Rate to Interval</string>
+    <string name="hr_hint">Rate (bpm)</string>
     <string name="calculated_result_label"></string>
     <string name="qtc_formula_title">QTc Formula</string>
     <string name="qtc_formula_summary">Select the QTc formula</string>

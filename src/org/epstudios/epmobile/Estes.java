@@ -1,6 +1,8 @@
 package org.epstudios.epmobile;
 
 import android.app.AlertDialog;
+import android.content.Intent;
+import android.view.MenuItem;
 import android.widget.CheckBox;
 
 public class Estes extends RiskScore {
@@ -11,6 +13,20 @@ public class Estes extends RiskScore {
 	private final int LAD = 4;
 	private final int QRS_DURATION = 5;
 	private final int INTRINSICOID = 6;
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case android.R.id.home:
+			Intent parentActivityIntent = new Intent(this, LvhList.class);
+			parentActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+					| Intent.FLAG_ACTIVITY_NEW_TASK);
+			startActivity(parentActivityIntent);
+			finish();
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
+	}
 
 	@Override
 	protected void calculateResult() {
