@@ -220,7 +220,7 @@
     <string name="root_mean_square_label">Root-mean-square voltage of terminal 40 msec \u2264 20 \u03bcV</string>
     <string name="terminal_activation_label">Terminal activation duration</string>
     <string name="terminal_activation_duration_label">Terminal activation duration of QRS
-	\u2265 55 msec measure from the nadir of the S wave to the end of the QRS including
+	\u2265 55 msec measured from the nadir of the S wave to the end of the QRS including
 	R\', in V1, V2, or V3, in the absence of complete RBBB</string>
     <string name="arrhythmias_label">V. Arrhythmias</string>
     <string name="major_arrhythmias_label">Nonsustained or sustained VT of LBBB morphology
@@ -460,8 +460,8 @@
     <string name="milstein_step_2_5">LBBB (+ QRS \u2265 90 msec in Lead I and rS in V1 and V2)?</string>
     <string name="milstein_step_3">Q or isoelectric delta wave two of Leads II, III, aVF?</string>
     <string name="milstein_step_4">Rs or RS in V1, V2, or V3?</string>
-    <string name="milstein_step_6">QRS axis \u003e +30\u00b0</string>
-    <string name="milstein_step_7">Rs or RS in V1 or V2</string>
+    <string name="milstein_step_6">QRS axis \u003e +30\u00b0?</string>
+    <string name="milstein_step_7">Rs or RS in V1 or V2?</string>
     <string name="anatomy_av_annulus_title">Anatomy of AV Annulus</string>
     <!-- Long QT -->
     <string name="long_qt_syndrome_diagnosis_title">Long QT Syndrome Diagnosis</string>
@@ -647,7 +647,7 @@
         the peak of the R wave in V2. ID of \u2265 85 msec predicts epicardial origin
         (Sens 87%, Spec 90%).\n\nShortest RS complex (RS): Measured from the earliest
         ventricular activation to the nadir of the first S wave in any precordial lead.
-        RS \u2265 121 msec predicts epicardial origin (Sens 76%, Spec 85%)\n\nReference:
+        RS \u2265 121 msec predicts epicardial origin (Sens 76%, Spec 85%).\n\nReference:
         http://circ.ahajournals.org/content/109/15/1842.full</string>
     <string name="outflow_vt_late_transition_step">QRS transition (first precordial lead with R > S) V4 or later?</string>
     <string name="outflow_vt_free_wall_step">QRS duration \u2265 140 msec or R wave notching in inferior leads?</string>
@@ -676,10 +676,10 @@
         it is not possible to use an algorithm to determine from which ventricle the VT arises.
         See Tanner et al. JACC 2005;45:418. http://content.onlinejacc.org/cgi/content/short/45/3/418.
         \nThis algorithm was developed from Joshi S and Wilber DJ, J Cardiovasc Electrophysiol 2005;16:Suppl I:S52,
-        Bala r and Marchlinski FE, Heart Rhythm 2007;4:366, and Srivathsan K et al. Indian Pacing Electrophysiol J
+        Bala R and Marchlinski FE, Heart Rhythm 2007;4:366, and Srivathsan K et al. Indian Pacing Electrophysiol J
         2005;5:106. http://cogprints.org/4219/1/srivathsan.htm</string>
     <string name="mitral_annular_vt_instructions" formatted="false"> Use this module to predict the
-		location of idiopathic mitral annular VT or PVCs based on the ECG.  Note that this module does not deal with
+		location of idiopathic mitral annular ventricular tachycardia or premature ventricular complexes based on the ECG.  Note that this module does not deal with
 		mitral isthmus VT in the setting of inferior infarction (see Wilber D et al. Circulation 1995;92:3481
 		http://circ.ahajournals.org/content/92/12/3481.long)
 		Reference: Tada H et al.  JACC 2005;45:877.</string>

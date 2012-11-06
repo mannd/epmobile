@@ -26,8 +26,10 @@ public abstract class EpListActivity extends EpMainListActivity {
 	// adds up button
 	@Override
 	protected void onCreate(Bundle saveInstanceState) {
-		getActionBar().setDisplayHomeAsUpEnabled(true);
 		super.onCreate(saveInstanceState);
+		int versionNumber = Integer.valueOf(android.os.Build.VERSION.SDK);
+		if (versionNumber >= 11)
+			getActionBar().setDisplayHomeAsUpEnabled(true);
 	}
 
 	@Override
