@@ -46,8 +46,13 @@ public class CycleLength extends EpActivity implements OnClickListener {
 		hrRadioButton = (RadioButton) findViewById(R.id.hr_button);
 		clRadioButton.setOnClickListener(this);
 		hrRadioButton.setOnClickListener(this);
-
-		setInputHint();
+		measurementTextView = (TextView) findViewById(R.id.MeasurementTextView);
+		if (savedInstanceState != null) {
+			String savedLabel = savedInstanceState.getString("label");
+			String savedHint = savedInstanceState.getString("hint");
+			measurementTextView.setText(savedLabel);
+			inputEditText.setHint(savedHint);
+		}
 	}
 
 	@Override
@@ -64,11 +69,20 @@ public class CycleLength extends EpActivity implements OnClickListener {
 		return super.onOptionsItemSelected(item);
 	}
 
+	@Override
+	protected void onSaveInstanceState(Bundle outState) {
+		super.onSaveInstanceState(outState);
+		outState.putString("label", measurementTextView.getText().toString());
+		outState.putString("hint", inputEditText.getHint().toString());
+
+	}
+
 	private TextView resultTextView;
 	private EditText inputEditText;
 	private RadioGroup intervalRateRadioGroup;
 	private RadioButton clRadioButton;
 	private RadioButton hrRadioButton;
+	private TextView measurementTextView;
 
 	public void onClick(View v) {
 		switch (v.getId()) {
@@ -81,6 +95,7 @@ public class CycleLength extends EpActivity implements OnClickListener {
 		case R.id.cl_button:
 		case R.id.hr_button:
 			setInputHint();
+			setMeasurementTextView();
 			break;
 		}
 	}
@@ -90,7 +105,13 @@ public class CycleLength extends EpActivity implements OnClickListener {
 			inputEditText.setHint(R.string.cl_hint);
 		else
 			inputEditText.setHint(R.string.hr_hint);
+	}
 
+	private void setMeasurementTextView() {
+		if (intervalRateRadioGroup.getCheckedRadioButtonId() == R.id.cl_button)
+			measurementTextView.setText(R.string.cl_hint);
+		else
+			measurementTextView.setText(R.string.hr_hint);
 	}
 
 	private void calculateResult() {
@@ -102,10 +123,10 @@ public class CycleLength extends EpActivity implements OnClickListener {
 				throw new NumberFormatException();
 			result = calculate(result);
 			if (intervalRateRadioGroup.getCheckedRadioButtonId() == R.id.cl_button)
-				resultTextView.setText("HR = " + String.valueOf(result)
+				resultTextView.setText("Rate = " + String.valueOf(result)
 						+ " bpm");
 			else
-				resultTextView.setText("CL = " + String.valueOf(result)
+				resultTextView.setText("Interval = " + String.valueOf(result)
 						+ " msec");
 		} catch (NumberFormatException e) {
 			resultTextView.setText("Invalid!");
