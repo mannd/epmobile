@@ -92,7 +92,7 @@ public class DoseCalculator {
 	private Boolean allHalfTablets(double[] doses) {
 		Boolean allHalfTabs = true;
 		for (int i = 0; i < doses.length; ++i)
-			if (doses[i] != 0.5)
+			if (doses[i] > 0.5)
 				allHalfTabs = false;
 		return allHalfTabs;
 	}
