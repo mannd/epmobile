@@ -18,6 +18,7 @@
 
 package org.epstudios.epmobile;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -28,8 +29,11 @@ public abstract class EpListActivity extends EpMainListActivity {
 	protected void onCreate(Bundle saveInstanceState) {
 		super.onCreate(saveInstanceState);
 		int versionNumber = Integer.valueOf(android.os.Build.VERSION.SDK);
-		if (versionNumber >= 11)
-			getActionBar().setDisplayHomeAsUpEnabled(true);
+		if (versionNumber >= 11) {
+			ActionBar actionBar = getActionBar();
+			if (actionBar != null)
+				actionBar.setDisplayHomeAsUpEnabled(true);
+		}
 	}
 
 	@Override
