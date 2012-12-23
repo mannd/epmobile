@@ -621,3 +621,7 @@
         Contraindicated if CrCl < 40.  
       - can increase to 120 mg or 160 mg if QTc < 500 ms
       - 3 days recommended for hospitalization
+
+** Long QT drugs
+*** website: http://www.azcert.org/medical-pros/drug-lists/printable-drug-list.cfm
+*** 
