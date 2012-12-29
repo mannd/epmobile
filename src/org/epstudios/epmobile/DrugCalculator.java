@@ -69,6 +69,9 @@ public abstract class DrugCalculator extends EpDrugCalculatorActivity implements
 	private final static int MG_SELECTION = 0;
 	private final static int MMOL_SELECTION = 1;
 
+	// phoney result of getDose() to indicate special dosing for apixaban
+	protected final static int USE_APIXABAN_DOSING = 9999;
+
 	private WeightUnit defaultWeightUnitSelection = WeightUnit.KG;
 	private CreatinineUnit defaultCreatinineUnitSelection = CreatinineUnit.MG;
 
@@ -185,7 +188,9 @@ public abstract class DrugCalculator extends EpDrugCalculatorActivity implements
 			String ccMessage = getMessage(cc);
 			ccTextView.setText(ccMessage);
 			int dose = getDose(cc);
-			if (dose == 0) {
+			if (dose == USE_APIXABAN_DOSING) {
+				// special processing here
+			} else if (dose == 0) {
 				calculatedDoseTextView.setText("Do not use!");
 				calculatedDoseTextView.setTextColor(Color.RED);
 				ccTextView.setTextColor(Color.RED);

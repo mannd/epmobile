@@ -719,5 +719,6 @@
     <string name="creatinine_mmol_per_l">Cr (\u00B5mol/L)</string>
     <string name="creatinine_mg_hint">Creatinine (mg/dL)</string>
     <string name="creatinine_mmol_hint">Creatinine (\u00B5mol/L)</string>
+    <string name="apixaban_calculator_title">Apixaban Calculator</string>
 
 </resources>
