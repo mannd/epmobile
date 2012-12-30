@@ -192,21 +192,25 @@ public abstract class DrugCalculator extends EpDrugCalculatorActivity implements
 			double dose = getDose(cc);
 			if (dose == USE_APIXABAN_DOSING) {
 				// special processing here
-				if (cc >= 15 && cc <= 29) {
+				if (cc <= 24) {
 					calculatedDoseTextView.setText("Dosing Undefined");
-					calculatedDoseTextView.setTextColor(Color.YELLOW);
 					ccTextView.setTextColor(Color.YELLOW);
-				} else if ((creatinine >= 1.5 && (age >= 80 || weight <= 60))
-						|| (age >= 80 && weight <= 60))
-					dose = 2.5;
-				else
-					dose = 5;
-
+				} else {
+					ccTextView.setTextColor(Color.WHITE);
+					if ((creatinine >= 1.5 && (age >= 80 || weight <= 60))
+							|| (age >= 80 && weight <= 60))
+						dose = 2.5;
+					else
+						dose = 5;
+				}
 			}
 			if (dose == 0) {
 				calculatedDoseTextView.setText("Do not use!");
 				calculatedDoseTextView.setTextColor(Color.RED);
 				ccTextView.setTextColor(Color.RED);
+			} else if (dose == USE_APIXABAN_DOSING) {
+				calculatedDoseTextView.setTextColor(Color.LTGRAY);
+				calculatedDoseTextView.setText("Dose Undefined");
 			} else {
 				calculatedDoseTextView.setTextColor(Color.LTGRAY);
 				// format to only show decimal if non-zero
