@@ -22,26 +22,17 @@ public class Apixaban extends DrugCalculator {
 
 	@Override
 	protected int getDose(int crCl) {
-		if (crCl >= 15)
+		if (crCl >= 30)
 			return USE_APIXABAN_DOSING;
 		return 0;
 	}
 
 	@Override
-	protected String doseFrequency(int crCl) {
-		if (crCl > 60)
-			return " mg BID";
-		if (crCl >= 40)
-			return " mg daily";
-		return "";
-	}
-
-	@Override
 	protected String getMessage(int crCl) {
 		String msg = super.getMessage(crCl);
-		if (crCl >= 40) {
-			msg += "\n" + getString(R.string.sotalol_dosing_message);
-			msg += doseFrequency(crCl) + ".";
+		if (crCl >= 15 && crCl <= 29) {
+			msg += "\n" + getString(R.string.apixaban_use_caution_message);
+
 		}
 		return msg;
 	}

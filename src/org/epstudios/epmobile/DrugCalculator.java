@@ -1,5 +1,7 @@
 package org.epstudios.epmobile;
 
+import java.text.DecimalFormat;
+
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -187,17 +189,29 @@ public abstract class DrugCalculator extends EpDrugCalculatorActivity implements
 													// colored later
 			String ccMessage = getMessage(cc);
 			ccTextView.setText(ccMessage);
-			int dose = getDose(cc);
+			double dose = getDose(cc);
 			if (dose == USE_APIXABAN_DOSING) {
 				// special processing here
-			} else if (dose == 0) {
+				if (cc >= 15 && cc <= 29) {
+					calculatedDoseTextView.setText("Dosing Undefined");
+					calculatedDoseTextView.setTextColor(Color.YELLOW);
+					ccTextView.setTextColor(Color.YELLOW);
+				} else if ((creatinine >= 1.5 && (age >= 80 || weight <= 60))
+						|| (age >= 80 && weight <= 60))
+					dose = 2.5;
+				else
+					dose = 5;
+
+			}
+			if (dose == 0) {
 				calculatedDoseTextView.setText("Do not use!");
 				calculatedDoseTextView.setTextColor(Color.RED);
 				ccTextView.setTextColor(Color.RED);
 			} else {
 				calculatedDoseTextView.setTextColor(Color.LTGRAY);
-				calculatedDoseTextView.setText(String.valueOf(dose)
-						+ doseFrequency(cc));
+				// format to only show decimal if non-zero
+				calculatedDoseTextView.setText(new DecimalFormat("#.#")
+						.format(dose) + doseFrequency(cc));
 			}
 		} catch (NumberFormatException e) {
 			calculatedDoseTextView.setText("Invalid!");

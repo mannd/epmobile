@@ -720,5 +720,7 @@
     <string name="creatinine_mg_hint">Creatinine (mg/dL)</string>
     <string name="creatinine_mmol_hint">Creatinine (\u00B5mol/L)</string>
     <string name="apixaban_calculator_title">Apixaban Calculator</string>
+    <string name="apixaban_use_caution_message">Limited clinical data available at this creatinine clearance.  
+        	Use caution because of higher bleeding risk.</string>
 
 </resources>
