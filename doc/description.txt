@@ -1,36 +1,30 @@
-EP Mobile provides cardiology tools for cardiac electrophysiologists, cardiologists, internists, emergency room physicians, medical students, nurses, technicians, and other health care workers who deal with cardiac arrhythmias. 
+EP Mobile provides tools for cardiac electrophysiologists, cardiologists, cardiology fellows, internists, emergency room physicians, medical students, nurses, technicians, and other health care workers who deal with cardiac arrhythmias. 
 
 If you have suggestions, features you'd like to see, or complaints, please email us! 
 
 EP Mobile -- The Swiss Army Knife of Electrophysiology!
 
-Current features: 
-- Sotalol dose calculator
-- Epicardial vs endocardial VT
-- Outflow tract VT location
-- Mitral annulus VT location
-- Brugada ECG descriptions
-- Long QT subtypes and ECG patterns
-- Brugada Syndrome ECG patterns
-- LVH ECG criteria, including Romhilt-Estes and others
-- ARVC/D 1994 diagnostic criteria
-- Long QT syndrome diagnosis
-- WPW accessory pathway location algorithms (Arruda,
-  Modified Arruda, and Milstein)
-- HEMORR2HAGES bleeding risk score
-- CMS (Medicare) ICD guidelines calculator
+Features: 
+- Drug dose calculators: dabigatran, dofetilide, rivaroxaban, 
+	sotalol and apixaban
+- Warfarin clinic weekly dose calculator
+- Interval to rate conversion
+- QTc calculator (Bazett, Fridericia, Sagie and Hodges formulas)
+- Atrial fibrillation risk scores (CHADS2, CHA2DS2-VASc)
+- Bleeding risk scores (HAS-BLED, HEMORR2HAGES)
 - Hypertrophic Cardiomyopathy risk score calculator
-- Dofetilide (Tikosyn) dose calculator
-- QTc calculator (Bazett, Fridericia, Sagie or Hodges)
-- Cycle length to heart rate calculator
-- Atrial fibrillation risk scores (CHADS, CHADS-VASc, HAS-BLED)
-- Dabigatran (Pradaxa) dose calculator
-- Warfarin (Coumadin) weekly dose calculator
-- Wide complex tachycardia algorithms
-- Normal EP values
-- ARVC/D diagnosis (2010 criteria)
+- CMS (Medicare) ICD guidelines calculator
+- VT localization algorithms
+	- Epicardial vs endocardial VT
+	- Outflow tract VT
+	- Mitral annular VT
+- WPW accessory pathway location (Arruda,  Modified Arruda, and Milstein)
+- Long QT diagnosis, subtypes and ECG patterns
 - Short QT syndrome diagnosis
-- Rivaroxaban dose calculator
+- Brugada syndrome diagnosis
+- LVH ECG criteria, including Romhilt-Estes score and others
+- ARVC/D 1994 and 2010 diagnostic criteria
+- Normal EP values
 
 Categories: Medicine, Cardiology, Electrophysiology, Arrhythmia.
 
