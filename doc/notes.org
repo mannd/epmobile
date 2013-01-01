@@ -122,7 +122,7 @@
   - run git log --pretty=oneline and update changes/x.y.z.txt
   - git add changes/x.y.z.txt
   - update doc/description.txt
-  - update screenshots - resize them with GIMP to 320 x 480!
+  - update screenshots - resize them with GIMP to 480 x 800.
   - git commit
   - git flow release finish vx.y
   - git push --tags origin master
