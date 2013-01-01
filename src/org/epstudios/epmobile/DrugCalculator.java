@@ -182,6 +182,13 @@ public abstract class DrugCalculator extends EpDrugCalculatorActivity implements
 				weight = UnitConverter.lbsToKgs(weight);
 			double creatinine = Double.parseDouble(creatinineText.toString());
 			double age = Double.parseDouble(ageText.toString());
+			if (age < 18) {
+				calculatedDoseTextView.setText("Do not use!");
+				calculatedDoseTextView.setTextColor(Color.RED);
+				ccTextView.setTextColor(Color.RED);
+				ccTextView.setText(getString(R.string.pediatric_use_warning));
+				return;
+			}
 			boolean useMmolUnits = (getCreatinineUnitSelection() == CreatinineUnit.MMOL);
 			int cc = CreatinineClearance.calculate(isMale, age, weight,
 					creatinine, useMmolUnits);
@@ -193,7 +200,8 @@ public abstract class DrugCalculator extends EpDrugCalculatorActivity implements
 			if (dose == USE_APIXABAN_DOSING) {
 				// special processing here
 				if (cc <= 24) {
-					calculatedDoseTextView.setText("Dosing Undefined");
+					calculatedDoseTextView
+							.setText(getString(R.string.dose_undefined_warning));
 					ccTextView.setTextColor(Color.YELLOW);
 				} else {
 					ccTextView.setTextColor(Color.WHITE);
@@ -206,12 +214,14 @@ public abstract class DrugCalculator extends EpDrugCalculatorActivity implements
 				}
 			}
 			if (dose == 0) {
-				calculatedDoseTextView.setText("Do not use!");
+				calculatedDoseTextView
+						.setText(getString(R.string.do_not_use_warning));
 				calculatedDoseTextView.setTextColor(Color.RED);
 				ccTextView.setTextColor(Color.RED);
 			} else if (dose == USE_APIXABAN_DOSING) {
 				calculatedDoseTextView.setTextColor(Color.LTGRAY);
-				calculatedDoseTextView.setText("Dose Undefined");
+				calculatedDoseTextView
+						.setText(getString(R.string.dose_undefined_warning));
 			} else {
 				calculatedDoseTextView.setTextColor(Color.LTGRAY);
 				// format to only show decimal if non-zero
@@ -219,7 +229,7 @@ public abstract class DrugCalculator extends EpDrugCalculatorActivity implements
 						.format(dose) + doseFrequency(cc));
 			}
 		} catch (NumberFormatException e) {
-			calculatedDoseTextView.setText("Invalid!");
+			calculatedDoseTextView.setText(getString(R.string.invalid_warning));
 			calculatedDoseTextView.setTextColor(Color.RED);
 			ccTextView.setText(R.string.creatinine_clearance_label);
 		}
