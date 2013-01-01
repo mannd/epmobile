@@ -197,7 +197,8 @@ public abstract class DrugCalculator extends EpDrugCalculatorActivity implements
 					ccTextView.setTextColor(Color.YELLOW);
 				} else {
 					ccTextView.setTextColor(Color.WHITE);
-					if ((creatinine >= 1.5 && (age >= 80 || weight <= 60))
+					boolean creatinineTooHigh = ((creatinine >= 133 && useMmolUnits) || (creatinine >= 1.5 && !useMmolUnits));
+					if ((creatinineTooHigh && (age >= 80 || weight <= 60))
 							|| (age >= 80 && weight <= 60))
 						dose = 2.5;
 					else
