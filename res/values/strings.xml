@@ -719,5 +719,14 @@
     <string name="creatinine_mmol_per_l">Cr (\u00B5mol/L)</string>
     <string name="creatinine_mg_hint">Creatinine (mg/dL)</string>
     <string name="creatinine_mmol_hint">Creatinine (\u00B5mol/L)</string>
+<!--    <string name="long_qt_drugs_title">Long QT Drugs</string> -->
+    <string name="apixaban_calculator_title">Apixaban Calculator</string>
+    <string name="apixaban_use_caution_message">Limited clinical data available at this creatinine clearance.  
+        	Use caution because of higher bleeding risk.</string>
+    <string name="invalid_warning">Invalid!</string>
+    <string name="dose_undefined_warning">"Dose undefined"</string>
+    <string name="pediatric_use_warning">Pediatric dosing is not recommended or not calculated
+  	    by EP Mobile.</string>
+    <string name="do_not_use_warning">"Do not use!"</string>
 
 </resources>

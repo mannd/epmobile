@@ -50,6 +50,7 @@ public class LongQtList extends EpDiagnosisListActivity {
 					lqtSubtypes();
 				else if (selection.equals(getString(R.string.lqt_ecg_title)))
 					lqtEcg();
+				// lqtDrugs here
 			}
 		});
 	}

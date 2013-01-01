@@ -128,7 +128,7 @@
   - git push --tags origin master
   - git push origin develop
   - refresh eclipse epmobile
-  - make/sign epmobile.apk, save it in dev/epmobileapp/later_verisons/vX.Y.Z/
+  - make/sign epmobile.apk, save it in dev/epmobileapp/later_verisons/
   - on market.android.com update product details
   - upload apk, deactivate old one
   - Tweet It! (after confirming it's on the Market)
