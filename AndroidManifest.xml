@@ -215,6 +215,10 @@
             android:name=".Sotalol"
             android:label="@string/sotalol_calculator_title" >
         </activity>
+        <activity
+            android:name=".Apixaban"
+            android:label="@string/apixaban_calculator_title" >
+        </activity>
     </application>
 
 </manifest>
