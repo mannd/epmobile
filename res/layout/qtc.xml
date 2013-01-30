@@ -34,6 +34,21 @@
         </EditText>
     </TableRow>
 
+    <TableRow>
+
+        <TextView
+            android:id="@+id/textView3"
+            android:text="@string/qtc_formula_label"
+            android:textAppearance="?android:attr/textAppearanceMedium" >
+        </TextView>
+
+        <Spinner
+            android:id="@+id/qtc_formula_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+        </Spinner>
+    </TableRow>
+
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
@@ -43,8 +58,7 @@
             android:id="@+id/calculate_qtc_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/calculate_label" >
-        </Button>
+            android:text="@string/calculate_label" />
 
         <TextView
             android:id="@+id/calculated_qtc"
