@@ -59,6 +59,7 @@
         <item>@string/qtc_calculator_title</item>
     </array>
     <array name="reference_list">
+        <item>@string/entrainment_title</item>
         <item>@string/icd_calculator_title</item>
         <item>@string/normal_ep_values_title</item>
     </array>
