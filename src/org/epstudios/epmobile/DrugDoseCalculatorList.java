@@ -27,7 +27,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class DrugDoseCalculatorList extends EpListActivity {
+public class DrugDoseCalculatorList extends EpCalculatorListActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -56,6 +56,9 @@ public class DrugDoseCalculatorList extends EpListActivity {
 				else if (selection
 						.equals(getString(R.string.sotalol_calculator_title)))
 					sotalolCalculator();
+				else if (selection
+						.equals(getString(R.string.apixaban_calculator_title)))
+					apixabanCalculator();
 
 			}
 		});
@@ -83,6 +86,11 @@ public class DrugDoseCalculatorList extends EpListActivity {
 
 	private void sotalolCalculator() {
 		Intent i = new Intent(this, Sotalol.class);
+		startActivity(i);
+	}
+
+	private void apixabanCalculator() {
+		Intent i = new Intent(this, Apixaban.class);
 		startActivity(i);
 	}
 

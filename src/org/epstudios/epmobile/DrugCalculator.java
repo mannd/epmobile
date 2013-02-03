@@ -1,5 +1,7 @@
 package org.epstudios.epmobile;
 
+import java.text.DecimalFormat;
+
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -14,7 +16,7 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public abstract class DrugCalculator extends EpActivity implements
+public abstract class DrugCalculator extends EpDrugCalculatorActivity implements
 		OnClickListener {
 
 	public DrugCalculator() {
@@ -68,6 +70,9 @@ public abstract class DrugCalculator extends EpActivity implements
 	private final static int LB_SELECTION = 1;
 	private final static int MG_SELECTION = 0;
 	private final static int MMOL_SELECTION = 1;
+
+	// phoney result of getDose() to indicate special dosing for apixaban
+	protected final static int USE_APIXABAN_DOSING = 9999;
 
 	private WeightUnit defaultWeightUnitSelection = WeightUnit.KG;
 	private CreatinineUnit defaultCreatinineUnitSelection = CreatinineUnit.MG;
@@ -177,6 +182,13 @@ public abstract class DrugCalculator extends EpActivity implements
 				weight = UnitConverter.lbsToKgs(weight);
 			double creatinine = Double.parseDouble(creatinineText.toString());
 			double age = Double.parseDouble(ageText.toString());
+			if (age < 18) {
+				calculatedDoseTextView.setText("Do not use!");
+				calculatedDoseTextView.setTextColor(Color.RED);
+				ccTextView.setTextColor(Color.RED);
+				ccTextView.setText(getString(R.string.pediatric_use_warning));
+				return;
+			}
 			boolean useMmolUnits = (getCreatinineUnitSelection() == CreatinineUnit.MMOL);
 			int cc = CreatinineClearance.calculate(isMale, age, weight,
 					creatinine, useMmolUnits);
@@ -184,18 +196,40 @@ public abstract class DrugCalculator extends EpActivity implements
 													// colored later
 			String ccMessage = getMessage(cc);
 			ccTextView.setText(ccMessage);
-			int dose = getDose(cc);
+			double dose = getDose(cc);
+			if (dose == USE_APIXABAN_DOSING) {
+				// special processing here
+				if (cc <= 24) {
+					calculatedDoseTextView
+							.setText(getString(R.string.dose_undefined_warning));
+					ccTextView.setTextColor(Color.YELLOW);
+				} else {
+					ccTextView.setTextColor(Color.WHITE);
+					boolean creatinineTooHigh = ((creatinine >= 133 && useMmolUnits) || (creatinine >= 1.5 && !useMmolUnits));
+					if ((creatinineTooHigh && (age >= 80 || weight <= 60))
+							|| (age >= 80 && weight <= 60))
+						dose = 2.5;
+					else
+						dose = 5;
+				}
+			}
 			if (dose == 0) {
-				calculatedDoseTextView.setText("Do not use!");
+				calculatedDoseTextView
+						.setText(getString(R.string.do_not_use_warning));
 				calculatedDoseTextView.setTextColor(Color.RED);
 				ccTextView.setTextColor(Color.RED);
+			} else if (dose == USE_APIXABAN_DOSING) {
+				calculatedDoseTextView.setTextColor(Color.LTGRAY);
+				calculatedDoseTextView
+						.setText(getString(R.string.dose_undefined_warning));
 			} else {
 				calculatedDoseTextView.setTextColor(Color.LTGRAY);
-				calculatedDoseTextView.setText(String.valueOf(dose)
-						+ doseFrequency(cc));
+				// format to only show decimal if non-zero
+				calculatedDoseTextView.setText(new DecimalFormat("#.#")
+						.format(dose) + doseFrequency(cc));
 			}
 		} catch (NumberFormatException e) {
-			calculatedDoseTextView.setText("Invalid!");
+			calculatedDoseTextView.setText(getString(R.string.invalid_warning));
 			calculatedDoseTextView.setTextColor(Color.RED);
 			ccTextView.setText(R.string.creatinine_clearance_label);
 		}

@@ -27,7 +27,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class LongQtList extends EpListActivity {
+public class LongQtList extends EpDiagnosisListActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -50,6 +50,7 @@ public class LongQtList extends EpListActivity {
 					lqtSubtypes();
 				else if (selection.equals(getString(R.string.lqt_ecg_title)))
 					lqtEcg();
+				// lqtDrugs here
 			}
 		});
 	}

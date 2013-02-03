@@ -1,5 +1,5 @@
 /*  EP Mobile -- Mobile tools for electrophysiologists
-    Copyright (C) 2011 EP Studios, Inc.
+    Copyright (C) 2012 EP Studios, Inc.
     www.epstudiossoftware.com
 
     This program is free software: you can redistribute it and/or modify
@@ -18,29 +18,22 @@
 
 package org.epstudios.epmobile;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.MenuItem;
+public class Apixaban extends DrugCalculator {
 
-public class Rwpt extends EpActivity {
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.rwpt);
+	protected int getDose(int crCl) {
+		if (crCl >= 15)
+			return USE_APIXABAN_DOSING;
+		return 0;
 	}
 
 	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case android.R.id.home:
-			Intent parentActivityIntent = new Intent(this,
-					WctAlgorithmList.class);
-			parentActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
-					| Intent.FLAG_ACTIVITY_NEW_TASK);
-			startActivity(parentActivityIntent);
-			finish();
-			return true;
+	protected String getMessage(int crCl) {
+		String msg = super.getMessage(crCl);
+		if (crCl >= 15 && crCl <= 24) {
+			msg += "\n" + getString(R.string.apixaban_use_caution_message);
+
 		}
-		return super.onOptionsItemSelected(item);
+		return msg;
 	}
 }

@@ -23,14 +23,16 @@ import java.util.Set;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.Spinner;
-import android.widget.AdapterView.OnItemSelectedListener;
 
 public class BrugadaMorphologyCriteria extends EpActivity implements
 		OnClickListener {
@@ -63,6 +65,21 @@ public class BrugadaMorphologyCriteria extends EpActivity implements
 		rbbbCheckBox[5] = (CheckBox) findViewById(R.id.monophasic_r_v6);
 
 		clearEntries();
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case android.R.id.home:
+			Intent parentActivityIntent = new Intent(this,
+					WctAlgorithmList.class);
+			parentActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+					| Intent.FLAG_ACTIVITY_NEW_TASK);
+			startActivity(parentActivityIntent);
+			finish();
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
 	}
 
 	private enum Bbb {
