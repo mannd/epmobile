@@ -468,8 +468,10 @@
     <string name="long_qt_syndrome_diagnosis_title">Long QT Syndrome Diagnosis</string>
     <string name="ecg_findings_label">ECG Findings</string>
     <string name="longest_qt_label">QTc \u2265 480 msec</string>
-    <string name="longer_qt_label">QTc 460–470 msec</string>
-    <string name="long_qt_label">QTc 450 msec (in males)</string>
+    <string name="longer_qt_label">QTc 460–479 msec</string>
+    <string name="long_qt_label">QTc 450–459 msec (in males)</string>
+    <string name="long_qt_post_exercise_label">QTc 4th min of recovery from exercise stress test
+        \u2265 480 msec</string>
     <string name="torsade_label">Torsade de pointes</string>
     <string name="t_wave_alternans_label">T wave alternans</string>
     <string name="notched_t_wave_label">Notched T wave in 3 leads</string>
