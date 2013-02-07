@@ -23,6 +23,7 @@ public class LongQt extends EpActivity implements OnClickListener {
 	private CheckBox congenitalDeafnessCheckBox;
 	private CheckBox familyHxLqtCheckBox;
 	private CheckBox familyHxScdCheckBox;
+	private CheckBox longQtPostExerciseCheckBox;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +44,7 @@ public class LongQt extends EpActivity implements OnClickListener {
 		congenitalDeafnessCheckBox = (CheckBox) findViewById(R.id.congenital_deafness);
 		familyHxLqtCheckBox = (CheckBox) findViewById(R.id.family_hx_lqt);
 		familyHxScdCheckBox = (CheckBox) findViewById(R.id.family_hx_scd);
+		longQtPostExerciseCheckBox = (CheckBox) findViewById(R.id.long_qt_post_exercise);
 
 		clearEntries();
 	}
@@ -88,6 +90,8 @@ public class LongQt extends EpActivity implements OnClickListener {
 			score += 20;
 			hasTorsade = true;
 		}
+		if (longQtPostExerciseCheckBox.isChecked())
+			score += 10;
 		if (tWaveAlternansCheckBox.isChecked())
 			score += 10;
 		if (notchedTWaveCheckBox.isChecked())
@@ -117,9 +121,9 @@ public class LongQt extends EpActivity implements OnClickListener {
 		double displayScore = score / 10.0;
 		Format formatter = new DecimalFormat("0.#");
 		String message = "Score = " + formatter.format(displayScore) + "\n";
-		if (score >= 40)
-			message += "Definite ";
-		else if (score >= 20)
+		if (score >= 35)
+			message += "High probability of ";
+		else if (score >= 15)
 			message += "Intermediate probability of ";
 		else
 			message += "Low probability of ";
@@ -153,6 +157,7 @@ public class LongQt extends EpActivity implements OnClickListener {
 		congenitalDeafnessCheckBox.setChecked(false);
 		familyHxLqtCheckBox.setChecked(false);
 		familyHxScdCheckBox.setChecked(false);
+		longQtPostExerciseCheckBox.setChecked(false);
 	}
 
 }

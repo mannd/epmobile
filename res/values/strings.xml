@@ -468,8 +468,10 @@
     <string name="long_qt_syndrome_diagnosis_title">Long QT Syndrome Diagnosis</string>
     <string name="ecg_findings_label">ECG Findings</string>
     <string name="longest_qt_label">QTc \u2265 480 msec</string>
-    <string name="longer_qt_label">QTc 460–470 msec</string>
-    <string name="long_qt_label">QTc 450 msec (in males)</string>
+    <string name="longer_qt_label">QTc 460–479 msec</string>
+    <string name="long_qt_label">QTc 450–459 msec (in males)</string>
+    <string name="long_qt_post_exercise_label">QTc 4th min of recovery from exercise stress test
+        \u2265 480 msec</string>
     <string name="torsade_label">Torsade de pointes</string>
     <string name="t_wave_alternans_label">T wave alternans</string>
     <string name="notched_t_wave_label">Notched T wave in 3 leads</string>
@@ -484,8 +486,8 @@
         LQTS = long QT syndrome, QTc calculated by Bazett formula,
         SCD = sudden cardiac death, *resting heart rate below 2nd percentile for age.
         Note: the same family member cannot be counted more than once.</string>
-    <string name="lqts_reference">Schwartz PJ et al.  Circulation 1993;88:782.
-        http://circ.ahajournals.org/content/88/2/782.citation</string>
+    <string name="lqts_reference">Schwartz PJ et al.  Circulation 2011;124:2181.
+        http://circ.ahajournals.org/content/124/20/2181</string>
     <!-- ARVC 1994 criteria -->
     <string name="arvc_old_criteria_title">ARVC/D 1994 Diagnostic Criteria</string>
     <string name="arvc_old_rv_dilatation">Severe dilatation and reduction
@@ -721,7 +723,7 @@
     <string name="creatinine_mg_hint">Creatinine (mg/dL)</string>
     <string name="creatinine_mmol_hint">Creatinine (\u00B5mol/L)</string>
     <string name="entrainment_title">Entrainment Mapping</string>
-<!--    <string name="long_qt_drugs_title">Long QT Drugs</string> -->
+    <!-- <string name="long_qt_drugs_title">Long QT Drugs</string> -->
     <string name="apixaban_calculator_title">Apixaban Calculator</string>
     <string name="apixaban_use_caution_message">Limited clinical data available at this creatinine clearance.  
         	Use caution because of higher bleeding risk.</string>
