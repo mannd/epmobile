@@ -11,7 +11,7 @@
 		\n\nEmail: mannd@epstudiossoftware.com
 		\nWeb: www.epstudiossoftware.com
 		\nSource: github.com/mannd/epmobile
-		\n\nCopyright \u00a9 2011, 2012 EP Studios, Inc.
+		\n\nCopyright \u00a9 2011, 2012, 2013 EP Studios, Inc.
 		\nLicensed under GNU GPL v3.</string>
     <string name="main_index_title">EP Mobile</string>
     <string name="about_label">About</string>
@@ -29,6 +29,7 @@
     <string name="qt_label">QT Interval (msec)</string>
     <string name="qt_hint">QT (msec)</string>
     <string name="qtc_result_label">QTc (msec)</string>
+    <string name="qtc_formula_label">QTc Formula</string>
     <string name="calculate_label">Calculate!</string>
     <string name="clear_label">Clear</string>
     <string name="dose_result_label">Dose</string>
@@ -46,8 +47,8 @@
     <string name="hr_label">Rate to Interval</string>
     <string name="hr_hint">Rate (bpm)</string>
     <string name="calculated_result_label"></string>
-    <string name="qtc_formula_title">QTc Formula</string>
-    <string name="qtc_formula_summary">Select the QTc formula</string>
+    <string name="qtc_formula_title">Default QTc Formula</string>
+    <string name="qtc_formula_summary">Select the default QTc formula</string>
     <string name="maximum_qtc_title">Maximum QTc</string>
     <string name="maximum_qtc_summary">Enter the maximum QTc in msec</string>
     <string name="maximum_qtc_message">This value is used to
@@ -719,6 +720,7 @@
     <string name="creatinine_mmol_per_l">Cr (\u00B5mol/L)</string>
     <string name="creatinine_mg_hint">Creatinine (mg/dL)</string>
     <string name="creatinine_mmol_hint">Creatinine (\u00B5mol/L)</string>
+    <string name="entrainment_title">Entrainment Mapping</string>
 <!--    <string name="long_qt_drugs_title">Long QT Drugs</string> -->
     <string name="apixaban_calculator_title">Apixaban Calculator</string>
     <string name="apixaban_use_caution_message">Limited clinical data available at this creatinine clearance.  
