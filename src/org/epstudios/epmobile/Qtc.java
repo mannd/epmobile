@@ -56,9 +56,11 @@ public class Qtc extends EpActivity implements OnClickListener {
 		rrEditText = (EditText) findViewById(R.id.rrEditText);
 		qtEditText = (EditText) findViewById(R.id.qtEditText);
 		qtcFormulaTextView = (TextView) findViewById(R.id.qtc_formula);
+		qtcFormulaSpinner = (Spinner) findViewById(R.id.qtc_formula_spinner);
 
 		getPrefs();
 		setAdapters();
+		setFormulaAdapters();
 
 		clearEntries();
 
@@ -85,11 +87,17 @@ public class Qtc extends EpActivity implements OnClickListener {
 	private TextView qtcFormulaTextView;
 	private String qtcFormula;
 	private OnItemSelectedListener itemListener;
+	private Spinner qtcFormulaSpinner;
 
 	private int qtcUpperLimit;
 	private final static int QTC_UPPER_LIMIT = 440;
 	private final static int INTERVAL_SELECTION = 0;
 	private final static int RATE_SELECTION = 1;
+
+	private final static int BAZETT_FORMULA = 0;
+	private final static int FRIDERICIA_FORMULA = 1;
+	private final static int SAGIE_FORMULA = 2;
+	private final static int HODGES_FORMULA = 3;
 
 	private IntervalRate defaultIntervalRateSelection = IntervalRate.INTERVAL;
 
@@ -130,6 +138,63 @@ public class Qtc extends EpActivity implements OnClickListener {
 
 	}
 
+	private void setFormulaAdapters() {
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+				this, R.array.formula_names,
+				android.R.layout.simple_spinner_item);
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		qtcFormulaSpinner.setAdapter(adapter);
+		int formula = BAZETT_FORMULA;
+		QtcFormula f = getQtcFormula(qtcFormula);
+		switch (f) {
+		case BAZETT:
+			formula = BAZETT_FORMULA;
+			break;
+		case FRIDERICIA:
+			formula = FRIDERICIA_FORMULA;
+			break;
+		case SAGIE:
+			formula = SAGIE_FORMULA;
+			break;
+		case HODGES:
+			formula = HODGES_FORMULA;
+			break;
+		}
+		qtcFormulaSpinner.setSelection(formula);
+		itemListener = new OnItemSelectedListener() {
+			public void onItemSelected(AdapterView<?> parent, View v,
+					int position, long id) {
+				updateQtcFormula();
+			}
+
+			public void onNothingSelected(AdapterView<?> parent) {
+				// do nothing
+			}
+
+		};
+
+		qtcFormulaSpinner.setOnItemSelectedListener(itemListener);
+
+	}
+
+	private void updateQtcFormula() {
+		int result = qtcFormulaSpinner.getSelectedItemPosition();
+		switch (result) {
+		case BAZETT_FORMULA:
+			qtcFormula = "BAZETT";
+			break;
+		case FRIDERICIA_FORMULA:
+			qtcFormula = "FRIDERICIA";
+			break;
+		case SAGIE_FORMULA:
+			qtcFormula = "SAGIE";
+			break;
+		case HODGES_FORMULA:
+			qtcFormula = "HODGES";
+			break;
+		}
+	}
+
 	private void updateIntervalRateSelection() {
 		IntervalRate intervalRateSelection = getIntervalRateSelection();
 		if (intervalRateSelection.equals(IntervalRate.INTERVAL))
@@ -160,20 +225,11 @@ public class Qtc extends EpActivity implements OnClickListener {
 			if (intervalRateSelection.equals(IntervalRate.RATE))
 				rr = 60000 / rr;
 			int qt = Integer.parseInt(qtText.toString());
-			getPrefs();
+			// getPrefs();
 			showQtcFormula();
-			QtcFormula formula;
-			if (qtcFormula.equals("BAZETT"))
-				formula = QtcFormula.BAZETT;
-			else if (qtcFormula.equals("FRIDERICIA"))
-				formula = QtcFormula.FRIDERICIA;
-			else if (qtcFormula.equals("SAGIE"))
-				formula = QtcFormula.SAGIE;
-			else if (qtcFormula.equals("HODGES"))
-				formula = QtcFormula.HODGES;
-			else
-				formula = QtcFormula.BAZETT;
-			Toast.makeText(this, "QTc Formula is " + qtcFormula, 3000).show();
+			QtcFormula formula = getQtcFormula(qtcFormula);
+			Toast.makeText(this, "QTc Formula is " + qtcFormula,
+					Toast.LENGTH_LONG).show();
 			int qtc = QtcCalculator.calculate(rr, qt, formula);
 			qtcTextView.setText("QTc = " + String.valueOf(qtc) + " msec");
 			if (qtc >= qtcUpperLimit)
@@ -184,6 +240,20 @@ public class Qtc extends EpActivity implements OnClickListener {
 			qtcTextView.setText("Invalid!");
 			qtcTextView.setTextColor(Color.RED);
 		}
+	}
+
+	private QtcFormula getQtcFormula(String name) {
+		if (name.equals("BAZETT"))
+			return QtcFormula.BAZETT;
+		else if (name.equals("FRIDERICIA"))
+			return QtcFormula.FRIDERICIA;
+		else if (name.equals("SAGIE"))
+			return QtcFormula.SAGIE;
+		else if (name.equals("HODGES"))
+			return QtcFormula.HODGES;
+		else
+			return QtcFormula.BAZETT;
+
 	}
 
 	private void clearEntries() {

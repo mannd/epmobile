@@ -39,6 +39,12 @@
         </RadioGroup>
 
         <CheckBox
+            android:id="@+id/long_qt_post_exercise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/long_qt_post_exercise_label" />
+
+        <CheckBox
             android:id="@+id/torsade"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

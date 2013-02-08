@@ -11,7 +11,7 @@
 		\n\nEmail: mannd@epstudiossoftware.com
 		\nWeb: www.epstudiossoftware.com
 		\nSource: github.com/mannd/epmobile
-		\n\nCopyright \u00a9 2011, 2012 EP Studios, Inc.
+		\n\nCopyright \u00a9 2011, 2012, 2013 EP Studios, Inc.
 		\nLicensed under GNU GPL v3.</string>
     <string name="main_index_title">EP Mobile</string>
     <string name="about_label">About</string>
@@ -29,6 +29,7 @@
     <string name="qt_label">QT Interval (msec)</string>
     <string name="qt_hint">QT (msec)</string>
     <string name="qtc_result_label">QTc (msec)</string>
+    <string name="qtc_formula_label">QTc Formula</string>
     <string name="calculate_label">Calculate!</string>
     <string name="clear_label">Clear</string>
     <string name="dose_result_label">Dose</string>
@@ -46,8 +47,8 @@
     <string name="hr_label">Rate to Interval</string>
     <string name="hr_hint">Rate (bpm)</string>
     <string name="calculated_result_label"></string>
-    <string name="qtc_formula_title">QTc Formula</string>
-    <string name="qtc_formula_summary">Select the QTc formula</string>
+    <string name="qtc_formula_title">Default QTc Formula</string>
+    <string name="qtc_formula_summary">Select the default QTc formula</string>
     <string name="maximum_qtc_title">Maximum QTc</string>
     <string name="maximum_qtc_summary">Enter the maximum QTc in msec</string>
     <string name="maximum_qtc_message">This value is used to
@@ -467,8 +468,10 @@
     <string name="long_qt_syndrome_diagnosis_title">Long QT Syndrome Diagnosis</string>
     <string name="ecg_findings_label">ECG Findings</string>
     <string name="longest_qt_label">QTc \u2265 480 msec</string>
-    <string name="longer_qt_label">QTc 460–470 msec</string>
-    <string name="long_qt_label">QTc 450 msec (in males)</string>
+    <string name="longer_qt_label">QTc 460–479 msec</string>
+    <string name="long_qt_label">QTc 450–459 msec (in males)</string>
+    <string name="long_qt_post_exercise_label">QTc 4th min of recovery from exercise stress test
+        \u2265 480 msec</string>
     <string name="torsade_label">Torsade de pointes</string>
     <string name="t_wave_alternans_label">T wave alternans</string>
     <string name="notched_t_wave_label">Notched T wave in 3 leads</string>
@@ -483,8 +486,8 @@
         LQTS = long QT syndrome, QTc calculated by Bazett formula,
         SCD = sudden cardiac death, *resting heart rate below 2nd percentile for age.
         Note: the same family member cannot be counted more than once.</string>
-    <string name="lqts_reference">Schwartz PJ et al.  Circulation 1993;88:782.
-        http://circ.ahajournals.org/content/88/2/782.citation</string>
+    <string name="lqts_reference">Schwartz PJ et al.  Circulation 2011;124:2181.
+        http://circ.ahajournals.org/content/124/20/2181</string>
     <!-- ARVC 1994 criteria -->
     <string name="arvc_old_criteria_title">ARVC/D 1994 Diagnostic Criteria</string>
     <string name="arvc_old_rv_dilatation">Severe dilatation and reduction
@@ -719,7 +722,8 @@
     <string name="creatinine_mmol_per_l">Cr (\u00B5mol/L)</string>
     <string name="creatinine_mg_hint">Creatinine (mg/dL)</string>
     <string name="creatinine_mmol_hint">Creatinine (\u00B5mol/L)</string>
-<!--    <string name="long_qt_drugs_title">Long QT Drugs</string> -->
+    <string name="entrainment_title">Entrainment Mapping</string>
+    <!-- <string name="long_qt_drugs_title">Long QT Drugs</string> -->
     <string name="apixaban_calculator_title">Apixaban Calculator</string>
     <string name="apixaban_use_caution_message">Limited clinical data available at this creatinine clearance.  
         	Use caution because of higher bleeding risk.</string>
