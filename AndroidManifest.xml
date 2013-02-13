@@ -219,6 +219,10 @@
             android:name=".Apixaban"
             android:label="@string/apixaban_calculator_title" >
         </activity>
+        <activity
+            android:name=".AtrialTachLocalization"
+            android:label="@string/atrial_tachycardia_localization_title" >
+        </activity>
     </application>
 
 </manifest>

@@ -732,5 +732,15 @@
     <string name="pediatric_use_warning">Pediatric dosing is not recommended or not calculated
   	    by EP Mobile.</string>
     <string name="do_not_use_warning">"Do not use!"</string>
+    <!-- Atrial tachycardia algorithm Kistler et al. -->
+    <string name="atrial_tachycardia_localization_title">Atrial Tach Localization</string>
+    <string name="at_v1_morphology_label">P wave in lead V1</string>
+    <string name="neg_label">neg</string>
+    <string name="pos_neg_label">pos/neg</string>
+    <string name="neg_pos_label">neg/pos or iso/pos</string>
+    <string name="iso_label">iso</string>
+    <string name="pos_label">pos</string>
+    <string name="at_localization_reference">Kistler et al. JACC 2006;48:1010.
+		J Am Coll Cardiol. 2006;48(5):1010-1017. doi:10.1016/j.jacc.2006.03.058</string>
 
 </resources>
