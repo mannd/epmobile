@@ -4,6 +4,9 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.method.LinkMovementMethod;
+import android.text.util.Linkify;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -12,39 +15,45 @@ import android.widget.TextView;
 
 public class AtrialTachLocalization extends EpActivity implements
 		OnClickListener {
-	private Button negButton;
-	private Button posNegButton;
-	private Button negPosButton;
-	private Button isoButton;
-	private Button posButton;
+
 	private Button yesButton;
 	private Button noButton;
 	private Button backButton;
+	private Button instructionsButton;
 	protected TextView stepTextView;
+
+	protected int step = 1;
+	private int priorStep = 1;
+	private int priorStep1 = 1;
+	private int priorStep2 = 1;
+	private int priorStep3 = 1;
+	private int priorStep4 = 1;
+	private int priorStep5 = 1;
+	private int priorStep6 = 1;
+	private int priorStep7 = 1;
+
+	private final int v1NegStep = 1;
+	private final int v1PosNegStep = 2;
+	private final int v1NegPosStep = 3;
+	private final int v1IsoStep = 4;
+	private final int v1PosStep = 5;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.atlocalization);
+		setContentView(R.layout.simplealgorithm);
 
-		negButton = (Button) findViewById(R.id.neg_button);
-		negButton.setOnClickListener(this);
-		posNegButton = (Button) findViewById(R.id.pos_neg_button);
-		posNegButton.setOnClickListener(this);
-		negPosButton = (Button) findViewById(R.id.neg_pos_button);
-		negPosButton.setOnClickListener(this);
-		isoButton = (Button) findViewById(R.id.iso_button);
-		isoButton.setOnClickListener(this);
-		posButton = (Button) findViewById(R.id.pos_button);
-		posButton.setOnClickListener(this);
 		yesButton = (Button) findViewById(R.id.yes_button);
 		yesButton.setOnClickListener(this);
 		noButton = (Button) findViewById(R.id.no_button);
 		noButton.setOnClickListener(this);
 		backButton = (Button) findViewById(R.id.back_button);
 		backButton.setOnClickListener(this);
+		instructionsButton = (Button) findViewById(R.id.morphology_button);
+		instructionsButton.setOnClickListener(this);
+		instructionsButton.setText(getString(R.string.instructions_label));
 		stepTextView = (TextView) findViewById(R.id.stepTextView);
-
+		step1();
 	}
 
 	@Override
@@ -65,31 +74,111 @@ public class AtrialTachLocalization extends EpActivity implements
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
-		case R.id.neg_button:
-			getNegResult();
+		case R.id.yes_button:
+			getYesResult();
 			break;
-		case R.id.pos_neg_button:
-			getPosNegResult();
+		case R.id.no_button:
+			getNoResult();
 			break;
-		case R.id.iso_button:
-			getIsoResult();
+		case R.id.back_button:
+			getBackResult();
+			break;
+		case R.id.morphology_button:
+			displayInstructions();
 			break;
 		}
 
 	}
 
-	private void getPosNegResult() {
-		showResult(getString(R.string.location_ct));
+	private String getV1Question(String label) {
+		return getString(R.string.at_v1_morphology_label) + " " + label + "?";
 	}
 
-	private void getIsoResult() {
-		showResult(getString(R.string.location_r_septum_perinodal));
+	protected void step1() {
+		stepTextView.setText(getV1Question(getString(R.string.neg_label)));
+		backButton.setEnabled(false);
+		instructionsButton.setVisibility(View.VISIBLE);
 	}
 
-	private void getNegResult() {
-		setContentView(R.layout.simplealgorithm);
-		stepTextView.setText(getString(R.string.v24_pos_step));
+	private void getBackResult() {
+		adjustStepsBackward();
+		gotoStep();
+	}
 
+	private void getNoResult() {
+		adjustStepsForward();
+		switch (step) {
+		case v1NegStep:
+			step = v1PosNegStep;
+			break;
+
+		}
+		gotoStep();
+	}
+
+	protected void getYesResult() {
+		adjustStepsForward();
+		switch (step) {
+
+		}
+		gotoStep();
+	}
+
+	private void displayInstructions() {
+		AlertDialog dialog = new AlertDialog.Builder(this).create();
+		final SpannableString message = new SpannableString(
+				getString(R.string.outflow_vt_instructions));
+		Linkify.addLinks(message, Linkify.WEB_URLS);
+		dialog.setMessage(message);
+		dialog.setTitle(getString(R.string.outflow_tract_vt_title));
+		dialog.show();
+		((TextView) dialog.findViewById(android.R.id.message))
+				.setMovementMethod(LinkMovementMethod.getInstance());
+	}
+
+	protected void gotoStep() {
+		if (step > 1) {
+			backButton.setEnabled(true);
+			instructionsButton.setVisibility(View.GONE);
+
+		}
+		switch (step) {
+		case v1NegStep:
+			step1();
+			break;
+		case v1PosNegStep:
+			stepTextView
+					.setText(getV1Question(getString(R.string.pos_neg_label)));
+			break;
+		}
+
+	}
+
+	protected void adjustStepsForward() {
+		priorStep7 = priorStep6;
+		priorStep6 = priorStep5;
+		priorStep5 = priorStep4;
+		priorStep4 = priorStep3;
+		priorStep3 = priorStep2;
+		priorStep2 = priorStep1;
+		priorStep1 = priorStep;
+		priorStep = step;
+	}
+
+	protected void adjustStepsBackward() {
+		step = priorStep;
+		priorStep = priorStep1;
+		priorStep1 = priorStep2;
+		priorStep2 = priorStep3;
+		priorStep3 = priorStep4;
+		priorStep4 = priorStep5;
+		priorStep5 = priorStep6;
+		priorStep6 = priorStep7;
+	}
+
+	private void resetSteps() {
+		priorStep7 = priorStep6 = priorStep5 = priorStep4 = 1;
+		priorStep3 = priorStep2 = priorStep1 = priorStep = step = 1;
 	}
 
 	protected void showResult(String message) {

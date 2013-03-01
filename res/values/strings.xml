@@ -743,7 +743,7 @@
     <string name="at_location_label">AT Location</string>
     <string name="location_ct">Crista Terminalis</string>
     <string name="location_r_septum_perinodal">Right Septum Perinodal</string>
-    <string name="v24_pos_step">V2-4 pos</string>
+    <string name="v24_pos_step">V2&#8211;4 pos</string>
     <string name="at_localization_reference">Kistler et al. JACC 2006;48:1010.
 		J Am Coll Cardiol. 2006;48(5):1010-1017. doi:10.1016/j.jacc.2006.03.058</string>
 
