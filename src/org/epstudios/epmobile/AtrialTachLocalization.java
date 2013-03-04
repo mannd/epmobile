@@ -19,6 +19,9 @@ public class AtrialTachLocalization extends EpActivity implements
 	private Button yesButton;
 	private Button noButton;
 	private Button backButton;
+	private Button row21Button;
+	private Button row22Button;
+	private Button row23Button;
 	private Button instructionsButton;
 	protected TextView stepTextView;
 
@@ -41,7 +44,7 @@ public class AtrialTachLocalization extends EpActivity implements
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.simplealgorithm);
+		setContentView(R.layout.complexalgorithm);
 
 		yesButton = (Button) findViewById(R.id.yes_button);
 		yesButton.setOnClickListener(this);
@@ -49,7 +52,13 @@ public class AtrialTachLocalization extends EpActivity implements
 		noButton.setOnClickListener(this);
 		backButton = (Button) findViewById(R.id.back_button);
 		backButton.setOnClickListener(this);
-		instructionsButton = (Button) findViewById(R.id.morphology_button);
+		row21Button = (Button) findViewById(R.id.row_2_1_button);
+		row21Button.setOnClickListener(this);
+		row22Button = (Button) findViewById(R.id.row_2_2_button);
+		row22Button.setOnClickListener(this);
+		row23Button = (Button) findViewById(R.id.row_2_3_button);
+		row23Button.setOnClickListener(this);
+		instructionsButton = (Button) findViewById(R.id.instructions_button);
 		instructionsButton.setOnClickListener(this);
 		instructionsButton.setText(getString(R.string.instructions_label));
 		stepTextView = (TextView) findViewById(R.id.stepTextView);
@@ -83,20 +92,33 @@ public class AtrialTachLocalization extends EpActivity implements
 		case R.id.back_button:
 			getBackResult();
 			break;
-		case R.id.morphology_button:
+		case R.id.row_2_1_button:
+			getRow21Result();
+			break;
+		case R.id.row_2_2_button:
+			getRow22Result();
+			break;
+		case R.id.row_2_3_button:
+			getRow23Result();
+			break;
+		case R.id.instructions_button:
 			displayInstructions();
 			break;
 		}
 
 	}
 
-	private String getV1Question(String label) {
-		return getString(R.string.at_v1_morphology_label) + " " + label + "?";
-	}
-
 	protected void step1() {
-		stepTextView.setText(getV1Question(getString(R.string.neg_label)));
-		backButton.setEnabled(false);
+		stepTextView.setText(getString(R.string.at_v1_morphology_label));
+		yesButton.setText(getString(R.string.neg_label));
+		noButton.setText(getString(R.string.pos_neg_label));
+		backButton.setText(getString(R.string.neg_pos_label));
+		row21Button.setText(getString(R.string.iso_pos_label));
+		row22Button.setText(getString(R.string.iso_label));
+		row23Button.setText(getString(R.string.pos_label));
+		row21Button.setVisibility(View.VISIBLE);
+		row22Button.setVisibility(View.VISIBLE);
+		row23Button.setVisibility(View.VISIBLE);
 		instructionsButton.setVisibility(View.VISIBLE);
 	}
 
@@ -124,6 +146,18 @@ public class AtrialTachLocalization extends EpActivity implements
 		gotoStep();
 	}
 
+	protected void getRow21Result() {
+
+	}
+
+	protected void getRow22Result() {
+
+	}
+
+	protected void getRow23Result() {
+
+	}
+
 	private void displayInstructions() {
 		AlertDialog dialog = new AlertDialog.Builder(this).create();
 		final SpannableString message = new SpannableString(
@@ -138,7 +172,9 @@ public class AtrialTachLocalization extends EpActivity implements
 
 	protected void gotoStep() {
 		if (step > 1) {
-			backButton.setEnabled(true);
+			row21Button.setVisibility(View.GONE);
+			row22Button.setVisibility(View.GONE);
+			row23Button.setVisibility(View.GONE);
 			instructionsButton.setVisibility(View.GONE);
 
 		}
@@ -147,8 +183,7 @@ public class AtrialTachLocalization extends EpActivity implements
 			step1();
 			break;
 		case v1PosNegStep:
-			stepTextView
-					.setText(getV1Question(getString(R.string.pos_neg_label)));
+
 			break;
 		}
 

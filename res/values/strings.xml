@@ -737,7 +737,8 @@
     <string name="at_v1_morphology_label">P wave in lead V1</string>
     <string name="neg_label">neg</string>
     <string name="pos_neg_label">pos/neg</string>
-    <string name="neg_pos_label">neg/pos or iso/pos</string>
+    <string name="neg_pos_label">neg/pos</string>
+    <string name="iso_pos_label">iso/pos</string>
     <string name="iso_label">iso</string>
     <string name="pos_label">pos</string>
     <string name="at_location_label">AT Location</string>
