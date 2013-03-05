@@ -13,7 +13,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class AtrialTachLocalization extends EpActivity implements
+public class AtrialTachLocalization extends LocationAlgorithm implements
 		OnClickListener {
 
 	private Button yesButton;
@@ -24,16 +24,6 @@ public class AtrialTachLocalization extends EpActivity implements
 	private Button row23Button;
 	private Button instructionsButton;
 	protected TextView stepTextView;
-
-	protected int step = 1;
-	private int priorStep = 1;
-	private int priorStep1 = 1;
-	private int priorStep2 = 1;
-	private int priorStep3 = 1;
-	private int priorStep4 = 1;
-	private int priorStep5 = 1;
-	private int priorStep6 = 1;
-	private int priorStep7 = 1;
 
 	private final int v1NegStep = 1;
 	private final int v1PosNegStep = 2;
@@ -189,33 +179,6 @@ public class AtrialTachLocalization extends EpActivity implements
 
 	}
 
-	protected void adjustStepsForward() {
-		priorStep7 = priorStep6;
-		priorStep6 = priorStep5;
-		priorStep5 = priorStep4;
-		priorStep4 = priorStep3;
-		priorStep3 = priorStep2;
-		priorStep2 = priorStep1;
-		priorStep1 = priorStep;
-		priorStep = step;
-	}
-
-	protected void adjustStepsBackward() {
-		step = priorStep;
-		priorStep = priorStep1;
-		priorStep1 = priorStep2;
-		priorStep2 = priorStep3;
-		priorStep3 = priorStep4;
-		priorStep4 = priorStep5;
-		priorStep5 = priorStep6;
-		priorStep6 = priorStep7;
-	}
-
-	private void resetSteps() {
-		priorStep7 = priorStep6 = priorStep5 = priorStep4 = 1;
-		priorStep3 = priorStep2 = priorStep1 = priorStep = step = 1;
-	}
-
 	protected void showResult(String message) {
 		AlertDialog dialog = new AlertDialog.Builder(this).create();
 		dialog.setMessage(message);
@@ -235,8 +198,8 @@ public class AtrialTachLocalization extends EpActivity implements
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-						// resetSteps();
-						// gotoStep();
+						resetSteps();
+						gotoStep();
 					}
 				});
 		dialog.show();
