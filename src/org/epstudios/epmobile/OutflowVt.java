@@ -31,7 +31,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class OutflowVt extends EpActivity implements OnClickListener {
+public class OutflowVt extends LocationAlgorithm implements OnClickListener {
 	private Button yesButton;
 	private Button noButton;
 	protected Button backButton;
@@ -39,15 +39,6 @@ public class OutflowVt extends EpActivity implements OnClickListener {
 	protected TextView stepTextView;
 
 	protected boolean mitralAnnularVt = false;
-	protected int step = 1;
-	private int priorStep = 1;
-	private int priorStep1 = 1;
-	private int priorStep2 = 1;
-	private int priorStep3 = 1;
-	private int priorStep4 = 1;
-	private int priorStep5 = 1;
-	private int priorStep6 = 1;
-	private int priorStep7 = 1;
 
 	private boolean isRvot = false;
 	private boolean isLvot = false;
@@ -207,33 +198,6 @@ public class OutflowVt extends EpActivity implements OnClickListener {
 			break;
 		}
 		gotoStep();
-	}
-
-	protected void adjustStepsForward() {
-		priorStep7 = priorStep6;
-		priorStep6 = priorStep5;
-		priorStep5 = priorStep4;
-		priorStep4 = priorStep3;
-		priorStep3 = priorStep2;
-		priorStep2 = priorStep1;
-		priorStep1 = priorStep;
-		priorStep = step;
-	}
-
-	protected void adjustStepsBackward() {
-		step = priorStep;
-		priorStep = priorStep1;
-		priorStep1 = priorStep2;
-		priorStep2 = priorStep3;
-		priorStep3 = priorStep4;
-		priorStep4 = priorStep5;
-		priorStep5 = priorStep6;
-		priorStep6 = priorStep7;
-	}
-
-	private void resetSteps() {
-		priorStep7 = priorStep6 = priorStep5 = priorStep4 = 1;
-		priorStep3 = priorStep2 = priorStep1 = priorStep = step = 1;
 	}
 
 	private void resetButtons() {

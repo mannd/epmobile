@@ -1,6 +1,6 @@
 package org.epstudios.epmobile;
 
-public class LocationAlgorithm extends EpActivity {
+public abstract class LocationAlgorithm extends EpActivity {
 	protected int step = 1;
 	private int priorStep = 1;
 	private int priorStep1 = 1;
