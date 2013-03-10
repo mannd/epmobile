@@ -733,19 +733,33 @@
   	    by EP Mobile.</string>
     <string name="do_not_use_warning">"Do not use!"</string>
     <!-- Atrial tachycardia algorithm Kistler et al. -->
-    <string name="atrial_tachycardia_localization_title">Atrial Tach Localization</string>
-    <string name="at_v1_morphology_label">P wave in lead V1</string>
-    <string name="neg_label">neg</string>
-    <string name="pos_neg_label">pos/neg</string>
-    <string name="neg_pos_label">neg/pos</string>
-    <string name="iso_pos_label">iso/pos</string>
-    <string name="iso_label">iso</string>
-    <string name="pos_label">pos</string>
+    <string name="atrial_tachycardia_localization_title">Atrial Tachycardia Location</string>
+    <string name="at_v1_morphology_label">P wave in Lead V1?</string>
+    <string name="neg_label">Neg</string>
+    <string name="pos_neg_label">Pos/Neg</string>
+    <string name="neg_pos_label">Neg/Pos</string>
+    <string name="iso_pos_label">Iso/Pos</string>
+    <string name="iso_label">Iso</string>
+    <string name="pos_label">Pos</string>
     <string name="at_location_label">AT Location</string>
     <string name="location_ct">Crista Terminalis</string>
     <string name="location_r_septum_perinodal">Right Septum Perinodal</string>
-    <string name="v24_pos_step">V2&#8211;4 pos</string>
+    <string name="location_sma">Superior Mitral Annulus</string>
+    <string name="location_cs_os_ls">Coronary Sinus Os or Left Septal</string>
+    <string name="location_ta">Tricuspid Annulus</string>
+    <string name="location_ta_raa">Tricuspid Annulus or Right Atrial Appendage</string>
+    <string name="location_cs_body">Coronary Sinus Body</string>
+    <string name="location_lpv_laa">Left Sided Pulmonary Vein or Left Atrial Appendage</string>
+    <string name="location_ct_rpv">Crista Terminalis or Right Sided Pulmonary Vein</string>
+    <string name="location_rpv">Right Sided Pulmonary Vein</string>
+    <string name="v24_pos_step">V2&#8211;4 Positive?</string>
+    <string name="avl_step">avL Polarity?</string>
+    <string name="bifid_II_step">Bifid P in II and/or V1?</string>
+    <string name="negative_in_all_inf_leads_step">Negative P in All Inferior Leads?</string>
+    <string name="sinus_rhythm_p_wave_step">Sinus Rhythm P Wave?</string>
+    <string name="plus_minus_label">+/-</string>
     <string name="at_localization_reference">Kistler et al. JACC 2006;48:1010.
-		J Am Coll Cardiol. 2006;48(5):1010-1017. doi:10.1016/j.jacc.2006.03.058</string>
+		J Am Coll Cardiol. 2006;48(5):1010-1017. http://content.onlinejacc.org/article.aspx?articleid=1137857</string>
+    <string name="at_localization_instructions">Fill in Help Text</string>
 
 </resources>

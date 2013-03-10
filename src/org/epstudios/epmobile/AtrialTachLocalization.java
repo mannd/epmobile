@@ -25,11 +25,14 @@ public class AtrialTachLocalization extends LocationAlgorithm implements
 	private Button instructionsButton;
 	protected TextView stepTextView;
 
-	private final int v1NegStep = 1;
-	private final int v1PosNegStep = 2;
-	private final int v1NegPosStep = 3;
-	private final int v1IsoStep = 4;
-	private final int v1PosStep = 5;
+	// Steps on non-linear in this algorithm
+	private final int step1 = 1;
+	private final int v24PosStep = 2;
+	private final int aVLStep = 3;
+	private final int bifidIIStep = 4;
+	private final int negAllInfStep = 5;
+	private final int negAllInf2Step = 6;
+	private final int sinusRhythmPStep = 7;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -113,48 +116,107 @@ public class AtrialTachLocalization extends LocationAlgorithm implements
 	}
 
 	private void getBackResult() {
-		adjustStepsBackward();
+		// for Step 1, back button is neg/pos button
+		if (step == step1)
+			step = aVLStep;
+		else
+			adjustStepsBackward();
 		gotoStep();
 	}
 
 	private void getNoResult() {
-		adjustStepsForward();
 		switch (step) {
-		case v1NegStep:
-			step = v1PosNegStep;
+		case step1:
+			showResult(getString(R.string.location_ct));
 			break;
-
+		case v24PosStep:
+			step = negAllInfStep;
+			break;
+		case aVLStep:
+			showResult(getString(R.string.location_cs_os_ls));
+			break;
+		case bifidIIStep:
+			step = sinusRhythmPStep;
+			break;
+		case negAllInfStep:
+			showResult(getString(R.string.location_ta_raa));
+			break;
+		case negAllInf2Step:
+			showResult(getString(R.string.location_lpv_laa));
+			break;
+		case sinusRhythmPStep:
+			showResult(getString(R.string.location_rpv));
+			break;
 		}
 		gotoStep();
 	}
 
 	protected void getYesResult() {
-		adjustStepsForward();
 		switch (step) {
-
+		case step1:
+			step = v24PosStep;
+			break;
+		case v24PosStep:
+			showResult(getString(R.string.location_ct));
+			break;
+		case aVLStep:
+			showResult(getString(R.string.location_sma));
+			break;
+		case bifidIIStep:
+			step = negAllInf2Step;
+			break;
+		case negAllInfStep:
+			showResult(getString(R.string.location_ta));
+			break;
+		case negAllInf2Step:
+			showResult(getString(R.string.location_cs_body));
+			break;
+		case sinusRhythmPStep:
+			showResult(getString(R.string.location_ct_rpv));
+			break;
 		}
 		gotoStep();
 	}
 
 	protected void getRow21Result() {
-
+		step = aVLStep;
+		gotoStep();
 	}
 
 	protected void getRow22Result() {
-
+		showResult(getString(R.string.location_r_septum_perinodal));
 	}
 
 	protected void getRow23Result() {
+		step = bifidIIStep;
+		gotoStep();
+	}
 
+	protected void adjustStepsBackward() {
+		switch (step) {
+		case v24PosStep:
+		case aVLStep:
+		case bifidIIStep:
+			step = step1;
+			break;
+		case negAllInfStep:
+			step = v24PosStep;
+			break;
+		case negAllInf2Step:
+		case sinusRhythmPStep:
+			step = bifidIIStep;
+			break;
+		}
 	}
 
 	private void displayInstructions() {
 		AlertDialog dialog = new AlertDialog.Builder(this).create();
 		final SpannableString message = new SpannableString(
-				getString(R.string.outflow_vt_instructions));
+				getString(R.string.at_localization_instructions) + "\n"
+						+ getString(R.string.at_localization_reference));
 		Linkify.addLinks(message, Linkify.WEB_URLS);
 		dialog.setMessage(message);
-		dialog.setTitle(getString(R.string.outflow_tract_vt_title));
+		dialog.setTitle(getString(R.string.atrial_tachycardia_localization_title));
 		dialog.show();
 		((TextView) dialog.findViewById(android.R.id.message))
 				.setMovementMethod(LinkMovementMethod.getInstance());
@@ -166,17 +228,36 @@ public class AtrialTachLocalization extends LocationAlgorithm implements
 			row22Button.setVisibility(View.GONE);
 			row23Button.setVisibility(View.GONE);
 			instructionsButton.setVisibility(View.GONE);
-
+			yesButton.setText(getString(R.string.yes));
+			noButton.setText(getString(R.string.no));
+			backButton.setText(getString(R.string.back));
 		}
 		switch (step) {
-		case v1NegStep:
+		case step1:
 			step1();
 			break;
-		case v1PosNegStep:
-
+		case v24PosStep:
+			stepTextView.setText(getString(R.string.v24_pos_step));
+			break;
+		case aVLStep:
+			stepTextView.setText(getString(R.string.avl_step));
+			yesButton.setText(getString(R.string.neg_label));
+			noButton.setText(getString(R.string.pos_label));
+			break;
+		case bifidIIStep:
+			stepTextView.setText(getString(R.string.bifid_II_step));
+			break;
+		case negAllInfStep:
+		case negAllInf2Step:
+			stepTextView
+					.setText(getString(R.string.negative_in_all_inf_leads_step));
+			break;
+		case sinusRhythmPStep:
+			stepTextView.setText(getString(R.string.sinus_rhythm_p_wave_step));
+			yesButton.setText(getString(R.string.pos_label));
+			noButton.setText(getString(R.string.plus_minus_label));
 			break;
 		}
-
 	}
 
 	protected void showResult(String message) {
@@ -199,7 +280,7 @@ public class AtrialTachLocalization extends LocationAlgorithm implements
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						resetSteps();
-						gotoStep();
+						step1();
 					}
 				});
 		dialog.show();
