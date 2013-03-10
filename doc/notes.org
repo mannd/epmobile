@@ -631,3 +631,19 @@
    - isoelectric means no P-wave deviation from the baseline of >=
      0.05 mV
    - Algorithm is for focal AT only
+* Entrainment
+** Sources
+   - http://askdrwiki.com/mediawiki/index.php?title=Entrainment
+   - http://content.onlinejacc.org/article.aspx?articleid=1121699
+** Criteria
+   - Concealed fusion y/n
+   - S-QRS interval
+     - Exit site S-QRS < 30% TCL
+     - Central site S-QRS > 31-50% TCL
+     - Proximal Site S-QRS 51-70%
+     - Inner Loop S-QRS > 70%
+   - TCL
+   - PPI
+   - PPI - TCL <= 30 msec in circuit
+   - EGM-QRS interval
+     - in circuit (with concealed fusion) S-QRS = EGM-QRS +/- 20 msec
