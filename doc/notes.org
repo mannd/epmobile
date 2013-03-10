@@ -621,3 +621,13 @@
         Contraindicated if CrCl < 40.  
       - can increase to 120 mg or 160 mg if QTc < 500 ms
       - 3 days recommended for hospitalization
+* AT Location
+** Kistler et al. Summary
+   - in V1, - or + /- P 100% specific RA
+   - in V1, -/+ or + P 100% sensitive LA
+   - Algoritm sensitivity = 93%
+   - P wave must have discrete iso segment before (i.e. not fused with
+     T wave, etc.)
+   - isoelectric means no P-wave deviation from the baseline of >=
+     0.05 mV
+   - Algorithm is for focal AT only

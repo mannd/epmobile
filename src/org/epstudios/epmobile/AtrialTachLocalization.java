@@ -265,7 +265,7 @@ public class AtrialTachLocalization extends LocationAlgorithm implements
 		dialog.setMessage(message);
 		dialog.setCanceledOnTouchOutside(false);
 		dialog.setCancelable(false);
-		dialog.setTitle(getString(R.string.at_location_label));
+		dialog.setTitle(getString(R.string.atrial_tachycardia_localization_title));
 		dialog.setButton(DialogInterface.BUTTON_POSITIVE,
 				getString(R.string.done_label),
 				new DialogInterface.OnClickListener() {

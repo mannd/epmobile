@@ -23,24 +23,21 @@
             android:id="@+id/yes_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="" >
+            android:layout_weight="1" >
         </Button>
 
         <Button
             android:id="@+id/no_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="" >
+            android:layout_weight="1" >
         </Button>
 
         <Button
             android:id="@+id/back_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="" >
+            android:layout_weight="1" >
         </Button>
     </LinearLayout>
 
@@ -53,24 +50,21 @@
             android:id="@+id/row_2_1_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="" >
+            android:layout_weight="1" >
         </Button>
 
         <Button
             android:id="@+id/row_2_2_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="" >
+            android:layout_weight="1" >
         </Button>
 
         <Button
             android:id="@+id/row_2_3_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="" >
+            android:layout_weight="1" >
         </Button>
     </LinearLayout>
 
