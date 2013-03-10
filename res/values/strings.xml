@@ -723,7 +723,10 @@
     <string name="creatinine_mg_hint">Creatinine (mg/dL)</string>
     <string name="creatinine_mmol_hint">Creatinine (\u00B5mol/L)</string>
     <string name="entrainment_title">Entrainment Mapping</string>
-    <!-- <string name="long_qt_drugs_title">Long QT Drugs</string> -->
+    <string name="long_qt_drugs_title">Long QT Drugs (link)</string>
+    <string name="long_qt_drugs_link">http://www.azcert.org/medical-pros/drug-lists/drug-lists.cfm</string>
+    <string name="brugada_drugs_title">Brugada Drugs (link)</string>
+    <string name="brugada_drugs_link">http://www.brugadadrugs.org</string>
     <string name="apixaban_calculator_title">Apixaban Calculator</string>
     <string name="apixaban_use_caution_message">Limited clinical data available at this creatinine clearance.  
         	Use caution because of higher bleeding risk.</string>

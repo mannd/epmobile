@@ -1,6 +1,7 @@
 package org.epstudios.epmobile;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -30,6 +31,12 @@ public class ReferenceList extends EpListActivity {
 				else if (selection
 						.equals(getString(R.string.icd_calculator_title)))
 					icdCalculator();
+				else if (selection
+						.equals(getString(R.string.long_qt_drugs_title)))
+					longQtDrugs();
+				else if (selection
+						.equals(getString(R.string.brugada_drugs_title)))
+					brugadaDrugs();
 			}
 		});
 	}
@@ -41,6 +48,18 @@ public class ReferenceList extends EpListActivity {
 
 	private void icdCalculator() {
 		Intent i = new Intent(this, CmsIcd.class);
+		startActivity(i);
+	}
+
+	private void longQtDrugs() {
+		Intent i = new Intent(Intent.ACTION_VIEW,
+				Uri.parse(getString(R.string.long_qt_drugs_link)));
+		startActivity(i);
+	}
+
+	private void brugadaDrugs() {
+		Intent i = new Intent(Intent.ACTION_VIEW,
+				Uri.parse(getString(R.string.brugada_drugs_link)));
 		startActivity(i);
 	}
 
