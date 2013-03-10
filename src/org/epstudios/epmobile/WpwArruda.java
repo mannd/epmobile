@@ -29,7 +29,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 // Supports both Arruda and modified Arruda algorithms
-public class WpwArruda extends EpActivity implements OnClickListener {
+public class WpwArruda extends LocationAlgorithm implements OnClickListener {
 	public final static String AS = "AS";
 	public final static String LPL = "LPL";
 	public final static String LL = "LL";
@@ -53,14 +53,6 @@ public class WpwArruda extends EpActivity implements OnClickListener {
 	protected String message;
 	protected String location1 = "";
 	protected String location2 = "";
-	protected int step = 1;
-	// these ints implement a back buffer
-	private int priorStep = 1;
-	private int priorStep1 = 1;
-	private int priorStep2 = 1;
-	private int priorStep3 = 1;
-	private int priorStep4 = 1;
-	private int priorStep5 = 1;
 
 	protected boolean modifiedArruda = false;
 
@@ -210,28 +202,6 @@ public class WpwArruda extends EpActivity implements OnClickListener {
 	private void getBackResult() {
 		adjustStepsBackward();
 		gotoStep();
-	}
-
-	protected void adjustStepsForward() {
-		priorStep5 = priorStep4;
-		priorStep4 = priorStep3;
-		priorStep3 = priorStep2;
-		priorStep2 = priorStep1;
-		priorStep1 = priorStep;
-		priorStep = step;
-	}
-
-	protected void adjustStepsBackward() {
-		step = priorStep;
-		priorStep = priorStep1;
-		priorStep1 = priorStep2;
-		priorStep2 = priorStep3;
-		priorStep3 = priorStep4;
-		priorStep4 = priorStep5;
-	}
-
-	private void resetSteps() {
-		priorStep5 = priorStep4 = priorStep3 = priorStep2 = priorStep1 = priorStep = step = 1;
 	}
 
 	protected void gotoStep() {

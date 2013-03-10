@@ -45,6 +45,7 @@
     </array>
     <array name="diagnosis_list">
         <item>@string/arvc_list_title</item>
+        <item>@string/atrial_tachycardia_localization_title</item>
         <item>@string/brugada_ecg_title</item>
         <item>@string/lvh_list_title</item>
         <item>@string/lqt_syndrome_title</item>
