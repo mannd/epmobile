@@ -223,6 +223,10 @@
             android:name=".AtrialTachLocalization"
             android:label="@string/atrial_tachycardia_localization_title" >
         </activity>
+        <activity
+            android:name=".Entrainment"
+            android:label="@string/entrainment_title" >
+        </activity>
     </application>
 
 </manifest>

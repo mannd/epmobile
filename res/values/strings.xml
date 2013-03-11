@@ -599,7 +599,7 @@
     <string name="calculator_title">Calculators</string>
     <string name="diagnosis_list_title">Diagnosis</string>
     <string name="diagnosis_title">Diagnosis</string>
-    <string name="reference_list_title">Reference</string>
+    <string name="reference_list_title">Reference &amp; Tools</string>
     <string name="reference_title">Reference</string>
     <string name="error_dialog_title">Error</string>
     <string name="estes_contradiction_message">You have selected strain pattern
@@ -766,5 +766,19 @@
         To be accurate, the P wave must have a discrete isoelectric segment before its start, i.e. don\'t use
         a P wave that is fused onto the end of a T wave.  Iso means isoelectric, defined as a &lt; 0.05 mV
         deviation from the baseline.  The algorithm sensitivity in the original study was 93%.</string>
+    <string name="tcl_label">Tachycardia CL</string>
+    <string name="ppi_label">Post-Pacing Int</string>
+    <string name="s_qrs_label">S-QRS</string>
+    <string name="egm_qrs_label">EGM-QRS</string>
+    <string name="concealed_fusion_label">Concealed Fusion</string>
+    <string name="tcl_hint">TCL (msec)</string>
+    <string name="ppi_hint">PPI (msec)</string>
+    <string name="s_qrs_hint">S-QRS (msec)</string>
+    <string name="egm_qrs_hint">EGM-QRS (msec)</string>
+    <string name="short_calculate_label">Calc</string>
+    <string name="short_clear_label">Clear</string>
+    <string name="help_label">Help</string>
+    <string name="clear_keep_tcl_label">Clear All</string>
+    <string name="error_ppi_lt_tcl">PPI &lt; TCL\nInvalid Data!</string>
 
 </resources>
