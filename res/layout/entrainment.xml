@@ -109,11 +109,11 @@
             android:text="@string/short_calculate_label" />
 
         <Button
-            android:id="@+id/clear_button"
+            android:id="@+id/clear_all_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/short_clear_label" />
+            android:text="@string/clear_all_label" />
 
         <Button
             android:id="@+id/clear_keep_tcl_button"

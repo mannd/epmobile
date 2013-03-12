@@ -600,7 +600,7 @@
     <string name="diagnosis_list_title">Diagnosis</string>
     <string name="diagnosis_title">Diagnosis</string>
     <string name="reference_list_title">Reference &amp; Tools</string>
-    <string name="reference_title">Reference</string>
+    <string name="reference_title">Reference &amp; Tools</string>
     <string name="error_dialog_title">Error</string>
     <string name="estes_contradiction_message">You have selected strain pattern
 	    with and without digitalis.  Please select one or the other, not both.</string>
@@ -776,9 +776,10 @@
     <string name="s_qrs_hint">S-QRS (msec)</string>
     <string name="egm_qrs_hint">EGM-QRS (msec)</string>
     <string name="short_calculate_label">Calc</string>
-    <string name="short_clear_label">Clear</string>
+    <string name="clear_all_label">Clear All</string>
     <string name="help_label">Help</string>
-    <string name="clear_keep_tcl_label">Clear All</string>
+    <string name="clear_keep_tcl_label">Clear</string>
     <string name="error_ppi_lt_tcl">PPI &lt; TCL\nInvalid Data!</string>
+    <string name="entrainment_instructions">Entrainment instructions here</string>
 
 </resources>
