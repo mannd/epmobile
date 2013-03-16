@@ -225,7 +225,7 @@
         </activity>
         <activity
             android:name=".DayCalculator"
-            android:label="@string/icd_day_calculator_title" >
+            android:label="@string/day_calculator_title" >
         </activity>
     </application>
 

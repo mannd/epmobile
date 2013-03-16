@@ -34,7 +34,7 @@ public class CalculatorList extends EpListActivity {
 						.equals(getString(R.string.drug_dose_calculator_list_title)))
 					drugDoseCalculators();
 				else if (selection
-						.equals(getString(R.string.icd_day_calculator_title)))
+						.equals(getString(R.string.day_calculator_title)))
 					icdDayCalculator();
 			}
 		});
