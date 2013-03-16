@@ -730,6 +730,10 @@
     <string name="apixaban_calculator_title">Apixaban Calculator</string>
     <string name="apixaban_use_caution_message">Limited clinical data available at this creatinine clearance.  
         	Use caution because of higher bleeding risk.</string>
+    <string name="apixaban_drug_interaction_at_5_mg_message">Use 2.5 mg twice daily when administered with
+        strong dual inhibitors of CYP3A4 and P-gp</string>
+    <string name="apixaban_dual_inhibitors">(e.g. ketoconazole, itraconazole, ritonavir, clarithromycin)</string>
+    <string name="apixaban_drug_interaction_at_2_5_mg_message">Avoid coadministration with strong dual inhibitors of CYP3A4 and P-gp.</string>
     <string name="invalid_warning">Invalid!</string>
     <string name="dose_undefined_warning">"Dose undefined"</string>
     <string name="pediatric_use_warning">Pediatric dosing is not recommended or not calculated
