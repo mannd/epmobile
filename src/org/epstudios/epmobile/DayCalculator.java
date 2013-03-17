@@ -1,6 +1,6 @@
 package org.epstudios.epmobile;
 
-import java.text.SimpleDateFormat;
+import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -102,8 +102,10 @@ public class DayCalculator extends EpActivity implements OnClickListener {
 			Calendar cal = new GregorianCalendar(indexDatePicker.getYear(),
 					indexDatePicker.getMonth(), indexDatePicker.getDayOfMonth());
 			cal.add(Calendar.DATE, number);
-			SimpleDateFormat date_format = new SimpleDateFormat("MM/dd/yyyy");
-			calculatedDateTextView.setText(date_format.format(cal.getTime()));
+			// DateFormat =
+			// SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+			calculatedDateTextView.setText(DateFormat.getDateInstance(
+					DateFormat.MEDIUM).format(cal.getTime()));
 
 		} catch (NumberFormatException e) {
 			calculatedDateTextView.setText("Invalid!");
