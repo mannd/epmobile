@@ -226,8 +226,8 @@
         <activity
             android:name=".DayCalculator"
             android:label="@string/day_calculator_title" >
-	</activity>
-	<activity
+        </activity>
+        <activity
             android:name=".Entrainment"
             android:label="@string/entrainment_title" >
         </activity>
