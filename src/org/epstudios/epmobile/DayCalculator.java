@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -21,9 +21,8 @@ public class DayCalculator extends EpActivity implements OnClickListener {
 	private DatePicker indexDatePicker;
 	private RadioGroup dayRadioGroup;
 	private EditText numberOfDaysEditText;
-	private Button calculateDateButton;
-	private Button clearButton;
 	private TextView calculatedDateTextView;
+	private CheckBox reverseTimeCheckBox;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +37,7 @@ public class DayCalculator extends EpActivity implements OnClickListener {
 		indexDatePicker = (DatePicker) findViewById(R.id.indexDatePicker);
 		dayRadioGroup = (RadioGroup) findViewById(R.id.dayRadioGroup);
 		numberOfDaysEditText = (EditText) findViewById(R.id.numberOfDaysEditText);
+		reverseTimeCheckBox = (CheckBox) findViewById(R.id.reverseTimeCheckBox);
 		calculatedDateTextView = (TextView) findViewById(R.id.calculated_date);
 		numberOfDaysEditText.setText("90");
 
@@ -99,6 +99,8 @@ public class DayCalculator extends EpActivity implements OnClickListener {
 		CharSequence numberOfDays = numberOfDaysEditText.getText();
 		try {
 			int number = Integer.parseInt(numberOfDays.toString());
+			if (reverseTimeCheckBox.isChecked())
+				number = -number;
 			Calendar cal = new GregorianCalendar(indexDatePicker.getYear(),
 					indexDatePicker.getMonth(), indexDatePicker.getDayOfMonth());
 			cal.add(Calendar.DATE, number);

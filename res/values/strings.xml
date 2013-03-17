@@ -775,5 +775,6 @@
     <string name="days_30">30 Days (new H&amp;P needed)</string>
     <string name="days_other">Other</string>
     <string name="date_result_label">Date</string>
+    <string name="reverse_time_label">Subtract Days</string>
 
 </resources>

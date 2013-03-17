@@ -38,10 +38,11 @@
                 android:id="@+id/numberOfDaysEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="right"
                 android:ems="10"
                 android:gravity="right"
                 android:hint="@string/number_of_days_hint"
-                android:inputType="number" >
+                android:inputType="numberSigned" >
             </EditText>
         </LinearLayout>
 
@@ -68,13 +69,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/days_30" />
-
-            <RadioButton
-                android:id="@+id/otherRadio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/days_other" />
         </RadioGroup>
+
+        <CheckBox
+            android:id="@+id/reverseTimeCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reverse_time_label" />
 
         <LinearLayout
             android:id="@+id/linearLayout3"
@@ -92,6 +93,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:gravity="center_horizontal"
                 android:text="@string/date_result_label"
                 android:textColor="@color/neutral_text"
                 android:textSize="20sp" >
