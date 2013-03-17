@@ -4,6 +4,9 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.method.LinkMovementMethod;
+import android.text.util.Linkify;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -98,6 +101,7 @@ public class Entrainment extends EpActivity implements OnClickListener {
 		String ppiText = ppiEditText.getText().toString();
 		String sqrsText = sqrsEditText.getText().toString();
 		String egmQrsText = egmQrsEditText.getText().toString();
+		resultTextView.setTextColor(Color.LTGRAY);
 		try {
 			int tcl = Integer.parseInt(tclText);
 			int ppi = Integer.parseInt(ppiText);
@@ -122,6 +126,7 @@ public class Entrainment extends EpActivity implements OnClickListener {
 					int sqrs = 0;
 					boolean hasEgmQrs = false;
 					boolean hasSqrs = false;
+					boolean invalidSqrs = false;
 					if (egmQrsText.length() != 0) {
 						egmQrs = Integer.parseInt(egmQrsText);
 						hasEgmQrs = true;
@@ -129,12 +134,6 @@ public class Entrainment extends EpActivity implements OnClickListener {
 					if (sqrsText.length() != 0) {
 						sqrs = Integer.parseInt(sqrsText);
 						hasSqrs = true;
-					}
-					if (hasEgmQrs && hasSqrs) {
-						int egmMinusQrs = egmQrs - sqrs;
-						if (Math.abs(egmMinusQrs) <= 20)
-							message += " "
-									+ getString(R.string.entrainment_egm_match_message);
 					}
 					if (hasSqrs) {
 						double sQrsPercent = (double) sqrs / tcl;
@@ -145,9 +144,20 @@ public class Entrainment extends EpActivity implements OnClickListener {
 							message += getString(R.string.central_site_label);
 						else if (sQrsPercent <= .7)
 							message += getString(R.string.proximal_site_label);
-						else
+						else if (sQrsPercent <= 1)
 							message += getString(R.string.entry_site_label);
-
+						else {
+							message += getString(R.string.invalid_sqrs_label);
+							invalidSqrs = true;
+						}
+						if (hasEgmQrs && !invalidSqrs) {
+							int egmMinusQrs = egmQrs - sqrs;
+							message += " ";
+							if (Math.abs(egmMinusQrs) <= 20)
+								message += getString(R.string.entrainment_egm_match_message);
+							else
+								message += getString(R.string.entrainment_egm_no_match_message);
+						}
 					}
 				}
 			}
@@ -182,10 +192,15 @@ public class Entrainment extends EpActivity implements OnClickListener {
 	}
 
 	private void displayInstructions() {
-		AlertDialog dialog = new AlertDialog.Builder(this).create();
-		String message = getString(R.string.entrainment_instructions);
+		final SpannableString message = new SpannableString(
+				getString(R.string.entrainment_instructions) + "\n\n"
+						+ getString(R.string.entrainment_reference));
+		Linkify.addLinks(message, Linkify.WEB_URLS);
+		final AlertDialog dialog = new AlertDialog.Builder(this).create();
 		dialog.setMessage(message);
 		dialog.setTitle(getString(R.string.entrainment_title));
 		dialog.show();
+		((TextView) dialog.findViewById(android.R.id.message))
+				.setMovementMethod(LinkMovementMethod.getInstance());
 	}
 }

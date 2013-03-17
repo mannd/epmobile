@@ -29,8 +29,6 @@
                 android:ems="10"
                 android:hint="@string/tcl_hint"
                 android:inputType="number" >
-
-                <requestFocus />
             </EditText>
         </TableRow>
 

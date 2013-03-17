@@ -785,15 +785,18 @@
     <string name="clear_keep_tcl_label">Clear</string>
     <string name="error_ppi_lt_tcl">PPI &lt; TCL\nInvalid Data!</string>
     <string name="entrainment_instructions">Entrainment instructions here</string>
+    <string name="entrainment_reference">Stevenson WG et al. JACC 1997;29:1180.\nhttp://content.onlinejacc.org/article.aspx?articleid=1121699 </string>
     <string name="entrainment_remote_site_message">Remote site from reentry circuit.</string>
     <string name="entrainment_outer_loop_message">Outer loop of reentry circuit.</string>
-    <string name="entrainment_inner_loop_message">Inner loop of reentry circuit.</string>
-    <string name="entrainment_bystander_message">Bystander pathway not in reentry circuit.</string>
-    <string name="entrainment_egm_match_message">Similar S-QRS and EGM-QRS intervals also suggest site in inner loop.</string>
+    <string name="entrainment_inner_loop_message">Inner loop or isthmus site of reentry circuit.</string>
+    <string name="entrainment_bystander_message">Adjacent bystander pathway not in reentry circuit.</string>
+    <string name="entrainment_egm_match_message">Similar S-QRS and EGM-QRS intervals suggest site in isthmus of reentry circuit.</string>
+    <string name="entrainment_egm_no_match_message">Dissimilar S-QRS and EGM-QRS intervals suggest site may be an adjacent bystander.</string>
     <string name="ppi_minus_tcl_label">PPI-TCL=</string>
-    <string name="exit_site_label">Exit site.</string>
-    <string name="central_site_label">Central site.</string>
-    <string name="proximal_site_label">Proximal site.</string>
-    <string name="entry_site_label">Entry site.</string>
+    <string name="exit_site_label">Isthmus exit site.</string>
+    <string name="central_site_label">Isthmus central site.</string>
+    <string name="proximal_site_label">Isthmus proximal site.</string>
+    <string name="entry_site_label">Inner loop site.</string>
+    <string name="invalid_sqrs_label">Invalid S-QRS (&gt;TCL) ignored!</string>
 
 </resources>
