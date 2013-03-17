@@ -647,3 +647,5 @@
    - PPI - TCL <= 30 msec in circuit
    - EGM-QRS interval
      - in circuit (with concealed fusion) S-QRS = EGM-QRS +/- 20 msec
+** Long QT drugs
+*** website: http://www.azcert.org/medical-pros/drug-lists/printable-drug-list.cfm
