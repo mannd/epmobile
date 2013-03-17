@@ -4,7 +4,7 @@ Changes since v1.5.1
 
 * Added Atrial Tachycardia Location module
 
-* Added Date Calculator (how many days until that ICD can be implanted?  Is the H&P really more than 30 days old?)
+* Added Date Calculator
 
 * Added Entrainment Mapping module
 
