@@ -1,6 +1,11 @@
 package org.epstudios.epmobile;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -34,6 +39,7 @@ public class DayCalculator extends EpActivity implements OnClickListener {
 		dayRadioGroup = (RadioGroup) findViewById(R.id.dayRadioGroup);
 		numberOfDaysEditText = (EditText) findViewById(R.id.numberOfDaysEditText);
 		calculatedDateTextView = (TextView) findViewById(R.id.calculated_date);
+		numberOfDaysEditText.setText("90");
 
 		dayRadioGroup
 				.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -42,12 +48,22 @@ public class DayCalculator extends EpActivity implements OnClickListener {
 					public void onCheckedChanged(RadioGroup group, int checkedId) {
 						RadioButton checkedRadioButton = (RadioButton) group
 								.findViewById(checkedId);
-						boolean isChecked = checkedRadioButton.isChecked();
-						if (isChecked) {
-							calculatedDateTextView.setText(checkedId);
-
+						int index = group.indexOfChild(checkedRadioButton);
+						int number = 0;
+						switch (index) {
+						case 0:
+							number = 90;
+							break;
+						case 1:
+							number = 40;
+							break;
+						case 2:
+							number = 30;
+							break;
+						// else still = 0;
 						}
-
+						if (number != 0)
+							numberOfDaysEditText.setText(String.valueOf(number));
 					}
 				});
 
@@ -80,12 +96,29 @@ public class DayCalculator extends EpActivity implements OnClickListener {
 	}
 
 	private void calculateDays() {
+		CharSequence numberOfDays = numberOfDaysEditText.getText();
+		try {
+			int number = Integer.parseInt(numberOfDays.toString());
+			Calendar cal = new GregorianCalendar(indexDatePicker.getYear(),
+					indexDatePicker.getMonth(), indexDatePicker.getDayOfMonth());
+			cal.add(Calendar.DATE, number);
+			SimpleDateFormat date_format = new SimpleDateFormat("MM/dd/yyyy");
+			calculatedDateTextView.setText(date_format.format(cal.getTime()));
+
+		} catch (NumberFormatException e) {
+			calculatedDateTextView.setText("Invalid!");
+			calculatedDateTextView.setTextColor(Color.RED);
+		}
 
 	}
 
 	private void clearEntries() {
 		numberOfDaysEditText.setText(null);
 		calculatedDateTextView.setText(getString(R.string.date_result_label));
+		dayRadioGroup.check(R.id.ninetyRadio);
+		numberOfDaysEditText.setText("90");
+		calculatedDateTextView.setTextColor(Color.LTGRAY);
+
 	}
 
 }
