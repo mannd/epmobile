@@ -2,6 +2,7 @@ package org.epstudios.epmobile;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,6 +19,7 @@ public class Entrainment extends EpActivity implements OnClickListener {
 	private TextView sqrsTextView;
 	private TextView egmQrsTextView;
 	private CheckBox concealedFusionCheckBox;
+	private TextView resultTextView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,7 @@ public class Entrainment extends EpActivity implements OnClickListener {
 		sqrsTextView = (TextView) findViewById(R.id.sqrsTextView);
 		egmQrsTextView = (TextView) findViewById(R.id.egmQrsTextView);
 		concealedFusionCheckBox = (CheckBox) findViewById(R.id.concealedFusionCheckBox);
+		resultTextView = (TextView) findViewById(R.id.resultTextView);
 		View calcButton = findViewById(R.id.calculate_button);
 		View clearKeepTclButton = findViewById(R.id.clear_keep_tcl_button);
 		View clearAllButton = findViewById(R.id.clear_all_button);
@@ -38,6 +41,23 @@ public class Entrainment extends EpActivity implements OnClickListener {
 		clearKeepTclButton.setOnClickListener(this);
 		clearAllButton.setOnClickListener(this);
 		helpButton.setOnClickListener(this);
+
+		concealedFusionCheckBox.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				boolean checked = concealedFusionCheckBox.isChecked();
+				sqrsTextView.setEnabled(checked);
+				sqrsEditText.setEnabled(checked);
+				egmQrsTextView.setEnabled(checked);
+				egmQrsEditText.setEnabled(checked);
+				if (!checked) {
+					sqrsEditText.setText(null);
+					egmQrsEditText.setText(null);
+				}
+
+			}
+
+		});
 
 	}
 
@@ -74,6 +94,72 @@ public class Entrainment extends EpActivity implements OnClickListener {
 	}
 
 	private void calculate() {
+		String tclText = tclEditText.getText().toString();
+		String ppiText = ppiEditText.getText().toString();
+		String sqrsText = sqrsEditText.getText().toString();
+		String egmQrsText = egmQrsEditText.getText().toString();
+		try {
+			int tcl = Integer.parseInt(tclText);
+			int ppi = Integer.parseInt(ppiText);
+			int ppiMinusTcl = ppi - tcl;
+			if (ppiMinusTcl < 0)
+				throw new NumberFormatException();
+			String message = "";
+			if (!concealedFusionCheckBox.isChecked()) {
+				if (ppiMinusTcl > 30)
+					message = getString(R.string.entrainment_remote_site_message);
+				else {
+					message = getString(R.string.entrainment_outer_loop_message);
+					resultTextView.setTextColor(Color.CYAN);
+				}
+			} else { // concealed fusion present!
+				if (ppiMinusTcl > 30) {
+					message = getString(R.string.entrainment_bystander_message);
+				} else {
+					message = getString(R.string.entrainment_inner_loop_message);
+					resultTextView.setTextColor(Color.GREEN);
+					int egmQrs = 0;
+					int sqrs = 0;
+					boolean hasEgmQrs = false;
+					boolean hasSqrs = false;
+					if (egmQrsText.length() != 0) {
+						egmQrs = Integer.parseInt(egmQrsText);
+						hasEgmQrs = true;
+					}
+					if (sqrsText.length() != 0) {
+						sqrs = Integer.parseInt(sqrsText);
+						hasSqrs = true;
+					}
+					if (hasEgmQrs && hasSqrs) {
+						int egmMinusQrs = egmQrs - sqrs;
+						if (Math.abs(egmMinusQrs) <= 20)
+							message += " "
+									+ getString(R.string.entrainment_egm_match_message);
+					}
+					if (hasSqrs) {
+						double sQrsPercent = (double) sqrs / tcl;
+						message += " ";
+						if (sQrsPercent < .3)
+							message += getString(R.string.exit_site_label);
+						else if (sQrsPercent <= .5)
+							message += getString(R.string.central_site_label);
+						else if (sQrsPercent <= .7)
+							message += getString(R.string.proximal_site_label);
+						else
+							message += getString(R.string.entry_site_label);
+
+					}
+				}
+			}
+
+			message = getString(R.string.ppi_minus_tcl_label)
+					+ String.valueOf(ppiMinusTcl) + ". " + message;
+			resultTextView.setText(message);
+
+		} catch (NumberFormatException e) {
+			resultTextView.setText(getString(R.string.invalid_warning));
+			resultTextView.setTextColor(Color.RED);
+		}
 
 	}
 
@@ -85,6 +171,8 @@ public class Entrainment extends EpActivity implements OnClickListener {
 		sqrsEditText.setEnabled(false);
 		egmQrsTextView.setEnabled(false);
 		egmQrsEditText.setText(null);
+		resultTextView.setTextColor(Color.LTGRAY);
+		resultTextView.setText(null);
 
 	}
 

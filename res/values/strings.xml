@@ -785,5 +785,15 @@
     <string name="clear_keep_tcl_label">Clear</string>
     <string name="error_ppi_lt_tcl">PPI &lt; TCL\nInvalid Data!</string>
     <string name="entrainment_instructions">Entrainment instructions here</string>
+    <string name="entrainment_remote_site_message">Remote site from reentry circuit.</string>
+    <string name="entrainment_outer_loop_message">Outer loop of reentry circuit.</string>
+    <string name="entrainment_inner_loop_message">Inner loop of reentry circuit.</string>
+    <string name="entrainment_bystander_message">Bystander pathway not in reentry circuit.</string>
+    <string name="entrainment_egm_match_message">Similar S-QRS and EGM-QRS intervals also suggest site in inner loop.</string>
+    <string name="ppi_minus_tcl_label">PPI-TCL=</string>
+    <string name="exit_site_label">Exit site.</string>
+    <string name="central_site_label">Central site.</string>
+    <string name="proximal_site_label">Proximal site.</string>
+    <string name="entry_site_label">Entry site.</string>
 
 </resources>
