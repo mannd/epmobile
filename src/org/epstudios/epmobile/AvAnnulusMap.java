@@ -31,7 +31,7 @@ public class AvAnnulusMap extends EpActivity {
 		Bundle extras = getIntent().getExtras();
 		if (extras != null) {
 			String message = extras.getString("message");
-			Toast.makeText(this, message, 5000).show();
+			Toast.makeText(this, message, Toast.LENGTH_LONG).show();
 			location1 = extras.getString("location1");
 			location2 = extras.getString("location2");
 			setApLocation(location1);

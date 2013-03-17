@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <string name="app_name">EP Mobile</string>
     <string name="about_text">EP Mobile is a package of
@@ -38,7 +38,6 @@
     <string name="creatinine_hint">Creatinine (mg/dL)</string>
     <string name="age_hint">Age (yr)</string>
     <string name="age_label">Age (yr)</string>
-    <string name="creatinine_label">Creatinine (mg/dL)</string>
     <string name="creatinine_clearance_label"></string>
     <string name="male_label">Male</string>
     <string name="female_label">Female</string>
@@ -576,7 +575,7 @@
     <string name="lqt_subtypes_4_description">Frequency: 1-2%\nLocus: 4q25-27\nGene: ANKB\nChannel:
     	INaKATP, INaCa exchange\nECG: Variable QT prolongation\nFeatures: No specific features</string>
     <string name="lqt_subtypes_5_name">LQTS 5 – 11</string>
-    <string name="lqt_subtypes_5_description">Remaining subtypes all &lt;1% frequency (some just single families)
+    <string name="lqt_subtypes_5_description" tools:ignore="StringFormatInvalid">Remaining subtypes all &lt;1% frequency (some just single families)
    	    without distinguishing features.  One exception is LQTS 8 which affects the ICaL channel, has
    	    alternating T waves on ECG, and is associated with Timothy Syndrome.</string>
     <string name="lqt_subtypes_reference">\nReferences:\nhttp://www.geneticheartdisease.org/lqts_gene_table.htm\n
@@ -728,8 +727,6 @@
     <string name="brugada_drugs_title">Brugada Drugs (link)</string>
     <string name="brugada_drugs_link">http://www.brugadadrugs.org</string>
     <string name="apixaban_calculator_title">Apixaban Calculator</string>
-    <string name="apixaban_use_caution_message">Limited clinical data available at this creatinine clearance.  
-        	Use caution because of higher bleeding risk.</string>
     <string name="apixaban_drug_interaction_at_5_mg_message">Use 2.5 mg twice daily when administered with
         strong dual inhibitors of CYP3A4 and P-gp</string>
     <string name="apixaban_dual_inhibitors">(e.g. ketoconazole, itraconazole, ritonavir, clarithromycin)</string>
@@ -777,7 +774,6 @@
     <string name="days_40">40 Days (ICD OK s/p MI)</string>
     <string name="days_90">90 Days (ICD OK s/p revasc or NICM)</string>
     <string name="days_30">30 Days (new H&amp;P needed)</string>
-    <string name="days_other">Other</string>
     <string name="date_result_label">Date</string>
     <string name="reverse_time_label">Subtract Days</string>
     <string name="tcl_label">Tachycardia CL</string>
@@ -793,7 +789,6 @@
     <string name="clear_all_label">Clear All</string>
     <string name="help_label">Help</string>
     <string name="clear_keep_tcl_label">Clear</string>
-    <string name="error_ppi_lt_tcl">PPI &lt; TCL\nInvalid Data!</string>
     <string name="entrainment_instructions">This Entrainment Mapping module is most suited for mapping ischemic
 		ventricular tachycardia (VT), but principles of entrainment apply to
 		all reentrant arrhythmias.  Entrainment is performed by pacing during
