@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.epstudios.epmobile"
-    android:versionCode="24"
-    android:versionName="1.5.1" >
+    android:versionCode="25"
+    android:versionName="2.0" xmlns:tools="http://schemas.android.com/tools">
 
     <uses-sdk
         android:minSdkVersion="7"
-        android:targetSdkVersion="14" >
+        android:targetSdkVersion="14"
+        tools:ignore="OldTargetApi" >
+
     </uses-sdk>
 
     <application
@@ -218,6 +220,18 @@
         <activity
             android:name=".Apixaban"
             android:label="@string/apixaban_calculator_title" >
+        </activity>
+        <activity
+            android:name=".AtrialTachLocalization"
+            android:label="@string/atrial_tachycardia_localization_title" >
+        </activity>
+        <activity
+            android:name=".DayCalculator"
+            android:label="@string/day_calculator_title" >
+        </activity>
+        <activity
+            android:name=".Entrainment"
+            android:label="@string/entrainment_title" >
         </activity>
     </application>
 

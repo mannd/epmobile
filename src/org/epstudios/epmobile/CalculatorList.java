@@ -33,6 +33,9 @@ public class CalculatorList extends EpListActivity {
 				else if (selection
 						.equals(getString(R.string.drug_dose_calculator_list_title)))
 					drugDoseCalculators();
+				else if (selection
+						.equals(getString(R.string.day_calculator_title)))
+					icdDayCalculator();
 			}
 		});
 	}
@@ -49,6 +52,11 @@ public class CalculatorList extends EpListActivity {
 
 	private void drugDoseCalculators() {
 		Intent i = new Intent(this, DrugDoseCalculatorList.class);
+		startActivity(i);
+	}
+
+	private void icdDayCalculator() {
+		Intent i = new Intent(this, DayCalculator.class);
 		startActivity(i);
 	}
 

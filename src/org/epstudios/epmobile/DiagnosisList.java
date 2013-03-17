@@ -44,6 +44,9 @@ public class DiagnosisList extends EpListActivity {
 					brugadaEcg();
 				else if (selection.equals(getString(R.string.vt_list_title)))
 					vtList();
+				else if (selection
+						.equals(getString(R.string.atrial_tachycardia_localization_title)))
+					atrialTachLocalization();
 			}
 		});
 	}
@@ -85,6 +88,11 @@ public class DiagnosisList extends EpListActivity {
 
 	private void brugadaEcg() {
 		Intent i = new Intent(this, BrugadaEcg.class);
+		startActivity(i);
+	}
+
+	private void atrialTachLocalization() {
+		Intent i = new Intent(this, AtrialTachLocalization.class);
 		startActivity(i);
 	}
 }

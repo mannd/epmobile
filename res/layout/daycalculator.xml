@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/index_event_label"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <DatePicker
+            android:id="@+id/indexDatePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:calendarViewShown="false"
+            android:gravity="center" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/number_of_days_label"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <EditText
+                android:id="@+id/numberOfDaysEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:ems="10"
+                android:gravity="right"
+                android:hint="@string/number_of_days_hint"
+                android:inputType="numberSigned" >
+            </EditText>
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/dayRadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <RadioButton
+                android:id="@+id/ninetyRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/days_90" />
+
+            <RadioButton
+                android:id="@+id/fortyRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/days_40" />
+
+            <RadioButton
+                android:id="@+id/thirtyRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/days_30" />
+        </RadioGroup>
+
+        <CheckBox
+            android:id="@+id/reverseTimeCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reverse_time_label" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/calculate_date_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/calculate_label" />
+
+            <TextView
+                android:id="@+id/calculated_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="@string/date_result_label"
+                android:textColor="@color/neutral_text"
+                android:textSize="20sp" >
+            </TextView>
+
+            <Button
+                android:id="@+id/clear_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/clear_label" >
+            </Button>
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>
