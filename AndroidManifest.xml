@@ -223,6 +223,10 @@
             android:name=".AtrialTachLocalization"
             android:label="@string/atrial_tachycardia_localization_title" >
         </activity>
+        <activity
+            android:name=".DayCalculator"
+            android:label="@string/day_calculator_title" >
+        </activity>
     </application>
 
 </manifest>

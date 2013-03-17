@@ -766,5 +766,14 @@
         To be accurate, the P wave must have a discrete isoelectric segment before its start, i.e. don\'t use
         a P wave that is fused onto the end of a T wave.  Iso means isoelectric, defined as a &lt; 0.05 mV
         deviation from the baseline.  The algorithm sensitivity in the original study was 93%.</string>
+    <string name="day_calculator_title">Date Calculator</string>
+    <string name="index_event_label">Index Event Date</string>
+    <string name="number_of_days_label">Number of Days</string>
+    <string name="number_of_days_hint">Days</string>
+    <string name="days_40">40 Days (ICD OK s/p MI)</string>
+    <string name="days_90">90 Days (ICD OK s/p revasc or NICM)</string>
+    <string name="days_30">30 Days (new H&amp;P needed)</string>
+    <string name="days_other">Other</string>
+    <string name="date_result_label">Date</string>
 
 </resources>
