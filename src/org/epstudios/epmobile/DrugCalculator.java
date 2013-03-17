@@ -199,18 +199,30 @@ public abstract class DrugCalculator extends EpDrugCalculatorActivity implements
 			double dose = getDose(cc);
 			if (dose == USE_APIXABAN_DOSING) {
 				// special processing here
-				if (cc <= 24) {
-					calculatedDoseTextView
-							.setText(getString(R.string.dose_undefined_warning));
-					ccTextView.setTextColor(Color.YELLOW);
-				} else {
-					ccTextView.setTextColor(Color.WHITE);
-					boolean creatinineTooHigh = ((creatinine >= 133 && useMmolUnits) || (creatinine >= 1.5 && !useMmolUnits));
-					if ((creatinineTooHigh && (age >= 80 || weight <= 60))
-							|| (age >= 80 && weight <= 60))
-						dose = 2.5;
-					else
-						dose = 5;
+				ccTextView.setTextColor(Color.WHITE);
+				boolean creatinineTooHigh = ((creatinine >= 133 && useMmolUnits) || (creatinine >= 1.5 && !useMmolUnits));
+				if ((creatinineTooHigh && (age >= 80 || weight <= 60))
+						|| (age >= 80 && weight <= 60))
+					dose = 2.5;
+				else
+					dose = 5;
+
+				// add on CYP/dPg warnings
+				if (dose == 5) {
+					ccTextView
+							.setText(ccMessage
+									+ "\n"
+									+ getString(R.string.apixaban_drug_interaction_at_5_mg_message)
+									+ " "
+									+ getString(R.string.apixaban_dual_inhibitors));
+				} else if (dose == 2.5) {
+					ccTextView
+							.setText(ccMessage
+									+ "\n"
+									+ getString(R.string.apixaban_drug_interaction_at_2_5_mg_message)
+									+ " "
+									+ getString(R.string.apixaban_dual_inhibitors));
+
 				}
 			}
 			if (dose == 0) {

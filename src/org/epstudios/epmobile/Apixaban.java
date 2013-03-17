@@ -30,10 +30,6 @@ public class Apixaban extends DrugCalculator {
 	@Override
 	protected String getMessage(int crCl) {
 		String msg = super.getMessage(crCl);
-		if (crCl >= 15 && crCl <= 24) {
-			msg += "\n" + getString(R.string.apixaban_use_caution_message);
-
-		}
 		return msg;
 	}
 }

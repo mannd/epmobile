@@ -37,6 +37,9 @@ public class ReferenceList extends EpListActivity {
 				else if (selection
 						.equals(getString(R.string.brugada_drugs_title)))
 					brugadaDrugs();
+				else if (selection
+						.equals(getString(R.string.entrainment_title)))
+					entrainment();
 			}
 		});
 	}
@@ -60,6 +63,11 @@ public class ReferenceList extends EpListActivity {
 	private void brugadaDrugs() {
 		Intent i = new Intent(Intent.ACTION_VIEW,
 				Uri.parse(getString(R.string.brugada_drugs_link)));
+		startActivity(i);
+	}
+
+	private void entrainment() {
+		Intent i = new Intent(this, Entrainment.class);
 		startActivity(i);
 	}
 
