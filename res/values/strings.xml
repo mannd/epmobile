@@ -773,25 +773,46 @@
     <string name="tcl_label">Tachycardia CL</string>
     <string name="ppi_label">Post-Pacing Int</string>
     <string name="s_qrs_label">S-QRS</string>
-    <string name="egm_qrs_label">EGM-QRS</string>
+    <string name="egm_qrs_label">EG-QRS</string>
     <string name="concealed_fusion_label">Concealed Fusion</string>
     <string name="tcl_hint">TCL (msec)</string>
     <string name="ppi_hint">PPI (msec)</string>
     <string name="s_qrs_hint">S-QRS (msec)</string>
-    <string name="egm_qrs_hint">EGM-QRS (msec)</string>
+    <string name="egm_qrs_hint">EG-QRS (msec)</string>
     <string name="short_calculate_label">Calc</string>
     <string name="clear_all_label">Clear All</string>
     <string name="help_label">Help</string>
     <string name="clear_keep_tcl_label">Clear</string>
     <string name="error_ppi_lt_tcl">PPI &lt; TCL\nInvalid Data!</string>
-    <string name="entrainment_instructions">Entrainment instructions here</string>
+    <string name="entrainment_instructions">This Entrainment Mapping module is most suited for mapping ischemic
+		ventricular tachycardia (VT), but principles of entrainment apply to
+		all reentrant arrhythmias.  Entrainment is performed by pacing during
+		stable VT (or other reentrant tachycardia) for approximately 8-15 beat
+		trains at 20-40 msec shorter than the tachycardia cycle length (TCL).
+		Make sure all electrograms are "entrained", i.e. the CL shortens to
+		the pacing CL.  The post-pacing interval (PPI) is measured from the
+		last pacing stimulus to the next electrogram recorded from the pacing
+		site.  Concealed fusion is present if the tachycardia morphology does
+		not change during entrainment.  If there is concealed fusion then the
+		pacing site is in an area of slow conduction near the critical isthmus
+		of the reentry circuit.  During VT if a discrete electrogram (EG) is
+		present prior to the QRS onset then the EG-QRS interval can be
+		measured.  During entrainment with concealed fusion, if there is a
+		delay between the pacing stimulus to onset of the QRS (S-QRS), then
+		the site is within the critical isthmus if the S-QRS interval is
+		similar to the EG-QRS interval.  In addition.  the relative location
+		within the critical isthmus can be estimated by the ratio of the S-QRS
+		to the TCL.  Sites with concealed fusion but long PPI intervals are
+		probably adjacent bystander tracts.  Pacing sites within the critical
+		isthmus are associated with a much higher chance of successful
+		tachycardia termination with ablation than other sites.</string>
     <string name="entrainment_reference">Stevenson WG et al. JACC 1997;29:1180.\nhttp://content.onlinejacc.org/article.aspx?articleid=1121699 </string>
     <string name="entrainment_remote_site_message">Remote site from reentry circuit.</string>
     <string name="entrainment_outer_loop_message">Outer loop of reentry circuit.</string>
     <string name="entrainment_inner_loop_message">Inner loop or isthmus site of reentry circuit.</string>
     <string name="entrainment_bystander_message">Adjacent bystander pathway not in reentry circuit.</string>
-    <string name="entrainment_egm_match_message">Similar S-QRS and EGM-QRS intervals suggest site in isthmus of reentry circuit.</string>
-    <string name="entrainment_egm_no_match_message">Dissimilar S-QRS and EGM-QRS intervals suggest site may be an adjacent bystander.</string>
+    <string name="entrainment_egm_match_message">Similar S-QRS and EG-QRS intervals suggest site in isthmus of reentry circuit.</string>
+    <string name="entrainment_egm_no_match_message">Dissimilar S-QRS and EG-QRS intervals suggest site may be an adjacent bystander.</string>
     <string name="ppi_minus_tcl_label">PPI-TCL=</string>
     <string name="exit_site_label">Isthmus exit site.</string>
     <string name="central_site_label">Isthmus central site.</string>
