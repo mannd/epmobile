@@ -763,7 +763,7 @@
     <string name="plus_minus_label">Pos/Neg</string>
     <string name="at_localization_reference">Kistler et al. JACC 2006;48:1010.
 		J Am Coll Cardiol. 2006;48(5):1010-1017. http://content.onlinejacc.org/article.aspx?articleid=1137857</string>
-    <string name="at_localization_instructions">This alogorithm applies only to focal atrial tachycardia.
+    <string name="at_localization_instructions">This algorithm applies only to focal atrial tachycardia.
         To be accurate, the P wave must have a discrete isoelectric segment before its start, i.e. don\'t use
         a P wave that is fused onto the end of a T wave.  Iso means isoelectric, defined as a &lt; 0.05 mV
         deviation from the baseline.  The algorithm sensitivity in the original study was 93%.</string>
