@@ -1,0 +1,24 @@
+EP Mobile v2.0.1 Release Notes
+
+Changes since v2.0
+
+* Fixed spelling errors
+
+Changes since v1.5.1
+
+* Added Atrial Tachycardia Location module
+
+* Added Date Calculator
+
+* Added Entrainment Mapping module
+
+* Added external links for Brugada and Long QT drugs
+
+* Updated Apixaban calculator to match final package insert
+
+* Reference section is now Reference & Tools
+
+* Improved formatting of calculator results
+
+
+
