@@ -77,8 +77,8 @@
     <string name="diabetes_label">Diabetes mellitus</string>
     <string name="low_chads_message">Anti-platelet drug (ASA) recommended</string>
     <string name="medium_chads_message">Anti-platelet drug or
-		anticoagulation (warfarin, dabigatran or rivaroxaban) recommended</string>
-    <string name="high_chads_message">Anticoagulation (warfarin, dabigitran or rivaroxaban) recommended</string>
+		anticoagulation (warfarin, dabigatran, rivaroxaban or apixaban) recommended</string>
+    <string name="high_chads_message">Anticoagulation (warfarin, dabigitran, rivaroxaban or apixaban) recommended</string>
     <string name="chadsvasc_title">CHA\u2082DS\u2082-VASc Score</string>
     <string name="vascular_label">Vascular disease (e.g. PVD, CAD, aortic plaque)</string>
     <string name="low_chadsvasc_message">No antithrombotic therapy or use Aspirin</string>
@@ -659,7 +659,7 @@
     <string name="outflow_vt_indeterminate_location_step">VT location may be right or left sided.  Select
         RV to find predicted RV location, LV to find predicted LV location.</string>
     <string name="outflow_vt_supravalvular_step">Absent S in V5 or V6?</string>
-    <string name="outflow_vt_location_label">Proposed VT Location</string>
+    <string name="outflow_vt_location_label">Ventricular Tachycardia Location</string>
     <string name="rv_label">RV</string>
     <string name="lv_label">LV</string>
     <string name="rvot_label">Right Ventricular Outflow Tract</string>
@@ -748,7 +748,7 @@
     <string name="location_ct">Crista Terminalis</string>
     <string name="location_r_septum_perinodal">Right Side of Septum or Perinodal</string>
     <string name="location_sma">Superior Mitral Annulus</string>
-    <string name="location_cs_os_ls">Coronary Sinus Os or Left Side of Septal</string>
+    <string name="location_cs_os_ls">Coronary Sinus Os or Left Side of Septum</string>
     <string name="location_ta">Tricuspid Annulus</string>
     <string name="location_ta_raa">Tricuspid Annulus or Right Atrial Appendage</string>
     <string name="location_cs_body">Coronary Sinus Body</string>
@@ -763,7 +763,7 @@
     <string name="plus_minus_label">Pos/Neg</string>
     <string name="at_localization_reference">Kistler et al. JACC 2006;48:1010.
 		J Am Coll Cardiol. 2006;48(5):1010-1017. http://content.onlinejacc.org/article.aspx?articleid=1137857</string>
-    <string name="at_localization_instructions">This alogorithm applies only to focal atrial tachycardia.
+    <string name="at_localization_instructions">This algorithm applies only to focal atrial tachycardia.
         To be accurate, the P wave must have a discrete isoelectric segment before its start, i.e. don\'t use
         a P wave that is fused onto the end of a T wave.  Iso means isoelectric, defined as a &lt; 0.05 mV
         deviation from the baseline.  The algorithm sensitivity in the original study was 93%.</string>
@@ -805,7 +805,7 @@
 		measured.  During entrainment with concealed fusion, if there is a
 		delay between the pacing stimulus to onset of the QRS (S-QRS), then
 		the site is within the critical isthmus if the S-QRS interval is
-		similar to the EG-QRS interval.  In addition.  the relative location
+		similar to the EG-QRS interval.  In addition the relative location
 		within the critical isthmus can be estimated by the ratio of the S-QRS
 		to the TCL.  Sites with concealed fusion but long PPI intervals are
 		probably adjacent bystander tracts.  Pacing sites within the critical
