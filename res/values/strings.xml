@@ -77,8 +77,8 @@
     <string name="diabetes_label">Diabetes mellitus</string>
     <string name="low_chads_message">Anti-platelet drug (ASA) recommended</string>
     <string name="medium_chads_message">Anti-platelet drug or
-		anticoagulation (warfarin, dabigatran or rivaroxaban) recommended</string>
-    <string name="high_chads_message">Anticoagulation (warfarin, dabigitran or rivaroxaban) recommended</string>
+		anticoagulation (warfarin, dabigatran, rivaroxaban or apixaban) recommended</string>
+    <string name="high_chads_message">Anticoagulation (warfarin, dabigitran, rivaroxaban or apixaban) recommended</string>
     <string name="chadsvasc_title">CHA\u2082DS\u2082-VASc Score</string>
     <string name="vascular_label">Vascular disease (e.g. PVD, CAD, aortic plaque)</string>
     <string name="low_chadsvasc_message">No antithrombotic therapy or use Aspirin</string>
@@ -659,7 +659,7 @@
     <string name="outflow_vt_indeterminate_location_step">VT location may be right or left sided.  Select
         RV to find predicted RV location, LV to find predicted LV location.</string>
     <string name="outflow_vt_supravalvular_step">Absent S in V5 or V6?</string>
-    <string name="outflow_vt_location_label">Proposed VT Location</string>
+    <string name="outflow_vt_location_label">Ventricular Tachycardia Location</string>
     <string name="rv_label">RV</string>
     <string name="lv_label">LV</string>
     <string name="rvot_label">Right Ventricular Outflow Tract</string>
