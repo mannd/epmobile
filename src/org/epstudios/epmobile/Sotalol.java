@@ -37,8 +37,8 @@ public class Sotalol extends DrugCalculator {
 	}
 
 	@Override
-	protected String getMessage(int crCl) {
-		String msg = super.getMessage(crCl);
+	protected String getMessage(int crCl, double age) {
+		String msg = super.getMessage(crCl, age);
 		if (crCl >= 40) {
 			msg += "\n" + getString(R.string.sotalol_dosing_message);
 			msg += doseFrequency(crCl) + ".";

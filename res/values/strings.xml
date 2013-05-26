@@ -260,6 +260,7 @@
 	    (e.g. dronedarone).</string>
     <string name="dabigatran_warning_mild">Consider reducing dose of dabigatran to 75 mg twice a day 
 	    when dronedarone or systemic ketoconazole is administered with dabigatran.</string>
+    <string name="dabigatran_warning_75_years_old">There may be increased bleeding risk at age over 75 years.</string>
     <string name="rivaroxaban_calculator_title">Rivaroxaban Calculator</string>
     <string name="rivaroxaban_dosing_message">"Take dose with evening meal."</string>
     <string name="icd_calculator_title">CMS ICD Criteria</string>
@@ -728,12 +729,12 @@
     <string name="brugada_drugs_link">http://www.brugadadrugs.org</string>
     <string name="apixaban_calculator_title">Apixaban Calculator</string>
     <string name="apixaban_drug_interaction_at_5_mg_message">Use 2.5 mg twice daily when administered with
-        strong dual inhibitors of CYP3A4 and P-gp</string>
+        strong dual inhibitors of CYP3A4 and P-gp.</string>
     <string name="apixaban_dual_inhibitors">(e.g. ketoconazole, itraconazole, ritonavir, clarithromycin)</string>
     <string name="apixaban_drug_interaction_at_2_5_mg_message">Avoid coadministration with strong dual inhibitors of CYP3A4 and P-gp.</string>
     <string name="invalid_warning">Invalid!</string>
-    <string name="dose_undefined_warning">"Dose undefined"</string>
-    <string name="pediatric_use_warning">Pediatric dosing is not recommended or not calculated
+    <string name="dose_undefined_warning">"Dose undefined."</string>
+    <string name="pediatric_use_warning">Pediatric dosing is not recommended or not calculated.
   	    by EP Mobile.</string>
     <string name="do_not_use_warning">"Do not use!"</string>
     <!-- Atrial tachycardia algorithm Kistler et al. -->

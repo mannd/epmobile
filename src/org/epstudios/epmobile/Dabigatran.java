@@ -23,16 +23,19 @@ import android.graphics.Color;
 public class Dabigatran extends DrugCalculator {
 
 	@Override
-	protected String getMessage(int crCl) {
-		String msg = super.getMessage(crCl) + "\n";
+	protected String getMessage(int crCl, double age) {
+		String msg = super.getMessage(crCl, age);
 		if ((crCl >= 15) && (crCl <= 30)) {
-			msg += getString(R.string.dabigatran_warning_severe);
+			msg += "\n" + getString(R.string.dabigatran_warning_severe);
 			ccTextView.setTextColor(Color.parseColor("#ffa500"));
 		} else if ((crCl > 30) && (crCl <= 50)) {
-			msg += getString(R.string.dabigatran_warning_mild);
+			msg += "\n" + getString(R.string.dabigatran_warning_mild);
 			ccTextView.setTextColor(Color.YELLOW);
 		} else
 			ccTextView.setTextColor(Color.WHITE);
+		if (age >= 75.0 && crCl >= 15) // don't bother with age warning if drug
+										// shouldn't be used
+			msg += "\n" + getString(R.string.dabigatran_warning_75_years_old);
 		return msg;
 	}
 
