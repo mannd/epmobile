@@ -137,16 +137,31 @@ public class Warfarin extends EpDrugCalculatorActivity implements
 		int id = tabletRadioGroup.getCheckedRadioButtonId();
 		switch (id) {
 		case R.id.tablet1:
-			dose = 2.0;
+			dose = 1.0;
 			break;
 		case R.id.tablet2:
-			dose = 2.5;
+			dose = 2.0;
 			break;
 		case R.id.tablet3:
-			dose = 5.0;
+			dose = 2.5;
 			break;
 		case R.id.tablet4:
+			dose = 3.0;
+			break;
+		case R.id.tablet5:
+			dose = 4.0;
+			break;
+		case R.id.tablet6:
+			dose = 5.0;
+			break;
+		case R.id.tablet7:
+			dose = 6.0;
+			break;
+		case R.id.tablet8:
 			dose = 7.5;
+			break;
+		case R.id.tablet9:
+			dose = 10.0;
 			break;
 		}
 		return dose;

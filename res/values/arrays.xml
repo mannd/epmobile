@@ -14,16 +14,26 @@
         <item>"HODGES"</item>
     </array>
     <array name="warfarin_tablets">
+        <item>"1 mg"</item>
         <item>"2 mg"</item>
         <item>"2.5 mg"</item>
+        <item>"3 mg"</item>
+        <item>"4 mg"</item>
         <item>"5 mg"</item>
+        <item>"6 mg"</item>
         <item>"7.5 mg"</item>
+        <item>"10 mg"</item>
     </array>
     <array name="warfarin_tablet_values">
         <item>"0"</item>
         <item>"1"</item>
         <item>"2"</item>
         <item>"3"</item>
+        <item>"4"</item>
+        <item>"5"</item>
+        <item>"6"</item>
+        <item>"7"</item>
+        <item>"8"</item>
     </array>
     <array name="inr_targets">
         <item>"2.0 - 3.0"</item>
