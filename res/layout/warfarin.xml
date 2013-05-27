@@ -62,31 +62,31 @@
                         android:id="@+id/tablet5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/tablet4" />
+                        android:text="@string/tablet5" />
 
                     <RadioButton
                         android:id="@+id/tablet6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/tablet4" />
+                        android:text="@string/tablet6" />
 
                     <RadioButton
                         android:id="@+id/tablet7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/tablet4" />
+                        android:text="@string/tablet7" />
 
                     <RadioButton
                         android:id="@+id/tablet8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/tablet4" />
+                        android:text="@string/tablet8" />
 
                     <RadioButton
                         android:id="@+id/tablet9"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/tablet4" />
+                        android:text="@string/tablet9" />
                 </RadioGroup>
             </LinearLayout>
 
