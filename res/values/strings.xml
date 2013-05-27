@@ -98,11 +98,11 @@
     <string name="tablet7">6 mg</string>
     <string name="tablet8">7.5 mg</string>
     <string name="tablet9">10 mg</string>
-    <string name="inr_label">INR</string>
-    <string name="weekly_dose_label">Current total warfarin dose per week</string>
+    <string name="inr_label">Current INR</string>
+    <string name="weekly_dose_label">Current Dose (mg/wk)</string>
     <string name="inr_hint">INR</string>
-    <string name="weekly_dose_hint">Dose (mg/week)</string>
-    <string name="inr_target_label">INR target</string>
+    <string name="weekly_dose_hint">Dose (mg/wk)</string>
+    <string name="inr_target_label">INR Target</string>
     <string name="inr_target1">2.0 – 3.0</string>
     <string name="inr_target2">2.5 – 3.5</string>
     <string name="default_warfarin_tablet_title">Default Warfarin Tablet</string>
