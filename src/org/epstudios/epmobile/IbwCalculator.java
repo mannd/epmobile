@@ -205,9 +205,9 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 			if (getWeightUnitSelection().equals(WeightUnit.LB))
 				weight = UnitConverter.lbsToKgs(weight);
 			double height = Double.parseDouble(heightText.toString());
-			if (getHeightUnitSelection().equals(HeightUnit.IN))
+			if (getHeightUnitSelection().equals(HeightUnit.CM))
 				height = UnitConverter.cmsToIns(height);
-			
+
 		} catch (NumberFormatException e) {
 			ibwEditText.setText(getString(R.string.invalid_warning));
 			ibwEditText.setTextColor(Color.RED);
@@ -215,8 +215,19 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 			abwEditText.setTextColor(Color.RED);
 		}
 	}
-	
-	public static idealBodyWeight()
+
+	public static double idealBodyWeight(double height, boolean isMale) {
+		double weight = height > 60.0 ? (height - 5.0 * 12.0) * 2.3 : 0.0;
+		if (isMale)
+			weight += 50.0;
+		else
+			weight += 45.5;
+		return weight;
+	}
+
+	public static double adjustedBodyWeight(double ibw, double actualWeight) {
+		return ibw + 0.4 * (actualWeight - ibw);
+	}
 
 	private void clearEntries() {
 		weightEditText.setText(null);
