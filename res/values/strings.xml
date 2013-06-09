@@ -831,5 +831,13 @@
     <string name="entry_site_label">Inner loop site.</string>
     <string name="invalid_sqrs_label">Invalid S-QRS (&gt;TCL) ignored!</string>
     <string name="ibw_calculator_title">Ideal Body Weight Calculator</string>
+    <string name="height_hint">Height (cm)</string>
+    <string name="height_inches_hint">Height (inches)</string>
+    <string name="copy_ibw_label">Copy IBW To Clipboard</string>
+    <string name="copy_abw_label">Copy ABW to Clipboard</string>
+    <string name="ibw_label">Ideal Body Weight</string>
+    <string name="ibw_hint">IBW</string>
+    <string name="abw_label">Adjusted Body Weight</string>
+    <string name="abw_hint">ABW</string>
 
 </resources>

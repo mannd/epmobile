@@ -37,26 +37,6 @@
 
             <TableRow>
 
-                <TextView
-                    android:id="@+id/ageTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/age_label"
-                    android:textAppearance="?android:attr/textAppearanceMedium" >
-                </TextView>
-
-                <EditText
-                    android:id="@+id/ageEditText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:hint="@string/age_hint"
-                    android:inputType="number" >
-                </EditText>
-            </TableRow>
-
-            <TableRow>
-
                 <Spinner android:id="@+id/weight_spinner" />
 
                 <EditText
@@ -70,14 +50,54 @@
 
             <TableRow>
 
-                <Spinner android:id="@+id/creatinine_spinner" />
+                <Spinner android:id="@+id/height_spinner" />
 
                 <EditText
-                    android:id="@+id/creatinineEditText"
+                    android:id="@+id/heightEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/creatinine_hint"
+                    android:hint="@string/height_hint"
                     android:inputType="numberDecimal" >
+                </EditText>
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/ibwTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ibw_label"
+                    android:textAppearance="?android:attr/textAppearanceMedium" >
+                </TextView>
+
+                <EditText
+                    android:id="@+id/ibwEditText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:focusable="false"
+                    android:hint="@string/ibw_hint" >
+                </EditText>
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/abwTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/abw_label"
+                    android:textAppearance="?android:attr/textAppearanceMedium" >
+                </TextView>
+
+                <EditText
+                    android:id="@+id/abwEditText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:focusable="false"
+                    android:hint="@string/abw_hint" >
                 </EditText>
             </TableRow>
         </TableLayout>
@@ -87,22 +107,11 @@
             android:layout_height="wrap_content" >
 
             <Button
-                android:id="@+id/calculate_dose_button"
+                android:id="@+id/calculate_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/calculate_label" >
             </Button>
-
-            <TextView
-                android:id="@+id/calculated_dose"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:text="@string/dose_result_label"
-                android:textColor="@color/neutral_text"
-                android:textSize="20sp" >
-            </TextView>
 
             <Button
                 android:id="@+id/clear_button"
@@ -112,13 +121,19 @@
             </Button>
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/ccTextView"
+        <Button
+            android:id="@+id/copy_ibw_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/creatinine_clearance_label"
-            android:textAppearance="?android:attr/textAppearanceMedium" >
-        </TextView>
+            android:text="@string/copy_ibw_label" >
+        </Button>
+
+        <Button
+            android:id="@+id/copy_abw_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/copy_abw_label" >
+        </Button>
     </LinearLayout>
 
 </ScrollView>
