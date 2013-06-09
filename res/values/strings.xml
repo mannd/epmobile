@@ -830,5 +830,6 @@
     <string name="proximal_site_label">Isthmus proximal site.</string>
     <string name="entry_site_label">Inner loop site.</string>
     <string name="invalid_sqrs_label">Invalid S-QRS (&gt;TCL) ignored!</string>
+    <string name="ibw_calculator_title">Ideal Body Weight Calculator</string>
 
 </resources>

@@ -36,6 +36,9 @@ public class CalculatorList extends EpListActivity {
 				else if (selection
 						.equals(getString(R.string.day_calculator_title)))
 					icdDayCalculator();
+				else if (selection
+						.equals(getString(R.string.ibw_calculator_title)))
+					ibwCalculator();
 			}
 		});
 	}
@@ -57,6 +60,11 @@ public class CalculatorList extends EpListActivity {
 
 	private void icdDayCalculator() {
 		Intent i = new Intent(this, DayCalculator.class);
+		startActivity(i);
+	}
+
+	private void ibwCalculator() {
+		Intent i = new Intent(this, IbwCalculator.class);
 		startActivity(i);
 	}
 

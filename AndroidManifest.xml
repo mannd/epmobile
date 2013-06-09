@@ -233,6 +233,10 @@
             android:name=".Entrainment"
             android:label="@string/entrainment_title" >
         </activity>
+        <activity
+            android:name=".IbwCalculator"
+            android:label="@string/ibw_calculator_title" >
+        </activity>
     </application>
 
 </manifest>
