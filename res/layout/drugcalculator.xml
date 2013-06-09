@@ -41,6 +41,7 @@
                     android:id="@+id/ageTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:padding="3dip"
                     android:text="@string/age_label"
                     android:textAppearance="?android:attr/textAppearanceMedium" >
                 </TextView>

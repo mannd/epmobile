@@ -153,5 +153,13 @@
         <item>MG</item>
         <item>MMOL</item>
     </array>
+    <array name="height_unit_labels">
+        <item>Height (cm)</item>
+        <item>Height (in)</item>
+    </array>
+    <array name="height_unit_values">
+        <item>CM</item>
+        <item>IN</item>
+    </array>
 
 </resources>

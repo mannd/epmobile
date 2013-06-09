@@ -71,7 +71,7 @@ public abstract class DrugCalculator extends EpDrugCalculatorActivity implements
 	private final static int MG_SELECTION = 0;
 	private final static int MMOL_SELECTION = 1;
 
-	// phoney result of getDose() to indicate special dosing for apixaban
+	// phony result of getDose() to indicate special dosing for apixaban
 	protected final static int USE_APIXABAN_DOSING = 9999;
 
 	private WeightUnit defaultWeightUnitSelection = WeightUnit.KG;
@@ -110,7 +110,7 @@ public abstract class DrugCalculator extends EpDrugCalculatorActivity implements
 
 		};
 
-		creatinineSpinner.setOnItemSelectedListener(itemListener);
+		// creatinineSpinner.setOnItemSelectedListener(itemListener);
 
 		ArrayAdapter<CharSequence> creatAdapter = ArrayAdapter
 				.createFromResource(this, R.array.creatinine_unit_labels,

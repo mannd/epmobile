@@ -29,4 +29,9 @@ public class UnitConverter {
 		return weight * conversionFactor;
 	}
 
+	public static double cmsToIns(double distance) {
+		final double conversionFactor = 0.39370;
+		return distance * conversionFactor;
+	}
+
 }

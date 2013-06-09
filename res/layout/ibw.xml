@@ -67,6 +67,7 @@
                     android:id="@+id/ibwTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:padding="3dip"
                     android:text="@string/ibw_label"
                     android:textAppearance="?android:attr/textAppearanceMedium" >
                 </TextView>
@@ -87,6 +88,7 @@
                     android:id="@+id/abwTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:padding="3dip"
                     android:text="@string/abw_label"
                     android:textAppearance="?android:attr/textAppearanceMedium" >
                 </TextView>

@@ -255,9 +255,9 @@
     <string name="arvc_reference">Reference: Marcus FI et al. Circulation
 		2010;121:1533.
 		http://circ.ahajournals.org/content/121/13/1533.long</string>
-    <string name="qtc_settings">QTc Settings</string>
+    <string name="qtc_settings">QTc Calculator Settings</string>
     <string name="warfarin_settings">Warfarin Settings</string>
-    <string name="drug_calculator_settings">Drug Calculator Settings</string>
+    <string name="drug_calculator_settings">Other Calculator Settings</string>
     <string name="default_weight_unit_title">Default Weight Unit</string>
     <string name="default_weight_unit_summary">Select default unit for weight</string>
     <string name="creatine_clearance_label">Creatinine Clearance</string>
@@ -832,12 +832,18 @@
     <string name="invalid_sqrs_label">Invalid S-QRS (&gt;TCL) ignored!</string>
     <string name="ibw_calculator_title">Ideal Body Weight Calculator</string>
     <string name="height_hint">Height (cm)</string>
-    <string name="height_inches_hint">Height (inches)</string>
+    <string name="height_inches_hint">Height (in)</string>
     <string name="copy_ibw_label">Copy IBW To Clipboard</string>
     <string name="copy_abw_label">Copy ABW to Clipboard</string>
-    <string name="ibw_label">Ideal Body Weight</string>
-    <string name="ibw_hint">IBW</string>
-    <string name="abw_label">Adjusted Body Weight</string>
-    <string name="abw_hint">ABW</string>
+    <string name="ibw_label">Ideal Body Weight (kg)</string>
+    <string name="ibw_hint">IBW (kg)</string>
+    <string name="ibw_lb_label">Ideal Body Weight (lb)</string>
+    <string name="ibw_lb_hint">IBW (lb)</string>
+    <string name="abw_label">Adjusted Body Weight (kg)</string>
+    <string name="abw_hint">ABW (kg)</string>
+    <string name="abw_lb_label">Adjusted Body Weight (lb)</string>
+    <string name="abw_lb_hint">ABS (lb)</string>
+    <string name="default_height_unit_title">Default Height Unit</string>
+    <string name="default_height_unit_summary">Select default unit for height</string>
 
 </resources>
