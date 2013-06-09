@@ -840,9 +840,9 @@
     <string name="ibw_lb_label">Ideal Body Weight (lb)</string>
     <string name="ibw_lb_hint">IBW (lb)</string>
     <string name="abw_label">Adjusted Body Weight (kg)</string>
-    <string name="abw_hint">ABW (kg)</string>
+    <string name="abw_hint">AjBW (kg)</string>
     <string name="abw_lb_label">Adjusted Body Weight (lb)</string>
-    <string name="abw_lb_hint">ABS (lb)</string>
+    <string name="abw_lb_hint">AjBW (lb)</string>
     <string name="default_height_unit_title">Default Height Unit</string>
     <string name="default_height_unit_summary">Select default unit for height</string>
 

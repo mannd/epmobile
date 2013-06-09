@@ -1,5 +1,7 @@
 package org.epstudios.epmobile;
 
+import java.text.DecimalFormat;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -201,12 +203,26 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 		CharSequence weightText = weightEditText.getText();
 		CharSequence heightText = heightEditText.getText();
 		try {
+			boolean unitsInLbs = false;
 			double weight = Double.parseDouble(weightText.toString());
-			if (getWeightUnitSelection().equals(WeightUnit.LB))
+			if (getWeightUnitSelection().equals(WeightUnit.LB)) {
 				weight = UnitConverter.lbsToKgs(weight);
+				unitsInLbs = true;
+			}
 			double height = Double.parseDouble(heightText.toString());
 			if (getHeightUnitSelection().equals(HeightUnit.CM))
 				height = UnitConverter.cmsToIns(height);
+			double ibw = idealBodyWeight(height, isMale);
+			double abw = adjustedBodyWeight(ibw, weight);
+			boolean overweight = isOverweight(ibw, weight);
+			if (unitsInLbs) {
+				ibw = UnitConverter.kgsToLbs(ibw);
+				abw = UnitConverter.kgsToLbs(abw);
+			}
+			ibwEditText.setText(new DecimalFormat("#.#").format(ibw));
+			abwEditText.setText(new DecimalFormat("#.#").format(abw));
+			// if overweight, dialog to use actual weight
+			// if underheight, dialog stating shouldn't use ibw/abw
 
 		} catch (NumberFormatException e) {
 			ibwEditText.setText(getString(R.string.invalid_warning));
@@ -226,7 +242,13 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 	}
 
 	public static double adjustedBodyWeight(double ibw, double actualWeight) {
-		return ibw + 0.4 * (actualWeight - ibw);
+		double abw = ibw + 0.4 * (actualWeight - ibw);
+		abw = actualWeight > ibw ? abw : actualWeight;
+		return abw;
+	}
+
+	public static boolean isOverweight(double ibw, double actualWeight) {
+		return actualWeight > ibw + .3 * ibw;
 	}
 
 	private void clearEntries() {
