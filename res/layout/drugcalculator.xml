@@ -117,6 +117,7 @@
             android:id="@+id/ccTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="3dip"
             android:text="@string/creatinine_clearance_label"
             android:textAppearance="?android:attr/textAppearanceMedium" >
         </TextView>

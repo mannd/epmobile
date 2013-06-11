@@ -72,14 +72,14 @@
                     android:textAppearance="?android:attr/textAppearanceMedium" >
                 </TextView>
 
-                <EditText
-                    android:id="@+id/ibwEditText"
+                <TextView
+                    android:id="@+id/ibwResultTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:focusable="false"
+                    android:textAppearance="?android:attr/textAppearanceMedium" >
                     android:hint="@string/ibw_hint" >
-                </EditText>
+                </TextView>
             </TableRow>
 
             <TableRow>
@@ -93,14 +93,14 @@
                     android:textAppearance="?android:attr/textAppearanceMedium" >
                 </TextView>
 
-                <EditText
-                    android:id="@+id/abwEditText"
+                <TextView
+                    android:id="@+id/abwResultTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:focusable="false"
+                    android:textAppearance="?android:attr/textAppearanceMedium" >
                     android:hint="@string/abw_hint" >
-                </EditText>
+                </TextView>
             </TableRow>
         </TableLayout>
 
@@ -136,6 +136,15 @@
             android:layout_height="wrap_content"
             android:text="@string/copy_abw_label" >
         </Button>
+
+        <TextView
+            android:id="@+id/messageTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dip"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceMedium" >
+        </TextView>
     </LinearLayout>
 
 </ScrollView>

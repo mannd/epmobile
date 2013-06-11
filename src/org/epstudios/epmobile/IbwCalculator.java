@@ -2,6 +2,7 @@ package org.epstudios.epmobile;
 
 import java.text.DecimalFormat;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -26,8 +27,9 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 	private Spinner heightSpinner;
 	private TextView ibwTextView;
 	private TextView abwTextView;
-	private EditText ibwEditText;
-	private EditText abwEditText;
+	private TextView ibwResultTextView;
+	private TextView abwResultTextView;
+	private TextView messageTextView;
 
 	private OnItemSelectedListener itemListener;
 	private OnItemSelectedListener heightItemListener;
@@ -39,6 +41,10 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 	private enum HeightUnit {
 		CM, IN
 	};
+
+	private enum WeightMeasurement {
+		IBW, ABW
+	}
 
 	private final static int KG_SELECTION = 0;
 	private final static int LB_SELECTION = 1;
@@ -69,8 +75,9 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 		heightSpinner = (Spinner) findViewById(R.id.height_spinner);
 		ibwTextView = (TextView) findViewById(R.id.ibwTextView);
 		abwTextView = (TextView) findViewById(R.id.abwTextView);
-		ibwEditText = (EditText) findViewById(R.id.ibwEditText);
-		abwEditText = (EditText) findViewById(R.id.abwEditText);
+		ibwResultTextView = (TextView) findViewById(R.id.ibwResultTextView);
+		abwResultTextView = (TextView) findViewById(R.id.abwResultTextView);
+		messageTextView = (TextView) findViewById(R.id.messageTextView);
 
 		getPrefs();
 		setAdapters();
@@ -101,10 +108,10 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 			clearEntries();
 			break;
 		case R.id.copy_ibw_button:
-			// copyIbw();
+			copyIbwOrAbw(WeightMeasurement.IBW);
 			break;
 		case R.id.copy_abw_button:
-			// copyAbw();
+			copyIbwOrAbw(WeightMeasurement.ABW);
 			break;
 		}
 	}
@@ -162,15 +169,15 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 		if (weightUnitSelection.equals(WeightUnit.KG)) {
 			weightEditText.setHint(getString(R.string.weight_hint));
 			ibwTextView.setText(getString(R.string.ibw_label));
-			ibwEditText.setHint(getString(R.string.ibw_hint));
+			ibwResultTextView.setHint(getString(R.string.ibw_hint));
 			abwTextView.setText(getString(R.string.abw_label));
-			abwEditText.setHint(getString(R.string.abw_hint));
+			abwResultTextView.setHint(getString(R.string.abw_hint));
 		} else {
 			weightEditText.setHint(getString(R.string.weight_lb_hint));
 			ibwTextView.setText(getString(R.string.ibw_lb_label));
-			ibwEditText.setHint(getString(R.string.ibw_lb_hint));
+			ibwResultTextView.setHint(getString(R.string.ibw_lb_hint));
 			abwTextView.setText(getString(R.string.abw_lb_label));
-			abwEditText.setHint(getString(R.string.abw_lb_hint));
+			abwResultTextView.setHint(getString(R.string.abw_lb_hint));
 		}
 	}
 
@@ -199,6 +206,10 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 	}
 
 	private void calculate() {
+		// clear any message
+		messageTextView.setText(null);
+		// make sure message white with 2 calculations in row, 1st invalid
+		resetResultTextColor();
 		Boolean isMale = sexRadioGroup.getCheckedRadioButtonId() == R.id.male;
 		CharSequence weightText = weightEditText.getText();
 		CharSequence heightText = heightEditText.getText();
@@ -215,25 +226,49 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 			double ibw = idealBodyWeight(height, isMale);
 			double abw = adjustedBodyWeight(ibw, weight);
 			boolean overweight = isOverweight(ibw, weight);
+			boolean underheight = isUnderHeight(height);
 			if (unitsInLbs) {
 				ibw = UnitConverter.kgsToLbs(ibw);
 				abw = UnitConverter.kgsToLbs(abw);
 			}
-			ibwEditText.setText(new DecimalFormat("#.#").format(ibw));
-			abwEditText.setText(new DecimalFormat("#.#").format(abw));
-			// if overweight, dialog to use actual weight
-			// if underheight, dialog stating shouldn't use ibw/abw
+			ibwResultTextView.setText(new DecimalFormat("#.#").format(ibw));
+			abwResultTextView.setText(new DecimalFormat("#.#").format(abw));
+			if (overweight)
+				messageTextView.setText(getString(R.string.overweight_message));
+			if (underheight)
+				messageTextView
+						.setText(getString(R.string.underheight_message));
 
 		} catch (NumberFormatException e) {
-			ibwEditText.setText(getString(R.string.invalid_warning));
-			ibwEditText.setTextColor(Color.RED);
-			abwEditText.setText(getString(R.string.invalid_warning));
-			abwEditText.setTextColor(Color.RED);
+			ibwResultTextView.setText(getString(R.string.invalid_warning));
+			ibwResultTextView.setTextColor(Color.RED);
+			abwResultTextView.setText(getString(R.string.invalid_warning));
+			abwResultTextView.setTextColor(Color.RED);
+		}
+	}
+
+	@SuppressWarnings("deprecation")
+	// clipboard handled differently depending on Android version
+	private void copyIbwOrAbw(WeightMeasurement weightType) {
+		String textToCopy = "";
+		if (weightType == WeightMeasurement.IBW)
+			textToCopy = ibwResultTextView.getText().toString();
+		else
+			textToCopy = abwResultTextView.getText().toString();
+		int sdk = android.os.Build.VERSION.SDK_INT;
+		if (sdk < android.os.Build.VERSION_CODES.HONEYCOMB) {
+			android.text.ClipboardManager clipboard = (android.text.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+			clipboard.setText(textToCopy);
+		} else {
+			android.content.ClipboardManager clipboard = (android.content.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+			android.content.ClipData clip = android.content.ClipData
+					.newPlainText("Copied Text", textToCopy);
+			clipboard.setPrimaryClip(clip);
 		}
 	}
 
 	public static double idealBodyWeight(double height, boolean isMale) {
-		double weight = height > 60.0 ? (height - 5.0 * 12.0) * 2.3 : 0.0;
+		double weight = height > 60.0 ? (height - 60.0) * 2.3 : 0.0;
 		if (isMale)
 			weight += 50.0;
 		else
@@ -242,6 +277,7 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 	}
 
 	public static double adjustedBodyWeight(double ibw, double actualWeight) {
+		// TODO setting to choose 0.3 or 0.4 for correction factor??
 		double abw = ibw + 0.4 * (actualWeight - ibw);
 		abw = actualWeight > ibw ? abw : actualWeight;
 		return abw;
@@ -251,14 +287,24 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 		return actualWeight > ibw + .3 * ibw;
 	}
 
+	public static boolean isUnderHeight(double height) {
+		return height <= 60.0;
+	}
+
 	private void clearEntries() {
 		weightEditText.setText(null);
 		heightEditText.setText(null);
-		ibwEditText.setText(null);
-		abwEditText.setText(null);
-		ibwEditText.setTextColor(Color.WHITE);
-		abwEditText.setTextColor(Color.WHITE);
+		ibwResultTextView.setText(null);
+		abwResultTextView.setText(null);
+		resetResultTextColor();
+		messageTextView.setText(null);
 		weightEditText.requestFocus();
+
+	}
+
+	private void resetResultTextColor() {
+		ibwResultTextView.setTextColor(Color.WHITE);
+		abwResultTextView.setTextColor(Color.WHITE);
 	}
 
 	private void getPrefs() {
@@ -272,7 +318,7 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 			defaultWeightUnitSelection = WeightUnit.LB;
 		String heightUnitPreference = prefs.getString("default_height_unit",
 				"CM");
-		if (heightUnitPreference.equals("MG"))
+		if (heightUnitPreference.equals("CM"))
 			defaultHeightUnitSelection = HeightUnit.CM;
 		else
 			defaultHeightUnitSelection = HeightUnit.IN;

@@ -830,7 +830,7 @@
     <string name="proximal_site_label">Isthmus proximal site.</string>
     <string name="entry_site_label">Inner loop site.</string>
     <string name="invalid_sqrs_label">Invalid S-QRS (&gt;TCL) ignored!</string>
-    <string name="ibw_calculator_title">Ideal Body Weight Calculator</string>
+    <string name="ibw_calculator_title">Body Weight Calculator</string>
     <string name="height_hint">Height (cm)</string>
     <string name="height_inches_hint">Height (in)</string>
     <string name="copy_ibw_label">Copy IBW To Clipboard</string>
@@ -840,10 +840,12 @@
     <string name="ibw_lb_label">Ideal Body Weight (lb)</string>
     <string name="ibw_lb_hint">IBW (lb)</string>
     <string name="abw_label">Adjusted Body Weight (kg)</string>
-    <string name="abw_hint">AjBW (kg)</string>
+    <string name="abw_hint">ABW (kg)</string>
     <string name="abw_lb_label">Adjusted Body Weight (lb)</string>
-    <string name="abw_lb_hint">AjBW (lb)</string>
+    <string name="abw_lb_hint">ABW (lb)</string>
     <string name="default_height_unit_title">Default Height Unit</string>
     <string name="default_height_unit_summary">Select default unit for height</string>
+    <string name="overweight_message">Actual weight is at least 30% over ideal body weight.  Use adjusted body weight instead.</string>
+    <string name="underheight_message">These measurements may not be useful when height is &lt; 60 inches.</string>
 
 </resources>
