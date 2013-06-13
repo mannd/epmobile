@@ -14,16 +14,26 @@
         <item>"HODGES"</item>
     </array>
     <array name="warfarin_tablets">
+        <item>"1 mg"</item>
         <item>"2 mg"</item>
         <item>"2.5 mg"</item>
+        <item>"3 mg"</item>
+        <item>"4 mg"</item>
         <item>"5 mg"</item>
+        <item>"6 mg"</item>
         <item>"7.5 mg"</item>
+        <item>"10 mg"</item>
     </array>
     <array name="warfarin_tablet_values">
         <item>"0"</item>
         <item>"1"</item>
         <item>"2"</item>
         <item>"3"</item>
+        <item>"4"</item>
+        <item>"5"</item>
+        <item>"6"</item>
+        <item>"7"</item>
+        <item>"8"</item>
     </array>
     <array name="inr_targets">
         <item>"2.0 - 3.0"</item>
@@ -55,6 +65,7 @@
         <item>@string/wpw_algorithm_list_title</item>
     </array>
     <array name="calculator_list">
+        <item>@string/ibw_calculator_title</item>
         <item>@string/day_calculator_title</item>
         <item>@string/drug_dose_calculator_list_title</item>
         <item>@string/cycle_length_calculator_title</item>
@@ -141,6 +152,14 @@
     <array name="creatinine_unit_values">
         <item>MG</item>
         <item>MMOL</item>
+    </array>
+    <array name="height_unit_labels">
+        <item>Height (cm)</item>
+        <item>Height (in)</item>
+    </array>
+    <array name="height_unit_values">
+        <item>CM</item>
+        <item>IN</item>
     </array>
 
 </resources>

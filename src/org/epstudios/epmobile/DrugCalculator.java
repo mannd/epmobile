@@ -71,7 +71,7 @@ public abstract class DrugCalculator extends EpDrugCalculatorActivity implements
 	private final static int MG_SELECTION = 0;
 	private final static int MMOL_SELECTION = 1;
 
-	// phoney result of getDose() to indicate special dosing for apixaban
+	// phony result of getDose() to indicate special dosing for apixaban
 	protected final static int USE_APIXABAN_DOSING = 9999;
 
 	private WeightUnit defaultWeightUnitSelection = WeightUnit.KG;
@@ -110,7 +110,7 @@ public abstract class DrugCalculator extends EpDrugCalculatorActivity implements
 
 		};
 
-		creatinineSpinner.setOnItemSelectedListener(itemListener);
+		// creatinineSpinner.setOnItemSelectedListener(itemListener);
 
 		ArrayAdapter<CharSequence> creatAdapter = ArrayAdapter
 				.createFromResource(this, R.array.creatinine_unit_labels,
@@ -194,7 +194,7 @@ public abstract class DrugCalculator extends EpDrugCalculatorActivity implements
 					creatinine, useMmolUnits);
 			ccTextView.setTextColor(Color.WHITE); // reset to white here; text
 													// colored later
-			String ccMessage = getMessage(cc);
+			String ccMessage = getMessage(cc, age);
 			ccTextView.setText(ccMessage);
 			double dose = getDose(cc);
 			if (dose == USE_APIXABAN_DOSING) {
@@ -279,9 +279,10 @@ public abstract class DrugCalculator extends EpDrugCalculatorActivity implements
 			defaultCreatinineUnitSelection = CreatinineUnit.MMOL;
 	}
 
-	protected String getMessage(int crCl) {
+	protected String getMessage(int crCl, double age) {
 		// returns basic creatinine clearance
 		// override for drug-specific message
+		// age is only used in some cases for warnings
 		return getString(R.string.creatine_clearance_label) + " = "
 				+ String.valueOf(crCl) + " ml/min";
 	}

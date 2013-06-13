@@ -75,29 +75,33 @@
     <string name="chf_label">Congestive heart failure</string>
     <string name="age75_label">Age 75 or over</string>
     <string name="diabetes_label">Diabetes mellitus</string>
-    <string name="low_chads_message">Anti-platelet drug (ASA) recommended</string>
-    <string name="medium_chads_message">Anti-platelet drug or
+    <string name="low_chads_message">Aspirin recommended</string>
+    <string name="medium_chads_message">Aspirin or
 		anticoagulation (warfarin, dabigatran, rivaroxaban or apixaban) recommended</string>
     <string name="high_chads_message">Anticoagulation (warfarin, dabigitran, rivaroxaban or apixaban) recommended</string>
     <string name="chadsvasc_title">CHA\u2082DS\u2082-VASc Score</string>
     <string name="vascular_label">Vascular disease (e.g. PVD, CAD, aortic plaque)</string>
     <string name="low_chadsvasc_message">No antithrombotic therapy or use Aspirin</string>
-    <string name="medium_chadsvasc_message">Oral anticoagulation (warfarin or dabigatran
-		or others) or Aspirin (Oral anticoagulant preferred)</string>
-    <string name="high_chadsvasc_message">Oral anticoagulation
-		(warfarin or dabigatran or others)</string>
+    <string name="medium_chadsvasc_message">Anticoagulation (warfarin, dabigitran, rivaroxaban or apixaban) or Aspirin (anticoagulation preferred)</string>
+    <string name="high_chadsvasc_message">Anticoagulation
+		(warfarin, dabigitran, rivaroxaban or apixaban)</string>
     <string name="warfarin_title">Warfarin Clinic</string>
     <string name="warfarin_label">Warfarin Dose Calculator</string>
     <string name="tablet_label">Tablet</string>
-    <string name="tablet1">2 mg</string>
-    <string name="tablet2">2.5 mg</string>
-    <string name="tablet3">5 mg</string>
-    <string name="tablet4">7.5 mg</string>
-    <string name="inr_label">INR</string>
-    <string name="weekly_dose_label">Current total warfarin dose per week</string>
+    <string name="tablet1">1 mg</string>
+    <string name="tablet2">2 mg</string>
+    <string name="tablet3">2.5 mg</string>
+    <string name="tablet4">3 mg</string>
+    <string name="tablet5">4 mg</string>
+    <string name="tablet6">5 mg</string>
+    <string name="tablet7">6 mg</string>
+    <string name="tablet8">7.5 mg</string>
+    <string name="tablet9">10 mg</string>
+    <string name="inr_label">Current INR</string>
+    <string name="weekly_dose_label">Current Dose (mg/wk)</string>
     <string name="inr_hint">INR</string>
-    <string name="weekly_dose_hint">Dose (mg/week)</string>
-    <string name="inr_target_label">INR target</string>
+    <string name="weekly_dose_hint">Dose (mg/wk)</string>
+    <string name="inr_target_label">INR Target</string>
     <string name="inr_target1">2.0 – 3.0</string>
     <string name="inr_target2">2.5 – 3.5</string>
     <string name="default_warfarin_tablet_title">Default Warfarin Tablet</string>
@@ -250,9 +254,9 @@
     <string name="arvc_reference">Reference: Marcus FI et al. Circulation
 		2010;121:1533.
 		http://circ.ahajournals.org/content/121/13/1533.long</string>
-    <string name="qtc_settings">QTc Settings</string>
+    <string name="qtc_settings">QTc Calculator Settings</string>
     <string name="warfarin_settings">Warfarin Settings</string>
-    <string name="drug_calculator_settings">Drug Calculator Settings</string>
+    <string name="drug_calculator_settings">Other Calculator Settings</string>
     <string name="default_weight_unit_title">Default Weight Unit</string>
     <string name="default_weight_unit_summary">Select default unit for weight</string>
     <string name="creatine_clearance_label">Creatinine Clearance</string>
@@ -260,6 +264,7 @@
 	    (e.g. dronedarone).</string>
     <string name="dabigatran_warning_mild">Consider reducing dose of dabigatran to 75 mg twice a day 
 	    when dronedarone or systemic ketoconazole is administered with dabigatran.</string>
+    <string name="dabigatran_warning_75_years_old">There may be increased bleeding risk at age over 75 years.</string>
     <string name="rivaroxaban_calculator_title">Rivaroxaban Calculator</string>
     <string name="rivaroxaban_dosing_message">"Take dose with evening meal."</string>
     <string name="icd_calculator_title">CMS ICD Criteria</string>
@@ -728,12 +733,12 @@
     <string name="brugada_drugs_link">http://www.brugadadrugs.org</string>
     <string name="apixaban_calculator_title">Apixaban Calculator</string>
     <string name="apixaban_drug_interaction_at_5_mg_message">Use 2.5 mg twice daily when administered with
-        strong dual inhibitors of CYP3A4 and P-gp</string>
+        strong dual inhibitors of CYP3A4 and P-gp.</string>
     <string name="apixaban_dual_inhibitors">(e.g. ketoconazole, itraconazole, ritonavir, clarithromycin)</string>
     <string name="apixaban_drug_interaction_at_2_5_mg_message">Avoid coadministration with strong dual inhibitors of CYP3A4 and P-gp.</string>
     <string name="invalid_warning">Invalid!</string>
-    <string name="dose_undefined_warning">"Dose undefined"</string>
-    <string name="pediatric_use_warning">Pediatric dosing is not recommended or not calculated
+    <string name="dose_undefined_warning">"Dose undefined."</string>
+    <string name="pediatric_use_warning">Pediatric dosing is not recommended or not calculated.
   	    by EP Mobile.</string>
     <string name="do_not_use_warning">"Do not use!"</string>
     <!-- Atrial tachycardia algorithm Kistler et al. -->
@@ -824,5 +829,22 @@
     <string name="proximal_site_label">Isthmus proximal site.</string>
     <string name="entry_site_label">Inner loop site.</string>
     <string name="invalid_sqrs_label">Invalid S-QRS (&gt;TCL) ignored!</string>
+    <string name="ibw_calculator_title">Body Weight Calculator</string>
+    <string name="height_hint">Height (cm)</string>
+    <string name="height_inches_hint">Height (in)</string>
+    <string name="copy_ibw_label">Copy IBW To Clipboard</string>
+    <string name="copy_abw_label">Copy ABW to Clipboard</string>
+    <string name="ibw_label">Ideal Body Weight (kg)</string>
+    <string name="ibw_hint">IBW (kg)</string>
+    <string name="ibw_lb_label">Ideal Body Weight (lb)</string>
+    <string name="ibw_lb_hint">IBW (lb)</string>
+    <string name="abw_label">Adjusted Body Weight (kg)</string>
+    <string name="abw_hint">ABW (kg)</string>
+    <string name="abw_lb_label">Adjusted Body Weight (lb)</string>
+    <string name="abw_lb_hint">ABW (lb)</string>
+    <string name="default_height_unit_title">Default Height Unit</string>
+    <string name="default_height_unit_summary">Select default unit for height</string>
+    <string name="overweight_message">Actual weight is at least 30% over ideal body weight.  Use adjusted body weight instead.</string>
+    <string name="underheight_message">These measurements may not be useful when height is &lt; 60 inches.</string>
 
 </resources>

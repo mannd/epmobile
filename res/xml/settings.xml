@@ -58,6 +58,14 @@
             android:title="@string/default_weight_unit_title" >
         </ListPreference>
         <ListPreference
+            android:defaultValue="CM"
+            android:entries="@array/height_unit_labels"
+            android:entryValues="@array/height_unit_values"
+            android:key="default_height_unit"
+            android:summary="@string/default_height_unit_summary"
+            android:title="@string/default_height_unit_title" >
+        </ListPreference>
+        <ListPreference
             android:defaultValue="MG"
             android:entries="@array/creatinine_unit_labels"
             android:entryValues="@array/creatinine_unit_values"

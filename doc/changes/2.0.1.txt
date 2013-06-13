@@ -1,4 +1,8 @@
-EP Mobile v2.0 Release Notes
+EP Mobile v2.0.1 Release Notes
+
+Changes since v2.0
+
+* Fixed spelling errors
 
 Changes since v1.5.1
 
@@ -16,6 +20,5 @@ Changes since v1.5.1
 
 * Improved formatting of calculator results
 
-* Bumped version up to 2.0 because of major updates and to synchronize versions across platforms
 
 

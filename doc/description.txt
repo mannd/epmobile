@@ -21,7 +21,8 @@ Features:
 - WPW accessory pathway location (Arruda,  Modified Arruda, and Milstein)
 - Atrial tachycardia localization algorithm
 - Entrainment mapping
-- Date caculator
+- Date calculator
+- Body weight calculator (ideal and adjusted body weight)
 - Long QT diagnosis, subtypes and ECG patterns
 - Long QT drugs
 - Short QT syndrome diagnosis

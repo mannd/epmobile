@@ -28,8 +28,8 @@ public class Apixaban extends DrugCalculator {
 	}
 
 	@Override
-	protected String getMessage(int crCl) {
-		String msg = super.getMessage(crCl);
+	protected String getMessage(int crCl, double age) {
+		String msg = super.getMessage(crCl, age);
 		return msg;
 	}
 }

@@ -30,7 +30,8 @@
                 <RadioGroup
                     android:id="@+id/tabletRadioGroup"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" >
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
 
                     <RadioButton
                         android:id="@+id/tablet1"
@@ -56,13 +57,42 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/tablet4" />
+
+                    <RadioButton
+                        android:id="@+id/tablet5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tablet5" />
+
+                    <RadioButton
+                        android:id="@+id/tablet6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tablet6" />
+
+                    <RadioButton
+                        android:id="@+id/tablet7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tablet7" />
+
+                    <RadioButton
+                        android:id="@+id/tablet8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tablet8" />
+
+                    <RadioButton
+                        android:id="@+id/tablet9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tablet9" />
                 </RadioGroup>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:orientation="vertical" >
 
                 <TextView
@@ -90,12 +120,6 @@
                         android:layout_height="wrap_content"
                         android:text="@string/inr_target2" />
                 </RadioGroup>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" >
 
                 <TextView
                     android:id="@+id/inrTextView"
@@ -110,33 +134,20 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/inr_hint"
                     android:inputType="numberDecimal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/weekly_dose_label"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/weeklyDoseEditText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/weekly_dose_hint"
+                    android:inputType="numberDecimal" />
             </LinearLayout>
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/weeklyDoseTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/weekly_dose_label"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/weekly_dose_hint"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-
-            <EditText
-                android:id="@+id/weeklyDoseEditText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="@string/weekly_dose_hint"
-                android:inputType="numberDecimal" />
         </LinearLayout>
 
         <LinearLayout

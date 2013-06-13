@@ -137,16 +137,31 @@ public class Warfarin extends EpDrugCalculatorActivity implements
 		int id = tabletRadioGroup.getCheckedRadioButtonId();
 		switch (id) {
 		case R.id.tablet1:
-			dose = 2.0;
+			dose = 1.0;
 			break;
 		case R.id.tablet2:
-			dose = 2.5;
+			dose = 2.0;
 			break;
 		case R.id.tablet3:
-			dose = 5.0;
+			dose = 2.5;
 			break;
 		case R.id.tablet4:
+			dose = 3.0;
+			break;
+		case R.id.tablet5:
+			dose = 4.0;
+			break;
+		case R.id.tablet6:
+			dose = 5.0;
+			break;
+		case R.id.tablet7:
+			dose = 6.0;
+			break;
+		case R.id.tablet8:
 			dose = 7.5;
+			break;
+		case R.id.tablet9:
+			dose = 10.0;
 			break;
 		}
 		return dose;
@@ -358,7 +373,7 @@ public class Warfarin extends EpDrugCalculatorActivity implements
 		weeklyDoseEditText.setText(null);
 		getPrefs();
 		int defaultId = Integer.parseInt(defaultWarfarinTablet);
-		int id = 2; // 5 mg default default
+		int id = 5; // 5 mg default default
 		switch (defaultId) {
 		case 0:
 			id = R.id.tablet1;
@@ -371,6 +386,21 @@ public class Warfarin extends EpDrugCalculatorActivity implements
 			break;
 		case 3:
 			id = R.id.tablet4;
+			break;
+		case 4:
+			id = R.id.tablet5;
+			break;
+		case 5:
+			id = R.id.tablet6;
+			break;
+		case 6:
+			id = R.id.tablet7;
+			break;
+		case 7:
+			id = R.id.tablet8;
+			break;
+		case 8:
+			id = R.id.tablet9;
 			break;
 		}
 		tabletRadioGroup.check(id);
@@ -390,7 +420,7 @@ public class Warfarin extends EpDrugCalculatorActivity implements
 	private void getPrefs() {
 		SharedPreferences prefs = PreferenceManager
 				.getDefaultSharedPreferences(getBaseContext());
-		defaultWarfarinTablet = prefs.getString("default_warfarin_tablet", "2"); // 2
+		defaultWarfarinTablet = prefs.getString("default_warfarin_tablet", "5"); // 5
 																					// =
 																					// 5
 																					// mg
