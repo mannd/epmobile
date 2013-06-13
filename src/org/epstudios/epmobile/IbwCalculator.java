@@ -278,6 +278,7 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 
 	public static double adjustedBodyWeight(double ibw, double actualWeight) {
 		// TODO setting to choose 0.3 or 0.4 for correction factor??
+		// for now, literature seems to support 0.4 as best correction factor
 		double abw = ibw + 0.4 * (actualWeight - ibw);
 		abw = actualWeight > ibw ? abw : actualWeight;
 		return abw;
