@@ -22,6 +22,7 @@ Features:
 - Atrial tachycardia localization algorithm
 - Entrainment mapping
 - Date calculator
+- Body weight calculator (ideal and adjusted body weight)
 - Long QT diagnosis, subtypes and ECG patterns
 - Long QT drugs
 - Short QT syndrome diagnosis
