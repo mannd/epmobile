@@ -1,0 +1,11 @@
+EP Mobile v2.1 Release Notes
+
+Changes since v2.0.1
+
+* Added Weight Calculator for ideal and adjusted body weight.  You can now use these weights easily in the drug calculators if you choose.
+
+* Added tablet sizes to Warfarin Clinic calculator.  All available tablet sizes are now selectable.
+
+* Added warning to Dabigatran Calculator re bleeding risk if age 75 or over.
+
+
