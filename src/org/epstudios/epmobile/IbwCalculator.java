@@ -216,6 +216,7 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 		try {
 			boolean unitsInLbs = false;
 			double weight = Double.parseDouble(weightText.toString());
+			double originalWeight = weight;
 			if (getWeightUnitSelection().equals(WeightUnit.LB)) {
 				weight = UnitConverter.lbsToKgs(weight);
 				unitsInLbs = true;
@@ -227,17 +228,35 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 			double abw = adjustedBodyWeight(ibw, weight);
 			boolean overweight = isOverweight(ibw, weight);
 			boolean underheight = isUnderHeight(height);
+			boolean underweight = isUnderWeight(weight, ibw);
+			String weightUnitAbbreviation = getString(R.string.kg_abbreviation);
 			if (unitsInLbs) {
 				ibw = UnitConverter.kgsToLbs(ibw);
 				abw = UnitConverter.kgsToLbs(abw);
+				weightUnitAbbreviation = getString(R.string.pound_abbreviation);
 			}
-			ibwResultTextView.setText(new DecimalFormat("#.#").format(ibw));
-			abwResultTextView.setText(new DecimalFormat("#.#").format(abw));
-			if (overweight)
-				messageTextView.setText(getString(R.string.overweight_message));
+			String formattedIbw = new DecimalFormat("#.#").format(ibw);
+			String formattedAbw = new DecimalFormat("#.#").format(abw);
+			ibwResultTextView.setText(formattedIbw);
+			abwResultTextView.setText(formattedAbw);
 			if (underheight)
 				messageTextView
 						.setText(getString(R.string.underheight_message));
+			else if (overweight)
+				messageTextView.setText(getString(R.string.overweight_message)
+						+ formatWeight(formattedAbw, weightUnitAbbreviation));
+			else if (underweight)
+				messageTextView
+						.setText(getString(R.string.underweight_message)
+								+ formatWeight(new DecimalFormat("#.#")
+										.format(originalWeight),
+										weightUnitAbbreviation));
+			else
+				// normal weight
+				messageTextView
+						.setText(getString(R.string.normalweight_message)
+								+ formatWeight(formattedIbw,
+										weightUnitAbbreviation));
 
 		} catch (NumberFormatException e) {
 			ibwResultTextView.setText(getString(R.string.invalid_warning));
@@ -245,6 +264,10 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 			abwResultTextView.setText(getString(R.string.invalid_warning));
 			abwResultTextView.setTextColor(Color.RED);
 		}
+	}
+
+	private String formatWeight(String weight, String units) {
+		return weight + " " + units + ").";
 	}
 
 	@SuppressWarnings("deprecation")
@@ -290,6 +313,10 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 
 	public static boolean isUnderHeight(double height) {
 		return height <= 60.0;
+	}
+
+	public static boolean isUnderWeight(double weight, double ibw) {
+		return weight < ibw;
 	}
 
 	private void clearEntries() {
