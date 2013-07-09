@@ -77,7 +77,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textAppearance="?android:attr/textAppearanceMedium" >
+                    android:textAppearance="?android:attr/textAppearanceMedium"
                     android:hint="@string/ibw_hint" >
                 </TextView>
             </TableRow>
@@ -98,7 +98,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textAppearance="?android:attr/textAppearanceMedium" >
+                    android:textAppearance="?android:attr/textAppearanceMedium" 
                     android:hint="@string/abw_hint" >
                 </TextView>
             </TableRow>
