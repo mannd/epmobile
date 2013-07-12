@@ -237,6 +237,10 @@
             android:name=".IbwCalculator"
             android:label="@string/ibw_calculator_title" >
         </activity>
+        <activity
+            android:name=".SyncopeRiskScoreList"
+            android:label="@string/syncope_list_title" >
+        </activity>
     </application>
 
 </manifest>

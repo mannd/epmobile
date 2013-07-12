@@ -850,5 +850,10 @@
     <string name="normalweight_message">Weight is in the normal range.  Recommended weight is Ideal Body Weight (</string>
     <string name="pound_abbreviation">lb</string>
     <string name="kg_abbreviation">kg</string>
+    <string name="syncope_list_title">Syncope Risk Scores</string>
+    <string name="syncope_sf_rule_title">San Francisco Rule</string>
+    <string name="syncope_martin_title">Martin Algorithm</string>
+    <string name="syncope_oesil_score_title">OESIL Score</string>
+    <string name="syncope_egsys_score_title">EGSYS Score</string>
 
 </resources>

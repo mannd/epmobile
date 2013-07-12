@@ -21,6 +21,7 @@ public class RiskScoreList extends EpListActivity {
 		lv.setTextFilterEnabled(true);
 
 		lv.setOnItemClickListener(new OnItemClickListener() {
+			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				CharSequence selection = ((TextView) view).getText();
@@ -35,6 +36,9 @@ public class RiskScoreList extends EpListActivity {
 				else if (selection
 						.equals(getString(R.string.hemorrhages_title)))
 					hemorrhagesScore();
+				else if (selection
+						.equals(getString(R.string.syncope_list_title)))
+					syncopeRiskScores();
 			}
 		});
 	}
@@ -61,6 +65,11 @@ public class RiskScoreList extends EpListActivity {
 
 	private void hemorrhagesScore() {
 		Intent i = new Intent(this, Hemorrhages.class);
+		startActivity(i);
+	}
+
+	private void syncopeRiskScores() {
+		Intent i = new Intent(this, SyncopeRiskScoreList.class);
 		startActivity(i);
 	}
 

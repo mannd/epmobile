@@ -106,6 +106,7 @@
         <item>@string/hasbled_title</item>
         <item>@string/hemorrhages_title</item>
         <item>@string/hcm_title</item>
+        <item>@string/syncope_list_title</item>
     </array>
     <array name="arvc_criteria_list">
         <item>@string/arvc_old_criteria_title</item>
@@ -160,6 +161,12 @@
     <array name="height_unit_values">
         <item>CM</item>
         <item>IN</item>
+    </array>
+    <array name="syncope_risk_scores">
+        <item>@string/syncope_egsys_score_title</item>
+        <item>@string/syncope_martin_title</item>
+        <item>@string/syncope_oesil_score_title</item>
+        <item>@string/syncope_sf_rule_title</item>
     </array>
 
 </resources>
