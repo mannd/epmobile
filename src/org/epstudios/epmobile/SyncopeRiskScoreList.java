@@ -1,5 +1,6 @@
 package org.epstudios.epmobile;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -24,8 +25,15 @@ public class SyncopeRiskScoreList extends EpRiskScoreListActivity {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				CharSequence selection = ((TextView) view).getText();
+				if (selection.equals(getString(R.string.syncope_sf_rule_title)))
+					syncopeSfRule();
 
 			}
 		});
+	}
+
+	private void syncopeSfRule() {
+		Intent i = new Intent(this, SyncopeSfRule.class);
+		startActivity(i);
 	}
 }

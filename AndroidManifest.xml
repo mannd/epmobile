@@ -241,6 +241,10 @@
             android:name=".SyncopeRiskScoreList"
             android:label="@string/syncope_list_title" >
         </activity>
+        <activity
+            android:name=".SyncopeSfRule"
+            android:label="@string/syncope_sf_rule_title" >
+        </activity>
     </application>
 
 </manifest>
