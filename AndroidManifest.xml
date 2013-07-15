@@ -249,6 +249,10 @@
             android:name=".MartinAlgorithm"
             android:label="@string/syncope_martin_title" >
         </activity>
+        <activity
+            android:name=".OesilScore"
+            android:label="@string/syncope_oesil_score_title" >
+        </activity>
     </application>
 
 </manifest>
