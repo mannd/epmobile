@@ -1,11 +1,12 @@
 package org.epstudios.epmobile;
 
+import android.view.View;
 import android.widget.CheckBox;
 
 public class SyncopeSfRule extends SyncopeRiskScore {
 	@Override
 	protected void setContentView() {
-		setContentView(R.layout.syncopesfrule);
+		setContentView(R.layout.simplerisk);
 	}
 
 	@Override
@@ -35,13 +36,22 @@ public class SyncopeSfRule extends SyncopeRiskScore {
 
 	@Override
 	protected void init() {
-		checkBox = new CheckBox[5];
+		checkBox = new CheckBox[6];
 
-		checkBox[0] = (CheckBox) findViewById(R.id.abnormal_ecg);
-		checkBox[1] = (CheckBox) findViewById(R.id.chf);
-		checkBox[2] = (CheckBox) findViewById(R.id.sob);
-		checkBox[3] = (CheckBox) findViewById(R.id.low_hct);
-		checkBox[4] = (CheckBox) findViewById(R.id.low_bp);
+		checkBox[0] = (CheckBox) findViewById(R.id.risk_one);
+		checkBox[1] = (CheckBox) findViewById(R.id.risk_two);
+		checkBox[2] = (CheckBox) findViewById(R.id.risk_three);
+		checkBox[3] = (CheckBox) findViewById(R.id.risk_four);
+		checkBox[4] = (CheckBox) findViewById(R.id.risk_five);
+		checkBox[5] = (CheckBox) findViewById(R.id.risk_six);
+
+		checkBox[5].setVisibility(View.GONE);
+
+		checkBox[0].setText(getString(R.string.abnormal_ecg_label));
+		checkBox[1].setText(getString(R.string.chf_label));
+		checkBox[2].setText(getString(R.string.sob_label));
+		checkBox[3].setText(getString(R.string.low_hct_label));
+		checkBox[4].setText(getString(R.string.low_bp_label));
 	}
 
 }
