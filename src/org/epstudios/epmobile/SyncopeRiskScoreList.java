@@ -27,6 +27,9 @@ public class SyncopeRiskScoreList extends EpRiskScoreListActivity {
 				CharSequence selection = ((TextView) view).getText();
 				if (selection.equals(getString(R.string.syncope_sf_rule_title)))
 					syncopeSfRule();
+				else if (selection
+						.equals(getString(R.string.syncope_martin_title)))
+					martinAlgorithm();
 
 			}
 		});
@@ -34,6 +37,11 @@ public class SyncopeRiskScoreList extends EpRiskScoreListActivity {
 
 	private void syncopeSfRule() {
 		Intent i = new Intent(this, SyncopeSfRule.class);
+		startActivity(i);
+	}
+
+	private void martinAlgorithm() {
+		Intent i = new Intent(this, MartinAlgorithm.class);
 		startActivity(i);
 	}
 }

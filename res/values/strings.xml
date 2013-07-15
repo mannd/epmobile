@@ -855,12 +855,15 @@
     <string name="syncope_martin_title">Martin Algorithm</string>
     <string name="syncope_oesil_score_title">OESIL Score</string>
     <string name="syncope_egsys_score_title">EGSYS Score</string>
-    <string name="abnormal_ecg_label">Abnormal ECG</string>
+    <string name="abnormal_ecg_label">Abnormal ECG (new changes or non-sinus rhythm)</string>
     <string name="sob_label">Shortness of breath</string>
     <string name="low_hct_label">Hematocrit &lt; 30%</string>
     <string name="low_bp_label">Systolic BP &lt; 90 mmHg</string>
-    <string name="no_sf_rule_risk_message">No or little risk of serious events at 7 days.</string>
-    <string name="high_sf_rule_risk_message" formatted="false">Risk of serious events at 7 days (98% sensitive and 56% specific).</string>
+    <string name="no_sf_rule_risk_message">No or little risk of serious events at 30 days.</string>
+    <string name="high_sf_rule_risk_message" formatted="false">Risk of serious events at 30 days (98% sensitive and 56% specific).</string>
     <string name="syncope_sf_rule_reference">Reference: Quinn J et al. Ann Emer Med 2006 47:448.</string>
+    <string name="history_vt_label">History of ventricular arrhythmia</string>
+    <string name="history_chf_label">History of congestive heart failure</string>
+    <string name="age_over_45_label">Age &gt; 45 years</string>
 
 </resources>
