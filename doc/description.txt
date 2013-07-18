@@ -13,6 +13,7 @@ Features:
 - Atrial fibrillation risk scores (CHADS2, CHA2DS2-VASc)
 - Bleeding risk scores (HAS-BLED, HEMORR2HAGES)
 - Hypertrophic Cardiomyopathy risk score calculator
+- Syncope risk scores (SF Rule, Martin, OESIL, EGSYS)
 - CMS (Medicare) ICD guidelines calculator
 - VT localization algorithms
 	- Epicardial vs endocardial VT
