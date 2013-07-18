@@ -2,7 +2,7 @@ EP Mobile provides tools for cardiac electrophysiologists, cardiologists, cardio
 
 If you have suggestions, features you'd like to see, or complaints, please email us! 
 
-EP Mobile -- The Swiss Army Knife of Electrophysiology!
+EP Mobile -- The Junior Woodchucks Guidebook of Electrophysiology!
 
 Features: 
 - Drug dose calculators: dabigatran, dofetilide, rivaroxaban, 
