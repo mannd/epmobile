@@ -870,5 +870,13 @@
     <string name="age_over_65_label">Age &gt; 65 years</string>
     <string name="martin_algorithm_reference">Martin TP et al. Ann Emerg Med 1997 29:459.</string>
     <string name="oesil_score_reference">Colivicchi F et al. Eur Heart J 2003 24:811.</string>
+    <string name="palps_before_syncope_label">Palpitations before syncope</string>
+    <string name="abnormal_ecg_or_heart_disease_label">Abnormal ECG or heart disease</string>
+    <string name="syncope_during_effort_label">Syncope during effort</string>
+    <string name="syncope_while_supine_label">Syncope while supine</string>
+    <string name="autonomic_prodrome_label">Autonomic prodrome (nausea, vomiting)</string>
+    <string name="predisposing_factors_label">Predisposing and/or precipitating factors (warm-crowded place,
+        prolonged standing, fear, pain, emotion)</string>
+    <string name="egsys_score_reference">Del Rosso A et al. Heart 2008 94:1630.</string>
 
 </resources>

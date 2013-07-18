@@ -33,7 +33,9 @@ public class SyncopeRiskScoreList extends EpRiskScoreListActivity {
 				else if (selection
 						.equals(getString(R.string.syncope_oesil_score_title)))
 					oesilScore();
-
+				else if (selection
+						.equals(getString(R.string.syncope_egsys_score_title)))
+					egsysScore();
 			}
 		});
 	}
@@ -50,6 +52,11 @@ public class SyncopeRiskScoreList extends EpRiskScoreListActivity {
 
 	private void oesilScore() {
 		Intent i = new Intent(this, OesilScore.class);
+		startActivity(i);
+	}
+
+	private void egsysScore() {
+		Intent i = new Intent(this, EgsysScore.class);
 		startActivity(i);
 	}
 }

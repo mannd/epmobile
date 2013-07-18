@@ -253,6 +253,10 @@
             android:name=".OesilScore"
             android:label="@string/syncope_oesil_score_title" >
         </activity>
+        <activity
+            android:name=".EgsysScore"
+            android:label="@string/syncope_egsys_score_title" >
+        </activity>
     </application>
 
 </manifest>
