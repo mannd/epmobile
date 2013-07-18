@@ -844,7 +844,39 @@
     <string name="abw_lb_hint">ABW (lb)</string>
     <string name="default_height_unit_title">Default Height Unit</string>
     <string name="default_height_unit_summary">Select default unit for height</string>
-    <string name="overweight_message">Actual weight is at least 30% over ideal body weight.  Use adjusted body weight instead.</string>
+    <string name="overweight_message">Actual weight is at least 30% over Ideal Body Weight.  Recommended weight is Adjusted Body Weight (</string>
     <string name="underheight_message">These measurements may not be useful when height is &lt; 60 inches.</string>
+    <string name="underweight_message">Actual weight is less than Ideal Body Weight.  Recommended weight is Actual Weight (</string>
+    <string name="normalweight_message">Weight is in the normal range.  Recommended weight is Ideal Body Weight (</string>
+    <string name="pound_abbreviation">lb</string>
+    <string name="kg_abbreviation">kg</string>
+    <string name="syncope_list_title">Syncope Risk Scores</string>
+    <string name="syncope_sf_rule_title">San Francisco Rule</string>
+    <string name="syncope_martin_title">Martin Algorithm</string>
+    <string name="syncope_oesil_score_title">OESIL Score</string>
+    <string name="syncope_egsys_score_title">EGSYS Score</string>
+    <string name="abnormal_ecg_label">Abnormal ECG (new changes or non-sinus rhythm)</string>
+    <string name="sob_label">Shortness of breath</string>
+    <string name="low_hct_label">Hematocrit &lt; 30%</string>
+    <string name="low_bp_label">Systolic BP &lt; 90 mmHg</string>
+    <string name="no_sf_rule_risk_message">No or little risk of serious events at 30 days.</string>
+    <string name="high_sf_rule_risk_message" formatted="false">Risk of serious events at 30 days (98% sensitive and 56% specific).</string>
+    <string name="syncope_sf_rule_reference">Reference: Quinn J et al. Ann Emerg Med 2006 47:448.</string>
+    <string name="history_vt_label">History of ventricular arrhythmia</string>
+    <string name="history_chf_label">History of congestive heart failure</string>
+    <string name="age_over_45_label">Age &gt; 45 years</string>
+    <string name="history_cv_disease_label">History of cardiovascular disease</string>
+    <string name="lack_of_prodrome_label">Lack of prodrome</string>
+    <string name="age_over_65_label">Age &gt; 65 years</string>
+    <string name="martin_algorithm_reference">Martin TP et al. Ann Emerg Med 1997 29:459.</string>
+    <string name="oesil_score_reference">Colivicchi F et al. Eur Heart J 2003 24:811.</string>
+    <string name="palps_before_syncope_label">Palpitations before syncope</string>
+    <string name="abnormal_ecg_or_heart_disease_label">Abnormal ECG or heart disease</string>
+    <string name="syncope_during_effort_label">Syncope during effort</string>
+    <string name="syncope_while_supine_label">Syncope while supine</string>
+    <string name="autonomic_prodrome_label">Autonomic prodrome (nausea, vomiting)</string>
+    <string name="predisposing_factors_label">Predisposing and/or precipitating factors (warm-crowded place,
+        prolonged standing, fear, pain, emotion)</string>
+    <string name="egsys_score_reference">Del Rosso A et al. Heart 2008 94:1630.</string>
 
 </resources>

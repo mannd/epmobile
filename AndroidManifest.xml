@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="org.epstudios.epmobile"
-    android:versionCode="27"
-    android:versionName="2.1" >
+    android:versionCode="28"
+    android:versionName="2.2" >
 
     <uses-sdk
         android:minSdkVersion="7"
@@ -236,6 +236,26 @@
         <activity
             android:name=".IbwCalculator"
             android:label="@string/ibw_calculator_title" >
+        </activity>
+        <activity
+            android:name=".SyncopeRiskScoreList"
+            android:label="@string/syncope_list_title" >
+        </activity>
+        <activity
+            android:name=".SyncopeSfRule"
+            android:label="@string/syncope_sf_rule_title" >
+        </activity>
+        <activity
+            android:name=".MartinAlgorithm"
+            android:label="@string/syncope_martin_title" >
+        </activity>
+        <activity
+            android:name=".OesilScore"
+            android:label="@string/syncope_oesil_score_title" >
+        </activity>
+        <activity
+            android:name=".EgsysScore"
+            android:label="@string/syncope_egsys_score_title" >
         </activity>
     </application>
 
