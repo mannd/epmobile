@@ -43,7 +43,7 @@ public class EgsysScore extends SyncopeRiskScore {
 		message = "EGSYS Score = " + result + "\n"
 				+ "2-year total mortality = " + mortalityRisk
 				+ "%\nCardiac syncope probability = " + syncopeRisk
-				+ "%\nReference: " + getString(R.string.oesil_score_reference);
+				+ "%\nReference: " + getString(R.string.egsys_score_reference);
 		return message;
 
 	}
