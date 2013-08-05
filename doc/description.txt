@@ -32,6 +32,7 @@ Features:
 - LVH ECG criteria, including Romhilt-Estes score and others
 - ARVC/D 1994 and 2010 diagnostic criteria
 - Normal EP values
+- Wide complex tachycardia algorithms 
 
 Categories: Medicine, Cardiology, Electrophysiology, Arrhythmia.
 
