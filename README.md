@@ -4,10 +4,10 @@ that provides a set of tools for electrophysiologists and other health care
 workers who deal with cardiac arrhythmias.  The program includes EP calculators, drug dose calculators, risk scores, diagnostic tools, ECG figures, and more.  It is available on the [Android Market](https://market.android.com/details?id=org.epstudios.epmobile).
 
 EP Mobile is free, open source, and licensed under the 
-[GNU GPL v3 license.](http://http://www.gnu.org/licenses/gpl.html)
+[GNU GPL v3 license.](http://www.gnu.org/licenses/gpl.html)
 
 ## License
-Copyright 2011, 2012, 2013 [EP Studios, Inc.](http://www.epstudiossoftware.com)
+Copyright © 2011, 2012, 2013 [EP Studios, Inc.](http://www.epstudiossoftware.com)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
