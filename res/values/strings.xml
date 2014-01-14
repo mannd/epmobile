@@ -11,7 +11,7 @@
 		\n\nEmail: mannd@epstudiossoftware.com
 		\nWeb: www.epstudiossoftware.com
 		\nSource: github.com/mannd/epmobile
-		\n\nCopyright \u00a9 2011, 2012, 2013 EP Studios, Inc.
+		\n\nCopyright \u00a9 2011-2014 EP Studios, Inc.
 		\nLicensed under GNU GPL v3.</string>
     <string name="main_index_title">EP Mobile</string>
     <string name="about_label">About</string>
@@ -728,7 +728,7 @@
     <string name="creatinine_mmol_hint">Creatinine (\u00B5mol/L)</string>
     <string name="entrainment_title">Entrainment Mapping</string>
     <string name="long_qt_drugs_title">Long QT Drugs (link)</string>
-    <string name="long_qt_drugs_link">http://www.azcert.org/medical-pros/drug-lists/drug-lists.cfm</string>
+    <string name="long_qt_drugs_link">http://www.crediblemeds.org</string>
     <string name="brugada_drugs_title">Brugada Drugs (link)</string>
     <string name="brugada_drugs_link">http://www.brugadadrugs.org</string>
     <string name="apixaban_calculator_title">Apixaban Calculator</string>
