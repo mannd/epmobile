@@ -1,8 +1,4 @@
-EP Mobile v2.2.2 Release Notes
-
-Changes since v2.2.1
-
-* Fixed broken Long QT drugs link
+EP Mobile v2.2.1 Release Notes
 
 Changes since v2.2
 
