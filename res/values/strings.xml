@@ -878,5 +878,12 @@
     <string name="predisposing_factors_label">Predisposing and/or precipitating factors (warm-crowded place,
         prolonged standing, fear, pain, emotion)</string>
     <string name="egsys_score_reference">Del Rosso A et al. Heart 2008 94:1630.</string>
+    <string name="vereckei_title">Vereckei Algorithm</string>
+    <string name="vereckei_step1_label">Presence of initial R in lead avR?</string>
+    <string name="vereckei_step2_label">Initial r or q in avR with width \u2265 40 msec?</string>
+    <string name="vereckei_step3_label">Notching on descending limb or a negative onset, predominantly negative QRS complex in avR?</string>
+    <string name="vereckei_step4_label">Ratio of voltage of initial and final 40 msec of complex in avR
+	    (Vi/Vt) \u2264 1?</string>
+    <string name="verecki_reference">Reference: Vereckei A, et al. Heart Rhythm 2008;5:89.</string>
 
 </resources>

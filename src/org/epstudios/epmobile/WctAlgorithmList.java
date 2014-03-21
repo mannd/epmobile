@@ -39,6 +39,7 @@ public class WctAlgorithmList extends EpDiagnosisListActivity {
 		lv.setTextFilterEnabled(true);
 
 		lv.setOnItemClickListener(new OnItemClickListener() {
+			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				CharSequence selection = ((TextView) view).getText();
@@ -48,6 +49,8 @@ public class WctAlgorithmList extends EpDiagnosisListActivity {
 					morphologyCriteria();
 				else if (selection.equals(getString(R.string.rwpt_title)))
 					ultraSimpleBrugadaAlgorithm();
+				else if (selection.equals(getString(R.string.vereckei_title)))
+					vereckiAlgorithm();
 			}
 		});
 	}
@@ -64,6 +67,11 @@ public class WctAlgorithmList extends EpDiagnosisListActivity {
 
 	private void ultraSimpleBrugadaAlgorithm() {
 		Intent i = new Intent(this, Rwpt.class);
+		startActivity(i);
+	}
+
+	private void vereckiAlgorithm() {
+		Intent i = new Intent(this, Vereckei.class);
 		startActivity(i);
 	}
 

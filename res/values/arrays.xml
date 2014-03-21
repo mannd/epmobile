@@ -84,7 +84,7 @@
         <item>@string/brugada_wct_title</item>
         <item>@string/morphology_title</item>
         <item>@string/rwpt_title</item>
-        <!-- <item>Vereckei Algorithm</item> -->
+        <item>@string/vereckei_title</item>
     </array>
     <array name="wpw_algorithm_list">
         <item>@string/anatomy_av_annulus_title</item>
