@@ -649,3 +649,20 @@
      - in circuit (with concealed fusion) S-QRS = EGM-QRS +/- 20 msec
 ** Long QT drugs
 *** website: http://www.azcert.org/medical-pros/drug-lists/printable-drug-list.cfm
+* TODO Verecki algorithm
+** Algorithm (uses only lead avR)
+   1. evaluate presence of initial R wave in avR
+   2. initial r or q with width >= 40 msec
+   3. notching on descending limb of a negative onset, predominantly
+      negative QRS complex.
+   4. Vi/Vt <= 1
+      1. Vi = initial ventricular activation velocity
+      2. Vt = terminal ventricular activation velocity
+      3. Measured by excursion in mV recorded on the ECG during the
+         initial Vi and terminal Vt 40 msec of the QRS
+** Use of algorithm
+   Similar to Brugada.  Yes at each step means VT.
+** References
+   http://academics.ochsner.org/uploadedFiles/Education/Library/Healthcare_Professionals/Differentiating%20Wide%20Complex%20Tachycardia_Saad.pdf
+   http://www.heartrhythmjournal.com/article/S1547-5271(07)00943-5/abstract
+* TODO New ICD risk algorith
