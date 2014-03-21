@@ -257,6 +257,10 @@
             android:name=".EgsysScore"
             android:label="@string/syncope_egsys_score_title" >
         </activity>
+        <activity
+            android:name=".Vereckei"
+            android:label="@string/vereckei_title" >
+        </activity>
     </application>
 
 </manifest>
