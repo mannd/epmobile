@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="3dip" >
+
+        <CheckBox
+            android:id="@+id/female_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/female_sex_label" />
+
+        <TextView
+            style="@style/Header1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/admission_reason_label" />
+
+        <RadioGroup
+            android:id="@+id/admission_reason_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <RadioButton
+                android:id="@+id/for_procedure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/for_procedure_label" >
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/for_heart_failure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/for_heart_failure_label" >
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/for_other_reason"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/other_label" >
+            </RadioButton>
+        </RadioGroup>
+        <!--
+             <CheckBox
+            android:id="@+id/hypertension"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/htn_label" />
+
+        <CheckBox
+            android:id="@+id/age75"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/age75_label" />
+
+        <CheckBox
+            android:id="@+id/diabetes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/diabetes_label" />
+
+        <CheckBox
+            android:id="@+id/stroke"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stroke_label" />
+        -->
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/calculate_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/calculate_label" />
+
+            <Button
+                android:id="@+id/clear_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/clear_label" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

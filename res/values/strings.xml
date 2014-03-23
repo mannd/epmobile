@@ -885,5 +885,12 @@
     <string name="vereckei_step4_label">Ratio of voltage of initial and final 40 msec of QRS complex in aVR
 	    (Vi/Vt) \u2264 1?</string>
     <string name="verecki_reference">Reference: Vereckei A, et al. Heart Rhythm 2008;5:89.</string>
+    <string name="icd_risk_title">ICD Risk</string>
+    <string name="icd_risk_reference">Reference: Dodson J, et al.  JACC 2014;8:788\n</string>
+    <string name="female_sex_label">Female sex</string>
+    <string name="admission_reason_label">Reason for admission</string>
+    <string name="for_procedure_label">For procedure</string>
+    <string name="for_heart_failure_label">For heart failure</string>
+    <string name="other_label">Other reason</string>
 
 </resources>
