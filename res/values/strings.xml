@@ -896,5 +896,12 @@
     <string name="class_one_or_two_label">I/II</string>
     <string name="class_three_label">III</string>
     <string name="class_four_label">IV</string>
+    <string name="no_prior_cabg_label">No prior CABG</string>
+    <string name="current_dialysis_label">Current dialysis</string>
+    <string name="chronic_lung_disease_label">Chronic lung disease</string>
+    <string name="abnormal_conduction_label">Abnormal conduction</string>
+    <string name="no_abnormal_conduction_label">No</string>
+    <string name="yes_lbbb_label">Yes LBBB</string>
+    <string name="yes_other_label">Yes other</string>
 
 </resources>

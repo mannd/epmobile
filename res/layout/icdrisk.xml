@@ -80,31 +80,59 @@
                 android:text="@string/class_four_label" >
             </RadioButton>
         </RadioGroup>
-        <!--
-             <CheckBox
-            android:id="@+id/hypertension"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/htn_label" />
+
+        <View style="@style/Divider" />
 
         <CheckBox
-            android:id="@+id/age75"
+            android:id="@+id/no_prior_cabg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/age75_label" />
+            android:text="@string/no_prior_cabg_label" />
 
         <CheckBox
-            android:id="@+id/diabetes"
+            android:id="@+id/current_dialysis"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/diabetes_label" />
+            android:text="@string/current_dialysis_label" />
 
         <CheckBox
-            android:id="@+id/stroke"
+            android:id="@+id/chronic_lung_disease"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/stroke_label" />
-        -->
+            android:text="@string/chronic_lung_disease_label" />
+
+        <TextView
+            style="@style/Header1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/abnormal_conduction_label" />
+
+        <RadioGroup
+            android:id="@+id/abnormal_conduction_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <RadioButton
+                android:id="@+id/no_abnormal_conduction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_abnormal_conduction_label" >
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/yes_lbbb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes_lbbb_label" >
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/yes_other"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes_other_label" >
+            </RadioButton>
+        </RadioGroup>
 
         <LinearLayout
             android:id="@+id/linearLayout3"
