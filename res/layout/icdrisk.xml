@@ -47,6 +47,39 @@
                 android:text="@string/other_label" >
             </RadioButton>
         </RadioGroup>
+
+        <TextView
+            style="@style/Header1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nyha_class_label" />
+
+        <RadioGroup
+            android:id="@+id/nyha_class_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <RadioButton
+                android:id="@+id/class_one_or_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/class_one_or_two_label" >
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/class_three"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/class_three_label" >
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/class_four"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/class_four_label" >
+            </RadioButton>
+        </RadioGroup>
         <!--
              <CheckBox
             android:id="@+id/hypertension"

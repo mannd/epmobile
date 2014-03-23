@@ -892,5 +892,9 @@
     <string name="for_procedure_label">For procedure</string>
     <string name="for_heart_failure_label">For heart failure</string>
     <string name="other_label">Other reason</string>
+    <string name="nyha_class_label">NYHA functional class</string>
+    <string name="class_one_or_two_label">I/II</string>
+    <string name="class_three_label">III</string>
+    <string name="class_four_label">IV</string>
 
 </resources>
