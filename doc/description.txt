@@ -12,6 +12,7 @@ Features:
 - QTc calculator (Bazett, Fridericia, Sagie and Hodges formulas)
 - Atrial fibrillation risk scores (CHADS2, CHA2DS2-VASc)
 - Bleeding risk scores (HAS-BLED, HEMORR2HAGES)
+- ICD in-hospital complication risk score
 - Hypertrophic Cardiomyopathy risk score calculator
 - Syncope risk scores (SF Rule, Martin, OESIL, EGSYS)
 - CMS (Medicare) ICD guidelines calculator

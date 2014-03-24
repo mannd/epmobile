@@ -39,6 +39,8 @@ public class RiskScoreList extends EpListActivity {
 				else if (selection
 						.equals(getString(R.string.syncope_list_title)))
 					syncopeRiskScores();
+				else if (selection.equals(getString(R.string.icd_risk_title)))
+					IcdRiskScore();
 			}
 		});
 	}
@@ -70,6 +72,11 @@ public class RiskScoreList extends EpListActivity {
 
 	private void syncopeRiskScores() {
 		Intent i = new Intent(this, SyncopeRiskScoreList.class);
+		startActivity(i);
+	}
+
+	private void IcdRiskScore() {
+		Intent i = new Intent(this, IcdRisk.class);
 		startActivity(i);
 	}
 
