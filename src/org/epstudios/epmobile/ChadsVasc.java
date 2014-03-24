@@ -101,7 +101,8 @@ public class ChadsVasc extends RiskScore {
 		}
 		risk = "Annual stroke risk is " + risk + "%";
 		message = "CHA\u2082DS\u2082-VASc score = " + result + "\n" + message
-				+ "\n" + risk + "\nReference: Lip GY et al. Stroke 2010";
+				+ "\n" + risk
+				+ "\nReference: Lip GY et al. Stroke 2010 137:263.";
 		return message;
 	}
 

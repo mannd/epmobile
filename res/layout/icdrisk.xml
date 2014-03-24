@@ -134,6 +134,199 @@
             </RadioButton>
         </RadioGroup>
 
+        <TextView
+            style="@style/Header1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/procedure_type_label" />
+
+        <RadioGroup
+            android:id="@+id/procedure_type_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <RadioButton
+                android:id="@+id/initial_implant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/initial_implant_label" >
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/generator_replacement_eri"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/generator_replacement_eri_label" >
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/generator_replacement_infection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/generator_replacement_infection_label" >
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/generator_replacement_device_relocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/generator_replacement_device_relocation_label" >
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/generator_replacement_upgrade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/generator_replacement_upgrade_label" >
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/generator_replacement_malfunction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/generator_replacement_malfunction_label" >
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/generator_replacement_other"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/generator_replacement_other_label" >
+            </RadioButton>
+        </RadioGroup>
+
+        <TextView
+            style="@style/Header1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/icd_type_label" />
+
+        <RadioGroup
+            android:id="@+id/icd_type_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <RadioButton
+                android:id="@+id/single_chamber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/single_chamber_label" >
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/dual_chamber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dual_chamber_label" >
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/crt_d"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/crt_d_label" >
+            </RadioButton>
+        </RadioGroup>
+
+        <TextView
+            style="@style/Header1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sodium_label" />
+
+        <RadioGroup
+            android:id="@+id/sodium_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <RadioButton
+                android:id="@+id/low_sodium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/low_sodium_label" >
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/normal_sodium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/normal_sodium_label" >
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/high_sodium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/high_sodium_label" >
+            </RadioButton>
+        </RadioGroup>
+
+        <TextView
+            style="@style/Header1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hgb_label" />
+
+        <RadioGroup
+            android:id="@+id/hgb_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <RadioButton
+                android:id="@+id/low_hgb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/low_hgb_label" >
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/normal_hgb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/normal_hgb_label" >
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/high_hgb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/high_hgb_label" >
+            </RadioButton>
+        </RadioGroup>
+
+        <TextView
+            style="@style/Header1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bun_label" />
+
+        <RadioGroup
+            android:id="@+id/bun_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <RadioButton
+                android:id="@+id/low_bun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/low_bun_label" >
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/normal_bun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/normal_bun_label" >
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/high_bun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/high_bun_label" >
+            </RadioButton>
+        </RadioGroup>
+
         <LinearLayout
             android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
