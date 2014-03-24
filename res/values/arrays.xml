@@ -104,8 +104,9 @@
         <item>@string/chads_title</item>
         <item>@string/chadsvasc_title</item>
         <item>@string/hasbled_title</item>
-        <item>@string/hemorrhages_title</item>
         <item>@string/hcm_title</item>
+        <item>@string/hemorrhages_title</item>
+        <item>@string/icd_risk_title</item>
         <item>@string/syncope_list_title</item>
     </array>
     <array name="arvc_criteria_list">

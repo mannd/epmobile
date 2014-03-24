@@ -261,6 +261,10 @@
             android:name=".Vereckei"
             android:label="@string/vereckei_title" >
         </activity>
+        <activity
+            android:name=".IcdRisk"
+            android:label="@string/icd_risk_title" >
+        </activity>
     </application>
 
 </manifest>
