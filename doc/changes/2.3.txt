@@ -6,5 +6,3 @@ Changes since v2.2.2
 
 * Added ICD in-hospital complication risk score (Dodson JA et al, JACC
   2014 63:788).
-
-
