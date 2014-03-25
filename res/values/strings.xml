@@ -907,7 +907,7 @@
     <string name="initial_implant_label">Initial implant</string>
     <string name="generator_replacement_eri_label">Generator replacement for ERI</string>
     <string name="generator_replacement_infection_label">Generator replacement for infection</string>
-    <string name="generator_replacement_device_relocation_label">Generator replacement for device reolcation</string>
+    <string name="generator_replacement_device_relocation_label">Generator replacement for device relocation</string>
     <string name="generator_replacement_upgrade_label">Generator replacement for upgrade</string>
     <string name="generator_replacement_malfunction_label">Generator replacement for malfunction</string>
     <string name="generator_replacement_other_label">Generator replacement for other reason</string>
