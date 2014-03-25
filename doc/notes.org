@@ -665,7 +665,7 @@
 ** References
    http://academics.ochsner.org/uploadedFiles/Education/Library/Healthcare_Professionals/Differentiating%20Wide%20Complex%20Tachycardia_Saad.pdf
    http://www.heartrhythmjournal.com/article/S1547-5271(07)00943-5/abstract
-* TODO New ICD risk algorithm
+* DONE New ICD risk algorithm
   - Female sex 2 points
   - Reason for admission
     - admitted for procedure 0
