@@ -1,4 +1,6 @@
-EP Mobile v2.2.2 Release Notes
+EP Mobile v2.2.3 Release Notes
+
+Changes since 2.2.2
 
 Changes since v2.2.1
 
