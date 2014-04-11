@@ -3,7 +3,7 @@ package org.epstudios.epmobile;
 import android.content.Intent;
 import android.view.MenuItem;
 
-public class SyncopeRiskScore extends RiskScore {
+public abstract class SyncopeRiskScore extends RiskScore {
 
 	@Override
 	protected void calculateResult() {
