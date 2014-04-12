@@ -39,9 +39,10 @@ public class DrugDoseCalculatorList extends EpCalculatorListActivity {
 		lv.setTextFilterEnabled(true);
 
 		lv.setOnItemClickListener(new OnItemClickListener() {
+			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				CharSequence selection = ((TextView) view).getText();
+				String selection = ((TextView) view).getText().toString();
 				if (selection
 						.equals(getString(R.string.dabigatran_calculator_title)))
 					dabigatranCalculator();

@@ -20,9 +20,10 @@ public class VtList extends EpDiagnosisListActivity {
 		lv.setTextFilterEnabled(true);
 
 		lv.setOnItemClickListener(new OnItemClickListener() {
+			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				CharSequence selection = ((TextView) view).getText();
+				String selection = ((TextView) view).getText().toString();
 				if (selection.equals(getString(R.string.epicardial_vt_title)))
 					epicardialVt();
 				else if (selection
