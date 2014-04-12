@@ -24,7 +24,7 @@ public class SyncopeRiskScoreList extends EpRiskScoreListActivity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				CharSequence selection = ((TextView) view).getText();
+				String selection = ((TextView) view).getText().toString();
 				if (selection.equals(getString(R.string.syncope_sf_rule_title)))
 					syncopeSfRule();
 				else if (selection

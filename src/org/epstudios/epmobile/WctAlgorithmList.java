@@ -42,7 +42,7 @@ public class WctAlgorithmList extends EpDiagnosisListActivity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				CharSequence selection = ((TextView) view).getText();
+				String selection = ((TextView) view).getText().toString();
 				if (selection.equals(getString(R.string.brugada_wct_title)))
 					brugadaAlgorithm();
 				else if (selection.equals(getString(R.string.morphology_title)))

@@ -39,9 +39,10 @@ public class ArvcList extends EpDiagnosisListActivity {
 		lv.setTextFilterEnabled(true);
 
 		lv.setOnItemClickListener(new OnItemClickListener() {
+			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				CharSequence selection = ((TextView) view).getText();
+				String selection = ((TextView) view).getText().toString();
 				if (selection
 						.equals(getString(R.string.arvc_2010_criteria_title)))
 					arvc2010();

@@ -24,7 +24,7 @@ public class RiskScoreList extends EpListActivity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				CharSequence selection = ((TextView) view).getText();
+				String selection = ((TextView) view).getText().toString();
 				if (selection.equals(getString(R.string.chads_title)))
 					chadsScore();
 				else if (selection.equals(getString(R.string.chadsvasc_title)))

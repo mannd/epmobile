@@ -22,9 +22,10 @@ public class ReferenceList extends EpListActivity {
 		lv.setTextFilterEnabled(true);
 
 		lv.setOnItemClickListener(new OnItemClickListener() {
+			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				CharSequence selection = ((TextView) view).getText();
+				String selection = ((TextView) view).getText().toString();
 				if (selection
 						.equals(getString(R.string.normal_ep_values_title)))
 					normalEpValues();
