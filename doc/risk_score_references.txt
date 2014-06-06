@@ -1,0 +1,91 @@
+* HOCM
+** Original references
+   References: Maron B et al.  Eur Heart J 2003:1965.
+	    http://eurheartj.oxfordjournals.org/content/24/21/1965.full
+	    McKenna WJ et al. Heart 2002;87:169.
+	    http://heart.bmj.com/content/87/2/169.full
+** Fixed reference
+   McKenna WJ. Behr ER. Hypertrophic cardiomyopathy: management, risk
+   stratification, and prevention of sudden death. Heart
+   [Internet]. 2002 Feb [cited 2014 Jun 6];87(2):169-176. Available from:
+   http://heart.bmj.com/content/87/2/169.full
+** Note
+   Actual algorithm is in the McKenna article, so use that for citation.
+* SYNCOPE SF RULE
+** Original reference
+   Reference: Quinn J et al. Ann Emerg Med 2006 47:448
+** Fixed reference
+   Quinn J, McDermott D, Stiell I, Kohn M, Wells G. Prospective
+   validation of the San Francisco Syncope rule to predict patients
+   with serious outcomes. 2006 May [cited 2014 Jun
+   6];47(5):448-54. Available from:
+   [[http://www.annemergmed.com/article/S0196-0644(05)01959-1/abstract]]
+* SYNCOPE MARTIN
+** Original reference
+   Martin TP et al. Ann Emerg Med 1997 29:459
+** Fixed reference
+   Martin TP, Hanusa BH, Kapoor WN.  Risk stratification of patients
+   with syncope. Ann Emerg Med [Internet]. 1997 April [cited 2014 Jun
+   6];29(4):459-66. Available from:
+   [[http://www.annemergmed.com/article/S0196-0644(97)70217-8/abstract]]
+* SYNCOPE OESIL
+** Original reference
+   Colivicchi F et al. Eur Heart J 2003 24:811
+** Fixed reference
+   Colivicchi F, Ammirati F, Melina D, Guido V, Imperoli G, Santini M,
+   for the OESIL (Osservatorio Epidemiologico sulla Sincope nel Lazio)
+   study investigators. Development and prospective validation of a
+   risk stratification system for patients with syncope in the
+   emergency department: the OESIL risk score. Eur Heart J
+   [Internet]. 2003 [cited 2014 Jun 6];24:811-19. Available from:
+   http://eurheartj.oxfordjournals.org/content/24/9/811.full.pdf
+* SYNCOPE EGYS
+** Original reference
+   Del Rosso A et al. Heart 2008 94:1630
+** Fixed reference
+   Del Rosso A, Ungar A, Maggi R, Giada F, Petix NR, De Santo T, Menozzi C, Brignole M. Clinical predictors of cardiac syncope at initial evaluation in patients referred urgently to a general hospital: the EGSYS score. Heart [Internet]. 2008 Dec [cited 2014 Jun 6];94(12):1620-6. Available from: http://heart.bmj.com/content/94/12/1620.abstract
+* ICD RISK
+** Original reference
+   Reference: Dodson JA et al. JACC 2014 8:788
+** Fixed reference
+   Dodson JA, Reynolds MR, Bao H, Al-Khatib SM, Peterson ED, Kremers MS, Mirro MJ, Curtis JP. Developing a risk model for in-hospital adverse events following implantable cardioverter-defibrillator implantation. J Am Coll Cardiol [Internet]. 2014 Mar [cited 2014 Jun 6];63(8):788-96. Available from: http://content.onlinejacc.org/article.aspx?articleid=1789346
+* CHADS
+
+Reference: Gage BF et al. JAMA 2001 285:2864
+
+* CHADS-VASC
+
+Lip GY et al. Stroke 2010 137:263
+
+* HAS-BLED
+
+Pisters R et al. Chest 2010 138:1093
+
+* HEMORRHAGES
+
+Reference: Gage BF et al. Am Heart J 2006;151:713
+
+* Journal quoting format
+** Print article
+   Veronesi U, Maisonneuve P, Decensi A.  Tamoxifen: an enduring
+   star. J Natl Cancer Inst. 2007 Feb 21;99(4):258-60.
+** Internet article
+   Kaul S, Diamond GA.  Good enough: blah blah.  Ann Intern Med
+   [Internet]. 2006 Jul 4 [cited 2007 Jan 4];145(1):62-9. Available
+   from: http://www.annals.org/cgi/reprint/145/1/62.pdf
+* Risk factor report format
+** Example
+Risk Score: CHADS
+Risk factors: Congestive heart failure, blah, age >= 75 yrs.
+CHADS score = 0
+Aspirin recommended
+Annual stroke risk is 1.9%
+Reference: blah blah
+** Format
+Risk Score: {getTitle}
+Risk factors: {getRiskFactors}
+Message: {getMessage}
+Reference: {getReference}
+
+
+   
