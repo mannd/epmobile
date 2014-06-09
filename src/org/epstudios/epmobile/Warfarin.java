@@ -18,6 +18,8 @@
 
 package org.epstudios.epmobile;
 
+import org.epstudios.epmobile.R.string;
+
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -322,25 +324,27 @@ public class Warfarin extends EpDrugCalculatorActivity implements
 
 		dialog.setMessage(message);
 		dialog.setTitle(getString(R.string.warfarin_result_title));
-		dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Reset",
+		dialog.setButton(DialogInterface.BUTTON_POSITIVE,
+				getString(string.reset_label, this),
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						clearEntries();
 					}
 				});
-		dialog.setButton(DialogInterface.BUTTON_NEUTRAL, "Don't Reset",
+		dialog.setButton(DialogInterface.BUTTON_NEUTRAL,
+				getString(string.dont_reset_label, this),
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 					}
 				});
 		if (showDoses) {
-			dialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Dosing",
+			dialog.setButton(DialogInterface.BUTTON_NEGATIVE,
+					getString(string.dosing_label, this),
 					new DialogInterface.OnClickListener() {
 						@Override
 						public void onClick(DialogInterface dialog, int which) {
-							// TODO Auto-generated method stub
 							displayDoses();
 						}
 					});

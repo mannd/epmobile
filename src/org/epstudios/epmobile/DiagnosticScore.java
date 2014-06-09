@@ -18,6 +18,8 @@
 
 package org.epstudios.epmobile;
 
+import org.epstudios.epmobile.R.string;
+
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -60,19 +62,20 @@ abstract public class DiagnosticScore extends EpActivity implements
 
 	abstract protected void init();
 
-	@SuppressWarnings("deprecation")
 	protected void displayResult(String message, String title) {
 		// put message in class field so inner class can use
 		AlertDialog dialog = new AlertDialog.Builder(this).create();
 		dialog.setMessage(message);
-		dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Reset",
+		dialog.setButton(DialogInterface.BUTTON_POSITIVE,
+				getString(string.reset_label, this),
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						clearEntries();
 					}
 				});
-		dialog.setButton(DialogInterface.BUTTON_NEUTRAL, "Don't Reset",
+		dialog.setButton(DialogInterface.BUTTON_NEUTRAL,
+				getString(string.dont_reset_label, this),
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {

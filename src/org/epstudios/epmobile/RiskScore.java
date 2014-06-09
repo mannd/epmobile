@@ -18,6 +18,8 @@
 
 package org.epstudios.epmobile;
 
+import org.epstudios.epmobile.R.string;
+
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -59,20 +61,23 @@ public abstract class RiskScore extends DiagnosticScore {
 		scoreTitle = title;
 		AlertDialog dialog = new AlertDialog.Builder(this).create();
 		dialog.setMessage(message);
-		dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Reset",
+		dialog.setButton(DialogInterface.BUTTON_POSITIVE,
+				getString(string.reset_label, this),
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						clearEntries();
 					}
 				});
-		dialog.setButton(DialogInterface.BUTTON_NEUTRAL, "Don't Reset",
+		dialog.setButton(DialogInterface.BUTTON_NEUTRAL,
+				getString(string.dont_reset_label, this),
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 					}
 				});
-		dialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Copy Result",
+		dialog.setButton(DialogInterface.BUTTON_NEGATIVE,
+				getString(string.copy_report_label, this),
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
