@@ -26,6 +26,7 @@ import android.view.View.OnClickListener;
 
 abstract public class DiagnosticScore extends EpActivity implements
 		OnClickListener {
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -59,7 +60,9 @@ abstract public class DiagnosticScore extends EpActivity implements
 
 	abstract protected void init();
 
+	@SuppressWarnings("deprecation")
 	protected void displayResult(String message, String title) {
+		// put message in class field so inner class can use
 		AlertDialog dialog = new AlertDialog.Builder(this).create();
 		dialog.setMessage(message);
 		dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Reset",

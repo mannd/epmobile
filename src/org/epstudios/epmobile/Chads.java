@@ -89,4 +89,9 @@ public class Chads extends RiskScore {
 		return message;
 
 	}
+
+	@Override
+	protected String getFullReference() {
+		return "";
+	}
 }

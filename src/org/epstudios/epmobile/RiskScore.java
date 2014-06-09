@@ -18,11 +18,16 @@
 
 package org.epstudios.epmobile;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.MenuItem;
 import android.widget.CheckBox;
 
 public abstract class RiskScore extends DiagnosticScore {
+	String dialogMessage;
+	String scoreTitle;
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
@@ -38,6 +43,7 @@ public abstract class RiskScore extends DiagnosticScore {
 		return super.onOptionsItemSelected(item);
 	}
 
+	@Override
 	protected void clearEntries() {
 		for (int i = 0; i < checkBox.length; i++)
 			checkBox[i].setChecked(false);
@@ -45,4 +51,72 @@ public abstract class RiskScore extends DiagnosticScore {
 
 	protected CheckBox[] checkBox;
 
+	@Override
+	@SuppressWarnings("deprecation")
+	protected void displayResult(String message, String title) {
+		// put message in class field so inner class can use
+		dialogMessage = message;
+		scoreTitle = title;
+		AlertDialog dialog = new AlertDialog.Builder(this).create();
+		dialog.setMessage(message);
+		dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Reset",
+				new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						clearEntries();
+					}
+				});
+		dialog.setButton(DialogInterface.BUTTON_NEUTRAL, "Don't Reset",
+				new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+					}
+				});
+		dialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Copy Result",
+				new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						// clipboard handled differently depending on Android
+						// version
+						String textToCopy = getFullRiskReport();
+						int sdk = android.os.Build.VERSION.SDK_INT;
+						if (sdk < android.os.Build.VERSION_CODES.HONEYCOMB) {
+							android.text.ClipboardManager clipboard = (android.text.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+							clipboard.setText(textToCopy);
+						} else {
+							android.content.ClipboardManager clipboard = (android.content.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+							android.content.ClipData clip = android.content.ClipData
+									.newPlainText("Copied Text", textToCopy);
+							clipboard.setPrimaryClip(clip);
+						}
+					}
+				});
+		dialog.setTitle(title);
+		dialog.show();
+	}
+
+	private String getFullRiskReport() {
+		String report = "Risk score: ";
+		report += scoreTitle + "\nResult: ";
+		report += dialogMessage + "\nReference: ";
+		report += getFullReference() + "\n";
+		return report;
+	}
+
+	// override in each risk score
+	protected String getFullReference() {
+		return "";
+	}
+
+	protected String getRiskTitle() {
+		return "";
+	}
+
+	protected String getShortReference() {
+		return "";
+	}
+
+	protected String getSelectedRisks() {
+		return "";
+	}
 }
