@@ -35,7 +35,7 @@
 ** Fixed reference
    Colivicchi F, Ammirati F, Melina D, Guido V, Imperoli G, Santini M,
    for the OESIL (Osservatorio Epidemiologico sulla Sincope nel Lazio)
-   study investigators. Development and prospective validation of a
+   Study Investigators. Development and prospective validation of a
    risk stratification system for patients with syncope in the
    emergency department: the OESIL risk score. Eur Heart J
    [Internet]. 2003 [cited 2014 Jun 6];24:811-19. Available from:
@@ -75,7 +75,7 @@
 ** Fixed reference
    Lip GY, Frison L, Halperin JL, Lane DA. Identifying patients at
    high risk for stroke despite anticoagulation: a comparison of
-   contemporary stroke risk stratificaiton schemes in an
+   contemporary stroke risk stratification schemes in an
    anticoagulated atrial fibrillation cohort. Stroke [Internet]. 2010
    Oct 21 [cited 2014 Jun 6];41:2731-8. Available from:
    http://stroke.ahajournals.org/content/41/12/2731.full.pdf
@@ -94,11 +94,17 @@
    Reference: Gage BF et al. Am Heart J 2006;151:713
 ** Fixed reference
    Gage BF, Yan Y, Milligan PE, Waterman AD, Culverhouse R, Rich MW,
-   Radford MJ. Clinical classification schemes for predicitng
+   Radford MJ. Clinical classification schemes for predicting
    hemorrhage: results from the National Registry of Atrial
    Fibrillation (NRAF). Am Heart J [Internet]. 2006 [cited 2014 Jun
    6];151:713-9. Available from:
    http://www.hematology.fi/system/files/HEMORRHAGES-score.pdf
+* ESTES-ROMHILT
+** Original reference
+   BP Hsieh et al. Am Heart J 2005;150:161   
+** Fixed reference
+   Romhilt DW, Estes EH Jr. A point-score system for the ECG diagnosis
+   of left ventricular hypertrophy. Am Heart J. 1968 Jun;75(6):752-8.
 * Journal quoting format
 ** Source
    http://www.ncbi.nlm.nih.gov/books/NBK7282/#A32362
