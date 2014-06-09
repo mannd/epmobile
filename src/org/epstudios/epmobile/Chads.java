@@ -18,12 +18,29 @@
 
 package org.epstudios.epmobile;
 
+import org.epstudios.epmobile.R.string;
+
 import android.widget.CheckBox;
 
 public class Chads extends RiskScore {
 	@Override
 	protected void setContentView() {
 		setContentView(R.layout.chads);
+	}
+
+	@Override
+	protected String getRiskTitle() {
+		return getString(string.chads_title, this);
+	}
+
+	@Override
+	protected String getShortReference() {
+		return getString(string.chads_short_reference, this);
+	}
+
+	@Override
+	protected String getFullReference() {
+		return getString(string.chads_full_reference, this);
 	}
 
 	@Override
@@ -90,8 +107,4 @@ public class Chads extends RiskScore {
 
 	}
 
-	@Override
-	protected String getFullReference() {
-		return "";
-	}
 }

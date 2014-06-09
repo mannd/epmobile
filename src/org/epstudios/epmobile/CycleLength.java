@@ -18,6 +18,8 @@
 
 package org.epstudios.epmobile;
 
+import org.epstudios.epmobile.R.string;
+
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -84,6 +86,7 @@ public class CycleLength extends EpActivity implements OnClickListener {
 	private RadioButton hrRadioButton;
 	private TextView measurementTextView;
 
+	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.calculate_result_button:
@@ -129,7 +132,7 @@ public class CycleLength extends EpActivity implements OnClickListener {
 				resultTextView.setText("Interval = " + String.valueOf(result)
 						+ " msec");
 		} catch (NumberFormatException e) {
-			resultTextView.setText("Invalid!");
+			resultTextView.setText(getString(string.invalid_warning, this));
 			resultTextView.setTextColor(Color.RED);
 		}
 	}
