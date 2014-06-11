@@ -4,8 +4,6 @@ import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-import org.epstudios.epmobile.R.string;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -112,7 +110,7 @@ public class DayCalculator extends EpActivity implements OnClickListener {
 					DateFormat.MEDIUM).format(cal.getTime()));
 
 		} catch (NumberFormatException e) {
-			calculatedDateTextView.setText(getString(string.invalid_warning,
+			calculatedDateTextView.setText(getString(R.string.invalid_warning,
 					this));
 			calculatedDateTextView.setTextColor(Color.RED);
 		}

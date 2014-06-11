@@ -18,7 +18,8 @@
 
 package org.epstudios.epmobile;
 
-import org.epstudios.epmobile.R.string;
+import java.util.ArrayList;
+import java.util.List;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -28,6 +29,8 @@ import android.view.MenuItem;
 import android.widget.CheckBox;
 
 public abstract class RiskScore extends DiagnosticScore {
+	private String resultMessage;
+	private final List<String> selectedRisks = new ArrayList<String>();
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
@@ -58,7 +61,7 @@ public abstract class RiskScore extends DiagnosticScore {
 		AlertDialog dialog = new AlertDialog.Builder(this).create();
 		dialog.setMessage(message);
 		dialog.setButton(DialogInterface.BUTTON_POSITIVE,
-				getString(string.reset_label, this),
+				getString(R.string.reset_label),
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
@@ -66,14 +69,14 @@ public abstract class RiskScore extends DiagnosticScore {
 					}
 				});
 		dialog.setButton(DialogInterface.BUTTON_NEUTRAL,
-				getString(string.dont_reset_label, this),
+				getString(R.string.dont_reset_label),
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 					}
 				});
 		dialog.setButton(DialogInterface.BUTTON_NEGATIVE,
-				getString(string.copy_report_label, this),
+				getString(R.string.copy_report_label),
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
@@ -101,20 +104,45 @@ public abstract class RiskScore extends DiagnosticScore {
 		String report = "Risk score: ";
 		report += getRiskTitle() + "\nRisks: ";
 		report += getSelectedRisks() + "\nResult: ";
-		report += getResult() + "\n" + getString(string.reference_label, this)
-				+ ": ";
+		report += getResultMessage() + "\n"
+				+ getString(R.string.reference_label) + ": ";
 		report += getFullReference() + "\n";
 		return report;
+	}
+
+	protected void setResultMessage(String message) {
+		resultMessage = message;
+	}
+
+	protected String getResultMessage() {
+		return resultMessage;
+	}
+
+	protected String resultWithShortReference() {
+		return getResultMessage() + "\n" + getString(R.string.reference_label)
+				+ ": " + getShortReference() + ".";
+	}
+
+	protected void clearSelectedRisks() {
+		selectedRisks.clear();
+	}
+
+	protected void addSelectedRisk(String risk) {
+		selectedRisks.add(risk);
+	}
+
+	protected String getSelectedRisks() {
+		if (selectedRisks.isEmpty()) {
+			return getString(R.string.none_label);
+		} else {
+			return selectedRisks.toString();
+		}
 	}
 
 	// each risk score needs these
 	abstract protected String getFullReference();
 
-	abstract protected String getResult();
-
 	abstract protected String getRiskTitle();
 
 	abstract protected String getShortReference();
-
-	abstract protected String getSelectedRisks();
 }

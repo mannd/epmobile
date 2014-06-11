@@ -19,7 +19,6 @@
 package org.epstudios.epmobile;
 
 import org.epstudios.epmobile.QtcCalculator.QtcFormula;
-import org.epstudios.epmobile.R.string;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -243,7 +242,7 @@ public class Qtc extends EpActivity implements OnClickListener {
 			else
 				qtcTextView.setTextColor(Color.GREEN);
 		} catch (NumberFormatException e) {
-			qtcTextView.setText(getString(string.invalid_warning, this));
+			qtcTextView.setText(getString(R.string.invalid_warning));
 			qtcTextView.setTextColor(Color.RED);
 		}
 	}

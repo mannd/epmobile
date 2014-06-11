@@ -103,12 +103,6 @@ public class Hemorrhages extends RiskScore {
 	}
 
 	@Override
-	protected String getResult() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	protected String getRiskTitle() {
 		// TODO Auto-generated method stub
 		return null;

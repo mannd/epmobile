@@ -3,8 +3,6 @@ package org.epstudios.epmobile;
 import java.text.DecimalFormat;
 import java.text.Format;
 
-import org.epstudios.epmobile.R.string;
-
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -132,7 +130,7 @@ public class LongQt extends EpActivity implements OnClickListener {
 		message += "Long QT Syndrome";
 		dialog.setMessage(message);
 		dialog.setButton(DialogInterface.BUTTON_POSITIVE,
-				getString(string.reset_label, this),
+				getString(R.string.reset_label),
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
@@ -140,7 +138,7 @@ public class LongQt extends EpActivity implements OnClickListener {
 					}
 				});
 		dialog.setButton(DialogInterface.BUTTON_NEUTRAL,
-				getString(string.dont_reset_label, this),
+				getString(R.string.dont_reset_label),
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {

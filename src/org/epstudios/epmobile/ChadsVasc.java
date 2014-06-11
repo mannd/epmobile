@@ -18,8 +18,6 @@
 
 package org.epstudios.epmobile;
 
-import org.epstudios.epmobile.R.string;
-
 import android.widget.CheckBox;
 
 public class ChadsVasc extends RiskScore {
@@ -103,19 +101,14 @@ public class ChadsVasc extends RiskScore {
 		}
 		risk = "Annual stroke risk is " + risk + "%";
 		message = "CHA\u2082DS\u2082-VASc score = " + result + "\n" + message
-				+ "\n" + risk + "\n" + getString(string.reference_label, this)
+				+ "\n" + risk + "\n"
+				+ getString(R.string.reference_label)
 				+ ": Lip GY et al. Stroke 2010 137:263.";
 		return message;
 	}
 
 	@Override
 	protected String getFullReference() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	protected String getResult() {
 		// TODO Auto-generated method stub
 		return null;
 	}

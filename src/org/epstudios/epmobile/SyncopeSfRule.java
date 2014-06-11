@@ -61,12 +61,6 @@ public class SyncopeSfRule extends SyncopeRiskScore {
 	}
 
 	@Override
-	protected String getResult() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	protected String getRiskTitle() {
 		// TODO Auto-generated method stub
 		return null;

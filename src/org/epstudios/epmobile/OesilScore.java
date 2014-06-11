@@ -1,7 +1,5 @@
 package org.epstudios.epmobile;
 
-import org.epstudios.epmobile.R.string;
-
 import android.view.View;
 import android.widget.CheckBox;
 
@@ -32,7 +30,7 @@ public class OesilScore extends SyncopeRiskScore {
 
 		message = "OESIL Score = " + result + "\n"
 				+ "1-year total mortality = " + risk[result] + "%\n"
-				+ getString(string.reference_label, this) + ": "
+				+ getString(R.string.reference_label) + ": "
 				+ getString(R.string.oesil_score_reference);
 		return message;
 
@@ -60,12 +58,6 @@ public class OesilScore extends SyncopeRiskScore {
 
 	@Override
 	protected String getFullReference() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	protected String getResult() {
 		// TODO Auto-generated method stub
 		return null;
 	}

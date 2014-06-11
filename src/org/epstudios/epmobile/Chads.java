@@ -18,17 +18,9 @@
 
 package org.epstudios.epmobile;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.epstudios.epmobile.R.string;
-
 import android.widget.CheckBox;
 
 public class Chads extends RiskScore {
-	private String resultMessage;
-	private final List<String> selectedRisks = new ArrayList<String>();
-
 	@Override
 	protected void setContentView() {
 		setContentView(R.layout.chads);
@@ -36,17 +28,17 @@ public class Chads extends RiskScore {
 
 	@Override
 	protected String getRiskTitle() {
-		return getString(string.chads_title, this);
+		return getString(R.string.chads_title);
 	}
 
 	@Override
 	protected String getShortReference() {
-		return getString(string.chads_short_reference, this);
+		return getString(R.string.chads_short_reference);
 	}
 
 	@Override
 	protected String getFullReference() {
-		return getString(string.chads_full_reference, this);
+		return getString(R.string.chads_full_reference);
 	}
 
 	@Override
@@ -63,10 +55,10 @@ public class Chads extends RiskScore {
 	@Override
 	protected void calculateResult() {
 		int result = 0;
-		selectedRisks.clear();
+		clearSelectedRisks();
 		for (int i = 0; i < checkBox.length; i++) {
 			if (checkBox[i].isChecked()) {
-				selectedRisks.add(checkBox[i].getText().toString());
+				addSelectedRisk(checkBox[i].getText().toString());
 				if (i == 4) // stroke = 2 points
 					result = result + 2;
 				else
@@ -111,27 +103,9 @@ public class Chads extends RiskScore {
 		risk = "Annual stroke risk is " + risk + "%";
 		message = "CHADS\u2082 score = " + result + "\n" + message + "\n"
 				+ risk;
-		resultMessage = message;
-		message += "\n" + getString(string.reference_label, this)
-				+ ": Gage BF et al. JAMA 2001 285:2864.";
-		return message;
+		setResultMessage(message);
+		return resultWithShortReference();
 
-	}
-
-	@Override
-	protected String getResult() {
-		// TODO Auto-generated method stub
-		return resultMessage;
-	}
-
-	@Override
-	protected String getSelectedRisks() {
-		// TODO Auto-generated method stub
-		if (selectedRisks.isEmpty()) {
-			return "[None]";
-		} else {
-			return selectedRisks.toString();
-		}
 	}
 
 }

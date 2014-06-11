@@ -18,8 +18,6 @@
 
 package org.epstudios.epmobile;
 
-import org.epstudios.epmobile.R.string;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -132,7 +130,7 @@ public class CycleLength extends EpActivity implements OnClickListener {
 				resultTextView.setText("Interval = " + String.valueOf(result)
 						+ " msec");
 		} catch (NumberFormatException e) {
-			resultTextView.setText(getString(string.invalid_warning, this));
+			resultTextView.setText(getString(R.string.invalid_warning));
 			resultTextView.setTextColor(Color.RED);
 		}
 	}

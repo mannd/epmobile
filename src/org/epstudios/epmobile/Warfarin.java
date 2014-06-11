@@ -18,8 +18,6 @@
 
 package org.epstudios.epmobile;
 
-import org.epstudios.epmobile.R.string;
-
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -325,7 +323,7 @@ public class Warfarin extends EpDrugCalculatorActivity implements
 		dialog.setMessage(message);
 		dialog.setTitle(getString(R.string.warfarin_result_title));
 		dialog.setButton(DialogInterface.BUTTON_POSITIVE,
-				getString(string.reset_label, this),
+				getString(R.string.reset_label),
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
@@ -333,7 +331,7 @@ public class Warfarin extends EpDrugCalculatorActivity implements
 					}
 				});
 		dialog.setButton(DialogInterface.BUTTON_NEUTRAL,
-				getString(string.dont_reset_label, this),
+				getString(R.string.dont_reset_label),
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
@@ -341,7 +339,7 @@ public class Warfarin extends EpDrugCalculatorActivity implements
 				});
 		if (showDoses) {
 			dialog.setButton(DialogInterface.BUTTON_NEGATIVE,
-					getString(string.dosing_label, this),
+					getString(R.string.dosing_label),
 					new DialogInterface.OnClickListener() {
 						@Override
 						public void onClick(DialogInterface dialog, int which) {
