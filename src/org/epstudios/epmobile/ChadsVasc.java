@@ -108,4 +108,34 @@ public class ChadsVasc extends RiskScore {
 		return message;
 	}
 
+	@Override
+	protected String getFullReference() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	protected String getResult() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	protected String getRiskTitle() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	protected String getShortReference() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	protected String getSelectedRisks() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

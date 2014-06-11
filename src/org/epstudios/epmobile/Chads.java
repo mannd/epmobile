@@ -102,10 +102,22 @@ public class Chads extends RiskScore {
 		}
 		risk = "Annual stroke risk is " + risk + "%";
 		message = "CHADS\u2082 score = " + result + "\n" + message + "\n"
-				+ risk + "\n" +
-		    getString(string.reference_label, this) + ": Gage BF et al. JAMA 2001 285:2864.";
+				+ risk + "\n" + getString(string.reference_label, this)
+				+ ": Gage BF et al. JAMA 2001 285:2864.";
 		return message;
 
+	}
+
+	@Override
+	protected String getResult() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	protected String getSelectedRisks() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

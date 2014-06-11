@@ -28,8 +28,6 @@ import android.view.MenuItem;
 import android.widget.CheckBox;
 
 public abstract class RiskScore extends DiagnosticScore {
-	String dialogMessage;
-	String scoreTitle;
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
@@ -57,8 +55,6 @@ public abstract class RiskScore extends DiagnosticScore {
 	@SuppressWarnings("deprecation")
 	protected void displayResult(String message, String title) {
 		// put message in class field so inner class can use
-		dialogMessage = message;
-		scoreTitle = title;
 		AlertDialog dialog = new AlertDialog.Builder(this).create();
 		dialog.setMessage(message);
 		dialog.setButton(DialogInterface.BUTTON_POSITIVE,
@@ -102,27 +98,21 @@ public abstract class RiskScore extends DiagnosticScore {
 
 	private String getFullRiskReport() {
 		String report = "Risk score: ";
-		report += scoreTitle + "\nResult: ";
-		report += dialogMessage + "\n"
-				+ getString(string.reference_label, this) + ": ";
+		report += getRiskTitle() + "\nResult: ";
+		report += getResult() + "\n" + getString(string.reference_label, this)
+				+ ": ";
 		report += getFullReference() + "\n";
 		return report;
 	}
 
-	// override in each risk score
-	protected String getFullReference() {
-		return "";
-	}
+	// each risk score needs these
+	abstract protected String getFullReference();
 
-	protected String getRiskTitle() {
-		return "";
-	}
+	abstract protected String getResult();
 
-	protected String getShortReference() {
-		return "";
-	}
+	abstract protected String getRiskTitle();
 
-	protected String getSelectedRisks() {
-		return "";
-	}
+	abstract protected String getShortReference();
+
+	abstract protected String getSelectedRisks();
 }

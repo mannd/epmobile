@@ -71,4 +71,34 @@ public class EgsysScore extends SyncopeRiskScore {
 		checkBox[5].setText(getString(R.string.predisposing_factors_label));
 	}
 
+	@Override
+	protected String getFullReference() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	protected String getResult() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	protected String getRiskTitle() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	protected String getShortReference() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	protected String getSelectedRisks() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
