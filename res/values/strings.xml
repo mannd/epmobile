@@ -134,7 +134,7 @@
     <string name="done_label">Done</string>
     <string name="reset_label">Reset</string>
     <string name="dont_reset_label">Don\'t Reset</string>
-    <string name="copy_report_label">Copy Report</string>
+    <string name="copy_report_label">Copy Result</string>
     <string name="dosing_label">Dosing</string>
     <string name="morphology_label">Morphology Criteria</string>
     <string name="morphology_title">@string/morphology_label</string>

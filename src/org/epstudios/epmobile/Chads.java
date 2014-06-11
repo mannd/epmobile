@@ -18,11 +18,17 @@
 
 package org.epstudios.epmobile;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.epstudios.epmobile.R.string;
 
 import android.widget.CheckBox;
 
 public class Chads extends RiskScore {
+	private String resultMessage;
+	private final List<String> selectedRisks = new ArrayList<String>();
+
 	@Override
 	protected void setContentView() {
 		setContentView(R.layout.chads);
@@ -57,8 +63,10 @@ public class Chads extends RiskScore {
 	@Override
 	protected void calculateResult() {
 		int result = 0;
+		selectedRisks.clear();
 		for (int i = 0; i < checkBox.length; i++) {
 			if (checkBox[i].isChecked()) {
+				selectedRisks.add(checkBox[i].getText().toString());
 				if (i == 4) // stroke = 2 points
 					result = result + 2;
 				else
@@ -102,7 +110,9 @@ public class Chads extends RiskScore {
 		}
 		risk = "Annual stroke risk is " + risk + "%";
 		message = "CHADS\u2082 score = " + result + "\n" + message + "\n"
-				+ risk + "\n" + getString(string.reference_label, this)
+				+ risk;
+		resultMessage = message;
+		message += "\n" + getString(string.reference_label, this)
 				+ ": Gage BF et al. JAMA 2001 285:2864.";
 		return message;
 
@@ -111,13 +121,17 @@ public class Chads extends RiskScore {
 	@Override
 	protected String getResult() {
 		// TODO Auto-generated method stub
-		return null;
+		return resultMessage;
 	}
 
 	@Override
 	protected String getSelectedRisks() {
 		// TODO Auto-generated method stub
-		return null;
+		if (selectedRisks.isEmpty()) {
+			return "[None]";
+		} else {
+			return selectedRisks.toString();
+		}
 	}
 
 }
