@@ -27,6 +27,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.MenuItem;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 public abstract class RiskScore extends DiagnosticScore {
 	private String resultMessage;
@@ -83,6 +84,7 @@ public abstract class RiskScore extends DiagnosticScore {
 						// clipboard handled differently depending on Android
 						// version
 						String textToCopy = getFullRiskReport();
+						showToast();
 						int sdk = android.os.Build.VERSION.SDK_INT;
 						if (sdk < android.os.Build.VERSION_CODES.HONEYCOMB) {
 							android.text.ClipboardManager clipboard = (android.text.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
@@ -108,6 +110,11 @@ public abstract class RiskScore extends DiagnosticScore {
 				+ getString(R.string.reference_label) + ": ";
 		report += getFullReference() + "\n";
 		return report;
+	}
+
+	private void showToast() {
+		Toast.makeText(this, "Result copied to clipboard", Toast.LENGTH_SHORT)
+				.show();
 	}
 
 	protected void setResultMessage(String message) {
