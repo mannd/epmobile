@@ -1,5 +1,7 @@
 package org.epstudios.epmobile;
 
+import org.epstudios.epmobile.R.string;
+
 import android.view.View;
 import android.widget.CheckBox;
 
@@ -28,7 +30,8 @@ public class MartinAlgorithm extends SyncopeRiskScore {
 
 		message = "Martin Algorithm Score = " + result + "\n"
 				+ "1-year severe arrhythmia or arrhythmic death risk = "
-				+ risk[result] + "%\nReference: "
+				+ risk[result] + "%\n"
+				+ getString(string.reference_label, this) + ": "
 				+ getString(R.string.martin_algorithm_reference);
 		return message;
 

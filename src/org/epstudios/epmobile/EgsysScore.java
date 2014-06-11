@@ -1,5 +1,7 @@
 package org.epstudios.epmobile;
 
+import org.epstudios.epmobile.R.string;
+
 import android.widget.CheckBox;
 
 public class EgsysScore extends SyncopeRiskScore {
@@ -42,8 +44,9 @@ public class EgsysScore extends SyncopeRiskScore {
 
 		message = "EGSYS Score = " + result + "\n"
 				+ "2-year total mortality = " + mortalityRisk
-				+ "%\nCardiac syncope probability = " + syncopeRisk
-				+ "%\nReference: " + getString(R.string.egsys_score_reference);
+				+ "%\nCardiac syncope probability = " + syncopeRisk + "%\n"
+				+ getString(string.reference_label, this) + ": "
+				+ getString(R.string.egsys_score_reference);
 		return message;
 
 	}

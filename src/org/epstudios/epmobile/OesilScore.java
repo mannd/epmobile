@@ -1,12 +1,14 @@
 package org.epstudios.epmobile;
 
+import org.epstudios.epmobile.R.string;
+
 import android.view.View;
 import android.widget.CheckBox;
 
 public class OesilScore extends SyncopeRiskScore {
 	// These scores are from the validation group in the paper.
 	// The derivation cohort had slightly different scores.
-	final double risk[] = new double[] { 0, 0.6, 14, 29, 52.9 };
+	final String risk[] = new String[] { "0", "0.6", "14", "29", "52.9" };
 
 	@Override
 	protected void setContentView() {
@@ -29,7 +31,8 @@ public class OesilScore extends SyncopeRiskScore {
 		String message;
 
 		message = "OESIL Score = " + result + "\n"
-				+ "1-year total mortality = " + risk[result] + "%\nReference: "
+				+ "1-year total mortality = " + risk[result] + "%\n"
+				+ getString(string.reference_label, this) + ": "
 				+ getString(R.string.oesil_score_reference);
 		return message;
 

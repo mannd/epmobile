@@ -18,6 +18,8 @@
 
 package org.epstudios.epmobile;
 
+import org.epstudios.epmobile.R.string;
+
 import android.widget.CheckBox;
 
 public class ChadsVasc extends RiskScore {
@@ -101,8 +103,8 @@ public class ChadsVasc extends RiskScore {
 		}
 		risk = "Annual stroke risk is " + risk + "%";
 		message = "CHA\u2082DS\u2082-VASc score = " + result + "\n" + message
-				+ "\n" + risk
-				+ "\nReference: Lip GY et al. Stroke 2010 137:263.";
+				+ "\n" + risk + "\n" + getString(string.reference_label, this)
+				+ ": Lip GY et al. Stroke 2010 137:263.";
 		return message;
 	}
 

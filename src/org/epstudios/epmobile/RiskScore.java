@@ -103,7 +103,8 @@ public abstract class RiskScore extends DiagnosticScore {
 	private String getFullRiskReport() {
 		String report = "Risk score: ";
 		report += scoreTitle + "\nResult: ";
-		report += dialogMessage + "\nReference: ";
+		report += dialogMessage + "\n"
+				+ getString(string.reference_label, this) + ": ";
 		report += getFullReference() + "\n";
 		return report;
 	}

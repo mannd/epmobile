@@ -18,6 +18,8 @@
 
 package org.epstudios.epmobile;
 
+import org.epstudios.epmobile.R.string;
+
 import android.widget.CheckBox;
 
 public class HasBled extends RiskScore {
@@ -85,7 +87,8 @@ public class HasBled extends RiskScore {
 		}
 		risk = "Bleeding risk is " + risk + " bleeds per 100 patient-years";
 		message = "HAS-BLED score = " + result + "\n" + message + "\n" + risk
-				+ "\nReference: Pisters R et al. Chest 2010 138:1093.";
+				+ "\n" + getString(string.reference_label, this)
+				+ ": Pisters R et al. Chest 2010 138:1093.";
 		return message;
 	}
 
