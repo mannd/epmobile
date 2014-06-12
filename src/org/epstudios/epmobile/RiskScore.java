@@ -104,7 +104,7 @@ public abstract class RiskScore extends DiagnosticScore {
 	private String getFullRiskReport() {
 		// TODO ? begin with Risk score: CHADS score -- check iOS version
 		String report = "Risk score: ";
-		report += getRiskTitle() + "\nRisks: ";
+		report += getRiskLabel() + "\nRisks: ";
 		report += getSelectedRisks() + "\nResult: ";
 		report += getResultMessage() + "\n"
 				+ getString(R.string.reference_label) + ": ";
@@ -149,7 +149,8 @@ public abstract class RiskScore extends DiagnosticScore {
 	// each risk score needs these
 	abstract protected String getFullReference();
 
-	abstract protected String getRiskTitle();
+	// this is the R.string.risk_label, not risk_title. No "score" attached
+	abstract protected String getRiskLabel();
 
 	abstract protected String getShortReference();
 }

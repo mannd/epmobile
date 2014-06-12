@@ -940,5 +940,10 @@
    		6];285(22):2864-70. Available from:
    		http://jama.jamanetwork.com/article.aspx?articleid=193912</string>
     <string name="none_label">None</string>
+    <string name="chads_label">CHADS\u2082</string>
+    <string name="chadsvasc_label">CHA\u2082DS\u2082-VASc</string>
+    <string name="hasbled_label">HAS-BLED</string>
+    <string name="hemorrhages_label">HEMORR\u2082HAGES</string>
+    <string name="estes_criteria_label">Romhilt-Estes LVH Score</string>
 
 </resources>

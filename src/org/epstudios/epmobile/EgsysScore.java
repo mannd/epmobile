@@ -76,7 +76,7 @@ public class EgsysScore extends SyncopeRiskScore {
 	}
 
 	@Override
-	protected String getRiskTitle() {
+	protected String getRiskLabel() {
 		// TODO Auto-generated method stub
 		return null;
 	}

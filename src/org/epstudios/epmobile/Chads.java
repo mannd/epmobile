@@ -27,11 +27,8 @@ public class Chads extends RiskScore {
 	}
 
 	@Override
-	protected String getRiskTitle() {
-		// TODO maybe should use "CHADS2" instead of "CHADS2 score" like iOS
-		// looks better in clipboard report,
-		// but will need to change getResultMessage too
-		return getString(R.string.chads_title);
+	protected String getRiskLabel() {
+		return getString(R.string.chads_label);
 	}
 
 	@Override
@@ -104,9 +101,8 @@ public class Chads extends RiskScore {
 			break;
 		}
 		risk = "Annual stroke risk is " + risk + "%";
-		// TODO have to make this + " score = " if I change getRiskTitle()
-		message = getRiskTitle() + " = " + result + "\n" + message + "\n"
-				+ risk;
+		message = getString(R.string.chads_title) + " = " + result + "\n"
+				+ message + "\n" + risk;
 		setResultMessage(message);
 		return resultWithShortReference();
 

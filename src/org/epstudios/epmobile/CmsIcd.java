@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.RadioGroup;
 
-public class CmsIcd extends RiskScore {
+public class CmsIcd extends DiagnosticScore {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -249,7 +249,7 @@ public class CmsIcd extends RiskScore {
 	}
 
 	@Override
-	protected String getRiskTitle() {
+	protected String getRiskLabel() {
 		// TODO Auto-generated method stub
 		return null;
 	}

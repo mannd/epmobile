@@ -100,7 +100,7 @@ public class Estes extends RiskScore {
 	}
 
 	@Override
-	protected String getRiskTitle() {
+	protected String getRiskLabel() {
 		// TODO Auto-generated method stub
 		return null;
 	}
