@@ -9,6 +9,7 @@ import android.widget.CheckBox;
 import android.widget.RadioGroup;
 
 public class CmsIcd extends DiagnosticScore {
+	protected CheckBox[] checkBox;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -236,34 +237,10 @@ public class CmsIcd extends DiagnosticScore {
 
 	@Override
 	protected void clearEntries() {
-		super.clearEntries();
+		for (int i = 0; i < checkBox.length; i++) {
+			checkBox[i].setChecked(false);
+		}
 		efRadioGroup.clearCheck();
 		nyhaRadioGroup.clearCheck();
-
 	}
-
-	@Override
-	protected String getFullReference() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	protected String getRiskLabel() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	protected String getShortReference() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	protected String getSelectedRisks() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }
