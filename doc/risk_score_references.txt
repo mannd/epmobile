@@ -138,12 +138,18 @@ Risk Score: CHADS Risk factors: Congestive heart failure, blah, age >=
         the short reference at the end. (end at ... + risk;)
      2) add setResultMessage(message);
      3) add return resultWithShortReference();
+* Notes
+** Estes
+   - Estes has no short reference in dialog.  Short reference is seen
+     on the layout.
+   - Full name Romilt-Estes LVH score used in clipboard for name of score.
+   - reference changed to original Romhilt reference.
 * List of risk scores to be updated
   - [X] CHADS
   - [X] Chads-vasc
   - [X] Has-bled
-  - [ ] Hemmorrhages
-  - [ ] Estes
+  - [X] Hemmorrhages
+  - [X] Estes
   - [ ] Hocm
   - [ ] SF rule
   - [ ] Martin rule
