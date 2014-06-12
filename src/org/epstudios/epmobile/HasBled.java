@@ -44,9 +44,12 @@ public class HasBled extends RiskScore {
 	@Override
 	protected void calculateResult() {
 		int result = 0;
+		clearSelectedRisks();
 		for (int i = 0; i < checkBox.length; i++) {
-			if (checkBox[i].isChecked())
+			if (checkBox[i].isChecked()) {
+				addSelectedRisk(checkBox[i].getText().toString());
 				result++;
+			}
 		}
 		displayResult(getResultMessage(result),
 				getString(R.string.hasbled_title));
@@ -84,34 +87,26 @@ public class HasBled extends RiskScore {
 			break;
 		}
 		risk = "Bleeding risk is " + risk + " bleeds per 100 patient-years";
-		message = "HAS-BLED score = " + result + "\n" + message + "\n" + risk
-				+ "\n" + getString(R.string.reference_label)
-				+ ": Pisters R et al. Chest 2010 138:1093.";
-		return message;
+		message = getRiskLabel() + " score = " + result + "\n" + message + "\n"
+				+ risk;
+		setResultMessage(message);
+		return resultWithShortReference();
 	}
 
 	@Override
 	protected String getFullReference() {
 		// TODO Auto-generated method stub
-		return null;
+		return getString(R.string.hasbled_full_reference);
 	}
 
 	@Override
 	protected String getRiskLabel() {
-		// TODO Auto-generated method stub
-		return null;
+		return getString(R.string.hasbled_label);
 	}
 
 	@Override
 	protected String getShortReference() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	protected String getSelectedRisks() {
-		// TODO Auto-generated method stub
-		return null;
+		return getString(R.string.hasbled_short_reference);
 	}
 
 }

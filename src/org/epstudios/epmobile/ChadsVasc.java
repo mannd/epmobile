@@ -43,11 +43,13 @@ public class ChadsVasc extends RiskScore {
 	@Override
 	protected void calculateResult() {
 		int result = 0;
+		clearSelectedRisks();
 		// correct checking both age checkboxes
 		if (checkBox[2].isChecked() && checkBox[6].isChecked())
 			checkBox[6].setChecked(false);
 		for (int i = 0; i < checkBox.length; i++) {
 			if (checkBox[i].isChecked()) {
+				addSelectedRisk(checkBox[i].getText().toString());
 				if (i == 4 || i == 2) // stroke, age>75 = 2 points
 					result = result + 2;
 				else
@@ -100,35 +102,24 @@ public class ChadsVasc extends RiskScore {
 			break;
 		}
 		risk = "Annual stroke risk is " + risk + "%";
-		message = "CHA\u2082DS\u2082-VASc score = " + result + "\n" + message
-				+ "\n" + risk + "\n"
-				+ getString(R.string.reference_label)
-				+ ": Lip GY et al. Stroke 2010 137:263.";
-		return message;
+		message = getRiskLabel() + " score = " + result + "\n" + message + "\n"
+				+ risk;
+		setResultMessage(message);
+		return resultWithShortReference();
 	}
 
 	@Override
 	protected String getFullReference() {
-		// TODO Auto-generated method stub
-		return null;
+		return getString(R.string.chadsvasc_full_reference);
 	}
 
 	@Override
 	protected String getRiskLabel() {
-		// TODO Auto-generated method stub
-		return null;
+		return getString(R.string.chadsvasc_label);
 	}
 
 	@Override
 	protected String getShortReference() {
-		// TODO Auto-generated method stub
-		return null;
+		return getString(R.string.chadsvasc_short_reference);
 	}
-
-	@Override
-	protected String getSelectedRisks() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

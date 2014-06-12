@@ -84,7 +84,7 @@
     <string name="low_chadsvasc_message">No antithrombotic therapy or use Aspirin</string>
     <string name="medium_chadsvasc_message">Anticoagulation (warfarin, dabigitran, rivaroxaban or apixaban) or Aspirin (anticoagulation preferred)</string>
     <string name="high_chadsvasc_message">Anticoagulation
-		(warfarin, dabigitran, rivaroxaban or apixaban)</string>
+		(warfarin, dabigitran, rivaroxaban or apixaban) recommended</string>
     <string name="warfarin_title">Warfarin Clinic</string>
     <string name="warfarin_label">Warfarin Dose Calculator</string>
     <string name="tablet_label">Tablet</string>
@@ -933,7 +933,7 @@
     <string name="incomplete_radio_groups_error">Selection incomplete</string>
     <string name="icd_result_title">Risk of In-Hospital Complications</string>
     <string name="reference_label">Reference</string>
-    <string name="chads_short_reference">Gage BF et al. JAMA 2001 285:2864.</string>
+    <string name="chads_short_reference">Gage BF et al. JAMA 2001 285:2864</string>
     <string name="chads_full_reference">Gage BF, Waterman AD, Shannon W, Boechler M, Rich MW, Radford
    		MJ. Validation of clinical classification schemes for predicting
    		stroke. JAMA [Internet]. 2001 Jun 13 [cited 2014 Jun
@@ -945,5 +945,20 @@
     <string name="hasbled_label">HAS-BLED</string>
     <string name="hemorrhages_label">HEMORR\u2082HAGES</string>
     <string name="estes_criteria_label">Romhilt-Estes LVH Score</string>
+    <string name="hasbled_short_reference">Pisters R et al. Chest 2010 138:1093</string>
+    <string name="hasbled_full_reference">Pisters R, Lane DA, Nieuwlaat R, de Vos CB, Crijns HJ,
+		Lip GY. A novel user-friendly score (HAS-BLED) to assess
+		1-year risk of major bleeding in patients with
+		atrial fibrillation: the Euro Heart Survey. Chest
+		[Internet]. 2010 Nov [cited 2014 Jun 6];138(5):1093-100.
+		Available from: http://journal.publications.chestnet.org/article.aspx?articleid=1045174"</string>
+    <string name="chadsvasc_short_reference">Lip GY et al. Stroke 2010 137:263</string>
+    <string name="chadsvasc_full_reference">Lip GY, Frison L, Halperin JL, Lane DA.
+		Identifying patients at high risk for stroke despite
+		anticoagulation: a comparison of contemporary stroke
+		risk stratification schemes in an anticoagulated atrial
+		fibrillation cohort. Stroke [Internet]. 2010 Oct 21
+		[cited 2014 Jun 6];41:2731-8. Available from:
+		http://stroke.ahajournals.org/content/41/12/2731.full.pdf</string>
 
 </resources>

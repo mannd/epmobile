@@ -125,13 +125,27 @@ Risk Score: CHADS Risk factors: Congestive heart failure, blah, age >=
    {getMessage} Reference: {getReference}
 * Update risk score steps
   1) add risk_label (eg chads_vasc_label = CHADS-VASc) to strings.xml
-  2) add 3 abstract methods to each risk score
+  2) add short and full_reference to strings.xml
+  3) add 3 abstract methods to each risk score
      1) getFullReference()
      2) getRiskLabel()
      3) getShortReference()
-  3) In calculateResult() add clearSelectedRisks() and addSelectedRisk()
-  4) In getResultMessage(int)
-     1) change message = getString(R.string.risk_title) + ... without
-        the short reference at the end.
+  4) Delete getSelectedRisks() if present
+  5) In calculateResult() add clearSelectedRisks() and
+     addSelectedRisk(checkBox[i]).toText().toString()
+  6) In getResultMessage(int)
+     1) change message = getRiskLabel() + " score = ..." without
+        the short reference at the end. (end at ... + risk;)
      2) add setResultMessage(message);
      3) add return resultWithShortReference();
+* List of risk scores to be updated
+  - [X] CHADS
+  - [X] Chads-vasc
+  - [X] Has-bled
+  - [ ] Hemmorrhages
+  - [ ] Estes
+  - [ ] Hocm
+  - [ ] SF rule
+  - [ ] Martin rule
+  - [ ] Oesil score
+  - [ ] Egys score

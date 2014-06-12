@@ -101,8 +101,8 @@ public class Chads extends RiskScore {
 			break;
 		}
 		risk = "Annual stroke risk is " + risk + "%";
-		message = getString(R.string.chads_title) + " = " + result + "\n"
-				+ message + "\n" + risk;
+		message = getRiskLabel() + " score = " + result + "\n" + message + "\n"
+				+ risk;
 		setResultMessage(message);
 		return resultWithShortReference();
 
