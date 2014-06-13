@@ -144,14 +144,18 @@ Risk Score: CHADS Risk factors: Congestive heart failure, blah, age >=
      on the layout.
    - Full name Romilt-Estes LVH score used in clipboard for name of score.
    - reference changed to original Romhilt reference.
+** HCM
+   - similar changes to Estes
+** Syncope scores
+   - those titles not ending in "score" used unchanged
 * List of risk scores to be updated
   - [X] CHADS
   - [X] Chads-vasc
   - [X] Has-bled
   - [X] Hemmorrhages
   - [X] Estes
-  - [ ] Hocm
-  - [ ] SF rule
+  - [X] Hocm
+  - [X] SF rule
   - [ ] Martin rule
   - [ ] Oesil score
   - [ ] Egys score

@@ -864,7 +864,7 @@
     <string name="low_bp_label">Systolic BP &lt; 90 mmHg</string>
     <string name="no_sf_rule_risk_message">No or little risk of serious events at 30 days.</string>
     <string name="high_sf_rule_risk_message" formatted="false">Risk of serious events at 30 days (98% sensitive and 56% specific).</string>
-    <string name="syncope_sf_rule_reference">Reference: Quinn J et al. Ann Emerg Med 2006 47:448.</string>
+    <string name="syncope_sf_rule_reference">Quinn J et al. Ann Emerg Med 2006 47:448</string>
     <string name="history_vt_label">History of ventricular arrhythmia</string>
     <string name="history_chf_label">History of congestive heart failure</string>
     <string name="age_over_45_label">Age &gt; 45 years</string>
@@ -972,5 +972,19 @@
         A point-score system for the ECG diagnosis
    		of left ventricular hypertrophy. Am Heart J.
    		1968 Jun;75(6):752-8.</string>
+    <string name="hcm_full_reference">McKenna WJ. Behr ER. Hypertrophic cardiomyopathy:
+	    management, risk stratification, and prevention of sudden death. Heart
+   		[Internet]. 2002 Feb [cited 2014 Jun 6];87(2):169-176. Available
+   		from: http://heart.bmj.com/content/87/2/169.full</string>
+    <string name="hcm_combined_sus_va_risk_label">Cardiac arrest and/or spontaneous
+   	    sustained VT</string>
+    <string name="hcm_label">HCM Sudden Death Risk</string>
+    <string name="syncope_sf_rule_full_reference">Quinn J, McDermott D, Stiell I,
+        Kohn M, Wells G. Prospective validation of the San Francisco Syncope rule
+        to predict patients with serious outcomes. 2006 May [cited 2014 Jun
+   		6];47(5):448-54. Available from:
+   		http://www.annemergmed.com/article/S0196-0644(05)01959-1/abstract</string>
+    <string name="syncope_sf_rule_short_reference"></string>
+    <string name="syncope_sf_rule_label">SF Rule</string>
 
 </resources>
