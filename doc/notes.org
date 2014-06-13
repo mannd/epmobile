@@ -113,26 +113,6 @@
   | Sat  |         |         |
   |------+---------+---------|
 ** 
-* Preparing new version -- IMPORTANT!
-  - finish version, commit.
-  - git flow release start vx.y
-  - IMPORTANT - update AndroidManifest.xml
-    - increment android:versionCode
-    - change android:versionName
-  - run git log --pretty=oneline and update changes/x.y.z.txt
-  - git add changes/x.y.z.txt
-  - update doc/description.txt
-  - update screenshots - resize them with GIMP to 480 x 800.
-  - git commit
-  - git flow release finish vx.y
-  - git push --tags origin master
-  - git push origin develop
-  - refresh eclipse epmobile
-  - make/sign epmobile.apk, save it in dev/epmobileapp/later_verisons/
-  - on market.android.com update product details
-  - upload apk, deactivate old one
-  - Tweet It! (after confirming it's on the Market)
-  - DONE!
 * Style
 ** General
 *** lower_case_hyphenated
@@ -713,3 +693,23 @@
    - score 10-30 in between
 ** Outcome
    in-hospital complications or mortality
+* Preparing new version -- IMPORTANT!
+  - finish version, commit.
+  - git flow release start vx.y
+  - IMPORTANT - update AndroidManifest.xml
+    - increment android:versionCode
+    - change android:versionName
+  - run git log --pretty=oneline and update changes/x.y.z.txt
+  - git add changes/x.y.z.txt
+  - update doc/description.txt
+  - update screenshots - resize them with GIMP to 480 x 800.
+  - git commit
+  - git flow release finish vx.y
+  - git push --tags origin master
+  - git push origin develop
+  - refresh eclipse epmobile
+  - make/sign epmobile.apk, save it in dev/epmobileapp/later_verisons/
+  - on market.android.com update product details
+  - upload apk, deactivate old one
+  - Tweet It! (after confirming it's on the Market)
+  - DONE!
