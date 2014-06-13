@@ -2,7 +2,7 @@ EP Mobile provides tools for cardiac electrophysiologists, cardiologists, cardio
 
 If you have suggestions, features you'd like to see, or complaints, please email us! 
 
-EP Mobile -- The Junior Woodchucks Guidebook of Electrophysiology!
+EP Mobile -- The Swiss Army Knife of Electrophysiology!
 
 Features: 
 - Drug dose calculators: dabigatran, dofetilide, rivaroxaban, 
@@ -34,6 +34,7 @@ Features:
 - ARVC/D 1994 and 2010 diagnostic criteria
 - Normal EP values
 - Wide complex tachycardia algorithms 
+- Copy risk score results to the clipboard for pasting in reports
 
 Categories: Medicine, Cardiology, Electrophysiology, Arrhythmia.
 
