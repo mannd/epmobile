@@ -40,7 +40,7 @@
    emergency department: the OESIL risk score. Eur Heart J
    [Internet]. 2003 [cited 2014 Jun 6];24:811-19. Available from:
    http://eurheartj.oxfordjournals.org/content/24/9/811.full.pdf
-* SYNCOPE EGYS
+* SYNCOPE EGSYS
 ** Original reference
    Del Rosso A et al. Heart 2008 94:1630
 ** Fixed reference
@@ -156,6 +156,7 @@ Risk Score: CHADS Risk factors: Congestive heart failure, blah, age >=
   - [X] Estes
   - [X] Hocm
   - [X] SF rule
-  - [ ] Martin rule
-  - [ ] Oesil score
-  - [ ] Egys score
+  - [X] Martin rule
+  - [X] Oesil score
+  - [X] Egys score
+* Scores all updated on <2014-06-13 Fri>
