@@ -85,15 +85,23 @@ public class Hcm extends RiskScore {
 	protected void calculateResult() {
 		int result = 0;
 		minor_risks = 0;
-		if (checkBox[0].isChecked() || checkBox[1].isChecked())
+		clearSelectedRisks();
+		if (checkBox[0].isChecked() || checkBox[1].isChecked()) {
+			addSelectedRisk(getString(R.string.hcm_combined_sus_va_risk_label));
 			result = HIGHEST_RISK_SCORE; // CA or spont VT
-		else {
-			for (int i = firstMajorRisk; i < firstMinorRisk; ++i)
-				if (checkBox[i].isChecked())
+		} else {
+			for (int i = firstMajorRisk; i < firstMinorRisk; ++i) {
+				if (checkBox[i].isChecked()) {
+					addSelectedRisk(checkBox[i].getText().toString());
 					result++;
-			for (int i = firstMinorRisk; i < checkBox.length; ++i)
-				if (checkBox[i].isChecked())
+				}
+			}
+			for (int i = firstMinorRisk; i < checkBox.length; ++i) {
+				if (checkBox[i].isChecked()) {
+					addSelectedRisk(checkBox[i].getText().toString());
 					minor_risks++;
+				}
+			}
 		}
 		displayResult(getResultMessage(result), getString(R.string.hcm_title));
 	}
@@ -112,32 +120,25 @@ public class Hcm extends RiskScore {
 			else if (result == 0)
 				message += getString(R.string.hcm_low_risk_text);
 		}
-
+		setResultMessage(message);
+		// no short reference added here
 		return message;
 
 	}
 
 	@Override
 	protected String getFullReference() {
-		// TODO Auto-generated method stub
-		return null;
+		return getString(R.string.hcm_full_reference);
 	}
 
 	@Override
 	protected String getRiskLabel() {
-		// TODO Auto-generated method stub
-		return null;
+		return getString(R.string.hcm_label);
 	}
 
 	@Override
 	protected String getShortReference() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	protected String getSelectedRisks() {
-		// TODO Auto-generated method stub
+		// no short reference given, since it is in layout
 		return null;
 	}
 }

@@ -15,8 +15,10 @@ public class EgsysScore extends SyncopeRiskScore {
 	@Override
 	protected void calculateResult() {
 		int result = 0;
+		clearSelectedRisks();
 		for (int i = 0; i < checkBox.length; i++) {
 			if (checkBox[i].isChecked()) {
+				addSelectedRisk(checkBox[i].getText().toString());
 				result += points[i];
 			}
 		}
@@ -40,12 +42,11 @@ public class EgsysScore extends SyncopeRiskScore {
 		if (result > 4)
 			syncopeRisk = 77;
 
-		message = "EGSYS Score = " + result + "\n"
+		message = getRiskLabel() + " score = " + result + "\n"
 				+ "2-year total mortality = " + mortalityRisk
-				+ "%\nCardiac syncope probability = " + syncopeRisk + "%\n"
-				+ getString(R.string.reference_label) + ": "
-				+ getString(R.string.egsys_score_reference);
-		return message;
+				+ "%\nCardiac syncope probability = " + syncopeRisk + "%";
+		setResultMessage(message);
+		return resultWithShortReference();
 
 	}
 
@@ -71,26 +72,16 @@ public class EgsysScore extends SyncopeRiskScore {
 
 	@Override
 	protected String getFullReference() {
-		// TODO Auto-generated method stub
-		return null;
+		return getString(R.string.syncope_egsys_full_reference);
 	}
 
 	@Override
 	protected String getRiskLabel() {
-		// TODO Auto-generated method stub
-		return null;
+		return getString(R.string.syncope_egsys_label);
 	}
 
 	@Override
 	protected String getShortReference() {
-		// TODO Auto-generated method stub
-		return null;
+		return getString(R.string.egsys_score_reference);
 	}
-
-	@Override
-	protected String getSelectedRisks() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

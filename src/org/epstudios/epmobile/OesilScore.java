@@ -16,8 +16,10 @@ public class OesilScore extends SyncopeRiskScore {
 	@Override
 	protected void calculateResult() {
 		int result = 0;
+		clearSelectedRisks();
 		for (int i = 0; i < checkBox.length; i++) {
 			if (checkBox[i].isChecked()) {
+				addSelectedRisk(checkBox[i].getText().toString());
 				result++;
 			}
 		}
@@ -28,11 +30,10 @@ public class OesilScore extends SyncopeRiskScore {
 	private String getResultMessage(int result) {
 		String message;
 
-		message = "OESIL Score = " + result + "\n"
-				+ "1-year total mortality = " + risk[result] + "%\n"
-				+ getString(R.string.reference_label) + ": "
-				+ getString(R.string.oesil_score_reference);
-		return message;
+		message = getRiskLabel() + " score = " + result + "\n"
+				+ "1-year total mortality = " + risk[result] + "%";
+		setResultMessage(message);
+		return resultWithShortReference();
 
 	}
 
@@ -58,26 +59,16 @@ public class OesilScore extends SyncopeRiskScore {
 
 	@Override
 	protected String getFullReference() {
-		// TODO Auto-generated method stub
-		return null;
+		return getString(R.string.syncope_oesil_full_reference);
 	}
 
 	@Override
 	protected String getRiskLabel() {
-		// TODO Auto-generated method stub
-		return null;
+		return getString(R.string.syncope_oesil_label);
 	}
 
 	@Override
 	protected String getShortReference() {
-		// TODO Auto-generated method stub
-		return null;
+		return getString(R.string.oesil_score_reference);
 	}
-
-	@Override
-	protected String getSelectedRisks() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }
