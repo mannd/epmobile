@@ -14,8 +14,10 @@ public class MartinAlgorithm extends SyncopeRiskScore {
 	@Override
 	protected void calculateResult() {
 		int result = 0;
+		clearSelectedRisks();
 		for (int i = 0; i < checkBox.length; i++) {
 			if (checkBox[i].isChecked()) {
+				addSelectedRisk(checkBox[i].getText().toString());
 				result++;
 			}
 		}
@@ -26,11 +28,11 @@ public class MartinAlgorithm extends SyncopeRiskScore {
 	private String getResultMessage(int result) {
 		String message;
 
-		message = "Martin Algorithm Score = " + result + "\n"
-				+ "1-year severe arrhythmia or arrhythmic death risk = "
-				+ risk[result] + "%\nReference: "
-				+ getString(R.string.martin_algorithm_reference);
-		return message;
+		message = getRiskLabel() + " score = " + result + "\n"
+				+ getString(R.string.syncope_martin_result_label) + " = "
+				+ risk[result] + "%";
+		setResultMessage(message);
+		return resultWithShortReference();
 
 	}
 
@@ -54,4 +56,18 @@ public class MartinAlgorithm extends SyncopeRiskScore {
 		checkBox[3].setText(getString(R.string.age_over_45_label));
 	}
 
+	@Override
+	protected String getFullReference() {
+		return getString(R.string.syncope_martin_full_reference);
+	}
+
+	@Override
+	protected String getRiskLabel() {
+		return getString(R.string.syncope_martin_title);
+	}
+
+	@Override
+	protected String getShortReference() {
+		return getString(R.string.martin_algorithm_reference);
+	}
 }

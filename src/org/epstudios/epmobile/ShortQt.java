@@ -69,6 +69,7 @@ public class ShortQt extends EpDiagnosisActivity implements OnClickListener {
 	private CheckBox genotypePositiveCheckBox;
 	private CheckBox mutationCheckBox;
 
+	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.calculate_button:
@@ -139,14 +140,16 @@ public class ShortQt extends EpDiagnosisActivity implements OnClickListener {
 			message += "Low probability";
 		message += " of Short QT Syndrome";
 		dialog.setMessage(message);
-		dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Reset",
+		dialog.setButton(DialogInterface.BUTTON_POSITIVE,
+				getString(R.string.reset_label),
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						clearEntries();
 					}
 				});
-		dialog.setButton(DialogInterface.BUTTON_NEUTRAL, "Don't Reset",
+		dialog.setButton(DialogInterface.BUTTON_NEUTRAL,
+				getString(R.string.dont_reset_label),
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {

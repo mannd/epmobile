@@ -322,25 +322,27 @@ public class Warfarin extends EpDrugCalculatorActivity implements
 
 		dialog.setMessage(message);
 		dialog.setTitle(getString(R.string.warfarin_result_title));
-		dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Reset",
+		dialog.setButton(DialogInterface.BUTTON_POSITIVE,
+				getString(R.string.reset_label),
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						clearEntries();
 					}
 				});
-		dialog.setButton(DialogInterface.BUTTON_NEUTRAL, "Don't Reset",
+		dialog.setButton(DialogInterface.BUTTON_NEUTRAL,
+				getString(R.string.dont_reset_label),
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 					}
 				});
 		if (showDoses) {
-			dialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Dosing",
+			dialog.setButton(DialogInterface.BUTTON_NEGATIVE,
+					getString(R.string.dosing_label),
 					new DialogInterface.OnClickListener() {
 						@Override
 						public void onClick(DialogInterface dialog, int which) {
-							// TODO Auto-generated method stub
 							displayDoses();
 						}
 					});

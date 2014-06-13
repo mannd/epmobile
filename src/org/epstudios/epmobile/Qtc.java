@@ -101,6 +101,7 @@ public class Qtc extends EpActivity implements OnClickListener {
 
 	private IntervalRate defaultIntervalRateSelection = IntervalRate.INTERVAL;
 
+	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.calculate_qtc_button:
@@ -123,11 +124,13 @@ public class Qtc extends EpActivity implements OnClickListener {
 		else
 			intervalRateSpinner.setSelection(RATE_SELECTION);
 		itemListener = new OnItemSelectedListener() {
+			@Override
 			public void onItemSelected(AdapterView<?> parent, View v,
 					int position, long id) {
 				updateIntervalRateSelection();
 			}
 
+			@Override
 			public void onNothingSelected(AdapterView<?> parent) {
 				// do nothing
 			}
@@ -162,11 +165,13 @@ public class Qtc extends EpActivity implements OnClickListener {
 		}
 		qtcFormulaSpinner.setSelection(formula);
 		itemListener = new OnItemSelectedListener() {
+			@Override
 			public void onItemSelected(AdapterView<?> parent, View v,
 					int position, long id) {
 				updateQtcFormula();
 			}
 
+			@Override
 			public void onNothingSelected(AdapterView<?> parent) {
 				// do nothing
 			}
@@ -237,7 +242,7 @@ public class Qtc extends EpActivity implements OnClickListener {
 			else
 				qtcTextView.setTextColor(Color.GREEN);
 		} catch (NumberFormatException e) {
-			qtcTextView.setText("Invalid!");
+			qtcTextView.setText(getString(R.string.invalid_warning));
 			qtcTextView.setTextColor(Color.RED);
 		}
 	}

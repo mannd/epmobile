@@ -84,7 +84,7 @@
     <string name="low_chadsvasc_message">No antithrombotic therapy or use Aspirin</string>
     <string name="medium_chadsvasc_message">Anticoagulation (warfarin, dabigitran, rivaroxaban or apixaban) or Aspirin (anticoagulation preferred)</string>
     <string name="high_chadsvasc_message">Anticoagulation
-		(warfarin, dabigitran, rivaroxaban or apixaban)</string>
+		(warfarin, dabigitran, rivaroxaban or apixaban) recommended</string>
     <string name="warfarin_title">Warfarin Clinic</string>
     <string name="warfarin_label">Warfarin Dose Calculator</string>
     <string name="tablet_label">Tablet</string>
@@ -133,6 +133,9 @@
     <string name="back">Back</string>
     <string name="done_label">Done</string>
     <string name="reset_label">Reset</string>
+    <string name="dont_reset_label">Don\'t Reset</string>
+    <string name="copy_report_label">Copy Result</string>
+    <string name="dosing_label">Dosing</string>
     <string name="morphology_label">Morphology Criteria</string>
     <string name="morphology_title">@string/morphology_label</string>
     <string name="broad_r">R > 30 msec in V1 or V2</string>
@@ -409,7 +412,7 @@
     <string name="low_risk_hemorrhages">Low risk of bleeding.</string>
     <string name="intermediate_risk_hemorrhages">Intermediate risk of bleeding.</string>
     <string name="high_risk_hemorrhages">High risk of bleeding.</string>
-    <string name="hemorrhages_reference">Reference: Gage BF et al. Am Heart J 2006;151:713.</string>
+    <string name="hemorrhages_reference">Gage BF et al. Am Heart J 2006;151:713</string>
     <string name="hepatic_or_renal_disease_label">Hepatic (cirrhosis, \u2265 2-fold
         elevation of AST or ALT, or albumin &lt; 3.6 g/dL) or renal disease (Cr clearance &lt; 30 ml/min)</string>
     <string name="etoh_hemorrhages_label">Ethanol use (history of EtOH abuse, recent hospitalization for EtOH-related illness, and
@@ -521,7 +524,7 @@
 	    (&lt; 35 yrs) due to suspected ARVC/D</string>
     <string name="arvc_old_family_hx">Family history of ARVC/D based on these
 	    criteria</string>
-    <string name="arvc_old_reference">Reference: WJ McKenna et al.  Br Heart J. 1994;71:215.
+    <string name="arvc_old_reference">Reference: McKenna WJ et al. Br Heart J. 1994;71:215.
  	    http://www.ncbi.nlm.nih.gov/sites/ppmc/articles/PMC483655/</string>
 
     <!-- LVH -->
@@ -547,7 +550,7 @@
     <string name="other_lvh_lead_v5_label">R in V5 or V6</string>
     <string name="other_lvh_lead_v5_result">> 26 mm</string>
     <string name="other_lvh_key">LVH present if any of above voltage criteria met.</string>
-    <string name="other_lvh_reference">Reference: BP Hsieh et al. Am Heart J 2005;150:161.</string>
+    <string name="other_lvh_reference">Reference: Hsieh BP et al. Am Heart J 2005;150:161.</string>
     <string name="estes_voltage_label">Any limb-lead R or S \u2265 20 mm
         or S V1 or V2 \u2265 30 mm or R V5 or V6 \u2265 30 mm</string>
     <string name="estes_strain_without_dig_label">Left ventricular strain pattern without digitalis</string>
@@ -741,7 +744,7 @@
     <string name="pediatric_use_warning">Pediatric dosing is not recommended or not calculated.
   	    by EP Mobile.</string>
     <string name="do_not_use_warning">"Do not use!"</string>
-    <!-- Atrial tachycardia algorithm Kistler et al. -->
+    <!-- Atrial tachycardia algorithm Kistler PM et al. -->
     <string name="atrial_tachycardia_localization_title">Atrial Tachycardia Location</string>
     <string name="at_v1_morphology_label">P Wave Morphology in Lead V1?</string>
     <string name="neg_label">Neg</string>
@@ -861,15 +864,15 @@
     <string name="low_bp_label">Systolic BP &lt; 90 mmHg</string>
     <string name="no_sf_rule_risk_message">No or little risk of serious events at 30 days.</string>
     <string name="high_sf_rule_risk_message" formatted="false">Risk of serious events at 30 days (98% sensitive and 56% specific).</string>
-    <string name="syncope_sf_rule_reference">Reference: Quinn J et al. Ann Emerg Med 2006 47:448.</string>
+    <string name="syncope_sf_rule_reference">Quinn J et al. Ann Emerg Med 2006 47:448</string>
     <string name="history_vt_label">History of ventricular arrhythmia</string>
     <string name="history_chf_label">History of congestive heart failure</string>
     <string name="age_over_45_label">Age &gt; 45 years</string>
     <string name="history_cv_disease_label">History of cardiovascular disease</string>
     <string name="lack_of_prodrome_label">Lack of prodrome</string>
     <string name="age_over_65_label">Age &gt; 65 years</string>
-    <string name="martin_algorithm_reference">Martin TP et al. Ann Emerg Med 1997 29:459.</string>
-    <string name="oesil_score_reference">Colivicchi F et al. Eur Heart J 2003 24:811.</string>
+    <string name="martin_algorithm_reference">Martin TP et al. Ann Emerg Med 1997 29:459</string>
+    <string name="oesil_score_reference">Colivicchi F et al. Eur Heart J 2003 24:811</string>
     <string name="palps_before_syncope_label">Palpitations before syncope</string>
     <string name="abnormal_ecg_or_heart_disease_label">Abnormal ECG or heart disease</string>
     <string name="syncope_during_effort_label">Syncope during effort</string>
@@ -877,7 +880,7 @@
     <string name="autonomic_prodrome_label">Autonomic prodrome (nausea, vomiting)</string>
     <string name="predisposing_factors_label">Predisposing and/or precipitating factors (warm-crowded place,
         prolonged standing, fear, pain, emotion)</string>
-    <string name="egsys_score_reference">Del Rosso A et al. Heart 2008 94:1630.</string>
+    <string name="egsys_score_reference">Del Rosso A et al. Heart 2008 94:1630</string>
     <string name="vereckei_title">Vereckei aVR Algorithm</string>
     <string name="vereckei_step1_label">Initial R in aVR?</string>
     <string name="vereckei_step2_label">Initial r or q in aVR with width > 40 msec?</string>
@@ -929,5 +932,79 @@
     <string name="high_bun_label">&gt; 40</string>
     <string name="incomplete_radio_groups_error">Selection incomplete</string>
     <string name="icd_result_title">Risk of In-Hospital Complications</string>
+    <string name="reference_label">Reference</string>
+    <string name="chads_short_reference">Gage BF et al. JAMA 2001 285:2864</string>
+    <string name="chads_full_reference">Gage BF, Waterman AD, Shannon W, Boechler M, Rich MW, Radford
+   		MJ. Validation of clinical classification schemes for predicting
+   		stroke. JAMA [Internet]. 2001 Jun 13 [cited 2014 Jun
+   		6];285(22):2864-70. Available from:
+   		http://jama.jamanetwork.com/article.aspx?articleid=193912</string>
+    <string name="none_label">None</string>
+    <string name="chads_label">CHADS\u2082</string>
+    <string name="chadsvasc_label">CHA\u2082DS\u2082-VASc</string>
+    <string name="hasbled_label">HAS-BLED</string>
+    <string name="hemorrhages_label">HEMORR\u2082HAGES</string>
+    <string name="estes_criteria_label">Romhilt-Estes LVH score</string>
+    <string name="hasbled_short_reference">Pisters R et al. Chest 2010 138:1093</string>
+    <string name="hasbled_full_reference">Pisters R, Lane DA, Nieuwlaat R, de Vos CB, Crijns HJ,
+		Lip GY. A novel user-friendly score (HAS-BLED) to assess
+		1-year risk of major bleeding in patients with
+		atrial fibrillation: the Euro Heart Survey. Chest
+		[Internet]. 2010 Nov [cited 2014 Jun 6];138(5):1093-100.
+		Available from: http://journal.publications.chestnet.org/article.aspx?articleid=1045174"</string>
+    <string name="chadsvasc_short_reference">Lip GY et al. Stroke 2010 137:263</string>
+    <string name="chadsvasc_full_reference">Lip GY, Frison L, Halperin JL, Lane DA.
+		Identifying patients at high risk for stroke despite
+		anticoagulation: a comparison of contemporary stroke
+		risk stratification schemes in an anticoagulated atrial
+		fibrillation cohort. Stroke [Internet]. 2010 Oct 21
+		[cited 2014 Jun 6];41:2731-8. Available from:
+		http://stroke.ahajournals.org/content/41/12/2731.full.pdf</string>
+    <string name="hemorrhages_full_reference">Gage BF, Yan Y, Milligan PE,
+	    Waterman AD, Culverhouse R, Rich MW,
+   		Radford MJ. Clinical classification schemes for predicting
+   		hemorrhage: results from the National Registry of Atrial
+   		Fibrillation (NRAF). Am Heart J [Internet]. 2006 [cited 2014 Jun
+   		6];151:713-9. Available from:
+   		http://www.hematology.fi/system/files/HEMORRHAGES-score.pdf</string>
+    <string name="estes_short_reference">Reference: Romhilt DW et al. Am Heart J.1968;75:752.</string>
+    <string name="estes_full_reference">Romhilt DW, Estes EH Jr.
+        A point-score system for the ECG diagnosis
+   		of left ventricular hypertrophy. Am Heart J.
+   		1968 Jun;75(6):752-8.</string>
+    <string name="hcm_full_reference">McKenna WJ. Behr ER. Hypertrophic cardiomyopathy:
+	    management, risk stratification, and prevention of sudden death. Heart
+   		[Internet]. 2002 Feb [cited 2014 Jun 6];87(2):169-176. Available
+   		from: http://heart.bmj.com/content/87/2/169.full</string>
+    <string name="hcm_combined_sus_va_risk_label">Cardiac arrest and/or spontaneous
+   	    sustained VT</string>
+    <string name="hcm_label">HCM Sudden Death Risk</string>
+    <string name="syncope_sf_rule_full_reference">Quinn J, McDermott D, Stiell I,
+        Kohn M, Wells G. Prospective validation of the San Francisco Syncope rule
+        to predict patients with serious outcomes. 2006 May [cited 2014 Jun
+   		6];47(5):448-54. Available from:
+   		http://www.annemergmed.com/article/S0196-0644(05)01959-1/abstract</string>
+    <string name="syncope_sf_rule_short_reference"></string>
+    <string name="syncope_sf_rule_label">SF Rule</string>
+    <string name="syncope_martin_full_reference">Martin TP, Hanusa BH, Kapoor WN.
+	    Risk stratification of patients with syncope. Ann Emerg Med [Internet].
+	    1997 April [cited 2014 Jun 6];29(4):459-66. Available from:
+   		http://www.annemergmed.com/article/S0196-0644(97)70217-8/abstract</string>
+    <string name="syncope_martin_result_label">1-year severe arrhythmia or arrhythmic death risk</string>
+    <string name="syncope_oesil_label">OESIL</string>
+    <string name="syncope_oesil_full_reference">Colivicchi F, Ammirati F, Melina D,
+        Guido V, Imperoli G, Santini M, for the OESIL (Osservatorio Epidemiologico
+        sulla Sincope nel Lazio) Study Investigators. Development and prospective
+        validation of a risk stratification system for patients with syncope in the
+   		emergency department: the OESIL risk score. Eur Heart J
+   		[Internet]. 2003 [cited 2014 Jun 6];24:811-19. Available from:
+   		http://eurheartj.oxfordjournals.org/content/24/9/811.full.pdf</string>
+    <string name="syncope_egsys_label">EGSYS</string>
+    <string name="syncope_egsys_full_reference">Del Rosso A, Ungar A, Maggi R,
+   	    Giada F, Petix NR, De Santo T, Menozzi C, Brignole M. Clinical predictors
+   	    of cardiac syncope at initial evaluation in patients referred urgently to
+   	    a general hospital: the EGSYS score. Heart [Internet]. 2008 Dec [cited 2014
+   		Jun 6];94(12):1620-6. Available from:
+   		http://heart.bmj.com/content/94/12/1620.abstract</string>
 
 </resources>

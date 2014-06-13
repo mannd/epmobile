@@ -27,6 +27,21 @@ public class Chads extends RiskScore {
 	}
 
 	@Override
+	protected String getRiskLabel() {
+		return getString(R.string.chads_label);
+	}
+
+	@Override
+	protected String getShortReference() {
+		return getString(R.string.chads_short_reference);
+	}
+
+	@Override
+	protected String getFullReference() {
+		return getString(R.string.chads_full_reference);
+	}
+
+	@Override
 	protected void init() {
 		checkBox = new CheckBox[5];
 
@@ -40,8 +55,10 @@ public class Chads extends RiskScore {
 	@Override
 	protected void calculateResult() {
 		int result = 0;
+		clearSelectedRisks();
 		for (int i = 0; i < checkBox.length; i++) {
 			if (checkBox[i].isChecked()) {
+				addSelectedRisk(checkBox[i].getText().toString());
 				if (i == 4) // stroke = 2 points
 					result = result + 2;
 				else
@@ -84,9 +101,11 @@ public class Chads extends RiskScore {
 			break;
 		}
 		risk = "Annual stroke risk is " + risk + "%";
-		message = "CHADS\u2082 score = " + result + "\n" + message + "\n"
-				+ risk + "\nReference: Gage BF et al. JAMA 2001 285:2864.";
-		return message;
+		message = getRiskLabel() + " score = " + result + "\n" + message + "\n"
+				+ risk;
+		setResultMessage(message);
+		return resultWithShortReference();
 
 	}
+
 }

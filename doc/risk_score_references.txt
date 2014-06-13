@@ -1,0 +1,162 @@
+* HOCM
+** Original references
+   References: Maron B et al.  Eur Heart J 2003:1965.
+	    http://eurheartj.oxfordjournals.org/content/24/21/1965.full
+	    McKenna WJ et al. Heart 2002;87:169.
+	    http://heart.bmj.com/content/87/2/169.full
+** Fixed reference
+   McKenna WJ. Behr ER. Hypertrophic cardiomyopathy: management, risk
+   stratification, and prevention of sudden death. Heart
+   [Internet]. 2002 Feb [cited 2014 Jun 6];87(2):169-176. Available
+   from: http://heart.bmj.com/content/87/2/169.full
+** Note
+   Actual algorithm is in the McKenna article, so use that for
+   citation.
+* SYNCOPE SF RULE
+** Original reference
+   Reference: Quinn J et al. Ann Emerg Med 2006 47:448
+** Fixed reference
+   Quinn J, McDermott D, Stiell I, Kohn M, Wells G. Prospective
+   validation of the San Francisco Syncope rule to predict patients
+   with serious outcomes. 2006 May [cited 2014 Jun
+   6];47(5):448-54. Available from:
+   [[http://www.annemergmed.com/article/S0196-0644(05)01959-1/abstract]]
+* SYNCOPE MARTIN
+** Original reference
+   Martin TP et al. Ann Emerg Med 1997 29:459
+** Fixed reference
+   Martin TP, Hanusa BH, Kapoor WN.  Risk stratification of patients
+   with syncope. Ann Emerg Med [Internet]. 1997 April [cited 2014 Jun
+   6];29(4):459-66. Available from:
+   [[http://www.annemergmed.com/article/S0196-0644(97)70217-8/abstract]]
+* SYNCOPE OESIL
+** Original reference
+   Colivicchi F et al. Eur Heart J 2003 24:811
+** Fixed reference
+   Colivicchi F, Ammirati F, Melina D, Guido V, Imperoli G, Santini M,
+   for the OESIL (Osservatorio Epidemiologico sulla Sincope nel Lazio)
+   Study Investigators. Development and prospective validation of a
+   risk stratification system for patients with syncope in the
+   emergency department: the OESIL risk score. Eur Heart J
+   [Internet]. 2003 [cited 2014 Jun 6];24:811-19. Available from:
+   http://eurheartj.oxfordjournals.org/content/24/9/811.full.pdf
+* SYNCOPE EGSYS
+** Original reference
+   Del Rosso A et al. Heart 2008 94:1630
+** Fixed reference
+   Del Rosso A, Ungar A, Maggi R, Giada F, Petix NR, De Santo T,
+   Menozzi C, Brignole M. Clinical predictors of cardiac syncope at
+   initial evaluation in patients referred urgently to a general
+   hospital: the EGSYS score. Heart [Internet]. 2008 Dec [cited 2014
+   Jun 6];94(12):1620-6. Available from:
+   http://heart.bmj.com/content/94/12/1620.abstract
+* ICD RISK
+** Original reference
+   Reference: Dodson JA et al. JACC 2014 8:788
+** Fixed reference
+   Dodson JA, Reynolds MR, Bao H, Al-Khatib SM, Peterson ED, Kremers
+   MS, Mirro MJ, Curtis JP. Developing a risk model for in-hospital
+   adverse events following implantable cardioverter-defibrillator
+   implantation. J Am Coll Cardiol [Internet]. 2014 Mar [cited 2014
+   Jun 6];63(8):788-96. Available from:
+   http://content.onlinejacc.org/article.aspx?articleid=1789346
+* CHADS
+** Original reference
+   Reference: Gage BF et al. JAMA 2001 285:2864
+** Fixed reference
+   Gage BF, Waterman AD, Shannon W, Boechler M, Rich MW, Radford
+   MJ. Validation of clinical classification schemes for predicting
+   stroke. JAMA [Internet]. 2001 Jun 13 [cited 2014 Jun
+   6];285(22):2864-70. Available from:
+   http://jama.jamanetwork.com/article.aspx?articleid=193912
+* CHADS-VASC
+** Original reference
+   Lip GY et al. Stroke 2010 137:263
+** Fixed reference
+   Lip GY, Frison L, Halperin JL, Lane DA. Identifying patients at
+   high risk for stroke despite anticoagulation: a comparison of
+   contemporary stroke risk stratification schemes in an
+   anticoagulated atrial fibrillation cohort. Stroke [Internet]. 2010
+   Oct 21 [cited 2014 Jun 6];41:2731-8. Available from:
+   http://stroke.ahajournals.org/content/41/12/2731.full.pdf
+* HAS-BLED
+** Original reference
+   Pisters R et al. Chest 2010 138:1093
+** Fixed reference
+   Pisters R, Lane DA, Nieuwlaat R, de Vos CB, Crijns HJ, Lip GY. A
+   novel user-friendly score (HAS-BLED) to assess 1-year risk of major
+   bleeding in patients with atrial fibrillation: the Euro Heart
+   Survey. Chest [Internet]. 2010 Nov [cited 2014 Jun
+   6];138(5):1093-100. Available from:
+   http://journal.publications.chestnet.org/article.aspx?articleid=1045174
+* HEMORRHAGES
+** Original reference
+   Reference: Gage BF et al. Am Heart J 2006;151:713
+** Fixed reference
+   Gage BF, Yan Y, Milligan PE, Waterman AD, Culverhouse R, Rich MW,
+   Radford MJ. Clinical classification schemes for predicting
+   hemorrhage: results from the National Registry of Atrial
+   Fibrillation (NRAF). Am Heart J [Internet]. 2006 [cited 2014 Jun
+   6];151:713-9. Available from:
+   http://www.hematology.fi/system/files/HEMORRHAGES-score.pdf
+* ESTES-ROMHILT
+** Original reference
+   BP Hsieh et al. Am Heart J 2005;150:161   
+** Fixed reference
+   Romhilt DW, Estes EH Jr. A point-score system for the ECG diagnosis
+   of left ventricular hypertrophy. Am Heart J. 1968 Jun;75(6):752-8.
+* Journal quoting format
+** Source
+   http://www.ncbi.nlm.nih.gov/books/NBK7282/#A32362
+** Print article
+   Veronesi U, Maisonneuve P, Decensi A.  Tamoxifen: an enduring
+   star. J Natl Cancer Inst. 2007 Feb 21;99(4):258-60.
+** Internet article
+   Kaul S, Diamond GA.  Good enough: blah blah.  Ann Intern Med
+   [Internet]. 2006 Jul 4 [cited 2007 Jan 4];145(1):62-9. Available
+   from: http://www.annals.org/cgi/reprint/145/1/62.pdf
+* Risk factor report format
+** Example
+Risk Score: CHADS Risk factors: Congestive heart failure, blah, age >=
+75 yrs.  CHADS score = 0 Aspirin recommended Annual stroke risk is
+1.9% Reference: blah blah
+** Format
+   Risk Score: {getTitle} Risk factors: {getRiskFactors} Message:
+   {getMessage} Reference: {getReference}
+* Update risk score steps
+  1) add risk_label (eg chads_vasc_label = CHADS-VASc) to strings.xml
+  2) add short and full_reference to strings.xml
+  3) add 3 abstract methods to each risk score
+     1) getFullReference()
+     2) getRiskLabel()
+     3) getShortReference()
+  4) Delete getSelectedRisks() if present
+  5) In calculateResult() add clearSelectedRisks() and
+     addSelectedRisk(checkBox[i]).toText().toString()
+  6) In getResultMessage(int)
+     1) change message = getRiskLabel() + " score = ..." without
+        the short reference at the end. (end at ... + risk;)
+     2) add setResultMessage(message);
+     3) add return resultWithShortReference();
+* Notes
+** Estes
+   - Estes has no short reference in dialog.  Short reference is seen
+     on the layout.
+   - Full name Romilt-Estes LVH score used in clipboard for name of score.
+   - reference changed to original Romhilt reference.
+** HCM
+   - similar changes to Estes
+** Syncope scores
+   - those titles not ending in "score" used unchanged
+* List of risk scores to be updated
+  - [X] CHADS
+  - [X] Chads-vasc
+  - [X] Has-bled
+  - [X] Hemmorrhages
+  - [X] Estes
+  - [X] Hocm
+  - [X] SF rule
+  - [X] Martin rule
+  - [X] Oesil score
+  - [X] Egys score
+* Scores all updated on <2014-06-13 Fri>

@@ -39,8 +39,10 @@ public class Estes extends RiskScore {
 			return;
 		}
 		int result = 0;
+		clearSelectedRisks();
 		for (int i = 0; i < checkBox.length; i++) {
 			if (checkBox[i].isChecked()) {
+				addSelectedRisk(checkBox[i].getText().toString());
 				switch (i) {
 				case VOLTAGE:
 				case LAE:
@@ -62,13 +64,15 @@ public class Estes extends RiskScore {
 	}
 
 	private String getResultMessage(int result) {
-		String message = "Romhilt-Estes Score = " + result + "\n";
+		String message = getRiskLabel() + " = " + result + "\n";
 		if (result < 4)
 			message += getString(R.string.estes_no_lvh_message);
 		else if (result == 4)
 			message += getString(R.string.estes_probable_lvh_message);
 		else if (result > 4)
 			message += getString(R.string.estes_definite_lvh_message);
+		setResultMessage(message);
+		// short reference not added here, is on the layout
 		return message;
 
 	}
@@ -93,4 +97,20 @@ public class Estes extends RiskScore {
 
 	}
 
+	@Override
+	protected String getFullReference() {
+		return getString(R.string.estes_full_reference);
+	}
+
+	@Override
+	protected String getRiskLabel() {
+		return getString(R.string.estes_criteria_label);
+	}
+
+	@Override
+	protected String getShortReference() {
+		// short ref not used in Estes result dialog,
+		// as it is already at the bottom of the layout.
+		return null;
+	}
 }

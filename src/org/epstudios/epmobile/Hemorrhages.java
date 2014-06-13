@@ -48,13 +48,16 @@ public class Hemorrhages extends RiskScore {
 
 	@Override
 	protected void calculateResult() {
+		clearSelectedRisks();
 		int result = 0;
 		for (int i = 0; i < checkBox.length; i++) {
-			if (checkBox[i].isChecked())
+			if (checkBox[i].isChecked()) {
+				addSelectedRisk(checkBox[i].getText().toString());
 				if (i == REBLEED)
 					result += 2;
 				else
 					result++;
+			}
 		}
 		displayResult(getResultMessage(result),
 				getString(R.string.hemorrhages_title));
@@ -90,10 +93,24 @@ public class Hemorrhages extends RiskScore {
 		if (result >= 5)
 			risk = "12.3";
 		risk = "Bleeding risk is " + risk + " bleeds per 100 patient-years";
-		message = getString(R.string.hemorrhages_title) + " = " + result + "\n"
-				+ message + "\n" + risk + "\n"
-				+ getString(R.string.hemorrhages_reference);
-		return message;
+		message = getRiskLabel() + " score = " + result + "\n" + message + "\n"
+				+ risk;
+		setResultMessage(message);
+		return resultWithShortReference();
 	}
 
+	@Override
+	protected String getFullReference() {
+		return getString(R.string.hemorrhages_full_reference);
+	}
+
+	@Override
+	protected String getRiskLabel() {
+		return getString(R.string.hemorrhages_label);
+	}
+
+	@Override
+	protected String getShortReference() {
+		return getString(R.string.hemorrhages_reference);
+	}
 }

@@ -84,6 +84,7 @@ public class CycleLength extends EpActivity implements OnClickListener {
 	private RadioButton hrRadioButton;
 	private TextView measurementTextView;
 
+	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.calculate_result_button:
@@ -129,7 +130,7 @@ public class CycleLength extends EpActivity implements OnClickListener {
 				resultTextView.setText("Interval = " + String.valueOf(result)
 						+ " msec");
 		} catch (NumberFormatException e) {
-			resultTextView.setText("Invalid!");
+			resultTextView.setText(getString(R.string.invalid_warning));
 			resultTextView.setTextColor(Color.RED);
 		}
 	}

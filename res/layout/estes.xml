@@ -79,7 +79,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="3dip"
-            android:text="@string/other_lvh_reference" />
+            android:text="@string/estes_short_reference" />
     </LinearLayout>
 
 </ScrollView>

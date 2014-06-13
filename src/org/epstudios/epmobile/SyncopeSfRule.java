@@ -12,8 +12,10 @@ public class SyncopeSfRule extends SyncopeRiskScore {
 	@Override
 	protected void calculateResult() {
 		int result = 0;
+		clearSelectedRisks();
 		for (int i = 0; i < checkBox.length; i++) {
 			if (checkBox[i].isChecked()) {
+				addSelectedRisk(checkBox[i].getText().toString());
 				result++;
 			}
 		}
@@ -27,11 +29,10 @@ public class SyncopeSfRule extends SyncopeRiskScore {
 			message = getString(R.string.no_sf_rule_risk_message);
 		else
 			message = getString(R.string.high_sf_rule_risk_message);
-		message = "SF Rule Score " + (result > 0 ? "\u2265 1." : "= 0.") + "\n"
-				+ message + "\n"
-				+ getString(R.string.syncope_sf_rule_reference);
-		return message;
-
+		message = getRiskLabel() + " score "
+				+ (result > 0 ? "\u2265 1" : "= 0") + "\n" + message;
+		setResultMessage(message);
+		return resultWithShortReference();
 	}
 
 	@Override
@@ -54,4 +55,18 @@ public class SyncopeSfRule extends SyncopeRiskScore {
 		checkBox[4].setText(getString(R.string.low_bp_label));
 	}
 
+	@Override
+	protected String getFullReference() {
+		return getString(R.string.syncope_sf_rule_full_reference);
+	}
+
+	@Override
+	protected String getRiskLabel() {
+		return getString(R.string.syncope_sf_rule_label);
+	}
+
+	@Override
+	protected String getShortReference() {
+		return getString(R.string.syncope_sf_rule_reference);
+	}
 }

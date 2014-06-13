@@ -8,7 +8,8 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.RadioGroup;
 
-public class CmsIcd extends RiskScore {
+public class CmsIcd extends DiagnosticScore {
+	protected CheckBox[] checkBox;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +33,12 @@ public class CmsIcd extends RiskScore {
 		return super.onOptionsItemSelected(item);
 	}
 
+	@Override
 	protected void setContentView() {
 		setContentView(R.layout.cmsicd);
 	}
 
+	@Override
 	protected void init() {
 		checkBox = new CheckBox[16];
 
@@ -234,10 +237,10 @@ public class CmsIcd extends RiskScore {
 
 	@Override
 	protected void clearEntries() {
-		super.clearEntries();
+		for (int i = 0; i < checkBox.length; i++) {
+			checkBox[i].setChecked(false);
+		}
 		efRadioGroup.clearCheck();
 		nyhaRadioGroup.clearCheck();
-
 	}
-
 }

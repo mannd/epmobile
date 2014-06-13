@@ -15,8 +15,10 @@ public class EgsysScore extends SyncopeRiskScore {
 	@Override
 	protected void calculateResult() {
 		int result = 0;
+		clearSelectedRisks();
 		for (int i = 0; i < checkBox.length; i++) {
 			if (checkBox[i].isChecked()) {
+				addSelectedRisk(checkBox[i].getText().toString());
 				result += points[i];
 			}
 		}
@@ -40,11 +42,11 @@ public class EgsysScore extends SyncopeRiskScore {
 		if (result > 4)
 			syncopeRisk = 77;
 
-		message = "EGSYS Score = " + result + "\n"
+		message = getRiskLabel() + " score = " + result + "\n"
 				+ "2-year total mortality = " + mortalityRisk
-				+ "%\nCardiac syncope probability = " + syncopeRisk
-				+ "%\nReference: " + getString(R.string.egsys_score_reference);
-		return message;
+				+ "%\nCardiac syncope probability = " + syncopeRisk + "%";
+		setResultMessage(message);
+		return resultWithShortReference();
 
 	}
 
@@ -68,4 +70,18 @@ public class EgsysScore extends SyncopeRiskScore {
 		checkBox[5].setText(getString(R.string.predisposing_factors_label));
 	}
 
+	@Override
+	protected String getFullReference() {
+		return getString(R.string.syncope_egsys_full_reference);
+	}
+
+	@Override
+	protected String getRiskLabel() {
+		return getString(R.string.syncope_egsys_label);
+	}
+
+	@Override
+	protected String getShortReference() {
+		return getString(R.string.egsys_score_reference);
+	}
 }
