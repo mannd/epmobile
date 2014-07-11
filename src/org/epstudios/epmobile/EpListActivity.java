@@ -28,6 +28,7 @@ public abstract class EpListActivity extends EpMainListActivity {
 	@Override
 	protected void onCreate(Bundle saveInstanceState) {
 		super.onCreate(saveInstanceState);
+
 		int versionNumber = android.os.Build.VERSION.SDK_INT;
 		if (versionNumber >= 11) {
 			ActionBar actionBar = getActionBar();

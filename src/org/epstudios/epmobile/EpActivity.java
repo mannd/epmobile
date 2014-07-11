@@ -52,6 +52,8 @@ public abstract class EpActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle saveInstanceState) {
 		super.onCreate(saveInstanceState);
+		setTheme(android.R.style.Theme_Holo);
+
 		int versionNumber = android.os.Build.VERSION.SDK_INT;
 		if (versionNumber >= 11) {
 			ActionBar actionBar = getActionBar();
