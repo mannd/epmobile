@@ -13,7 +13,9 @@ public abstract class EpMainListActivity extends ListActivity {
 	@Override
 	protected void onCreate(Bundle saveInstanceState) {
 		super.onCreate(saveInstanceState);
-		setTheme(android.R.style.Theme_Holo);
+		if (false) {
+			setTheme(android.R.style.Theme_Holo);
+		}
 	}
 
 	@Override
