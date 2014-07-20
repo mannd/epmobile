@@ -22,6 +22,18 @@
         <item name="android:textColor">@android:color/holo_orange_light</item>
     </style>
 
+    <style name="WarfarinDayStyle">
+        <item name="android:textColor">@color/dark_cyan</item>
+    </style>
+
+    <style name="WarfarinDayColumnStyle">
+        <item name="android:textColor">@color/darker_still_cyan</item>
+    </style>
+
+    <style name="WarfarinDoseColumnStyle">
+        <item name="android:textColor">@color/fire_red</item>
+    </style>
+
     <style name="AppBaseTheme" parent="android:Theme.Holo.Light.DarkActionBar"></style>
 
 </resources>
