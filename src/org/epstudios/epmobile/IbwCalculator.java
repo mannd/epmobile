@@ -99,6 +99,7 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 		return super.onOptionsItemSelected(item);
 	}
 
+	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.calculate_button:
@@ -127,11 +128,13 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 		else
 			weightSpinner.setSelection(LB_SELECTION);
 		itemListener = new OnItemSelectedListener() {
+			@Override
 			public void onItemSelected(AdapterView<?> parent, View v,
 					int position, long id) {
 				updateWeightUnitSelection();
 			}
 
+			@Override
 			public void onNothingSelected(AdapterView<?> parent) {
 				// do nothing
 			}
@@ -149,11 +152,13 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 		else
 			heightSpinner.setSelection(IN_SELECTION);
 		heightItemListener = new OnItemSelectedListener() {
+			@Override
 			public void onItemSelected(AdapterView<?> parent, View v,
 					int position, long id) {
 				updateHeightUnitSelection();
 			}
 
+			@Override
 			public void onNothingSelected(AdapterView<?> parent) {
 				// do nothing
 			}
@@ -331,8 +336,10 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 	}
 
 	private void resetResultTextColor() {
-		ibwResultTextView.setTextColor(Color.WHITE);
-		abwResultTextView.setTextColor(Color.WHITE);
+		ibwResultTextView.setTextAppearance(this,
+				android.R.style.TextAppearance_Medium);
+		abwResultTextView.setTextAppearance(this,
+				android.R.style.TextAppearance_Medium);
 	}
 
 	private void getPrefs() {

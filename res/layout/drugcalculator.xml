@@ -101,7 +101,7 @@
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
                 android:text="@string/dose_result_label"
-                android:textColor="@color/neutral_text"
+                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="20sp" >
             </TextView>
 

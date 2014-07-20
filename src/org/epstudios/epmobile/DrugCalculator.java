@@ -77,6 +77,7 @@ public abstract class DrugCalculator extends EpDrugCalculatorActivity implements
 	private WeightUnit defaultWeightUnitSelection = WeightUnit.KG;
 	private CreatinineUnit defaultCreatinineUnitSelection = CreatinineUnit.MG;
 
+	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.calculate_dose_button:
@@ -99,11 +100,13 @@ public abstract class DrugCalculator extends EpDrugCalculatorActivity implements
 		else
 			weightSpinner.setSelection(LB_SELECTION);
 		itemListener = new OnItemSelectedListener() {
+			@Override
 			public void onItemSelected(AdapterView<?> parent, View v,
 					int position, long id) {
 				updateWeightUnitSelection();
 			}
 
+			@Override
 			public void onNothingSelected(AdapterView<?> parent) {
 				// do nothing
 			}
@@ -123,11 +126,13 @@ public abstract class DrugCalculator extends EpDrugCalculatorActivity implements
 		else
 			creatinineSpinner.setSelection(MMOL_SELECTION);
 		creatItemListener = new OnItemSelectedListener() {
+			@Override
 			public void onItemSelected(AdapterView<?> parent, View v,
 					int position, long id) {
 				updateCreatinineUnitSelection();
 			}
 
+			@Override
 			public void onNothingSelected(AdapterView<?> parent) {
 				// do nothing
 			}
@@ -192,14 +197,15 @@ public abstract class DrugCalculator extends EpDrugCalculatorActivity implements
 			boolean useMmolUnits = (getCreatinineUnitSelection() == CreatinineUnit.MMOL);
 			int cc = CreatinineClearance.calculate(isMale, age, weight,
 					creatinine, useMmolUnits);
-			ccTextView.setTextColor(Color.WHITE); // reset to white here; text
-													// colored later
+			ccTextView.setTextAppearance(this,
+					android.R.style.TextAppearance_Medium);
 			String ccMessage = getMessage(cc, age);
 			ccTextView.setText(ccMessage);
 			double dose = getDose(cc);
 			if (dose == USE_APIXABAN_DOSING) {
 				// special processing here
-				ccTextView.setTextColor(Color.WHITE);
+				ccTextView.setTextAppearance(this,
+						android.R.style.TextAppearance_Medium);
 				boolean creatinineTooHigh = ((creatinine >= 133 && useMmolUnits) || (creatinine >= 1.5 && !useMmolUnits));
 				if ((creatinineTooHigh && (age >= 80 || weight <= 60))
 						|| (age >= 80 && weight <= 60))
@@ -231,11 +237,13 @@ public abstract class DrugCalculator extends EpDrugCalculatorActivity implements
 				calculatedDoseTextView.setTextColor(Color.RED);
 				ccTextView.setTextColor(Color.RED);
 			} else if (dose == USE_APIXABAN_DOSING) {
-				calculatedDoseTextView.setTextColor(Color.LTGRAY);
+				calculatedDoseTextView.setTextAppearance(this,
+						android.R.style.TextAppearance_Large);
 				calculatedDoseTextView
 						.setText(getString(R.string.dose_undefined_warning));
 			} else {
-				calculatedDoseTextView.setTextColor(Color.LTGRAY);
+				calculatedDoseTextView.setTextAppearance(this,
+						android.R.style.TextAppearance_Large);
 				// format to only show decimal if non-zero
 				calculatedDoseTextView.setText(new DecimalFormat("#.#")
 						.format(dose) + doseFrequency(cc));
@@ -256,9 +264,11 @@ public abstract class DrugCalculator extends EpDrugCalculatorActivity implements
 		creatinineEditText.setText(null);
 		ageEditText.setText(null);
 		ccTextView.setText(R.string.creatinine_clearance_label);
-		ccTextView.setTextColor(Color.WHITE);
+		ccTextView.setTextAppearance(this,
+				android.R.style.TextAppearance_Medium);
 		calculatedDoseTextView.setText(getString(R.string.dose_result_label));
-		calculatedDoseTextView.setTextColor(Color.LTGRAY);
+		calculatedDoseTextView.setTextAppearance(this,
+				android.R.style.TextAppearance_Large);
 		ageEditText.requestFocus();
 	}
 
