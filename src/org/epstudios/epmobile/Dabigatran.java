@@ -18,8 +18,6 @@
 
 package org.epstudios.epmobile;
 
-import android.graphics.Color;
-
 public class Dabigatran extends DrugCalculator {
 	// / TODO need to fix these colors for both themes
 	@Override
@@ -27,13 +25,12 @@ public class Dabigatran extends DrugCalculator {
 		String msg = super.getMessage(crCl, age);
 		if ((crCl >= 15) && (crCl <= 30)) {
 			msg += "\n" + getString(R.string.dabigatran_warning_severe);
-			ccTextView.setTextColor(Color.parseColor("#ffa500")); // orange ok
-																	// with
-																	// holo.light
+			ccTextView.setTextColor(getResources().getColor(
+					R.color.warning_yellow));
 		} else if ((crCl > 30) && (crCl <= 50)) {
 			msg += "\n" + getString(R.string.dabigatran_warning_mild);
-			ccTextView.setTextColor(getResources()
-					.getColor(R.color.dark_yellow));
+			ccTextView.setTextColor(getResources().getColor(
+					R.color.warning_yellow)); // all warnings same color now
 		} else
 			ccTextView.setTextAppearance(this,
 					android.R.style.TextAppearance_Medium);

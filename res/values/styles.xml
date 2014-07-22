@@ -51,7 +51,9 @@
 
     <style name="WarfarinDayColumnStyle">
         <item name="android:textColor">@color/yellow</item>
-    </style><style name="WarfarinDoseColumnStyle">
+    </style>
+
+    <style name="WarfarinDoseColumnStyle">
         <item name="android:textColor">@color/green</item>
     </style>
 

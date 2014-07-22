@@ -11,5 +11,6 @@
     <color name="darker_still_cyan">#1D718C</color>
     <color name="dark_yellow">#F9B037</color>
     <color name="fire_red">#C01909</color>
+    <color name="warning_yellow">#ffa500</color>
 
 </resources>

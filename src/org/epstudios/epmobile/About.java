@@ -23,7 +23,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 public class About extends Activity {
-	private final static String VERSION = "development";
+	private final static String VERSION = "2.5beta";
 	private TextView versionTextView;
 
 	@Override
