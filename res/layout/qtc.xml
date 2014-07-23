@@ -67,8 +67,7 @@
             android:layout_weight="1"
             android:gravity="center_horizontal"
             android:text="@string/qtc_result_label"
-            android:textColor="@color/neutral_text"
-            android:textSize="20sp" >
+            android:textAppearance="?android:attr/textAppearanceMedium" >
         </TextView>
 
         <Button
