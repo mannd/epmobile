@@ -78,6 +78,7 @@ public class Entrainment extends EpActivity implements OnClickListener {
 		return super.onOptionsItemSelected(item);
 	}
 
+	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.calculate_button:
@@ -101,7 +102,8 @@ public class Entrainment extends EpActivity implements OnClickListener {
 		String ppiText = ppiEditText.getText().toString();
 		String sqrsText = sqrsEditText.getText().toString();
 		String egmQrsText = egmQrsEditText.getText().toString();
-		resultTextView.setTextColor(Color.LTGRAY);
+		resultTextView.setTextAppearance(this,
+				android.R.style.TextAppearance_Medium);
 		try {
 			int tcl = Integer.parseInt(tclText);
 			int ppi = Integer.parseInt(ppiText);
@@ -114,14 +116,16 @@ public class Entrainment extends EpActivity implements OnClickListener {
 					message = getString(R.string.entrainment_remote_site_message);
 				else {
 					message = getString(R.string.entrainment_outer_loop_message);
-					resultTextView.setTextColor(Color.CYAN);
+					resultTextView.setTextColor(getResources().getColor(
+							R.color.cyan));
 				}
 			} else { // concealed fusion present!
 				if (ppiMinusTcl > 30) {
 					message = getString(R.string.entrainment_bystander_message);
 				} else {
 					message = getString(R.string.entrainment_inner_loop_message);
-					resultTextView.setTextColor(Color.GREEN);
+					resultTextView.setTextColor(getResources().getColor(
+							R.color.green));
 					int egmQrs = 0;
 					int sqrs = 0;
 					boolean hasEgmQrs = false;
@@ -181,7 +185,8 @@ public class Entrainment extends EpActivity implements OnClickListener {
 		sqrsEditText.setEnabled(false);
 		egmQrsTextView.setEnabled(false);
 		egmQrsEditText.setText(null);
-		resultTextView.setTextColor(Color.LTGRAY);
+		resultTextView.setTextAppearance(this,
+				android.R.style.TextAppearance_Medium);
 		resultTextView.setText(null);
 
 	}

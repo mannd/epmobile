@@ -240,7 +240,8 @@ public class Qtc extends EpActivity implements OnClickListener {
 			if (qtc >= qtcUpperLimit)
 				qtcTextView.setTextColor(Color.RED);
 			else
-				qtcTextView.setTextColor(Color.GREEN);
+				qtcTextView
+						.setTextColor(getResources().getColor(R.color.green));
 		} catch (NumberFormatException e) {
 			qtcTextView.setText(getString(R.string.invalid_warning));
 			qtcTextView.setTextColor(Color.RED);
