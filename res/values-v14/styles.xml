@@ -23,15 +23,15 @@
     </style>
 
     <style name="WarfarinDayStyle">
-        <item name="android:textColor">@color/dark_cyan</item>
+        <item name="android:textColor">@android:color/holo_blue_dark</item>
     </style>
 
     <style name="WarfarinDayColumnStyle">
-        <item name="android:textColor">@color/darker_still_cyan</item>
+        <item name="android:textColor">@android:color/holo_green_dark</item>
     </style>
 
     <style name="WarfarinDoseColumnStyle">
-        <item name="android:textColor">@color/fire_red</item>
+        <item name="android:textColor">@android:color/holo_red_dark</item>
     </style>
 
     <style name="AppBaseTheme" parent="android:Theme.Holo.Light.DarkActionBar"></style>
