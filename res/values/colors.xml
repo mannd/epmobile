@@ -11,5 +11,9 @@
     <color name="darker_still_cyan">#1D718C</color>
     <color name="dark_yellow">#F9B037</color>
     <color name="fire_red">#C01909</color>
+    <color name="warning_yellow">#ffa500</color>
+    <color name="dark_goldenrod_1">#fdab10</color>
+    <color name="sienna_2">#e76333</color>
+    <color name="forest_green">#1f7b19</color>
 
 </resources>

@@ -6,7 +6,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:padding="3dip" >
 
         <TableLayout
             android:layout_width="match_parent"
@@ -69,7 +70,7 @@
                     android:layout_height="wrap_content"
                     android:padding="3dip"
                     android:text="@string/ibw_label"
-                    android:textAppearance="?android:attr/textAppearanceMedium" >
+                    android:textAppearance="?android:attr/textAppearanceSmall" >
                 </TextView>
 
                 <TextView
@@ -90,7 +91,7 @@
                     android:layout_height="wrap_content"
                     android:padding="3dip"
                     android:text="@string/abw_label"
-                    android:textAppearance="?android:attr/textAppearanceMedium" >
+                    android:textAppearance="?android:attr/textAppearanceSmall" >
                 </TextView>
 
                 <TextView
