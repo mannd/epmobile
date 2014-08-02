@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- This is default theme, maybe change to light -->
+    <style name="AppBaseTheme" parent="android:Theme"></style>
+
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
     <style name="Header1" parent="@android:style/TextAppearance.Medium">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -29,13 +36,24 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">left</item>
         <item name="android:padding">3dip</item>
-        <item name="android:textColor">@android:color/white</item>
     </style>
 
     <style name="Divider">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1dp</item>
         <item name="android:background">@android:color/darker_gray</item>
+    </style>
+
+    <style name="WarfarinDayStyle">
+        <item name="android:textColor">@color/cyan</item>
+    </style>
+
+    <style name="WarfarinDayColumnStyle">
+        <item name="android:textColor">@color/yellow</item>
+    </style>
+
+    <style name="WarfarinDoseColumnStyle">
+        <item name="android:textColor">@color/green</item>
     </style>
 
 </resources>

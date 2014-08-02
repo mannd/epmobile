@@ -1,36 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/background" >
+    android:layout_height="match_parent" >
 
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:stretchColumns="*" >
 
-        <TableRow android:textColor="@color/yellow" >
+        <TableRow>
 
             <TextView
+                style="@style/WarfarinDayColumnStyle"
                 android:layout_column="1"
                 android:padding="3dip"
-                android:text="@string/day_label"
-                android:textColor="@color/yellow" />
+                android:text="@string/day_label" />
 
             <TextView
                 android:id="@+id/percent1"
                 android:padding="3dip"
-                android:textColor="@color/green" />
+                style="@style/WarfarinDoseColumnStyle" />
 
             <TextView
+                style="@style/WarfarinDayColumnStyle"
                 android:padding="3dip"
-                android:text="@string/day_label"
-                android:textColor="@color/yellow" />
+                android:text="@string/day_label" />
 
             <TextView
                 android:id="@+id/percent2"
                 android:padding="3dip"
-                android:textColor="@color/green" />
+                style="@style/WarfarinDoseColumnStyle" />
         </TableRow>
 
         <View
@@ -40,19 +39,19 @@
         <TableRow>
 
             <TextView
+                style="@style/WarfarinDayStyle"
                 android:layout_column="1"
                 android:padding="3dip"
-                android:text="@string/sun_label"
-                android:textColor="@color/cyan" />
+                android:text="@string/sun_label" />
 
             <TextView
                 android:id="@+id/sunDose1"
                 android:padding="3dip" />
 
             <TextView
+                style="@style/WarfarinDayStyle"
                 android:padding="3dip"
-                android:text="@string/sun_label"
-                android:textColor="@color/cyan" />
+                android:text="@string/sun_label" />
 
             <TextView
                 android:id="@+id/sunDose2"
@@ -62,19 +61,19 @@
         <TableRow>
 
             <TextView
+                style="@style/WarfarinDayStyle"
                 android:layout_column="1"
                 android:padding="3dip"
-                android:text="@string/mon_label"
-                android:textColor="@color/cyan" />
+                android:text="@string/mon_label" />
 
             <TextView
                 android:id="@+id/monDose1"
                 android:padding="3dip" />
 
             <TextView
+                style="@style/WarfarinDayStyle"
                 android:padding="3dip"
-                android:text="@string/mon_label"
-                android:textColor="@color/cyan" />
+                android:text="@string/mon_label" />
 
             <TextView
                 android:id="@+id/monDose2"
@@ -84,19 +83,19 @@
         <TableRow>
 
             <TextView
+                style="@style/WarfarinDayStyle"
                 android:layout_column="1"
                 android:padding="3dip"
-                android:text="@string/tue_label"
-                android:textColor="@color/cyan" />
+                android:text="@string/tue_label" />
 
             <TextView
                 android:id="@+id/tueDose1"
                 android:padding="3dip" />
 
             <TextView
+                style="@style/WarfarinDayStyle"
                 android:padding="3dip"
-                android:text="@string/tue_label"
-                android:textColor="@color/cyan" />
+                android:text="@string/tue_label" />
 
             <TextView
                 android:id="@+id/tueDose2"
@@ -106,19 +105,19 @@
         <TableRow>
 
             <TextView
+                style="@style/WarfarinDayStyle"
                 android:layout_column="1"
                 android:padding="3dip"
-                android:text="@string/wed_label"
-                android:textColor="@color/cyan" />
+                android:text="@string/wed_label" />
 
             <TextView
                 android:id="@+id/wedDose1"
                 android:padding="3dip" />
 
             <TextView
+                style="@style/WarfarinDayStyle"
                 android:padding="3dip"
-                android:text="@string/wed_label"
-                android:textColor="@color/cyan" />
+                android:text="@string/wed_label" />
 
             <TextView
                 android:id="@+id/wedDose2"
@@ -128,19 +127,19 @@
         <TableRow>
 
             <TextView
+                style="@style/WarfarinDayStyle"
                 android:layout_column="1"
                 android:padding="3dip"
-                android:text="@string/thu_label"
-                android:textColor="@color/cyan" />
+                android:text="@string/thu_label" />
 
             <TextView
                 android:id="@+id/thuDose1"
                 android:padding="3dip" />
 
             <TextView
+                style="@style/WarfarinDayStyle"
                 android:padding="3dip"
-                android:text="@string/thu_label"
-                android:textColor="@color/cyan" />
+                android:text="@string/thu_label" />
 
             <TextView
                 android:id="@+id/thuDose2"
@@ -150,19 +149,19 @@
         <TableRow>
 
             <TextView
+                style="@style/WarfarinDayStyle"
                 android:layout_column="1"
                 android:padding="3dip"
-                android:text="@string/fri_label"
-                android:textColor="@color/cyan" />
+                android:text="@string/fri_label" />
 
             <TextView
                 android:id="@+id/friDose1"
                 android:padding="3dip" />
 
             <TextView
+                style="@style/WarfarinDayStyle"
                 android:padding="3dip"
-                android:text="@string/fri_label"
-                android:textColor="@color/cyan" />
+                android:text="@string/fri_label" />
 
             <TextView
                 android:id="@+id/friDose2"
@@ -172,19 +171,19 @@
         <TableRow>
 
             <TextView
+                style="@style/WarfarinDayStyle"
                 android:layout_column="1"
                 android:padding="3dip"
-                android:text="@string/sat_label"
-                android:textColor="@color/cyan" />
+                android:text="@string/sat_label" />
 
             <TextView
                 android:id="@+id/satDose1"
                 android:padding="3dip" />
 
             <TextView
+                style="@style/WarfarinDayStyle"
                 android:padding="3dip"
-                android:text="@string/sat_label"
-                android:textColor="@color/cyan" />
+                android:text="@string/sat_label" />
 
             <TextView
                 android:id="@+id/satDose2"
@@ -198,26 +197,27 @@
         <TableRow>
 
             <TextView
+                style="@style/WarfarinDayColumnStyle"
                 android:layout_column="1"
-                android:text="@string/total_label"
-                android:textColor="@color/yellow" />
+                android:text="@string/total_label" />
 
             <TextView
                 android:id="@+id/weeklyDose1"
                 android:layout_column="2"
                 android:padding="3dip"
-                android:textColor="@color/green" />
+                style="@style/WarfarinDoseColumnStyle" />
 
             <TextView
+                style="@style/WarfarinDayColumnStyle"
                 android:layout_column="3"
-                android:text="@string/total_label"
-                android:textColor="@color/yellow" />
+                android:text="@string/total_label" />
 
             <TextView
                 android:id="@+id/weeklyDose2"
+                style="@style/WarfarinDoseColumnStyle"
                 android:layout_column="4"
-                android:padding="3dip"
-                android:textColor="@color/green" />
+                android:padding="3dip" />
+
         </TableRow>
     </TableLayout>
 

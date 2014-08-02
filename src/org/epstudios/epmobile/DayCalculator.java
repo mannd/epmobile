@@ -122,7 +122,8 @@ public class DayCalculator extends EpActivity implements OnClickListener {
 		calculatedDateTextView.setText(getString(R.string.date_result_label));
 		dayRadioGroup.check(R.id.ninetyRadio);
 		numberOfDaysEditText.setText("90");
-		calculatedDateTextView.setTextColor(Color.LTGRAY);
+		calculatedDateTextView.setTextAppearance(this,
+				android.R.style.TextAppearance_Large);
 
 	}
 

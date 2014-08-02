@@ -63,8 +63,7 @@
             android:layout_weight="1"
             android:gravity="center_horizontal"
             android:text="@string/calculated_result_label"
-            android:textColor="@color/neutral_text"
-            android:textSize="16sp" >
+            android:textAppearance="?android:attr/textAppearanceMedium" >
         </TextView>
 
         <Button

@@ -2,6 +2,7 @@ package org.epstudios.epmobile;
 
 import android.app.ListActivity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -9,6 +10,10 @@ import android.view.MenuItem;
 public abstract class EpMainListActivity extends ListActivity {
 	// adds option menu functions
 	// only used for Main menu list which does not have an up button
+	@Override
+	protected void onCreate(Bundle saveInstanceState) {
+		super.onCreate(saveInstanceState);
+	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
