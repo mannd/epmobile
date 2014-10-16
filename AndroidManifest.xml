@@ -6,8 +6,8 @@
     android:versionName="2.5" >
 
     <uses-sdk
-        android:minSdkVersion="7"
-        android:targetSdkVersion="20"
+        android:minSdkVersion="L"
+        android:targetSdkVersion="L"
         tools:ignore="OldTargetApi" >
     </uses-sdk>
 
