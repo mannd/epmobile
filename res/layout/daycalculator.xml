@@ -40,9 +40,9 @@
                 android:id="@+id/numberOfDaysEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right"
+                android:layout_gravity="end"
                 android:ems="10"
-                android:gravity="right"
+                android:gravity="end"
                 android:hint="@string/number_of_days_hint"
                 android:inputType="numberSigned" >
             </EditText>
