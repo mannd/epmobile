@@ -137,7 +137,9 @@ public class CycleLength extends EpActivity implements OnClickListener {
 
 	public static int calculate(int value) {
 		// assumes 0 has been weeded out before calling
-		assert (value != 0);
+		if (BuildConfig.DEBUG && value == 0) {
+			throw new AssertionError();
+		}
 		return (int) Math.round(60000.0 / value);
 	}
 
