@@ -15,20 +15,21 @@
 #+XSLT:
 * Use
 - Distinguish retrograde accessory pathway (AP) conduction from retrograde AV nodal (AVN) conduction.
-- Useful when SVT not inducible in patient with WPW or concealed septal AP, and post-ablation to exclude continued retrograde AP conduction.
-- Most useful with paraseptal pathways.
+- Useful for assessing retrograde conduction when SVT not inducible in patient with WPW or concealed septal AP, and post-ablation to exclude continued retrograde AP conduction.
+- Most useful for detecting paraseptal pathways.
 * Technique
-- Pace ventricle adjacent to His bundle or right bundle (HB-RB), using catheter with closely spaced electrodes (2 mm).
+- Pace ventricle near His bundle or right bundle (HB-RB), using catheter with closely spaced electrodes (2 mm).
 - Pace at high output (10 mA and 2 to 6 ms pulse width).
 - Withdraw catheter towards HB-RB until there is shortening of the QRS duration, indicating His or RB capture.
 - Decrease pacing output until loss of HB-RB capture, indicated by widening of QRS.
-- Measure stimulus to local A (S-A), as well as His to A (H-A) if possible
+- Measure stimulus to local A (S-A), as well as His to A (H-A) if possible.
 - Assess atrial activation sequence for changes using multiple atrial recordings (e.g. coronary sinus, high right atrium).
 * Results
-- Loss of HB-RB capture without change in S-A interval or atrial activation sequence indicates exclusive retrograde AP conduction.  H-A shortens as its activation is now delayed due to retrograde activation via remote inputs near apex of RV.
-- Increase in S-A interval without change in H-A interval or atrial activation sequence indicates exclusive retrograde AVN conduction.
-  - Note slowly conducting AP or distant AP can give false AVN only response.
-- Change in atrial activation sequence indicates both retrograde AP and AVN conduction.  S-A interval longer (or same when pacing is near the AP).  H-A interval is same or shorter.
+- Loss of HB-RB capture with change in atrial activation sequence indicates combined retrograde AP and AVN conduction.
+- Loss of HB-RB capture with no change in atrial activation sequence indicates exclusive retrograde AP or AVN conduction.
+  - Loss of HB-RB capture without change in S-A interval indicates exclusive retrograde AP conduction.  H-A shortens as its activation is now delayed due to retrograde activation via remote inputs near apex of RV.
+  - Loss of HB-RB capture with increase in S-A interval indicates exclusive retrograde AVN conduction.  H-A interval is unchanged.
+- Note slowly conducting AP or distant AP can give false AVN only response.
 * Reference
 Hirao K, Otomo K, Wang X, et al. Para-Hisian pacing. A new method for differentiating retrograde conduction over an accessory AV pathway from conduction over the AV node.  Circulation 1996; 94: 1027-1035.
 http://circ.ahajournals.org/content/94/5/1027.full
