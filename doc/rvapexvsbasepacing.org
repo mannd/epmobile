@@ -17,7 +17,7 @@
 - Determine if retrograde conduction is via a septal accessory pathway (AP) or the AV node (AVN).
 - Useful when SVT is not inducible or post-ablation to exclude continued retrograde AP conduction.
 * Technique
-- Using a deflectable catheter, position at apex and then at posterior base of RV in RAO 30° view.
+- Using a deflectable catheter, position at apex and then at posterior base of RV in 30° RAO view.
 - Ventricular pacing at each site at same pacing cycle length.
 - Measure stimulus to atrium (S-A) at each site.
 * Results
