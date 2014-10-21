@@ -77,6 +77,8 @@
         <item>@string/entrainment_title</item>
         <item>@string/long_qt_drugs_title</item>
         <item>@string/normal_ep_values_title</item>
+        <item>@string/para_hisian_pacing_title</item>
+        <item>@string/rva_vs_rvb_pacing_title</item>
     </array>
     <array name="wct_algorithm_list">
 

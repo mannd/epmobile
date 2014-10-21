@@ -41,6 +41,12 @@ public class ReferenceList extends EpListActivity {
 				else if (selection
 						.equals(getString(R.string.entrainment_title)))
 					entrainment();
+				else if (selection
+						.equals(getString(R.string.para_hisian_pacing_title)))
+					paraHisianPacing();
+				else if (selection
+						.equals(getString(R.string.rva_vs_rvb_pacing_title)))
+					rvaVsRvbPacing();
 			}
 		});
 	}
@@ -70,6 +76,17 @@ public class ReferenceList extends EpListActivity {
 	private void entrainment() {
 		Intent i = new Intent(this, Entrainment.class);
 		startActivity(i);
+	}
+
+	private void paraHisianPacing() {
+		Intent i = new Intent(this, ParaHisianPacing.class);
+		startActivity(i);
+	}
+
+	private void rvaVsRvbPacing() {
+		Intent i = new Intent(this, RvaVsRvbPacing.class);
+		startActivity(i);
+
 	}
 
 }
