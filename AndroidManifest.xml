@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="org.epstudios.epmobile"
-    android:versionCode="37"
-    android:versionName="2.5.1" >
+    android:versionCode="38"
+    android:versionName="2.6" >
 
     <uses-sdk
         android:minSdkVersion="7"
@@ -15,7 +15,7 @@
         android:allowBackup="true"
         android:icon="@drawable/icon"
         android:label="@string/app_name"
-        android:supportsRtl="false"
+        android:supportsRtl="true"
         android:theme="@style/AppTheme" >
          >
         <activity
@@ -267,6 +267,14 @@
         <activity
             android:name=".IcdRisk"
             android:label="@string/icd_risk_title" >
+        </activity>
+        <activity
+            android:name=".ParaHisianPacing"
+            android:label="@string/para_hisian_pacing_title" >
+        </activity>
+        <activity
+            android:name=".RvaVsRvbPacing"
+            android:label="@string/rva_vs_rvb_pacing_title" >
         </activity>
     </application>
 

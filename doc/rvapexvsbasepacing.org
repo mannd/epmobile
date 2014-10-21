@@ -1,0 +1,30 @@
+#+TITLE:     RV Apex vs Base Pacing
+#+AUTHOR:    David Mann
+#+EMAIL:     mannd@epstudiossoftware.com
+#+DATE:      [2014-10-20 Mon]
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:nil toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME: 
+#+XSLT:
+* Use
+- Determine if retrograde conduction is via a septal accessory pathway (AP) or the AV node (AVN).
+- Useful when SVT is not inducible or post-ablation to exclude continued retrograde AP conduction.
+* Technique
+- Using a deflectable catheter, position at apex and then at posterior base of RV in 30° RAO view.
+- Ventricular pacing at each site at same pacing cycle length.
+- Measure stimulus to atrium (S-A) at each site.
+* Results
+- S-A is shorter pacing at base compared with apex in patients with AP conduction only.
+- S-A is longer pacing at base compared with apex in patients with retrograde AVN conduction only.
+- Note that patients with combined retrograde AP and AV nodal conduction were excluded from the study population.  However change in atrial activation sequence when pacing at the 2 sites suggests combined retrograde AP and AVN conduction.
+- Note that only patients with posteroseptal APs were included in the study, though the technique is probably also applicable to patients with anteroseptal or para-Hisian APs, as long as basal pacing site is close to the AP.
+* Reference
+Martínez-Alday JD, Almendral J, Arenal A, et al. Identification of concealed posteroseptal Kent pathways by comparison of ventriculoatrial intervals from apical and posterobasal right ventricular sites.  Circulation 1994; 89: 1060-1067.
+http://circ.ahajournals.org/content/89/3/1060.abstract?ijkey=33950406ac6141d4fb927e205814d0bd992c33c9&keytype2=tf_ipsecsha

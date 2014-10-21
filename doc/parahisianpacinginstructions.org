@@ -1,0 +1,35 @@
+#+TITLE:     Para-Hisian Pacing
+#+AUTHOR:    David Mann
+#+EMAIL:     mannd@epstudiossoftware.com
+#+DATE:      [2014-10-20 Mon]
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:nil toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME: 
+#+XSLT:
+* Use
+- Distinguish retrograde accessory pathway (AP) conduction from retrograde AV nodal (AVN) conduction.
+- Useful for assessing retrograde conduction when SVT not inducible in patient with WPW or concealed septal AP, and post-ablation to exclude continued retrograde AP conduction.
+- Most useful for detecting paraseptal pathways.
+* Technique
+- Pace ventricle near His bundle or right bundle (HB-RB), using catheter with closely spaced electrodes (2 mm).
+- Pace at high output (10 mA and 2 to 6 ms pulse width).
+- Withdraw catheter towards HB-RB until there is shortening of the QRS duration, indicating His or RB capture.
+- Decrease pacing output until loss of HB-RB capture, indicated by widening of QRS.
+- Measure stimulus to local A (S-A), as well as His to A (H-A) if possible.
+- Assess atrial activation sequence for changes using multiple atrial recordings (e.g. coronary sinus, high right atrium).
+* Results
+- Loss of HB-RB capture with change in atrial activation sequence indicates combined retrograde AP and AVN conduction.
+- Loss of HB-RB capture with no change in atrial activation sequence indicates exclusive retrograde AP or AVN conduction.
+  - Loss of HB-RB capture without change in S-A interval indicates exclusive retrograde AP conduction.  H-A shortens as its activation is now delayed due to retrograde activation via remote inputs near apex of RV.
+  - Loss of HB-RB capture with increase in S-A interval indicates exclusive retrograde AVN conduction.  H-A interval is unchanged.
+- Note slowly conducting AP or distant AP can give false AVN only response.
+* Reference
+Hirao K, Otomo K, Wang X, et al. Para-Hisian pacing. A new method for differentiating retrograde conduction over an accessory AV pathway from conduction over the AV node.  Circulation 1996; 94: 1027-1035.
+http://circ.ahajournals.org/content/94/5/1027.full
