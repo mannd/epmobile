@@ -21,6 +21,7 @@ package org.epstudios.epmobile;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.View.OnClickListener;
 
@@ -31,7 +32,11 @@ abstract public class DiagnosticScore extends EpActivity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView();
-
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+        if (toolbar != null) {
+            setSupportActionBar(toolbar);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 		View calculateButton = findViewById(R.id.calculate_button);
 		calculateButton.setOnClickListener(this);
 		View clearButton = findViewById(R.id.clear_button);
