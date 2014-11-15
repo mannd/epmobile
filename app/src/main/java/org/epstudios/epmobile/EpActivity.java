@@ -60,13 +60,6 @@ public abstract class EpActivity extends ActionBarActivity {
             setSupportActionBar(toolbar);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
-//		int versionNumber = android.os.Build.VERSION.SDK_INT;
-//		if (versionNumber >= 11) {
-//			ActionBar actionBar = getActionBar();
-//			if (actionBar != null)
-//				actionBar.setDisplayHomeAsUpEnabled(true);
-//		}
-
     }
 
 }

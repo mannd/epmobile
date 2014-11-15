@@ -13,9 +13,9 @@ import android.widget.TextView;
 public class BrugadaEcg extends EpDiagnosisActivity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
 		setContentView(R.layout.brugadaecg);
-		textButton = (Button) findViewById(R.id.text_button);
+        super.onCreate(savedInstanceState);
+        textButton = (Button) findViewById(R.id.text_button);
 		textButton.setOnClickListener(this);
 	}
 
