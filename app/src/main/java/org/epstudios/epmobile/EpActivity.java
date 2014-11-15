@@ -55,13 +55,17 @@ public abstract class EpActivity extends ActionBarActivity {
 	@Override
 	protected void onCreate(Bundle saveInstanceState) {
 		super.onCreate(saveInstanceState);
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+        if (toolbar != null) {
+            setSupportActionBar(toolbar);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 //		int versionNumber = android.os.Build.VERSION.SDK_INT;
 //		if (versionNumber >= 11) {
 //			ActionBar actionBar = getActionBar();
 //			if (actionBar != null)
 //				actionBar.setDisplayHomeAsUpEnabled(true);
 //		}
-
 
     }
 
