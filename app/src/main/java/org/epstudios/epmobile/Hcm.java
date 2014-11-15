@@ -25,10 +25,12 @@ import android.widget.CheckBox;
 public class Hcm extends RiskScore {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
 		setContentView(R.layout.hcm);
+        // super sets up toolbar, so need layout first.  Call
+        // after setContentView().
+        super.onCreate(savedInstanceState);
 
-		View calculateButton = findViewById(R.id.calculate_button);
+        View calculateButton = findViewById(R.id.calculate_button);
 		calculateButton.setOnClickListener(this);
 		View clearButton = findViewById(R.id.clear_button);
 		clearButton.setOnClickListener(this);
