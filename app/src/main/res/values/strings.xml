@@ -50,10 +50,10 @@
     <string name="qtc_formula_summary">Select the default QTc formula</string>
     <string name="maximum_qtc_title">Maximum QTc</string>
     <string name="maximum_qtc_summary">Enter the maximum QTc in msec</string>
-    <string name="maximum_qtc_message">This value is used to
+    <string name="maximum_qtc_message">This value in msec is used to
 		color code (with red) abnormally high QTc values</string>
     <string name="maximum_qtc_default_value">440</string>
-    <string name="settings_label">Settings…</string>
+    <string name="settings_label">Settings</string>
     <string name="settings_shortcut">s</string>
     <string name="settings_title">EP Mobile Settings</string>
     <string name="hasbled_title">HAS-BLED Score</string>
@@ -1007,5 +1007,19 @@
    		http://heart.bmj.com/content/94/12/1620.abstract</string>
     <string name="rva_vs_rvb_pacing_title">RV Apex vs Base Pacing</string>
     <string name="para_hisian_pacing_title">Para-Hisian Pacing</string>
+    <string name="qtc_formula_key">qtc_formula</string>
+    <string name="maximum_qtc_key">maximum_qtc</string>
+    <string name="qtc_formula_default_value">BAZETT</string>
+    <string name="interval_rate_default_value">RATE</string>
+    <string name="interval_rate_key">interval_rate</string>
+    <string name="warfarin_tablet_default_value">2</string>
+    <string name="warfarin_tablet_key">default_warfarin_tablet</string>
+    <string name="inr_target_default_value">0</string>
+    <string name="inr_target_key">default_inr_target</string>
+    <string name="weight_unit_default_value">KG</string>
+    <string name="weight_unit_key">default_weight_unit</string>
+    <string name="height_unit_default_value">CM</string>
+    <string name="height_unit_key">default_height_unit</string>
+    <string name="creatinine_unit_default_value">MG</string>
 
 </resources>
