@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 
+import java.util.ArrayList;
+
 /**
  * Copyright (C) 2013, 2014 EP Studios, Inc.
  * www.epstudiossoftware.com
@@ -55,10 +57,12 @@ public class MyPreferenceFragment extends PreferenceFragment
         intervalRateKey = activity.getString(R.string.interval_rate_key);
         intervalRatePref = findPreference(intervalRateKey);
         setPreferenceSummary(intervalRatePref, intervalRateKey, intervalRateDefaultValue, NULL);
-        warfarinTabletDefaultValue = activity.getString(R.string.warfarin_tablet_default_value);
-        warfarinTabletKey = activity.getString(R.string.warfarin_tablet_key);
-        warfarinTabletPref = findPreference(warfarinTabletKey);
-        setPreferenceSummary(warfarinTabletPref, warfarinTabletKey, warfarinTabletDefaultValue, "mg");
+//        warfarinTabletDefaultValue = activity.getString(R.string.warfarin_tablet_default_value);
+//        warfarinTabletKey = activity.getString(R.string.warfarin_tablet_key);
+//        warfarinTabletPref = findPreference(warfarinTabletKey);
+//        String[] warfarinTabletArray = activity.getResources().getStringArray(R.array.warfarin_tablet_values);
+//        int warfarinTabletIndex = getPreferenceScreen().getSharedPreferences().getInt(warfarinTabletKey, 2);
+//        warfarinTabletPref.setSummary(warfarinTabletArray[warfarinTabletIndex]);
     }
 
     @Override
@@ -82,10 +86,10 @@ public class MyPreferenceFragment extends PreferenceFragment
         if (key.equals(intervalRateKey)) {
             intervalRatePref.setSummary(sharedPreferences.getString(key, intervalRateDefaultValue));
         }
-        if (key.equals(warfarinTabletKey)) {
-            warfarinTabletPref.setSummary(sharedPreferences.getString(key, warfarinTabletDefaultValue)
-                + " " + "mg");
-        }
+//        if (key.equals(warfarinTabletKey)) {
+//            warfarinTabletPref.setSummary(sharedPreferences.getString(key, warfarinTabletDefaultValue)
+//                + " " + "mg");
+//        }
         // TODO more prefs
     }
 
