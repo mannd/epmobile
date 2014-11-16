@@ -18,48 +18,37 @@
 
 package org.epstudios.epmobile;
 
-import android.annotation.TargetApi;
 import android.os.Bundle;
-import android.preference.PreferenceActivity;
-import android.preference.PreferenceFragment;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 
-public class Prefs extends PreferenceActivity {
-	
-	private static int prefs = R.xml.settings;
-	
+public class Prefs extends ActionBarActivity {
+
 	@Override
-	protected void onCreate(final Bundle savedInstanceState)
+	protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        try {
-            getClass().getMethod("getFragmentManager");
-            AddResourceApi11AndGreater();
-        } catch (NoSuchMethodException e) { //Api < 11
-            AddResourceApiLessThan11();
+        setContentView(R.layout.prefs);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getFragmentManager().beginTransaction()
+                .replace(R.id.content_frame, new MyPreferenceFragment()).commit();
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                // NavUtils.navigateUpFromSameTask(this);
+                finish();
+                return true;
         }
-    }
-
-    @SuppressWarnings("deprecation")
-    protected void AddResourceApiLessThan11()
-    {
-        addPreferencesFromResource(prefs);
-    }
-
-    @TargetApi(11)
-    protected void AddResourceApi11AndGreater()
-    {
-        getFragmentManager().beginTransaction().replace(android.R.id.content, new PF()).commit();
-    }
-
-    @TargetApi(11)
-    public static class PF extends PreferenceFragment
-    {       
-        @Override
-        public void onCreate(final Bundle savedInstanceState)
-        {
-            super.onCreate(savedInstanceState);
-            addPreferencesFromResource(Prefs.prefs); //outer class private members seem to be visible for inner class, and making it static made things so much easier
-        }
+        return super.onOptionsItemSelected(item);
     }
 
 }
