@@ -29,7 +29,9 @@ public class MyPreferenceFragment extends PreferenceFragment
     private String warfarinTabletDefaultValue;
     private String warfarinTabletKey;
     private Preference warfarinTabletPref;
-    private final String NULL = "";
+    private String inrTargetDefaultValue;
+    private String inrTargetKey;
+    private Preference inrTargetPref;
     private final String msec = "msec";
 
     @Override
@@ -59,6 +61,12 @@ public class MyPreferenceFragment extends PreferenceFragment
         warfarinTabletKey = activity.getString(R.string.warfarin_tablet_key);
         warfarinTabletPref = findPreference(warfarinTabletKey);
         warfarinTabletPref.setSummary(getWarfarinTablet(activity, sharedPreferences));
+
+        inrTargetDefaultValue = activity.getString(R.string.inr_target_default_value);
+        inrTargetKey = activity.getString(R.string.inr_target_key);
+        inrTargetPref = findPreference(inrTargetKey);
+        inrTargetPref.setSummary(getInrTarget(activity, sharedPreferences));
+
     }
 
     @Override
@@ -78,6 +86,9 @@ public class MyPreferenceFragment extends PreferenceFragment
         if (key.equals(warfarinTabletKey)) {
             warfarinTabletPref.setSummary(getWarfarinTablet(getActivity(), sharedPreferences));
         }
+        if (key.equals(inrTargetKey)) {
+            inrTargetPref.setSummary(getInrTarget(getActivity(), sharedPreferences));
+        }
         // TODO more prefs
     }
 
@@ -94,9 +105,14 @@ public class MyPreferenceFragment extends PreferenceFragment
 
     private String getWarfarinTablet(Activity activity, SharedPreferences sharedPreferences) {
         String[] warfarinTabletArray = activity.getResources().getStringArray(R.array.warfarin_tablets);
-        String warfarinTabletIndexString = sharedPreferences.getString(warfarinTabletKey, warfarinTabletDefaultValue);
-        Integer warfarinTabletIndex = Integer.parseInt(warfarinTabletIndexString);
+        Integer warfarinTabletIndex = Integer.parseInt(sharedPreferences.getString(warfarinTabletKey, warfarinTabletDefaultValue));
         return warfarinTabletArray[warfarinTabletIndex];
+    }
+
+    private String getInrTarget(Activity activity, SharedPreferences sharedPreferences) {
+        String[] inrTargetArray = activity.getResources().getStringArray(R.array.inr_targets);
+        Integer inrTargetIndex = Integer.parseInt(sharedPreferences.getString(inrTargetKey, inrTargetDefaultValue));
+        return inrTargetArray[inrTargetIndex];
     }
 
     @Override
