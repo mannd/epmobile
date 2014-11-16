@@ -24,7 +24,7 @@
     <string name="cycle_length_label">Interval/Rate Conversion</string>
     <string name="cycle_length_calculator_title">Interval/Rate Conversion</string>
     <string name="rr_hint">RR (msec)</string>
-    <string name="interval_rate_title">Interval or Rate</string>
+    <string name="interval_rate_title">Use RR Interval or Heart Rate</string>
     <string name="interval_rate_summary">Use RR interval or heart rate as default</string>
     <string name="qt_label">QT Interval (msec)</string>
     <string name="qt_hint">QT (msec)</string>

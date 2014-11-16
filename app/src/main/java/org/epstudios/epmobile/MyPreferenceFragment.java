@@ -37,32 +37,28 @@ public class MyPreferenceFragment extends PreferenceFragment
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.settings);
         Activity activity = getActivity();
+        SharedPreferences sharedPreferences = getPreferenceScreen().getSharedPreferences();
+
         qtcFormulaDefaultValue = activity.getString(R.string.qtc_formula_default_value);
         qtcFormulaKey = activity.getString(R.string.qtc_formula_key);
         qtcFormulaPref = findPreference(qtcFormulaKey);
-        setPreferenceSummary(qtcFormulaPref, qtcFormulaKey, qtcFormulaDefaultValue, NULL);
+        qtcFormulaPref.setSummary(sharedPreferences.getString(qtcFormulaKey, qtcFormulaDefaultValue));
+
         maximumQtcDefaultValue = activity.getString(R.string.maximum_qtc_default_value);
         maximumQtcKey = activity.getString(R.string.maximum_qtc_key);
         maximumQtcPref = findPreference(maximumQtcKey);
-        // handle empty maximum Qtc
-        String maximumQtc = getPreferenceScreen().getSharedPreferences().getString(maximumQtcKey,
-                maximumQtcDefaultValue);
-        if (maximumQtc.length() == 0) {
-            maximumQtcPref.setSummary("No entry (440 msec will be used)");
-        }
-        else {
-            maximumQtcPref.setSummary(maximumQtc + " " + msec);
-        }
+        maximumQtcPref.setSummary(getMaximumQtcSummary(
+                sharedPreferences.getString(maximumQtcKey, maximumQtcDefaultValue)));
+
         intervalRateDefaultValue = activity.getString(R.string.interval_rate_default_value);
         intervalRateKey = activity.getString(R.string.interval_rate_key);
         intervalRatePref = findPreference(intervalRateKey);
-        setPreferenceSummary(intervalRatePref, intervalRateKey, intervalRateDefaultValue, NULL);
-//        warfarinTabletDefaultValue = activity.getString(R.string.warfarin_tablet_default_value);
-//        warfarinTabletKey = activity.getString(R.string.warfarin_tablet_key);
-//        warfarinTabletPref = findPreference(warfarinTabletKey);
-//        String[] warfarinTabletArray = activity.getResources().getStringArray(R.array.warfarin_tablet_values);
-//        int warfarinTabletIndex = getPreferenceScreen().getSharedPreferences().getInt(warfarinTabletKey, 2);
-//        warfarinTabletPref.setSummary(warfarinTabletArray[warfarinTabletIndex]);
+        intervalRatePref.setSummary(sharedPreferences.getString(intervalRateKey, intervalRateDefaultValue));
+
+        warfarinTabletDefaultValue = activity.getString(R.string.warfarin_tablet_default_value);
+        warfarinTabletKey = activity.getString(R.string.warfarin_tablet_key);
+        warfarinTabletPref = findPreference(warfarinTabletKey);
+        warfarinTabletPref.setSummary(getWarfarinTablet(activity, sharedPreferences));
     }
 
     @Override
@@ -74,28 +70,33 @@ public class MyPreferenceFragment extends PreferenceFragment
         }
         if (key.equals(maximumQtcKey)) {
             String maximumQtc = sharedPreferences.getString(key, maximumQtcDefaultValue);
-            // if they enter empty string, show default (and it will be default)
-            if (maximumQtc.length() == 0) {
-                maximumQtcPref.setSummary("No entry (440 msec will be used)");
-            }
-            else {
-                maximumQtcPref.setSummary(sharedPreferences.getString(key,
-                        maximumQtcDefaultValue) + " " + msec);
-            }
+            maximumQtcPref.setSummary(getMaximumQtcSummary(maximumQtc));
         }
         if (key.equals(intervalRateKey)) {
             intervalRatePref.setSummary(sharedPreferences.getString(key, intervalRateDefaultValue));
         }
-//        if (key.equals(warfarinTabletKey)) {
-//            warfarinTabletPref.setSummary(sharedPreferences.getString(key, warfarinTabletDefaultValue)
-//                + " " + "mg");
-//        }
+        if (key.equals(warfarinTabletKey)) {
+            warfarinTabletPref.setSummary(getWarfarinTablet(getActivity(), sharedPreferences));
+        }
         // TODO more prefs
     }
 
-    private void setPreferenceSummary(Preference pref, String key, String defaultValue, String units) {
-        pref.setSummary(getPreferenceScreen().getSharedPreferences().getString(key, defaultValue)
-         + (units.length() > 0 ? " " + units : ""));
+    private String getMaximumQtcSummary(String maximumQtc) {
+        // if they enter empty string, show default (and it will be default)
+        if (maximumQtc.length() == 0) {
+            maximumQtc = "No entry (440 msec will be used)";
+        }
+        else {
+            maximumQtc += " " + msec;
+        }
+        return maximumQtc;
+    }
+
+    private String getWarfarinTablet(Activity activity, SharedPreferences sharedPreferences) {
+        String[] warfarinTabletArray = activity.getResources().getStringArray(R.array.warfarin_tablets);
+        String warfarinTabletIndexString = sharedPreferences.getString(warfarinTabletKey, warfarinTabletDefaultValue);
+        Integer warfarinTabletIndex = Integer.parseInt(warfarinTabletIndexString);
+        return warfarinTabletArray[warfarinTabletIndex];
     }
 
     @Override
