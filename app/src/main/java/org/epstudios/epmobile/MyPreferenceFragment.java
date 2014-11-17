@@ -32,6 +32,15 @@ public class MyPreferenceFragment extends PreferenceFragment
     private String inrTargetDefaultValue;
     private String inrTargetKey;
     private Preference inrTargetPref;
+    private String weightUnitDefaultValue;
+    private String weightUnitKey;
+    private Preference weightUnitPref;
+    private String heightUnitDefaultValue;
+    private String heightUnitKey;
+    private Preference heightUnitPref;
+    private String creatUnitDefaultValue;
+    private String creatUnitKey;
+    private Preference creatUnitPref;
     private final String msec = "msec";
 
     @Override
@@ -67,6 +76,21 @@ public class MyPreferenceFragment extends PreferenceFragment
         inrTargetPref = findPreference(inrTargetKey);
         inrTargetPref.setSummary(getInrTarget(activity, sharedPreferences));
 
+        weightUnitDefaultValue = activity.getString(R.string.weight_unit_default_value);
+        weightUnitKey = activity.getString(R.string.weight_unit_key);
+        weightUnitPref = findPreference(weightUnitKey);
+        weightUnitPref.setSummary(sharedPreferences.getString(weightUnitKey, weightUnitDefaultValue));
+
+        heightUnitDefaultValue = activity.getString(R.string.height_unit_default_value);
+        heightUnitKey = activity.getString(R.string.height_unit_key);
+        heightUnitPref = findPreference(heightUnitKey);
+        heightUnitPref.setSummary(sharedPreferences.getString(heightUnitKey, heightUnitDefaultValue));
+
+        creatUnitDefaultValue = activity.getString(R.string.creatinine_unit_default_value);
+        creatUnitKey = activity.getString(R.string.creatinine_clearance_unit_key);
+        creatUnitPref = findPreference(creatUnitKey);
+        creatUnitPref.setSummary(getCreatUnit(activity, sharedPreferences));
+
     }
 
     @Override
@@ -89,7 +113,15 @@ public class MyPreferenceFragment extends PreferenceFragment
         if (key.equals(inrTargetKey)) {
             inrTargetPref.setSummary(getInrTarget(getActivity(), sharedPreferences));
         }
-        // TODO more prefs
+        if (key.equals(weightUnitKey)) {
+            weightUnitPref.setSummary(sharedPreferences.getString(key, weightUnitDefaultValue));
+        }
+        if (key.equals(heightUnitKey)) {
+            heightUnitPref.setSummary(sharedPreferences.getString(key, heightUnitDefaultValue));
+        }
+        if (key.equals(creatUnitKey)) {
+            creatUnitPref.setSummary(getCreatUnit(getActivity(), sharedPreferences));
+        }
     }
 
     private String getMaximumQtcSummary(String maximumQtc) {
@@ -113,6 +145,15 @@ public class MyPreferenceFragment extends PreferenceFragment
         String[] inrTargetArray = activity.getResources().getStringArray(R.array.inr_targets);
         Integer inrTargetIndex = Integer.parseInt(sharedPreferences.getString(inrTargetKey, inrTargetDefaultValue));
         return inrTargetArray[inrTargetIndex];
+    }
+
+    private String getCreatUnit(Activity activity, SharedPreferences sharedPreferences) {
+        String[] creatUnitArray = activity.getResources().getStringArray(R.array.creatinine_unit_labels);
+        String creatUnitValue = sharedPreferences.getString(creatUnitKey, creatUnitDefaultValue);
+        if (creatUnitValue.equals("MG")) {
+            return creatUnitArray[0];
+        }
+        return creatUnitArray[1]; // MMOL
     }
 
     @Override

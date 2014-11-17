@@ -1021,5 +1021,6 @@
     <string name="height_unit_default_value">CM</string>
     <string name="height_unit_key">default_height_unit</string>
     <string name="creatinine_unit_default_value">MG</string>
+    <string name="creatinine_clearance_unit_key">default_creatinine_unit</string>
 
 </resources>
