@@ -41,7 +41,7 @@ public class MyPreferenceFragment extends PreferenceFragment
     private String creatUnitDefaultValue;
     private String creatUnitKey;
     private Preference creatUnitPref;
-    private final String msec = "msec";
+    private final String msec = getActivity().getString(R.string.msec);
 
     @Override
     public void onCreate(final Bundle savedInstanceState) {
@@ -93,6 +93,17 @@ public class MyPreferenceFragment extends PreferenceFragment
 
     }
 
+    private String getMaximumQtcSummary(String maximumQtc) {
+        // if they enter empty string, show default (and it will be default)
+        if (maximumQtc.length() == 0) {
+            maximumQtc = "No entry (440 msec will be used)";
+        }
+        else {
+            maximumQtc += " " + msec;
+        }
+        return maximumQtc;
+    }
+
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
                                           String key) {
@@ -124,17 +135,6 @@ public class MyPreferenceFragment extends PreferenceFragment
         }
     }
 
-    private String getMaximumQtcSummary(String maximumQtc) {
-        // if they enter empty string, show default (and it will be default)
-        if (maximumQtc.length() == 0) {
-            maximumQtc = "No entry (440 msec will be used)";
-        }
-        else {
-            maximumQtc += " " + msec;
-        }
-        return maximumQtc;
-    }
-
     private String getWarfarinTablet(Activity activity, SharedPreferences sharedPreferences) {
         String[] warfarinTabletArray = activity.getResources().getStringArray(R.array.warfarin_tablets);
         Integer warfarinTabletIndex = Integer.parseInt(sharedPreferences.getString(warfarinTabletKey, warfarinTabletDefaultValue));
@@ -150,7 +150,7 @@ public class MyPreferenceFragment extends PreferenceFragment
     private String getCreatUnit(Activity activity, SharedPreferences sharedPreferences) {
         String[] creatUnitArray = activity.getResources().getStringArray(R.array.creatinine_unit_labels);
         String creatUnitValue = sharedPreferences.getString(creatUnitKey, creatUnitDefaultValue);
-        if (creatUnitValue.equals("MG")) {
+        if (creatUnitValue.equals(creatUnitDefaultValue)) { // MG
             return creatUnitArray[0];
         }
         return creatUnitArray[1]; // MMOL
