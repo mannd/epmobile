@@ -32,10 +32,10 @@ import android.widget.TextView;
 public class CycleLength extends EpActivity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
 		setContentView(R.layout.cyclelength);
+        super.onCreate(savedInstanceState);
 
-		View calculateResultButton = findViewById(R.id.calculate_result_button);
+        View calculateResultButton = findViewById(R.id.calculate_result_button);
 		calculateResultButton.setOnClickListener(this);
 		View clearButton = findViewById(R.id.clear_button);
 		clearButton.setOnClickListener(this);

@@ -41,7 +41,7 @@ public class MyPreferenceFragment extends PreferenceFragment
     private String creatUnitDefaultValue;
     private String creatUnitKey;
     private Preference creatUnitPref;
-    private final String msec = getActivity().getString(R.string.msec);
+    private String msec;
 
     @Override
     public void onCreate(final Bundle savedInstanceState) {
@@ -49,6 +49,8 @@ public class MyPreferenceFragment extends PreferenceFragment
         addPreferencesFromResource(R.xml.settings);
         Activity activity = getActivity();
         SharedPreferences sharedPreferences = getPreferenceScreen().getSharedPreferences();
+        
+        msec = activity.getString(R.string.msec);
 
         qtcFormulaDefaultValue = activity.getString(R.string.qtc_formula_default_value);
         qtcFormulaKey = activity.getString(R.string.qtc_formula_key);
@@ -96,7 +98,7 @@ public class MyPreferenceFragment extends PreferenceFragment
     private String getMaximumQtcSummary(String maximumQtc) {
         // if they enter empty string, show default (and it will be default)
         if (maximumQtc.length() == 0) {
-            maximumQtc = "No entry (440 msec will be used)";
+            maximumQtc = getActivity().getString(R.string.no_default_qtc_selected_error_message);
         }
         else {
             maximumQtc += " " + msec;

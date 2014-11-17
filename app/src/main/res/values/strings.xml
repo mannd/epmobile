@@ -1023,5 +1023,6 @@
     <string name="creatinine_unit_default_value">MG</string>
     <string name="creatinine_clearance_unit_key">default_creatinine_unit</string>
     <string name="msec">msec</string>
+    <string name="no_default_qtc_selected_error_message">No entry (440 msec will be used)</string>
 
 </resources>
