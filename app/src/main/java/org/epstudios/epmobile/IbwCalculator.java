@@ -56,8 +56,8 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.ibw);
+        setContentView(R.layout.ibw);
+        super.onCreate(savedInstanceState);
 
 		View calculateButton = findViewById(R.id.calculate_button);
 		calculateButton.setOnClickListener(this);
