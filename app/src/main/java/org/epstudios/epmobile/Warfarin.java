@@ -35,8 +35,8 @@ public class Warfarin extends EpDrugCalculatorActivity implements
 		OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.warfarin);
+        setContentView(R.layout.warfarin);
+        super.onCreate(savedInstanceState);
 
 		View calculateDoseButton = findViewById(R.id.calculate_dose_button);
 		calculateDoseButton.setOnClickListener(this);

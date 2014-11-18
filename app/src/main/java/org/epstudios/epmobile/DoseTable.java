@@ -29,8 +29,8 @@ public class DoseTable extends EpDrugCalculatorActivity implements
 		OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.dosetable);
+        setContentView(R.layout.dosetable);
+        super.onCreate(savedInstanceState);
 
 		SharedPreferences prefs = PreferenceManager
 				.getDefaultSharedPreferences(getBaseContext());

@@ -1,224 +1,233 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <TableLayout
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:stretchColumns="*" >
+        android:layout_height="match_parent">
 
-        <TableRow>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*">
 
-            <TextView
-                style="@style/WarfarinDayColumnStyle"
-                android:layout_column="1"
-                android:padding="3dip"
-                android:text="@string/day_label" />
+            <TableRow>
 
-            <TextView
-                android:id="@+id/percent1"
-                android:padding="3dip"
-                style="@style/WarfarinDoseColumnStyle" />
+                <TextView
+                    style="@style/WarfarinDayColumnStyle"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:text="@string/day_label" />
 
-            <TextView
-                style="@style/WarfarinDayColumnStyle"
-                android:padding="3dip"
-                android:text="@string/day_label" />
+                <TextView
+                    android:id="@+id/percent1"
+                    style="@style/WarfarinDoseColumnStyle"
+                    android:padding="3dip" />
 
-            <TextView
-                android:id="@+id/percent2"
-                android:padding="3dip"
-                style="@style/WarfarinDoseColumnStyle" />
-        </TableRow>
+                <TextView
+                    style="@style/WarfarinDayColumnStyle"
+                    android:padding="3dip"
+                    android:text="@string/day_label" />
 
-        <View
-            android:layout_height="2dip"
-            android:background="@color/divider" />
+                <TextView
+                    android:id="@+id/percent2"
+                    style="@style/WarfarinDoseColumnStyle"
+                    android:padding="3dip" />
+            </TableRow>
 
-        <TableRow>
+            <View
+                android:layout_height="2dip"
+                android:background="@color/divider" />
 
-            <TextView
-                style="@style/WarfarinDayStyle"
-                android:layout_column="1"
-                android:padding="3dip"
-                android:text="@string/sun_label" />
+            <TableRow>
 
-            <TextView
-                android:id="@+id/sunDose1"
-                android:padding="3dip" />
+                <TextView
+                    style="@style/WarfarinDayStyle"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:text="@string/sun_label" />
 
-            <TextView
-                style="@style/WarfarinDayStyle"
-                android:padding="3dip"
-                android:text="@string/sun_label" />
+                <TextView
+                    android:id="@+id/sunDose1"
+                    android:padding="3dip" />
 
-            <TextView
-                android:id="@+id/sunDose2"
-                android:padding="3dip" />
-        </TableRow>
+                <TextView
+                    style="@style/WarfarinDayStyle"
+                    android:padding="3dip"
+                    android:text="@string/sun_label" />
 
-        <TableRow>
+                <TextView
+                    android:id="@+id/sunDose2"
+                    android:padding="3dip" />
+            </TableRow>
 
-            <TextView
-                style="@style/WarfarinDayStyle"
-                android:layout_column="1"
-                android:padding="3dip"
-                android:text="@string/mon_label" />
+            <TableRow>
 
-            <TextView
-                android:id="@+id/monDose1"
-                android:padding="3dip" />
+                <TextView
+                    style="@style/WarfarinDayStyle"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:text="@string/mon_label" />
 
-            <TextView
-                style="@style/WarfarinDayStyle"
-                android:padding="3dip"
-                android:text="@string/mon_label" />
+                <TextView
+                    android:id="@+id/monDose1"
+                    android:padding="3dip" />
 
-            <TextView
-                android:id="@+id/monDose2"
-                android:padding="3dip" />
-        </TableRow>
+                <TextView
+                    style="@style/WarfarinDayStyle"
+                    android:padding="3dip"
+                    android:text="@string/mon_label" />
 
-        <TableRow>
+                <TextView
+                    android:id="@+id/monDose2"
+                    android:padding="3dip" />
+            </TableRow>
 
-            <TextView
-                style="@style/WarfarinDayStyle"
-                android:layout_column="1"
-                android:padding="3dip"
-                android:text="@string/tue_label" />
+            <TableRow>
 
-            <TextView
-                android:id="@+id/tueDose1"
-                android:padding="3dip" />
+                <TextView
+                    style="@style/WarfarinDayStyle"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:text="@string/tue_label" />
 
-            <TextView
-                style="@style/WarfarinDayStyle"
-                android:padding="3dip"
-                android:text="@string/tue_label" />
+                <TextView
+                    android:id="@+id/tueDose1"
+                    android:padding="3dip" />
 
-            <TextView
-                android:id="@+id/tueDose2"
-                android:padding="3dip" />
-        </TableRow>
+                <TextView
+                    style="@style/WarfarinDayStyle"
+                    android:padding="3dip"
+                    android:text="@string/tue_label" />
 
-        <TableRow>
+                <TextView
+                    android:id="@+id/tueDose2"
+                    android:padding="3dip" />
+            </TableRow>
 
-            <TextView
-                style="@style/WarfarinDayStyle"
-                android:layout_column="1"
-                android:padding="3dip"
-                android:text="@string/wed_label" />
+            <TableRow>
 
-            <TextView
-                android:id="@+id/wedDose1"
-                android:padding="3dip" />
+                <TextView
+                    style="@style/WarfarinDayStyle"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:text="@string/wed_label" />
 
-            <TextView
-                style="@style/WarfarinDayStyle"
-                android:padding="3dip"
-                android:text="@string/wed_label" />
+                <TextView
+                    android:id="@+id/wedDose1"
+                    android:padding="3dip" />
 
-            <TextView
-                android:id="@+id/wedDose2"
-                android:padding="3dip" />
-        </TableRow>
+                <TextView
+                    style="@style/WarfarinDayStyle"
+                    android:padding="3dip"
+                    android:text="@string/wed_label" />
 
-        <TableRow>
+                <TextView
+                    android:id="@+id/wedDose2"
+                    android:padding="3dip" />
+            </TableRow>
 
-            <TextView
-                style="@style/WarfarinDayStyle"
-                android:layout_column="1"
-                android:padding="3dip"
-                android:text="@string/thu_label" />
+            <TableRow>
 
-            <TextView
-                android:id="@+id/thuDose1"
-                android:padding="3dip" />
+                <TextView
+                    style="@style/WarfarinDayStyle"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:text="@string/thu_label" />
 
-            <TextView
-                style="@style/WarfarinDayStyle"
-                android:padding="3dip"
-                android:text="@string/thu_label" />
+                <TextView
+                    android:id="@+id/thuDose1"
+                    android:padding="3dip" />
 
-            <TextView
-                android:id="@+id/thuDose2"
-                android:padding="3dip" />
-        </TableRow>
+                <TextView
+                    style="@style/WarfarinDayStyle"
+                    android:padding="3dip"
+                    android:text="@string/thu_label" />
 
-        <TableRow>
+                <TextView
+                    android:id="@+id/thuDose2"
+                    android:padding="3dip" />
+            </TableRow>
 
-            <TextView
-                style="@style/WarfarinDayStyle"
-                android:layout_column="1"
-                android:padding="3dip"
-                android:text="@string/fri_label" />
+            <TableRow>
 
-            <TextView
-                android:id="@+id/friDose1"
-                android:padding="3dip" />
+                <TextView
+                    style="@style/WarfarinDayStyle"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:text="@string/fri_label" />
 
-            <TextView
-                style="@style/WarfarinDayStyle"
-                android:padding="3dip"
-                android:text="@string/fri_label" />
+                <TextView
+                    android:id="@+id/friDose1"
+                    android:padding="3dip" />
 
-            <TextView
-                android:id="@+id/friDose2"
-                android:padding="3dip" />
-        </TableRow>
+                <TextView
+                    style="@style/WarfarinDayStyle"
+                    android:padding="3dip"
+                    android:text="@string/fri_label" />
 
-        <TableRow>
+                <TextView
+                    android:id="@+id/friDose2"
+                    android:padding="3dip" />
+            </TableRow>
 
-            <TextView
-                style="@style/WarfarinDayStyle"
-                android:layout_column="1"
-                android:padding="3dip"
-                android:text="@string/sat_label" />
+            <TableRow>
 
-            <TextView
-                android:id="@+id/satDose1"
-                android:padding="3dip" />
+                <TextView
+                    style="@style/WarfarinDayStyle"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:text="@string/sat_label" />
 
-            <TextView
-                style="@style/WarfarinDayStyle"
-                android:padding="3dip"
-                android:text="@string/sat_label" />
+                <TextView
+                    android:id="@+id/satDose1"
+                    android:padding="3dip" />
 
-            <TextView
-                android:id="@+id/satDose2"
-                android:padding="3dip" />
-        </TableRow>
+                <TextView
+                    style="@style/WarfarinDayStyle"
+                    android:padding="3dip"
+                    android:text="@string/sat_label" />
 
-        <View
-            android:layout_height="2dip"
-            android:background="@color/divider" />
+                <TextView
+                    android:id="@+id/satDose2"
+                    android:padding="3dip" />
+            </TableRow>
 
-        <TableRow>
+            <View
+                android:layout_height="2dip"
+                android:background="@color/divider" />
 
-            <TextView
-                style="@style/WarfarinDayColumnStyle"
-                android:layout_column="1"
-                android:text="@string/total_label" />
+            <TableRow>
 
-            <TextView
-                android:id="@+id/weeklyDose1"
-                android:layout_column="2"
-                android:padding="3dip"
-                style="@style/WarfarinDoseColumnStyle" />
+                <TextView
+                    style="@style/WarfarinDayColumnStyle"
+                    android:layout_column="1"
+                    android:text="@string/total_label" />
 
-            <TextView
-                style="@style/WarfarinDayColumnStyle"
-                android:layout_column="3"
-                android:text="@string/total_label" />
+                <TextView
+                    android:id="@+id/weeklyDose1"
+                    style="@style/WarfarinDoseColumnStyle"
+                    android:layout_column="2"
+                    android:padding="3dip" />
 
-            <TextView
-                android:id="@+id/weeklyDose2"
-                style="@style/WarfarinDoseColumnStyle"
-                android:layout_column="4"
-                android:padding="3dip" />
+                <TextView
+                    style="@style/WarfarinDayColumnStyle"
+                    android:layout_column="3"
+                    android:text="@string/total_label" />
 
-        </TableRow>
-    </TableLayout>
+                <TextView
+                    android:id="@+id/weeklyDose2"
+                    style="@style/WarfarinDoseColumnStyle"
+                    android:layout_column="4"
+                    android:padding="3dip" />
 
-</ScrollView>
+            </TableRow>
+        </TableLayout>
+
+    </ScrollView>
+
+</LinearLayout>
