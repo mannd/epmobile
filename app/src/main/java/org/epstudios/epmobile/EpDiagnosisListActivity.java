@@ -3,7 +3,7 @@ package org.epstudios.epmobile;
 import android.content.Intent;
 import android.view.MenuItem;
 
-public class EpDiagnosisListActivity extends EpListActivity {
+public abstract class EpDiagnosisListActivity extends EpListActivity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
