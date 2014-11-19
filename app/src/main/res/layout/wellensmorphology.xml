@@ -1,44 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white" >
+    android:orientation="vertical">
 
-    <TableLayout
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dip" >
+        android:layout_height="match_parent">
 
-        <TextView
+        <TableLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/lbbb_wct_label"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@android:color/black" />
+            android:padding="10dip">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:contentDescription="@string/morphology_label"
-            android:src="@drawable/lbbbmorphology" >
-        </ImageView>
+            <TextView
+                android:layout_height="wrap_content"
+                android:text="@string/lbbb_wct_label"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/black" />
 
-        <TextView
-            android:text="@string/rbbb_wct_label"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@android:color/black" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/morphology_label"
+                android:src="@drawable/lbbbmorphology"></ImageView>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:contentDescription="@string/morphology_label"
-            android:src="@drawable/rbbbmorphology" >
-        </ImageView>
+            <TextView
+                android:text="@string/rbbb_wct_label"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/black" />
 
-        <TextView
-            android:text="@string/wellens_reference"
-            android:textColor="@android:color/black" />
-    </TableLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/morphology_label"
+                android:src="@drawable/rbbbmorphology"></ImageView>
 
-</ScrollView>
+            <TextView
+                android:text="@string/wellens_reference"
+                android:textColor="@android:color/black" />
+        </TableLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -2,53 +2,58 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/stepTextView"
+    <include layout="@layout/toolbar" />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="10dip"
-        android:text="@string/step_1"
-        android:textAppearance="?android:attr/textAppearanceLarge" >
-    </TextView>
+        android:layout_height="match_parent"
+        android:padding="3dip"
+        android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/linearLayout1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-        <Button
-            android:id="@+id/yes_button"
+        <TextView
+            android:id="@+id/stepTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/yes" >
-        </Button>
+            android:gravity="center"
+            android:padding="10dip"
+            android:text="@string/step_1"
+            android:textAppearance="?android:attr/textAppearanceLarge"></TextView>
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/yes_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/yes"></Button>
+
+            <Button
+                android:id="@+id/no_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/no"></Button>
+
+            <Button
+                android:id="@+id/back_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/back"></Button>
+        </LinearLayout>
 
         <Button
-            android:id="@+id/no_button"
+            android:id="@+id/morphology_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/no" >
-        </Button>
+            android:text="@string/morphology_label"></Button>
 
-        <Button
-            android:id="@+id/back_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/back" >
-        </Button>
     </LinearLayout>
-
-    <Button
-        android:id="@+id/morphology_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/morphology_label" >
-    </Button>
 
 </LinearLayout>
