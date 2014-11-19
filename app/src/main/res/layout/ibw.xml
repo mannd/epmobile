@@ -14,7 +14,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="3dip">
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin">
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -71,7 +74,10 @@
                         android:id="@+id/ibwTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="3dip"
+                        android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin"
                         android:text="@string/ibw_label"
                         android:textAppearance="?android:attr/textAppearanceSmall"></TextView>
 
@@ -90,7 +96,10 @@
                         android:id="@+id/abwTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="3dip"
+                        android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin"
                         android:text="@string/abw_label"
                         android:textAppearance="?android:attr/textAppearanceSmall"></TextView>
 
@@ -137,7 +146,10 @@
                 android:id="@+id/messageTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="3dip"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin"
                 android:text=""
                 android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
         </LinearLayout>
