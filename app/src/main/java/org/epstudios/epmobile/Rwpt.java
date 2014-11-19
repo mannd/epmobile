@@ -25,8 +25,8 @@ import android.view.MenuItem;
 public class Rwpt extends EpActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.rwpt);
+        setContentView(R.layout.rwpt);
+        super.onCreate(savedInstanceState);
 	}
 
 	@Override

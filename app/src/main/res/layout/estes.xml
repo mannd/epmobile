@@ -1,85 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <LinearLayout
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="3dip" >
-
-        <CheckBox
-            android:id="@+id/voltage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/estes_voltage_label" />
-
-        <CheckBox
-            android:id="@+id/strain_without_dig"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/estes_strain_without_dig_label" />
-
-        <CheckBox
-            android:id="@+id/strain_with_dig"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/estes_strain_with_dig_label" />
-
-        <CheckBox
-            android:id="@+id/lae"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/estes_lae_label" />
-
-        <CheckBox
-            android:id="@+id/lad"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/estes_lad_label" />
-
-        <CheckBox
-            android:id="@+id/qrs_duration"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/estes_qrs_duration_label" />
-
-        <CheckBox
-            android:id="@+id/intrinsicoid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/estes_intrinsicoid_label" />
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="3dip">
 
-            <Button
-                android:id="@+id/calculate_button"
+            <CheckBox
+                android:id="@+id/voltage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/calculate_label" />
+                android:text="@string/estes_voltage_label" />
 
-            <Button
-                android:id="@+id/clear_button"
+            <CheckBox
+                android:id="@+id/strain_without_dig"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/clear_label" />
+                android:text="@string/estes_strain_without_dig_label" />
+
+            <CheckBox
+                android:id="@+id/strain_with_dig"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/estes_strain_with_dig_label" />
+
+            <CheckBox
+                android:id="@+id/lae"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/estes_lae_label" />
+
+            <CheckBox
+                android:id="@+id/lad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/estes_lad_label" />
+
+            <CheckBox
+                android:id="@+id/qrs_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/estes_qrs_duration_label" />
+
+            <CheckBox
+                android:id="@+id/intrinsicoid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/estes_intrinsicoid_label" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/calculate_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/calculate_label" />
+
+                <Button
+                    android:id="@+id/clear_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/clear_label" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dip"
+                android:text="@string/estes_key" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dip"
+                android:text="@string/estes_short_reference" />
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="3dip"
-            android:text="@string/estes_key" />
+    </ScrollView>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="3dip"
-            android:text="@string/estes_short_reference" />
-    </LinearLayout>
-
-</ScrollView>
+</LinearLayout>

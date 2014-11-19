@@ -36,8 +36,8 @@ public class AtrialTachLocalization extends LocationAlgorithm implements
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.complexalgorithm);
+        setContentView(R.layout.complexalgorithm);
+        super.onCreate(savedInstanceState);
 
 		yesButton = (Button) findViewById(R.id.yes_button);
 		yesButton.setOnClickListener(this);

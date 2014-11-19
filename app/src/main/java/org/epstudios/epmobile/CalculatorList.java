@@ -12,14 +12,14 @@ import android.widget.TextView;
 public class CalculatorList extends EpListActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-				this, R.array.calculator_list,
-				android.R.layout.simple_list_item_1);
-		setListAdapter(adapter);
-		ListView lv = getListView();
-		lv.setTextFilterEnabled(true);
+        setContentView(R.layout.selectionlist);
+        super.onCreate(savedInstanceState);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this, R.array.calculator_list, android.R.layout.simple_list_item_1);
+        ListView lv = (ListView) findViewById(R.id.list);
+        lv.setAdapter(adapter);
 
+        lv.setTextFilterEnabled(true);
 		lv.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,

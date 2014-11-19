@@ -21,6 +21,7 @@ package org.epstudios.epmobile;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.app.ActionBarActivity;
@@ -31,31 +32,35 @@ import android.view.MenuItem;
 
 //adds option menu functions
 public abstract class EpActivity extends ActionBarActivity {
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		super.onCreateOptionsMenu(menu);
-		MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.menu, menu);
-		return true;
-	}
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case R.id.settings:
-			startActivity(new Intent(this, Prefs.class));
-			return true;
-		case R.id.about:
-			startActivity(new Intent(this, About.class));
-			return true;
-		}
-		return false;
-	}
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.settings:
+                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
+                    startActivity(new Intent(this, OldPrefs.class));
+                } else {
+                    startActivity(new Intent(this, Prefs.class));
+                }
+                return true;
+            case R.id.about:
+                startActivity(new Intent(this, About.class));
+                return true;
+        }
+        return false;
+    }
 
-	@Override
-	protected void onCreate(Bundle saveInstanceState) {
-		super.onCreate(saveInstanceState);
-        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+    @Override
+    protected void onCreate(Bundle saveInstanceState) {
+        super.onCreate(saveInstanceState);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         if (toolbar != null) {
             setSupportActionBar(toolbar);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);

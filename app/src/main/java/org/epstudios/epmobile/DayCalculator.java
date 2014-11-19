@@ -26,10 +26,10 @@ public class DayCalculator extends EpActivity implements OnClickListener {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
 		setContentView(R.layout.daycalculator);
+        super.onCreate(savedInstanceState);
 
-		View calculateDateButton = findViewById(R.id.calculate_date_button);
+        View calculateDateButton = findViewById(R.id.calculate_date_button);
 		calculateDateButton.setOnClickListener(this);
 		View clearButton = findViewById(R.id.clear_button);
 		clearButton.setOnClickListener(this);

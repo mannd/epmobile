@@ -23,19 +23,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-public abstract class EpListActivity extends EpMainListActivity {
-	// adds up button
-	@Override
-	protected void onCreate(Bundle saveInstanceState) {
-		super.onCreate(saveInstanceState);
-
-		int versionNumber = android.os.Build.VERSION.SDK_INT;
-		if (versionNumber >= 11) {
-			ActionBar actionBar = getActionBar();
-			if (actionBar != null)
-				actionBar.setDisplayHomeAsUpEnabled(true);
-		}
-	}
+public abstract class EpListActivity extends EpActivity {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {

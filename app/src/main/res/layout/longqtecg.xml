@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white" >
+    android:orientation="vertical">
 
-    <ImageView
+    <include layout="@layout/toolbar" />
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:contentDescription="@string/lqt_ecg_title"
-        android:src="@drawable/longqtecg" />
+        android:background="@android:color/white">
 
-</FrameLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/lqt_ecg_title"
+            android:src="@drawable/longqtecg" />
+
+    </FrameLayout>
+
+</LinearLayout>

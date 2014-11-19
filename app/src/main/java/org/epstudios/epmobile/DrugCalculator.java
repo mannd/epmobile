@@ -25,8 +25,8 @@ public abstract class DrugCalculator extends EpDrugCalculatorActivity implements
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.drugcalculator);
+        setContentView(R.layout.drugcalculator);
+        super.onCreate(savedInstanceState);
 
 		View calculateDoseButton = findViewById(R.id.calculate_dose_button);
 		calculateDoseButton.setOnClickListener(this);
@@ -282,7 +282,7 @@ public abstract class DrugCalculator extends EpDrugCalculatorActivity implements
 		else
 			defaultWeightUnitSelection = WeightUnit.LB;
 		String creatinineUnitPreference = prefs.getString(
-				"default_creatinine_unit", "MG");
+				getString(R.string.creatinine_clearance_unit_key), "MG");
 		if (creatinineUnitPreference.equals("MG"))
 			defaultCreatinineUnitSelection = CreatinineUnit.MG;
 		else

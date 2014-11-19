@@ -25,8 +25,8 @@ import android.view.MenuItem;
 public class WctMorphologyCriteria extends EpActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.wellensmorphology);
+        setContentView(R.layout.wellensmorphology);
+        super.onCreate(savedInstanceState);
 	}
 
 	@Override

@@ -7,8 +7,8 @@ import android.view.MenuItem;
 public class LongQtEcg extends EpActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.longqtecg);
+        setContentView(R.layout.longqtecg);
+        super.onCreate(savedInstanceState);
 	}
 
 	@Override
