@@ -38,8 +38,8 @@ public class BrugadaMorphologyCriteria extends EpActivity implements
 		OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.wctmorphologycriteria);
+        setContentView(R.layout.wctmorphologycriteria);
+        super.onCreate(savedInstanceState);
 
 		View calculateButton = findViewById(R.id.calculate_button);
 		calculateButton.setOnClickListener(this);

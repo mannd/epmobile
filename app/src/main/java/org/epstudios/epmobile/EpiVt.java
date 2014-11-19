@@ -7,8 +7,8 @@ import android.view.MenuItem;
 public class EpiVt extends EpActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.epivt);
+        setContentView(R.layout.epivt);
+        super.onCreate(savedInstanceState);
 	}
 
 	@Override

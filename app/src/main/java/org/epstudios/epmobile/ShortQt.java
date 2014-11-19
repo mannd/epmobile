@@ -29,8 +29,8 @@ import android.widget.RadioGroup;
 public class ShortQt extends EpDiagnosisActivity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.shortqt);
+        setContentView(R.layout.shortqt);
+        super.onCreate(savedInstanceState);
 
 		View calculateButton = findViewById(R.id.calculate_button);
 		calculateButton.setOnClickListener(this);
