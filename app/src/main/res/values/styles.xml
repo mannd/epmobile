@@ -5,15 +5,14 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:padding">3dip</item>
-        <item name="android:background">@android:color/background_light</item>
-        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textColor">@color/green</item>
     </style>
 
     <style name="Header2" parent="@android:style/TextAppearance.Small">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:padding">3dip</item>
-        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textColor">@color/dark_goldenrod_1</item>
     </style>
 
     <style name="RightColumnValue" parent="@android:style/TextAppearance.Medium">
@@ -21,7 +20,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">right</item>
         <item name="android:padding">3dip</item>
-        <item name="android:textColor">@color/yellow</item>
+        <item name="android:textColor">@color/sienna_2</item>
     </style>
 
     <style name="LeftColumnLabel" parent="@android:style/TextAppearance.Medium">
@@ -42,11 +41,11 @@
     </style>
 
     <style name="WarfarinDayColumnStyle">
-        <item name="android:textColor">@color/yellow</item>
+        <item name="android:textColor">@color/green</item>
     </style>
 
     <style name="WarfarinDoseColumnStyle">
-        <item name="android:textColor">@color/green</item>
+        <item name="android:textColor">@color/sienna_2</item>
     </style>
 
 </resources>

@@ -20,35 +20,23 @@
                 <TextView
                     style="@style/WarfarinDayColumnStyle"
                     android:layout_column="1"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin"
+                    android:padding="3dip"
                     android:text="@string/day_label" />
 
                 <TextView
                     android:id="@+id/percent1"
                     style="@style/WarfarinDoseColumnStyle"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin" />
+                    android:padding="3dip" />
 
                 <TextView
                     style="@style/WarfarinDayColumnStyle"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin"
+                    android:padding="3dip"
                     android:text="@string/day_label" />
 
                 <TextView
                     android:id="@+id/percent2"
                     style="@style/WarfarinDoseColumnStyle"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin" />
+                    android:padding="3dip" />
             </TableRow>
 
             <View
@@ -60,33 +48,21 @@
                 <TextView
                     style="@style/WarfarinDayStyle"
                     android:layout_column="1"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin"
+                    android:padding="3dip"
                     android:text="@string/sun_label" />
 
                 <TextView
                     android:id="@+id/sunDose1"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin" />
+                    android:padding="3dip" />
 
                 <TextView
                     style="@style/WarfarinDayStyle"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin"
+                    android:padding="3dip"
                     android:text="@string/sun_label" />
 
                 <TextView
                     android:id="@+id/sunDose2"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin" />
+                    android:padding="3dip" />
             </TableRow>
 
             <TableRow>
@@ -94,33 +70,21 @@
                 <TextView
                     style="@style/WarfarinDayStyle"
                     android:layout_column="1"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin"
+                    android:padding="3dip"
                     android:text="@string/mon_label" />
 
                 <TextView
                     android:id="@+id/monDose1"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin" />
+                    android:padding="3dip" />
 
                 <TextView
                     style="@style/WarfarinDayStyle"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin"
+                    android:padding="3dip"
                     android:text="@string/mon_label" />
 
                 <TextView
                     android:id="@+id/monDose2"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin" />
+                    android:padding="3dip" />
             </TableRow>
 
             <TableRow>
@@ -128,33 +92,21 @@
                 <TextView
                     style="@style/WarfarinDayStyle"
                     android:layout_column="1"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin"
+                    android:padding="3dip"
                     android:text="@string/tue_label" />
 
                 <TextView
                     android:id="@+id/tueDose1"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin" />
+                    android:padding="3dip" />
 
                 <TextView
                     style="@style/WarfarinDayStyle"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin"
+                    android:padding="3dip"
                     android:text="@string/tue_label" />
 
                 <TextView
                     android:id="@+id/tueDose2"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin" />
+                    android:padding="3dip" />
             </TableRow>
 
             <TableRow>
@@ -162,33 +114,21 @@
                 <TextView
                     style="@style/WarfarinDayStyle"
                     android:layout_column="1"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin"
+                    android:padding="3dip"
                     android:text="@string/wed_label" />
 
                 <TextView
                     android:id="@+id/wedDose1"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin" />
+                    android:padding="3dip" />
 
                 <TextView
                     style="@style/WarfarinDayStyle"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin"
+                    android:padding="3dip"
                     android:text="@string/wed_label" />
 
                 <TextView
                     android:id="@+id/wedDose2"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin" />
+                    android:padding="3dip" />
             </TableRow>
 
             <TableRow>
@@ -196,33 +136,21 @@
                 <TextView
                     style="@style/WarfarinDayStyle"
                     android:layout_column="1"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin"
+                    android:padding="3dip"
                     android:text="@string/thu_label" />
 
                 <TextView
                     android:id="@+id/thuDose1"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin" />
+                    android:padding="3dip" />
 
                 <TextView
                     style="@style/WarfarinDayStyle"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin"
+                    android:padding="3dip"
                     android:text="@string/thu_label" />
 
                 <TextView
                     android:id="@+id/thuDose2"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin" />
+                    android:padding="3dip" />
             </TableRow>
 
             <TableRow>
@@ -230,33 +158,21 @@
                 <TextView
                     style="@style/WarfarinDayStyle"
                     android:layout_column="1"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin"
+                    android:padding="3dip"
                     android:text="@string/fri_label" />
 
                 <TextView
                     android:id="@+id/friDose1"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin" />
+                    android:padding="3dip" />
 
                 <TextView
                     style="@style/WarfarinDayStyle"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin"
+                    android:padding="3dip"
                     android:text="@string/fri_label" />
 
                 <TextView
                     android:id="@+id/friDose2"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin" />
+                    android:padding="3dip" />
             </TableRow>
 
             <TableRow>
@@ -264,33 +180,21 @@
                 <TextView
                     style="@style/WarfarinDayStyle"
                     android:layout_column="1"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin"
+                    android:padding="3dip"
                     android:text="@string/sat_label" />
 
                 <TextView
                     android:id="@+id/satDose1"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin" />
+                    android:padding="3dip" />
 
                 <TextView
                     style="@style/WarfarinDayStyle"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin"
+                    android:padding="3dip"
                     android:text="@string/sat_label" />
 
                 <TextView
                     android:id="@+id/satDose2"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin" />
+                    android:padding="3dip" />
             </TableRow>
 
             <View
@@ -308,10 +212,7 @@
                     android:id="@+id/weeklyDose1"
                     style="@style/WarfarinDoseColumnStyle"
                     android:layout_column="2"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin" />
+                    android:padding="3dip" />
 
                 <TextView
                     style="@style/WarfarinDayColumnStyle"
@@ -322,10 +223,7 @@
                     android:id="@+id/weeklyDose2"
                     style="@style/WarfarinDoseColumnStyle"
                     android:layout_column="4"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin" />
+                    android:padding="3dip" />
 
             </TableRow>
         </TableLayout>
