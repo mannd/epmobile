@@ -8,10 +8,10 @@ public class RvaVsRvbPacing extends EpReferenceActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+        setContentView(R.layout.weblayout);
 		super.onCreate(savedInstanceState);
 		String url = "file:///android_asset/rvapexvsbasepacing.html";
-		webView = new WebView(this);
-		setContentView(webView);
+		webView = (WebView) findViewById(R.id.web_view);
 		webView.loadUrl(url);
 	}
 

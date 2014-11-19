@@ -12,13 +12,15 @@ import android.widget.TextView;
 public class SyncopeRiskScoreList extends EpRiskScoreListActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+        setContentView(R.layout.selectionlist);
 		super.onCreate(savedInstanceState);
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
 				this, R.array.syncope_risk_scores,
 				android.R.layout.simple_list_item_1);
-		setListAdapter(adapter);
-		ListView lv = getListView();
-		lv.setTextFilterEnabled(true);
+        ListView lv = (ListView) findViewById(R.id.list);
+        lv.setAdapter(adapter);
+
+        lv.setTextFilterEnabled(true);
 
 		lv.setOnItemClickListener(new OnItemClickListener() {
 			@Override

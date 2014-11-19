@@ -20,6 +20,8 @@ package org.epstudios.epmobile;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -27,54 +29,57 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class EpMobile extends EpMainListActivity {
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-				this, R.array.main_index, android.R.layout.simple_list_item_1);
-		setListAdapter(adapter);
-		ListView lv = getListView();
-		lv.setTextFilterEnabled(true);
+public class EpMobile extends EpActivity {
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        setContentView(R.layout.selectionlist);
+        super.onCreate(savedInstanceState);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this, R.array.main_index, android.R.layout.simple_list_item_1);
+        ListView lv = (ListView) findViewById(R.id.list);
+        lv.setAdapter(adapter);
 
-		lv.setOnItemClickListener(new OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-				String selection = ((TextView) view).getText().toString();
-				if (selection.equals(getString(R.string.calculator_list_title)))
-					calculatorList();
-				else if (selection
-						.equals(getString(R.string.reference_list_title)))
-					referenceList();
-				else if (selection
-						.equals(getString(R.string.risk_score_list_title)))
-					riskScores();
-				else if (selection
-						.equals(getString(R.string.diagnosis_list_title)))
-					diagnosisList();
-			}
-		});
-	}
+        lv.setTextFilterEnabled(true);
 
-	private void calculatorList() {
-		Intent i = new Intent(this, CalculatorList.class);
-		startActivity(i);
-	}
+        lv.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                String selection = ((TextView) view).getText().toString();
+                if (selection.equals(getString(R.string.calculator_list_title)))
+                    calculatorList();
+                else if (selection
+                        .equals(getString(R.string.reference_list_title)))
+                    referenceList();
+                else if (selection
+                        .equals(getString(R.string.risk_score_list_title)))
+                    riskScores();
+                else if (selection
+                        .equals(getString(R.string.diagnosis_list_title)))
+                    diagnosisList();
+            }
+        });
+    }
 
-	private void diagnosisList() {
-		Intent i = new Intent(this, DiagnosisList.class);
-		startActivity(i);
-	}
+    private void calculatorList() {
+        Intent i = new Intent(this, CalculatorList.class);
+        startActivity(i);
+    }
 
-	private void riskScores() {
-		Intent i = new Intent(this, RiskScoreList.class);
-		startActivity(i);
-	}
+    private void diagnosisList() {
+        Intent i = new Intent(this, DiagnosisList.class);
+        startActivity(i);
+    }
 
-	private void referenceList() {
-		Intent i = new Intent(this, ReferenceList.class);
-		startActivity(i);
-	}
+    private void riskScores() {
+        Intent i = new Intent(this, RiskScoreList.class);
+        startActivity(i);
+    }
+
+    private void referenceList() {
+        Intent i = new Intent(this, ReferenceList.class);
+        startActivity(i);
+    }
 
 }
