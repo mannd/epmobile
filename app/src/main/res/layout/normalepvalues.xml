@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        >
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*">
+
+            <TextView
+                style="@style/Header1"
+                android:text="@string/basic_intervals_label" />
+
+            <TableRow>
+
+                <TextView
+                    style="@style/LeftColumnLabel"
+                    android:text="@string/ah" />
+
+                <TextView
+                    style="@style/RightColumnValue"
+                    android:text="@string/ah_normal" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/LeftColumnLabel"
+                    android:text="@string/hv" />
+
+                <TextView
+                    style="@style/RightColumnValue"
+                    android:text="@string/hv_normal" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/LeftColumnLabel"
+                    android:text="@string/h_duration" />
+
+                <TextView
+                    style="@style/RightColumnValue"
+                    android:text="@string/h_duration_normal" />
+            </TableRow>
+
+            <TextView
+                style="@style/Header1"
+                android:text="@string/sinus_node_label" />
+
+            <TableRow>
+
+                <TextView
+                    style="@style/LeftColumnLabel"
+                    android:text="@string/sact" />
+
+                <TextView
+                    style="@style/RightColumnValue"
+                    android:text="@string/sact_normal" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/LeftColumnLabel"
+                    android:text="@string/csnrt" />
+
+                <TextView
+                    style="@style/RightColumnValue"
+                    android:text="@string/csnrt_normal" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/LeftColumnLabel"
+                    android:text="@string/srt_scl" />
+
+                <TextView
+                    style="@style/RightColumnValue"
+                    android:text="@string/srt_scl_normal" />
+            </TableRow>
+
+            <TextView
+                style="@style/Header1"
+                android:text="@string/refractory_periods_label" />
+
+            <TableRow>
+
+                <TextView
+                    style="@style/LeftColumnLabel"
+                    android:text="@string/aerp" />
+
+                <TextView
+                    style="@style/RightColumnValue"
+                    android:text="@string/aerp_normal" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/LeftColumnLabel"
+                    android:text="@string/avn_bcl" />
+
+                <TextView
+                    style="@style/RightColumnValue"
+                    android:text="@string/avn_bcl_normal" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/LeftColumnLabel"
+                    android:text="@string/avn_erp" />
+
+                <TextView
+                    style="@style/RightColumnValue"
+                    android:text="@string/avn_erp_normal" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/LeftColumnLabel"
+                    android:text="@string/avn_frp" />
+
+                <TextView
+                    style="@style/RightColumnValue"
+                    android:text="@string/avn_frp_normal" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/LeftColumnLabel"
+                    android:text="@string/hps_erp" />
+
+                <TextView
+                    style="@style/RightColumnValue"
+                    android:text="@string/hps_erp_normal" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/LeftColumnLabel"
+                    android:text="@string/verp" />
+
+                <TextView
+                    style="@style/RightColumnValue"
+                    android:text="@string/verp_normal" />
+            </TableRow>
+
+            <TextView
+                android:text="@string/normal_ep_values_reference" />
+        </TableLayout>
+
+    </ScrollView>
+
+</LinearLayout>

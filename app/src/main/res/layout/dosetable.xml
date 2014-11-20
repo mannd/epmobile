@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*">
+
+            <TableRow>
+
+                <TextView
+                    style="@style/WarfarinDayColumnStyle"
+                    android:layout_column="1"
+                    android:text="@string/day_label" />
+
+                <TextView
+                    android:id="@+id/percent1"
+                    style="@style/WarfarinDoseColumnStyle" />
+
+                <TextView
+                    style="@style/WarfarinDayColumnStyle"
+                    android:text="@string/day_label" />
+
+                <TextView
+                    android:id="@+id/percent2"
+                    style="@style/WarfarinDoseColumnStyle" />
+            </TableRow>
+
+            <View
+                android:layout_height="2dip"
+                android:background="@color/divider" />
+
+            <TableRow>
+
+                <TextView
+                    style="@style/WarfarinDayStyle"
+                    android:layout_column="1"
+                    android:text="@string/sun_label" />
+
+                <TextView android:id="@+id/sunDose1" />
+
+                <TextView
+                    style="@style/WarfarinDayStyle"
+                    android:text="@string/sun_label" />
+
+                <TextView android:id="@+id/sunDose2" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/WarfarinDayStyle"
+                    android:layout_column="1"
+                    android:text="@string/mon_label" />
+
+                <TextView android:id="@+id/monDose1" />
+
+                <TextView
+                    style="@style/WarfarinDayStyle"
+                    android:text="@string/mon_label" />
+
+                <TextView android:id="@+id/monDose2" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/WarfarinDayStyle"
+                    android:layout_column="1"
+                    android:text="@string/tue_label" />
+
+                <TextView android:id="@+id/tueDose1" />
+
+                <TextView
+                    style="@style/WarfarinDayStyle"
+                    android:text="@string/tue_label" />
+
+                <TextView android:id="@+id/tueDose2" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/WarfarinDayStyle"
+                    android:layout_column="1"
+                    android:text="@string/wed_label" />
+
+                <TextView android:id="@+id/wedDose1" />
+
+                <TextView
+                    style="@style/WarfarinDayStyle"
+                    android:text="@string/wed_label" />
+
+                <TextView android:id="@+id/wedDose2" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/WarfarinDayStyle"
+                    android:layout_column="1"
+                    android:text="@string/thu_label" />
+
+                <TextView android:id="@+id/thuDose1" />
+
+                <TextView
+                    style="@style/WarfarinDayStyle"
+                    android:text="@string/thu_label" />
+
+                <TextView android:id="@+id/thuDose2" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/WarfarinDayStyle"
+                    android:layout_column="1"
+                    android:text="@string/fri_label" />
+
+                <TextView android:id="@+id/friDose1" />
+
+                <TextView
+                    style="@style/WarfarinDayStyle"
+                    android:text="@string/fri_label" />
+
+                <TextView android:id="@+id/friDose2" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/WarfarinDayStyle"
+                    android:layout_column="1"
+                    android:text="@string/sat_label" />
+
+                <TextView android:id="@+id/satDose1" />
+
+                <TextView
+                    style="@style/WarfarinDayStyle"
+                    android:text="@string/sat_label" />
+
+                <TextView android:id="@+id/satDose2" />
+            </TableRow>
+
+            <View
+                android:layout_height="2dip"
+                android:background="@color/divider" />
+
+            <TableRow>
+
+                <TextView
+                    style="@style/WarfarinDayColumnStyle"
+                    android:layout_column="1"
+                    android:text="@string/total_label" />
+
+                <TextView
+                    android:id="@+id/weeklyDose1"
+                    style="@style/WarfarinDoseColumnStyle"
+                    android:layout_column="2" />
+
+                <TextView
+                    style="@style/WarfarinDayColumnStyle"
+                    android:layout_column="3"
+                    android:text="@string/total_label" />
+
+                <TextView
+                    android:id="@+id/weeklyDose2"
+                    style="@style/WarfarinDoseColumnStyle"
+                    android:layout_column="4" />
+
+            </TableRow>
+        </TableLayout>
+
+    </ScrollView>
+
+</LinearLayout>

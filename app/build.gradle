@@ -1,0 +1,27 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.0.2"
+
+    defaultConfig {
+        applicationId "org.epstudios.epmobile"
+        minSdkVersion 7
+        targetSdkVersion 21
+        versionCode 39
+        versionName "2.7"
+
+    }
+
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:21.0.0'
+}
+

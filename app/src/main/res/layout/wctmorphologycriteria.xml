@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        >
+
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <Spinner android:id="@+id/bbb_spinner"></Spinner>
+
+            <CheckBox
+                android:id="@+id/broad_r"
+                android:text="@string/broad_r" />
+
+            <CheckBox
+                android:id="@+id/broad_rs"
+                android:text="@string/broad_rs" />
+
+            <CheckBox
+                android:id="@+id/notched_s"
+                android:text="@string/notched_s" />
+
+            <CheckBox
+                android:id="@+id/lbbb_q_v6"
+                android:text="@string/q_v6" />
+
+            <CheckBox
+                android:id="@+id/monophasic_r_v1"
+                android:text="@string/monophasic_r_v1" />
+
+            <CheckBox
+                android:id="@+id/qr_v1"
+                android:text="@string/qr_v1" />
+
+            <CheckBox
+                android:id="@+id/rs_v1"
+                android:text="@string/rs_v1" />
+
+            <CheckBox
+                android:id="@+id/deep_s_v6"
+                android:text="@string/deep_s_v6" />
+
+            <CheckBox
+                android:id="@+id/rbbb_q_v6"
+                android:text="@string/q_v6" />
+
+            <CheckBox
+                android:id="@+id/monophasic_r_v6"
+                android:text="@string/monophasic_r_v6" />
+
+            <TableRow>
+
+                <Button
+                    android:id="@+id/calculate_button"
+                    android:text="@string/calculate_label" />
+
+                <Button
+                    android:id="@+id/clear_button"
+                    android:text="@string/clear_label" />
+            </TableRow>
+        </TableLayout>
+
+    </ScrollView>
+
+</LinearLayout>

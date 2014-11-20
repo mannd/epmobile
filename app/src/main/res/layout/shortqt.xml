@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Header1"
+                android:text="@string/qtc_label" />
+
+            <RadioGroup
+                android:id="@+id/qtc_radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/short_qt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/short_qt_label"></RadioButton>
+
+                <RadioButton
+                    android:id="@+id/shorter_qt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/shorter_qt_label"></RadioButton>
+
+                <RadioButton
+                    android:id="@+id/shortest_qt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/shortest_qt_label"></RadioButton>
+            </RadioGroup>
+
+            <TextView
+                style="@style/Header1"
+                android:text="@string/jt_label" />
+
+            <CheckBox
+                android:id="@+id/short_jt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/short_jt_label" />
+
+            <TextView
+                style="@style/Header1"
+                android:text="@string/clinical_history_label" />
+
+            <CheckBox
+                android:id="@+id/sudden_cardiac_arrest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sudden_cardiac_arrest_label" />
+
+            <CheckBox
+                android:id="@+id/polymorphic_vt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/polymorphic_vt_label" />
+
+            <CheckBox
+                android:id="@+id/unexplained_syncope"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/unexplained_syncope_label" />
+
+            <CheckBox
+                android:id="@+id/afb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/afb_label" />
+
+            <TextView
+                style="@style/Header1"
+                android:text="@string/family_hx_label" />
+
+            <CheckBox
+                android:id="@+id/relative_with_sqts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/relative_with_sqts_label" />
+
+            <CheckBox
+                android:id="@+id/relative_with_sd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/relative_with_sd_label" />
+
+            <CheckBox
+                android:id="@+id/sids"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sids_label" />
+
+            <TextView
+                style="@style/Header1"
+                android:text="@string/genotype_label" />
+
+            <CheckBox
+                android:id="@+id/genotype_positive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/genotype_positive_label" />
+
+            <CheckBox
+                android:id="@+id/mutation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mutation_label" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/calculate_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/calculate_label" />
+
+                <Button
+                    android:id="@+id/clear_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/clear_label" />
+
+                <Button
+                    android:id="@+id/instructions_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/instructions_label" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sqts_reference" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

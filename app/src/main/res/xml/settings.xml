@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="@string/qtc_settings" >
+        <ListPreference
+            android:defaultValue="@string/qtc_formula_default_value"
+            android:entries="@array/formula_names"
+            android:entryValues="@array/formula_values"
+            android:key="@string/qtc_formula_key"
+            android:summary="@string/qtc_formula_summary"
+            android:title="@string/qtc_formula_title" >
+        </ListPreference>
+
+        <EditTextPreference
+            android:defaultValue="@string/maximum_qtc_default_value"
+            android:dialogMessage="@string/maximum_qtc_message"
+            android:dialogTitle="@string/maximum_qtc_title"
+            android:inputType="number"
+            android:key="@string/maximum_qtc_key"
+            android:summary="@string/maximum_qtc_summary"
+            android:title="@string/maximum_qtc_title" >
+        </EditTextPreference>
+
+        <ListPreference
+            android:defaultValue="@string/interval_rate_default_value"
+            android:entries="@array/interval_rate_labels"
+            android:entryValues="@array/interval_rate_values"
+            android:key="@string/interval_rate_key"
+            android:summary="@string/interval_rate_summary"
+            android:title="@string/interval_rate_title" >
+        </ListPreference>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/warfarin_settings" >
+        <ListPreference
+            android:defaultValue="@string/warfarin_tablet_default_value"
+            android:entries="@array/warfarin_tablets"
+            android:entryValues="@array/warfarin_tablet_values"
+            android:key="@string/warfarin_tablet_key"
+            android:summary="@string/default_warfarin_tablet_summary"
+            android:title="@string/default_warfarin_tablet_title" >
+        </ListPreference>
+        <ListPreference
+            android:defaultValue="@string/inr_target_default_value"
+            android:entries="@array/inr_targets"
+            android:entryValues="@array/inr_target_values"
+            android:key="@string/inr_target_key"
+            android:summary="@string/default_inr_target_summary"
+            android:title="@string/default_inr_target_title" >
+        </ListPreference>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/drug_calculator_settings" >
+        <ListPreference
+            android:defaultValue="@string/weight_unit_default_value"
+            android:entries="@array/weight_unit_labels"
+            android:entryValues="@array/weight_unit_values"
+            android:key="@string/weight_unit_key"
+            android:summary="@string/default_weight_unit_summary"
+            android:title="@string/default_weight_unit_title" >
+        </ListPreference>
+        <ListPreference
+            android:defaultValue="@string/height_unit_default_value"
+            android:entries="@array/height_unit_labels"
+            android:entryValues="@array/height_unit_values"
+            android:key="@string/height_unit_key"
+            android:summary="@string/default_height_unit_summary"
+            android:title="@string/default_height_unit_title" >
+        </ListPreference>
+        <ListPreference
+            android:defaultValue="@string/creatinine_unit_default_value"
+            android:entries="@array/creatinine_unit_labels"
+            android:entryValues="@array/creatinine_unit_values"
+            android:key="default_creatinine_unit"
+            android:summary="@string/default_creatinine_unit_summary"
+            android:title="@string/default_creatinine_unit_title" >
+        </ListPreference>
+    </PreferenceCategory>
+
+</PreferenceScreen>

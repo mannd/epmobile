@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/Header1"
+                android:text="@string/global_dysfunction_label" />
+
+            <TextView
+                style="@style/Header2"
+                android:text="@string/major" />
+
+            <CheckBox
+                android:id="@+id/rv_dilatation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/arvc_old_rv_dilatation" />
+
+            <CheckBox
+                android:id="@+id/rv_aneurysms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/arvc_old_rv_aneurysms" />
+
+            <CheckBox
+                android:id="@+id/rv_segmental_dilatation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/arvc_old_rv_segmental_dilatation" />
+
+            <TextView
+                style="@style/Header2"
+                android:text="@string/minor" />
+
+            <CheckBox
+                android:id="@+id/mild_rv_dilatation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/arvc_old_mild_rv_dilatation" />
+
+            <CheckBox
+                android:id="@+id/mild_rv_segmental_dilatation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/arvc_old_mild_rv_segmental_dilatation" />
+
+            <CheckBox
+                android:id="@+id/regional_rv_hypokinesia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/arvc_old_regional_rv_hypokinesia" />
+
+            <TextView
+                style="@style/Header1"
+                android:text="@string/tissue_label" />
+
+            <TextView
+                style="@style/Header2"
+                android:text="@string/major" />
+
+            <CheckBox
+                android:id="@+id/fatty_replacement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/arvc_old_fatty_replacement" />
+
+            <TextView
+                style="@style/Header1"
+                android:text="@string/repolarization_label" />
+
+            <TextView
+                style="@style/Header2"
+                android:text="@string/minor" />
+
+            <CheckBox
+                android:id="@+id/twi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/arvc_old_twi" />
+
+            <TextView
+                style="@style/Header1"
+                android:text="@string/depolarization_label" />
+
+            <TextView
+                style="@style/Header2"
+                android:text="@string/major" />
+
+            <CheckBox
+                android:id="@+id/epsilon_waves"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/arvc_old_epsilon_waves" />
+
+            <TextView
+                style="@style/Header2"
+                android:text="@string/minor" />
+
+            <CheckBox
+                android:id="@+id/late_potentials"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/arvc_old_late_potentials" />
+
+            <TextView
+                style="@style/Header1"
+                android:text="@string/arrhythmias_label" />
+
+            <TextView
+                style="@style/Header2"
+                android:text="@string/minor" />
+
+            <CheckBox
+                android:id="@+id/lbbb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/arvc_old_lbbb" />
+
+            <CheckBox
+                android:id="@+id/pvcs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/arvc_old_pvcs" />
+
+            <TextView
+                style="@style/Header1"
+                android:text="@string/family_history_label" />
+
+            <TextView
+                style="@style/Header2"
+                android:text="@string/major" />
+
+            <CheckBox
+                android:id="@+id/familial_disease"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/arvc_old_familial_disease" />
+
+            <TextView
+                style="@style/Header2"
+                android:text="@string/minor" />
+
+            <CheckBox
+                android:id="@+id/family_hx_scd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/arvc_old_family_hx_scd" />
+
+            <CheckBox
+                android:id="@+id/family_hx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/arvc_old_family_hx" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/calculate_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/calculate_label" />
+
+                <Button
+                    android:id="@+id/clear_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/clear_label" />
+            </LinearLayout>
+
+            <TextView
+                android:autoLink="web"
+                android:text="@string/arvc_old_reference" />
+        </TableLayout>
+
+    </ScrollView>
+
+</LinearLayout>

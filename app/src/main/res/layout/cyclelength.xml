@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:stretchColumns="*">
+
+        <RadioGroup
+            android:id="@+id/intervalRateRadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/cl_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/cl_label"></RadioButton>
+
+            <RadioButton
+                android:id="@+id/hr_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hr_label"></RadioButton>
+        </RadioGroup>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/MeasurementTextView"
+                android:text="@string/cl_hint"
+                android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
+
+            <EditText
+                android:id="@+id/inputEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/cl_hint"
+                android:inputType="number"
+                android:text=""></EditText>
+        </TableRow>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:padding="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/calculate_result_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/calculate_label"></Button>
+
+            <TextView
+                android:id="@+id/calculated_result"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="@string/calculated_result_label"
+                android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
+
+            <Button
+                android:id="@+id/clear_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/clear_label"></Button>
+        </LinearLayout>
+
+    </TableLayout>
+
+</LinearLayout>

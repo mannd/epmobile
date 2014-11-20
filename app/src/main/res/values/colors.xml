@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="divider">#ff909090</color>
+    <color name="yellow">#ffffff00</color>
+    <color name="dark_goldenrod_1">#fdab10</color>
+    <color name="sienna_2">#e76333</color>
+
+    <color name="green">#1f7b19</color>
+    <color name="cyan">#1D718C</color>
+
+
+    <color name="primary">#03a9f4</color>
+    <color name="primary_dark">#0288d1</color>
+    <color name="accent">#40c4ff</color>
+
+
+</resources>

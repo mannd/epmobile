@@ -11,6 +11,7 @@
 # generated files
 bin/
 gen/
+doc/notes.html
 
 # local configuration file (sdk path, etc)
 local.properties
@@ -22,6 +23,15 @@ local.properties
 # other temp files
 *~
 
+# OSX files
+.DS_Store
+
 # eclipse
 .classpath
 .settings/
+lint.xml
+
+# Android Studio
+.idea
+.gradle
+build/

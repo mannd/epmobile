@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin_small"
+        android:layout_marginRight="@dimen/activity_horizontal_margin_small"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        >
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*">
+
+            <TextView
+                style="@style/Header1"
+                android:text="@string/sokolow_label" />
+
+            <TableRow>
+
+                <TextView
+                    style="@style/LeftColumnLabel"
+                    android:text="@string/sokolow_s_plus_r_label" />
+
+                <TextView
+                    style="@style/RightColumnValue"
+                    android:text="@string/sokolow_s_plus_r_result" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/LeftColumnLabel"
+                    android:text="@string/sokolow_r_in_avl_label" />
+
+                <TextView
+                    style="@style/RightColumnValue"
+                    android:text="@string/sokolow_r_in_avl_result" />
+            </TableRow>
+
+            <TextView
+                style="@style/Header1"
+                android:text="@string/cornell_label" />
+
+            <TableRow>
+
+                <TextView
+                    style="@style/LeftColumnLabel"
+                    android:text="@string/cornell_men_label" />
+
+                <TextView
+                    style="@style/RightColumnValue"
+                    android:text="@string/cornell_men_result" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/LeftColumnLabel"
+                    android:text="@string/cornell_women_label" />
+
+                <TextView
+                    style="@style/RightColumnValue"
+                    android:text="@string/cornell_women_result" />
+            </TableRow>
+
+            <TextView
+                style="@style/Header1"
+                android:text="@string/other_voltage_criteria_label" />
+
+            <TableRow>
+
+                <TextView
+                    style="@style/LeftColumnLabel"
+                    android:text="@string/other_lvh_lead_i_label" />
+
+                <TextView
+                    style="@style/RightColumnValue"
+                    android:text="@string/other_lvh_lead_i_result" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/LeftColumnLabel"
+                    android:text="@string/other_lvh_lead_avl_label" />
+
+                <TextView
+                    style="@style/RightColumnValue"
+                    android:text="@string/other_lvh_lead_avl_result" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/LeftColumnLabel"
+                    android:text="@string/other_lvh_lead_v5_label" />
+
+                <TextView
+                    style="@style/RightColumnValue"
+                    android:text="@string/other_lvh_lead_v5_result" />
+            </TableRow>
+
+            <TextView
+                android:text="@string/other_lvh_key" />
+
+            <TextView
+                android:text="@string/other_lvh_reference" />
+        </TableLayout>
+
+    </ScrollView>
+
+</LinearLayout>

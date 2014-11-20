@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Header1" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">3dip</item>
+        <item name="android:textColor">@color/green</item>
+    </style>
+
+    <style name="Header2" parent="@android:style/TextAppearance.Small">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">3dip</item>
+        <item name="android:textColor">@color/dark_goldenrod_1</item>
+    </style>
+
+    <style name="RightColumnValue" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">right</item>
+        <item name="android:padding">3dip</item>
+        <item name="android:textColor">@color/sienna_2</item>
+    </style>
+
+    <style name="LeftColumnLabel" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">left</item>
+        <item name="android:padding">3dip</item>
+    </style>
+
+    <style name="Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@android:color/darker_gray</item>
+    </style>
+
+    <style name="WarfarinDayStyle">
+        <item name="android:textColor">@color/cyan</item>
+    </style>
+
+    <style name="WarfarinDayColumnStyle">
+        <item name="android:textColor">@color/green</item>
+    </style>
+
+    <style name="WarfarinDoseColumnStyle">
+        <item name="android:textColor">@color/sienna_2</item>
+    </style>
+
+</resources>
