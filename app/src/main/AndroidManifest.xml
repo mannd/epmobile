@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="org.epstudios.epmobile"
-    android:versionCode="38"
-    android:versionName="2.6">
-
-    <uses-sdk
-        android:minSdkVersion="7"
-        android:targetSdkVersion="21"
-        tools:ignore="OldTargetApi"></uses-sdk>
+    package="org.epstudios.epmobile">
 
     <application
         android:allowBackup="true"
