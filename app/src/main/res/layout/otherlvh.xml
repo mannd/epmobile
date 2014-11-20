@@ -8,12 +8,16 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin_small"
+        android:layout_marginRight="@dimen/activity_horizontal_margin_small"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        >
 
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="3dip"
             android:stretchColumns="*">
 
             <TextView
@@ -35,7 +39,6 @@
 
                 <TextView
                     style="@style/LeftColumnLabel"
-                    android:padding="3dip"
                     android:text="@string/sokolow_r_in_avl_label" />
 
                 <TextView
@@ -107,11 +110,9 @@
             </TableRow>
 
             <TextView
-                android:padding="3dip"
                 android:text="@string/other_lvh_key" />
 
             <TextView
-                android:padding="3dip"
                 android:text="@string/other_lvh_reference" />
         </TableLayout>
 

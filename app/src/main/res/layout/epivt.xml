@@ -9,12 +9,13 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="@dimen/activity_horizontal_margin"
         android:background="@android:color/white">
 
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dip">
+            >
 
             <ImageView
                 android:id="@+id/imageView1"

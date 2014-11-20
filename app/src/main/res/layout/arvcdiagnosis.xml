@@ -8,12 +8,19 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+
+        >
 
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="3dip">
+
+            >
 
             <TextView
                 style="@style/Header1"
@@ -24,7 +31,6 @@
                 android:text="@string/major" />
 
             <TextView
-                android:padding="3dip"
                 android:text="@string/by_echo_label" />
 
             <CheckBox
@@ -32,10 +38,6 @@
                 android:text="@string/regional_echo_abnormality_label" />
 
             <TextView
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin"
                 android:text="@string/and_one_echo_label" />
 
             <RadioGroup android:id="@+id/echo_major_radio_group">
@@ -60,10 +62,6 @@
             </RadioGroup>
 
             <TextView
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin"
                 android:text="@string/by_mri_label" />
 
             <CheckBox
@@ -71,10 +69,6 @@
                 android:text="@string/regional_mri_abnormality_label" />
 
             <TextView
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin"
                 android:text="@string/and_one_label" />
 
             <RadioGroup android:id="@+id/mri_major_radio_group">
@@ -93,10 +87,6 @@
             </RadioGroup>
 
             <TextView
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin"
                 android:text="@string/by_rv_angio_label" />
 
             <CheckBox
@@ -108,10 +98,6 @@
                 android:text="@string/minor" />
 
             <TextView
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin"
                 android:text="@string/by_echo_label" />
 
             <CheckBox
@@ -119,10 +105,6 @@
                 android:text="@string/regional_echo_minor_abnormality_label" />
 
             <TextView
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin"
                 android:text="@string/and_one_echo_label" />
 
             <RadioGroup android:id="@+id/echo_minor_radio_group">
@@ -147,10 +129,6 @@
             </RadioGroup>
 
             <TextView
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin"
                 android:text="@string/by_mri_label" />
 
             <CheckBox
@@ -158,10 +136,6 @@
                 android:text="@string/regional_mri_abnormality_label" />
 
             <TextView
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin"
                 android:text="@string/and_one_label" />
 
             <RadioGroup android:id="@+id/mri_minor_radio_group">
@@ -240,10 +214,6 @@
                 android:text="@string/minor" />
 
             <TextView
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin"
                 android:text="@string/saecg_label"></TextView>
 
             <CheckBox
@@ -259,10 +229,6 @@
                 android:text="@string/root_mean_square_label" />
 
             <TextView
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin"
                 android:text="@string/terminal_activation_label"></TextView>
 
             <CheckBox
@@ -348,18 +314,10 @@
             </LinearLayout>
 
             <TextView
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin"
                 android:text="@string/arvc_key" />
 
             <TextView
                 android:autoLink="web"
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin"
                 android:text="@string/arvc_reference" />
         </TableLayout>
 

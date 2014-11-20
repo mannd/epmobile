@@ -6,13 +6,18 @@
 
     <include layout="@layout/toolbar" />
 
-    <WebView
-        android:id="@+id/web_view"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="@dimen/activity_horizontal_margin"
-        >
+        android:id="@+id/avannulus_frame"
+        android:background="@android:color/white">
 
-    </WebView>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/avannulus_image"
+             />
+
+    </FrameLayout>
 
 </LinearLayout>
