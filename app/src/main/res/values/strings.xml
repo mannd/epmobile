@@ -586,8 +586,7 @@
     <string name="lqt_subtypes_5_description" tools:ignore="StringFormatInvalid">Remaining subtypes all &lt;1% frequency (some just single families)
    	    without distinguishing features.  One exception is LQTS 8 which affects the ICaL channel, has
    	    alternating T waves on ECG, and is associated with Timothy Syndrome.</string>
-    <string name="lqt_subtypes_reference">\nReferences:\nhttp://www.geneticheartdisease.org/lqts_gene_table.htm\n
-        http://en.ecgpedia.org/wiki/Long_QT_Syndrome</string>
+    <string name="lqt_subtypes_reference">\nReferences:\nhttp://www.geneticheartdisease.org/lqts_gene_table.htm\n\nhttp://en.ecgpedia.org/wiki/Long_QT_Syndrome</string>
     <string name="lqt_ecg_title">Long QT ECG Patterns</string>
     <string name="brugada_ecg_title">Brugada ECG Patterns</string>
     <string name="text_label">Notes</string>
@@ -731,7 +730,7 @@
     <string name="creatinine_mmol_hint">Creatinine (\u00B5mol/L)</string>
     <string name="entrainment_title">Entrainment Mapping</string>
     <string name="long_qt_drugs_title">Long QT Drugs (link)</string>
-    <string name="long_qt_drugs_link">http://www.crediblemeds.org</string>
+    <string name="long_qt_drugs_link">https://www.crediblemeds.org</string>
     <string name="brugada_drugs_title">Brugada Drugs (link)</string>
     <string name="brugada_drugs_link">http://www.brugadadrugs.org</string>
     <string name="apixaban_calculator_title">Apixaban Calculator</string>
