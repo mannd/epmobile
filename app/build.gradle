@@ -8,14 +8,18 @@ android {
         applicationId "org.epstudios.epmobile"
         minSdkVersion 7
         targetSdkVersion 21
-        versionCode 39
-        versionName "2.7"
+        versionCode 40
+        versionName "2.7.1"
 
     }
 
     buildTypes {
         release {
-            runProguard false
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+        debug {
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
