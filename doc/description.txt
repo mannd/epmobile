@@ -7,7 +7,7 @@ EP Mobile -- The Swiss Army Knife of Electrophysiology!
 Features: 
 - NEW: Pacing tricks: Para-Hisian pacing and RV apex vs base pacing
 - Drug dose calculators: dabigatran, dofetilide, rivaroxaban, 
-	sotalol and apixaban
+	sotalol, apixaban and edoxaban
 - Warfarin clinic weekly dose calculator
 - Interval to rate conversion
 - QTc calculator (Bazett, Fridericia, Sagie and Hodges formulas)
