@@ -98,6 +98,7 @@
         <item>@string/apixaban_calculator_title</item>
         <item>@string/dabigatran_calculator_title</item>
         <item>@string/dofetilide_calculator_title</item>
+        <item>@string/edoxaban_calculator_title</item>
         <item>@string/rivaroxaban_calculator_title</item>
         <item>@string/sotalol_calculator_title</item>
         <item>@string/warfarin_title</item>

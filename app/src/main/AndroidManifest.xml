@@ -208,6 +208,9 @@
         <activity
             android:name=".RvaVsRvbPacing"
             android:label="@string/rva_vs_rvb_pacing_title"></activity>
+        <activity android:name=".Edoxaban"
+            android:label="@string/edoxaban_calculator_title">
+        </activity>
     </application>
 
 </manifest>
