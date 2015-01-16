@@ -62,6 +62,9 @@ public class DrugDoseCalculatorList extends EpCalculatorListActivity {
 				else if (selection
 						.equals(getString(R.string.apixaban_calculator_title)))
 					apixabanCalculator();
+                else if (selection
+                        .equals(getString(R.string.edoxaban_calculator_title)))
+                    edoxabanCalculator();
 
 			}
 		});
@@ -96,5 +99,10 @@ public class DrugDoseCalculatorList extends EpCalculatorListActivity {
 		Intent i = new Intent(this, Apixaban.class);
 		startActivity(i);
 	}
+
+    private void edoxabanCalculator() {
+        Intent i = new Intent(this, Edoxaban.class);
+        startActivity(i);
+    }
 
 }
