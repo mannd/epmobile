@@ -40,17 +40,29 @@ public class DavilaAlgorithm extends WpwArruda {
             case 3:
                 step = 9; // LP
                 break;
-            case 4:
-                step = 10;
+            case 10:
+                step = 7; //  AS
                 break;
             case 5:
-                step = 6;
+                step = 6;  // aVL +?
                 break;
             case 6:
-                step = 12;
+                step = 7;  // AS
                 break;
             case 7:
                 step = 14;
+                break;
+            case 11:
+                step = 12; // MS
+                break;
+            case 13:
+                step = 14; // V2 + ?
+                break;
+            case 14:
+                step = 15; // RPS
+                break;
+            case 16:
+                step = 17; // RL
                 break;
         }
         gotoStep();
@@ -61,25 +73,37 @@ public class DavilaAlgorithm extends WpwArruda {
         adjustStepsForward();
         switch (step) {
             case 1:
-                step = 3; // III +/-
+                step = 5;  // III + ?
                 break;
             case 2:
-                step = 4;
+                step = 3;   // III +/- ?
                 break;
             case 3:
-                step = 5;
+                step = 4;
                 break;
             case 4:
                 step = 11;
                 break;
             case 5:
-                step = 7;
+                step = 10;
                 break;
             case 6:
-                step = 13;
+                step = 8;  // LL
                 break;
-            case 7:
-                step = 15;
+            case 10:
+                step = 11;
+                break;
+            case 11:
+                step = 13; // II + ?
+                break;
+            case 13:
+                step = 17; // II -
+                break;
+            case 14:
+                step = 16; //RL
+                break;
+            case 17:
+                step = 19; // PSTA
                 break;
         }
         gotoStep();
@@ -91,33 +115,39 @@ public class DavilaAlgorithm extends WpwArruda {
                 step1();
                 break;
             case 2:
+            case 5:
                 stepTextView.setText(getString(R.string.davila_positive_iii));
                 break;
 
-                // so far
-            case 5:
-                stepTextView.setText(getString(R.string.milstein_step_2_5));
-                break;
             case 3:
+            case 10:
                 stepTextView.setText(getString(R.string.davila_plus_minus_iii));
                 break;
-            case 4:
-                stepTextView.setText(getString(R.string.milstein_step_4));
-                break;
             case 6:
-                stepTextView.setText(getString(R.string.milstein_step_6));
+                stepTextView.setText(getString(R.string.davila_positive_avl));
                 break;
+            case 11:
+                stepTextView.setText(getString(R.string.davila_qrs_pattern));
+                break;
+            case 13:
+                stepTextView.setText(getString(R.string.davila_positive_ii));
+                break;
+            case 14:
+                stepTextView.setText(getString(R.string.davila_positive_v2));
+                break;
+            case 17:
+                stepTextView.setText(getString(R.string.davila_negative_v2));
+                break;
+            // here
+            case 4:
             case 7:
-                stepTextView.setText(getString(R.string.milstein_step_7));
-                break;
             case 8:
             case 9:
-            case 10:
-            case 11:
             case 12:
-            case 13:
-            case 14:
             case 15:
+            case 16:
+            case 18:
+            case 19:
                 showResult();
                 break;
         }
@@ -127,30 +157,35 @@ public class DavilaAlgorithm extends WpwArruda {
 
     protected void setMessageAndLocation() {
         switch (step) {
+            case 4:
+                message += getString(R.string.psma_location);
+                location1 = PSMA;
+                break;
+            case 7:
+                message += getString(R.string.as_location);
+                location1 = AS;
+                break;
             case 8:
                 message += getString(R.string.ll_location);
                 location1 = LL;
                 break;
-            case 12:
-                message += getString(R.string.as_location);
-                location1 = AS;
-                break;
             case 9:
-            case 14:
                 message += getString(R.string.lp_location);
                 location1 = LP;
                 break;
-            case 10:
-                message += getString(R.string.psma_location);
-                location1 = PSMA;
+            case 12:
+                message += getString(R.string.msta_location);
+                location1 = MSTA;
                 break;
-            case 11:
-            case 13:
+            case 16:
+            case 18:
                 message += getString(R.string.rl_location);
                 location1 = RL;
                 break;
             case 15:
-                message += getString(R.string.undetermined_location);
+            case 19:
+                message += getString(R.string.psta_location);
+                location1 = PSTA;
                 break;
         }
     }

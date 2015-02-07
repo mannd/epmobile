@@ -1029,8 +1029,15 @@
         Polarity of QRS in lead V1 is + or \u00b1 ?</string>
     <string name="davila_positive_iii">Lead III polarity + ?</string>
     <string name="davila_plus_minus_iii">Lead III polarity \u00b1 ?</string>
+    <string name="davila_minus_iii">Lead III polarity - ?</string>
     <string name="lp_location">Left Posterior</string>
     <string name="psma_location">Left Posteroseptal (Posteroseptal Mitral Annulus)</string>
+    <string name="davila_positive_avl">Lead aVL polarity + ?</string>
+    <string name="davila_qrs_pattern">Lead III has Qrs pattern\n
+    (deep Q followed by small r and s in a negative QRS complex in lead III)?</string>
+    <string name="davila_positive_ii">Lead II polarity + ?</string>
+    <string name="davila_positive_v2">Lead V2 polariy + ?</string>
+    <string name="davila_negative_v2">Lead V2 polarity - ?</string>
 
 
 </resources>
