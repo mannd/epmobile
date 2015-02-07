@@ -55,6 +55,8 @@ public class WpwAlgorithmList extends EpDiagnosisListActivity {
 				else if (selection
 						.equals(getString(R.string.anatomy_av_annulus_title)))
 					avAnnulusMap();
+                else if (selection.equals(getString(R.string.davila_title)))
+                    davilaAlgorithm();
 			}
 		});
 	}
@@ -78,5 +80,10 @@ public class WpwAlgorithmList extends EpDiagnosisListActivity {
 		Intent i = new Intent(this, AvAnnulusMap.class);
 		startActivity(i);
 	}
+
+    private void davilaAlgorithm() {
+        Intent i = new Intent(this, DavilaAlgorithm.class);
+        startActivity(i);
+    }
 
 }
