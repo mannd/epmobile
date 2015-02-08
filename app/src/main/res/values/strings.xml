@@ -434,18 +434,19 @@
     <string name="arruda_title">Arruda Algorithm</string>
     <string name="modified_arruda_title">Modified Arruda Algorithm</string>
     <string name="milstein_title">Milstein Algorithm</string>
-    <string name="arruda_step_1">Lead I \u00b1 or -\n or V1 R/S \u2265 1?</string>
-    <string name="arruda_step_2_3">Pathway is Left Free Wall\nLead aVF + ?</string>
-    <string name="arruda_step_6_7">Pathway is Left Free Wall\nLead I \u00b1 or Lead V1 S \u00b1 ?</string>
-    <string name="arruda_step_8a">Lead V1 + ?</string>
-    <string name="arruda_step_8b">Lead V1 \u00b1 ?</string>
-    <string name="arruda_step_13">Lead II - ?</string>
-    <string name="arruda_step_15">Lead V1 \u00b1 or - ?</string>
-    <string name="arruda_step_16_17">Pathway is Septal\nLead aVF - ?</string>
-    <string name="arruda_step_18">Lead aVF \u00b1 ?</string>
+    <string name="arruda_step_1">Note this algorithm uses polarity of initial delta
+        wave (positive +, negative -, or isoelectric \u00b1)\n\nLead I delta \u00b1 or -\n or V1 R/S \u2265 1?</string>
+    <string name="arruda_step_2_3">Pathway is Left Free Wall\nLead aVF delta + ?</string>
+    <string name="arruda_step_6_7">Pathway is Left Free Wall\nLead I delta \u00b1 or Lead V1 S \u00b1 ?</string>
+    <string name="arruda_step_8a">Lead V1 delta + ?</string>
+    <string name="arruda_step_8b">Lead V1 delta \u00b1 ?</string>
+    <string name="arruda_step_13">Lead II delta - ?</string>
+    <string name="arruda_step_15">Lead V1 delta \u00b1 or - ?</string>
+    <string name="arruda_step_16_17">Pathway is Septal\nLead aVF delta - ?</string>
+    <string name="arruda_step_18">Lead aVF delta \u00b1 ?</string>
     <string name="arruda_step_20">Lead III R \u2265 S ?</string>
-    <string name="arruda_step_24_25_26">Pathway is Right Free Wall\nLead aVF + ?</string>
-    <string name="arruda_step_27">Lead II + ?</string>
+    <string name="arruda_step_24_25_26">Pathway is Right Free Wall\nLead aVF delta + ?</string>
+    <string name="arruda_step_27">Lead II delta + ?</string>
     <string name="pathway_location_label">Accessory Pathway Location</string>
     <string name="show_map_label">Show Map</string>
     <string name="lpl_ll_location">Left Posterolateral or Left Lateral</string>
@@ -1026,7 +1027,7 @@
     <string name="edoxaban_calculator_title">Edoxaban Calculator</string>
     <string name="davila_title">D\'Avila Algorithm</string>
     <string name="davila_step_1">Note that this algorithm uses QRS polarity, not delta wave polarity!\n\n
-        Polarity of QRS in lead V1 is + or \u00b1 ?</string>
+        Polarity of QRS in Lead V1 is + or \u00b1 ?</string>
     <string name="davila_positive_iii">Lead III polarity + ?</string>
     <string name="davila_plus_minus_iii">Lead III polarity \u00b1 ?</string>
     <string name="davila_minus_iii">Lead III polarity - ?</string>
