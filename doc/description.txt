@@ -21,7 +21,7 @@ Features:
 	- Epicardial vs endocardial VT
 	- Outflow tract VT
 	- Mitral annular VT
-- WPW accessory pathway location (Arruda,  Modified Arruda, and Milstein)
+- WPW accessory pathway location (Arruda, Modified Arruda, D'Avila, and Milstein)
 - Atrial tachycardia localization algorithm
 - Entrainment mapping
 - Date calculator
