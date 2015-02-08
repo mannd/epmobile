@@ -64,6 +64,9 @@ public class DavilaAlgorithm extends WpwArruda {
             case 16:
                 step = 17; // RL
                 break;
+            case 17:
+                step = 19; // PS
+                break;
         }
         gotoStep();
     }
@@ -103,7 +106,7 @@ public class DavilaAlgorithm extends WpwArruda {
                 step = 16; //RL
                 break;
             case 17:
-                step = 19; // PSTA
+                step = 18; // RL
                 break;
         }
         gotoStep();
@@ -133,12 +136,9 @@ public class DavilaAlgorithm extends WpwArruda {
                 stepTextView.setText(getString(R.string.davila_positive_ii));
                 break;
             case 14:
+            case 17:
                 stepTextView.setText(getString(R.string.davila_positive_v2));
                 break;
-            case 17:
-                stepTextView.setText(getString(R.string.davila_negative_v2));
-                break;
-            // here
             case 4:
             case 7:
             case 8:
@@ -174,7 +174,7 @@ public class DavilaAlgorithm extends WpwArruda {
                 location1 = LP;
                 break;
             case 12:
-                message += getString(R.string.msta_location);
+                message += getString(R.string.davila_ms_location);
                 location1 = MSTA;
                 break;
             case 16:
@@ -183,9 +183,12 @@ public class DavilaAlgorithm extends WpwArruda {
                 location1 = RL;
                 break;
             case 15:
-            case 19:
-                message += getString(R.string.psta_location);
+                message += getString(R.string.davila_rps_location);
                 location1 = PSTA;
+                break;
+            case 19:
+                message += getString(R.string.davila_ps_location);
+                location1 = SUBEPI;
                 break;
         }
     }

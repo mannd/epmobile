@@ -1038,6 +1038,9 @@
     <string name="davila_positive_ii">Lead II polarity + ?</string>
     <string name="davila_positive_v2">Lead V2 polariy + ?</string>
     <string name="davila_negative_v2">Lead V2 polarity - ?</string>
+    <string name="davila_ps_location">Posteroseptal</string>
+    <string name="davila_rps_location">Right Posteroseptal (Posteroseptal Tricuspid Annulus)</string>
+    <string name="davila_ms_location">Mid-septal (Mid-septal Tricuspid Annulus</string>
 
 
 </resources>
