@@ -1,0 +1,47 @@
+# Apixaban -- leave title blank below
+#+TITLE:  
+#+AUTHOR:    David Mann
+#+EMAIL:     mannd@epstudiossoftware.com
+#+DATE:      [2015-03-05 Thu]
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:nil toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME: 
+#+XSLT:
+* Dosage and administration
+** Nonvalvular atrial fibrillation
+- Recommended dose is 5 mg orally twice daily.
+- In patients with at least 2 of the following: age ≥80 yrs, body weight ≤60 kg, or serum creatinine ≥1.5 mg/dL, recommended dose is 2.5 mg PO BID.
+** Prophylaxis of DVT following hip or knee replacement surgery
+- Recommended dose is 2.5 mg PO BID.
+** Treatment of DVT and PE
+- Recommended dose is 10 mg PO BID for 7 days, then 5 mg PO BID.
+** Reduction in the risk of recurrent DVT and PE following initial therapy
+- Recommended dose is 2.5 mg PO BID.
+* Dosage forms and strengths
+- Tablets
+  - 2.5 mg
+  - 5 mg
+* Contraindications
+- Active pathological bleeding
+- Severe hypersensitivity to apixaban
+* Warnings and precautions
+- Bleeding: serious and potentially fatal bleeding.  Promptly evaluate signs and symptoms of blood loss.
+- Prosthetic heart valves: Use is not recommended.
+* Adverse reactions
+- Most common adverse reactions (>1%) are related to bleeding
+* Drug interactions
+- For patients receiving apixaban at doses greater than 2.5 mg BID, the dose should be reduced 50% when it is coadministered with strong dual inhibitors of CYP3A4 and P-gp (e.g. ketoconazole, itraconazole, ritonavir, and clarithromycin).  For patients on apixaban 2.5 mg BID avoid coadministration with these drugs.
+- Simultaneous use of strong dual inducers of CYP3A4 and P-gp (e.g. rifampin, carbamazepine, phenytoin, and St. John's wort) reduces blood levels of apixaban: avoid concomitant use.
+- Simultaneous use with other anti-platelet or anti-coagualant drugs increases risk of bleeding.
+* Use in specific populations
+- Pregnancy: Not recommended.
+- Nursing mothers: Discontinue drug or discontinue nursing.
+- Moderate or severe hepatic impairment: Not recommended.
+- End stage renal disease on hemodialysis: No change in dosing recommendations, but use caution, as this specific patient population was not included in clinical trials.

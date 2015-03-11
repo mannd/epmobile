@@ -1,0 +1,48 @@
+# Rivaroxaban -- leave title blank below
+#+TITLE:  
+#+AUTHOR:    David Mann
+#+EMAIL:     mannd@epstudiossoftware.com
+#+DATE:      [2015-03-06 Fri]
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:nil toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME: 
+#+XSLT:
+* Dosage and administration
+** Nonvalvular atrial fibrillation
+| CrCl                   | Dose                                  |
+|------------------------+---------------------------------------|
+| >50 mL/min             | 20 mg PO once daily with evening meal |
+| ≥15 to ≤50 mL/min      | 15 mg PO once daily with evening meal |
+| <15 mL/min or dialysis | Not recommended                       |
+** DVT and PE
+- 15 mg PO BID with food for the first 21 days for initial treatment of acute DVT or PE.  After the initial treatment period, 20 mg orally once daily with food for the remaining treatment and the long-term reduction in the risk of recurrence of DVT and PE.
+** Prophylaxis of DVT following hip or knee replacement surgery
+- 10 mg PO once daily with or without food.
+* Dosage forms and strengths
+- Tablets
+  - 10 mg
+  - 15 mg
+  - 20 mg
+* Contraindications
+- Active pathological bleeding
+- Severe hypersensitivity reaction to rivaroxaban
+* Warnings and precautions
+- Risk of bleeding: Can cause serious and fatal bleeding. Promptly evaluate signs and symptoms of blood loss.
+- Pregnancy-related hemorrhage: use with caution in pregnant women due to the potential for obstetric hemorrhage and/or emergent delivery.  Promptly evaluate signs and symptoms of blood loss.
+- Prosthetic heart valves: Use is not recommended.
+* Adverse reactions
+- Most common adverse reaction (>5%) is bleeding.
+* Drug interactions
+- Combined P-gp and strong CYP3A4 inhibitors(ketoconazole, ritonavir, clarithromycin, erhythmomycin, and fluconazole) and inducers (carbamazepine, phenytoin, rifampin, and St. John's wart): Avoid concomitant use.
+- Anticoagulants and antiplatelet drugs: Avoid concomitant use.
+* Use in specific populations
+- Nursing mothers: Discontinue drug or discontinue nursing.
+- Renal impairment: Avoid or adjust dose based on CrCl.
+- Hepatic impairment: Avoid use in patient with Child-Pugh B and C hepatic impairment or with any degree of hepatic disease associated with coagulopathy.

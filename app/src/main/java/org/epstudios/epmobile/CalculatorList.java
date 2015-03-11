@@ -40,6 +40,10 @@ public class CalculatorList extends EpListActivity {
 				else if (selection
 						.equals(getString(R.string.ibw_calculator_title)))
 					ibwCalculator();
+                else if (selection.equals(getString(R.string.creatinine_clearance_calculator_title)))
+                    creatinineClearanceCalculator();
+
+
 			}
 		});
 	}
@@ -68,5 +72,9 @@ public class CalculatorList extends EpListActivity {
 		Intent i = new Intent(this, IbwCalculator.class);
 		startActivity(i);
 	}
+
+    private void creatinineClearanceCalculator() {
+
+    }
 
 }

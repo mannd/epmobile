@@ -1042,6 +1042,8 @@
     <string name="davila_ps_location">Posteroseptal</string>
     <string name="davila_rps_location">Right Posteroseptal (Posteroseptal Tricuspid Annulus)</string>
     <string name="davila_ms_location">Mid-septal (Mid-septal Tricuspid Annulus</string>
+    <string name="creatinine_clearance_calculator_title">Creatinine Clearance Calculator</string>
+    <string name="drug_reference_title">Drug Reference</string>
 
 
 </resources>
