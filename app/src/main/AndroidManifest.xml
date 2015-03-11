@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.epstudios.epmobile">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/icon"
@@ -202,12 +204,6 @@
         <activity
             android:name=".IcdRisk"
             android:label="@string/icd_risk_title"></activity>
-        <activity
-            android:name=".ParaHisianPacing"
-            android:label="@string/para_hisian_pacing_title"></activity>
-        <activity
-            android:name=".RvaVsRvbPacing"
-            android:label="@string/rva_vs_rvb_pacing_title"></activity>
         <activity android:name=".Edoxaban"
             android:label="@string/edoxaban_calculator_title">
         </activity>
@@ -218,6 +214,9 @@
             android:label="@string/drug_reference_title">
         </activity>
         <activity android:name=".DrugReference"
+            android:label = "">
+        </activity>
+        <activity android:name=".LinkView"
             android:label = "">
         </activity>
     </application>

@@ -66,15 +66,17 @@ public class ReferenceList extends EpActivity {
 	}
 
 	private void longQtDrugs() {
-		Intent i = new Intent(Intent.ACTION_VIEW,
-				Uri.parse(getString(R.string.long_qt_drugs_link)));
-		startActivity(i);
+        Intent i = new Intent(this, LinkView.class);
+        i.putExtra("EXTRA_URL", getString(R.string.long_qt_drugs_link));
+        i.putExtra("EXTRA_TITLE", getString(R.string.long_qt_drugs_title));
+        startActivity(i);
 	}
 
 	private void brugadaDrugs() {
-		Intent i = new Intent(Intent.ACTION_VIEW,
-				Uri.parse(getString(R.string.brugada_drugs_link)));
-		startActivity(i);
+        Intent i = new Intent(this, LinkView.class);
+        i.putExtra("EXTRA_URL", getString(R.string.brugada_drugs_link));
+        i.putExtra("EXTRA_TITLE", getString(R.string.brugada_drugs_title));
+        startActivity(i);
 	}
 
 	private void entrainment() {
@@ -83,14 +85,16 @@ public class ReferenceList extends EpActivity {
 	}
 
 	private void paraHisianPacing() {
-		Intent i = new Intent(this, ParaHisianPacing.class);
+		Intent i = new Intent(this, LinkView.class);
+        i.putExtra("EXTRA_URL", "file:///android_asset/parahisianpacinginstructions.html");
+        i.putExtra("EXTRA_TITLE", getString((R.string.para_hisian_pacing_title)));
 		startActivity(i);
 	}
 
 	private void rvaVsRvbPacing() {
-		Intent i = new Intent(this, RvaVsRvbPacing.class);
-        i.putExtra("EXTRA_TITLE", "RVA/RV Base Pacing");
-        startActivity(i);
+		Intent i = new Intent(this, LinkView.class);
+        i.putExtra("EXTRA_URL", "file:///android_asset/rvapexvsbasepacing.html");
+        i.putExtra("EXTRA_TITLE", getString((R.string.rva_vs_rvb_pacing_title)));        startActivity(i);
 	}
 
     private void drugReferenceList() {
