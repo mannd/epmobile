@@ -46,7 +46,7 @@ public class DrugReferenceList extends EpActivity {
         // right now reuse same array used by drug calculators, BUT
         // if we add more drugs (like amiodarone) will need to create separate array.
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                this, R.array.drug_calculator_list,
+                this, R.array.drug_reference_list,
                 android.R.layout.simple_list_item_1);
         ListView lv = (ListView) findViewById(R.id.list);
         lv.setAdapter(adapter);
@@ -59,24 +59,22 @@ public class DrugReferenceList extends EpActivity {
                                     int position, long id) {
                 String selection = ((TextView) view).getText().toString();
                 if (selection
-                        .equals(getString(R.string.dabigatran_calculator_title)))
+                        .equals(getString(R.string.dabigatran)))
                     dabigatranReference();
                 else if (selection
-                        .equals(getString(R.string.dofetilide_calculator_title)))
+                        .equals(getString(R.string.dofetilide)))
                     dofetilideReference();
                 else if (selection
-                        .equals(getString(R.string.rivaroxaban_calculator_title)))
+                        .equals(getString(R.string.rivaroxaban)))
                     rivaroxabanReference();
-                else if (selection.equals(getString(R.string.warfarin_title)))
-                    warfarinReference();
                 else if (selection
-                        .equals(getString(R.string.sotalol_calculator_title)))
+                        .equals(getString(R.string.sotalol)))
                     sotalolReference();
                 else if (selection
-                        .equals(getString(R.string.apixaban_calculator_title)))
+                        .equals(getString(R.string.apixaban)))
                     apixabanReference();
                 else if (selection
-                        .equals(getString(R.string.edoxaban_calculator_title)))
+                        .equals(getString(R.string.edoxaban)))
                     edoxabanReference();
 
             }
@@ -84,37 +82,46 @@ public class DrugReferenceList extends EpActivity {
     }
 
     private void dabigatranReference() {
-        Intent i = new Intent(this, RvaVsRvbPacing.class);
+        Intent i = new Intent(this, LinkView.class);
+        i.putExtra("EXTRA_URL", "file:///android_asset/dabigatran.html");
+        i.putExtra("EXTRA_TITLE", getString(R.string.dabigatran));
         startActivity(i);
     }
 
     private void dofetilideReference() {
-        Intent i = new Intent(this, DrugReference.class);
+        Intent i = new Intent(this, LinkView.class);
+        i.putExtra("EXTRA_URL", "file:///android_asset/dofetilide.html");
+        i.putExtra("EXTRA_TITLE", getString(R.string.dofetilide));
+
         startActivity(i);
     }
 
     private void rivaroxabanReference() {
-        Intent i = new Intent(this, DrugReference.class);
-        startActivity(i);
-    }
-
-    private void warfarinReference() {
-        Intent i = new Intent(this, DrugReference.class);
+        Intent i = new Intent(this, LinkView.class);
+        i.putExtra("EXTRA_URL", "file:///android_asset/rivaroxaban.html");
+        i.putExtra("EXTRA_TITLE", getString(R.string.rivaroxaban));
         startActivity(i);
     }
 
     private void sotalolReference() {
-        Intent i = new Intent(this, DrugReference.class);
+        Intent i = new Intent(this, LinkView.class);
+        i.putExtra("EXTRA_URL", "file:///android_asset/sotalol.html");
+        i.putExtra("EXTRA_TITLE", getString(R.string.sotalol));
         startActivity(i);
     }
 
     private void apixabanReference() {
-        Intent i = new Intent(this, Apixaban.class);
+        Intent i = new Intent(this, LinkView.class);
+        i.putExtra("EXTRA_URL", "file:///android_asset/apixaban.html");
+        i.putExtra("EXTRA_TITLE", getString(R.string.apixaban));
         startActivity(i);
     }
 
     private void edoxabanReference() {
-        Intent i = new Intent(this, DrugReference.class);
+        Intent i = new Intent(this, LinkView.class);
+        i.putExtra("EXTRA_URL", "file:///android_asset/edoxaban.html");
+        i.putExtra("EXTRA_TITLE", getString(R.string.edoxaban));
+
         startActivity(i);
     }
 

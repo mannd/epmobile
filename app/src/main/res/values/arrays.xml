@@ -83,6 +83,14 @@
         <item>@string/para_hisian_pacing_title</item>
         <item>@string/rva_vs_rvb_pacing_title</item>
     </array>
+    <array name="drug_reference_list">
+        <item>@string/apixaban</item>
+        <item>@string/dabigatran</item>
+        <item>@string/dofetilide</item>
+        <item>@string/edoxaban</item>
+        <item>@string/rivaroxaban</item>
+        <item>@string/sotalol</item>
+    </array>
     <array name="wct_algorithm_list">
 
         <!-- <item>ACC Algorithm</item> -->

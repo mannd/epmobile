@@ -1045,6 +1045,12 @@
     <string name="creatinine_clearance_calculator_title">Creatinine Clearance Calculator</string>
     <string name="drug_reference_title">Drug Reference</string>
     <string name="rvh_title">Right Ventricular Hypertrophy</string>
+    <string name="apixaban">Apixaban</string>
+    <string name="dabigatran">Dabigatran</string>
+    <string name="dofetilide">Dofetilide</string>
+    <string name="edoxaban">Edoxaban</string>
+    <string name="rivaroxaban">Rivaroxaban</string>
+    <string name="sotalol">Sotalol</string>
 
 
 </resources>
