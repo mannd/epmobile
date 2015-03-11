@@ -49,6 +49,8 @@ public class ReferenceList extends EpListActivity {
 				else if (selection
 						.equals(getString(R.string.rva_vs_rvb_pacing_title)))
 					rvaVsRvbPacing();
+                else if (selection.equals(getString(R.string.drug_reference_title)))
+                    drugReferenceList();
 			}
 		});
 	}
@@ -88,7 +90,11 @@ public class ReferenceList extends EpListActivity {
 	private void rvaVsRvbPacing() {
 		Intent i = new Intent(this, RvaVsRvbPacing.class);
 		startActivity(i);
-
 	}
+
+    private void drugReferenceList() {
+        Intent i = new Intent(this, DrugReferenceList.class);
+        startActivity(i);
+    }
 
 }

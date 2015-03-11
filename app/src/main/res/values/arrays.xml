@@ -59,6 +59,7 @@
         <item>@string/brugada_ecg_title</item>
         <item>@string/lvh_list_title</item>
         <item>@string/lqt_syndrome_title</item>
+        <item>@string/rvh_title</item>
         <item>@string/short_qt_title</item>
         <item>@string/vt_list_title</item>
         <item>@string/wct_algorithm_list_title</item>

@@ -1,6 +1,7 @@
 package org.epstudios.epmobile;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -51,6 +52,8 @@ public class DiagnosisList extends EpListActivity {
 				else if (selection
 						.equals(getString(R.string.atrial_tachycardia_localization_title)))
 					atrialTachLocalization();
+                else if (selection.equals(getString(R.string.rvh_title)))
+                    rvhCriteria();
 			}
 		});
 	}
@@ -99,4 +102,11 @@ public class DiagnosisList extends EpListActivity {
 		Intent i = new Intent(this, AtrialTachLocalization.class);
 		startActivity(i);
 	}
+
+    private void rvhCriteria() {
+            Intent i = new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("file:///android_asset/rvh.html"));
+            startActivity(i);
+
+    }
 }
