@@ -53,6 +53,9 @@ public abstract class EpActivity extends ActionBarActivity {
             case R.id.about:
                 startActivity(new Intent(this, About.class));
                 return true;
+            case android.R.id.home:
+                finish();
+                return true;
         }
         return false;
     }

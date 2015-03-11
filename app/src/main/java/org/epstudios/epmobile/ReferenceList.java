@@ -10,7 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class ReferenceList extends EpListActivity {
+public class ReferenceList extends EpActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.selectionlist);
@@ -89,7 +89,8 @@ public class ReferenceList extends EpListActivity {
 
 	private void rvaVsRvbPacing() {
 		Intent i = new Intent(this, RvaVsRvbPacing.class);
-		startActivity(i);
+        i.putExtra("EXTRA_TITLE", "RVA/RV Base Pacing");
+        startActivity(i);
 	}
 
     private void drugReferenceList() {

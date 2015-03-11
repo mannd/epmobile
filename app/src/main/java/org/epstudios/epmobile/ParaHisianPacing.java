@@ -3,7 +3,7 @@ package org.epstudios.epmobile;
 import android.os.Bundle;
 import android.webkit.WebView;
 
-public class ParaHisianPacing extends EpReferenceActivity {
+public class ParaHisianPacing extends EpActivity {
 	private WebView webView;
 
 	@Override

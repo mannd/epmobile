@@ -38,7 +38,7 @@ import android.widget.TextView;
  * A limited number of CPT codes are used in this program under the Fair Use
  * doctrine of US Copyright Law.  See README.md for more information.
  */
-public class DrugReferenceList extends EpReferenceActivity {
+public class DrugReferenceList extends EpActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.selectionlist);
