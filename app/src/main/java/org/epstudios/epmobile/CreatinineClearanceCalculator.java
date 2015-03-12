@@ -25,13 +25,19 @@ public class CreatinineClearanceCalculator extends DrugCalculator {
     @Override
     protected int getDose(int crCl) {
 
-        return 0;
+        return CREATININE_CLEARANCE_ONLY;
     }
 
     @Override
-    protected String getMessage(int crCl, double age) {
-        String msg = super.getMessage(crCl, age);
-        return msg;
+    protected Boolean pediatricDosingOk() {
+        return true;
+    }
+
+    @Override
+    protected String defaultResultLabel() {
+        ccTextView.setTextAppearance(this,
+                android.R.style.TextAppearance_Medium);
+        return "CrCl";
     }
 
 }

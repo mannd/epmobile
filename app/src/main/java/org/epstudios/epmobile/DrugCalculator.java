@@ -73,6 +73,8 @@ public abstract class DrugCalculator extends EpActivity implements
 
 	// phony result of getDose() to indicate special dosing for apixaban
 	protected final static int USE_APIXABAN_DOSING = 9999;
+    // phony -int dose to indicate CrCl ONLY
+    protected final static int CREATININE_CLEARANCE_ONLY = -1;
 
 	private WeightUnit defaultWeightUnitSelection = WeightUnit.KG;
 	private CreatinineUnit defaultCreatinineUnitSelection = CreatinineUnit.MG;
@@ -176,7 +178,7 @@ public abstract class DrugCalculator extends EpActivity implements
 			return CreatinineUnit.MMOL;
 	}
 
-	private void calculateDose() {
+	protected void calculateDose() {
 		CharSequence weightText = weightEditText.getText();
 		CharSequence creatinineText = creatinineEditText.getText();
 		CharSequence ageText = ageEditText.getText();
@@ -187,7 +189,7 @@ public abstract class DrugCalculator extends EpActivity implements
 				weight = UnitConverter.lbsToKgs(weight);
 			double creatinine = Double.parseDouble(creatinineText.toString());
 			double age = Double.parseDouble(ageText.toString());
-			if (age < 18) {
+			if (age < 18 && !pediatricDosingOk()) {
 				calculatedDoseTextView.setText("Do not use!");
 				calculatedDoseTextView.setTextColor(Color.RED);
 				ccTextView.setTextColor(Color.RED);
@@ -196,13 +198,13 @@ public abstract class DrugCalculator extends EpActivity implements
 			}
 			boolean useMmolUnits = (getCreatinineUnitSelection() == CreatinineUnit.MMOL);
 			int cc = CreatinineClearance.calculate(isMale, age, weight,
-					creatinine, useMmolUnits);
+                    creatinine, useMmolUnits);
 			ccTextView.setTextAppearance(this,
 					android.R.style.TextAppearance_Medium);
 			String ccMessage = getMessage(cc, age);
 			ccTextView.setText(ccMessage);
-			double dose = getDose(cc);
-			if (dose == USE_APIXABAN_DOSING) {
+            double dose = getDose(cc);
+            if (dose == USE_APIXABAN_DOSING) {
 				// special processing here
 				ccTextView.setTextAppearance(this,
 						android.R.style.TextAppearance_Medium);
@@ -231,7 +233,12 @@ public abstract class DrugCalculator extends EpActivity implements
 
 				}
 			}
-			if (dose == 0) {
+            if (dose < 0) {  // CrCl only
+                calculatedDoseTextView.setTextAppearance(this,
+                        android.R.style.TextAppearance_Large);
+                calculatedDoseTextView.setText(String.valueOf(cc) + " ml/min");
+            }
+			else if (dose == 0) {
 				calculatedDoseTextView
 						.setText(getString(R.string.do_not_use_warning));
 				calculatedDoseTextView.setTextColor(Color.RED);
@@ -255,6 +262,10 @@ public abstract class DrugCalculator extends EpActivity implements
 		}
 	}
 
+    protected Boolean pediatricDosingOk() {
+        return false;
+    }
+
 	protected String doseFrequency(int crCl) {
 		return " mg BID";
 	}
@@ -266,11 +277,15 @@ public abstract class DrugCalculator extends EpActivity implements
 		ccTextView.setText(R.string.creatinine_clearance_label);
 		ccTextView.setTextAppearance(this,
 				android.R.style.TextAppearance_Medium);
-		calculatedDoseTextView.setText(getString(R.string.dose_result_label));
+		calculatedDoseTextView.setText(defaultResultLabel());
 		calculatedDoseTextView.setTextAppearance(this,
 				android.R.style.TextAppearance_Large);
 		ageEditText.requestFocus();
 	}
+
+    protected String defaultResultLabel() {
+        return "Dose";
+    }
 
 	private void getPrefs() {
 		SharedPreferences prefs = PreferenceManager
