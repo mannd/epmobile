@@ -213,12 +213,12 @@
         <activity android:name=".DrugReferenceList"
             android:label="@string/drug_reference_title">
         </activity>
-        <activity android:name=".DrugReference"
-            android:label = "">
-        </activity>
         <activity android:name=".LinkView"
             android:label = "">
         </activity>
+        <activity android:name=".CreatinineClearanceCalculator"
+            android:label="@string/creatinine_clearance_calculator_title">
+         </activity>
     </application>
 
 </manifest>

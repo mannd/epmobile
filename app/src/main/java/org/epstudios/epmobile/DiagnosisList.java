@@ -104,9 +104,10 @@ public class DiagnosisList extends EpActivity {
 	}
 
     private void rvhCriteria() {
-            Intent i = new Intent(Intent.ACTION_VIEW,
-                    Uri.parse("file:///android_asset/rvh.html"));
-            startActivity(i);
+        Intent i = new Intent(this, LinkView.class);
+        i.putExtra("EXTRA_URL", "file:///android_asset/rvh.html");
+        i.putExtra("EXTRA_TITLE", getString(R.string.rvh_title));
+        startActivity(i);
 
     }
 }

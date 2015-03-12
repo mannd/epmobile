@@ -74,7 +74,8 @@ public class CalculatorList extends EpActivity {
 	}
 
     private void creatinineClearanceCalculator() {
-
+        Intent i = new Intent(this, CreatinineClearanceCalculator.class);
+        startActivity(i);
     }
 
 }
