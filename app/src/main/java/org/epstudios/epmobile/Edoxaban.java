@@ -46,6 +46,11 @@ public class Edoxaban extends DrugCalculator {
         }
         return msg;
     }
+
+    @Override
+    protected String getDisclaimer() {
+        return getString(R.string.af_drug_dose_disclaimer) + super.getDisclaimer();
+    }
 }
 
 

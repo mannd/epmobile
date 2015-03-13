@@ -1051,6 +1051,10 @@
     <string name="edoxaban">Edoxaban</string>
     <string name="rivaroxaban">Rivaroxaban</string>
     <string name="sotalol">Sotalol</string>
+    <string name="drug_dose_disclaimer">\nMore information can be found in the Drug Reference
+        modules.</string>
+    <string name="af_drug_dose_disclaimer">\nDoses calculated here are only for the nonvalvular
+        atrial fibrillation indication.</string>
 
 
 </resources>

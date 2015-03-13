@@ -48,4 +48,9 @@ public class Dabigatran extends DrugCalculator {
 		return 0;
 	}
 
+    @Override
+    protected String getDisclaimer() {
+        return getString(R.string.af_drug_dose_disclaimer) + super.getDisclaimer();
+    }
+
 }

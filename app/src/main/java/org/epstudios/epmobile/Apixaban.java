@@ -32,4 +32,9 @@ public class Apixaban extends DrugCalculator {
 		String msg = super.getMessage(crCl, age);
 		return msg;
 	}
+
+    @Override
+    protected String getDisclaimer() {
+        return getString(R.string.af_drug_dose_disclaimer) + super.getDisclaimer();
+    }
 }

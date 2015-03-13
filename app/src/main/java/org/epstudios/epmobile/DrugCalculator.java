@@ -202,7 +202,7 @@ public abstract class DrugCalculator extends EpActivity implements
 			ccTextView.setTextAppearance(this,
 					android.R.style.TextAppearance_Medium);
 			String ccMessage = getMessage(cc, age);
-			ccTextView.setText(ccMessage);
+			ccTextView.setText(ccMessage + getDisclaimer());
             double dose = getDose(cc);
             if (dose == USE_APIXABAN_DOSING) {
 				// special processing here
@@ -222,14 +222,16 @@ public abstract class DrugCalculator extends EpActivity implements
 									+ "\n"
 									+ getString(R.string.apixaban_drug_interaction_at_5_mg_message)
 									+ " "
-									+ getString(R.string.apixaban_dual_inhibitors));
+									+ getString(R.string.apixaban_dual_inhibitors)
+                                    + getDisclaimer());
 				} else if (dose == 2.5) {
 					ccTextView
 							.setText(ccMessage
 									+ "\n"
 									+ getString(R.string.apixaban_drug_interaction_at_2_5_mg_message)
 									+ " "
-									+ getString(R.string.apixaban_dual_inhibitors));
+									+ getString(R.string.apixaban_dual_inhibitors)
+                                    + getDisclaimer());
 
 				}
 			}
@@ -311,6 +313,10 @@ public abstract class DrugCalculator extends EpActivity implements
 		return getString(R.string.creatine_clearance_label) + " = "
 				+ String.valueOf(crCl) + " ml/min";
 	}
+
+    protected String getDisclaimer() {
+        return getString(R.string.drug_dose_disclaimer);
+    }
 
 	abstract protected int getDose(int crCl);
 

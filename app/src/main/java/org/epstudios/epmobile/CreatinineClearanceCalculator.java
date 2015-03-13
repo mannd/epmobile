@@ -40,4 +40,9 @@ public class CreatinineClearanceCalculator extends DrugCalculator {
         return "CrCl";
     }
 
+    @Override
+    protected String getDisclaimer() {
+        return "";  // no disclaimer for CrCl
+    }
+
 }
