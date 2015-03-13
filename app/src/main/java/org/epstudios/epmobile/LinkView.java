@@ -55,7 +55,7 @@ public class LinkView extends EpActivity {
         setTitle(linkTitle);
         if (showButton) {
             Button button = (Button) findViewById(R.id.text_button);
-            button.setText("CrCl = 17mL/min");
+            button.setText("Calculate CrCl");
         }
 
         super.onCreate(savedInstanceState);

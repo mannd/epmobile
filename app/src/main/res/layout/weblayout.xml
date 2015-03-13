@@ -25,6 +25,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAllCaps="false"
+            android:background="@drawable/button_custom"
+            android:textColor="@android:color/white"
 
             android:text="@string/short_creatinine_clearance_label"
             android:layout_gravity="center_horizontal|bottom"
