@@ -414,7 +414,7 @@
     <string name="high_risk_hemorrhages">High risk of bleeding.</string>
     <string name="hemorrhages_reference">Gage BF et al. Am Heart J 2006;151:713</string>
     <string name="hepatic_or_renal_disease_label">Hepatic (cirrhosis, \u2265 2-fold
-        elevation of AST or ALT, or albumin &lt; 3.6 g/dL) or renal disease (Cr clearance &lt; 30 ml/min)</string>
+        elevation of AST or ALT, or albumin &lt; 3.6 g/dL) or renal disease (Cr clearance &lt; 30 mL/min)</string>
     <string name="etoh_hemorrhages_label">Ethanol use (history of EtOH abuse, recent hospitalization for EtOH-related illness, and
 	    worsening liver disease</string>
     <string name="malignancy_label">Malignancy (recent metastatic cancer)</string>

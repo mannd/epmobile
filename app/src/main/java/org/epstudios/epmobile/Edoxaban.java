@@ -42,7 +42,7 @@ public class Edoxaban extends DrugCalculator {
     protected String getMessage(int crCl, double age) {
         String msg = super.getMessage(crCl, age);
         if (crCl > 95) {
-            msg += "\nEdoxaban should not be used in patients with CrCl > 95 ml/min";
+            msg += "\nEdoxaban should not be used in patients with CrCl > 95 mL/min";
         }
         return msg;
     }

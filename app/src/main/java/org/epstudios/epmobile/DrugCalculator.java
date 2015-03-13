@@ -238,7 +238,7 @@ public abstract class DrugCalculator extends EpActivity implements
             if (dose < 0) {  // CrCl only
                 calculatedDoseTextView.setTextAppearance(this,
                         android.R.style.TextAppearance_Large);
-                calculatedDoseTextView.setText(String.valueOf(cc) + " ml/min");
+                calculatedDoseTextView.setText(String.valueOf(cc) + " mL/min");
             }
 			else if (dose == 0) {
 				calculatedDoseTextView
@@ -311,7 +311,7 @@ public abstract class DrugCalculator extends EpActivity implements
 		// override for drug-specific message
 		// age is only used in some cases for warnings
 		return getString(R.string.creatine_clearance_label) + " = "
-				+ String.valueOf(crCl) + " ml/min";
+				+ String.valueOf(crCl) + " mL/min";
 	}
 
     protected String getDisclaimer() {
