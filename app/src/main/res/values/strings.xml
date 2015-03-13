@@ -38,7 +38,6 @@
     <string name="creatinine_hint">Creatinine (mg/dL)</string>
     <string name="age_hint">Age (yr)</string>
     <string name="age_label">Age (yr)</string>
-    <string name="creatinine_clearance_label"></string>
     <string name="male_label">Male</string>
     <string name="female_label">Female</string>
     <string name="cl_label">Interval to Rate</string>
@@ -262,7 +261,8 @@
     <string name="drug_calculator_settings">Other Calculator Settings</string>
     <string name="default_weight_unit_title">Default Weight Unit</string>
     <string name="default_weight_unit_summary">Select default unit for weight</string>
-    <string name="creatine_clearance_label">Creatinine Clearance</string>
+    <string name="creatinine_clearance_label"></string>
+    <string name="long_creatinine_clearance_label">Creatinine Clearance</string>
     <string name="dabigatran_warning_severe">Avoid concomitant use of P-gp inhibitors
 	    (e.g. dronedarone).</string>
     <string name="dabigatran_warning_mild">Consider reducing dose of dabigatran to 75 mg twice a day 
@@ -1056,6 +1056,7 @@
     <string name="af_drug_dose_disclaimer">\nDoses calculated here are only for the nonvalvular
         atrial fibrillation indication.</string>
     <string name="apixaban_esrd_caution">\nUse with caution in patients with ESRD on dialysis</string>
+    <string name="short_creatinine_clearance_label">CrCl</string>
 
 
 </resources>

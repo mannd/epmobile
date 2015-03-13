@@ -30,13 +30,13 @@ import android.widget.TextView;
  * along with EP Mobile.  If not, see <http://www.gnu.org/licenses/>.
  * <p/>
  */
+
+
 public class DrugReferenceList extends EpActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.selectionlist);
         super.onCreate(savedInstanceState);
-        // right now reuse same array used by drug calculators, BUT
-        // if we add more drugs (like amiodarone) will need to create separate array.
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this, R.array.drug_reference_list,
                 android.R.layout.simple_list_item_1);
@@ -77,6 +77,7 @@ public class DrugReferenceList extends EpActivity {
         Intent i = new Intent(this, LinkView.class);
         i.putExtra("EXTRA_URL", "file:///android_asset/dabigatran.html");
         i.putExtra("EXTRA_TITLE", getString(R.string.dabigatran));
+        i.putExtra("EXTRA_SHOW_BUTTON", true);
         startActivity(i);
     }
 
@@ -84,7 +85,7 @@ public class DrugReferenceList extends EpActivity {
         Intent i = new Intent(this, LinkView.class);
         i.putExtra("EXTRA_URL", "file:///android_asset/dofetilide.html");
         i.putExtra("EXTRA_TITLE", getString(R.string.dofetilide));
-
+        i.putExtra("EXTRA_SHOW_BUTTON", true);
         startActivity(i);
     }
 
@@ -92,6 +93,7 @@ public class DrugReferenceList extends EpActivity {
         Intent i = new Intent(this, LinkView.class);
         i.putExtra("EXTRA_URL", "file:///android_asset/rivaroxaban.html");
         i.putExtra("EXTRA_TITLE", getString(R.string.rivaroxaban));
+        i.putExtra("EXTRA_SHOW_BUTTON", true);
         startActivity(i);
     }
 
@@ -99,6 +101,7 @@ public class DrugReferenceList extends EpActivity {
         Intent i = new Intent(this, LinkView.class);
         i.putExtra("EXTRA_URL", "file:///android_asset/sotalol.html");
         i.putExtra("EXTRA_TITLE", getString(R.string.sotalol));
+        i.putExtra("EXTRA_SHOW_BUTTON", true);
         startActivity(i);
     }
 
@@ -106,6 +109,7 @@ public class DrugReferenceList extends EpActivity {
         Intent i = new Intent(this, LinkView.class);
         i.putExtra("EXTRA_URL", "file:///android_asset/apixaban.html");
         i.putExtra("EXTRA_TITLE", getString(R.string.apixaban));
+        i.putExtra("EXTRA_SHOW_BUTTON", true);
         startActivity(i);
     }
 
@@ -113,7 +117,7 @@ public class DrugReferenceList extends EpActivity {
         Intent i = new Intent(this, LinkView.class);
         i.putExtra("EXTRA_URL", "file:///android_asset/edoxaban.html");
         i.putExtra("EXTRA_TITLE", getString(R.string.edoxaban));
-
+        i.putExtra("EXTRA_SHOW_BUTTON", true);
         startActivity(i);
     }
 

@@ -1,8 +1,12 @@
 package org.epstudios.epmobile;
 
-import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.webkit.WebView;
+import android.widget.Button;
+
 
 /**
  * Copyright (C) 2015 EP Studios, Inc.
@@ -31,19 +35,38 @@ public class LinkView extends EpActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         Bundle extras = getIntent().getExtras();
         String url = "";
         String linkTitle = "";
+        Boolean showButton = false;
         if (extras != null) {
             url  = extras.getString("EXTRA_URL");
             linkTitle = extras.getString("EXTRA_TITLE");
+            showButton = extras.getBoolean("EXTRA_SHOW_BUTTON");
+
         }
-        setContentView(R.layout.weblayout);
-        super.onCreate(savedInstanceState);
-        //String url = "file:///android_asset/rvapexvsbasepacing.html";
+        if (showButton)
+            setContentView(R.layout.weblayout);
+        else
+            setContentView(R.layout.weblayout_no_button);
         webView = (WebView) findViewById(R.id.web_view);
         webView.loadUrl(url);
         setTitle(linkTitle);
+        if (showButton) {
+            Button button = (Button) findViewById(R.id.text_button);
+            button.setText("CrCl = 17mL/min");
+        }
+
+        super.onCreate(savedInstanceState);
+
 
     }
-}
+
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.text_button:
+                ;
+                break;
+        }
+    }}

@@ -303,7 +303,7 @@ public abstract class DrugCalculator extends EpActivity implements
 		// returns basic creatinine clearance
 		// override for drug-specific message
 		// age is only used in some cases for warnings
-		return getString(R.string.creatine_clearance_label) + " = "
+		return getString(R.string.long_creatinine_clearance_label) + " = "
 				+ String.valueOf(crCl) + " mL/min";
 	}
 
