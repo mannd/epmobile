@@ -22,9 +22,8 @@ public class Apixaban extends DrugCalculator {
 
 	@Override
 	protected int getDose(int crCl) {
-		if (crCl >= 15)
-			return USE_APIXABAN_DOSING;
-		return 0;
+        // note only warning now if CrCl < 15, apixaban not prohibited
+		return USE_APIXABAN_DOSING;
 	}
 
 	@Override

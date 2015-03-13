@@ -214,26 +214,19 @@ public abstract class DrugCalculator extends EpActivity implements
 					dose = 2.5;
 				else
 					dose = 5;
-
 				// add on CYP/dPg warnings
+                String message = ccMessage + "\n";
 				if (dose == 5) {
-					ccTextView
-							.setText(ccMessage
-									+ "\n"
-									+ getString(R.string.apixaban_drug_interaction_at_5_mg_message)
-									+ " "
-									+ getString(R.string.apixaban_dual_inhibitors)
-                                    + getDisclaimer());
-				} else if (dose == 2.5) {
-					ccTextView
-							.setText(ccMessage
-									+ "\n"
-									+ getString(R.string.apixaban_drug_interaction_at_2_5_mg_message)
-									+ " "
-									+ getString(R.string.apixaban_dual_inhibitors)
-                                    + getDisclaimer());
-
-				}
+                    message += getString(R.string.apixaban_drug_interaction_at_5_mg_message);
+                }
+                else if (dose == 2.5) {
+                    message += getString(R.string.apixaban_drug_interaction_at_2_5_mg_message);
+                }
+                message += " " + getString(R.string.apixaban_dual_inhibitors) + getDisclaimer();
+                if (cc < 15) {
+                    message += getString(R.string.apixaban_esrd_caution);
+                }
+                ccTextView.setText(message);
 			}
             if (dose < 0) {  // CrCl only
                 calculatedDoseTextView.setTextAppearance(this,

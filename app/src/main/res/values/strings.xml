@@ -1055,6 +1055,7 @@
         modules.</string>
     <string name="af_drug_dose_disclaimer">\nDoses calculated here are only for the nonvalvular
         atrial fibrillation indication.</string>
+    <string name="apixaban_esrd_caution">\nUse with caution in patients with ESRD on dialysis</string>
 
 
 </resources>
