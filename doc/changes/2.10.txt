@@ -1,0 +1,8 @@
+EP Mobile v2.10 Release Notes
+Changes since v2.9
+* Added standalone creatinine clearance calculator
+* Added right ventricular hypertrophy criteria
+* Updated apixaban dosing calculator dosing for end-stage renal disease
+* Added more information to results of drug dosing calculators
+* Added drug reference pages with detailed use of EP related drugs
+* Creatinine clearance toolbar in drug reference pages allows easy access to creatinine clearance data while reviewing dosing information

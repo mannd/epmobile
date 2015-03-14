@@ -5,7 +5,10 @@ If you have suggestions, features you'd like to see, or complaints, please email
 EP Mobile -- The Swiss Army Knife of Electrophysiology!
 
 Features: 
-- NEW: Pacing tricks: Para-Hisian pacing and RV apex vs base pacing
+- NEW: Right ventricular hypertrophy criteria
+- NEW: Drug reference with creatinine clearance toolbar
+- NEW: Creatinine clearance calculator
+- Pacing tricks: Para-Hisian pacing and RV apex vs base pacing
 - Drug dose calculators: dabigatran, dofetilide, rivaroxaban, 
 	sotalol, apixaban and edoxaban
 - Warfarin clinic weekly dose calculator
