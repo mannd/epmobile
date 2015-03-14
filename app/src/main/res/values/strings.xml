@@ -38,7 +38,6 @@
     <string name="creatinine_hint">Creatinine (mg/dL)</string>
     <string name="age_hint">Age (yr)</string>
     <string name="age_label">Age (yr)</string>
-    <string name="creatinine_clearance_label"></string>
     <string name="male_label">Male</string>
     <string name="female_label">Female</string>
     <string name="cl_label">Interval to Rate</string>
@@ -262,7 +261,8 @@
     <string name="drug_calculator_settings">Other Calculator Settings</string>
     <string name="default_weight_unit_title">Default Weight Unit</string>
     <string name="default_weight_unit_summary">Select default unit for weight</string>
-    <string name="creatine_clearance_label">Creatinine Clearance</string>
+    <string name="creatinine_clearance_label"></string>
+    <string name="long_creatinine_clearance_label">Creatinine Clearance</string>
     <string name="dabigatran_warning_severe">Avoid concomitant use of P-gp inhibitors
 	    (e.g. dronedarone).</string>
     <string name="dabigatran_warning_mild">Consider reducing dose of dabigatran to 75 mg twice a day 
@@ -414,7 +414,7 @@
     <string name="high_risk_hemorrhages">High risk of bleeding.</string>
     <string name="hemorrhages_reference">Gage BF et al. Am Heart J 2006;151:713</string>
     <string name="hepatic_or_renal_disease_label">Hepatic (cirrhosis, \u2265 2-fold
-        elevation of AST or ALT, or albumin &lt; 3.6 g/dL) or renal disease (Cr clearance &lt; 30 ml/min)</string>
+        elevation of AST or ALT, or albumin &lt; 3.6 g/dL) or renal disease (Cr clearance &lt; 30 mL/min)</string>
     <string name="etoh_hemorrhages_label">Ethanol use (history of EtOH abuse, recent hospitalization for EtOH-related illness, and
 	    worsening liver disease</string>
     <string name="malignancy_label">Malignancy (recent metastatic cancer)</string>
@@ -1042,6 +1042,21 @@
     <string name="davila_ps_location">Posteroseptal</string>
     <string name="davila_rps_location">Right Posteroseptal (Posteroseptal Tricuspid Annulus)</string>
     <string name="davila_ms_location">Mid-septal (Mid-septal Tricuspid Annulus</string>
+    <string name="creatinine_clearance_calculator_title">Creatinine Clearance Calculator</string>
+    <string name="drug_reference_title">Drug Reference</string>
+    <string name="rvh_title">Right Ventricular Hypertrophy</string>
+    <string name="apixaban">Apixaban</string>
+    <string name="dabigatran">Dabigatran</string>
+    <string name="dofetilide">Dofetilide</string>
+    <string name="edoxaban">Edoxaban</string>
+    <string name="rivaroxaban">Rivaroxaban</string>
+    <string name="sotalol">Sotalol</string>
+    <string name="drug_dose_disclaimer">\nMore information can be found in the Drug Reference
+        modules.</string>
+    <string name="af_drug_dose_disclaimer">\nDoses calculated here are only for the nonvalvular
+        atrial fibrillation indication.</string>
+    <string name="apixaban_esrd_caution">\nUse with caution in patients with ESRD on dialysis</string>
+    <string name="short_creatinine_clearance_label">CrCl</string>
 
 
 </resources>

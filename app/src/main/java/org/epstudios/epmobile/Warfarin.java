@@ -31,7 +31,7 @@ import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 
-public class Warfarin extends EpDrugCalculatorActivity implements
+public class Warfarin extends EpActivity implements
 		OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

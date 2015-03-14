@@ -1,0 +1,58 @@
+# Dabigatran -- leave title blank below
+#+TITLE:  
+#+AUTHOR:    David Mann
+#+EMAIL:     mannd@epstudiossoftware.com
+#+DATE:      [2015-03-06 Fri]
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:nil toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME: 
+#+XSLT:
+* Dosage and administration
+** Nonvalvular atrial fibrillation
+| CrCl                   | Dose            |
+|------------------------+-----------------|
+| >30 mL/min             | 150 mg PO BID   |
+| ≥15 to <30 mL/min      | 75 mg PO BID    |
+| <15 mL/min or dialysis | Not recommended |
+** DVT and PE
+| CrCl                   | Dose            |
+|------------------------+-----------------|
+| >30 mL/min             | 150 mg PO BID   |
+| ≤30 mL/min or dialysis | Not recommended |
+Start after 5-10 days of parenteral anticoagulation.
+** Reduction in risk of recurrence of DVT and PE in patients who have been previously treated
+| CrCl                   | Dose            |
+|------------------------+-----------------|
+| >30 mL/min             | 150 mg PO BID   |
+| ≤30 mL/min or dialysis | Not recommended |
+** Dosing modifications (atrial fibrillation)
+- CrCl 30-50 mL/min and coadministration of P-gp inhibitors dronedarone or ketoconazole: Consider reducing dose to 75 mg BID.  Dose adjustment not necessary when coadministered with other P-gp inhibitors
+- CrCl <30 mL/min with concomitant use of P-gp inhibitors: Avoid coadministration.
+** Dosing modifications (DVT/PE)
+- CrCl <50 mL/min with concomitant use of P-gp inhibitors: Avoid coadministration.
+* Dosage forms and strengths
+- Capsules
+  - 75 mg
+  - 150 mg
+* Contraindications
+- Active pathological bleeding
+- History of serious hypersensitivity reaction to dabigatran
+- Mechanical prosthetic heart valve
+* Warnings and precautions
+- Bleeding: Can cause serious and fatal bleeding.
+- Bioprosthetic heart valves: Use is not recommended.
+* Adverse reactions
+- Most common adverse reactions (>15%) are gastritis-like symptoms and bleeding.
+* Drug interactions
+- P-gp inducers rifampin: Avoid coadministration with dabigatran.
+- P-gp inhibitors in patients with CrCl 30-50 mL/min: Consider reducing dose or avoid.
+- P-gp inhibitors in patients with CrCl <30 mL/min: Not recommended.
+* Use in specific populations
+- Geriatric use: Risk of bleeding increases with age.

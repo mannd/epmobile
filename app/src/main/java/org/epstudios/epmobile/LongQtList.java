@@ -27,7 +27,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class LongQtList extends EpDiagnosisListActivity {
+public class LongQtList extends EpActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.selectionlist);

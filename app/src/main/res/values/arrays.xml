@@ -59,6 +59,7 @@
         <item>@string/brugada_ecg_title</item>
         <item>@string/lvh_list_title</item>
         <item>@string/lqt_syndrome_title</item>
+        <item>@string/rvh_title</item>
         <item>@string/short_qt_title</item>
         <item>@string/vt_list_title</item>
         <item>@string/wct_algorithm_list_title</item>
@@ -66,6 +67,7 @@
     </array>
     <array name="calculator_list">
         <item>@string/ibw_calculator_title</item>
+        <item>@string/creatinine_clearance_calculator_title</item>
         <item>@string/day_calculator_title</item>
         <item>@string/drug_dose_calculator_list_title</item>
         <item>@string/cycle_length_calculator_title</item>
@@ -74,11 +76,20 @@
     <array name="reference_list">
         <item>@string/brugada_drugs_title</item>
         <item>@string/icd_calculator_title</item>
+        <item>@string/drug_reference_title</item>
         <item>@string/entrainment_title</item>
         <item>@string/long_qt_drugs_title</item>
         <item>@string/normal_ep_values_title</item>
         <item>@string/para_hisian_pacing_title</item>
         <item>@string/rva_vs_rvb_pacing_title</item>
+    </array>
+    <array name="drug_reference_list">
+        <item>@string/apixaban</item>
+        <item>@string/dabigatran</item>
+        <item>@string/dofetilide</item>
+        <item>@string/edoxaban</item>
+        <item>@string/rivaroxaban</item>
+        <item>@string/sotalol</item>
     </array>
     <array name="wct_algorithm_list">
 

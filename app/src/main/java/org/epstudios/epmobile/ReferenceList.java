@@ -10,7 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class ReferenceList extends EpListActivity {
+public class ReferenceList extends EpActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.selectionlist);
@@ -49,6 +49,8 @@ public class ReferenceList extends EpListActivity {
 				else if (selection
 						.equals(getString(R.string.rva_vs_rvb_pacing_title)))
 					rvaVsRvbPacing();
+                else if (selection.equals(getString(R.string.drug_reference_title)))
+                    drugReferenceList();
 			}
 		});
 	}
@@ -64,15 +66,17 @@ public class ReferenceList extends EpListActivity {
 	}
 
 	private void longQtDrugs() {
-		Intent i = new Intent(Intent.ACTION_VIEW,
-				Uri.parse(getString(R.string.long_qt_drugs_link)));
-		startActivity(i);
+        Intent i = new Intent(this, LinkView.class);
+        i.putExtra("EXTRA_URL", getString(R.string.long_qt_drugs_link));
+        i.putExtra("EXTRA_TITLE", getString(R.string.long_qt_drugs_title));
+        startActivity(i);
 	}
 
 	private void brugadaDrugs() {
-		Intent i = new Intent(Intent.ACTION_VIEW,
-				Uri.parse(getString(R.string.brugada_drugs_link)));
-		startActivity(i);
+        Intent i = new Intent(this, LinkView.class);
+        i.putExtra("EXTRA_URL", getString(R.string.brugada_drugs_link));
+        i.putExtra("EXTRA_TITLE", getString(R.string.brugada_drugs_title));
+        startActivity(i);
 	}
 
 	private void entrainment() {
@@ -81,14 +85,21 @@ public class ReferenceList extends EpListActivity {
 	}
 
 	private void paraHisianPacing() {
-		Intent i = new Intent(this, ParaHisianPacing.class);
+		Intent i = new Intent(this, LinkView.class);
+        i.putExtra("EXTRA_URL", "file:///android_asset/parahisianpacinginstructions.html");
+        i.putExtra("EXTRA_TITLE", getString((R.string.para_hisian_pacing_title)));
 		startActivity(i);
 	}
 
 	private void rvaVsRvbPacing() {
-		Intent i = new Intent(this, RvaVsRvbPacing.class);
-		startActivity(i);
-
+		Intent i = new Intent(this, LinkView.class);
+        i.putExtra("EXTRA_URL", "file:///android_asset/rvapexvsbasepacing.html");
+        i.putExtra("EXTRA_TITLE", getString((R.string.rva_vs_rvb_pacing_title)));        startActivity(i);
 	}
+
+    private void drugReferenceList() {
+        Intent i = new Intent(this, DrugReferenceList.class);
+        startActivity(i);
+    }
 
 }

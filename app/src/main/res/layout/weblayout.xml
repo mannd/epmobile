@@ -6,13 +6,37 @@
 
     <include layout="@layout/toolbar" />
 
-    <WebView
-        android:id="@+id/web_view"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="@dimen/activity_horizontal_margin"
-        >
+        android:layout_height="match_parent">
 
-    </WebView>
+    <WebView
+            android:id="@+id/web_view"
+            android:layout_above="@id/text_button"
+            android:layout_width="match_parent"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:layout_height="match_parent"
+        android:clickable="false">
+        </WebView>
+
+        <Button
+            android:id="@+id/text_button"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:background="@drawable/button_custom"
+            android:textColor="@android:color/white"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+
+            android:text="@string/short_creatinine_clearance_label"
+            android:layout_gravity="center_horizontal|bottom"
+            android:clickable="true" />
+
+
+    </RelativeLayout>
+
+
 
 </LinearLayout>
+

@@ -26,7 +26,7 @@ import android.view.View.OnClickListener;
 import android.widget.CheckBox;
 import android.widget.RadioGroup;
 
-public class ShortQt extends EpDiagnosisActivity implements OnClickListener {
+public class ShortQt extends EpActivity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.shortqt);
