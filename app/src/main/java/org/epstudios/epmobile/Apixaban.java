@@ -22,9 +22,8 @@ public class Apixaban extends DrugCalculator {
 
 	@Override
 	protected int getDose(int crCl) {
-		if (crCl >= 15)
-			return USE_APIXABAN_DOSING;
-		return 0;
+        // note only warning now if CrCl < 15, apixaban not prohibited
+		return USE_APIXABAN_DOSING;
 	}
 
 	@Override
@@ -32,4 +31,9 @@ public class Apixaban extends DrugCalculator {
 		String msg = super.getMessage(crCl, age);
 		return msg;
 	}
+
+    @Override
+    protected String getDisclaimer() {
+        return getString(R.string.af_drug_dose_disclaimer) + super.getDisclaimer();
+    }
 }

@@ -1,0 +1,51 @@
+# Edoxaban -- leave title blank below
+#+TITLE:  
+#+AUTHOR:    David Mann
+#+EMAIL:     mannd@epstudiossoftware.com
+#+DATE:      [2015-02-23 Mon]
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:nil toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME: 
+#+XSLT:
+* Dosage and administration
+** Nonvalvular atrial fibrillation
+| CrCl              | Dose                |
+|-------------------+---------------------|
+| >95 mL/min        | DO NOT USE!         |
+| >50 to ≤95 mL/min | 60 mg PO once daily |
+| ≥15 to <50 mL/min | 30 mg PO once daily |
+| <15 mL/min        | DO NOT USE!         |
+Note: Do not use with CrCl >95 mL/min!
+** DVT and PE
+| CrCl              | Dose                    |
+|-------------------+-------------------------|
+| >50 mL/min        | 60 mg orally once daily |
+| ≥15 to <50 mL/min | 30 mg orally once daily |
+Patients with body weight ≤60 kg or receiving certain P-gp inhibitors (verpamil, quinidine, azithromycin, clarithromycin, erhythromycin, itraconazole or ketoconazole) use 30 mg once daily.
+* Dosage forms and strengths
+- Tablets
+  - 15 mg
+  - 30 mg
+  - 60 mg
+* Contraindications
+-  Active pathological bleeding
+* Warnings and precautions
+- Bleeding: serious and potentially fatal bleeding.  Promptly evaluate signs and symptoms of blood loss.
+- Mechanical heart valves or moderate to severe mitral stenosis: Use is not recommended.
+* Adverse reactions
+- Treatment of nonvalvular AF: The most common adverse reactions (≥5%) are bleeding and anemia.
+- Treatment of DVT and PE: The most common adverse reactions (≥1%) are bleeding, rash, abnormal liver function tests and anemia.
+* Drug interactions
+- Anticoagulants: Avoid concomitant use.
+- Rifampin: Avoid concomitant use.
+* Use in specific populations
+- Nursing mothers: Discontinue drug or discontinue nursing.
+- Impaired renal function: Reduce dose (see tables above).
+- Moderate or severe hepatic impairment: Not recommended.

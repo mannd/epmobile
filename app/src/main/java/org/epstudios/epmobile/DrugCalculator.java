@@ -16,7 +16,7 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public abstract class DrugCalculator extends EpDrugCalculatorActivity implements
+public abstract class DrugCalculator extends EpActivity implements
 		OnClickListener {
 
 	public DrugCalculator() {
@@ -73,11 +73,20 @@ public abstract class DrugCalculator extends EpDrugCalculatorActivity implements
 
 	// phony result of getDose() to indicate special dosing for apixaban
 	protected final static int USE_APIXABAN_DOSING = 9999;
+    // phony -int dose to indicate CrCl ONLY
+    protected final static int CREATININE_CLEARANCE_ONLY = -1;
 
 	private WeightUnit defaultWeightUnitSelection = WeightUnit.KG;
 	private CreatinineUnit defaultCreatinineUnitSelection = CreatinineUnit.MG;
 
-	@Override
+    // return string for Drug Reference CrCl calculator
+    private String creatinineClearanceReturnString;
+
+    protected String getCreatinineClearanceReturnString() {
+        return creatinineClearanceReturnString;
+    }
+
+    @Override
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.calculate_dose_button:
@@ -176,7 +185,7 @@ public abstract class DrugCalculator extends EpDrugCalculatorActivity implements
 			return CreatinineUnit.MMOL;
 	}
 
-	private void calculateDose() {
+	protected void calculateDose() {
 		CharSequence weightText = weightEditText.getText();
 		CharSequence creatinineText = creatinineEditText.getText();
 		CharSequence ageText = ageEditText.getText();
@@ -187,7 +196,7 @@ public abstract class DrugCalculator extends EpDrugCalculatorActivity implements
 				weight = UnitConverter.lbsToKgs(weight);
 			double creatinine = Double.parseDouble(creatinineText.toString());
 			double age = Double.parseDouble(ageText.toString());
-			if (age < 18) {
+			if (age < 18 && !pediatricDosingOk()) {
 				calculatedDoseTextView.setText("Do not use!");
 				calculatedDoseTextView.setTextColor(Color.RED);
 				ccTextView.setTextColor(Color.RED);
@@ -196,13 +205,15 @@ public abstract class DrugCalculator extends EpDrugCalculatorActivity implements
 			}
 			boolean useMmolUnits = (getCreatinineUnitSelection() == CreatinineUnit.MMOL);
 			int cc = CreatinineClearance.calculate(isMale, age, weight,
-					creatinine, useMmolUnits);
+                    creatinine, useMmolUnits);
 			ccTextView.setTextAppearance(this,
 					android.R.style.TextAppearance_Medium);
 			String ccMessage = getMessage(cc, age);
-			ccTextView.setText(ccMessage);
-			double dose = getDose(cc);
-			if (dose == USE_APIXABAN_DOSING) {
+			ccTextView.setText(ccMessage + getDisclaimer());
+            creatinineClearanceReturnString = getCrClResultString(cc, isMale, age, weight, creatinine,
+                    useMmolUnits);
+            double dose = getDose(cc);
+            if (dose == USE_APIXABAN_DOSING) {
 				// special processing here
 				ccTextView.setTextAppearance(this,
 						android.R.style.TextAppearance_Medium);
@@ -212,26 +223,27 @@ public abstract class DrugCalculator extends EpDrugCalculatorActivity implements
 					dose = 2.5;
 				else
 					dose = 5;
-
 				// add on CYP/dPg warnings
+                String message = ccMessage + "\n";
 				if (dose == 5) {
-					ccTextView
-							.setText(ccMessage
-									+ "\n"
-									+ getString(R.string.apixaban_drug_interaction_at_5_mg_message)
-									+ " "
-									+ getString(R.string.apixaban_dual_inhibitors));
-				} else if (dose == 2.5) {
-					ccTextView
-							.setText(ccMessage
-									+ "\n"
-									+ getString(R.string.apixaban_drug_interaction_at_2_5_mg_message)
-									+ " "
-									+ getString(R.string.apixaban_dual_inhibitors));
-
-				}
+                    message += getString(R.string.apixaban_drug_interaction_at_5_mg_message);
+                }
+                else if (dose == 2.5) {
+                    message += getString(R.string.apixaban_drug_interaction_at_2_5_mg_message);
+                }
+                message += " " + getString(R.string.apixaban_dual_inhibitors);
+                if (cc < 15) {
+                    message += getString(R.string.apixaban_esrd_caution);
+                }
+                message += getDisclaimer();
+                ccTextView.setText(message);
 			}
-			if (dose == 0) {
+            if (dose < 0) {  // CrCl only
+                calculatedDoseTextView.setTextAppearance(this,
+                        android.R.style.TextAppearance_Large);
+                calculatedDoseTextView.setText(String.valueOf(cc) + " mL/min");
+            }
+			else if (dose == 0) {
 				calculatedDoseTextView
 						.setText(getString(R.string.do_not_use_warning));
 				calculatedDoseTextView.setTextColor(Color.RED);
@@ -255,6 +267,19 @@ public abstract class DrugCalculator extends EpDrugCalculatorActivity implements
 		}
 	}
 
+    private String getCrClResultString(double crCl, boolean isMale,
+                                       double age, double weight, double cr, boolean crIsMmMolUnits) {
+        String result = "CrCl = " + Math.round(crCl) + "mL/min (";
+        result += Math.round(age)+ "y" + (isMale ? "M" : "F") + " ";
+        result += Math.round(weight) + "kg Cr ";
+        result += cr + (crIsMmMolUnits ? "\u00B5mol/L)" : "mg/dL)");
+        return result;
+    }
+
+    protected Boolean pediatricDosingOk() {
+        return false;
+    }
+
 	protected String doseFrequency(int crCl) {
 		return " mg BID";
 	}
@@ -266,11 +291,15 @@ public abstract class DrugCalculator extends EpDrugCalculatorActivity implements
 		ccTextView.setText(R.string.creatinine_clearance_label);
 		ccTextView.setTextAppearance(this,
 				android.R.style.TextAppearance_Medium);
-		calculatedDoseTextView.setText(getString(R.string.dose_result_label));
+		calculatedDoseTextView.setText(defaultResultLabel());
 		calculatedDoseTextView.setTextAppearance(this,
 				android.R.style.TextAppearance_Large);
 		ageEditText.requestFocus();
 	}
+
+    protected String defaultResultLabel() {
+        return "Dose";
+    }
 
 	private void getPrefs() {
 		SharedPreferences prefs = PreferenceManager
@@ -293,9 +322,13 @@ public abstract class DrugCalculator extends EpDrugCalculatorActivity implements
 		// returns basic creatinine clearance
 		// override for drug-specific message
 		// age is only used in some cases for warnings
-		return getString(R.string.creatine_clearance_label) + " = "
-				+ String.valueOf(crCl) + " ml/min";
+		return getString(R.string.long_creatinine_clearance_label) + " = "
+				+ String.valueOf(crCl) + " mL/min";
 	}
+
+    protected String getDisclaimer() {
+        return getString(R.string.drug_dose_disclaimer);
+    }
 
 	abstract protected int getDose(int crCl);
 

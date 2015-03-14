@@ -1,0 +1,75 @@
+# Dofetilide  -- leave title blank below
+#+TITLE:  
+#+AUTHOR:    David Mann
+#+EMAIL:     mannd@epstudiossoftware.com
+#+DATE:      [2015-03-06 Fri]
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:nil toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME: 
+#+XSLT:
+* Note
+- Dofetilide is available only to hospitals and prescribers who have received appropriate dosing and treatment initiation education.
+* Dosage and administration
+1) Obtain ECG.  Prior to administration of first dose, determine QTc interval.  If QTc >440 msec (500 msec in patients with ventricular conduction abnormalities), dofetilide is contraindicated.  If the heart rate is <60 bpm, QT interval should be used.  Patients with heart rates <50 bpm have not been studied.
+2) Calculate CrCl.
+3) Starting dose
+   | CrCl             | Dose            |
+   |------------------+-----------------|
+   | >60 mL/min       | 500 mcg BID     |
+   | 40 to 60 mL/min  | 250 mcg BID     |
+   | 20 to <40 mL/min | 125 mcg BID     |
+   | <20 mL/min       | Contraindicated |
+4) Administer the adjusted dofetilide dose and begin continuous ECG monitoring.
+5) At 2-3 hours after first dose of dofetilide, determine the QTc.  If the QT has increased by >15% compared to the baseline established in the first step, OR if the QTc is >500 msec (550 msec in patients with ventricular conduction abnormalities), subsequent dosing should be adjusted as follows:
+   | Starting dose | Subsequent dose for ↑QTc |
+   |---------------+--------------------------|
+   | 500 mcg BID   | 250 mcg BID              |
+   | 250 mcg BID   | 125 mcg BID              |
+   | 125 mcg BID   | 125 mcg once daily       |
+6) At 2-3 hours after each subsequent dose of dofetilide, determine the QTc (for in-hospital doses 2-5).  No further down titration of dofetilide based on QTc is recommended.  NOTE: If at any time after the 2nd dose of dofetilide the QTc is >500 msec (550 msec in patients with ventricular conduction abnormalities) dofetilide should be discontinued.
+7) Patients are to be continuously monitored by ECG for a minimum of 3 days, or for a minimum of 12 hours after electrical or pharmacological conversion to normal sinus rhythm, whichever is greater.
+* Dosage forms and strengths
+- Capsules
+  - 125 mcg
+  - 250 mcg
+  - 500 mcg
+* Warnings
+- Dofetilide can cause serious ventricular arrhythmias, primarily Torsade de Pointes (TdP) type ventricular tachycardia, a polymorphic ventricular tachycardia associated with QT interval prolongation. QT prolongation is directly related to dofetilide dose.  Factors such as reduced CrCl, female gender, and larger doses increase the risk of TdP.  The risk of TdP can be reduced by adjustment of the dofetilide dose according to CrCl and by monitoring the ECG for excessive increases in the QT interval.
+- Hospitalize patient at least 3 days while on maintenance dose in facility that provides cardiac resuscitation, continuous ECG monitoring, and estimated CrCl.
+- Calculate CrCl before initiating dofetilide therapy.
+- Measure QT interval before initiating dofetilide therapy.
+- Follow specific dosing adjustment guidelines given above.
+- Reevaluate renal function and QTc q3 month or more if medically required.
+* Contraindications
+- Congenital or acquired long QT syndromes.
+- Baseline QT or QTc interval >440 msec (500 msec in patients with ventricular conduction abnormalities).
+- Concomitant use of:
+  - verapamil
+  - cimetidine
+  - trimethoprim
+  - ketoconazole
+  - prochlorperazine
+  - dolutegravir
+  - megestrol
+  - hydrochlorothiazide
+  - drugs that prolong the QT interval
+- CrCl <20 mL/min.
+- Previous hypersensitivity to dofetilide.
+* Adverse reactions
+- Dose-depended incidence of Torsade de Pointes with potentially fatal ventricular arrhythmias, as well as other tachy and bradyarrhythmias.
+- >10% include headache and chest pain.
+* Drug interactions
+- Note multiple drug interactions; do not use with other QT prolonging drugs.  See Contraindications.  See full prescribing details.
+* Use in specific populations
+- Nursing mothers: Discontinue drug or discontinue nursing.
+- Pregnancy category: C
+- Increased incidence of Torsade de Pointes in women.
+- Adjust dose for renal impairment; see above and full prescribing information.
+  
