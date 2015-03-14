@@ -210,7 +210,8 @@ public abstract class DrugCalculator extends EpActivity implements
 					android.R.style.TextAppearance_Medium);
 			String ccMessage = getMessage(cc, age);
 			ccTextView.setText(ccMessage + getDisclaimer());
-            creatinineClearanceReturnString = "CrCl = " + cc + " mL/min";
+            creatinineClearanceReturnString = getCrClResultString(cc, isMale, age, weight, creatinine,
+                    useMmolUnits);
             double dose = getDose(cc);
             if (dose == USE_APIXABAN_DOSING) {
 				// special processing here
@@ -230,10 +231,11 @@ public abstract class DrugCalculator extends EpActivity implements
                 else if (dose == 2.5) {
                     message += getString(R.string.apixaban_drug_interaction_at_2_5_mg_message);
                 }
-                message += " " + getString(R.string.apixaban_dual_inhibitors) + getDisclaimer();
+                message += " " + getString(R.string.apixaban_dual_inhibitors);
                 if (cc < 15) {
                     message += getString(R.string.apixaban_esrd_caution);
                 }
+                message += getDisclaimer();
                 ccTextView.setText(message);
 			}
             if (dose < 0) {  // CrCl only
@@ -265,7 +267,14 @@ public abstract class DrugCalculator extends EpActivity implements
 		}
 	}
 
-
+    private String getCrClResultString(double crCl, boolean isMale,
+                                       double age, double weight, double cr, boolean crIsMmMolUnits) {
+        String result = "CrCl = " + Math.round(crCl) + "mL/min (";
+        result += Math.round(age)+ "y" + (isMale ? "M" : "F") + " ";
+        result += Math.round(weight) + "kg Cr ";
+        result += cr + (crIsMmMolUnits ? "\u00B5mol/L)" : "mg/dL)");
+        return result;
+    }
 
     protected Boolean pediatricDosingOk() {
         return false;

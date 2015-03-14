@@ -36,6 +36,7 @@ import android.widget.Toast;
 public class LinkView extends EpActivity implements View.OnClickListener {
     private WebView webView;
     private Button calcCrClButton;
+    private static final String BUTTON_TITLE = "Calculate CrCl";
 
 
     static public int CREATININE_CLEARANCE_CALCULATOR_ACTIVITY = 123;
@@ -63,7 +64,7 @@ public class LinkView extends EpActivity implements View.OnClickListener {
         if (showButton) {
             calcCrClButton = (Button) findViewById(R.id.text_button);
             calcCrClButton.setOnClickListener(this);
-            calcCrClButton.setText("Calculate CrCl");
+            calcCrClButton.setText(BUTTON_TITLE);
         }
 
         super.onCreate(savedInstanceState);
@@ -85,7 +86,9 @@ public class LinkView extends EpActivity implements View.OnClickListener {
         if (requestCode == CREATININE_CLEARANCE_CALCULATOR_ACTIVITY &&
                 resultCode == RESULT_OK && data != null) {
             String result = data.getStringExtra("EXTRA_RESULT_STRING");
-            result += " (Touch to recalculate)";
+            if (result == null) {
+                result = BUTTON_TITLE;
+            }
 
             calcCrClButton.setText(result);
         }
