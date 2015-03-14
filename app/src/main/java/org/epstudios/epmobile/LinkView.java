@@ -1,11 +1,14 @@
 package org.epstudios.epmobile;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.Toast;
 
 
 /**
@@ -30,8 +33,12 @@ import android.widget.Button;
  * along with EP Mobile.  If not, see <http://www.gnu.org/licenses/>.
  * <p/>
  */
-public class LinkView extends EpActivity {
+public class LinkView extends EpActivity implements View.OnClickListener {
     private WebView webView;
+    private Button calcCrClButton;
+
+
+    static public int CREATININE_CLEARANCE_CALCULATOR_ACTIVITY = 123;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +61,9 @@ public class LinkView extends EpActivity {
         webView.loadUrl(url);
         setTitle(linkTitle);
         if (showButton) {
-            Button button = (Button) findViewById(R.id.text_button);
-            button.setText("Calculate CrCl");
+            calcCrClButton = (Button) findViewById(R.id.text_button);
+            calcCrClButton.setOnClickListener(this);
+            calcCrClButton.setText("Calculate CrCl");
         }
 
         super.onCreate(savedInstanceState);
@@ -66,7 +74,22 @@ public class LinkView extends EpActivity {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.text_button:
-                ;
+                Intent i = new Intent(this, CreatinineClearanceCalculator.class);
+                startActivityForResult(i, CREATININE_CLEARANCE_CALCULATOR_ACTIVITY);
                 break;
         }
-    }}
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == CREATININE_CLEARANCE_CALCULATOR_ACTIVITY &&
+                resultCode == RESULT_OK && data != null) {
+            String result = data.getStringExtra("EXTRA_RESULT_STRING");
+            result += " (Touch to recalculate)";
+
+            calcCrClButton.setText(result);
+        }
+
+    }
+
+}

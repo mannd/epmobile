@@ -79,7 +79,14 @@ public abstract class DrugCalculator extends EpActivity implements
 	private WeightUnit defaultWeightUnitSelection = WeightUnit.KG;
 	private CreatinineUnit defaultCreatinineUnitSelection = CreatinineUnit.MG;
 
-	@Override
+    // return string for Drug Reference CrCl calculator
+    private String creatinineClearanceReturnString;
+
+    protected String getCreatinineClearanceReturnString() {
+        return creatinineClearanceReturnString;
+    }
+
+    @Override
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.calculate_dose_button:
@@ -203,6 +210,7 @@ public abstract class DrugCalculator extends EpActivity implements
 					android.R.style.TextAppearance_Medium);
 			String ccMessage = getMessage(cc, age);
 			ccTextView.setText(ccMessage + getDisclaimer());
+            creatinineClearanceReturnString = "CrCl = " + cc + " mL/min";
             double dose = getDose(cc);
             if (dose == USE_APIXABAN_DOSING) {
 				// special processing here
@@ -256,6 +264,8 @@ public abstract class DrugCalculator extends EpActivity implements
 			ccTextView.setText(R.string.creatinine_clearance_label);
 		}
 	}
+
+
 
     protected Boolean pediatricDosingOk() {
         return false;

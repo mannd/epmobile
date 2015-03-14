@@ -1,5 +1,8 @@
 package org.epstudios.epmobile;
 
+import android.content.Intent;
+import android.os.Bundle;
+
 /**
  * Copyright (C) 2015 EP Studios, Inc.
  * www.epstudiossoftware.com
@@ -43,6 +46,16 @@ public class CreatinineClearanceCalculator extends DrugCalculator {
     @Override
     protected String getDisclaimer() {
         return "";  // no disclaimer for CrCl
+    }
+
+    @Override
+    protected void calculateDose() {
+        super.calculateDose();
+        Bundle bundle = new Bundle();
+        bundle.putString("EXTRA_RESULT_STRING", getCreatinineClearanceReturnString());
+        Intent mIntent = new Intent();
+        mIntent.putExtras(bundle);
+        setResult(RESULT_OK, mIntent);
     }
 
 }
