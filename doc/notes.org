@@ -694,8 +694,8 @@
 ** Outcome
    in-hospital complications or mortality
 * Preparing new version -- IMPORTANT!
-  - [X] finish version, commit.
-  - [X] git flow release start vx.y
+  - [ ] finish version, commit.
+  - [ ] git flow release start vx.y
   - [ ] IMPORTANT - update build.gradle
     - [ ] increment android:versionCode
     - [ ] change android:versionName
@@ -708,7 +708,7 @@
   - [ ] git flow release finish vx.y
   - [ ] git push --tags origin master
   - [ ] git push origin develop
-  - [ ] refresh eclipse epmobile
+  - [ ] refresh android studio epmobile
   - [ ] make/sign epmobile.apk, save it in dev/epmobileapp/later_verisons/
   - [ ] on market.android.com update product details
   - [ ] upload apk, deactivate old one
