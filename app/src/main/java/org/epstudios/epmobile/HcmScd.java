@@ -25,9 +25,16 @@ package org.epstudios.epmobile;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 
 public class HcmScd extends RiskScore
 {  // TODO implement
+
+    private EditText ageEditText;
+    private EditText maxLvWallThicknessEditText;
+    private EditText maxLvotGradientEditText;
+    private EditText laSizeEditText;
+
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.hcmscd);
         // super sets up toolbar, so need layout first.  Call
@@ -54,6 +61,11 @@ public class HcmScd extends RiskScore
         checkBox[0] = (CheckBox) findViewById(R.id.family_hx_scd);
         checkBox[1] = (CheckBox) findViewById(R.id.nsvt);
         checkBox[2] = (CheckBox) findViewById(R.id.unexplained_syncope);
+
+        ageEditText = (EditText) findViewById(R.id.age);
+        maxLvWallThicknessEditText = (EditText) findViewById(R.id.max_lv_wall_thickness);
+        maxLvotGradientEditText = (EditText) findViewById(R.id.max_lvot_gradient);
+        laSizeEditText = (EditText) findViewById(R.id.la_size);
     }
 
     @Override
@@ -68,5 +80,14 @@ public class HcmScd extends RiskScore
 
     protected String getShortReference() {
         return "";
+    }
+
+    @Override
+    protected void clearEntries() {
+        super.clearEntries();
+        ageEditText.getText().clear();
+        maxLvWallThicknessEditText.getText().clear();
+        maxLvotGradientEditText.getText().clear();
+        laSizeEditText.getText().clear();
     }
 }

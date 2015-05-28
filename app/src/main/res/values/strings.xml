@@ -304,7 +304,7 @@
     <string name="risk_scores_title">Risk Scores</string>
 
     <!-- HCM -->
-    <string name="hcm_title">HCM Sudden Death Risk Score</string>
+    <string name="hcm_title">HCM SCD Risk (2002)</string>
     <!-- Major risk factors -->
     <string name="cardiac_arrest_label">Cardiac arrest (VF)</string>
     <string name="spontaneous_vt_label">Spontaneous sustained VT</string>
@@ -1057,13 +1057,14 @@
         atrial fibrillation indication.</string>
     <string name="apixaban_esrd_caution">\nUse with caution in patients with ESRD on dialysis</string>
     <string name="short_creatinine_clearance_label">CrCl</string>
-    <string name="hcm_scd_esc_score_title">HCM Risk-SCD (ESC)</string>
-    <string name="hcm_scd_key">Age = age at evaluation. Measurements via transthoracic echo.
-        LA diameter measured in parasternal long axis. Max LVOT (left ventricular outflow tract)
-        gradient determined at
+    <string name="hcm_scd_esc_score_title">HCM SCD Risk (2014)</string>
+    <string name="hcm_scd_key">Age = age at evaluation. Max LV wall = maximum left ventricular
+        wall thickness.  Note all echo measurements via transthoracic echo.
+        Max gradient = maximum left ventricular outflow tract gradient determined at
         rest and with Valsalva using pulsed and continuous wave Doppler from the apical 3 and
         5 chamber views. Peak outflow gradients determined by modified Bernouilli equation:
-        Gradient = 4V/u00B2, where V is the peak aortic outflow velocity.
+        Gradient = 4V/u00B2, where V is the peak aortic outflow velocity. LA (left atrial)
+        size measured in parasternal long axis.
         Family hx of SCD = history of sudden cardiac death in 1 or more first degree
         relatives under 40 years old or SCD in a first degree relative with confirmed HCM at
         any age. NSVT = nonsustained ventricular tachycardia: 3 consecutive ventricular beats
@@ -1073,12 +1074,13 @@
         diagnosis and management of hypertrophic cardiomyopathy. Eur Heart J 2014;35:2733,
         http://eurheartj.oxfordjournals.org/content/35/39/2733#sec-16</string>
     <string name="age_in_years_label">Age (yr)</string>
-    <string name="age_in_years_hint">Age in years</string>
-    <string name="max_lv_wall_thickness_hint">Max LV wall thickness (mm)</string>
-    <string name="max_lv_wall_thickness_label">Max LV wall thickness (mm)</string>
-    <string name="max_lvot_gradient_label">Max LVOT gradient (mmHg)</string>
-    <string name="max_lvot_gradient_hint">Max LVOT gradient (mmHg)</string>
-    <string name="la_size_label">Left atrial size (mm)</string>
-    <string name="la_size_hint">Left atrial size (mm)</string>
+    <string name="age_in_years_hint">Age (yr)</string>
+    <string name="max_lv_wall_thickness_hint">LV wall (mm)</string>
+    <string name="max_lv_wall_thickness_label">Max LV wall (mm)</string>
+    <string name="max_lvot_gradient_label">Max gradient (mmHg)</string>
+    <string name="max_lvot_gradient_hint">Gradient (mmHg)</string>
+    <string name="la_size_label">LA size (mm)</string>
+    <string name="la_size_hint">LA (mm)</string>
+    <string name="scd_in_family_label">Family hx of SCD</string>
 
 </resources>

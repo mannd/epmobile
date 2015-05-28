@@ -29,7 +29,7 @@ public class Hcm extends RiskScore {
         // super sets up toolbar, so need layout first.  Call
         // after setContentView().
         super.onCreate(savedInstanceState);
-		
+
 	}
 
 	@Override

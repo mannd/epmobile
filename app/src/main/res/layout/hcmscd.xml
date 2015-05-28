@@ -25,10 +25,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:stretchColumns="*"
-                android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                android:layout_marginRight="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:layout_marginBottom="@dimen/activity_vertical_margin"
                 >
 
             <TableRow>
@@ -94,7 +90,7 @@
                 android:id="@+id/family_hx_scd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/family_hx_scd_label"
+                android:text="@string/scd_in_family_label"
                 android:checked="false" />
 
             <CheckBox
