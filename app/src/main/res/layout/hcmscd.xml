@@ -21,48 +21,74 @@
             android:orientation="vertical"
             >
 
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="*"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                >
 
-            <TextView
-                style="@style/Header1"
-                android:text="@string/major" />
+            <TableRow>
 
-            <CheckBox
-                android:id="@+id/cardiac_arrest"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/cardiac_arrest_label" />
+                <TextView
+                    android:id="@+id/textView2"
+                    android:text="@string/age_in_years_label"
+                    android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
 
-            <CheckBox
-                android:id="@+id/spontaneous_vt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/spontaneous_vt_label" />
+                <EditText
+                    android:id="@+id/age"
+                    android:hint="@string/age_in_years_hint"
+                    android:inputType="number"
+                    android:text=""></EditText>
+            </TableRow>
 
-            <CheckBox
-                android:id="@+id/family_hx_sd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/family_hx_sd_label" />
+                <TableRow>
 
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:text="@string/max_lv_wall_thickness_label"
+                        android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
 
+                    <EditText
+                        android:id="@+id/max_lv_wall_thickness"
+                        android:hint="@string/max_lv_wall_thickness_hint"
+                        android:inputType="number"
+                        android:text=""></EditText>
+                </TableRow>
 
-            <CheckBox
-                android:id="@+id/lv_thickness"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/lv_thickness_label" />
+                <TableRow>
 
-            <CheckBox
-                android:id="@+id/abnormal_exercise_bp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/abnormal_exercise_bp_label" />
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:text="@string/max_lvot_gradient_label"
+                        android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
 
-            <CheckBox
-                android:id="@+id/nonsustained_vt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/nonsustained_vt_label" />
+                    <EditText
+                        android:id="@+id/max_lvot_gradient"
+                        android:hint="@string/max_lvot_gradient_hint"
+                        android:inputType="number"
+                        android:text=""></EditText>
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:text="@string/la_size_label"
+                        android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
+
+                    <EditText
+                        android:id="@+id/la_size"
+                        android:hint="@string/la_size_hint"
+                        android:inputType="number"
+                        android:text=""></EditText>
+                </TableRow>
+
+            </TableLayout>
+
 
             <CheckBox
                 android:id="@+id/family_hx_scd"

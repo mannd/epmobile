@@ -22,8 +22,49 @@
 
 package org.epstudios.epmobile;
 
-public class HcmScd // extends RiskScore
+import android.os.Bundle;
+import android.view.View;
+import android.widget.CheckBox;
+
+public class HcmScd extends RiskScore
 {  // TODO implement
+    protected void onCreate(Bundle savedInstanceState) {
+        setContentView(R.layout.hcmscd);
+        // super sets up toolbar, so need layout first.  Call
+        // after setContentView().
+        super.onCreate(savedInstanceState);
+
+    }
+
+
+    @Override
+    protected void calculateResult() {
+
+    }
+
+    @Override
+    protected void setContentView() {
+
+    }
+
+    @Override
+    protected void init() {
+        checkBox = new CheckBox[3];
+
+        checkBox[0] = (CheckBox) findViewById(R.id.family_hx_scd);
+        checkBox[1] = (CheckBox) findViewById(R.id.nsvt);
+        checkBox[2] = (CheckBox) findViewById(R.id.unexplained_syncope);
+    }
+
+    @Override
+    protected String getFullReference() {
+        return null;
+    }
+
+    @Override
+    protected String getRiskLabel() {
+        return null;
+    }
 
     protected String getShortReference() {
         return "";
