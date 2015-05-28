@@ -119,6 +119,7 @@
         <item>@string/chads_title</item>
         <item>@string/chadsvasc_title</item>
         <item>@string/hasbled_title</item>
+        <item>@string/hcm_scd_esc_score_title</item>
         <item>@string/hcm_title</item>
         <item>@string/hemorrhages_title</item>
         <item>@string/icd_risk_title</item>

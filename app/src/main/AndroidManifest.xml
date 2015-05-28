@@ -219,6 +219,9 @@
         <activity android:name=".CreatinineClearanceCalculator"
             android:label="@string/creatinine_clearance_calculator_title">
          </activity>
+        <activity android:name=".HcmScd"
+            android:label="@string/hcm_scd_esc_score_title">
+        </activity>
     </application>
 
 </manifest>
