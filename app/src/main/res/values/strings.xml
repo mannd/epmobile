@@ -164,7 +164,7 @@
 		Lea &amp; Febiger.</string>
     <string name="arvc_list_title">ARVC/D Diagnosis</string>
     <string name="arvc_title">ARVC/D Diagnosis</string>
-    <string name="arvc_2010_criteria_title">ARVC/D 2010 Diagnostic Criteria</string>
+    <string name="arvc_2010_criteria_title">ARVC/D Diagnosis (2010)</string>
     <string name="global_dysfunction_label">I. Global or regional dysfunction and structural
 		alterations</string>
     <string name="major">MAJOR</string>
@@ -497,7 +497,7 @@
     <string name="lqts_reference">Schwartz PJ et al.  Circulation 2011;124:2181.
         http://circ.ahajournals.org/content/124/20/2181</string>
     <!-- ARVC 1994 criteria -->
-    <string name="arvc_old_criteria_title">ARVC/D 1994 Diagnostic Criteria</string>
+    <string name="arvc_old_criteria_title">ARVC/D Diagnosis (1994)</string>
     <string name="arvc_old_rv_dilatation">Severe dilatation and reduction
         of RVEF with no or only mild LV impairment</string>
     <string name="arvc_old_rv_aneurysms">Localized RV aneurysms (akinetic
