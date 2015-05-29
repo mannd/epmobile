@@ -58,6 +58,20 @@
                 <TableRow>
 
                     <TextView
+                        android:id="@+id/textView5"
+                        android:text="@string/la_size_label"
+                        android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
+
+                    <EditText
+                        android:id="@+id/la_size"
+                        android:hint="@string/la_size_hint"
+                        android:inputType="number"
+                        android:text=""></EditText>
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
                         android:id="@+id/textView4"
                         android:text="@string/max_lvot_gradient_label"
                         android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
@@ -69,19 +83,7 @@
                         android:text=""></EditText>
                 </TableRow>
 
-                <TableRow>
 
-                    <TextView
-                        android:id="@+id/textView5"
-                        android:text="@string/la_size_label"
-                        android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
-
-                    <EditText
-                        android:id="@+id/la_size"
-                        android:hint="@string/la_size_hint"
-                        android:inputType="number"
-                        android:text=""></EditText>
-                </TableRow>
 
             </TableLayout>
 

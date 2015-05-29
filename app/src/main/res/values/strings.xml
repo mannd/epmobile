@@ -1058,15 +1058,16 @@
     <string name="apixaban_esrd_caution">\nUse with caution in patients with ESRD on dialysis</string>
     <string name="short_creatinine_clearance_label">CrCl</string>
     <string name="hcm_scd_esc_score_title">HCM SCD Risk (2014)</string>
-    <string name="hcm_scd_key">Age = age at evaluation. Max LV wall = maximum left ventricular
+    <string name="hcm_scd_key">Age = age at evaluation. Wall thickness = maximum left ventricular
         wall thickness.  Note all echo measurements via transthoracic echo.
-        Max gradient = maximum left ventricular outflow tract gradient determined at
+        LA (left atrial)
+        diameter measured in parasternal long axis.
+        Gradient = maximum left ventricular outflow tract gradient determined at
         rest and with Valsalva using pulsed and continuous wave Doppler from the apical 3 and
         5 chamber views. Peak outflow gradients determined by modified Bernouilli equation:
-        Gradient = 4V\u00B2, where V is the peak aortic outflow velocity. LA (left atrial)
-        diameter measured in parasternal long axis.
+        Gradient = 4V\u00B2, where V is the peak aortic outflow velocity.
         Family hx of SCD = history of sudden cardiac death in 1 or more first degree
-        relatives under 40 years old or SCD in a first degree relative with confirmed HCM at
+        relatives under 40 years old or in a first degree relative with confirmed HCM at
         any age. NSVT = nonsustained ventricular tachycardia: 3 consecutive ventricular beats
         at a rate of 120 bpm or more and ;lt 30 sec
         duration on Holter monitoring (mininum 24 hrs) at or prior to evaluation.</string>
@@ -1075,12 +1076,12 @@
         http://eurheartj.oxfordjournals.org/content/35/39/2733#sec-16
         O\'Mahony C et al.  Eur Heart J 2014;35:2010, http://eurheartj.oxfordjournals.org/content/35/30/2010.long
         </string>
-    <string name="age_in_years_label">Age (yr)</string>
+    <string name="age_in_years_label">Age in years</string>
     <string name="age_in_years_hint">Age (yr)</string>
-    <string name="max_lv_wall_thickness_hint">LV wall (mm)</string>
-    <string name="max_lv_wall_thickness_label">Max LV wall (mm)</string>
-    <string name="max_lvot_gradient_label">Max gradient (mmHg)</string>
-    <string name="max_lvot_gradient_hint">Gradient (mmHg)</string>
+    <string name="max_lv_wall_thickness_hint">Thickness (mm)</string>
+    <string name="max_lv_wall_thickness_label">Wall thickness (mm)</string>
+    <string name="max_lvot_gradient_label">Gradient (mmHg)</string>
+    <string name="max_lvot_gradient_hint">Grad (mmHg)</string>
     <string name="la_size_label">LA diameter (mm)</string>
     <string name="la_size_hint">LA (mm)</string>
     <string name="scd_in_family_label">Family hx of SCD</string>
@@ -1089,5 +1090,13 @@
     <string name="invalid_thickness_message">Maximum LV wall thickness must be between 10 and 35 mm.</string>
     <string name="invalid_gradient_message">Maximum LV gradient must be between 2 and 154 mmHg.</string>
     <string name="invalid_diameter_message">Maximum LA diameter must be between 28 and 67 mm.</string>
-
+    <string name="icd_not_indicated_message">ICD generally not indicated.</string>
+    <string name="icd_may_be_considered_message">ICD may be considered.</string>
+    <string name="icd_should_be_considered_message">ICD should be considered.</string>
+    <string name="hcm_scd_2014_full_reference">O’Mahony C., Jichi F., Pavlou M.,
+        Monserrat L., Anastasakis A., Rapezzi C.  A novel clinical risk prediction
+        model for sudden cardiac death in hypertrophic cardiomyopathy (HCM Risk-SCD).
+        Eur Heart J [Internet] 2014 Aug [cited 2015 May 29];35(30):2010–2020.
+        Available from: http://doi.org/10.1093/eurheartj/eht439
+</string>
 </resources>

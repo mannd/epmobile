@@ -25,9 +25,6 @@ import android.widget.CheckBox;
 public class Hcm extends RiskScore {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		setContentView(R.layout.hcm);
-        // super sets up toolbar, so need layout first.  Call
-        // after setContentView().
         super.onCreate(savedInstanceState);
 
 	}
@@ -101,6 +98,7 @@ public class Hcm extends RiskScore {
 			else if (result == 0)
 				message += getString(R.string.hcm_low_risk_text);
 		}
+		setResultMessage(message);
 		// no short reference added here
 		return message;
 

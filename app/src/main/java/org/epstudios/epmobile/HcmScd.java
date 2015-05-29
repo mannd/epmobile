@@ -45,9 +45,6 @@ public class HcmScd extends RiskScore
     private EditText laSizeEditText;
 
     protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.hcmscd);
-        // super sets up toolbar, so need layout first.  Call
-        // after setContentView().
         super.onCreate(savedInstanceState);
     }
 
@@ -98,6 +95,19 @@ public class HcmScd extends RiskScore
             double scdProb = 1 - Math.pow(coefficient, Math.exp(prognosticIndex));
             displayResult(getResultMessage(scdProb, NO_ERROR),
                     getString(R.string.hcm_scd_esc_score_title));
+            addSelectedRisk("Age = " + ageString + " yrs");
+            addSelectedRisk("LV wall thickness = " + maxLvWallThicknessString + " mm");
+            addSelectedRisk("LA diameter = " + laDiameterString + " mm");
+            addSelectedRisk(("LVOT gradient = " + maxLvotGradientString + " mmHg"));
+            if (hasFamilyHxScd) {
+                addSelectedRisk(getString(R.string.family_history_sudden_death_label));
+            }
+            if (hasNsvt) {
+                addSelectedRisk(getString(R.string.nonsustained_vt_label));
+            }
+            if (hasSyncope) {
+                addSelectedRisk(getString(R.string.unexplained_syncope_label));
+            }
         } catch (NumberFormatException e) {
             displayResult(getResultMessage(0.0, NUMBER_EXCEPTION),
                     getString(R.string.error_dialog_title));
@@ -109,7 +119,7 @@ public class HcmScd extends RiskScore
 
     @Override
     protected void setContentView() {
-
+        setContentView(R.layout.hcmscd);
     }
 
     @Override
@@ -128,16 +138,17 @@ public class HcmScd extends RiskScore
 
     @Override
     protected String getFullReference() {
-        return null;
+        return getString(R.string.hcm_scd_2014_full_reference);
     }
 
     @Override
     protected String getRiskLabel() {
-        return null;
+        return getString(R.string.hcm_label);
     }
 
     protected String getShortReference() {
-        return "";
+        // no short reference given, since it is in layout
+        return null;
     }
 
     @Override
@@ -177,19 +188,20 @@ public class HcmScd extends RiskScore
             DecimalFormat formatter = new DecimalFormat("##.##");
             String formattedResult = formatter.format(result);
             message = "5 year SCD risk = " + formattedResult + "%";
-            String recommendations = "";
+            String recommendations;
             if (result < 4) {
-                recommendations = "ICD generally not indicated.";
+                recommendations = getString(R.string.icd_not_indicated_message);
             }
             else if (result < 6) {
-                recommendations = "ICD may be considered.";
+                recommendations = getString(R.string.icd_may_be_considered_message);
             }
             else {
-                recommendations = "ICD should be considered.";
+                recommendations = getString(R.string.icd_should_be_considered_message);
             }
             message = message + "\n" + recommendations;
         }
         // no short reference added here
+        setResultMessage(message);
         return message;
     }
 
