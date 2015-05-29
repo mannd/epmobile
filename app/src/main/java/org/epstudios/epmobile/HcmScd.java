@@ -100,7 +100,7 @@ public class HcmScd extends RiskScore
             addSelectedRisk("LA diameter = " + laDiameterString + " mm");
             addSelectedRisk(("LVOT gradient = " + maxLvotGradientString + " mmHg"));
             if (hasFamilyHxScd) {
-                addSelectedRisk(getString(R.string.family_history_sudden_death_label));
+                addSelectedRisk(getString(R.string.scd_in_family_label));
             }
             if (hasNsvt) {
                 addSelectedRisk(getString(R.string.nonsustained_vt_label));
@@ -143,7 +143,7 @@ public class HcmScd extends RiskScore
 
     @Override
     protected String getRiskLabel() {
-        return getString(R.string.hcm_label);
+        return getString(R.string.hcm_scd_esc_score_title);
     }
 
     protected String getShortReference() {
@@ -201,6 +201,7 @@ public class HcmScd extends RiskScore
             message = message + "\n" + recommendations;
         }
         // no short reference added here
+        // this is needed for clipboard copying of result
         setResultMessage(message);
         return message;
     }

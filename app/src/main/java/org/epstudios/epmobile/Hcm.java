@@ -111,7 +111,7 @@ public class Hcm extends RiskScore {
 
 	@Override
 	protected String getRiskLabel() {
-		return getString(R.string.hcm_label);
+		return getString(R.string.hcm_title);
 	}
 
 	@Override
