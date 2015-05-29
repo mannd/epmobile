@@ -23,12 +23,19 @@
 package org.epstudios.epmobile;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
 public class HcmScd extends RiskScore
-{  // TODO implement
+{
+    private static final int NO_ERROR = 8999;
+    private static final int NUMBER_EXCEPTION = 9000;
+    private static final int AGE_OUT_OF_RANGE = 9001;
+    private static final int THICKNESS_OUT_OF_RANGE = 9002;
+    private static final int GRADIENT_OUT_OF_RANGE = 9003;
+    private static final int SIZE_OUT_OF_RANGE = 9004;
 
     private EditText ageEditText;
     private EditText maxLvWallThicknessEditText;
@@ -40,12 +47,35 @@ public class HcmScd extends RiskScore
         // super sets up toolbar, so need layout first.  Call
         // after setContentView().
         super.onCreate(savedInstanceState);
-
     }
-
 
     @Override
     protected void calculateResult() {
+        Log.d("EPS", "Calculate HCM-SCD");
+        String ageString = ageEditText.getText().toString();
+        String maxLvWallThicknessString = maxLvWallThicknessEditText.getText().toString();
+        String maxLvotGradientString = maxLvotGradientEditText.getText().toString();
+        boolean hasFamilyHxScd = checkBox[0].isChecked();
+        boolean hasNsvt = checkBox[1].isChecked();
+        boolean hasSyncope = checkBox[2].isChecked();
+        try {
+            int age = Integer.parseInt(ageString);
+            int maxLvWallThickness = Integer.parseInt(maxLvWallThicknessString);
+            int maxLvotGradient = Integer.parseInt(maxLvotGradientString);
+            if (age > 116 || age < 16) {
+                displayResult(getResultMessage(0.0, AGE_OUT_OF_RANGE),
+                        getString(R.string.error_dialog_title));
+                return;
+            }
+
+
+        } catch (NumberFormatException e) {
+            Log.d("EPS", "Invalid number");
+            displayResult(getResultMessage(0.0, NUMBER_EXCEPTION),
+                    getString(R.string.error_dialog_title));
+            return;
+        }
+
 
     }
 
@@ -90,4 +120,26 @@ public class HcmScd extends RiskScore
         maxLvotGradientEditText.getText().clear();
         laSizeEditText.getText().clear();
     }
+
+    private String getResultMessage(double result,int errorCode) {
+        String message = "";
+        switch (errorCode) {
+            case NUMBER_EXCEPTION:
+                message = getString(R.string.invalid_entries_message);
+                break;
+            case AGE_OUT_OF_RANGE:
+                message = getString(R.string.invalid_age_message);
+                break;
+            // etc.
+            default:
+                break;
+        }
+        if (errorCode == NO_ERROR) {
+            // do the message here
+        }
+        setResultMessage(message);
+        // no short reference added here
+        return message;
+    }
+
 }

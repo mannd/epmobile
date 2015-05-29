@@ -1063,7 +1063,7 @@
         Max gradient = maximum left ventricular outflow tract gradient determined at
         rest and with Valsalva using pulsed and continuous wave Doppler from the apical 3 and
         5 chamber views. Peak outflow gradients determined by modified Bernouilli equation:
-        Gradient = 4V/u00B2, where V is the peak aortic outflow velocity. LA (left atrial)
+        Gradient = 4V\u00B2, where V is the peak aortic outflow velocity. LA (left atrial)
         size measured in parasternal long axis.
         Family hx of SCD = history of sudden cardiac death in 1 or more first degree
         relatives under 40 years old or SCD in a first degree relative with confirmed HCM at
@@ -1082,5 +1082,7 @@
     <string name="la_size_label">LA size (mm)</string>
     <string name="la_size_hint">LA (mm)</string>
     <string name="scd_in_family_label">Family hx of SCD</string>
+    <string name="invalid_entries_message">Invalid entry!</string>
+    <string name="invalid_age_message">Age should be between 16 and 115 yrs</string>
 
 </resources>
