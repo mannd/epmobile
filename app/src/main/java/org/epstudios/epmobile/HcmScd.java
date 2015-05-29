@@ -50,7 +50,6 @@ public class HcmScd extends RiskScore
 
     @Override
     protected void calculateResult() {
-        Log.d("EPS", "Calculate HCM-SCD");
         String ageString = ageEditText.getText().toString();
         String maxLvWallThicknessString = maxLvWallThicknessEditText.getText().toString();
         String maxLvotGradientString = maxLvotGradientEditText.getText().toString();
