@@ -28,6 +28,8 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
+import java.text.DecimalFormat;
+
 public class HcmScd extends RiskScore
 {
     private static final int NO_ERROR = 8999;
@@ -55,6 +57,7 @@ public class HcmScd extends RiskScore
         String ageString = ageEditText.getText().toString();
         String maxLvWallThicknessString = maxLvWallThicknessEditText.getText().toString();
         String maxLvotGradientString = maxLvotGradientEditText.getText().toString();
+        String laDiameterString = laSizeEditText.getText().toString();
         boolean hasFamilyHxScd = checkBox[0].isChecked();
         boolean hasNsvt = checkBox[1].isChecked();
         boolean hasSyncope = checkBox[2].isChecked();
@@ -62,15 +65,40 @@ public class HcmScd extends RiskScore
             int age = Integer.parseInt(ageString);
             int maxLvWallThickness = Integer.parseInt(maxLvWallThicknessString);
             int maxLvotGradient = Integer.parseInt(maxLvotGradientString);
-            if (age > 116 || age < 16) {
+            int laDiameter = Integer.parseInt(laDiameterString);
+            if (age > 115 || age < 16) {
                 displayResult(getResultMessage(0.0, AGE_OUT_OF_RANGE),
                         getString(R.string.error_dialog_title));
                 return;
             }
-
-
+            if (maxLvWallThickness < 10 || maxLvWallThickness > 35) {
+                displayResult(getResultMessage(0.0, THICKNESS_OUT_OF_RANGE),
+                        getString(R.string.error_dialog_title));
+                return;
+            }
+            if (maxLvotGradient < 2 || maxLvotGradient > 154) {
+                displayResult(getResultMessage(0.0, GRADIENT_OUT_OF_RANGE),
+                        getString(R.string.error_dialog_title));
+                return;
+            }
+            if (laDiameter < 28 || laDiameter > 67) {
+                displayResult(getResultMessage(0.0, SIZE_OUT_OF_RANGE),
+                        getString(R.string.error_dialog_title));
+                return;
+            }
+            final double coefficient = 0.998;
+            double prognosticIndex = 0.15939858 * maxLvWallThickness
+                    - 0.00294271 * maxLvWallThickness * maxLvWallThickness
+                    + 0.0259082 * laDiameter
+                    + 0.00446131 * maxLvotGradient
+                    + (hasFamilyHxScd ? 0.4583082 : 0.0)
+                    + (hasNsvt ? 0.82639195 : 0.0)
+                    + (hasSyncope ? 0.71650361 : 0.0)
+                    - 0.01799934 * age;
+            double scdProb = 1 - Math.pow(coefficient, Math.exp(prognosticIndex));
+            displayResult(getResultMessage(scdProb, NO_ERROR),
+                    getString(R.string.hcm_scd_esc_score_title));
         } catch (NumberFormatException e) {
-            Log.d("EPS", "Invalid number");
             displayResult(getResultMessage(0.0, NUMBER_EXCEPTION),
                     getString(R.string.error_dialog_title));
             return;
@@ -130,14 +158,37 @@ public class HcmScd extends RiskScore
             case AGE_OUT_OF_RANGE:
                 message = getString(R.string.invalid_age_message);
                 break;
-            // etc.
+            case THICKNESS_OUT_OF_RANGE:
+                message = getString(R.string.invalid_thickness_message);
+                break;
+            case GRADIENT_OUT_OF_RANGE:
+                message = getString(R.string.invalid_gradient_message);
+                break;
+            case SIZE_OUT_OF_RANGE:
+                message = getString(R.string.invalid_diameter_message);
+                break;
+            case NO_ERROR:      // drop through
             default:
                 break;
         }
         if (errorCode == NO_ERROR) {
-            // do the message here
+            // convert to percentage
+            result = result * 100.0;
+            DecimalFormat formatter = new DecimalFormat("##.##");
+            String formattedResult = formatter.format(result);
+            message = "5 year SCD risk = " + formattedResult + "%";
+            String recommendations = "";
+            if (result < 4) {
+                recommendations = "ICD generally not indicated.";
+            }
+            else if (result < 6) {
+                recommendations = "ICD may be considered.";
+            }
+            else {
+                recommendations = "ICD should be considered.";
+            }
+            message = message + "\n" + recommendations;
         }
-        setResultMessage(message);
         // no short reference added here
         return message;
     }

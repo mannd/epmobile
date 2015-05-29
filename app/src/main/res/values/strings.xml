@@ -1064,25 +1064,30 @@
         rest and with Valsalva using pulsed and continuous wave Doppler from the apical 3 and
         5 chamber views. Peak outflow gradients determined by modified Bernouilli equation:
         Gradient = 4V\u00B2, where V is the peak aortic outflow velocity. LA (left atrial)
-        size measured in parasternal long axis.
+        diameter measured in parasternal long axis.
         Family hx of SCD = history of sudden cardiac death in 1 or more first degree
         relatives under 40 years old or SCD in a first degree relative with confirmed HCM at
         any age. NSVT = nonsustained ventricular tachycardia: 3 consecutive ventricular beats
         at a rate of 120 bpm or more and ;lt 30 sec
         duration on Holter monitoring (mininum 24 hrs) at or prior to evaluation.</string>
-    <string name="hcm_scd_reference">Reference: Elliott PM et al. 2014 ESC guidelines on
+    <string name="hcm_scd_reference">References: Elliott PM et al. 2014 ESC guidelines on
         diagnosis and management of hypertrophic cardiomyopathy. Eur Heart J 2014;35:2733,
-        http://eurheartj.oxfordjournals.org/content/35/39/2733#sec-16</string>
+        http://eurheartj.oxfordjournals.org/content/35/39/2733#sec-16
+        O\'Mahony C et al.  Eur Heart J 2014;35:2010, http://eurheartj.oxfordjournals.org/content/35/30/2010.long
+        </string>
     <string name="age_in_years_label">Age (yr)</string>
     <string name="age_in_years_hint">Age (yr)</string>
     <string name="max_lv_wall_thickness_hint">LV wall (mm)</string>
     <string name="max_lv_wall_thickness_label">Max LV wall (mm)</string>
     <string name="max_lvot_gradient_label">Max gradient (mmHg)</string>
     <string name="max_lvot_gradient_hint">Gradient (mmHg)</string>
-    <string name="la_size_label">LA size (mm)</string>
+    <string name="la_size_label">LA diameter (mm)</string>
     <string name="la_size_hint">LA (mm)</string>
     <string name="scd_in_family_label">Family hx of SCD</string>
-    <string name="invalid_entries_message">Invalid entry!</string>
-    <string name="invalid_age_message">Age should be between 16 and 115 yrs</string>
+    <string name="invalid_entries_message">One or more entries are invalid.</string>
+    <string name="invalid_age_message">Age must be between 16 and 115 yrs.</string>
+    <string name="invalid_thickness_message">Maximum LV wall thickness must be between 10 and 35 mm.</string>
+    <string name="invalid_gradient_message">Maximum LV gradient must be between 2 and 154 mmHg.</string>
+    <string name="invalid_diameter_message">Maximum LA diameter must be between 28 and 67 mm.</string>
 
 </resources>

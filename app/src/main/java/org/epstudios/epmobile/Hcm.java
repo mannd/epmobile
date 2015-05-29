@@ -101,7 +101,6 @@ public class Hcm extends RiskScore {
 			else if (result == 0)
 				message += getString(R.string.hcm_low_risk_text);
 		}
-		setResultMessage(message);
 		// no short reference added here
 		return message;
 
