@@ -25,32 +25,8 @@ import android.widget.CheckBox;
 public class Hcm extends RiskScore {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		setContentView(R.layout.hcm);
-        // super sets up toolbar, so need layout first.  Call
-        // after setContentView().
         super.onCreate(savedInstanceState);
 
-        View calculateButton = findViewById(R.id.calculate_button);
-		calculateButton.setOnClickListener(this);
-		View clearButton = findViewById(R.id.clear_button);
-		clearButton.setOnClickListener(this);
-
-		checkBox = new CheckBox[11];
-
-		// super bad
-		checkBox[0] = (CheckBox) findViewById(R.id.cardiac_arrest);
-		checkBox[1] = (CheckBox) findViewById(R.id.spontaneous_vt);
-		// major risks
-		checkBox[2] = (CheckBox) findViewById(R.id.family_hx_sd);
-		checkBox[3] = (CheckBox) findViewById(R.id.unexplained_syncope);
-		checkBox[4] = (CheckBox) findViewById(R.id.lv_thickness);
-		checkBox[5] = (CheckBox) findViewById(R.id.abnormal_exercise_bp);
-		checkBox[6] = (CheckBox) findViewById(R.id.nonsustained_vt);
-		// minor risks
-		checkBox[7] = (CheckBox) findViewById(R.id.afb);
-		checkBox[8] = (CheckBox) findViewById(R.id.myocardial_ischemia);
-		checkBox[9] = (CheckBox) findViewById(R.id.lv_outflow_obstruction);
-		checkBox[10] = (CheckBox) findViewById(R.id.high_risk_mutation);
 	}
 
 	@Override
@@ -135,7 +111,7 @@ public class Hcm extends RiskScore {
 
 	@Override
 	protected String getRiskLabel() {
-		return getString(R.string.hcm_label);
+		return getString(R.string.hcm_title);
 	}
 
 	@Override

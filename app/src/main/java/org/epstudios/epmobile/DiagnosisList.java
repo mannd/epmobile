@@ -32,8 +32,6 @@ public class DiagnosisList extends EpActivity {
 				if (selection
 						.equals(getString(R.string.wct_algorithm_list_title)))
 					wctAlgorithm();
-				else if (selection.equals(getString(R.string.arvc_list_title)))
-					arvc();
 				else if (selection.equals(getString(R.string.short_qt_title)))
 					shortQt();
 				else if (selection
@@ -54,6 +52,12 @@ public class DiagnosisList extends EpActivity {
 					atrialTachLocalization();
                 else if (selection.equals(getString(R.string.rvh_title)))
                     rvhCriteria();
+				else if (selection
+						.equals(getString(R.string.arvc_2010_criteria_title)))
+					arvc2010();
+				else if (selection
+						.equals(getString(R.string.arvc_old_criteria_title)))
+					arvcOld();
 			}
 		});
 	}
@@ -65,11 +69,6 @@ public class DiagnosisList extends EpActivity {
 
 	private void wctAlgorithm() {
 		Intent i = new Intent(this, WctAlgorithmList.class);
-		startActivity(i);
-	}
-
-	private void arvc() {
-		Intent i = new Intent(this, ArvcList.class);
 		startActivity(i);
 	}
 
@@ -108,6 +107,15 @@ public class DiagnosisList extends EpActivity {
         i.putExtra("EXTRA_URL", "file:///android_asset/rvh.html");
         i.putExtra("EXTRA_TITLE", getString(R.string.rvh_title));
         startActivity(i);
-
     }
+
+	private void arvc2010() {
+		Intent i = new Intent(this, Arvc.class);
+		startActivity(i);
+	}
+
+	private void arvcOld() {
+		Intent i = new Intent(this, ArvcOld.class);
+		startActivity(i);
+	}
 }

@@ -5,9 +5,8 @@ If you have suggestions, features you'd like to see, or complaints, please email
 EP Mobile -- The Swiss Army Knife of Electrophysiology!
 
 Features: 
-- NEW: Right ventricular hypertrophy criteria
-- NEW: Drug reference with creatinine clearance toolbar
-- NEW: Creatinine clearance calculator
+- Drug reference with creatinine clearance toolbar
+- Creatinine clearance calculator
 - Pacing tricks: Para-Hisian pacing and RV apex vs base pacing
 - Drug dose calculators: dabigatran, dofetilide, rivaroxaban, 
 	sotalol, apixaban and edoxaban
@@ -17,7 +16,7 @@ Features:
 - Atrial fibrillation risk scores (CHADS2, CHA2DS2-VASc)
 - Bleeding risk scores (HAS-BLED, HEMORR2HAGES)
 - ICD in-hospital complication risk score
-- Hypertrophic Cardiomyopathy risk score calculator
+- Hypertrophic Cardiomyopathy risk score calculators
 - Syncope risk scores (SF Rule, Martin, OESIL, EGSYS)
 - CMS (Medicare) ICD guidelines calculator
 - VT localization algorithms
@@ -35,6 +34,7 @@ Features:
 - Brugada syndrome diagnosis
 - Brugada drugs
 - LVH ECG criteria, including Romhilt-Estes score and others
+- Right ventricular hypertrophy criteria
 - ARVC/D 1994 and 2010 diagnostic criteria
 - Normal EP values
 - Wide complex tachycardia algorithms 

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="*"
+                >
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:text="@string/age_in_years_label"
+                    android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
+
+                <EditText
+                    android:id="@+id/age"
+                    android:hint="@string/age_in_years_hint"
+                    android:inputType="number"
+                    android:text=""></EditText>
+            </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:text="@string/max_lv_wall_thickness_label"
+                        android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
+
+                    <EditText
+                        android:id="@+id/max_lv_wall_thickness"
+                        android:hint="@string/max_lv_wall_thickness_hint"
+                        android:inputType="number"
+                        android:text=""></EditText>
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:text="@string/la_size_label"
+                        android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
+
+                    <EditText
+                        android:id="@+id/la_size"
+                        android:hint="@string/la_size_hint"
+                        android:inputType="number"
+                        android:text=""></EditText>
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:text="@string/max_lvot_gradient_label"
+                        android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
+
+                    <EditText
+                        android:id="@+id/max_lvot_gradient"
+                        android:hint="@string/max_lvot_gradient_hint"
+                        android:inputType="number"
+                        android:text=""></EditText>
+                </TableRow>
+
+
+
+            </TableLayout>
+
+
+            <CheckBox
+                android:id="@+id/family_hx_scd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/scd_in_family_label"
+                android:checked="false" />
+
+            <CheckBox
+                android:id="@+id/nsvt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nonsustained_vt_label"
+                android:checked="false" />
+
+            <CheckBox
+                android:id="@+id/unexplained_syncope"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/unexplained_syncope_label"
+                android:checked="false" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/calculate_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/calculate_label" />
+
+                <Button
+                    android:id="@+id/clear_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/clear_label" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/hcm_scd_key" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/hcm_scd_reference" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

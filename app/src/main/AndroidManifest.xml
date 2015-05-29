@@ -6,7 +6,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/icon"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -75,9 +75,6 @@
         <activity
             android:name=".NormalEpValues"
             android:label="@string/normal_ep_values_title"></activity>
-        <activity
-            android:name=".ArvcList"
-            android:label="@string/arvc_title"></activity>
         <activity
             android:name=".Arvc"
             android:label="@string/arvc_2010_criteria_title"></activity>
@@ -219,6 +216,9 @@
         <activity android:name=".CreatinineClearanceCalculator"
             android:label="@string/creatinine_clearance_calculator_title">
          </activity>
+        <activity android:name=".HcmScd"
+            android:label="@string/hcm_scd_esc_score_title">
+        </activity>
     </application>
 
 </manifest>

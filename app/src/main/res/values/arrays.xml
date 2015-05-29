@@ -54,7 +54,8 @@
         <item>@string/risk_score_list_title</item>
     </array>
     <array name="diagnosis_list">
-        <item>@string/arvc_list_title</item>
+        <item>@string/arvc_old_criteria_title</item>
+        <item>@string/arvc_2010_criteria_title</item>
         <item>@string/atrial_tachycardia_localization_title</item>
         <item>@string/brugada_ecg_title</item>
         <item>@string/lvh_list_title</item>
@@ -120,6 +121,7 @@
         <item>@string/chadsvasc_title</item>
         <item>@string/hasbled_title</item>
         <item>@string/hcm_title</item>
+        <item>@string/hcm_scd_esc_score_title</item>
         <item>@string/hemorrhages_title</item>
         <item>@string/icd_risk_title</item>
         <item>@string/syncope_list_title</item>
