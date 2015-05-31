@@ -1064,7 +1064,7 @@
         diameter measured in parasternal long axis.
         Gradient = maximum left ventricular outflow tract gradient determined at
         rest and with Valsalva using pulsed and continuous wave Doppler from the apical 3 and
-        5 chamber views. Peak outflow gradients determined by modified Bernouilli equation:
+        5 chamber views. Peak outflow gradients determined by modified Bernoulli equation:
         Gradient = 4V\u00B2, where V is the peak aortic outflow velocity.
         Family hx of SCD = history of sudden cardiac death in 1 or more first degree
         relatives under 40 years old or in a first degree relative with confirmed HCM at
@@ -1098,5 +1098,5 @@
         model for sudden cardiac death in hypertrophic cardiomyopathy (HCM Risk-SCD).
         Eur Heart J [Internet] 2014 Aug [cited 2015 May 29];35(30):2010–2020.
         Available from: http://doi.org/10.1093/eurheartj/eht439
-</string>
+    </string>
 </resources>
