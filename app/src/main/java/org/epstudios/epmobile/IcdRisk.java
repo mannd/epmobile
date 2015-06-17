@@ -41,12 +41,11 @@ public class IcdRisk extends DiagnosticScore {
 	@Override
 	protected void calculateResult() {
 		// TODO Auto-generated method stub
-		String message = "";
-		String title = "";
-		int score = 0;
+		String message;
+		int score;
 		if (radioGroupsIncomplete()) {
 			message = getString(R.string.incomplete_radio_groups_error);
-			title = getString(R.string.error_dialog_title);
+			String title = getString(R.string.error_dialog_title);
 			displayResult(message, title);
 			return;
 		}

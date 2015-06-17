@@ -68,19 +68,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="@string/icd_ef_gt_35_label"></RadioButton>
+                    android:text="@string/icd_ef_gt_35_label"/>
 
                 <RadioButton
                     android:id="@+id/icd_ef_lt_35"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/icd_ef_lt_35_label"></RadioButton>
+                    android:text="@string/icd_ef_lt_35_label"/>
 
                 <RadioButton
                     android:id="@+id/icd_ef_lt_30"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/icd_ef_lt_30_label"></RadioButton>
+                    android:text="@string/icd_ef_lt_30_label"/>
             </RadioGroup>
 
             <CheckBox
@@ -111,25 +111,25 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="@string/icd_nyha1_label"></RadioButton>
+                    android:text="@string/icd_nyha1_label"/>
 
                 <RadioButton
                     android:id="@+id/icd_nyha2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/icd_nyha2_label"></RadioButton>
+                    android:text="@string/icd_nyha2_label"/>
 
                 <RadioButton
                     android:id="@+id/icd_nyha3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/icd_nyha3_label"></RadioButton>
+                    android:text="@string/icd_nyha3_label"/>
 
                 <RadioButton
                     android:id="@+id/icd_nyha4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/icd_nyha4_label"></RadioButton>
+                    android:text="@string/icd_nyha4_label"/>
             </RadioGroup>
 
             <CheckBox
@@ -211,13 +211,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/cms_icd_key"></TextView>
+                android:text="@string/cms_icd_key"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autoLink="web"
-                android:text="@string/cms_icd_references"></TextView>
+                android:text="@string/cms_icd_references"/>
         </LinearLayout>
 
     </ScrollView>

@@ -16,6 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/avannulus_image"
+            android:contentDescription="@string/av_annulus_map_title"
              />
 
     </FrameLayout>

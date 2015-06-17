@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/step_1"
-            android:textAppearance="?android:attr/textAppearanceLarge"></TextView>
+            android:textAppearance="?android:attr/textAppearanceLarge"/>
 
         <LinearLayout
             android:id="@+id/linearLayout1"
@@ -33,19 +33,19 @@
                 android:id="@+id/yes_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"></Button>
+                android:layout_weight="1"/>
 
             <Button
                 android:id="@+id/no_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"></Button>
+                android:layout_weight="1"/>
 
             <Button
                 android:id="@+id/back_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"></Button>
+                android:layout_weight="1"/>
         </LinearLayout>
 
         <LinearLayout

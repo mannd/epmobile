@@ -1093,7 +1093,7 @@
     <string name="icd_not_indicated_message">ICD generally not indicated.</string>
     <string name="icd_may_be_considered_message">ICD may be considered.</string>
     <string name="icd_should_be_considered_message">ICD should be considered.</string>
-    <string name="hcm_scd_2014_full_reference">O\'Mahony C., Jichi F., Pavlou M.,
+    <string name="hcm_scd_2014_full_reference" tools:ignore="Typos">O\'Mahony C., Jichi F., Pavlou M.,
         Monserrat L., Anastasakis A., Rapezzi C.  A novel clinical risk prediction
         model for sudden cardiac death in hypertrophic cardiomyopathy (HCM Risk-SCD).
         Eur Heart J [Internet] 2014 Aug [cited 2015 May 29];35(30):2010–2020.

@@ -85,7 +85,7 @@ public class Hcm extends RiskScore {
 	}
 
 	private String getResultMessage(int result) {
-		String message = "";
+		String message;
 		if (result == HIGHEST_RISK_SCORE)
 			message = getString(R.string.hcm_highest_risk_sd_text);
 		else {

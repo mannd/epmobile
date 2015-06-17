@@ -126,10 +126,6 @@
         <item>@string/icd_risk_title</item>
         <item>@string/syncope_list_title</item>
     </array>
-    <array name="arvc_criteria_list">
-        <item>@string/arvc_old_criteria_title</item>
-        <item>@string/arvc_2010_criteria_title</item>
-    </array>
     <array name="lvh_criteria_list">
         <item>@string/other_lvh_criteria_title</item>
         <item>@string/estes_criteria_title</item>
