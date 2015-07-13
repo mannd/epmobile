@@ -92,7 +92,7 @@ public class Hemorrhages extends RiskScore {
 		}
 		if (result >= 5)
 			risk = "12.3";
-		risk = "Bleeding risk is " + risk + " bleeds per 100 patient-years";
+		risk = "Bleeding risk is " + risk + " bleeds per 100 patient-years.";
 		message = getRiskLabel() + " score = " + result + "\n" + message + "\n"
 				+ risk;
 		setResultMessage(message);

@@ -74,16 +74,24 @@
     <string name="chf_label">Congestive heart failure</string>
     <string name="age75_label">Age 75 or over</string>
     <string name="diabetes_label">Diabetes mellitus</string>
-    <string name="low_chads_message">Aspirin recommended</string>
+    <string name="low_chads_message">Aspirin is recommended.</string>
     <string name="medium_chads_message">Aspirin or
-		anticoagulation (warfarin, dabigatran, rivaroxaban or apixaban) recommended</string>
-    <string name="high_chads_message">Anticoagulation (warfarin, dabigitran, rivaroxaban or apixaban) recommended</string>
+		anticoagulation (warfarin, dabigatran, rivaroxaban, apixaban or edoxaban) is recommended.</string>
+		<string name="high_chads_message">Anticoagulation (warfarin, dabigitran, rivaroxaban, apixaban or edoxaban) is recommended.</string>
+    <string name="chads_proviso_message">Current guidelines recommend using CHA\u2082DS\u2082-VASc rather
+        than CHADS\u2082 to assess stroke risk, especially when CHADS\u2082 is 0 or 1.</string>
     <string name="chadsvasc_title">CHA\u2082DS\u2082-VASc Score</string>
     <string name="vascular_label">Vascular disease (e.g. PVD, CAD, aortic plaque)</string>
-    <string name="low_chadsvasc_message">No antithrombotic therapy or use Aspirin</string>
-    <string name="medium_chadsvasc_message">Anticoagulation (warfarin, dabigitran, rivaroxaban or apixaban) or Aspirin (anticoagulation preferred)</string>
+    <string name="low_chadsvasc_message">No antithrombotic therapy is reasonable.</string>
+    <string name="medium_chadsvasc_message">No anticoagulation or anticoagulation (warfarin, dabigitran, rivaroxaban, apixaban
+        or edoxaban) or aspirin may be considered (2014 AHA/ACC/HRS guidelines).
+    </string>
     <string name="high_chadsvasc_message">Anticoagulation
-		(warfarin, dabigitran, rivaroxaban or apixaban) recommended</string>
+    (warfarin, dabigitran, rivaroxaban, apixaban or edoxaban) is recommended.</string>
+    <string name="female_only_chadsvasc_message">European Society of Cardiology (2012) recommends no anticoagulation when female sex is
+        the only risk factor.</string>
+    <string name="non_female_chadsvasc_message">European Society of Cardiology (2012) recommends anticoagulation.</string>
+    <string name="chadsvasc_one_message"></string>
     <string name="warfarin_title">Warfarin Clinic</string>
     <string name="warfarin_label">Warfarin Dose Calculator</string>
     <string name="tablet_label">Tablet</string>
@@ -1093,7 +1101,7 @@
     <string name="icd_not_indicated_message">ICD generally not indicated.</string>
     <string name="icd_may_be_considered_message">ICD may be considered.</string>
     <string name="icd_should_be_considered_message">ICD should be considered.</string>
-    <string name="hcm_scd_2014_full_reference">O\'Mahony C., Jichi F., Pavlou M.,
+    <string name="hcm_scd_2014_full_reference" tools:ignore="Typos">O\'Mahony C., Jichi F., Pavlou M.,
         Monserrat L., Anastasakis A., Rapezzi C.  A novel clinical risk prediction
         model for sudden cardiac death in hypertrophic cardiomyopathy (HCM Risk-SCD).
         Eur Heart J [Internet] 2014 Aug [cited 2015 May 29];35(30):2010–2020.

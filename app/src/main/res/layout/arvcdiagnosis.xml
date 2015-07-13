@@ -150,7 +150,7 @@
                     android:id="@+id/minor_mri_ef_criteria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/minor_mri_ef_criteria"></RadioButton>
+                    android:text="@string/minor_mri_ef_criteria"/>
             </RadioGroup>
 
             <TextView

@@ -28,7 +28,7 @@ public class EgsysScore extends SyncopeRiskScore {
 
 	private String getResultMessage(int result) {
 		String message;
-		int mortalityRisk = 0;
+		int mortalityRisk;
 		int syncopeRisk = 0;
 		if (result < 3) {
 			mortalityRisk = 2;

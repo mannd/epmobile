@@ -280,10 +280,11 @@ public class OutflowVt extends LocationAlgorithm implements OnClickListener {
 	}
 
 	protected String getMessage() {
-		String message = new String();
-		if (isIndeterminate)
+		String message = "";
+		if (isIndeterminate) {
 			message += "Note: Location (RV vs LV) is indeterminate. "
 					+ "Results reflect one possible localization.\n";
+		}
 		if (isRvot) {
 			message += getString(R.string.rvot_label);
 			message += isRvFreeWall ? "\nFree wall" : "\nSeptal";
@@ -294,8 +295,9 @@ public class OutflowVt extends LocationAlgorithm implements OnClickListener {
 			message += getString(R.string.lvot_label);
 			message += isSupraValvular ? getString(R.string.cusp_vt_label)
 					: getString(R.string.mitral_annular_vt_label);
-		} else
-			message = getString(R.string.indeterminate_location);
+		} else {
+            message = getString(R.string.indeterminate_location);
+        }
 		return message;
 	}
 }

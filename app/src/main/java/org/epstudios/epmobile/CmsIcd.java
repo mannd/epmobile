@@ -105,7 +105,7 @@ public class CmsIcd extends DiagnosticScore {
 
 	@Override
 	protected void calculateResult() {
-		int result = -1;
+		int result;
 		// according to NCD, brain damage excludes all indications
 		if (checkBox[BRAIN_DAMAGE].isChecked())
 			result = BRAIN_DAMAGE;
@@ -184,11 +184,9 @@ public class CmsIcd extends DiagnosticScore {
 			return message;
 		}
 		// Now work out possible indications
-		Boolean indicated = false;
-
 		// MADIT II -- note MADIT II explicitly excludes class IV,
 		// but Guideline 8 allows class IV if QRS wide
-		indicated = efLessThan30 && checkBox[MI].isChecked()
+		Boolean indicated = efLessThan30 && checkBox[MI].isChecked()
 				&& (!nyhaIV || crtCriteriaMet);
 		// MADIT
 		Boolean maditIndication = false;
@@ -212,16 +210,13 @@ public class CmsIcd extends DiagnosticScore {
 			if (checkBox[RECENT_MI].isChecked()) {
 				message += getString(R.string.icd_not_approved_text);
 				message += CR + getString(R.string.post_mi_time_exclusion);
-				indicated = false;
 			} else if (maditIndication && checkBox[RECENT_MI_EPS].isChecked()) {
 				message += getString(R.string.icd_not_approved_text);
 				message += CR + getString(R.string.post_mi_early_eps_exclusion);
-				indicated = false;
 			} else if (checkBox[RECENT_CABG].isChecked()) {
 				message += getString(R.string.icd_not_approved_text);
 				message += CR
 						+ getString(R.string.post_revascularization_exclusion);
-				indicated = false;
 			} else if (crtCriteriaMet && nyhaIV) // CRT-ICD must be used for
 													// NYHA IV
 				message += getString(R.string.icd_crt_approved_text);

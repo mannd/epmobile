@@ -110,7 +110,7 @@ public class Entrainment extends EpActivity implements OnClickListener {
 			int ppiMinusTcl = ppi - tcl;
 			if (ppiMinusTcl < 0)
 				throw new NumberFormatException();
-			String message = "";
+			String message;
 			if (!concealedFusionCheckBox.isChecked()) {
 				if (ppiMinusTcl > 30)
 					message = getString(R.string.entrainment_remote_site_message);

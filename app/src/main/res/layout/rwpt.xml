@@ -22,11 +22,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/rwpt_title"
-                android:src="@drawable/rwpt"></ImageView>
+                android:src="@drawable/rwpt"/>
 
             <TextView
                 android:text="@string/rwpt_text"
-                android:textColor="@android:color/black"></TextView>
+                android:textColor="@android:color/black"/>
         </TableLayout>
 
     </ScrollView>

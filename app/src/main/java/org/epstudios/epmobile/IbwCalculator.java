@@ -278,7 +278,7 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 	@SuppressWarnings("deprecation")
 	// clipboard handled differently depending on Android version
 	private void copyIbwOrAbw(WeightMeasurement weightType) {
-		String textToCopy = "";
+		String textToCopy;
 		if (weightType == WeightMeasurement.IBW)
 			textToCopy = ibwResultTextView.getText().toString();
 		else

@@ -227,17 +227,17 @@ public class MitralAnnularVt extends LocationAlgorithm implements
 	}
 
 	protected String getMessage() {
-		String message = new String();
+		String message;
 		if (isNotMitralAnnular)
-			message += getString(R.string.mavt_not_mitral_annular_label);
+			message = getString(R.string.mavt_not_mitral_annular_label);
 		else if (isAnteroLateral)
-			message += getString(R.string.mavt_anterolateral_label);
+			message = getString(R.string.mavt_anterolateral_label);
 		else if (isAnteroMedial)
-			message += getString(R.string.mavt_anteromedial_label);
+			message = getString(R.string.mavt_anteromedial_label);
 		else if (isPosterior)
-			message += getString(R.string.mavt_posterior_label);
+			message = getString(R.string.mavt_posterior_label);
 		else if (isPosteroSeptal)
-			message += getString(R.string.mavt_posteroseptal_label);
+			message = getString(R.string.mavt_posteroseptal_label);
 		else
 			message = getString(R.string.indeterminate_location);
 		return message;
