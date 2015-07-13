@@ -75,6 +75,9 @@ public class ChadsVasc extends RiskScore {
             if (isFemale) {
                 message += " " + getString(R.string.female_only_chadsvasc_message);
             }
+			else {
+				message += " " + getString(R.string.non_female_chadsvasc_message);
+			}
         }
 		else
 			message = getString(R.string.high_chadsvasc_message);
