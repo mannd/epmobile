@@ -21,6 +21,8 @@ package org.epstudios.epmobile;
 import android.widget.CheckBox;
 
 public class ChadsVasc extends RiskScore {
+	private boolean isFemale;
+
 	@Override
 	protected void setContentView() {
 		setContentView(R.layout.chadsvasc);
@@ -43,6 +45,7 @@ public class ChadsVasc extends RiskScore {
 	@Override
 	protected void calculateResult() {
 		int result = 0;
+		isFemale = false;
 		clearSelectedRisks();
 		// correct checking both age checkboxes
 		if (checkBox[2].isChecked() && checkBox[6].isChecked())
@@ -50,6 +53,9 @@ public class ChadsVasc extends RiskScore {
 		for (int i = 0; i < checkBox.length; i++) {
 			if (checkBox[i].isChecked()) {
 				addSelectedRisk(checkBox[i].getText().toString());
+				if (i == 7) {
+					isFemale = true;
+				}
 				if (i == 4 || i == 2) // stroke, age>75 = 2 points
 					result = result + 2;
 				else
@@ -64,8 +70,15 @@ public class ChadsVasc extends RiskScore {
 		String message;
 		if (result < 1)
 			message = getString(R.string.low_chadsvasc_message);
-		else if (result == 1)
-			message = getString(R.string.medium_chadsvasc_message);
+		else if (result == 1) {
+            message = getString(R.string.medium_chadsvasc_message);
+            if (isFemale) {
+                message += " " + getString(R.string.female_only_chadsvasc_message);
+            }
+			else {
+				message += " " + getString(R.string.non_female_chadsvasc_message);
+			}
+        }
 		else
 			message = getString(R.string.high_chadsvasc_message);
 		String risk = "";

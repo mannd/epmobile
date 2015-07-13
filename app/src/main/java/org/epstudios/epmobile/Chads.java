@@ -76,6 +76,7 @@ public class Chads extends RiskScore {
 			message = getString(R.string.medium_chads_message);
 		else
 			message = getString(R.string.high_chads_message);
+		message += "\n" + getString(R.string.chads_proviso_message);
 		String risk = "";
 		switch (result) {
 		case 0:

@@ -102,7 +102,6 @@ public abstract class RiskScore extends DiagnosticScore {
 	}
 
 	private String getFullRiskReport() {
-		// TODO ? begin with Risk score: CHADS score -- check iOS version
 		String report = "Risk score: ";
 		report += getRiskLabel() + "\nRisks: ";
 		report += getSelectedRisks() + "\nResult: ";
