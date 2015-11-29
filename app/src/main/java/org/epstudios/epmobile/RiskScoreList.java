@@ -45,11 +45,17 @@ public class RiskScoreList extends EpActivity {
 					IcdRiskScore();
                 else if (selection.equals(getString(R.string.hcm_scd_esc_score_title)))
                     hcmScdRisk();
-			}
+				else if (selection.equals(getString(R.string.same_tt2r2_title)))
+					sameTt2r2Score();
+                else if (selection.equals(getString(R.string.atria_bleeding_score_title)))
+                    atriaBleedingScore();
+                else if (selection.equals(getString(R.string.atria_stroke_score_title)))
+                    atriaStrokeScore();
+            }
 		});
 	}
 
-	private void hasBledScore() {
+    private void hasBledScore() {
 		Intent i = new Intent(this, HasBled.class);
 		startActivity(i);
 	}
@@ -87,5 +93,13 @@ public class RiskScoreList extends EpActivity {
 	private void hcmScdRisk() {
 		startActivity(new Intent(this, HcmScd.class));
 	}
+
+	private void sameTt2r2Score() {
+		// startActivity(new Intent(this, SameTt2r2.class));
+	}
+
+    private void atriaBleedingScore() {}
+
+    private void atriaStrokeScore() {}
 
 }

@@ -117,6 +117,8 @@
         <item>@string/warfarin_title</item>
     </array>
     <array name="risk_score_list">
+        <item>@string/atria_bleeding_score_title</item>
+        <item>@string/atria_stroke_score_title</item>
         <item>@string/chads_title</item>
         <item>@string/chadsvasc_title</item>
         <item>@string/hasbled_title</item>
@@ -124,6 +126,7 @@
         <item>@string/hcm_scd_esc_score_title</item>
         <item>@string/hemorrhages_title</item>
         <item>@string/icd_risk_title</item>
+        <item>@string/same_tt2r2_title</item>
         <item>@string/syncope_list_title</item>
     </array>
     <array name="lvh_criteria_list">

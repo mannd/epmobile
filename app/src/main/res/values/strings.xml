@@ -1107,4 +1107,7 @@
         Eur Heart J [Internet] 2014 Aug [cited 2015 May 29];35(30):2010–2020.
         Available from: http://doi.org/10.1093/eurheartj/eht439
     </string>
+    <string name="same_tt2r2_title">SAMe-TT\u2082R\u2082 Score</string>
+    <string name="atria_bleeding_score_title">ATRIA Bleeding Risk Score</string>
+    <string name="atria_stroke_score_title">ATRIA Stroke Risk Score</string>
 </resources>
