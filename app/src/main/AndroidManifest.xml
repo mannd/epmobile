@@ -221,6 +221,9 @@
         <activity android:name=".HcmScd"
             android:label="@string/hcm_scd_esc_score_title">
         </activity>
+        <activity android:name=".AtriaBleed"
+            android:label="@string/atria_bleeding_score_title">
+        </activity>
     </application>
 
 </manifest>

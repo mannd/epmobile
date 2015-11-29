@@ -98,7 +98,9 @@ public class RiskScoreList extends EpActivity {
 		// startActivity(new Intent(this, SameTt2r2.class));
 	}
 
-    private void atriaBleedingScore() {}
+    private void atriaBleedingScore() {
+        startActivity(new Intent(this, AtriaBleed.class));
+    }
 
     private void atriaStrokeScore() {}
 

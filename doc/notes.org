@@ -694,8 +694,33 @@
 ** Outcome
    in-hospital complications or mortality
 * New scores [2015-11-29 Sun]
-** ATRIA Bleeding risk score
-** ATRIA Stroke risk score
+** DONE ATRIA Bleeding risk score
+CLOSED: [2015-11-29 Sun 15:23]
+:LOGBOOK:
+- State "DONE"       from              [2015-11-29 Sun 15:23]
+:END:
+*** Reference
+[[http://content.onlinejacc.org/article.aspx?articleid=1146658#tbl3][JACC article]]
+[[http://www.mdcalc.com/atria-bleeding-risk-score/][online calculator]]
+*** Definitions
+- Anemia: hgb <13 g/dl men, <12 g/dl women
+- Severe renal disease: GFR <30 ml/min or HD dependent
+- Any prior hemorrhage dx (all-cause)
+*** risk score
+| risk factor           | points |
+| anemia                |      3 |
+| severe renal disease  |      3 |
+| age >= 75 y           |      2 |
+| any prior hemorrhage  |      1 |
+| diagnosed HTN         |      1 |
+*** Results
+- low risk 0-3 points (hemorrhage rate <1% per year 0.8%
+- intermediate risk 4 points 2.6% risk
+- high risk 5-10 points >5% per year risk 5.8%
+*** endpoint
+major hemorrhage
+note all pts on warfarin
+** TODO ATRIA Stroke risk score
 *** References
 [[http://jaha.ahajournals.org/content/2/3/e000250.full][AHA article]]
 [[http://jaha.ahajournals.org/content/2/3/e000250/T3.expansion.html][Table showing point assignment]]
@@ -725,7 +750,7 @@ Possible point scores range from 0 to 12 for those without a prior stroke and fr
 *** Outcome events
 - ischemic stroke
 - other thromboembolic events
-** SAMe-TT2R2 score
+** TODO SAMe-TT2R2 score
 *** Reference
 [[http://journal.publications.chestnet.org/article.aspx?articleid=1686270][full text]]
 *** Score

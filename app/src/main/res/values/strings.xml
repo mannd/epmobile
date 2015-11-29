@@ -1110,4 +1110,23 @@
     <string name="same_tt2r2_title">SAMe-TT\u2082R\u2082 Score</string>
     <string name="atria_bleeding_score_title">ATRIA Bleeding Risk Score</string>
     <string name="atria_stroke_score_title">ATRIA Stroke Risk Score</string>
+    <string name="atria_anemia_label">Anemia (Hgb &lt;13 g/dl M, &lt;12 g/dl F)</string>
+    <string name="atria_renal_disease_label">Severe renal disease (GFR &lt;30 ml/min
+        or hemodialysis)</string>
+    <string name="atria_prior_hemorrhage_label">Any prior hemorrhage</string>
+    <string name="atria_htn_label">Diagnosed hypertension</string>
+    <string name="atria_bleed_short_reference">Fang MC et al. JACC 2011 58:395</string>
+    <string name="atria_bleed_full_reference">Fang MC, Go, AS, Chang Y, Borowsky LH, Pomernacki NK,
+        Udaltsova N, Singer DE.  A new risk scheme to predict warfarin-associated
+        hemorrhage.  The ATRIA Study.  J Am Coll Cardiol [Internet]. 2011 Jul 2011
+        [cited 2015 Nov 29];58(4):395-401.  Available from:
+        http://content.onlinejacc.org/article.aspx?articleid=1146658#tbl3</string>
+    <string name="atria_bleed_risk_label">ATRIA bleeding risk</string>
+    <string name="low_atria_bleed_message">Low bleeding risk on warfarin
+        (hemorrhage rate 0.8% per year)</string>
+    <string name="medium_atria_bleed_message">Intermediate bleeding risk on
+        warfarin (hemorrhage rate 2.6% per year)</string>
+    <string name="high_atria_bleed_message">High bleeding risk on warfarin
+        (hemorrhage rate 5.8% per year)</string>
+
 </resources>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <CheckBox
+                android:id="@+id/anemia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/atria_anemia_label" />
+
+            <CheckBox
+                android:id="@+id/renal_disease"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/atria_renal_disease_label" />
+
+            <CheckBox
+                android:id="@+id/age75"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/age75_label" />
+
+            <CheckBox
+                android:id="@+id/prior_hemorrhage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/atria_prior_hemorrhage_label" />
+
+            <CheckBox
+                android:id="@+id/htn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/atria_htn_label" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/calculate_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/calculate_label" />
+
+                <Button
+                    android:id="@+id/clear_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/clear_label" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
