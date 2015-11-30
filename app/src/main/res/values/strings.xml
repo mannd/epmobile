@@ -44,7 +44,7 @@
     <string name="cl_hint">Interval (msec)</string>
     <string name="hr_label">Rate to Interval</string>
     <string name="hr_hint">Rate (bpm)</string>
-    <string name="calculated_result_label"></string>
+    <string name="calculated_result_label"/>
     <string name="qtc_formula_title">Default QTc Formula</string>
     <string name="qtc_formula_summary">Select the default QTc formula</string>
     <string name="maximum_qtc_title">Maximum QTc</string>
@@ -91,7 +91,7 @@
     <string name="female_only_chadsvasc_message">European Society of Cardiology (2012) recommends no anticoagulation when female sex is
         the only risk factor.</string>
     <string name="non_female_chadsvasc_message">European Society of Cardiology (2012) recommends anticoagulation.</string>
-    <string name="chadsvasc_one_message"></string>
+    <string name="chadsvasc_one_message"/>
     <string name="warfarin_title">Warfarin Clinic</string>
     <string name="warfarin_label">Warfarin Dose Calculator</string>
     <string name="tablet_label">Tablet</string>
@@ -269,7 +269,7 @@
     <string name="drug_calculator_settings">Other Calculator Settings</string>
     <string name="default_weight_unit_title">Default Weight Unit</string>
     <string name="default_weight_unit_summary">Select default unit for weight</string>
-    <string name="creatinine_clearance_label"></string>
+    <string name="creatinine_clearance_label"/>
     <string name="long_creatinine_clearance_label">Creatinine Clearance</string>
     <string name="dabigatran_warning_severe">Avoid concomitant use of P-gp inhibitors
 	    (e.g. dronedarone).</string>
@@ -1128,5 +1128,19 @@
         warfarin (hemorrhage rate 2.6% per year)</string>
     <string name="high_atria_bleed_message">High bleeding risk on warfarin
         (hemorrhage rate 5.8% per year)</string>
-
+    <string name="atria_stroke_short_reference">Singer DE et al.
+        J Am Heart Assoc 2013 2:e000250</string>
+    <string name="atria_stroke_full_reference">Singer DE, Chang Y, Borowsky LH,
+        Fang MC, Pomernacki NK, Udaltsova N, Reynolds K, Go AS.  A new risk scheme to predict
+        ischemic stroke and other thromboembolism in atrial fibrillation: the ATRIA study
+        stroke risk score.  J Am Heart Assoc [Internet].  2013 Jun 19 [cited 2015 Nov
+        29];2:3000250.  Available from:
+        http://jaha.ahajournals.org/content/2/3/e000250</string>
+    <string name="atria_stroke_age_85">Age 85 or greater</string>
+    <string name="atria_stroke_age_75">Age 75 to 84</string>
+    <string name="atria_stroke_age_65">Age 65 to 74</string>
+    <string name="atria_stroke_age_less_than_65">Age less than 65</string>
+    <string name="atria_stroke_htn_label">Hypertension</string>
+    <string name="atria_stroke_proteinuria_label">Proteinuria</string>
+    <string name="atria_stroke_renal_disease_label">GFR &lt; 45 or end stage renal disease</string>
 </resources>
