@@ -24,7 +24,8 @@
 
             <RadioGroup
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"></RadioGroup>
+                android:layout_height="wrap_content"
+                android:id="@+id/age">
 
             <RadioButton
                 android:layout_width="wrap_content"
@@ -49,6 +50,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/atria_stroke_age_less_than_65"
                 android:id="@+id/agelessthan65" />
+
+            </RadioGroup>
 
             <CheckBox
                 android:id="@+id/sex"
@@ -85,6 +88,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/atria_stroke_renal_disease_label" />
+
+            <CheckBox
+                android:id="@+id/stroke"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/atria_prior_stroke_label" />
 
             <LinearLayout
                 android:id="@+id/linearLayout3"

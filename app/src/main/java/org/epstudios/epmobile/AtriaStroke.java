@@ -1,5 +1,9 @@
 package org.epstudios.epmobile;
 
+import android.app.AlertDialog;
+import android.widget.CheckBox;
+import android.widget.RadioGroup;
+
 /**
  * Copyright (C) 2015 EP Studios, Inc.
  * www.epstudiossoftware.com
@@ -23,7 +27,7 @@ package org.epstudios.epmobile;
  */
 public class AtriaStroke extends RiskScore {
 
-    private boolean hasStrokeHx;
+    private RadioGroup radioGroup;
     
     @Override
     protected String getFullReference() {
@@ -32,7 +36,7 @@ public class AtriaStroke extends RiskScore {
 
     @Override
     protected String getRiskLabel() {
-        return null;
+        return getString(R.string.atria_stroke_risk_label);
     }
 
     @Override
@@ -42,16 +46,81 @@ public class AtriaStroke extends RiskScore {
 
     @Override
     protected void calculateResult() {
+        int radioButtonId = radioGroup.getCheckedRadioButtonId();
+        if (radioButtonId == -1) {
+            AlertDialog dialog = new AlertDialog.Builder(this).create();
+            dialog.setMessage(getString(R.string.no_age_checked_message));
+            dialog.setTitle(getString(R.string.error_dialog_title));
+            dialog.show();
+            return;
+        }
+        // calculate
+        int result = 0;
+        clearSelectedRisks();
+        for (int i = 0; i < checkBox.length; i++) {
+            if (checkBox[i].isChecked()) {
+                addSelectedRisk(checkBox[i].getText().toString());
+                result++;
+            }
+        }
+        // checkBox[6] = prior stroke hx
+        boolean hasStrokeHx = checkBox[6].isChecked();
+        if (hasStrokeHx) {
+            result--;
+        }
+        switch (radioButtonId) {
+            case R.id.age85:
+                result += (hasStrokeHx ? 9 : 6);
+                break;
+            case R.id.age75:
+                result += (hasStrokeHx ? 7 : 5);
+                break;
+            case R.id.age65:
+                result += (hasStrokeHx ? 7 : 3);
+                break;
+            case R.id.agelessthan65:
+                result += hasStrokeHx ? 8 : 0;
+                break;
+        }
+        displayResult(getResultMessage(result), getString(R.string.atria_stroke_score_title));
+    }
 
+    private String getResultMessage(int result) {
+        String message;
+        if (result < 6)
+            message = getString(R.string.low_atria_stroke_message);
+        else if (result == 6)
+            message = getString(R.string.medium_atria_stroke_message);
+        else
+            message = getString(R.string.high_atria_stroke_message);
+        message = getRiskLabel() + " score = " + result + "\n" + message;
+        setResultMessage(message);
+        return resultWithShortReference();
     }
 
     @Override
     protected void setContentView() {
-
+        setContentView(R.layout.atriastroke);
     }
 
     @Override
     protected void init() {
+        checkBox = new CheckBox[7];
 
+        checkBox[0] = (CheckBox) findViewById(R.id.sex);
+        checkBox[1] = (CheckBox) findViewById(R.id.diabetes);
+        checkBox[2] = (CheckBox) findViewById(R.id.chf);
+        checkBox[3] = (CheckBox) findViewById(R.id.htn);
+        checkBox[4] = (CheckBox) findViewById(R.id.proteinuria);
+        checkBox[5] = (CheckBox) findViewById(R.id.renal_disease);
+        checkBox[6] = (CheckBox) findViewById(R.id.stroke);
+
+        radioGroup = (RadioGroup) findViewById(R.id.age);
+    }
+
+    @Override
+    protected void clearEntries() {
+        super.clearEntries();
+        radioGroup.clearCheck();
     }
 }

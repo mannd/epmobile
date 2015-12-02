@@ -727,19 +727,19 @@ note all pts on warfarin
 *** risk score
 ATRIA Stroke Risk Model Point Scoring System
 
-| Risk Factor     | Without Prior Stroke | With Prior Stroke |
-|-----------------+----------------------+-------------------|
-| Age, y          |                      |                   |
-| ≥85             |                    6 |                 9 |
-| 75 to 84        |                    5 |                 7 |
-| 65 to 74        |                    3 |                 7 |
-| <65             |                    0 |                 8 |
-| Female          |                    1 |                 1 |
-| Diabetes        |                    1 |                 1 |
-| CHF             |                    1 |                 1 |
-| Hypertension    |                    1 |                 1 |
-| Proteinuria     |                    1 |                 1 |
-| eGFR<45 or ESRD |                    1 |                 1 |
+| Risk Factor     | Without Stroke | With Stroke |
+|-----------------+----------------+-------------|
+| Age, y          |                |             |
+| ≥85             |              6 |           9 |
+| 75 to 84        |              5 |           7 |
+| 65 to 74        |              3 |           7 |
+| <65             |              0 |           8 |
+| Female          |              1 |           1 |
+| Diabetes        |              1 |           1 |
+| CHF             |              1 |           1 |
+| Hypertension    |              1 |           1 |
+| Proteinuria     |              1 |           1 |
+| eGFR<45 or ESRD |              1 |           1 |
 Possible point scores range from 0 to 12 for those without a prior stroke and from 7 to 15 for those with a prior stroke. ATRIA indicates Anticoagulation and Risk Factors in Atrial Fibrillation; CHF, congestive heart failure; eGFR, estimated glomerular filtration rate; ESRD, end‐stage renal disease.
 *** Results
 | Score              | events/year |
