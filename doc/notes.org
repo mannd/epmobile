@@ -694,27 +694,52 @@
 ** Outcome
    in-hospital complications or mortality
 * New scores [2015-11-29 Sun]
-** ATRIA Bleeding risk score
-** ATRIA Stroke risk score
+** DONE ATRIA Bleeding risk score
+CLOSED: [2015-11-29 Sun 15:23]
+:LOGBOOK:
+- State "DONE"       from              [2015-11-29 Sun 15:23]
+:END:
+*** Reference
+[[http://content.onlinejacc.org/article.aspx?articleid=1146658#tbl3][JACC article]]
+[[http://www.mdcalc.com/atria-bleeding-risk-score/][online calculator]]
+*** Definitions
+- Anemia: hgb <13 g/dl men, <12 g/dl women
+- Severe renal disease: GFR <30 ml/min or HD dependent
+- Any prior hemorrhage dx (all-cause)
+*** risk score
+| risk factor           | points |
+| anemia                |      3 |
+| severe renal disease  |      3 |
+| age >= 75 y           |      2 |
+| any prior hemorrhage  |      1 |
+| diagnosed HTN         |      1 |
+*** Results
+- low risk 0-3 points (hemorrhage rate <1% per year 0.8%
+- intermediate risk 4 points 2.6% risk
+- high risk 5-10 points >5% per year risk 5.8%
+*** endpoint
+major hemorrhage
+note all pts on warfarin
+** TODO ATRIA Stroke risk score
 *** References
 [[http://jaha.ahajournals.org/content/2/3/e000250.full][AHA article]]
 [[http://jaha.ahajournals.org/content/2/3/e000250/T3.expansion.html][Table showing point assignment]]
 *** risk score
 ATRIA Stroke Risk Model Point Scoring System
 
-| Risk Factor     | Without Prior Stroke | With Prior Stroke |
-|-----------------+----------------------+-------------------|
-| Age, y          |                      |                   |
-| ≥85             |                    6 |                 9 |
-| 75 to 84        |                    5 |                 7 |
-| 65 to 74        |                    3 |                 7 |
-| <65             |                    0 |                 8 |
-| Female          |                    1 |                 1 |
-| Diabetes        |                    1 |                 1 |
-| CHF             |                    1 |                 1 |
-| Hypertension    |                    1 |                 1 |
-| Proteinuria     |                    1 |                 1 |
-| eGFR<45 or ESRD |                    1 |                 1 |
+| Risk Factor     | Without Stroke | With Stroke |
+|-----------------+----------------+-------------|
+| Age, y          |                |             |
+| ≥85             |              6 |           9 |
+| 75 to 84        |              5 |           7 |
+| 65 to 74        |              3 |           7 |
+| <65             |              0 |           8 |
+| Female          |              1 |           1 |
+| Diabetes        |              1 |           1 |
+| CHF             |              1 |           1 |
+| Hypertension    |              1 |           1 |
+| Proteinuria     |              1 |           1 |
+| eGFR<45 or ESRD |              1 |           1 |
 Possible point scores range from 0 to 12 for those without a prior stroke and from 7 to 15 for those with a prior stroke. ATRIA indicates Anticoagulation and Risk Factors in Atrial Fibrillation; CHF, congestive heart failure; eGFR, estimated glomerular filtration rate; ESRD, end‐stage renal disease.
 *** Results
 | Score              | events/year |
@@ -725,12 +750,13 @@ Possible point scores range from 0 to 12 for those without a prior stroke and fr
 *** Outcome events
 - ischemic stroke
 - other thromboembolic events
-** SAMe-TT2R2 score
+** TODO SAMe-TT2R2 score
 *** Reference
 [[http://journal.publications.chestnet.org/article.aspx?articleid=1686270][full text]]
 *** Score
 | factor                 | points |
 | Sex (female)           |      1 |
+| Age (<60 y)            |      1 |
 | Medical hx (see below) |      1 |
 | Treatment (see below)  |      1 |
 | Tobacco use            |      2 |

@@ -44,7 +44,7 @@
     <string name="cl_hint">Interval (msec)</string>
     <string name="hr_label">Rate to Interval</string>
     <string name="hr_hint">Rate (bpm)</string>
-    <string name="calculated_result_label"></string>
+    <string name="calculated_result_label"/>
     <string name="qtc_formula_title">Default QTc Formula</string>
     <string name="qtc_formula_summary">Select the default QTc formula</string>
     <string name="maximum_qtc_title">Maximum QTc</string>
@@ -91,7 +91,7 @@
     <string name="female_only_chadsvasc_message">European Society of Cardiology (2012) recommends no anticoagulation when female sex is
         the only risk factor.</string>
     <string name="non_female_chadsvasc_message">European Society of Cardiology (2012) recommends anticoagulation.</string>
-    <string name="chadsvasc_one_message"></string>
+    <string name="chadsvasc_one_message"/>
     <string name="warfarin_title">Warfarin Clinic</string>
     <string name="warfarin_label">Warfarin Dose Calculator</string>
     <string name="tablet_label">Tablet</string>
@@ -269,7 +269,7 @@
     <string name="drug_calculator_settings">Other Calculator Settings</string>
     <string name="default_weight_unit_title">Default Weight Unit</string>
     <string name="default_weight_unit_summary">Select default unit for weight</string>
-    <string name="creatinine_clearance_label"></string>
+    <string name="creatinine_clearance_label"/>
     <string name="long_creatinine_clearance_label">Creatinine Clearance</string>
     <string name="dabigatran_warning_severe">Avoid concomitant use of P-gp inhibitors
 	    (e.g. dronedarone).</string>
@@ -1110,4 +1110,73 @@
     <string name="same_tt2r2_title">SAMe-TT\u2082R\u2082 Score</string>
     <string name="atria_bleeding_score_title">ATRIA Bleeding Risk Score</string>
     <string name="atria_stroke_score_title">ATRIA Stroke Risk Score</string>
+    <string name="atria_anemia_label">Anemia (Hgb &lt;13 g/dl M, &lt;12 g/dl F)</string>
+    <string name="atria_renal_disease_label">Severe renal disease (GFR &lt;30 ml/min
+        or hemodialysis)</string>
+    <string name="atria_prior_hemorrhage_label">Any prior hemorrhage</string>
+    <string name="atria_htn_label">Diagnosed hypertension</string>
+    <string name="atria_bleed_short_reference">Fang MC et al. JACC 2011 58:395</string>
+    <string name="atria_bleed_full_reference">Fang MC, Go, AS, Chang Y, Borowsky LH, Pomernacki NK,
+        Udaltsova N, Singer DE.  A new risk scheme to predict warfarin-associated
+        hemorrhage.  The ATRIA Study.  J Am Coll Cardiol [Internet]. 2011 Jul 2011
+        [cited 2015 Nov 29];58(4):395-401.  Available from:
+        http://content.onlinejacc.org/article.aspx?articleid=1146658#tbl3</string>
+    <string name="atria_bleed_risk_label">ATRIA bleeding risk</string>
+    <string name="low_atria_bleed_message">Low bleeding risk on warfarin
+        (hemorrhage rate 0.8% per year).</string>
+    <string name="medium_atria_bleed_message">Intermediate bleeding risk on
+        warfarin (hemorrhage rate 2.6% per year).  Consider alternatives
+        to warfarin.</string>
+    <string name="high_atria_bleed_message">High bleeding risk on warfarin
+        (hemorrhage rate 5.8% per year).  Strongly consider alternatives
+        to warfarin.</string>
+    <string name="atria_stroke_short_reference">Singer DE et al.
+        J Am Heart Assoc 2013 2:e000250</string>
+    <string name="atria_stroke_full_reference">Singer DE, Chang Y, Borowsky LH,
+        Fang MC, Pomernacki NK, Udaltsova N, Reynolds K, Go AS.  A new risk scheme to predict
+        ischemic stroke and other thromboembolism in atrial fibrillation: the ATRIA study
+        stroke risk score.  J Am Heart Assoc [Internet].  2013 Jun 19 [cited 2015 Nov
+        29];2:3000250.  Available from:
+        http://jaha.ahajournals.org/content/2/3/e000250</string>
+    <string name="atria_stroke_age_85">Age 85 or greater</string>
+    <string name="atria_stroke_age_75">Age 75 to 84</string>
+    <string name="atria_stroke_age_65">Age 65 to 74</string>
+    <string name="atria_stroke_age_less_than_65">Age less than 65</string>
+    <string name="atria_stroke_htn_label">Hypertension</string>
+    <string name="atria_stroke_proteinuria_label">Proteinuria</string>
+    <string name="atria_stroke_renal_disease_label">eGFR &lt; 45 mL/min/1.73 m\u00B2
+        or ESRD</string>
+    <string name="atria_prior_stroke_label">Prior stroke</string>
+    <string name="no_age_checked_message">Select an age range.</string>
+    <string name="atria_stroke_risk_label">ATRIA stroke risk</string>
+    <string name="low_atria_stroke_message">Low thromboembolic risk
+        (&lt;1% per year).</string>
+    <string name="medium_atria_stroke_message">Moderate thromboembolic risk
+        (1 to &lt;2% per year).</string>
+    <string name="high_atria_stroke_message">High thromboembolic risk
+        (2% or greater per year).</string>
+    <string name="same_med_hx_label">Medical hx (&gt; 2 of HTN, DM,
+        CAD/MI, PAD, CHF, prior stroke, pulmonary disease, hepatic or renal disease)</string>
+    <string name="same_treatment_label">Treatment: interacting drugs,
+        e.g. amiodarone</string>
+    <string name="same_smoking_label">Tobacco use (within 2 y)</string>
+    <string name="same_race_label">Race (non-Caucasian)</string>
+    <string name="same_sex_label">Sex (female)</string>
+    <string name="same_age_label">Age (&lt;60 y)</string>
+    <string name="same_ttr_title">SAMe-TT\u2082R\u2082</string>
+    <string name="same_short_reference">Apostolakis S et al.
+        Chest 2013;144:1555</string>
+    <string name="same_full_reference">Apostolakis S, Sullivan RM, Olshanky B,
+        Lip GYH.  Factors affecting quality of anticoagulation control among
+        patients with atrial fibrillation on warfarin.  The
+        SAMe-TT\u2082R\u2082 Score.  Chest [Internet].  2013 Nov
+        [cited 2015 Dec 2] 144(5):155-1563.  Available from:
+        http://journal.publications.chestnet.org/article.aspx?articleid=1686270</string>
+    <string name="same_risk_label">SAMe-TT\u2082R\u2082 Score</string>
+    <string name="low_same_risk_message">Patients have high TTR (Time in Therapeutic
+        Range) (&gt;65% of the time) so initiating warfarin likely beneficial.</string>
+    <string name="high_same_risk_message">Patient have low TTR (Time in Therapeutic
+        Range) (&lt;65% of the time).  Improve education
+        regarding anticoagulation control, or consider a new oral anticoagulant instead
+        of warfarin.</string>
 </resources>
