@@ -227,6 +227,8 @@
         <activity android:name=".AtriaStroke"
             android:label="@string/atria_stroke_score_title">
         </activity>
+        <activity android:name=".SameTtr"
+            android:label="@string/same_tt2r2_title" />
     </application>
 
 </manifest>

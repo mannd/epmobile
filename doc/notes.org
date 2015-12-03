@@ -756,6 +756,7 @@ Possible point scores range from 0 to 12 for those without a prior stroke and fr
 *** Score
 | factor                 | points |
 | Sex (female)           |      1 |
+| Age (<60 y)            |      1 |
 | Medical hx (see below) |      1 |
 | Treatment (see below)  |      1 |
 | Tobacco use            |      2 |
