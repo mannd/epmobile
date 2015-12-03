@@ -71,15 +71,22 @@ public class AtriaStroke extends RiskScore {
         switch (radioButtonId) {
             case R.id.age85:
                 result += (hasStrokeHx ? 9 : 6);
+                addSelectedRisk(getString(R.string.atria_stroke_age_85));
                 break;
             case R.id.age75:
                 result += (hasStrokeHx ? 7 : 5);
+                addSelectedRisk(getString(R.string.atria_stroke_age_75));
                 break;
             case R.id.age65:
                 result += (hasStrokeHx ? 7 : 3);
+                addSelectedRisk(getString(R.string.atria_stroke_age_65));
                 break;
             case R.id.agelessthan65:
                 result += hasStrokeHx ? 8 : 0;
+                // Don't put in selectedRisks if risk is 0.
+                if (hasStrokeHx) {
+                    addSelectedRisk(getString(R.string.atria_stroke_age_less_than_65));
+                }
                 break;
         }
         displayResult(getResultMessage(result), getString(R.string.atria_stroke_score_title));

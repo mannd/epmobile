@@ -1142,14 +1142,15 @@
     <string name="atria_stroke_age_less_than_65">Age less than 65</string>
     <string name="atria_stroke_htn_label">Hypertension</string>
     <string name="atria_stroke_proteinuria_label">Proteinuria</string>
-    <string name="atria_stroke_renal_disease_label">GFR &lt; 45 or end stage renal disease</string>
+    <string name="atria_stroke_renal_disease_label">eGFR &lt; 45 mL/min/1.73 m\u00B2
+        or ESRD</string>
     <string name="atria_prior_stroke_label">Prior stroke</string>
     <string name="no_age_checked_message">Select an age range.</string>
     <string name="atria_stroke_risk_label">ATRIA stroke risk</string>
     <string name="low_atria_stroke_message">Low thromboembolic risk
-        (&lt; 1% per year)</string>
-    <string name="medium_atria_stroke_message">Intermediate thromboembolic risk
-        (1 to &lt; 2% per year)</string>
+        (&lt;1% per year)</string>
+    <string name="medium_atria_stroke_message">Moderate thromboembolic risk
+        (1 to &lt;2% per year)</string>
     <string name="high_atria_stroke_message">High thromboembolic risk
-        (2% or more per year)</string>
+        (2% or greater per year)</string>
 </resources>
