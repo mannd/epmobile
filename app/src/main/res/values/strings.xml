@@ -1123,11 +1123,13 @@
         http://content.onlinejacc.org/article.aspx?articleid=1146658#tbl3</string>
     <string name="atria_bleed_risk_label">ATRIA bleeding risk</string>
     <string name="low_atria_bleed_message">Low bleeding risk on warfarin
-        (hemorrhage rate 0.8% per year)</string>
+        (hemorrhage rate 0.8% per year).</string>
     <string name="medium_atria_bleed_message">Intermediate bleeding risk on
-        warfarin (hemorrhage rate 2.6% per year)</string>
+        warfarin (hemorrhage rate 2.6% per year).  Consider alternatives
+        to warfarin.</string>
     <string name="high_atria_bleed_message">High bleeding risk on warfarin
-        (hemorrhage rate 5.8% per year)</string>
+        (hemorrhage rate 5.8% per year).  Strongly consider alternatives
+        to warfarin.</string>
     <string name="atria_stroke_short_reference">Singer DE et al.
         J Am Heart Assoc 2013 2:e000250</string>
     <string name="atria_stroke_full_reference">Singer DE, Chang Y, Borowsky LH,
@@ -1148,9 +1150,9 @@
     <string name="no_age_checked_message">Select an age range.</string>
     <string name="atria_stroke_risk_label">ATRIA stroke risk</string>
     <string name="low_atria_stroke_message">Low thromboembolic risk
-        (&lt;1% per year)</string>
+        (&lt;1% per year).</string>
     <string name="medium_atria_stroke_message">Moderate thromboembolic risk
-        (1 to &lt;2% per year)</string>
+        (1 to &lt;2% per year).</string>
     <string name="high_atria_stroke_message">High thromboembolic risk
-        (2% or greater per year)</string>
+        (2% or greater per year).</string>
 </resources>
