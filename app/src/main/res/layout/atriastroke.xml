@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/age">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/atria_stroke_age_85"
+                android:id="@+id/age85" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/atria_stroke_age_75"
+                android:id="@+id/age75" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/atria_stroke_age_65"
+                android:id="@+id/age65" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/atria_stroke_age_less_than_65"
+                android:id="@+id/agelessthan65" />
+
+            </RadioGroup>
+
+            <CheckBox
+                android:id="@+id/sex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/female_sex_label" />
+
+            <CheckBox
+                android:id="@+id/diabetes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/diabetes_label" />
+
+            <CheckBox
+                android:id="@+id/chf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chf_label" />
+
+            <CheckBox
+                android:id="@+id/htn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/atria_stroke_htn_label" />
+
+            <CheckBox
+                android:id="@+id/proteinuria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/atria_stroke_proteinuria_label" />
+
+            <CheckBox
+                android:id="@+id/renal_disease"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/atria_stroke_renal_disease_label" />
+
+            <CheckBox
+                android:id="@+id/stroke"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/atria_prior_stroke_label" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/calculate_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/calculate_label" />
+
+                <Button
+                    android:id="@+id/clear_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/clear_label" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

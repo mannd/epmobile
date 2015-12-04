@@ -25,184 +25,184 @@
         <activity
             android:name=".About"
             android:label="@string/about_title"
-            android:theme="@android:style/Theme.Dialog"></activity>
+            android:theme="@android:style/Theme.Dialog"/>
         <activity
             android:name=".Qtc"
-            android:label="@string/qtc_calculator_title"></activity>
+            android:label="@string/qtc_calculator_title"/>
         <activity
             android:name=".Dofetilide"
-            android:label="@string/dofetilide_label"></activity>
+            android:label="@string/dofetilide_label"/>
         <activity
             android:name=".CycleLength"
-            android:label="@string/cycle_length_label"></activity>
+            android:label="@string/cycle_length_label"/>
         <activity
             android:name=".Prefs"
-            android:label="@string/settings_title"></activity>
+            android:label="@string/settings_title"/>
         <activity
             android:name=".OldPrefs"
-            android:label="EP Mobile Settings"></activity>
+            android:label="EP Mobile Settings"/>
         <activity
             android:name=".HasBled"
-            android:label="@string/hasbled_title"></activity>
+            android:label="@string/hasbled_title"/>
         <activity
             android:name=".Chads"
-            android:label="@string/chads_title"></activity>
+            android:label="@string/chads_title"/>
         <activity
             android:name=".ChadsVasc"
-            android:label="@string/chadsvasc_title"></activity>
+            android:label="@string/chadsvasc_title"/>
         <activity
             android:name=".Dabigatran"
-            android:label="@string/dabigatran_label"></activity>
+            android:label="@string/dabigatran_label"/>
         <activity
             android:name=".Warfarin"
-            android:label="@string/warfarin_label"></activity>
+            android:label="@string/warfarin_label"/>
         <activity
             android:name=".DoseTable"
-            android:label="@string/dose_table_title"></activity>
+            android:label="@string/dose_table_title"/>
         <activity
             android:name=".Brugada"
-            android:label="@string/brugada_vt_title"></activity>
+            android:label="@string/brugada_vt_title"/>
         <activity
             android:name=".WctAlgorithmList"
-            android:label="@string/wct_algorithm_title"></activity>
+            android:label="@string/wct_algorithm_title"/>
         <activity
             android:name=".WctMorphologyCriteria"
-            android:label="@string/morphology_label"></activity>
+            android:label="@string/morphology_label"/>
         <activity
             android:name=".Rwpt"
-            android:label="@string/rwpt_title"></activity>
+            android:label="@string/rwpt_title"/>
         <activity
             android:name=".BrugadaMorphologyCriteria"
-            android:label="@string/morphology_label"></activity>
+            android:label="@string/morphology_label"/>
         <activity
             android:name=".NormalEpValues"
-            android:label="@string/normal_ep_values_title"></activity>
+            android:label="@string/normal_ep_values_title"/>
         <activity
             android:name=".Arvc"
-            android:label="@string/arvc_2010_criteria_title"></activity>
+            android:label="@string/arvc_2010_criteria_title"/>
         <activity
             android:name=".ArvcOld"
-            android:label="@string/arvc_old_criteria_title"></activity>
+            android:label="@string/arvc_old_criteria_title"/>
         <activity
             android:name=".Rivaroxaban"
-            android:label="@string/rivaroxaban_calculator_title"></activity>
+            android:label="@string/rivaroxaban_calculator_title"/>
         <activity
             android:name=".ShortQt"
-            android:label="@string/short_qt_title"></activity>
+            android:label="@string/short_qt_title"/>
         <activity
             android:name=".DrugDoseCalculatorList"
-            android:label="@string/drug_dose_calculators_title"></activity>
+            android:label="@string/drug_dose_calculators_title"/>
         <activity
             android:name=".RiskScoreList"
-            android:label="@string/risk_scores_title"></activity>
+            android:label="@string/risk_scores_title"/>
         <activity
             android:name=".Hcm"
-            android:label="@string/hcm_title"></activity>
+            android:label="@string/hcm_title"/>
         <activity
             android:name=".CmsIcd"
-            android:label="@string/icd_calculator_title"></activity>
+            android:label="@string/icd_calculator_title"/>
         <activity
             android:name=".Hemorrhages"
-            android:label="@string/hemorrhages_title"></activity>
+            android:label="@string/hemorrhages_title"/>
         <activity
             android:name=".WpwAlgorithmList"
-            android:label="@string/wpw_algorithm_title"></activity>
+            android:label="@string/wpw_algorithm_title"/>
         <activity
             android:name=".WpwArruda"
-            android:label="@string/arruda_title"></activity>
+            android:label="@string/arruda_title"/>
         <activity
             android:name=".AvAnnulusMap"
-            android:label="@string/av_annulus_map_title"></activity>
+            android:label="@string/av_annulus_map_title"/>
         <activity
             android:name=".WpwModifiedArruda"
-            android:label="@string/modified_arruda_title"></activity>
+            android:label="@string/modified_arruda_title"/>
         <activity
             android:name=".WpwMilstein"
-            android:label="@string/milstein_title"></activity>
+            android:label="@string/milstein_title"/>
         <activity
             android:name=".LongQt"
-            android:label="@string/long_qt_syndrome_diagnosis_title"></activity>
+            android:label="@string/long_qt_syndrome_diagnosis_title"/>
         <activity
             android:name=".LvhList"
-            android:label="@string/lvh_title"></activity>
+            android:label="@string/lvh_title"/>
         <activity
             android:name=".LvhVoltage"
-            android:label="@string/other_lvh_criteria_title"></activity>
+            android:label="@string/other_lvh_criteria_title"/>
         <activity
             android:name=".Estes"
-            android:label="@string/estes_criteria_title"></activity>
+            android:label="@string/estes_criteria_title"/>
         <activity
             android:name=".LongQtList"
-            android:label="@string/lqt_syndrome_label"></activity>
+            android:label="@string/lqt_syndrome_label"/>
         <activity
             android:name=".LongQtSubtypes"
-            android:label="@string/lqt_subtypes_title"></activity>
+            android:label="@string/lqt_subtypes_title"/>
         <activity
             android:name=".LongQtEcg"
-            android:label="@string/lqt_ecg_title"></activity>
+            android:label="@string/lqt_ecg_title"/>
         <activity
             android:name=".BrugadaEcg"
-            android:label="@string/brugada_ecg_title"></activity>
+            android:label="@string/brugada_ecg_title"/>
         <activity
             android:name=".DiagnosisList"
-            android:label="@string/diagnosis_title"></activity>
+            android:label="@string/diagnosis_title"/>
         <activity
             android:name=".CalculatorList"
-            android:label="@string/calculator_title"></activity>
+            android:label="@string/calculator_title"/>
         <activity
             android:name=".ReferenceList"
-            android:label="@string/reference_title"></activity>
+            android:label="@string/reference_title"/>
         <activity
             android:name=".VtList"
-            android:label="@string/vt_list_title"></activity>
+            android:label="@string/vt_list_title"/>
         <activity
             android:name=".EpiVt"
-            android:label="@string/epicardial_vt_title"></activity>
+            android:label="@string/epicardial_vt_title"/>
         <activity
             android:name=".OutflowVt"
-            android:label="@string/outflow_tract_vt_title"></activity>
+            android:label="@string/outflow_tract_vt_title"/>
         <activity
             android:name=".MitralAnnularVt"
-            android:label="@string/mitral_annular_vt_title"></activity>
+            android:label="@string/mitral_annular_vt_title"/>
         <activity
             android:name=".Sotalol"
-            android:label="@string/sotalol_calculator_title"></activity>
+            android:label="@string/sotalol_calculator_title"/>
         <activity
             android:name=".Apixaban"
-            android:label="@string/apixaban_calculator_title"></activity>
+            android:label="@string/apixaban_calculator_title"/>
         <activity
             android:name=".AtrialTachLocalization"
-            android:label="@string/atrial_tachycardia_localization_title"></activity>
+            android:label="@string/atrial_tachycardia_localization_title"/>
         <activity
             android:name=".DayCalculator"
-            android:label="@string/day_calculator_title"></activity>
+            android:label="@string/day_calculator_title"/>
         <activity
             android:name=".Entrainment"
-            android:label="@string/entrainment_title"></activity>
+            android:label="@string/entrainment_title"/>
         <activity
             android:name=".IbwCalculator"
-            android:label="@string/ibw_calculator_title"></activity>
+            android:label="@string/ibw_calculator_title"/>
         <activity
             android:name=".SyncopeRiskScoreList"
-            android:label="@string/syncope_list_title"></activity>
+            android:label="@string/syncope_list_title"/>
         <activity
             android:name=".SyncopeSfRule"
-            android:label="@string/syncope_sf_rule_title"></activity>
+            android:label="@string/syncope_sf_rule_title"/>
         <activity
             android:name=".MartinAlgorithm"
-            android:label="@string/syncope_martin_title"></activity>
+            android:label="@string/syncope_martin_title"/>
         <activity
             android:name=".OesilScore"
-            android:label="@string/syncope_oesil_score_title"></activity>
+            android:label="@string/syncope_oesil_score_title"/>
         <activity
             android:name=".EgsysScore"
-            android:label="@string/syncope_egsys_score_title"></activity>
+            android:label="@string/syncope_egsys_score_title"/>
         <activity
             android:name=".Vereckei"
-            android:label="@string/vereckei_title"></activity>
+            android:label="@string/vereckei_title"/>
         <activity
             android:name=".IcdRisk"
-            android:label="@string/icd_risk_title"></activity>
+            android:label="@string/icd_risk_title"/>
         <activity android:name=".Edoxaban"
             android:label="@string/edoxaban_calculator_title">
         </activity>
@@ -221,6 +221,14 @@
         <activity android:name=".HcmScd"
             android:label="@string/hcm_scd_esc_score_title">
         </activity>
+        <activity android:name=".AtriaBleed"
+            android:label="@string/atria_bleeding_score_title">
+        </activity>
+        <activity android:name=".AtriaStroke"
+            android:label="@string/atria_stroke_score_title">
+        </activity>
+        <activity android:name=".SameTtr"
+            android:label="@string/same_tt2r2_title" />
     </application>
 
 </manifest>
