@@ -77,17 +77,17 @@
     <string name="low_chads_message">Aspirin is recommended.</string>
     <string name="medium_chads_message">Aspirin or
 		anticoagulation (warfarin, dabigatran, rivaroxaban, apixaban or edoxaban) is recommended.</string>
-		<string name="high_chads_message">Anticoagulation (warfarin, dabigitran, rivaroxaban, apixaban or edoxaban) is recommended.</string>
+		<string name="high_chads_message">Anticoagulation (warfarin, dabigatran, rivaroxaban, apixaban or edoxaban) is recommended.</string>
     <string name="chads_proviso_message">Current guidelines recommend using CHA\u2082DS\u2082-VASc rather
         than CHADS\u2082 to assess stroke risk, especially when CHADS\u2082 is 0 or 1.</string>
     <string name="chadsvasc_title">CHA\u2082DS\u2082-VASc Score</string>
     <string name="vascular_label">Vascular disease (e.g. PVD, CAD, aortic plaque)</string>
     <string name="low_chadsvasc_message">No antithrombotic therapy is reasonable.</string>
-    <string name="medium_chadsvasc_message">No anticoagulation or anticoagulation (warfarin, dabigitran, rivaroxaban, apixaban
+    <string name="medium_chadsvasc_message">No anticoagulation or anticoagulation (warfarin, dabigatran, rivaroxaban, apixaban
         or edoxaban) or aspirin may be considered (2014 AHA/ACC/HRS guidelines).
     </string>
     <string name="high_chadsvasc_message">Anticoagulation
-    (warfarin, dabigitran, rivaroxaban, apixaban or edoxaban) is recommended.</string>
+    (warfarin, dabigatran, rivaroxaban, apixaban or edoxaban) is recommended.</string>
     <string name="female_only_chadsvasc_message">European Society of Cardiology (2012) recommends no anticoagulation when female sex is
         the only risk factor.</string>
     <string name="non_female_chadsvasc_message">European Society of Cardiology (2012) recommends anticoagulation.</string>
@@ -1045,7 +1045,7 @@
     <string name="davila_qrs_pattern">Lead III has Qrs pattern\n
     (deep Q followed by small r and s in a negative QRS complex in lead III)?</string>
     <string name="davila_positive_ii">Lead II polarity + ?</string>
-    <string name="davila_positive_v2">Lead V2 polariy + ?</string>
+    <string name="davila_positive_v2">Lead V2 polarity + ?</string>
     <string name="davila_negative_v2">Lead V2 polarity - ?</string>
     <string name="davila_ps_location">Posteroseptal</string>
     <string name="davila_rps_location">Right Posteroseptal (Posteroseptal Tricuspid Annulus)</string>
@@ -1166,7 +1166,7 @@
     <string name="same_ttr_title">SAMe-TT\u2082R\u2082</string>
     <string name="same_short_reference">Apostolakis S et al.
         Chest 2013;144:1555</string>
-    <string name="same_full_reference">Apostolakis S, Sullivan RM, Olshanky B,
+    <string name="same_full_reference">Apostolakis S, Sullivan RM, Olshansky B,
         Lip GYH.  Factors affecting quality of anticoagulation control among
         patients with atrial fibrillation on warfarin.  The
         SAMe-TT\u2082R\u2082 Score.  Chest [Internet].  2013 Nov
