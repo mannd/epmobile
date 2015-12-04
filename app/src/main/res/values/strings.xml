@@ -1156,7 +1156,7 @@
     <string name="high_atria_stroke_message">High thromboembolic risk
         (2% or greater per year).</string>
     <string name="same_med_hx_label">Medical hx (&gt; 2 of HTN, DM,
-        CAD/MI, PAD, CHF, prior stroke, pulmonary disease, hepatic or renal disease)</string>
+        CAD/MI, PAD, CHF, prior stroke, pulmonary disease, and hepatic or renal disease)</string>
     <string name="same_treatment_label">Treatment: interacting drugs,
         e.g. amiodarone</string>
     <string name="same_smoking_label">Tobacco use (within 2 y)</string>
@@ -1172,11 +1172,13 @@
         SAMe-TT\u2082R\u2082 Score.  Chest [Internet].  2013 Nov
         [cited 2015 Dec 2] 144(5):155-1563.  Available from:
         http://journal.publications.chestnet.org/article.aspx?articleid=1686270</string>
-    <string name="same_risk_label">SAMe-TT\u2082R\u2082 Score</string>
-    <string name="low_same_risk_message">Patients have high TTR (Time in Therapeutic
-        Range) (&gt;65% of the time) so initiating warfarin likely beneficial.</string>
-    <string name="high_same_risk_message">Patient have low TTR (Time in Therapeutic
-        Range) (&lt;65% of the time).  Improve education
-        regarding anticoagulation control, or consider a new oral anticoagulant instead
-        of warfarin.</string>
+    <string name="same_risk_label">SAMe-TT\u2082R\u2082</string>
+    <string name="low_same_risk_message">Patient likely to have good
+        anticoagulation control on warfarin with high (&gt;65%) TTR
+        (Time in Therapeutic Range).</string>
+    <string name="high_same_risk_message">Patient likely to have poor
+        anticoagulation control on warfarin with low
+        (&lt;65%) TTR (Time in Therapeutic Range).
+        Improve education regarding anticoagulation control,
+        or consider a new oral anticoagulant instead of warfarin.</string>
 </resources>
