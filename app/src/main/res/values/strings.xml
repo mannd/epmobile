@@ -1174,7 +1174,7 @@
         http://journal.publications.chestnet.org/article.aspx?articleid=1686270</string>
     <string name="same_risk_label">SAMe-TT\u2082R\u2082</string>
     <string name="low_same_risk_message">Patient likely to have good
-        anticoagulation control on warfarin with high (&gt;65%) TTR
+        anticoagulation control on warfarin with high (\u226565%) TTR
         (Time in Therapeutic Range).</string>
     <string name="high_same_risk_message">Patient likely to have poor
         anticoagulation control on warfarin with low
