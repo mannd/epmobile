@@ -930,11 +930,11 @@
     <string name="low_sodium_label">&lt; 135</string>
     <string name="normal_sodium_label">135 &#8211;145</string>
     <string name="high_sodium_label">&gt; 145</string>
-    <string name="hgb_label">Hemoglobin (gm/dl)</string>
+    <string name="hgb_label">Hemoglobin (gm/dL)</string>
     <string name="low_hgb_label">&lt; 12</string>
     <string name="normal_hgb_label">12 &#8211;14</string>
     <string name="high_hgb_label">&gt; 14</string>
-    <string name="bun_label">BUN (mg/dl)</string>
+    <string name="bun_label">BUN (mg/dL)</string>
     <string name="low_bun_label">&lt; 20</string>
     <string name="normal_bun_label">20 &#8211;40</string>
     <string name="high_bun_label">&gt; 40</string>
@@ -1110,8 +1110,8 @@
     <string name="same_tt2r2_title">SAMe-TT\u2082R\u2082 Score</string>
     <string name="atria_bleeding_score_title">ATRIA Bleeding Risk Score</string>
     <string name="atria_stroke_score_title">ATRIA Stroke Risk Score</string>
-    <string name="atria_anemia_label">Anemia (Hgb &lt;13 g/dl M, &lt;12 g/dl F)</string>
-    <string name="atria_renal_disease_label">Severe renal disease (GFR &lt;30 ml/min
+    <string name="atria_anemia_label">Anemia (Hgb &lt;13 g/dL M, &lt;12 g/dL F)</string>
+    <string name="atria_renal_disease_label">Severe renal disease (GFR &lt;30 mL/min
         or hemodialysis)</string>
     <string name="atria_prior_hemorrhage_label">Any prior hemorrhage</string>
     <string name="atria_htn_label">Diagnosed hypertension</string>
