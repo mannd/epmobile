@@ -229,6 +229,8 @@
         </activity>
         <activity android:name=".SameTtr"
             android:label="@string/same_tt2r2_title" />
+        <activity android:name=".Orbit"
+            android:label="@string/orbit_risk_title" />
     </application>
 
 </manifest>

@@ -42,7 +42,7 @@ public class RiskScoreList extends EpActivity {
 						.equals(getString(R.string.syncope_list_title)))
 					syncopeRiskScores();
 				else if (selection.equals(getString(R.string.icd_risk_title)))
-					IcdRiskScore();
+					icdRiskScore();
                 else if (selection.equals(getString(R.string.hcm_scd_esc_score_title)))
                     hcmScdRisk();
 				else if (selection.equals(getString(R.string.same_tt2r2_title)))
@@ -51,6 +51,8 @@ public class RiskScoreList extends EpActivity {
                     atriaBleedingScore();
                 else if (selection.equals(getString(R.string.atria_stroke_score_title)))
                     atriaStrokeScore();
+				else if (selection.equals(getString(R.string.orbit_risk_title)))
+					orbitRiskScore();
             }
 		});
 	}
@@ -85,9 +87,13 @@ public class RiskScoreList extends EpActivity {
 		startActivity(i);
 	}
 
-	private void IcdRiskScore() {
+	private void icdRiskScore() {
 		Intent i = new Intent(this, IcdRisk.class);
 		startActivity(i);
+	}
+
+	private void orbitRiskScore() {
+		startActivity(new Intent(this, Orbit.class));
 	}
 
 	private void hcmScdRisk() {

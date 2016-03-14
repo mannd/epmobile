@@ -1136,7 +1136,7 @@
         Fang MC, Pomernacki NK, Udaltsova N, Reynolds K, Go AS.  A new risk scheme to predict
         ischemic stroke and other thromboembolism in atrial fibrillation: the ATRIA study
         stroke risk score.  J Am Heart Assoc [Internet].  2013 Jun 19 [cited 2015 Nov
-        29];2:3000250.  Available from:
+        29];2:e000250.  Available from:
         http://jaha.ahajournals.org/content/2/3/e000250</string>
     <string name="atria_stroke_age_85">Age 85 or greater</string>
     <string name="atria_stroke_age_75">Age 75 to 84</string>
@@ -1170,7 +1170,7 @@
         Lip GYH.  Factors affecting quality of anticoagulation control among
         patients with atrial fibrillation on warfarin.  The
         SAMe-TT\u2082R\u2082 Score.  Chest [Internet].  2013 Nov
-        [cited 2015 Dec 2] 144(5):155-1563.  Available from:
+        [cited 2015 Dec 2] 144(5):1555-1563.  Available from:
         http://journal.publications.chestnet.org/article.aspx?articleid=1686270</string>
     <string name="same_risk_label">SAMe-TT\u2082R\u2082</string>
     <string name="low_same_risk_message">Patient likely to have good
@@ -1181,4 +1181,20 @@
         (&lt;65%) TTR (Time in Therapeutic Range).
         Improve education regarding anticoagulation control,
         or consider a new oral anticoagulant instead of warfarin.</string>
+    <string name="orbit_anemia_label">Anemia or hx anemia (Hgb &lt; 13 mg/dL male, &lt; 12 mg/dL female></string>
+    <string name="orbit_bleeding_label">Bleeding hx</string>
+    <string name="orbit_renal_insufficiency_label">Renal insufficiency (eGFR &lt; 60 mg/dL/1.73 m²)</string>
+    <string name="orbit_antiplatelet_label">Antiplatelet drug treatment</string>
+    <string name="orbit_label">ORBIT</string>
+    <string name="low_orbit_message">Low bleeding risk.</string>
+    <string name="medium_orbit_message">Medium bleeding risk.</string>
+    <string name="high_orbit_message">High bleeding risk.</string>
+    <string name="orbit_full_reference">O\'Brien EC, Simon DN, Thomas LE, Hylek EM, Gersh BJ, Ansell JE,
+        Kowey PR, Mahaffey KW, Chang P, Fonarow GC, Pencina MJ, Piccini JP, Peterson ED.
+        The ORBIT Bleeding Score: A Simple Bedside Score to Assess Bleeding Risk in Atrial Fibrillation.
+        Eur Heart J [Internet].  2015 [cited 2016 Mar 13] 36(46):3258-3264.
+        Available from: http://www.medscape.com/viewarticle/855941_1</string>
+    <string name="orbit_short_reference">O\'Brien EC et al.  Eur Heart J 2016;36:3258</string>
+    <string name="orbit_risk_title">ORBIT Bleeding Risk Score</string>
+
 </resources>

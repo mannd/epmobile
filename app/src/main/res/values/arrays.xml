@@ -126,6 +126,7 @@
         <item>@string/hcm_scd_esc_score_title</item>
         <item>@string/hemorrhages_title</item>
         <item>@string/icd_risk_title</item>
+        <item>@string/orbit_risk_title</item>
         <item>@string/same_tt2r2_title</item>
         <item>@string/syncope_list_title</item>
     </array>
