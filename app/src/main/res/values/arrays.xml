@@ -73,6 +73,7 @@
         <item>@string/drug_dose_calculator_list_title</item>
         <item>@string/cycle_length_calculator_title</item>
         <item>@string/qtc_calculator_title</item>
+        <item>@string/qtc_ivcd_calculator_title</item>
     </array>
     <array name="reference_list">
         <item>@string/brugada_drugs_title</item>

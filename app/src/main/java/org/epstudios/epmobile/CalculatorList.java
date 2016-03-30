@@ -42,6 +42,8 @@ public class CalculatorList extends EpActivity {
 					ibwCalculator();
                 else if (selection.equals(getString(R.string.creatinine_clearance_calculator_title)))
                     creatinineClearanceCalculator();
+				else if (selection.equals(getString(R.string.qtc_ivcd_calculator_title)))
+					qtcIvcdCalculator();
 
 
 			}
@@ -77,5 +79,9 @@ public class CalculatorList extends EpActivity {
         Intent i = new Intent(this, CreatinineClearanceCalculator.class);
         startActivity(i);
     }
+
+	private void qtcIvcdCalculator() {
+        startActivity(new Intent(this, QtcIvcd.class));
+	}
 
 }

@@ -1196,5 +1196,10 @@
         Available from: http://www.medscape.com/viewarticle/855941_1</string>
     <string name="orbit_short_reference">O\'Brien EC et al.  Eur Heart J 2016;36:3258</string>
     <string name="orbit_risk_title">ORBIT Bleeding Risk Score</string>
+    <string name="qrs_label">QRS (msec)</string>
+    <string name="qrs_hint">QRS (msec)</string>
+    <string name="sex_label">Sex</string>
+    <string name="lbbb_query">LBBB?</string>
+    <string name="qtc_ivcd_calculator_title">QTc With IVCD</string>
 
 </resources>
