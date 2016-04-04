@@ -228,7 +228,7 @@ public class Qtc extends EpActivity implements OnClickListener {
 		try {
 			int rr = Integer.parseInt(rrText.toString());
 			if (intervalRateSelection.equals(IntervalRate.RATE))
-				rr = 60000 / rr;
+				rr = (int) Math.round(60000.0 / rr);
 			int qt = Integer.parseInt(qtText.toString());
 			// getPrefs();
 			showQtcFormula();

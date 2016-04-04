@@ -1201,5 +1201,7 @@
     <string name="sex_label">Sex</string>
     <string name="lbbb_query">LBBB?</string>
     <string name="qtc_ivcd_calculator_title">QTc With IVCD</string>
+    <string name="qtc_ivcd_results_title">QTc with IVCD Results</string>
+    <string name="qt_calculator_error">One or more values are incorrect or missing.</string>
 
 </resources>

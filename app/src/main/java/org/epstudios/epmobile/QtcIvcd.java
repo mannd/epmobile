@@ -22,6 +22,7 @@ package org.epstudios.epmobile;
  * along with epmobile.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -151,24 +152,39 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
     }
 
     private void calculateQtc() {
-        CharSequence rrText = rrEditText.getText();
+        CharSequence rateIntervalText = rrEditText.getText();
         CharSequence qtText = qtEditText.getText();
         CharSequence qrsText = qrsEditText.getText();
         IntervalRate intervalRateSelection = getIntervalRateSelection();
         try {
-            int rr = Integer.parseInt(rrText.toString());
-            if (intervalRateSelection.equals(IntervalRate.RATE))
-                rr = 60000 / rr;
+            int interval;
+            int rate;
+            int rateInterval = Integer.parseInt(rateIntervalText.toString());
+
+            if (intervalRateSelection.equals(IntervalRate.RATE)) {
+                interval = (int) Math.round(60000.0 / rateInterval);
+                rate = rateInterval;
+            }
+            else {
+                interval = rateInterval;
+                rate = (int) Math.round(60000.0 / rateInterval);
+            }
             int qt = Integer.parseInt(qtText.toString());
             int qrs = Integer.parseInt(qrsText.toString());
+            if (rateInterval <= 0 || qt <= 0 || qrs <= 00 || qrs >= qt) {
+                throw new NumberFormatException();
+            }
             QtcCalculator.QtcFormula formula = QtcCalculator.QtcFormula.BAZETT;
-            int qtc = QtcCalculator.calculate(rr, qt, formula);
+            int qtc = QtcCalculator.calculate(interval, qt, formula);
             // TODO: other QtcFormula calculations here
             // TODO: display results
+            startActivity(new Intent(this, QtcIvcdResults.class));
         } catch (NumberFormatException e) {
             // TODO diplay error message
-//            qtcTextView.setText(getString(R.string.invalid_warning));
-//            qtcTextView.setTextColor(Color.RED);
+            AlertDialog alert = new AlertDialog.Builder(this).create();
+            alert.setTitle(getString(R.string.error_dialog_title));
+            alert.setMessage(getString(R.string.qt_calculator_error));
+            alert.show();;
         }
     }
 

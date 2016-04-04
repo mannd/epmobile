@@ -89,5 +89,11 @@ public class QtcCalculatorTest extends TestCase {
 		assertTrue(result == 421);
 	}
 
+	public void testTruncation() {
+		long result = QtcCalculator.calculate(888, 400, QtcFormula.BAZETT);
+		assertTrue(result == 424);
+
+	}
+
 
 }

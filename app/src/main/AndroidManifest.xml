@@ -233,6 +233,8 @@
             android:label="@string/orbit_risk_title" />
         <activity android:name=".QtcIvcd"
             android:label="@string/qtc_ivcd_calculator_title" />
+        <activity android:name=".QtcIvcdResults"
+            android:label="@string/qtc_ivcd_results_title" />
     </application>
 
 </manifest>

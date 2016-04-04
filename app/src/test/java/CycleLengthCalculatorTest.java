@@ -16,5 +16,8 @@ public class CycleLengthCalculatorTest extends TestCase {
 		// HALF_EVEN
 		assertEquals(6, Math.round(5.5));
 		assertEquals(5, Math.round(4.5));
+		assertEquals(4, Math.round(4.499));
+		// test errors from integer truncation
+		assertEquals(68, CycleLength.calculate(888));
 	}
 }
