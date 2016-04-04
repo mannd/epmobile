@@ -32,8 +32,12 @@ import android.widget.TextView;
 public class EpMobile extends EpActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         setContentView(R.layout.selectionlist);
+
         super.onCreate(savedInstanceState);
+
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this, R.array.main_index, android.R.layout.simple_list_item_1);
