@@ -151,30 +151,25 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
     }
 
     private void calculateQtc() {
-//        CharSequence rrText = rrEditText.getText();
-//        CharSequence qtText = qtEditText.getText();
-//        IntervalRate intervalRateSelection = getIntervalRateSelection();
-//        try {
-//            int rr = Integer.parseInt(rrText.toString());
-//            if (intervalRateSelection.equals(IntervalRate.RATE))
-//                rr = 60000 / rr;
-//            int qt = Integer.parseInt(qtText.toString());
-//            // getPrefs();
-//            showQtcFormula();
-//            QtcCalculator.QtcFormula formula = getQtcFormula(qtcFormula);
-//            Toast.makeText(this, "QTc Formula is " + qtcFormula,
-//                    Toast.LENGTH_LONG).show();
-//            int qtc = QtcCalculator.calculate(rr, qt, formula);
-//            qtcTextView.setText("QTc = " + String.valueOf(qtc) + " msec");
-//            if (qtc >= qtcUpperLimit)
-//                qtcTextView.setTextColor(Color.RED);
-//            else
-//                qtcTextView
-//                        .setTextColor(getResources().getColor(R.color.green));
-//        } catch (NumberFormatException e) {
+        CharSequence rrText = rrEditText.getText();
+        CharSequence qtText = qtEditText.getText();
+        CharSequence qrsText = qrsEditText.getText();
+        IntervalRate intervalRateSelection = getIntervalRateSelection();
+        try {
+            int rr = Integer.parseInt(rrText.toString());
+            if (intervalRateSelection.equals(IntervalRate.RATE))
+                rr = 60000 / rr;
+            int qt = Integer.parseInt(qtText.toString());
+            int qrs = Integer.parseInt(qrsText.toString());
+            QtcCalculator.QtcFormula formula = QtcCalculator.QtcFormula.BAZETT;
+            int qtc = QtcCalculator.calculate(rr, qt, formula);
+            // TODO: other QtcFormula calculations here
+            // TODO: display results
+        } catch (NumberFormatException e) {
+            // TODO diplay error message
 //            qtcTextView.setText(getString(R.string.invalid_warning));
 //            qtcTextView.setTextColor(Color.RED);
-//        }
+        }
     }
 
     private void clearEntries() {
