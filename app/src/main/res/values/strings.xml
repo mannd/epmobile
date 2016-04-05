@@ -1203,5 +1203,51 @@
     <string name="qtc_ivcd_calculator_title">QTc With IVCD</string>
     <string name="qtc_ivcd_results_title">QTc with IVCD Results</string>
     <string name="qt_calculator_error">One or more values are incorrect or missing.</string>
+    <string name="qt_ivcd_info_message">Select any result for more details</string>
+    <string name="qtm_lbbb_error_message">QTm only defined for LBBB</string>
+    <string name="qtmc_lbbb_error_message">QTmc only defined for LBBB</string>
+    <string name="qt_details">QT = %d msec.\n\nUse: The QT varies with heart rate,
+        QRS and sex, and so is usually not a good measure of repolarization independent
+        of these other factors.\n\nFormula:
+        This is the uncorrected QT interval.\n\nNormal values: Not defined</string>
+    <string name="qtc_details">QTc = %1$d msec.\n\nUse: The QTc corrects for heart rate,
+        in this case using the Bazett formula, but does not correct for increased QRS duration.
+        \n\nFormula: QTc[sec] = QT[sec] / SQRT(RR[sec])\n\nNormal values (without IVCD) per
+        AHA/ACC/HRS guidelines
+        (%2$s): Male &lt; 450 msec, Female &lt; 460 msec and &gt; 390 msec (both sexes)</string>
+    <string name="qtc_reference">"Rautaharju P et al. Circulation. 2009;119:e241-e250.</string>
+    <string name="qt_ivcd_instructions">Select any of the results in the list to see a dialog with detailed results</string>
+    <string name="qt_intructions_title">Details</string>
+    <string name="qt_details_title">Uncorrected QT</string>
+    <string name="qtc_details_title">Corrected QT</string>
+    <string name="qtm_reference">Bogossian H et al. New formula for evaluation of
+        the QT interval in patients with left bundle branch block. Heart Rhythm
+        2004;11:2273-2277.</string>
+    <string name="qtrrqrs_formula">QTrr,qrs = QT - 155 x (60/HR - 1)
+        - 0.93 x (QRS - 139) + k, k = -22 ms for men and -34 ms for women</string>
+    <string name="qtrrqrs_reference">Rautaharju P et al. Assessment of prolonged QT
+        and JT intervals in ventricular conduction defects.
+        Amer J Cardio 2003;93:1017-1021.</string>
+    <string name="jt_details_title">Uncorrected JT</string>
+    <string name="jtc_details_title">Corrected JT</string>
+    <string name="qtm_details_title">Modified QT (QTm) in LBBB</string>
+    <string name="qtmc_details_title">Corrected Modified QT in LBBB (QTmc)</string>
+    <string name="qtrrqrs_details_title">QT Corrected for Rate,\nQRS, and Sex (QTrr,qrs)</string>
+    <string name="jt_details">JT = %d msec.\n\nUse: The JT interval corrects for QRS duration,
+        but does not correct for heart rate.
+        \n\nFormula: JT = QT - QRS\n\nNormal values: Not defined.</string>
+    <string name="jtc_details">JTc = %d msec.\n\nUse: JTc corrects for heart rate and QRS duration, however normal values are not well established.
+        \n\nFormula: JTc = QTc(Bazett) - QRS\n\nNormal values: Not defined.</string>
+    <string name="qtm_details">QTm = %1$d msec.\n\nUse: Attempts to correct for the
+        prolongation of the QT interval attributable to QRS prolongation in LBBB.
+        \n\nFormula: QTm = QTb - 0.485 * QRSb\n\nNormal values:
+        Not defined.\n\nReference: %2$s</string>
+    <string name="qtmc_details">QTmc = %1$d msec.\n\nUse: Corrects QTm for heart rate,
+        in this case using the Bazett formula.\n\nFormula: QTmc = QTm corrected
+        for rate using Bazett formula\n\nNormal values:
+        Presumably the same as QTc.\n\nReference: %2$s</string>
+    <string name="qtrrqrs_details">QTrr,qrs = %1$d msec.\n\nUse:
+        Corrects QT for rate, QRS duration and sex.\n\nFormula: %2$s\n\nNormal values:
+        2%% and 5%% normal limits of 460 and 450 msec.\n\nReference: %3$s</string>
 
 </resources>

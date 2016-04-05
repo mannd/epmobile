@@ -110,8 +110,7 @@ public class DayCalculator extends EpActivity implements OnClickListener {
 					DateFormat.MEDIUM).format(cal.getTime()));
 
 		} catch (NumberFormatException e) {
-			calculatedDateTextView.setText(getString(R.string.invalid_warning,
-					this));
+			calculatedDateTextView.setText(getString(R.string.invalid_warning));
 			calculatedDateTextView.setTextColor(Color.RED);
 		}
 
