@@ -930,11 +930,11 @@
     <string name="low_sodium_label">&lt; 135</string>
     <string name="normal_sodium_label">135 &#8211;145</string>
     <string name="high_sodium_label">&gt; 145</string>
-    <string name="hgb_label">Hemoglobin (gm/dl)</string>
+    <string name="hgb_label">Hemoglobin (gm/dL)</string>
     <string name="low_hgb_label">&lt; 12</string>
     <string name="normal_hgb_label">12 &#8211;14</string>
     <string name="high_hgb_label">&gt; 14</string>
-    <string name="bun_label">BUN (mg/dl)</string>
+    <string name="bun_label">BUN (mg/dL)</string>
     <string name="low_bun_label">&lt; 20</string>
     <string name="normal_bun_label">20 &#8211;40</string>
     <string name="high_bun_label">&gt; 40</string>
@@ -1110,8 +1110,8 @@
     <string name="same_tt2r2_title">SAMe-TT\u2082R\u2082 Score</string>
     <string name="atria_bleeding_score_title">ATRIA Bleeding Risk Score</string>
     <string name="atria_stroke_score_title">ATRIA Stroke Risk Score</string>
-    <string name="atria_anemia_label">Anemia (Hgb &lt;13 g/dl M, &lt;12 g/dl F)</string>
-    <string name="atria_renal_disease_label">Severe renal disease (GFR &lt;30 ml/min
+    <string name="atria_anemia_label">Anemia (Hgb &lt;13 g/dL M, &lt;12 g/dL F)</string>
+    <string name="atria_renal_disease_label">Severe renal disease (GFR &lt;30 mL/min
         or hemodialysis)</string>
     <string name="atria_prior_hemorrhage_label">Any prior hemorrhage</string>
     <string name="atria_htn_label">Diagnosed hypertension</string>
@@ -1136,7 +1136,7 @@
         Fang MC, Pomernacki NK, Udaltsova N, Reynolds K, Go AS.  A new risk scheme to predict
         ischemic stroke and other thromboembolism in atrial fibrillation: the ATRIA study
         stroke risk score.  J Am Heart Assoc [Internet].  2013 Jun 19 [cited 2015 Nov
-        29];2:3000250.  Available from:
+        29];2:e000250.  Available from:
         http://jaha.ahajournals.org/content/2/3/e000250</string>
     <string name="atria_stroke_age_85">Age 85 or greater</string>
     <string name="atria_stroke_age_75">Age 75 to 84</string>
@@ -1170,15 +1170,84 @@
         Lip GYH.  Factors affecting quality of anticoagulation control among
         patients with atrial fibrillation on warfarin.  The
         SAMe-TT\u2082R\u2082 Score.  Chest [Internet].  2013 Nov
-        [cited 2015 Dec 2] 144(5):155-1563.  Available from:
+        [cited 2015 Dec 2] 144(5):1555-1563.  Available from:
         http://journal.publications.chestnet.org/article.aspx?articleid=1686270</string>
     <string name="same_risk_label">SAMe-TT\u2082R\u2082</string>
     <string name="low_same_risk_message">Patient likely to have good
-        anticoagulation control on warfarin with high (&gt;65%) TTR
+        anticoagulation control on warfarin with high (\u226565%) TTR
         (Time in Therapeutic Range).</string>
     <string name="high_same_risk_message">Patient likely to have poor
         anticoagulation control on warfarin with low
         (&lt;65%) TTR (Time in Therapeutic Range).
         Improve education regarding anticoagulation control,
         or consider a new oral anticoagulant instead of warfarin.</string>
+    <string name="orbit_anemia_label">Anemia or hx anemia (Hgb &lt; 13 mg/dL male, &lt; 12 mg/dL female></string>
+    <string name="orbit_bleeding_label">Bleeding hx</string>
+    <string name="orbit_renal_insufficiency_label">Renal insufficiency (eGFR &lt; 60 mg/dL/1.73 m²)</string>
+    <string name="orbit_antiplatelet_label">Antiplatelet drug treatment</string>
+    <string name="orbit_label">ORBIT</string>
+    <string name="low_orbit_message">Low bleeding risk.</string>
+    <string name="medium_orbit_message">Medium bleeding risk.</string>
+    <string name="high_orbit_message">High bleeding risk.</string>
+    <string name="orbit_full_reference">O\'Brien EC, Simon DN, Thomas LE, Hylek EM, Gersh BJ, Ansell JE,
+        Kowey PR, Mahaffey KW, Chang P, Fonarow GC, Pencina MJ, Piccini JP, Peterson ED.
+        The ORBIT Bleeding Score: A Simple Bedside Score to Assess Bleeding Risk in Atrial Fibrillation.
+        Eur Heart J [Internet].  2015 [cited 2016 Mar 13] 36(46):3258-3264.
+        Available from: http://www.medscape.com/viewarticle/855941_1</string>
+    <string name="orbit_short_reference">O\'Brien EC et al.  Eur Heart J 2016;36:3258</string>
+    <string name="orbit_risk_title">ORBIT Bleeding Risk Score</string>
+    <string name="qrs_label">QRS (msec)</string>
+    <string name="qrs_hint">QRS (msec)</string>
+    <string name="sex_label">Sex</string>
+    <string name="lbbb_query">LBBB?</string>
+    <string name="qtc_ivcd_calculator_title">QTc With IVCD</string>
+    <string name="qtc_ivcd_results_title">QTc with IVCD Results</string>
+    <string name="qt_calculator_error">One or more values are incorrect or missing.</string>
+    <string name="qt_ivcd_info_message">Select any result for more details</string>
+    <string name="qtm_lbbb_error_message">QTm only defined for LBBB</string>
+    <string name="qtmc_lbbb_error_message">QTmc only defined for LBBB</string>
+    <string name="qt_details">QT = %d msec.\n\nUse: The QT varies with heart rate,
+        QRS and sex, and so is usually not a good measure of repolarization independent
+        of these other factors.\n\nFormula:
+        This is the uncorrected QT interval.\n\nNormal values: Not defined</string>
+    <string name="qtc_details">QTc = %1$d msec.\n\nUse: The QTc corrects for heart rate,
+        in this case using the Bazett formula, but does not correct for increased QRS duration.
+        \n\nFormula: QTc[sec] = QT[sec] / SQRT(RR[sec])\n\nNormal values (without IVCD) per
+        AHA/ACC/HRS guidelines
+        (%2$s): Male &lt; 450 msec, Female &lt; 460 msec and &gt; 390 msec (both sexes)</string>
+    <string name="qtc_reference">"Rautaharju P et al. Circulation. 2009;119:e241-e250.</string>
+    <string name="qt_ivcd_instructions">Select any of the results in the list to see a dialog with detailed results</string>
+    <string name="qt_intructions_title">Details</string>
+    <string name="qt_details_title">Uncorrected QT</string>
+    <string name="qtc_details_title">Corrected QT</string>
+    <string name="qtm_reference">Bogossian H et al. New formula for evaluation of
+        the QT interval in patients with left bundle branch block. Heart Rhythm
+        2004;11:2273-2277.</string>
+    <string name="qtrrqrs_formula">QTrr,qrs = QT - 155 x (60/HR - 1)
+        - 0.93 x (QRS - 139) + k, k = -22 ms for men and -34 ms for women</string>
+    <string name="qtrrqrs_reference">Rautaharju P et al. Assessment of prolonged QT
+        and JT intervals in ventricular conduction defects.
+        Amer J Cardio 2003;93:1017-1021.</string>
+    <string name="jt_details_title">Uncorrected JT</string>
+    <string name="jtc_details_title">Corrected JT</string>
+    <string name="qtm_details_title">Modified QT (QTm) in LBBB</string>
+    <string name="qtmc_details_title">Corrected Modified QT in LBBB (QTmc)</string>
+    <string name="qtrrqrs_details_title">QT Corrected for Rate,\nQRS, and Sex (QTrr,qrs)</string>
+    <string name="jt_details">JT = %d msec.\n\nUse: The JT interval corrects for QRS duration,
+        but does not correct for heart rate.
+        \n\nFormula: JT = QT - QRS\n\nNormal values: Not defined.</string>
+    <string name="jtc_details">JTc = %d msec.\n\nUse: JTc corrects for heart rate and QRS duration, however normal values are not well established.
+        \n\nFormula: JTc = QTc(Bazett) - QRS\n\nNormal values: Not defined.</string>
+    <string name="qtm_details">QTm = %1$d msec.\n\nUse: Attempts to correct for the
+        prolongation of the QT interval attributable to QRS prolongation in LBBB.
+        \n\nFormula: QTm = QTb - 0.485 * QRSb\n\nNormal values:
+        Not defined.\n\nReference: %2$s</string>
+    <string name="qtmc_details">QTmc = %1$d msec.\n\nUse: Corrects QTm for heart rate,
+        in this case using the Bazett formula.\n\nFormula: QTmc = QTm corrected
+        for rate using Bazett formula\n\nNormal values:
+        Presumably the same as QTc.\n\nReference: %2$s</string>
+    <string name="qtrrqrs_details">QTrr,qrs = %1$d msec.\n\nUse:
+        Corrects QT for rate, QRS duration and sex.\n\nFormula: %2$s\n\nNormal values:
+        2%% and 5%% normal limits of 460 and 450 msec.\n\nReference: %3$s</string>
+
 </resources>

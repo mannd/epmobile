@@ -73,6 +73,7 @@
         <item>@string/drug_dose_calculator_list_title</item>
         <item>@string/cycle_length_calculator_title</item>
         <item>@string/qtc_calculator_title</item>
+        <item>@string/qtc_ivcd_calculator_title</item>
     </array>
     <array name="reference_list">
         <item>@string/brugada_drugs_title</item>
@@ -126,6 +127,7 @@
         <item>@string/hcm_scd_esc_score_title</item>
         <item>@string/hemorrhages_title</item>
         <item>@string/icd_risk_title</item>
+        <item>@string/orbit_risk_title</item>
         <item>@string/same_tt2r2_title</item>
         <item>@string/syncope_list_title</item>
     </array>
@@ -185,5 +187,23 @@
         <item>@string/syncope_oesil_score_title</item>
         <item>@string/syncope_sf_rule_title</item>
     </array>
+    <array name="qt_ivcd_results">
+        <item>@string/qt</item>
+        <item>@string/qtc</item>
+        <item>@string/jt</item>
+        <item>@string/jtc</item>
+        <item>@string/qtm</item>
+        <item>@string/qtmc</item>
+        <item>@string/qtrrqrs</item>
+        <item>@string/qt_instructions</item>
+    </array>
 
+    <string name="qt">QT</string>
+    <string name="qtc">QTc</string>
+    <string name="jt">JT</string>
+    <string name="jtc">JTc</string>
+    <string name="qtm">QTm</string>
+    <string name="qtmc">QTmc</string>
+    <string name="qtrrqrs">QTrr,qrs</string>
+    <string name="qt_instructions">Select item for details</string>
 </resources>

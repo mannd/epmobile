@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="*"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        >
+
+        <RadioGroup
+            android:id="@+id/sexRadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/male_label"></RadioButton>
+
+            <RadioButton
+                android:id="@+id/female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/female_label"></RadioButton>
+        </RadioGroup>
+
+        <TableRow>
+
+            <Spinner android:id="@+id/interval_rate_spinner"></Spinner>
+
+            <EditText
+                android:id="@+id/rrEditText"
+                android:hint="@string/rr_hint"
+                android:inputType="number"
+                android:text=""></EditText>
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:text="@string/qt_label"
+                android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
+
+            <EditText
+                android:id="@+id/qtEditText"
+                android:hint="@string/qt_hint"
+                android:inputType="number"
+                android:text=""></EditText>
+        </TableRow>
+
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/textView2a"
+                android:text="@string/qrs_label"
+                android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
+
+            <EditText
+                android:id="@+id/qrsEditText"
+                android:hint="@string/qrs_hint"
+                android:inputType="number"
+                android:text=""></EditText>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="@string/lbbb_query"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                />
+
+            <CheckBox
+                android:id="@+id/lbbbCheckBox"
+                />
+
+        </TableRow>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin">
+
+            <Button
+                android:id="@+id/calculate_qtc_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/calculate_label" />
+
+
+            <Button
+                android:id="@+id/clear_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/clear_label"/>
+        </LinearLayout>
+
+
+    </TableLayout>
+
+</LinearLayout>

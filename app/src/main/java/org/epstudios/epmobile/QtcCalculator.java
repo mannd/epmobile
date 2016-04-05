@@ -73,4 +73,24 @@ public class QtcCalculator {
 		return qtSec + ((1.75 * (hr - 60) / 1000));
 	}
 
+	// TODO add QTc with IVCD methods
+	public static long qtCorrectedForLBBB(int qt, int qrs) {
+        return Math.round(qt - (qrs * 0.485));
+    }
+
+    public static long jtInterval(int qt, int qrs) {
+        return Math.round(qt -qrs);
+    }
+
+    public static int jtCorrected(int qt, int rr, int qrs) {
+        int result = calculate(rr, qt, QtcFormula.BAZETT);
+        result -= qrs;
+        return result;
+    }
+
+    public static long qtRrIvcd(int qt, double hr, int qrs, boolean isMale) {
+        double k = isMale ? -22 : -34;
+        return Math.round(qt - 155 * (60/hr - 1) - 0.93 * (qrs - 139) + k);
+    }
+
 }

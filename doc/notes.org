@@ -777,7 +777,7 @@ Possible point scores range from 0 to 12 for those without a prior stroke and fr
   - [X] git add changes/x.y.z.txt
   - [X] update doc/description.txt
   - [X] update screenshots - resize them with GIMP to 480 x 800.
-  - [X] git commit
+  - [ ] git commit
   - [ ] git flow release finish vx.y
   - [ ] git push --tags origin master
   - [ ] git push origin develop

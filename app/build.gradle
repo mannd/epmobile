@@ -2,14 +2,14 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 22
-    buildToolsVersion "21.1.2"
+    buildToolsVersion "23.0.2"
 
     defaultConfig {
         applicationId "org.epstudios.epmobile"
         minSdkVersion 7
         targetSdkVersion 22
-        versionCode 47
-        versionName "2.13"
+        versionCode 48
+        versionName "2.14"
 
     }
 
@@ -19,6 +19,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
         debug {
+            debuggable true
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
@@ -27,5 +28,7 @@ android {
 
 dependencies {
     compile 'com.android.support:appcompat-v7:22.0.0'
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:1.10.19'
 }
 
