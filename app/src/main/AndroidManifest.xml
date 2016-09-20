@@ -235,6 +235,8 @@
             android:label="@string/qtc_ivcd_calculator_title" />
         <activity android:name=".QtcIvcdResults"
             android:label="@string/qtc_ivcd_results_title" />
+        <activity android:name=".IcdMortalityRisk"
+            android:label="@string/icd_mortality_risk_title" />
     </application>
 
 </manifest>

@@ -773,15 +773,15 @@ Possible point scores range from 0 to 12 for those without a prior stroke and fr
     - [X] increment android:versionCode
     - [X] change android:versionName
   - [X] ALSO IMPORTANT - update version in About.java!!!
-  - [X] run git log --pretty=oneline and update changes/x.y.z.txt
-  - [X] git add changes/x.y.z.txt
-  - [X] update doc/description.txt
-  - [X] update screenshots - resize them with GIMP to 480 x 800.
+  - [ ] run git log --pretty=oneline and update changes/x.y.z.txt
+  - [ ] git add changes/x.y.z.txt
+  - [ ] update doc/description.txt
+  - [ ] update screenshots - resize them with GIMP to 480 x 800.
   - [ ] git commit
   - [ ] git flow release finish vx.y
   - [ ] git push --tags origin master
   - [ ] git push origin develop
-  - [ ] refresh android studio epmobile
+  - [ ] refresh android studio epmobgile
   - [ ] make/sign epmobile.apk, save it in dev/epmobileapp/later_verisons/
   - [ ] on market.android.com update product details
   - [ ] upload apk, deactivate old one

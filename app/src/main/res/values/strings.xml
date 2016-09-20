@@ -141,7 +141,7 @@
     <string name="done_label">Done</string>
     <string name="reset_label">Reset</string>
     <string name="dont_reset_label">Don\'t Reset</string>
-    <string name="copy_report_label">Copy Result</string>
+    <string name="copy_report_label">Copy</string>
     <string name="dosing_label">Dosing</string>
     <string name="morphology_label">Morphology Criteria</string>
     <string name="morphology_title">@string/morphology_label</string>
@@ -1249,5 +1249,27 @@
     <string name="qtrrqrs_details">QTrr,qrs = %1$d msec.\n\nUse:
         Corrects QT for rate, QRS duration and sex.\n\nFormula: %2$s\n\nNormal values:
         2%% and 5%% normal limits of 460 and 450 msec.\n\nReference: %3$s</string>
-
+    <string name="very_high_risk_label">Very High Risk (BUN \u2265 50 or Cr \u2265 2.5 mg/dL)</string>
+    <string name="nyha_greater_than_2_label">NYHA class &gt; II</string>
+    <string name="age70_label">Age &gt; 70</string>
+    <string name="qrs_greater_than_12_label">QRS &gt; 0.12 sec</string>
+    <string name="bun_greater_than_26_label">BUN &gt; 26 mg/dL</string>
+    <string name="afb_baseline_label">AFB as baseline rhythm</string>
+    <string name="icd_mortality_risk_full_reference">Goldenberg I, Vyas AK, Hall WJ,
+        Moss AJ, Wang H, He H, Zareba W, McNitt S, Andrews ML, MADIT-II Investigators.
+        Risk stratification for primary implantation of a cardioverter-defibrillator
+        in patients with ischemic left ventricular dysfunction.
+        J Am Coll Cardiol [Internet] 2008 Jan [cited 2016 Sep 1];51(3):288-296.
+        Available from
+        http://content.onlinejacc.org/article.aspx?articleid=1187155</string>
+    <string name="icd_mortality_risk_short_reference">Goldenberg I et al.
+        JACC 2008;51:288</string>
+    <string name="vhr_message">In the Very High Risk group there is high (50%%) 2 year mortality
+        in MADIT-II type patients regardless of therapy (conventional therapy %1$d%%,
+        ICD %2$d%% mortality).</string>
+    <string name="not_vhr_message">The 2 year mortality risk in MADIT-II type patients with
+        conventional therapy is %1$d%%, and with ICD therapy is %2$d%%.</string>
+    <string name="icd_mortality_warning_message">Results based on MADIT-II study population, in brief,
+        EF \u2264 30%%, prior MI, excluding NYHA class IV, recent MI/CABG,
+        renal failure and others.</string>
 </resources>

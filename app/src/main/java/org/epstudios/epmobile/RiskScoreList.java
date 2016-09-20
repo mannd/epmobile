@@ -53,6 +53,8 @@ public class RiskScoreList extends EpActivity {
                     atriaStrokeScore();
 				else if (selection.equals(getString(R.string.orbit_risk_title)))
 					orbitRiskScore();
+				else if (selection.equals(getString(R.string.icd_mortality_risk_title)))
+					icdMortalityRisk();
             }
 		});
 	}
@@ -110,6 +112,10 @@ public class RiskScoreList extends EpActivity {
 
     private void atriaStrokeScore() {
 		startActivity(new Intent(this, AtriaStroke.class));
+	}
+
+	private void icdMortalityRisk() {
+		startActivity(new Intent(this, IcdMortalityRisk.class));
 	}
 
 }
