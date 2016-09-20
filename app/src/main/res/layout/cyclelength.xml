@@ -51,6 +51,15 @@
                 android:text=""></EditText>
         </TableRow>
 
+            <TextView
+                android:id="@+id/calculated_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/calculated_result_label"
+                android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
+
+
         <LinearLayout
             android:id="@+id/linearLayout3"
             android:padding="3dp"
@@ -63,14 +72,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/calculate_label"></Button>
 
-            <TextView
-                android:id="@+id/calculated_result"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.96"
-                android:gravity="center_horizontal"
-                android:text="@string/calculated_result_label"
-                android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
 
             <Button
                 android:id="@+id/clear_button"
@@ -78,6 +79,9 @@
                 android:layout_height="wrap_content"
                 android:text="@string/clear_label"></Button>
         </LinearLayout>
+
+
+
 
     </TableLayout>
 
