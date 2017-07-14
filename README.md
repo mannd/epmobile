@@ -1,7 +1,12 @@
 ## Description
 EP Mobile is an [Android](http://www.android.com) application
 that provides a set of tools for electrophysiologists and other health care
-workers who deal with cardiac arrhythmias.  The program includes EP calculators, drug dose calculators, risk scores, diagnostic tools, ECG figures, and more.  It is available on the [Android Market](https://market.android.com/details?id=org.epstudios.epmobile).
+workers who deal with cardiac arrhythmias.  The program includes EP calculators, drug dose calculators, risk scores, diagnostic tools, ECG figures, and more.
+
+<a href="https://f-droid.org/packages/org.epstudios.epmobile/" target="_blank">
+<img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="100"/></a>
+<a href="https://play.google.com/store/apps/details?id=org.epstudios.epmobile" target="_blank">
+<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" alt="Get it on Google Play" height="100"/></a>
 
 EP Mobile is free, open source, and licensed under the 
 [GNU GPL v3 license.](http://www.gnu.org/licenses/gpl.html)
