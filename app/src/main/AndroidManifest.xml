@@ -153,6 +153,9 @@
             android:name=".ReferenceList"
             android:label="@string/reference_title"/>
         <activity
+            android:name=".BrugadaList"
+            android:label="@string/brugada_syndrome_title" />
+        <activity
             android:name=".VtList"
             android:label="@string/vt_list_title"/>
         <activity

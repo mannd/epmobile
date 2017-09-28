@@ -57,7 +57,8 @@
         <item>@string/arvc_old_criteria_title</item>
         <item>@string/arvc_2010_criteria_title</item>
         <item>@string/atrial_tachycardia_localization_title</item>
-        <item>@string/brugada_ecg_title</item>
+        <item>@string/brugada_syndrome_title</item>
+        <item>@string/ers_title</item>
         <item>@string/lvh_list_title</item>
         <item>@string/lqt_syndrome_title</item>
         <item>@string/rvh_title</item>
@@ -65,6 +66,11 @@
         <item>@string/vt_list_title</item>
         <item>@string/wct_algorithm_list_title</item>
         <item>@string/wpw_algorithm_list_title</item>
+    </array>
+    <array name="brugada_list">
+        <item>@string/brugada_ecg_title</item>
+        <item>@string/brugada_diagnosis_title</item>
+        <item>@string/brugada_score_title</item>
     </array>
     <array name="calculator_list">
         <item>@string/ibw_calculator_title</item>
@@ -208,4 +214,8 @@
     <string name="qtrrqrs">QTrr,qrs</string>
     <string name="qt_instructions">Select item for details</string>
     <string name="icd_mortality_risk_title">ICD Mortality Risk</string>
+    <string name="brugada_syndrome_title">Brugada Syndrome</string>
+    <string name="ers_title">Early Repolarization Syndrome</string>
+    <string name="brugada_score_title">Brugada Shanghai Score</string>
+    <string name="brugada_diagnosis_title">Brugada Diagnosis</string>
 </resources>
