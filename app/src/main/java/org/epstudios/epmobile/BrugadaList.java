@@ -66,8 +66,11 @@ public class BrugadaList extends EpActivity {
 		startActivity(i);
 	}
 
-	private void brugadaDiagnosis() {
-		//
+   private void brugadaDiagnosis() {
+		Intent i = new Intent(this, LinkView.class);
+        i.putExtra("EXTRA_URL", "file:///android_asset/brugadadiagnosis.html");
+        i.putExtra("EXTRA_TITLE", getString((R.string.brugada_diagnosis_title)));
+        startActivity(i);
 	}
 
 	private void brugadaScore() {
