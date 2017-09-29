@@ -74,7 +74,8 @@ public class BrugadaList extends EpActivity {
 	}
 
 	private void brugadaScore() {
-		//
+		Intent i = new Intent(this, BrugadaScore.class);
+		startActivity(i);
 	}
 
 }
