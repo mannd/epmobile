@@ -158,6 +158,9 @@
         <activity
             android:name=".BrugadaScore"
             android:label="@string/brugada_score_title" />
+        <activity
+            android:name=".ErsScore"
+            android:label="@string/ers_title" />
          <activity
             android:name=".VtList"
             android:label="@string/vt_list_title"/>

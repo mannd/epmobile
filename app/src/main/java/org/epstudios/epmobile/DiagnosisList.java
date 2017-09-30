@@ -44,6 +44,8 @@ public class DiagnosisList extends EpActivity {
 				else if (selection
 						.equals(getString(R.string.brugada_syndrome_title)))
 					brugadaList();
+				else if (selection.equals(getString(R.string.ers_title)))
+					ersScore();
 				else if (selection.equals(getString(R.string.vt_list_title)))
 					vtList();
 				else if (selection
@@ -115,6 +117,11 @@ public class DiagnosisList extends EpActivity {
 
 	private void arvcOld() {
 		Intent i = new Intent(this, ArvcOld.class);
+		startActivity(i);
+	}
+
+	private void ersScore() {
+		Intent i = new Intent(this, ErsScore.class);
 		startActivity(i);
 	}
 }

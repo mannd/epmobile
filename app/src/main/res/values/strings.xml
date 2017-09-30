@@ -1293,4 +1293,16 @@
         Available from: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5063270/</string>
     <string name="brugada_score_key">VF = ventricular fibrillation.  VT = ventricular tachycardia.
 	    SCD = sudden cardiac death.</string>
+    <string name="large_er_label">ER ≥ 0.2 mV in ≥ 2 inferior and/or lateral ECG leads with horizontal/descending ST segment (\'IIa pattern\')</string>
+    <string name="dynamic_j_point_label">Dynamic changes in J-point elevation (≥ 0.1 mV) in ≥ 2 inferior and/or lateral leads</string>
+    <string name="j_point_elevation_label">≥ 0.1 mV J-point elevation in at least 2 inferior and/or lateral ECG leads</string>
+    <string name="relative_definite_ers_label">Relative with definite ERS</string>
+    <string name="relative_ers_ecg_label">≥ 2 first-degree relatives with a IIa ECG pattern as above</string>
+    <string name="one_relative_ers_ecg_label">First-degree relative with a IIa ECG pattern as above</string>
+    <string name="ers_pathogenic_mutation_label">Probable pathogenic ERS mutation</string>
+    <string name="ambulatory_ecg_label">Ambulatory ECG Monitoring</string>
+    <string name="ecg_label">12-lead ECG</string>
+    <string name="short_coupled_pvcs_label">Short-coupled PVCs with R on ascending limb or peak of T wave</string>
+    <string name="ers_score_key">ER = Early repolarization.  PVCs = Premature ventricular complexes VF = ventricular fibrillation.  VT = ventricular tachycardia.
+	    SCD = sudden cardiac death.</string>
 </resources>
