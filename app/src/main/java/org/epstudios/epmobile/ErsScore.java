@@ -43,7 +43,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ErsScore extends RiskScore {
-    private List<Integer> points = new ArrayList(Arrays.asList(30, 20, 10, 20, 15, 10, 20,
+    private List<Integer> points = new ArrayList<>(Arrays.asList(30, 20, 10, 20, 15, 10, 20,
             20, 20, 10, 5, 5));
     private int clinicalIndexBegin = 0;
     private int clinicalIndexEnd = 2;

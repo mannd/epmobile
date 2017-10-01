@@ -34,7 +34,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class BrugadaScore extends RiskScore {
-    private List<Integer> points = new ArrayList(Arrays.asList(35, 30, 20, 30, 20, 20, 10,
+    private List<Integer> points = new ArrayList<>(Arrays.asList(35, 30, 20, 30, 20, 20, 10,
             5, 20, 10, 5, 5));
     private int ecgIndexBegin = 0;
     private int ecgIndexEnd = 2;
