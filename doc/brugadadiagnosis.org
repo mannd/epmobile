@@ -1,0 +1,21 @@
+# Brugada diagnosis -- leave title blank below
+#+TITLE:  
+#+AUTHOR:    David Mann
+#+EMAIL:     mannd@epstudiossoftware.com
+#+DATE:      [2017-09-24 Sun]
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:nil toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME: 
+#+XSLT:
+* HRS/EHRA/APHRS Expert Consensus Diagnostic Criteria for Brugada Syndrome (2013)
+1. Brugada syndrome is diagnosed in patients with ST-segment elevation with type 1 morphology _>_ 2 mm in _>_ 1 lead among the right precordial leads V1, V2, positioned in the 2nd, 3rd, or 4th intercostal space occurring either spontaneously or after provocative drug test with intravenous administration of Class I antiarrhythmic drugs.
+2. Brugada syndrome is diagnosed in patients with type 2 or type 3 ST-segment elevation with _>_ 1 lead among the right precordial leads V1, V2, positioned in the 2nd, 3rd, or 4th intercostal space occurring when a provocative drug test with intravenous administration of Class I antiarrhythmic drugs induces a type 1 ECG morphology.
+** Reference
+Priori SG, Wilde AA, Horie M, Cho Y, Behr ER, Berul C, et al. HRS/EHRA/APHRS expert consensus statement on the diagnosis and management of patients with inherited primary arrhythmia syndromes. Heart Rhythm. 2013;10(12):1932–1963. http://dx.doi.org/10.1016/j.hrthm.2013.05.014

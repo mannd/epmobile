@@ -11,7 +11,7 @@
 		\n\nEmail: mannd@epstudiossoftware.com
 		\nWeb: www.epstudiossoftware.com
 		\nSource: github.com/mannd/epmobile
-		\n\nCopyright \u00a9 2011-2015 EP Studios, Inc.
+		\n\nCopyright \u00a9 2011-2017 EP Studios, Inc.
 		\nLicensed under GNU GPL v3.</string>
     <string name="main_index_title">EP Mobile</string>
     <string name="about_label">About</string>
@@ -1272,4 +1272,37 @@
     <string name="icd_mortality_warning_message">Results based on MADIT-II study population, in brief,
         EF \u2264 30%%, prior MI, excluding NYHA class IV, recent MI/CABG,
         renal failure and others.</string>
+    <string name="ecg_criteria_label">ECG (12 lead/ambulatory)</string>
+    <string name="brugada_family_history_label">Family History</string>
+    <string name="genetic_test_result_label">Genetic Test Result</string>
+    <string name="spontaneous_type_1_ecg_label">Spontaneous type 1 Brugada ECG pattern at nominal or high leads</string>
+    <string name="fever_type_1_ecg_label">Fever-induced type 1 Brugada ECG pattern at nominal or high leads</string>
+    <string name="type_2_3_ecg_label">Type 2 or 3 Brugada ECG pattern that converts with provocative drug challenge</string>
+    <string name="unexplained_arrest_label">Unexplained arrest or documented VF/polymorphic VT</string>
+    <string name="agonal_respirations_label">Nocturnal agonal respirations</string>
+    <string name="arrhythmic_syncope_label">Suspected arrhythmic syncope</string>
+    <string name="unclear_syncope_label">Syncope of unclear mechanism/unclear etiology</string>
+    <string name="afl_afb_label">Atrial flutter/fibrillation in patients &lt; 30 years without alternative etiology</string>
+    <string name="relative_definite_brugada_label">First- or second-degree relative with definite Brugada Syndrome</string>
+    <string name="suspicious_scd_label">Suspicious SCD (fever, nocturnal, Brugada aggravating drugs) in first- or second-degree relative</string>
+    <string name="unexplained_scd_label">Unexplained SCD &lt; 45 years in first- or second-degree relative with negative autopsy</string>
+    <string name="pathogenic_mutation_label">Probable pathogenic mutation in Brugada susceptibility gene</string>
+    <string name="brugada_score_reference">Antzelevitch C, Yan GX, Ackerman MJ, Borggrefe M, Corrado D, Guo J, et al.
+        J-wave syndromes expert consensus conference report: Emerging concepts and gaps in knowledge.
+        J Arrhythmia. [Internet] 2016 Oct [cited 2017 Sep 28];32(5):315-339.
+        Available from: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5063270/</string>
+    <string name="brugada_score_key">VF = ventricular fibrillation.  VT = ventricular tachycardia.
+	    SCD = sudden cardiac death.</string>
+    <string name="large_er_label">ER ≥ 0.2 mV in ≥ 2 inferior and/or lateral ECG leads with horizontal/descending ST segment (\'IIa pattern\')</string>
+    <string name="dynamic_j_point_label">Dynamic changes in J-point elevation (≥ 0.1 mV) in ≥ 2 inferior and/or lateral leads</string>
+    <string name="j_point_elevation_label">≥ 0.1 mV J-point elevation in at least 2 inferior and/or lateral ECG leads</string>
+    <string name="relative_definite_ers_label">Relative with definite ERS</string>
+    <string name="relative_ers_ecg_label">≥ 2 first-degree relatives with a IIa ECG pattern as above</string>
+    <string name="one_relative_ers_ecg_label">First-degree relative with a IIa ECG pattern as above</string>
+    <string name="ers_pathogenic_mutation_label">Probable pathogenic ERS mutation</string>
+    <string name="ambulatory_ecg_label">Ambulatory ECG Monitoring</string>
+    <string name="ecg_label">12-lead ECG</string>
+    <string name="short_coupled_pvcs_label">Short-coupled PVCs with R on ascending limb or peak of T wave</string>
+    <string name="ers_score_key">ER = Early repolarization.  PVCs = Premature ventricular complexes VF = ventricular fibrillation.  VT = ventricular tachycardia.
+	    SCD = sudden cardiac death.</string>
 </resources>

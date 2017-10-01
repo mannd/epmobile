@@ -12,7 +12,7 @@ EP Mobile is free, open source, and licensed under the
 [GNU GPL v3 license.](http://www.gnu.org/licenses/gpl.html)
 
 ## License
-Copyright © 2011, 2012, 2013, 2014 [EP Studios, Inc.](http://www.epstudiossoftware.com)
+Copyright © 2011 - 2017 [EP Studios, Inc.](http://www.epstudiossoftware.com)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -38,6 +38,8 @@ The Brugada syndrome ECG pattern figure is from
 [Napolitano C, Priori SG. Brugada syndrome. Orphanet J Rare Dis. 1, 35. 2006. doi:10.1186/1750-1172-1-35](http://www.ncbi.nlm.nih.gov/pubmed/16972995?dopt=Abstract).
 It is licensed under the
 [Creative Commons Attribution 2.0 Generic License](http://creativecommons.org/licenses/by/2.0/deed.en).
+
+A complete set of references for the app is available [here](https://www.epstudiossoftware.com/ep-mobile/references-2/).
 
 ## Author
 David Mann

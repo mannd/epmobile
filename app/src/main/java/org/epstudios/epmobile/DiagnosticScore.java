@@ -30,10 +30,9 @@ abstract public class DiagnosticScore extends EpActivity implements
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-        // must setContentView first before calling super
+		super.onCreate(savedInstanceState);
         setContentView();
-
-        super.onCreate(savedInstanceState);
+		initToolbar();
 
 		View calculateButton = findViewById(R.id.calculate_button);
 		calculateButton.setOnClickListener(this);

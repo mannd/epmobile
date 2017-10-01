@@ -1,7 +1,6 @@
 package org.epstudios.epmobile;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,9 +12,10 @@ import android.widget.TextView;
 public class DiagnosisList extends EpActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.selectionlist);
 		super.onCreate(savedInstanceState);
-		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+        setContentView(R.layout.selectionlist);
+	initToolbar();
+	ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
 				this, R.array.diagnosis_list,
 				android.R.layout.simple_list_item_1);
         ListView lv = (ListView) findViewById(R.id.list);
@@ -43,8 +43,10 @@ public class DiagnosisList extends EpActivity {
 				else if (selection.equals(getString(R.string.lvh_list_title)))
 					lvhList();
 				else if (selection
-						.equals(getString(R.string.brugada_ecg_title)))
-					brugadaEcg();
+						.equals(getString(R.string.brugada_syndrome_title)))
+					brugadaList();
+				else if (selection.equals(getString(R.string.ers_title)))
+					ersScore();
 				else if (selection.equals(getString(R.string.vt_list_title)))
 					vtList();
 				else if (selection
@@ -92,8 +94,8 @@ public class DiagnosisList extends EpActivity {
 		startActivity(i);
 	}
 
-	private void brugadaEcg() {
-		Intent i = new Intent(this, BrugadaEcg.class);
+	private void brugadaList() {
+		Intent i = new Intent(this, BrugadaList.class);
 		startActivity(i);
 	}
 
@@ -116,6 +118,11 @@ public class DiagnosisList extends EpActivity {
 
 	private void arvcOld() {
 		Intent i = new Intent(this, ArvcOld.class);
+		startActivity(i);
+	}
+
+	private void ersScore() {
+		Intent i = new Intent(this, ErsScore.class);
 		startActivity(i);
 	}
 }

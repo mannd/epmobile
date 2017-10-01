@@ -29,9 +29,10 @@ public class DoseTable extends EpActivity implements
 		OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.dosetable);
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.dosetable);
+	initToolbar();
+	
 		SharedPreferences prefs = PreferenceManager
 				.getDefaultSharedPreferences(getBaseContext());
 		lowEnd = prefs.getInt("lowEnd", 0);

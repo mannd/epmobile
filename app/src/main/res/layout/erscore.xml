@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                style="@style/Header1"
+                android:text="@string/clinical_history_label" />
+
+            <CheckBox
+                android:id="@+id/unexplained_arrest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/unexplained_arrest_label" />
+
+            <CheckBox
+                android:id="@+id/arrhythmic_syncope"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/arrhythmic_syncope_label" />
+
+            <CheckBox
+                android:id="@+id/unclear_syncope"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/unclear_syncope_label" />
+
+            <TextView
+                style="@style/Header1"
+                android:text="@string/ecg_label" />
+
+            <CheckBox
+                android:id="@+id/large_er"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/large_er_label" />
+
+            <CheckBox
+                android:id="@+id/dynamic_j_point"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dynamic_j_point_label" />
+
+            <CheckBox
+                android:id="@+id/j_point_elevation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/j_point_elevation_label" />
+
+            <TextView
+                style="@style/Header1"
+                android:text="@string/ambulatory_ecg_label" />
+
+            <CheckBox
+                android:id="@+id/short_coupled_pvcs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/short_coupled_pvcs_label" />
+
+            <TextView
+                style="@style/Header1"
+                android:text="@string/brugada_family_history_label" />
+
+            <CheckBox
+                android:id="@+id/relative_definite_ers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/relative_definite_ers_label" />
+
+            <CheckBox
+                android:id="@+id/relative_ers_ecg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/relative_ers_ecg_label" />
+
+            <CheckBox
+                android:id="@+id/one_relative_ers_ecg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/one_relative_ers_ecg_label" />
+
+            <CheckBox
+                android:id="@+id/unexplained_scd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/unexplained_scd_label" />
+
+
+            <TextView
+                style="@style/Header1"
+                android:text="@string/genetic_test_result_label" />
+
+            <CheckBox
+                android:id="@+id/ers_pathogenic_mutation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ers_pathogenic_mutation_label" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/calculate_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/calculate_label" />
+
+                <Button
+                    android:id="@+id/clear_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/clear_label" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ers_score_key" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/brugada_score_reference" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

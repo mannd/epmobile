@@ -15,9 +15,10 @@ public class AvAnnulusMap extends EpActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.avannulusmap);
 		super.onCreate(savedInstanceState);
-		ImageView background = (ImageView) findViewById(R.id.avannulus_image);
+        setContentView(R.layout.avannulusmap);
+	initToolbar();
+	ImageView background = (ImageView) findViewById(R.id.avannulus_image);
 		background.setImageResource(R.drawable.modgrayavannulus);
 //		background.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,
 //				LayoutParams.MATCH_PARENT));

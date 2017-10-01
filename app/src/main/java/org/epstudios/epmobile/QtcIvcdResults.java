@@ -53,11 +53,9 @@ public class QtcIvcdResults extends EpActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.selectionlist);
-
         super.onCreate(savedInstanceState);
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setContentView(R.layout.selectionlist);
+	initToolbar();
 
         // TODO update labels
         qt = getIntent().getIntExtra("QT", 0);

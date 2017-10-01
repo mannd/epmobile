@@ -7,8 +7,9 @@ import android.view.MenuItem;
 public class LongQtEcg extends EpActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.longqtecg);
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.longqtecg);
+	initToolbar();
 	}
 
 	@Override
