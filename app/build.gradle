@@ -8,8 +8,8 @@ android {
         applicationId "org.epstudios.epmobile"
         minSdkVersion 9
         targetSdkVersion 25
-        versionCode 49
-        versionName "2.15"
+        versionCode 50
+        versionName "2.16"
 
     }
 
