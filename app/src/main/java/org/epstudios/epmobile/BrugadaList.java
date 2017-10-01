@@ -34,9 +34,10 @@ public class BrugadaList extends EpActivity {
 
     	@Override
 	public void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.selectionlist);
         super.onCreate(savedInstanceState);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+        setContentView(R.layout.selectionlist);
+        initToolbar();
+	ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this, R.array.brugada_list, android.R.layout.simple_list_item_1);
         ListView lv = (ListView) findViewById(R.id.list);
         lv.setAdapter(adapter);

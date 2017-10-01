@@ -25,8 +25,9 @@ import android.view.MenuItem;
 public class LongQtSubtypes extends EpActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.lqtsubtypes);
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.lqtsubtypes);
+	initToolbar();
 	}
 
 	@Override

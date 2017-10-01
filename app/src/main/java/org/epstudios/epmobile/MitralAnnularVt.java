@@ -54,9 +54,10 @@ public class MitralAnnularVt extends LocationAlgorithm implements
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.simplealgorithm);
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.simplealgorithm);
+	initToolbar();
+	
 		yesButton = (Button) findViewById(R.id.yes_button);
 		yesButton.setOnClickListener(this);
 		noButton = (Button) findViewById(R.id.no_button);

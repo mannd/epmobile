@@ -61,9 +61,10 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.qtcivcd);
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.qtcivcd);
+	initToolbar();
+	
         View calculateQtcButton = findViewById(R.id.calculate_qtc_button);
         calculateQtcButton.setOnClickListener(this);
         View clearButton = findViewById(R.id.clear_button);
@@ -176,7 +177,7 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
             }
             int qt = Integer.parseInt(qtText.toString());
             int qrs = Integer.parseInt(qrsText.toString());
-            if (rateInterval <= 0 || qt <= 0 || qrs <= 00 || qrs >= qt) {
+            if (rateInterval <= 0 || qt <= 0 || qrs <= 0 || qrs >= qt) {
                 throw new NumberFormatException();
             }
             QtcCalculator.QtcFormula formula = QtcCalculator.QtcFormula.BAZETT;

@@ -33,10 +33,10 @@ public class EpMobile extends EpActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
-        setContentView(R.layout.selectionlist);
-
         super.onCreate(savedInstanceState);
 
+        setContentView(R.layout.selectionlist);
+        initToolbar();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(

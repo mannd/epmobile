@@ -7,8 +7,9 @@ import android.view.MenuItem;
 public class LvhVoltage extends EpActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.otherlvh);
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.otherlvh);
+	initToolbar();
 	}
 
 	@Override

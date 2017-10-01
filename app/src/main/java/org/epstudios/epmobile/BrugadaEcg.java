@@ -13,9 +13,10 @@ import android.widget.TextView;
 public class BrugadaEcg extends EpActivity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		setContentView(R.layout.brugadaecg);
         super.onCreate(savedInstanceState);
-        textButton = (Button) findViewById(R.id.text_button);
+		setContentView(R.layout.brugadaecg);
+		initToolbar();
+		textButton = (Button) findViewById(R.id.text_button);
 		textButton.setOnClickListener(this);
 	}
 

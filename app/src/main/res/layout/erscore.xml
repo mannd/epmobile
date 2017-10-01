@@ -68,7 +68,7 @@
             <TextView
                 style="@style/Header1"
                 android:text="@string/ambulatory_ecg_label" />
-            _
+
             <CheckBox
                 android:id="@+id/short_coupled_pvcs"
                 android:layout_width="wrap_content"

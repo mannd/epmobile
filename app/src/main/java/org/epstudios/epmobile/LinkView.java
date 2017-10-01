@@ -43,6 +43,7 @@ public class LinkView extends EpActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
         Bundle extras = getIntent().getExtras();
         String url = "";
@@ -66,8 +67,7 @@ public class LinkView extends EpActivity implements View.OnClickListener {
             calcCrClButton.setOnClickListener(this);
             calcCrClButton.setText(BUTTON_TITLE);
         }
-
-        super.onCreate(savedInstanceState);
+	initToolbar();
 
 
     }

@@ -31,9 +31,10 @@ import android.widget.TextView;
 public class Brugada extends EpActivity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.simplealgorithm);
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.simplealgorithm);
+	initToolbar();
+	
 		yesButton = (Button) findViewById(R.id.yes_button);
 		yesButton.setOnClickListener(this);
 		noButton = (Button) findViewById(R.id.no_button);
