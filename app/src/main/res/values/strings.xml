@@ -278,7 +278,7 @@
     <string name="dabigatran_warning_75_years_old">There may be increased bleeding risk at age over 75 years.</string>
     <string name="rivaroxaban_calculator_title">Rivaroxaban Calculator</string>
     <string name="rivaroxaban_dosing_message">"Take dose with evening meal."</string>
-    <string name="icd_calculator_title">CMS ICD Criteria</string>
+    <string name="icd_calculator_title">CMS ICD Criteria (2018)</string>
     <string name="short_qt_title">Short QT Syndrome Diagnosis</string>
     <string name="qtc_label">QTc Interval</string>
     <string name="short_qt_label">\u003c 370 msec</string>
@@ -350,18 +350,18 @@
 
     <!-- ICD CMS criteria -->
     <string name="secondary_prevention_label">Secondary Prevention</string>
-    <string name="icd_cardiac_arrest_label">Documented cardiac arrest, without transient or reversible cause</string>
+    <string name="icd_cardiac_arrest_label">Documented CA due to VF, without transient or reversible cause</string>
     <string name="icd_sus_vt_label">Documented sustained VT/VF, either spontaneous or induced at EPS, not associated with an acute MI, 
 	     and without transient or reversible cause</string>
     <string name="primary_prevention_label">Primary Prevention</string>
     <string name="icd_familial_conditions_label">Documented familial or inherited condition 
-        with a high risk of life-threatening VT, e.g. Long QT Syndrome or HCM</string>
-    <string name="icd_nonischemic_cm_label">Nonischemic cardiomyopathy</string>
+        with a high risk of life-threatening VT, including, but not limited to, Long QT Syndrome or HCM</string>
+    <string name="icd_nonischemic_cm_label">Nonischemic cardiomyopathy on OMT \u2265 3 months</string>
     <string name="icd_ischemic_cm_label">Ischemic cardiomyopathy</string>
     <string name="icd_ef_gt_35_label">EF \u003e 35%</string>
     <string name="icd_ef_lt_35_label">EF \u003e 30% and \u2264 35%</string>
     <string name="icd_ef_lt_30_label">EF \u2264 30%</string>
-    <string name="icd_mi_label">Documented prior MI</string>
+    <string name="icd_mi_label">Prior MI</string>
     <string name="icd_nyha1_label">NYHA class I</string>
     <string name="icd_nyha2_label">NYHA class II</string>
     <string name="icd_nyha3_label">NYHA class III</string>
@@ -369,53 +369,49 @@
     <string name="icd_long_duration_cm_label">CM duration \u2265 3 months</string>
     <string name="icd_inducible_vt_label">Inducible sustained VT/VF at EPS</string>
     <string name="icd_qrs_duration_long_label">QRS duration \u2265 120 msec</string>
-    <string name="exclusions_label">Exclusions</string>
+    <string name="exclusions_label">Exclusion</string>
     <string name="icd_cardiogenic_shock_label">Cardiogenic shock or symptomatic hypotension</string>
     <string name="icd_recent_cabg_label">CABG or PCI within past 3 months</string>
     <string name="icd_recent_mi_label">Acute MI within past 40 days</string>
     <string name="icd_recent_mi_eps_label">EPS performed within 4 weeks post-MI</string>
     <string name="icd_revascularization_candidate_label">Symptoms or findings that would make patient a candidate for revascularization</string>
-    <string name="icd_brain_damage_label">Irreversible brain damage from preexisting cerebral disease</string>
+    <string name="icd_brain_damage_label">Significant, irreversible brain damage</string>
+    <string name="icd_svt_uncontrolled_rate_label">SVT, e.g. AF, with poorly controlled ventricular rate</string>
     <string name="icd_bad_prognosis_label">Non-cardiac disease with likelihood of survival \u003c 1 year</string>
     <string name="icd_no_ef_or_nyha_message">Invalid. You must select an EF and
         NYHA class.</string>
     <string name="icd_no_ef_message">Invalid. You must select an EF.</string>
-    <string name="icd_no_nyha_message">Invalid. You must select a NYHA class.</string>
+    <string name="icd_no_nyha_message">You must select a NYHA class in order to know is this primary
+        prevention ICD is indicated.</string>
     <string name="icd_approved_text">ICD implantation appears to meet CMS guidelines.</string>
     <string name="icd_not_approved_text">ICD implantation does NOT meet CMS guidelines.</string>
     <string name="icd_crt_approved_text">CRT-ICD implantation appears to meet CMS guidelines.</string>
     <string name="crt_approved_text">Use of a CRT-ICD may be indicated.</string>
     <string name="post_mi_time_exclusion">ICD implantation is too soon post MI.</string>
     <string name="post_mi_early_eps_exclusion">EPS performed too soon post MI.</string>
-    <string name="absolute_exclusion">ICD implantation has one or more exclusions.</string>
+    <string name="absolute_exclusion">There are one or more absolute exclusions to ICD implantation.</string>
     <string name="brain_damage_exclusion">Irreversible brain damage is an absolute exclusion 
         for ICD implantation.</string>
     <string name="post_revascularization_exclusion">ICD implantation is too soon post myocardial revascularization.</string>
     <string name="cms_icd_instructions">The Calculate button will show whether the patient is likely 
-         to meet CMS guidelines for Medicare reimbursement.  Note the CMS National Coverage Determination
-         (NCD) is quite detailed and you should be very familiar with it before making a decision 
-	     as to whether a particular patient is likely to be
-	     covered.  This module is only intended as a guide to the NCD and is not definitive.
-	     Additional factors need to be considered.  For example, the NCD definition of 
-	     myocardial infarction must be used. Primary prevention ICD recipients 
-	     must be enrolled in an FDA-approved clinical trial
-	     or in the National ICD Registry.  Although unstated in CMS guidelines, patients
-	     considered for primary prevention ICDs should be on stable, optimal medical
-	     therapy for left ventricular dysfunction.  Note also that the CMS 
-	     makes a distinction between EP testing performed for suspected VT (e.g. in a patient with syncope) in Guideline #2
-	     and EP testing performed for risk stratification (e.g. as in MADIT), which is Guideline #4.
-	     The CMS NCD does not cover approval of CRT devices.  
-	     CRT device approval is subject to Local Coverage Determinations and
-         local payers.  Note that some locales may require
-         QRS duration \u2265 130 msec for CRT coverage.</string>
-    <string name="cms_icd_key">CABG = coronary artery bypass grafting.  CM = cardiomyopathy. 
+        to meet CMS guidelines for Medicare reimbursement.  Note the CMS National Coverage Determination
+        (NCD) is quite detailed and you should be very familiar with it before making a decision
+        as to whether a particular patient is likely to be
+        covered.  This module is only intended as a guide to the NCD and is not definitive.
+        This tool has been updated with the 2018 CMS guidelines.</string>
+    <string name="cms_icd_key">AF = atrial fibrillation.  CA = cardiac arrest.
+        CABG = coronary artery bypass grafting.  CM = cardiomyopathy.
         CMS = Centers for Medicare and Medicaid Services.
-        CRT = cardiac resynchronization therapy. EF = ejection fraction. EPS = electrophysiology study. 
+        EF = ejection fraction. EPS = electrophysiology study.
         HCM = hypertrophic cardiomyopathy. ICD = implantable cardioverter defibrillator.
-        MI = myocardial infarction. NYHA = New York Heart Association. PCI = percutaneous coronary intervention. 
-        VT = ventricular tachycardia. VF = ventricular fibrillation.</string>
-    <string name="cms_icd_references">Reference: Center for Medicaid and Medicare Services, 
-	     National Coverage Determination Manual, Chapter 1, Part 1, Section 20.4, 2005.</string>
+        OMT = optimal medical therapy.
+        MI = myocardial infarction. NYHA = New York Heart Association. PCI = percutaneous coronary intervention.
+        SVT = supraventricular tachycardia.
+        VT = ventricular tachycardia/tachyarrhythmia. VF = ventricular fibrillation.</string>
+    <string name="cms_icd_references">Reference: CMS: Decision Memo for Implantable Cardioverter Defibrillators (CAG-00157R4) Feb 15, 2018.
+        https://www.cms.gov/medicare-coverage-database/details/nca-decision-memo.aspx?NCAId=288</string>
+    <string name="cms_icd_shared_decision_message">Shared decision making encounter using evidence-based decision tool
+        necessary prior to ICD implant.</string>
     <string name="hemorrhages_title">HEMORR\u2082HAGES Score</string>
     <string name="low_risk_hemorrhages">Low risk of bleeding.</string>
     <string name="intermediate_risk_hemorrhages">Intermediate risk of bleeding.</string>
@@ -1305,4 +1301,25 @@
     <string name="short_coupled_pvcs_label">Short-coupled PVCs with R on ascending limb or peak of T wave</string>
     <string name="ers_score_key">ER = Early repolarization.  PVCs = Premature ventricular complexes VF = ventricular fibrillation.  VT = ventricular tachycardia.
 	    SCD = sudden cardiac death.</string>
+    <string name="absolute_exclusions_label">Absolute Exclusions</string>
+    <string name="personal_hx_vt_ca_label">Personal history of sustained VT or CA due to VF with:</string>
+    <string name="ejection_fraction_label">EF</string>
+    <string name="other_indication_label">Other Indications</string>
+    <string name="icd_replacement_label">Patient with existing ICD at ERI or with lead/device malfunction</string>
+    <string name="icd_transplant_bridge_label">Candidates for heart transplantation on transplant list</string>
+    <string name="ef_not_measured_text">Note that all ICD candidates must have left ventricular EF measured by echocardiography,
+        radionuclide (nuclear medicine) imaging, cardiac magnetic resonance imaging (MRI), or catheter angiography.
+        Select an EF range and try again.</string>
+    <string name="no_indications_selected_message">No ICD indications have been selected.  Use the checkboxs to select an indication.</string>
+    <string name="icd_exceptions_apply">Waiting periods (CABG within 3 months, MI within 40 days) do not apply in this
+        circumstance.</string>
+    <string name="icd_approval_unclear_message">Not enough information to determine if ICD is indicated.</string>
+    <string name="icd_approved_after_waiting_period">It is necessary to delay implantation until waiting period expires.
+        Note that if a pacemaker is indicated or the patient has an ICD at ERI or with lead/device malfunction,
+        ICD implantation CAN proceed before waiting period expires.</string>
+    <string name="icd_approval_affected_by_waiting_period">ICD implantation doesn\'t meet criteria due to excluson or waiting period.</string>
+    <string name="waiting_period_label">Waiting Periods</string>
+    <string name="icd_transplant_bridge_message">Coverage of ICDs as a bridge to transplant are determined by local Medicare Administrative Contractors (MACs).</string>
+    <string name="icd_forgot_to_check_cm_checkbox">You selected MI and patient has Class II or III heart failure.  Did you forget to select ischemic or nonischemic cardiomyopathy?</string>
+    <string name="icd_possibly_forgot_to_check_mi_checkbox">Patient would qualify if there was prior MI.  Did you forget to select prior MI?</string>
 </resources>
