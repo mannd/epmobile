@@ -1310,7 +1310,7 @@
     <string name="ef_not_measured_text">Note that all ICD candidates must have left ventricular EF measured by echocardiography,
         radionuclide (nuclear medicine) imaging, cardiac magnetic resonance imaging (MRI), or catheter angiography.
         Select an EF range and try again.</string>
-    <string name="no_indications_selected_message">No ICD indications have been selected.  Use the checkboxs to select an indication.</string>
+    <string name="icd_no_indications_message">No ICD indications have been selected.  Use the checkboxs to select an indication.</string>
     <string name="icd_exceptions_apply">Waiting periods (CABG within 3 months, MI within 40 days) do not apply in this
         circumstance.</string>
     <string name="icd_approval_unclear_message">Not enough information to determine if ICD is indicated.</string>
@@ -1319,7 +1319,8 @@
         ICD implantation CAN proceed before waiting period expires.</string>
     <string name="icd_approval_affected_by_waiting_period">ICD implantation doesn\'t meet criteria due to excluson or waiting period.</string>
     <string name="waiting_period_label">Waiting Periods</string>
-    <string name="icd_transplant_bridge_message">Coverage of ICDs as a bridge to transplant are determined by local Medicare Administrative Contractors (MACs).</string>
+    <string name="icd_bridge_to_transplant_message">Coverage of ICDs as a bridge to transplant are determined by local Medicare Administrative Contractors (MACs).</string>
     <string name="icd_forgot_to_check_cm_checkbox">You selected MI and patient has Class II or III heart failure.  Did you forget to select ischemic or nonischemic cardiomyopathy?</string>
     <string name="icd_possibly_forgot_to_check_mi_checkbox">Patient would qualify if there was prior MI.  Did you forget to select prior MI?</string>
+    <string name="icd_revasc_candidate">ICD implantation not indicated in candidate for revascularization.</string>
 </resources>
