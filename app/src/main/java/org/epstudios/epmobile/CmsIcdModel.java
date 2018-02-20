@@ -167,12 +167,15 @@ public class CmsIcdModel {
         // Note that result fields are filled only when they differ
         // from the default fields.
         if (absoluteExclusion()) {
+            result.approval = Approval.NOT_APPROVED;
             result.details = Details.ABSOLUTE_EXCLUSION;
         }
         else if (noIndications()) {
+            result.approval = Approval.NOT_APPROVED;
             result.details = Details.NO_INDICATIONS;
         }
         else if (noEF()) {
+            result.approval = Approval.NOT_APPROVED;
             result.details = Details.NO_EF;
         }
         else if (secondaryPrevention()) {

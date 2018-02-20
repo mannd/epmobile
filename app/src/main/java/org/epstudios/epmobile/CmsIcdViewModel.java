@@ -65,7 +65,7 @@ public class CmsIcdViewModel {
         details.put(CmsIcdModel.Details.ABSOLUTE_EXCLUSION,
                 activity.getString(R.string.absolute_exclusion));
         details.put(CmsIcdModel.Details.NO_INDICATIONS,
-                activity.getString(R.string.no_indications_selected_message));
+                activity.getString(R.string.icd_no_indications_message));
         details.put(CmsIcdModel.Details.NO_EF,
                 activity.getString(R.string.icd_no_ef_message));
         details.put(CmsIcdModel.Details.NO_NYHA,
@@ -76,19 +76,18 @@ public class CmsIcdViewModel {
                 activity.getString(R.string.icd_approval_affected_by_waiting_period));
         // TODO: check text here
         details.put(CmsIcdModel.Details.CANDIDATE_FOR_REVASC,
-                activity.getString(R.string.icd_exceptions_apply));
+                activity.getString(R.string.icd_revasc_candidate));
         details.put(CmsIcdModel.Details.FORGOT_ICM,
                 activity.getString(R.string.icd_forgot_to_check_cm_checkbox));
         details.put(CmsIcdModel.Details.FORGOT_MI,
                 activity.getString(R.string.icd_possibly_forgot_to_check_mi_checkbox));
         details.put(CmsIcdModel.Details.BRIDGE_TO_TRANSPLANT,
-                activity.getString(R.string.icd_transplant_bridge_message));
+                activity.getString(R.string.icd_bridge_to_transplant_message));
         details.put(CmsIcdModel.Details.NONE, null);
     }
 
     public String getMessage() {
         CmsIcdModel.Result result = model.getResult();
-        String message;
         String indication = indications.get(result.indication);
         String approval = approvals.get(result.approval);
         String detail = details.get(result.details);
@@ -96,10 +95,20 @@ public class CmsIcdViewModel {
         if (result.needsSdmEncounter) {
             sdmEncounter = activity.getString(R.string.cms_icd_shared_decision_message);
         }
-        message = indication + CR + approval + CR + detail + CR + sdmEncounter;
-
-        return message;
-
+        StringBuilder sb = new StringBuilder();
+        if (indication != null) {
+           sb.append(indication);
+        }
+        if (approval != null) {
+            sb.append(CR + approval);
+        }
+        if (detail != null) {
+            sb.append(CR + detail);
+        }
+        if (sdmEncounter != null) {
+            sb.append(sdmEncounter);
+        }
+        return sb.toString();
     }
 
 

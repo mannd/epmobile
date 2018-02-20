@@ -31,15 +31,17 @@ public class CmsIcdResultTest {
         CmsIcdModel model = new CmsIcdModel();
         CmsIcdModel.Result result = model.getResult();
         assert(result.indication == CmsIcdModel.Indication.NONE);
-        assert(result.approval == CmsIcdModel.Approval.NA);
+        assert(result.approval == CmsIcdModel.Approval.NOT_APPROVED);
         assert(result.details == CmsIcdModel.Details.NO_INDICATIONS);
         assert(!result.needsSdmEncounter);
         runAbsoluteExclusionTests(model);
         // should be back to no indications
+        assert(result.approval == CmsIcdModel.Approval.NOT_APPROVED);
         assert(model.getResult().details == CmsIcdModel.Details.NO_INDICATIONS);
         // now set something
         model.setCardiacArrest(true);
         // problem now is no ef set
+        assert(result.approval == CmsIcdModel.Approval.NOT_APPROVED);
         assert(model.getResult().details == CmsIcdModel.Details.NO_EF);
         // Absolute exclusions still override No EF and No Indications so test it again
         runAbsoluteExclusionTests(model);
