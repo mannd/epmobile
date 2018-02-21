@@ -22,34 +22,24 @@ package org.epstudios.epmobile;
  * along with epmobile.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import android.os.Bundle;
-import android.widget.CheckBox;
-
-import android.os.Bundle;
-import android.view.View;
 import android.widget.CheckBox;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 
 public class BrugadaScore extends RiskScore {
-    private List<Integer> points = new ArrayList<>(Arrays.asList(35, 30, 20, 30, 20, 20, 10,
+    private final List<Integer> points = new ArrayList<>(Arrays.asList(35, 30, 20, 30, 20, 20, 10,
             5, 20, 10, 5, 5));
-    private int ecgIndexBegin = 0;
-    private int ecgIndexEnd = 2;
-    private int clinicalIndexBegin = 3;
-    private int clinicalIndexEnd = 7;
-    private int familyIndexBegin = 8;
-    private int familyIndexEnd = 10;
-    private int geneticIndexBegin = 11;
-    private int geneticIndexEnd = 11;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
+    private final int ecgIndexBegin = 0;
+    private final int ecgIndexEnd = 2;
+    private final int clinicalIndexBegin = 3;
+    private final int clinicalIndexEnd = 7;
+    private final int familyIndexBegin = 8;
+    private final int familyIndexEnd = 10;
+    private final int geneticIndexBegin = 11;
+    private final int geneticIndexEnd = 11;
 
     @Override
     protected void setContentView() {
@@ -87,7 +77,7 @@ public class BrugadaScore extends RiskScore {
             }
         }
 
-        int result = 0;
+        int result;
         int ecgScore = 0;
         int clinicalScore = 0;
         int familyScore = 0;
@@ -125,7 +115,7 @@ public class BrugadaScore extends RiskScore {
     }
 
     private String getResultMessage(int result) {
-        String message = String.format("Risk Score = %.1f\n", result / 10.0);
+        String message = String.format(Locale.getDefault(),"Risk Score = %.1f\n", result / 10.0);
         if (result >= 35) {
             message += "Probable/definite Brugada Syndrome";
         }

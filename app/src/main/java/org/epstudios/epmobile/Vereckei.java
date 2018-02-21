@@ -11,10 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class Vereckei extends EpActivity implements OnClickListener {
-	private Button yesButton;
-	private Button noButton;
 	private Button backButton;
-	private Button morphologyButton;
 	private TextView stepTextView;
 	private static int step = 1;
 
@@ -23,14 +20,14 @@ public class Vereckei extends EpActivity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.simplealgorithm);
 	initToolbar();
-	
-		yesButton = (Button) findViewById(R.id.yes_button);
+
+		Button yesButton = (Button) findViewById(R.id.yes_button);
 		yesButton.setOnClickListener(this);
-		noButton = (Button) findViewById(R.id.no_button);
+		Button noButton = (Button) findViewById(R.id.no_button);
 		noButton.setOnClickListener(this);
 		backButton = (Button) findViewById(R.id.back_button);
 		backButton.setOnClickListener(this);
-		morphologyButton = (Button) findViewById(R.id.morphology_button);
+		Button morphologyButton = (Button) findViewById(R.id.morphology_button);
 		morphologyButton.setOnClickListener(this);
 		morphologyButton.setVisibility(View.GONE);
 		stepTextView = (TextView) findViewById(R.id.stepTextView);
@@ -142,7 +139,6 @@ public class Vereckei extends EpActivity implements OnClickListener {
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-						;
 					}
 				});
 		dialog.show();
@@ -166,7 +162,6 @@ public class Vereckei extends EpActivity implements OnClickListener {
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-						;
 					}
 				});
 		dialog.show();

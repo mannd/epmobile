@@ -18,20 +18,19 @@
 
 package org.epstudios.epmobile;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.view.MenuItem;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class RiskScore extends DiagnosticScore {
 	private String resultMessage;
-	private final List<String> selectedRisks = new ArrayList<String>();
+	private final List<String> selectedRisks = new ArrayList<>();
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
@@ -45,8 +44,7 @@ public abstract class RiskScore extends DiagnosticScore {
 
 	@Override
 	protected void clearEntries() {
-		for (int i = 0; i < checkBox.length; i++)
-			checkBox[i].setChecked(false);
+		for (CheckBox aCheckBox : checkBox) aCheckBox.setChecked(false);
 	}
 
 	protected CheckBox[] checkBox;
@@ -84,12 +82,16 @@ public abstract class RiskScore extends DiagnosticScore {
 						int sdk = android.os.Build.VERSION.SDK_INT;
 						if (sdk < android.os.Build.VERSION_CODES.HONEYCOMB) {
 							android.text.ClipboardManager clipboard = (android.text.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-							clipboard.setText(textToCopy);
+							if (clipboard != null) {
+								clipboard.setText(textToCopy);
+							}
 						} else {
 							android.content.ClipboardManager clipboard = (android.content.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
 							android.content.ClipData clip = android.content.ClipData
 									.newPlainText("Copied Text", textToCopy);
-							clipboard.setPrimaryClip(clip);
+							if (clipboard != null) {
+								clipboard.setPrimaryClip(clip);
+							}
 						}
 					}
 				});

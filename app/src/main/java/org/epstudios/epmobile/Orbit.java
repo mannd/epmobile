@@ -81,7 +81,7 @@ public class Orbit extends RiskScore {
             message = getString(R.string.medium_orbit_message);
         else
             message = getString(R.string.high_orbit_message);
-        String risk = "";
+        String risk;
         switch (result) {
             case 0:
             case 1:

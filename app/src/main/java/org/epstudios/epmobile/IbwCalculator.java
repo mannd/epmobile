@@ -1,7 +1,5 @@
 package org.epstudios.epmobile;
 
-import java.text.DecimalFormat;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -18,6 +16,8 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import java.text.DecimalFormat;
 
 public class IbwCalculator extends EpActivity implements OnClickListener {
 	private RadioGroup sexRadioGroup;
@@ -36,11 +36,11 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 
 	private enum WeightUnit {
 		KG, LB
-	};
+	}
 
 	private enum HeightUnit {
 		CM, IN
-	};
+	}
 
 	private enum WeightMeasurement {
 		IBW, ABW
@@ -287,12 +287,16 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 		int sdk = android.os.Build.VERSION.SDK_INT;
 		if (sdk < android.os.Build.VERSION_CODES.HONEYCOMB) {
 			android.text.ClipboardManager clipboard = (android.text.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-			clipboard.setText(textToCopy);
+			if (clipboard != null) {
+				clipboard.setText(textToCopy);
+			}
 		} else {
 			android.content.ClipboardManager clipboard = (android.content.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
 			android.content.ClipData clip = android.content.ClipData
 					.newPlainText("Copied Text", textToCopy);
-			clipboard.setPrimaryClip(clip);
+			if (clipboard != null) {
+				clipboard.setPrimaryClip(clip);
+			}
 		}
 	}
 

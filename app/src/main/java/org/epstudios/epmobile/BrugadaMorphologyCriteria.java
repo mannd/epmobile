@@ -18,9 +18,6 @@
 
 package org.epstudios.epmobile;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -33,6 +30,9 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.Spinner;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public class BrugadaMorphologyCriteria extends EpActivity implements
 		OnClickListener {
@@ -89,7 +89,6 @@ public class BrugadaMorphologyCriteria extends EpActivity implements
 
 	private Spinner bbbSpinner;
 
-	private OnItemSelectedListener itemListener;
 	private CheckBox[] lbbbCheckBox;
 	private CheckBox[] rbbbCheckBox;
 
@@ -98,9 +97,9 @@ public class BrugadaMorphologyCriteria extends EpActivity implements
 				this, R.array.bbb_labels, android.R.layout.simple_spinner_item);
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		bbbSpinner.setAdapter(adapter);
-		itemListener = new OnItemSelectedListener() {
+		OnItemSelectedListener itemListener = new OnItemSelectedListener() {
 			public void onItemSelected(AdapterView<?> parent, View v,
-					int position, long id) {
+									   int position, long id) {
 				updateBbbSelection();
 			}
 
@@ -134,10 +133,10 @@ public class BrugadaMorphologyCriteria extends EpActivity implements
 	}
 
 	private Boolean bothLeadsHaveEntries() {
-		Set<Integer> lbbbV1 = new HashSet<Integer>();
-		Set<Integer> lbbbV6 = new HashSet<Integer>();
-		Set<Integer> rbbbV1 = new HashSet<Integer>();
-		Set<Integer> rbbbV6 = new HashSet<Integer>();
+		Set<Integer> lbbbV1 = new HashSet<>();
+		Set<Integer> lbbbV6 = new HashSet<>();
+		Set<Integer> rbbbV1 = new HashSet<>();
+		Set<Integer> rbbbV6 = new HashSet<>();
 		lbbbV1.add(0);
 		lbbbV1.add(1);
 		lbbbV1.add(2);
@@ -197,7 +196,6 @@ public class BrugadaMorphologyCriteria extends EpActivity implements
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-						;
 					}
 				});
 		dialog.show();
@@ -222,7 +220,6 @@ public class BrugadaMorphologyCriteria extends EpActivity implements
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-						;
 					}
 				});
 		dialog.show();
@@ -254,21 +251,17 @@ public class BrugadaMorphologyCriteria extends EpActivity implements
 
 	private void hideEntries(CheckBox[] cb) {
 		clearEntries();
-		for (int i = 0; i < cb.length; i++)
-			cb[i].setVisibility(View.GONE);
+		for (CheckBox aCb : cb) aCb.setVisibility(View.GONE);
 	}
 
 	private void showEntries(CheckBox[] cb) {
 		clearEntries();
-		for (int i = 0; i < cb.length; i++)
-			cb[i].setVisibility(View.VISIBLE);
+		for (CheckBox aCb : cb) aCb.setVisibility(View.VISIBLE);
 	}
 
 	private void clearEntries() {
-		for (int i = 0; i < lbbbCheckBox.length; i++)
-			lbbbCheckBox[i].setChecked(false);
-		for (int i = 0; i < rbbbCheckBox.length; i++)
-			rbbbCheckBox[i].setChecked(false);
+		for (CheckBox aLbbbCheckBox : lbbbCheckBox) aLbbbCheckBox.setChecked(false);
+		for (CheckBox aRbbbCheckBox : rbbbCheckBox) aRbbbCheckBox.setChecked(false);
 	}
 
 }

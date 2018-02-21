@@ -57,9 +57,9 @@ public class AtriaStroke extends RiskScore {
         // calculate
         int result = 0;
         clearSelectedRisks();
-        for (int i = 0; i < checkBox.length; i++) {
-            if (checkBox[i].isChecked()) {
-                addSelectedRisk(checkBox[i].getText().toString());
+        for (CheckBox aCheckBox : checkBox) {
+            if (aCheckBox.isChecked()) {
+                addSelectedRisk(aCheckBox.getText().toString());
                 result++;
             }
         }

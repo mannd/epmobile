@@ -20,8 +20,6 @@ package org.epstudios.epmobile;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -38,7 +36,6 @@ public class EpMobile extends EpActivity {
         setContentView(R.layout.selectionlist);
         initToolbar();
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this, R.array.main_index, android.R.layout.simple_list_item_1);
         ListView lv = (ListView) findViewById(R.id.list);

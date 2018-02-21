@@ -43,8 +43,8 @@ public class CycleLength extends EpActivity implements OnClickListener {
 		intervalRateRadioGroup = (RadioGroup) findViewById(R.id.intervalRateRadioGroup);
 		resultTextView = (TextView) findViewById(R.id.calculated_result);
 		inputEditText = (EditText) findViewById(R.id.inputEditText);
-		clRadioButton = (RadioButton) findViewById(R.id.cl_button);
-		hrRadioButton = (RadioButton) findViewById(R.id.hr_button);
+		RadioButton clRadioButton = (RadioButton) findViewById(R.id.cl_button);
+		RadioButton hrRadioButton = (RadioButton) findViewById(R.id.hr_button);
 		clRadioButton.setOnClickListener(this);
 		hrRadioButton.setOnClickListener(this);
 		measurementTextView = (TextView) findViewById(R.id.MeasurementTextView);
@@ -81,8 +81,6 @@ public class CycleLength extends EpActivity implements OnClickListener {
 	private TextView resultTextView;
 	private EditText inputEditText;
 	private RadioGroup intervalRateRadioGroup;
-	private RadioButton clRadioButton;
-	private RadioButton hrRadioButton;
 	private TextView measurementTextView;
 
 	@Override

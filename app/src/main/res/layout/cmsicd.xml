@@ -9,10 +9,10 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_marginBottom="@dimen/activity_vertical_margin">
+        android:layout_marginTop="@dimen/activity_vertical_margin">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -22,41 +22,55 @@
 
             <TextView
                 style="@style/Header1"
-                android:text="@string/secondary_prevention_label" />
+                android:text="@string/secondary_prevention_label"/>
 
-            <CheckBox
-                android:id="@+id/icd_cardiac_arrest"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/icd_cardiac_arrest_label" />
+            <TextView
+                style="@style/Header2"
+                android:text="@string/personal_hx_vt_ca_label"/>
 
             <CheckBox
                 android:id="@+id/icd_sus_vt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/icd_sus_vt_label" />
+                android:text="@string/icd_sus_vt_label"/>
+
+            <CheckBox
+                android:id="@+id/icd_cardiac_arrest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/icd_cardiac_arrest_label"/>
 
             <TextView
                 style="@style/Header1"
-                android:text="@string/primary_prevention_label" />
+                android:text="@string/primary_prevention_label"/>
 
             <CheckBox
-                android:id="@+id/icd_familial_conditions"
+                android:id="@+id/icd_mi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/icd_familial_conditions_label" />
+                android:text="@string/icd_mi_label"/>
 
             <CheckBox
                 android:id="@+id/icd_ischemic_cm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/icd_ischemic_cm_label" />
+                android:text="@string/icd_ischemic_cm_label"/>
 
             <CheckBox
                 android:id="@+id/icd_nonischemic_cm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/icd_nonischemic_cm_label" />
+                android:text="@string/icd_nonischemic_cm_label"/>
+
+            <CheckBox
+                android:id="@+id/icd_familial_conditions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/icd_familial_conditions_label"/>
+
+            <TextView
+                style="@style/Header1"
+                android:text="@string/ejection_fraction_label"/>
 
             <RadioGroup
                 android:id="@+id/icd_ef_radio_group"
@@ -83,23 +97,9 @@
                     android:text="@string/icd_ef_lt_30_label"/>
             </RadioGroup>
 
-            <CheckBox
-                android:id="@+id/icd_long_duration_cm"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/icd_long_duration_cm_label" />
-
-            <CheckBox
-                android:id="@+id/icd_mi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/icd_mi_label" />
-
-            <CheckBox
-                android:id="@+id/icd_inducible_vt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/icd_inducible_vt_label" />
+            <TextView
+                style="@style/Header1"
+                android:text="@string/nyha_class_label"/>
 
             <RadioGroup
                 android:id="@+id/icd_nyha_radio_group"
@@ -132,57 +132,75 @@
                     android:text="@string/icd_nyha4_label"/>
             </RadioGroup>
 
+            <TextView
+                style="@style/Header1"
+                android:text="@string/other_indication_label"/>
+
             <CheckBox
-                android:id="@+id/icd_qrs_duration_long"
+                android:id="@+id/icd_replacement"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/icd_qrs_duration_long_label" />
+                android:text="@string/icd_replacement_label"/>
+
+            <CheckBox
+                android:id="@+id/icd_transplant_bridge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/icd_transplant_bridge_label"/>
 
             <TextView
                 style="@style/Header1"
-                android:text="@string/exclusions_label" />
-
-            <CheckBox
-                android:id="@+id/icd_cardiogenic_shock"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/icd_cardiogenic_shock_label" />
+                android:text="@string/waiting_period_label"/>
 
             <CheckBox
                 android:id="@+id/icd_recent_cabg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/icd_recent_cabg_label" />
+                android:text="@string/icd_recent_cabg_label"/>
 
             <CheckBox
                 android:id="@+id/icd_recent_mi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/icd_recent_mi_label" />
+                android:text="@string/icd_recent_mi_label"/>
 
-            <CheckBox
-                android:id="@+id/icd_recent_mi_eps"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/icd_recent_mi_eps_label" />
+            <TextView
+                style="@style/Header1"
+                android:text="@string/exclusions_label"/>
 
             <CheckBox
                 android:id="@+id/icd_revascularization_candidate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/icd_revascularization_candidate_label" />
+                android:text="@string/icd_revascularization_candidate_label"/>
+
+            <TextView
+                style="@style/Header1"
+                android:text="@string/absolute_exclusions_label"/>
+
+            <CheckBox
+                android:id="@+id/icd_cardiogenic_shock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/icd_cardiogenic_shock_label"/>
 
             <CheckBox
                 android:id="@+id/icd_bad_prognosis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/icd_bad_prognosis_label" />
+                android:text="@string/icd_bad_prognosis_label"/>
 
             <CheckBox
                 android:id="@+id/icd_brain_damage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/icd_brain_damage_label" />
+                android:text="@string/icd_brain_damage_label"/>
+
+            <CheckBox
+                android:id="@+id/icd_svt_uncontrolled_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/icd_svt_uncontrolled_rate_label"/>
 
             <LinearLayout
                 android:id="@+id/linearLayout3"
@@ -193,19 +211,19 @@
                     android:id="@+id/calculate_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/calculate_label" />
+                    android:text="@string/calculate_label"/>
 
                 <Button
                     android:id="@+id/clear_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/clear_label" />
+                    android:text="@string/clear_label"/>
 
                 <Button
                     android:id="@+id/instructions_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/instructions_label" />
+                    android:text="@string/instructions_label"/>
             </LinearLayout>
 
             <TextView

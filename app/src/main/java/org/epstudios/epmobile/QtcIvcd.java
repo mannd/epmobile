@@ -25,7 +25,6 @@ package org.epstudios.epmobile;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.MenuItem;
@@ -36,14 +35,12 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
 
 
 public class QtcIvcd extends EpActivity implements View.OnClickListener {
     private enum IntervalRate {
         INTERVAL, RATE
-    };
+    }
 
     private RadioGroup sexRadioGroup;
     private Spinner intervalRateSpinner;
@@ -51,7 +48,6 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
     private EditText qtEditText;
     private EditText qrsEditText;
     private CheckBox lbbbCheckBox;
-    private AdapterView.OnItemSelectedListener itemListener;
 
 
     private final static int INTERVAL_SELECTION = 0;
@@ -121,7 +117,7 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
             intervalRateSpinner.setSelection(INTERVAL_SELECTION);
         else
             intervalRateSpinner.setSelection(RATE_SELECTION);
-        itemListener = new AdapterView.OnItemSelectedListener() {
+        AdapterView.OnItemSelectedListener itemListener = new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View v,
                                        int position, long id) {
@@ -183,9 +179,9 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
             QtcCalculator.QtcFormula formula = QtcCalculator.QtcFormula.BAZETT;
             int qtc = QtcCalculator.calculate(interval, qt, formula);
             int jt = (int) QtcCalculator.jtInterval(qt, qrs);
-            int jtc = (int) QtcCalculator.jtCorrected(qt, interval, qrs);
+            int jtc = QtcCalculator.jtCorrected(qt, interval, qrs);
             int qtm = isLBBB ? (int) QtcCalculator.qtCorrectedForLBBB(qt, qrs) : 0;
-            int qtmc = isLBBB ? (int) QtcCalculator.calculate(interval, qtm, formula) : 0;
+            int qtmc = isLBBB ? QtcCalculator.calculate(interval, qtm, formula) : 0;
             int qtrrqrs = (int) QtcCalculator.qtRrIvcd(qt, rate, qrs, isMale);
 
             Intent intent = new Intent(this, QtcIvcdResults.class);
@@ -200,11 +196,10 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
             intent.putExtra("QTrrqrs", qtrrqrs);
             startActivity(intent);
         } catch (NumberFormatException e) {
-            // TODO diplay error message
             AlertDialog alert = new AlertDialog.Builder(this).create();
             alert.setTitle(getString(R.string.error_dialog_title));
             alert.setMessage(getString(R.string.qt_calculator_error));
-            alert.show();;
+            alert.show();
         }
     }
 

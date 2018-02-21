@@ -34,10 +34,10 @@ public class Brugada extends EpActivity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.simplealgorithm);
 	initToolbar();
-	
-		yesButton = (Button) findViewById(R.id.yes_button);
+
+		Button yesButton = (Button) findViewById(R.id.yes_button);
 		yesButton.setOnClickListener(this);
-		noButton = (Button) findViewById(R.id.no_button);
+		Button noButton = (Button) findViewById(R.id.no_button);
 		noButton.setOnClickListener(this);
 		backButton = (Button) findViewById(R.id.back_button);
 		backButton.setOnClickListener(this);
@@ -178,7 +178,6 @@ public class Brugada extends EpActivity implements OnClickListener {
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-						;
 					}
 				});
 		dialog.show();
@@ -203,7 +202,6 @@ public class Brugada extends EpActivity implements OnClickListener {
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-						;
 					}
 				});
 		dialog.show();
@@ -214,8 +212,6 @@ public class Brugada extends EpActivity implements OnClickListener {
 		startActivity(i);
 	}
 
-	private Button yesButton;
-	private Button noButton;
 	private Button backButton;
 	private Button morphologyButton;
 	private TextView stepTextView;

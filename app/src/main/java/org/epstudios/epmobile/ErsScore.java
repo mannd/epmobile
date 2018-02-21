@@ -23,44 +23,26 @@ package org.epstudios.epmobile;
  */
 
 
-import android.os.Bundle;
 import android.widget.CheckBox;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-
-import android.os.Bundle;
-import android.widget.CheckBox;
-
-import android.os.Bundle;
-import android.view.View;
-import android.widget.CheckBox;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.Locale;
 
 public class ErsScore extends RiskScore {
-    private List<Integer> points = new ArrayList<>(Arrays.asList(30, 20, 10, 20, 15, 10, 20,
+    private final List<Integer> points = new ArrayList<>(Arrays.asList(30, 20, 10, 20, 15, 10, 20,
             20, 20, 10, 5, 5));
-    private int clinicalIndexBegin = 0;
-    private int clinicalIndexEnd = 2;
-    private int ecgIndexBegin = 3;
-    private int ecgIndexEnd = 5;
-    private int ambulatoryEcgIndexBegin = 6;
-    private int ambulatoryEcgIndexEnd = 6;
-    private int familyIndexBegin = 7;
-    private int familyIndexEnd = 10;
-    private int geneticIndexBegin = 11;
-    private int geneticIndexEnd = 11;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
+    private final int clinicalIndexBegin = 0;
+    private final int clinicalIndexEnd = 2;
+    private final int ecgIndexBegin = 3;
+    private final int ecgIndexEnd = 5;
+    private final int ambulatoryEcgIndexBegin = 6;
+    private final int ambulatoryEcgIndexEnd = 6;
+    private final int familyIndexBegin = 7;
+    private final int familyIndexEnd = 10;
+    private final int geneticIndexBegin = 11;
+    private final int geneticIndexEnd = 11;
 
     @Override
     protected void setContentView() {
@@ -99,7 +81,7 @@ public class ErsScore extends RiskScore {
             }
         }
 
-        int result = 0;
+        int result;
         int clinicalScore = 0;
         int ecgScore = 0;
         int ambulatoryEcgScore = 0;
@@ -144,7 +126,7 @@ public class ErsScore extends RiskScore {
     }
 
     private String getResultMessage(int result) {
-        String message = String.format("Risk Score = %.1f\n", result / 10.0);
+        String message = String.format(Locale.getDefault(),"Risk Score = %.1f\n", result / 10.0);
         if (result >= 50) {
             message += "Probable/definite Early Repolarization Syndrome";
         }

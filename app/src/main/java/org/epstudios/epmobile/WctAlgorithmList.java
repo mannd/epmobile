@@ -53,7 +53,7 @@ public class WctAlgorithmList extends EpActivity {
 				else if (selection.equals(getString(R.string.rwpt_title)))
 					ultraSimpleBrugadaAlgorithm();
 				else if (selection.equals(getString(R.string.vereckei_title)))
-					vereckiAlgorithm();
+					vereckeiAlgorithm();
 			}
 		});
 	}
@@ -73,7 +73,7 @@ public class WctAlgorithmList extends EpActivity {
 		startActivity(i);
 	}
 
-	private void vereckiAlgorithm() {
+	private void vereckeiAlgorithm() {
 		Intent i = new Intent(this, Vereckei.class);
 		startActivity(i);
 	}
