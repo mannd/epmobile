@@ -29,11 +29,11 @@ import java.util.HashMap;
 public class CmsIcdViewModel {
     private static final String CR = "\n";
 
-    private Activity activity;
-    private CmsIcdModel model;
-    private HashMap<CmsIcdModel.Indication, String> indications = new HashMap<>();
-    private HashMap<CmsIcdModel.Approval, String> approvals = new HashMap<>();
-    private HashMap<CmsIcdModel.Details, String> details = new HashMap<>();
+    private final Activity activity;
+    private final CmsIcdModel model;
+    private final HashMap<CmsIcdModel.Indication, String> indications = new HashMap<>();
+    private final HashMap<CmsIcdModel.Approval, String> approvals = new HashMap<>();
+    private final HashMap<CmsIcdModel.Details, String> details = new HashMap<>();
 
     public CmsIcdViewModel(Activity activity, Boolean susVT, Boolean cardiacArrest,
                            Boolean priorMI, Boolean icm, Boolean nicm,
@@ -67,14 +67,13 @@ public class CmsIcdViewModel {
         details.put(CmsIcdModel.Details.NO_INDICATIONS,
                 activity.getString(R.string.icd_no_indications_message));
         details.put(CmsIcdModel.Details.NO_EF,
-                activity.getString(R.string.icd_no_ef_message));
+                activity.getString(R.string.icd_ef_not_measured_text));
         details.put(CmsIcdModel.Details.NO_NYHA,
                 activity.getString(R.string.icd_no_nyha_message));
         details.put(CmsIcdModel.Details.WAITING_PERIOD_EXCEPTION,
                 activity.getString(R.string.icd_exceptions_apply));
         details.put(CmsIcdModel.Details.NEEDS_WAITING_PERIOD,
-                activity.getString(R.string.icd_approval_affected_by_waiting_period));
-        // TODO: check text here
+                activity.getString(R.string.icd_approved_after_waiting_period));
         details.put(CmsIcdModel.Details.CANDIDATE_FOR_REVASC,
                 activity.getString(R.string.icd_revasc_candidate));
         details.put(CmsIcdModel.Details.FORGOT_ICM,
@@ -100,12 +99,13 @@ public class CmsIcdViewModel {
            sb.append(indication);
         }
         if (approval != null) {
-            sb.append(CR + approval);
+            sb.append(CR).append(approval);
         }
         if (detail != null) {
-            sb.append(CR + detail);
+            sb.append(CR).append(detail);
         }
         if (sdmEncounter != null) {
+            sb.append(" ");
             sb.append(sdmEncounter);
         }
         return sb.toString();

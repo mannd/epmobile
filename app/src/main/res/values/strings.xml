@@ -11,7 +11,7 @@
 		\n\nEmail: mannd@epstudiossoftware.com
 		\nWeb: www.epstudiossoftware.com
 		\nSource: github.com/mannd/epmobile
-		\n\nCopyright \u00a9 2011-2017 EP Studios, Inc.
+		\n\nCopyright \u00a9 2011-2018 EP Studios, Inc.
 		\nLicensed under GNU GPL v3.</string>
     <string name="main_index_title">EP Mobile</string>
     <string name="about_label">About</string>
@@ -91,7 +91,6 @@
     <string name="female_only_chadsvasc_message">European Society of Cardiology (2012) recommends no anticoagulation when female sex is
         the only risk factor.</string>
     <string name="non_female_chadsvasc_message">European Society of Cardiology (2012) recommends anticoagulation.</string>
-    <string name="chadsvasc_one_message"/>
     <string name="warfarin_title">Warfarin Clinic</string>
     <string name="warfarin_label">Warfarin Dose Calculator</string>
     <string name="tablet_label">Tablet</string>
@@ -366,39 +365,25 @@
     <string name="icd_nyha2_label">NYHA class II</string>
     <string name="icd_nyha3_label">NYHA class III</string>
     <string name="icd_nyha4_label">NHYA class IV</string>
-    <string name="icd_long_duration_cm_label">CM duration \u2265 3 months</string>
-    <string name="icd_inducible_vt_label">Inducible sustained VT/VF at EPS</string>
-    <string name="icd_qrs_duration_long_label">QRS duration \u2265 120 msec</string>
     <string name="exclusions_label">Exclusion</string>
-    <string name="icd_cardiogenic_shock_label">Cardiogenic shock or symptomatic hypotension</string>
+    <string name="icd_cardiogenic_shock_label">Not clinically stable (e.g. in shock, from any etiology)</string>
     <string name="icd_recent_cabg_label">CABG or PCI within past 3 months</string>
     <string name="icd_recent_mi_label">Acute MI within past 40 days</string>
-    <string name="icd_recent_mi_eps_label">EPS performed within 4 weeks post-MI</string>
     <string name="icd_revascularization_candidate_label">Symptoms or findings that would make patient a candidate for revascularization</string>
     <string name="icd_brain_damage_label">Significant, irreversible brain damage</string>
     <string name="icd_svt_uncontrolled_rate_label">SVT, e.g. AF, with poorly controlled ventricular rate</string>
     <string name="icd_bad_prognosis_label">Non-cardiac disease with likelihood of survival \u003c 1 year</string>
-    <string name="icd_no_ef_or_nyha_message">Invalid. You must select an EF and
-        NYHA class.</string>
-    <string name="icd_no_ef_message">Invalid. You must select an EF.</string>
-    <string name="icd_no_nyha_message">You must select a NYHA class in order to know is this primary
-        prevention ICD is indicated.</string>
+    <string name="icd_no_nyha_message">You must select a NYHA class.</string>
     <string name="icd_approved_text">ICD implantation appears to meet CMS guidelines.</string>
     <string name="icd_not_approved_text">ICD implantation does NOT meet CMS guidelines.</string>
-    <string name="icd_crt_approved_text">CRT-ICD implantation appears to meet CMS guidelines.</string>
-    <string name="crt_approved_text">Use of a CRT-ICD may be indicated.</string>
-    <string name="post_mi_time_exclusion">ICD implantation is too soon post MI.</string>
-    <string name="post_mi_early_eps_exclusion">EPS performed too soon post MI.</string>
     <string name="absolute_exclusion">There are one or more absolute exclusions to ICD implantation.</string>
-    <string name="brain_damage_exclusion">Irreversible brain damage is an absolute exclusion 
-        for ICD implantation.</string>
-    <string name="post_revascularization_exclusion">ICD implantation is too soon post myocardial revascularization.</string>
-    <string name="cms_icd_instructions">The Calculate button will show whether the patient is likely 
-        to meet CMS guidelines for Medicare reimbursement.  Note the CMS National Coverage Determination
+    <string name="cms_icd_instructions">Select patient characteristics and then select Calculate
+        to show whether the patient is likely to meet CMS guidelines for Medicare reimbursement.
+        Note the CMS National Coverage Determination
         (NCD) is quite detailed and you should be very familiar with it before making a decision
-        as to whether a particular patient is likely to be
-        covered.  This module is only intended as a guide to the NCD and is not definitive.
-        This tool has been updated with the 2018 CMS guidelines.</string>
+        as to whether a particular patient is covered.
+        This module is only intended as a guide to the NCD and is not definitive.
+        The module has been updated to the latest 2018 CMS guidelines.</string>
     <string name="cms_icd_key">AF = atrial fibrillation.  CA = cardiac arrest.
         CABG = coronary artery bypass grafting.  CM = cardiomyopathy.
         CMS = Centers for Medicare and Medicaid Services.
@@ -1307,20 +1292,23 @@
     <string name="other_indication_label">Other Indications</string>
     <string name="icd_replacement_label">Patient with existing ICD at ERI or with lead/device malfunction</string>
     <string name="icd_transplant_bridge_label">Candidates for heart transplantation on transplant list</string>
-    <string name="ef_not_measured_text">Note that all ICD candidates must have left ventricular EF measured by echocardiography,
+    <string name="icd_ef_not_measured_text">Note that all ICD candidates must have left ventricular EF measured by echocardiography,
         radionuclide (nuclear medicine) imaging, cardiac magnetic resonance imaging (MRI), or catheter angiography.
         Select an EF range and try again.</string>
-    <string name="icd_no_indications_message">No ICD indications have been selected.  Use the checkboxs to select an indication.</string>
-    <string name="icd_exceptions_apply">Waiting periods (CABG within 3 months, MI within 40 days) do not apply in this
+    <string name="icd_no_indications_message">No ICD indications have been selected.  Use the checkboxes to select an indication.</string>
+    <string name="icd_exceptions_apply">Waiting periods (CABG or PCI within 3 months, MI within 40 days) do not apply in this
         circumstance.</string>
     <string name="icd_approval_unclear_message">Not enough information to determine if ICD is indicated.</string>
-    <string name="icd_approved_after_waiting_period">It is necessary to delay implantation until waiting period expires.
+    <string name="icd_approved_after_waiting_period">It is necessary to delay implantation until waiting period expires
+        (40 days post-MI, 3 months post CABG or PCI).
         Note that if a pacemaker is indicated or the patient has an ICD at ERI or with lead/device malfunction,
         ICD implantation CAN proceed before waiting period expires.</string>
     <string name="icd_approval_affected_by_waiting_period">ICD implantation doesn\'t meet criteria due to excluson or waiting period.</string>
     <string name="waiting_period_label">Waiting Periods</string>
-    <string name="icd_bridge_to_transplant_message">Coverage of ICDs as a bridge to transplant are determined by local Medicare Administrative Contractors (MACs).</string>
+    <string name="icd_bridge_to_transplant_message">Coverage of ICDs as a bridge to transplant is determined by local Medicare Administrative Contractors (MACs).</string>
     <string name="icd_forgot_to_check_cm_checkbox">You selected MI and patient has Class II or III heart failure.  Did you forget to select ischemic or nonischemic cardiomyopathy?</string>
-    <string name="icd_possibly_forgot_to_check_mi_checkbox">Patient would qualify if there was prior MI.  Did you forget to select prior MI?</string>
+    <string name="icd_possibly_forgot_to_check_mi_checkbox">You selected ICM and patient has low EF but only Class I heart failure.  Did you forget to select prior MI?</string>
     <string name="icd_revasc_candidate">ICD implantation not indicated in candidate for revascularization.</string>
+    <string name="ok_button_label">OK</string>
+    <string name="version_string">Version %s</string>
 </resources>

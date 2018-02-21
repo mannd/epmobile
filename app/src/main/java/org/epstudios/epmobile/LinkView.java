@@ -2,13 +2,9 @@ package org.epstudios.epmobile;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
-import android.widget.Toast;
 
 
 /**
@@ -39,7 +35,7 @@ public class LinkView extends EpActivity implements View.OnClickListener {
     private static final String BUTTON_TITLE = "Calculate CrCl";
 
 
-    static public int CREATININE_CLEARANCE_CALCULATOR_ACTIVITY = 123;
+    static public final int CREATININE_CLEARANCE_CALCULATOR_ACTIVITY = 123;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

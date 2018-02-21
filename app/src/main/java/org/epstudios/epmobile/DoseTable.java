@@ -118,8 +118,7 @@ public class DoseTable extends EpActivity implements
 
 	private double totalDose(double[] doses, double tabletDose) {
 		double total = 0.0;
-		for (int i = 0; i < doses.length; ++i)
-			total = total + doses[i] * tabletDose;
+		for (double dose : doses) total = total + dose * tabletDose;
 		return total;
 	}
 

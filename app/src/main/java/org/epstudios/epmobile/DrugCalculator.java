@@ -1,7 +1,5 @@
 package org.epstudios.epmobile;
 
-import java.text.DecimalFormat;
-
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -15,6 +13,8 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import java.text.DecimalFormat;
 
 public abstract class DrugCalculator extends EpActivity implements
 		OnClickListener {
@@ -50,11 +50,11 @@ public abstract class DrugCalculator extends EpActivity implements
 
 	private enum WeightUnit {
 		KG, LB
-	};
+	}
 
 	private enum CreatinineUnit {
 		MG, MMOL
-	};
+	}
 
 	private TextView calculatedDoseTextView;
 	private EditText weightEditText;
@@ -64,8 +64,6 @@ public abstract class DrugCalculator extends EpActivity implements
 	protected TextView ccTextView; // cc == Creatinine Clearance
 	private Spinner weightSpinner;
 	private Spinner creatinineSpinner;
-	private OnItemSelectedListener itemListener;
-	private OnItemSelectedListener creatItemListener;
 
 	private final static int KG_SELECTION = 0;
 	private final static int LB_SELECTION = 1;
@@ -109,10 +107,10 @@ public abstract class DrugCalculator extends EpActivity implements
 			weightSpinner.setSelection(KG_SELECTION);
 		else
 			weightSpinner.setSelection(LB_SELECTION);
-		itemListener = new OnItemSelectedListener() {
+		OnItemSelectedListener itemListener = new OnItemSelectedListener() {
 			@Override
 			public void onItemSelected(AdapterView<?> parent, View v,
-					int position, long id) {
+									   int position, long id) {
 				updateWeightUnitSelection();
 			}
 
@@ -135,10 +133,10 @@ public abstract class DrugCalculator extends EpActivity implements
 			creatinineSpinner.setSelection(MG_SELECTION);
 		else
 			creatinineSpinner.setSelection(MMOL_SELECTION);
-		creatItemListener = new OnItemSelectedListener() {
+		OnItemSelectedListener creatItemListener = new OnItemSelectedListener() {
 			@Override
 			public void onItemSelected(AdapterView<?> parent, View v,
-					int position, long id) {
+									   int position, long id) {
 				updateCreatinineUnitSelection();
 			}
 
@@ -229,7 +227,7 @@ public abstract class DrugCalculator extends EpActivity implements
 				if (dose == 5) {
                     message += getString(R.string.apixaban_drug_interaction_at_5_mg_message);
                 }
-                else if (dose == 2.5) {
+                else {
                     message += getString(R.string.apixaban_drug_interaction_at_2_5_mg_message);
                 }
                 message += " " + getString(R.string.apixaban_dual_inhibitors);
@@ -249,11 +247,6 @@ public abstract class DrugCalculator extends EpActivity implements
 						.setText(getString(R.string.do_not_use_warning));
 				calculatedDoseTextView.setTextColor(Color.RED);
 				ccTextView.setTextColor(Color.RED);
-			} else if (dose == USE_APIXABAN_DOSING) {
-				calculatedDoseTextView.setTextAppearance(this,
-						android.R.style.TextAppearance_Large);
-				calculatedDoseTextView
-						.setText(getString(R.string.dose_undefined_warning));
 			} else {
 				calculatedDoseTextView.setTextAppearance(this,
 						android.R.style.TextAppearance_Large);

@@ -18,8 +18,6 @@
 
 package org.epstudios.epmobile;
 
-import org.epstudios.epmobile.QtcCalculator.QtcFormula;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -36,10 +34,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.epstudios.epmobile.QtcCalculator.QtcFormula;
+
 public class Qtc extends EpActivity implements OnClickListener {
 	private enum IntervalRate {
 		INTERVAL, RATE
-	};
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -250,16 +250,18 @@ public class Qtc extends EpActivity implements OnClickListener {
 	}
 
 	private QtcFormula getQtcFormula(String name) {
-		if (name.equals("BAZETT"))
-			return QtcFormula.BAZETT;
-		else if (name.equals("FRIDERICIA"))
-			return QtcFormula.FRIDERICIA;
-		else if (name.equals("SAGIE"))
-			return QtcFormula.SAGIE;
-		else if (name.equals("HODGES"))
-			return QtcFormula.HODGES;
-		else
-			return QtcFormula.BAZETT;
+		switch (name) {
+			case "BAZETT":
+				return QtcFormula.BAZETT;
+			case "FRIDERICIA":
+				return QtcFormula.FRIDERICIA;
+			case "SAGIE":
+				return QtcFormula.SAGIE;
+			case "HODGES":
+				return QtcFormula.HODGES;
+			default:
+				return QtcFormula.BAZETT;
+		}
 
 	}
 

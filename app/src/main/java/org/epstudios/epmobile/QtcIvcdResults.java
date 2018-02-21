@@ -1,10 +1,7 @@
 package org.epstudios.epmobile;
 
 import android.app.AlertDialog;
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -80,7 +77,7 @@ public class QtcIvcdResults extends EpActivity {
         String[] items = new String[] {qtMessage, qtcMessage, jtMessage, jtcMessage,
             qtmMessage, qtmcMessage, qtrrqrsMessage, infoMessage};
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items);
 
         ListView lv = (ListView) findViewById(R.id.list);
         lv.setAdapter(adapter);

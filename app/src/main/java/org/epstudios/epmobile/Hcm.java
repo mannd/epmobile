@@ -18,16 +18,9 @@
 
 package org.epstudios.epmobile;
 
-import android.os.Bundle;
-import android.view.View;
 import android.widget.CheckBox;
 
 public class Hcm extends RiskScore {
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-	}
 
 	@Override
 	protected void setContentView() {

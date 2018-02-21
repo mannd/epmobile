@@ -33,6 +33,7 @@
             android:text="@string/short_creatinine_clearance_label"
             android:layout_gravity="center_horizontal|bottom"
             android:clickable="true"
+            android:focusable="true"
             tools:ignore="UnusedAttribute" />
 
 

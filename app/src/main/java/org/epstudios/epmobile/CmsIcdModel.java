@@ -1,6 +1,5 @@
 package org.epstudios.epmobile;
 
-import static org.epstudios.epmobile.CmsIcdModel.Details.FORGOT_MI;
 import static org.epstudios.epmobile.CmsIcdModel.Details.NONE;
 
 /**

@@ -15,9 +15,9 @@ public class MartinAlgorithm extends SyncopeRiskScore {
 	protected void calculateResult() {
 		int result = 0;
 		clearSelectedRisks();
-		for (int i = 0; i < checkBox.length; i++) {
-			if (checkBox[i].isChecked()) {
-				addSelectedRisk(checkBox[i].getText().toString());
+		for (CheckBox aCheckBox : checkBox) {
+			if (aCheckBox.isChecked()) {
+				addSelectedRisk(aCheckBox.getText().toString());
 				result++;
 			}
 		}

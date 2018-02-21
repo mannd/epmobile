@@ -22,9 +22,6 @@
 
 package org.epstudios.epmobile;
 
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
@@ -43,10 +40,6 @@ public class HcmScd extends RiskScore
     private EditText maxLvWallThicknessEditText;
     private EditText maxLvotGradientEditText;
     private EditText laSizeEditText;
-
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
 
     @Override
     protected void calculateResult() {
@@ -110,7 +103,6 @@ public class HcmScd extends RiskScore
         } catch (NumberFormatException e) {
             displayResult(getResultMessage(0.0, NUMBER_EXCEPTION),
                     getString(R.string.error_dialog_title));
-            return;
         }
 
 

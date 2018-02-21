@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 
-import java.util.ArrayList;
-
 /**
  * Copyright (C) 2013, 2014 EP Studios, Inc.
  * www.epstudiossoftware.com

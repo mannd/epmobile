@@ -51,7 +51,7 @@ public class Warfarin extends EpActivity implements
 		inrEditText = (EditText) findViewById(R.id.inrEditText);
 		weeklyDoseEditText = (EditText) findViewById(R.id.weeklyDoseEditText);
 
-		doseChange = new DoseChange(0, 0, "", Direction.INCREASE);
+		doseChange = new DoseChange();
 
 		clearEntries();
 	}
@@ -88,12 +88,12 @@ public class Warfarin extends EpActivity implements
 	}
 
 	private class DoseChange {
-		public DoseChange(int lowEnd, int highEnd, String message,
-				Direction direction) {
-			this.lowEnd = lowEnd;
-			this.highEnd = highEnd;
-			this.message = message;
-			this.direction = direction;
+
+		public DoseChange() {
+		    this.lowEnd = 0;
+		    this.highEnd = 0;
+		    this.message = "";
+		    this.direction = Direction.INCREASE;
 		}
 
 		private int lowEnd;
@@ -170,9 +170,8 @@ public class Warfarin extends EpActivity implements
 
 	private double getWeeklyDose() {
 		try {
-			double weeklyDose = Double.parseDouble(weeklyDoseEditText.getText()
+			return Double.parseDouble(weeklyDoseEditText.getText()
 					.toString());
-			return weeklyDose;
 		} catch (NumberFormatException e) {
 			return 0.0;
 		}
@@ -263,11 +262,11 @@ public class Warfarin extends EpActivity implements
 		else if (range == TargetRange.HIGH_RANGE)
 			return percentDoseChangeHighRange(inr);
 		else
-			return new DoseChange(0, 0, "", Direction.INCREASE); // error!
+			return new DoseChange(); // error!
 	}
 
 	private DoseChange percentDoseChangeHighRange(double inr) {
-		DoseChange doseChange = new DoseChange(0, 0, "", Direction.INCREASE);
+		DoseChange doseChange = new DoseChange();
 		if (inr < 2.0) {
 			doseChange.lowEnd = 10;
 			doseChange.highEnd = 20;
@@ -296,7 +295,7 @@ public class Warfarin extends EpActivity implements
 	}
 
 	private DoseChange percentDoseChangeLowRange(double inr) {
-		DoseChange doseChange = new DoseChange(0, 0, "", Direction.INCREASE);
+		DoseChange doseChange = new DoseChange();
 		if (inr < 2.0) {
 			doseChange.lowEnd = 5;
 			doseChange.highEnd = 20;

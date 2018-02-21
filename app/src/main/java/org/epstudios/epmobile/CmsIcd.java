@@ -94,11 +94,12 @@ public class CmsIcd extends DiagnosticScore {
 	}
 
 	private void displayInstructions() {
-		AlertDialog dialog = new AlertDialog.Builder(this).create();
-		String message = getString(R.string.cms_icd_instructions);
-		dialog.setMessage(message);
-		dialog.setTitle(getString(R.string.icd_calculator_title));
-		dialog.show();
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setMessage(getString(R.string.cms_icd_instructions));
+		builder.setTitle(getString(R.string.icd_calculator_title));
+		builder.setPositiveButton(getString(R.string.ok_button_label), null);
+		AlertDialog alert = builder.create();
+		alert.show();
 	}
 
 	@Override
@@ -153,8 +154,8 @@ public class CmsIcd extends DiagnosticScore {
 
 	@Override
 	protected void clearEntries() {
-		for (int i = 0; i < checkBox.length; i++) {
-			checkBox[i].setChecked(false);
+		for (CheckBox aCheckBox : checkBox) {
+			aCheckBox.setChecked(false);
 		}
 		efRadioGroup.clearCheck();
 		nyhaRadioGroup.clearCheck();
