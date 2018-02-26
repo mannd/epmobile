@@ -35,7 +35,10 @@ public class EpMobile extends EpActivity {
 
         setContentView(R.layout.selectionlist);
         initToolbar();
-
+        // only EP Mobile main screen has no back arrow
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        }
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this, R.array.main_index, android.R.layout.simple_list_item_1);
         ListView lv = (ListView) findViewById(R.id.list);
