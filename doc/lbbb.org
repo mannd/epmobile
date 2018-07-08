@@ -1,0 +1,25 @@
+# LBBB -- leave title blank below
+#+TITLE:  
+#+AUTHOR:    David Mann
+#+EMAIL:     mannd@epstudiossoftware.com
+#+DATE:      [2018-07-08 Sun]
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:nil toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME: 
+#+XSLT:
+* LBBB vs IVCD ± LVH
+- Used to distinguish true LBBB from other causes of LBBB-like pattern, such as LVH, LAFB + LVH.  Patients with true LBBB may have greater benefit from cardiace resynchronization therapy.
+* Criteria 
+- QRS duration ≥ 140 msec men or ≥ 130 msec women
+- QS or rS in leads V1 and V2
+- mid-QRS notching or slurring in ≥ 2 leads V1, V2, V5, V6, I, aVL
+- *All 3 criteria must be met to diagnose true LBBB*
+* Reference
+- Strauss DG, Selvester RH, Wagner GS. Defining Left Bundle Branch Block in the Era of Cardiac Resynchronization Therapy. American Journal of Cardiology. 2011;107(6):927-934. https://doi.org/10.1016/j.amjcard.2010.11.010

@@ -60,6 +60,8 @@ public class DiagnosisList extends EpActivity {
 				else if (selection
 						.equals(getString(R.string.arvc_old_criteria_title)))
 					arvcOld();
+				else if (selection.equals(getString(R.string.lbbb_title)))
+				    lbbbCriteria();
 			}
 		});
 	}
@@ -123,6 +125,13 @@ public class DiagnosisList extends EpActivity {
 
 	private void ersScore() {
 		Intent i = new Intent(this, ErsScore.class);
+		startActivity(i);
+	}
+
+	private void lbbbCriteria() {
+		Intent i = new Intent(this, LinkView.class);
+		i.putExtra("EXTRA_URL", "file:///android_asset/lbbb.html");
+		i.putExtra("EXTRA_TITLE", getString(R.string.lbbb_title));
 		startActivity(i);
 	}
 }
