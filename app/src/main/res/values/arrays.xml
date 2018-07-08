@@ -59,6 +59,7 @@
         <item>@string/atrial_tachycardia_localization_title</item>
         <item>@string/brugada_syndrome_title</item>
         <item>@string/ers_title</item>
+        <item>@string/lbbb_title</item>
         <item>@string/lvh_list_title</item>
         <item>@string/lqt_syndrome_title</item>
         <item>@string/rvh_title</item>
@@ -218,4 +219,5 @@
     <string name="ers_title">Early Repolarization Syndrome</string>
     <string name="brugada_score_title">Brugada Shanghai Score</string>
     <string name="brugada_diagnosis_title">Brugada Diagnosis</string>
+    <string name="lbbb_title">Left Bundle Branch Block</string>
 </resources>
