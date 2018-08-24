@@ -36,16 +36,16 @@ public class LongQt extends EpActivity implements OnClickListener {
 		View clearButton = findViewById(R.id.clear_button);
 		clearButton.setOnClickListener(this);
 
-		qtcRadioGroup = (RadioGroup) findViewById(R.id.qtc_radio_group);
-		torsadeCheckBox = (CheckBox) findViewById(R.id.torsade);
-		tWaveAlternansCheckBox = (CheckBox) findViewById(R.id.t_wave_alternans);
-		notchedTWaveCheckBox = (CheckBox) findViewById(R.id.notched_t_wave);
-		lowHrCheckBox = (CheckBox) findViewById(R.id.low_hr);
-		syncopeRadioGroup = (RadioGroup) findViewById(R.id.syncope_radio_group);
-		congenitalDeafnessCheckBox = (CheckBox) findViewById(R.id.congenital_deafness);
-		familyHxLqtCheckBox = (CheckBox) findViewById(R.id.family_hx_lqt);
-		familyHxScdCheckBox = (CheckBox) findViewById(R.id.family_hx_scd);
-		longQtPostExerciseCheckBox = (CheckBox) findViewById(R.id.long_qt_post_exercise);
+		qtcRadioGroup = findViewById(R.id.qtc_radio_group);
+		torsadeCheckBox = findViewById(R.id.torsade);
+		tWaveAlternansCheckBox = findViewById(R.id.t_wave_alternans);
+		notchedTWaveCheckBox = findViewById(R.id.notched_t_wave);
+		lowHrCheckBox = findViewById(R.id.low_hr);
+		syncopeRadioGroup = findViewById(R.id.syncope_radio_group);
+		congenitalDeafnessCheckBox = findViewById(R.id.congenital_deafness);
+		familyHxLqtCheckBox = findViewById(R.id.family_hx_lqt);
+		familyHxScdCheckBox = findViewById(R.id.family_hx_scd);
+		longQtPostExerciseCheckBox = findViewById(R.id.long_qt_post_exercise);
 
 		clearEntries();
 	}

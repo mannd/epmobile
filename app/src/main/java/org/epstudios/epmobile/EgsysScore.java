@@ -54,12 +54,12 @@ public class EgsysScore extends SyncopeRiskScore {
 	protected void init() {
 		checkBox = new CheckBox[6];
 
-		checkBox[0] = (CheckBox) findViewById(R.id.risk_one);
-		checkBox[1] = (CheckBox) findViewById(R.id.risk_two);
-		checkBox[2] = (CheckBox) findViewById(R.id.risk_three);
-		checkBox[3] = (CheckBox) findViewById(R.id.risk_four);
-		checkBox[4] = (CheckBox) findViewById(R.id.risk_five);
-		checkBox[5] = (CheckBox) findViewById(R.id.risk_six);
+		checkBox[0] = findViewById(R.id.risk_one);
+		checkBox[1] = findViewById(R.id.risk_two);
+		checkBox[2] = findViewById(R.id.risk_three);
+		checkBox[3] = findViewById(R.id.risk_four);
+		checkBox[4] = findViewById(R.id.risk_five);
+		checkBox[5] = findViewById(R.id.risk_six);
 
 		checkBox[0].setText(getString(R.string.palps_before_syncope_label));
 		checkBox[1]

@@ -52,12 +52,12 @@ public class Qtc extends EpActivity implements OnClickListener {
 		View clearButton = findViewById(R.id.clear_button);
 		clearButton.setOnClickListener(this);
 
-		intervalRateSpinner = (Spinner) findViewById(R.id.interval_rate_spinner);
-		qtcTextView = (TextView) findViewById(R.id.calculated_qtc);
-		rrEditText = (EditText) findViewById(R.id.rrEditText);
-		qtEditText = (EditText) findViewById(R.id.qtEditText);
-		qtcFormulaTextView = (TextView) findViewById(R.id.qtc_formula);
-		qtcFormulaSpinner = (Spinner) findViewById(R.id.qtc_formula_spinner);
+		intervalRateSpinner = findViewById(R.id.interval_rate_spinner);
+		qtcTextView = findViewById(R.id.calculated_qtc);
+		rrEditText = findViewById(R.id.rrEditText);
+		qtEditText = findViewById(R.id.qtEditText);
+		qtcFormulaTextView = findViewById(R.id.qtc_formula);
+		qtcFormulaSpinner = findViewById(R.id.qtc_formula_spinner);
 
 		getPrefs();
 		setAdapters();

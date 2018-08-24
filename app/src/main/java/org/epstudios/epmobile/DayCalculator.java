@@ -35,11 +35,11 @@ public class DayCalculator extends EpActivity implements OnClickListener {
 		View clearButton = findViewById(R.id.clear_button);
 		clearButton.setOnClickListener(this);
 
-		indexDatePicker = (DatePicker) findViewById(R.id.indexDatePicker);
-		dayRadioGroup = (RadioGroup) findViewById(R.id.dayRadioGroup);
-		numberOfDaysEditText = (EditText) findViewById(R.id.numberOfDaysEditText);
-		reverseTimeCheckBox = (CheckBox) findViewById(R.id.reverseTimeCheckBox);
-		calculatedDateTextView = (TextView) findViewById(R.id.calculated_date);
+		indexDatePicker = findViewById(R.id.indexDatePicker);
+		dayRadioGroup = findViewById(R.id.dayRadioGroup);
+		numberOfDaysEditText = findViewById(R.id.numberOfDaysEditText);
+		reverseTimeCheckBox = findViewById(R.id.reverseTimeCheckBox);
+		calculatedDateTextView = findViewById(R.id.calculated_date);
 		numberOfDaysEditText.setText("90");
 
 		dayRadioGroup
@@ -47,7 +47,7 @@ public class DayCalculator extends EpActivity implements OnClickListener {
 
 					@Override
 					public void onCheckedChanged(RadioGroup group, int checkedId) {
-						RadioButton checkedRadioButton = (RadioButton) group
+						RadioButton checkedRadioButton = group
 								.findViewById(checkedId);
 						int index = group.indexOfChild(checkedRadioButton);
 						int number = 0;

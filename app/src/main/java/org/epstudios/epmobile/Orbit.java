@@ -66,11 +66,11 @@ public class Orbit extends RiskScore {
     protected void init() {
         checkBox = new CheckBox[5];
 
-        checkBox[0] = (CheckBox) findViewById(R.id.age75);
-        checkBox[1] = (CheckBox) findViewById(R.id.anemia);
-        checkBox[2] = (CheckBox) findViewById(R.id.bleeding);
-        checkBox[3] = (CheckBox) findViewById(R.id.renal_insufficiency);
-        checkBox[4] = (CheckBox) findViewById(R.id.antiplatelet_therapy);
+        checkBox[0] = findViewById(R.id.age75);
+        checkBox[1] = findViewById(R.id.anemia);
+        checkBox[2] = findViewById(R.id.bleeding);
+        checkBox[3] = findViewById(R.id.renal_insufficiency);
+        checkBox[4] = findViewById(R.id.antiplatelet_therapy);
     }
 
     private String getResultMessage(int result) {

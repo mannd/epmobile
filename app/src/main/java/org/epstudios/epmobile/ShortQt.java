@@ -40,17 +40,17 @@ public class ShortQt extends EpActivity implements OnClickListener {
 		View instructionsButton = findViewById(R.id.instructions_button);
 		instructionsButton.setOnClickListener(this);
 
-		qtcRadioGroup = (RadioGroup) findViewById(R.id.qtc_radio_group);
-		shortJtCheckBox = (CheckBox) findViewById(R.id.short_jt);
-		suddenCardiacArrestCheckBox = (CheckBox) findViewById(R.id.sudden_cardiac_arrest);
-		polymorphicVtCheckBox = (CheckBox) findViewById(R.id.polymorphic_vt);
-		unexplainedSyncopeCheckBox = (CheckBox) findViewById(R.id.unexplained_syncope);
-		afbCheckBox = (CheckBox) findViewById(R.id.afb);
-		relativeWithSqtsCheckBox = (CheckBox) findViewById(R.id.relative_with_sqts);
-		relativeWithSdCheckBox = (CheckBox) findViewById(R.id.relative_with_sd);
-		sidsCheckBox = (CheckBox) findViewById(R.id.sids);
-		genotypePositiveCheckBox = (CheckBox) findViewById(R.id.genotype_positive);
-		mutationCheckBox = (CheckBox) findViewById(R.id.mutation);
+		qtcRadioGroup = findViewById(R.id.qtc_radio_group);
+		shortJtCheckBox = findViewById(R.id.short_jt);
+		suddenCardiacArrestCheckBox = findViewById(R.id.sudden_cardiac_arrest);
+		polymorphicVtCheckBox = findViewById(R.id.polymorphic_vt);
+		unexplainedSyncopeCheckBox = findViewById(R.id.unexplained_syncope);
+		afbCheckBox = findViewById(R.id.afb);
+		relativeWithSqtsCheckBox = findViewById(R.id.relative_with_sqts);
+		relativeWithSdCheckBox = findViewById(R.id.relative_with_sd);
+		sidsCheckBox = findViewById(R.id.sids);
+		genotypePositiveCheckBox = findViewById(R.id.genotype_positive);
+		mutationCheckBox = findViewById(R.id.mutation);
 
 		clearEntries();
 

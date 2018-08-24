@@ -43,10 +43,10 @@ public class DoseTable extends EpActivity implements
 
 		this.setTitle("Warfarin Dose (" + String.valueOf(tabletDose)
 				+ " mg tabs)");
-		TextView percent1TextView = (TextView) findViewById(R.id.percent1);
+		TextView percent1TextView = findViewById(R.id.percent1);
 		percent1TextView.setText(String.valueOf(lowEnd) + "% "
 				+ (increase ? "Increase" : "Decrease"));
-		TextView percent2TextView = (TextView) findViewById(R.id.percent2);
+		TextView percent2TextView = findViewById(R.id.percent2);
 		percent2TextView.setText(String.valueOf(highEnd) + "% "
 				+ (increase ? "Increase" : "Decrease"));
 

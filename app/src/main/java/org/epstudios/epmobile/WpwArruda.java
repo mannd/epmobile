@@ -59,16 +59,16 @@ public class WpwArruda extends LocationAlgorithm implements OnClickListener {
         setContentView(R.layout.simplealgorithm);
 	initToolbar();
 
-		Button yesButton = (Button) findViewById(R.id.yes_button);
+		Button yesButton = findViewById(R.id.yes_button);
 		yesButton.setOnClickListener(this);
-		Button noButton = (Button) findViewById(R.id.no_button);
+		Button noButton = findViewById(R.id.no_button);
 		noButton.setOnClickListener(this);
-		backButton = (Button) findViewById(R.id.back_button);
+		backButton = findViewById(R.id.back_button);
 		backButton.setOnClickListener(this);
-		Button morphologyButton = (Button) findViewById(R.id.morphology_button);
+		Button morphologyButton = findViewById(R.id.morphology_button);
 		morphologyButton.setVisibility(View.GONE); // maybe need to change this
 													// to an instructions button
-		stepTextView = (TextView) findViewById(R.id.stepTextView);
+		stepTextView = findViewById(R.id.stepTextView);
 
 		step1();
 	}

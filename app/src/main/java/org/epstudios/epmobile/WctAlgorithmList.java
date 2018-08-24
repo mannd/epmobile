@@ -36,7 +36,7 @@ public class WctAlgorithmList extends EpActivity {
 	ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
 				this, R.array.wct_algorithm_list,
 				android.R.layout.simple_list_item_1);
-        ListView lv = (ListView) findViewById(R.id.list);
+        ListView lv = findViewById(R.id.list);
         lv.setAdapter(adapter);
 
         lv.setTextFilterEnabled(true);

@@ -47,23 +47,23 @@ public class BrugadaMorphologyCriteria extends EpActivity implements
 		View clearButton = findViewById(R.id.clear_button);
 		clearButton.setOnClickListener(this);
 
-		bbbSpinner = (Spinner) findViewById(R.id.bbb_spinner);
+		bbbSpinner = findViewById(R.id.bbb_spinner);
 
 		setAdapters();
 
 		lbbbCheckBox = new CheckBox[4];
-		lbbbCheckBox[0] = (CheckBox) findViewById(R.id.broad_r);
-		lbbbCheckBox[1] = (CheckBox) findViewById(R.id.broad_rs);
-		lbbbCheckBox[2] = (CheckBox) findViewById(R.id.notched_s);
-		lbbbCheckBox[3] = (CheckBox) findViewById(R.id.lbbb_q_v6);
+		lbbbCheckBox[0] = findViewById(R.id.broad_r);
+		lbbbCheckBox[1] = findViewById(R.id.broad_rs);
+		lbbbCheckBox[2] = findViewById(R.id.notched_s);
+		lbbbCheckBox[3] = findViewById(R.id.lbbb_q_v6);
 
 		rbbbCheckBox = new CheckBox[6];
-		rbbbCheckBox[0] = (CheckBox) findViewById(R.id.monophasic_r_v1);
-		rbbbCheckBox[1] = (CheckBox) findViewById(R.id.qr_v1);
-		rbbbCheckBox[2] = (CheckBox) findViewById(R.id.rs_v1);
-		rbbbCheckBox[3] = (CheckBox) findViewById(R.id.deep_s_v6);
-		rbbbCheckBox[4] = (CheckBox) findViewById(R.id.rbbb_q_v6);
-		rbbbCheckBox[5] = (CheckBox) findViewById(R.id.monophasic_r_v6);
+		rbbbCheckBox[0] = findViewById(R.id.monophasic_r_v1);
+		rbbbCheckBox[1] = findViewById(R.id.qr_v1);
+		rbbbCheckBox[2] = findViewById(R.id.rs_v1);
+		rbbbCheckBox[3] = findViewById(R.id.deep_s_v6);
+		rbbbCheckBox[4] = findViewById(R.id.rbbb_q_v6);
+		rbbbCheckBox[5] = findViewById(R.id.monophasic_r_v6);
 
 		clearEntries();
 	}

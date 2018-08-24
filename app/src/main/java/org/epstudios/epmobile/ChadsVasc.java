@@ -32,14 +32,14 @@ public class ChadsVasc extends RiskScore {
 	protected void init() {
 		checkBox = new CheckBox[8];
 
-		checkBox[0] = (CheckBox) findViewById(R.id.chf);
-		checkBox[1] = (CheckBox) findViewById(R.id.hypertension);
-		checkBox[2] = (CheckBox) findViewById(R.id.age75);
-		checkBox[3] = (CheckBox) findViewById(R.id.diabetes);
-		checkBox[4] = (CheckBox) findViewById(R.id.stroke);
-		checkBox[5] = (CheckBox) findViewById(R.id.vascular);
-		checkBox[6] = (CheckBox) findViewById(R.id.age65);
-		checkBox[7] = (CheckBox) findViewById(R.id.female);
+		checkBox[0] = findViewById(R.id.chf);
+		checkBox[1] = findViewById(R.id.hypertension);
+		checkBox[2] = findViewById(R.id.age75);
+		checkBox[3] = findViewById(R.id.diabetes);
+		checkBox[4] = findViewById(R.id.stroke);
+		checkBox[5] = findViewById(R.id.vascular);
+		checkBox[6] = findViewById(R.id.age65);
+		checkBox[7] = findViewById(R.id.female);
 	}
 
 	@Override

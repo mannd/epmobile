@@ -17,9 +17,9 @@ public class AvAnnulusMap extends EpActivity {
 		super.onCreate(savedInstanceState);
         setContentView(R.layout.avannulusmap);
 	initToolbar();
-	ImageView background = (ImageView) findViewById(R.id.avannulus_image);
+	ImageView background = findViewById(R.id.avannulus_image);
 		background.setImageResource(R.drawable.modgrayavannulus);
-		frame = (FrameLayout) findViewById(R.id.avannulus_frame);
+		frame = findViewById(R.id.avannulus_frame);
 		frame.setBackgroundColor(Color.WHITE);
 
 		Bundle extras = getIntent().getExtras();

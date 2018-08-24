@@ -51,21 +51,21 @@ public class BrugadaScore extends RiskScore {
         checkBox = new CheckBox[12];
 
         // ECG
-        checkBox[0] = (CheckBox) findViewById(R.id.spontaneous_type_1_ecg);
-        checkBox[1] = (CheckBox) findViewById(R.id.fever_type_1_ecg);
-        checkBox[2] = (CheckBox) findViewById(R.id.type_2_3_ecg);
+        checkBox[0] = findViewById(R.id.spontaneous_type_1_ecg);
+        checkBox[1] = findViewById(R.id.fever_type_1_ecg);
+        checkBox[2] = findViewById(R.id.type_2_3_ecg);
 	// Clinical history
-        checkBox[3] = (CheckBox) findViewById(R.id.unexplained_arrest);
-        checkBox[4] = (CheckBox) findViewById(R.id.agonal_respirations);
-        checkBox[5] = (CheckBox) findViewById(R.id.arrhythmic_syncope);
-        checkBox[6] = (CheckBox) findViewById(R.id.unclear_syncope);
-        checkBox[7] = (CheckBox) findViewById(R.id.afl_afb);
+        checkBox[3] = findViewById(R.id.unexplained_arrest);
+        checkBox[4] = findViewById(R.id.agonal_respirations);
+        checkBox[5] = findViewById(R.id.arrhythmic_syncope);
+        checkBox[6] = findViewById(R.id.unclear_syncope);
+        checkBox[7] = findViewById(R.id.afl_afb);
 	// Family history
-        checkBox[8] = (CheckBox) findViewById(R.id.relative_definite_brugada);
-        checkBox[9] = (CheckBox) findViewById(R.id.suspicious_scd);
-        checkBox[10] = (CheckBox) findViewById(R.id.unexplained_scd);
+        checkBox[8] = findViewById(R.id.relative_definite_brugada);
+        checkBox[9] = findViewById(R.id.suspicious_scd);
+        checkBox[10] = findViewById(R.id.unexplained_scd);
 	// Genetic testing
-        checkBox[11] = (CheckBox) findViewById(R.id.pathogenic_mutation);
+        checkBox[11] = findViewById(R.id.pathogenic_mutation);
     }
 
     @Override
@@ -115,7 +115,8 @@ public class BrugadaScore extends RiskScore {
     }
 
     private String getResultMessage(int result) {
-        String message = String.format(Locale.getDefault(),"Risk Score = %.1f\n", result / 10.0);
+        String message = String.format(Locale.getDefault(),"Risk Score = %s\n",
+                UnitConverter.trimmedTrailingZeros(result / 10.0));
         if (result >= 35) {
             message += "Probable/definite Brugada Syndrome";
         }

@@ -246,6 +246,8 @@
             android:label="@string/qtc_ivcd_results_title" />
         <activity android:name=".IcdMortalityRisk"
             android:label="@string/icd_mortality_risk_title" />
+        <activity android:name=".TamponadeScore"
+            android:label="@string/tamponade_title" />
     </application>
 
 </manifest>

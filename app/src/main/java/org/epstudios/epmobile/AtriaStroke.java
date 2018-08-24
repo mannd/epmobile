@@ -114,15 +114,15 @@ public class AtriaStroke extends RiskScore {
     protected void init() {
         checkBox = new CheckBox[7];
 
-        checkBox[0] = (CheckBox) findViewById(R.id.sex);
-        checkBox[1] = (CheckBox) findViewById(R.id.diabetes);
-        checkBox[2] = (CheckBox) findViewById(R.id.chf);
-        checkBox[3] = (CheckBox) findViewById(R.id.htn);
-        checkBox[4] = (CheckBox) findViewById(R.id.proteinuria);
-        checkBox[5] = (CheckBox) findViewById(R.id.renal_disease);
-        checkBox[6] = (CheckBox) findViewById(R.id.stroke);
+        checkBox[0] = findViewById(R.id.sex);
+        checkBox[1] = findViewById(R.id.diabetes);
+        checkBox[2] = findViewById(R.id.chf);
+        checkBox[3] = findViewById(R.id.htn);
+        checkBox[4] = findViewById(R.id.proteinuria);
+        checkBox[5] = findViewById(R.id.renal_disease);
+        checkBox[6] = findViewById(R.id.stroke);
 
-        radioGroup = (RadioGroup) findViewById(R.id.age);
+        radioGroup = findViewById(R.id.age);
     }
 
     @Override

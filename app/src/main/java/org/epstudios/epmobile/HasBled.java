@@ -30,15 +30,15 @@ public class HasBled extends RiskScore {
 	protected void init() {
 		checkBox = new CheckBox[9];
 
-		checkBox[0] = (CheckBox) findViewById(R.id.hypertension);
-		checkBox[1] = (CheckBox) findViewById(R.id.abnormal_renal_function);
-		checkBox[2] = (CheckBox) findViewById(R.id.abnormal_liver_function);
-		checkBox[3] = (CheckBox) findViewById(R.id.stroke);
-		checkBox[4] = (CheckBox) findViewById(R.id.bleeding);
-		checkBox[5] = (CheckBox) findViewById(R.id.labile_inr);
-		checkBox[6] = (CheckBox) findViewById(R.id.age65);
-		checkBox[7] = (CheckBox) findViewById(R.id.drug);
-		checkBox[8] = (CheckBox) findViewById(R.id.etoh);
+		checkBox[0] = findViewById(R.id.hypertension);
+		checkBox[1] = findViewById(R.id.abnormal_renal_function);
+		checkBox[2] = findViewById(R.id.abnormal_liver_function);
+		checkBox[3] = findViewById(R.id.stroke);
+		checkBox[4] = findViewById(R.id.bleeding);
+		checkBox[5] = findViewById(R.id.labile_inr);
+		checkBox[6] = findViewById(R.id.age65);
+		checkBox[7] = findViewById(R.id.drug);
+		checkBox[8] = findViewById(R.id.etoh);
 	}
 
 	@Override

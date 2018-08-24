@@ -32,19 +32,19 @@ public class Hcm extends RiskScore {
 		checkBox = new CheckBox[11];
 
 		// super bad
-		checkBox[0] = (CheckBox) findViewById(R.id.cardiac_arrest);
-		checkBox[1] = (CheckBox) findViewById(R.id.spontaneous_vt);
+		checkBox[0] = findViewById(R.id.cardiac_arrest);
+		checkBox[1] = findViewById(R.id.spontaneous_vt);
 		// major risks
-		checkBox[2] = (CheckBox) findViewById(R.id.family_hx_sd);
-		checkBox[3] = (CheckBox) findViewById(R.id.unexplained_syncope);
-		checkBox[4] = (CheckBox) findViewById(R.id.lv_thickness);
-		checkBox[5] = (CheckBox) findViewById(R.id.abnormal_exercise_bp);
-		checkBox[6] = (CheckBox) findViewById(R.id.nonsustained_vt);
+		checkBox[2] = findViewById(R.id.family_hx_sd);
+		checkBox[3] = findViewById(R.id.unexplained_syncope);
+		checkBox[4] = findViewById(R.id.lv_thickness);
+		checkBox[5] = findViewById(R.id.abnormal_exercise_bp);
+		checkBox[6] = findViewById(R.id.nonsustained_vt);
 		// minor risks
-		checkBox[7] = (CheckBox) findViewById(R.id.afb);
-		checkBox[8] = (CheckBox) findViewById(R.id.myocardial_ischemia);
-		checkBox[9] = (CheckBox) findViewById(R.id.lv_outflow_obstruction);
-		checkBox[10] = (CheckBox) findViewById(R.id.high_risk_mutation);
+		checkBox[7] = findViewById(R.id.afb);
+		checkBox[8] = findViewById(R.id.myocardial_ischemia);
+		checkBox[9] = findViewById(R.id.lv_outflow_obstruction);
+		checkBox[10] = findViewById(R.id.high_risk_mutation);
 	}
 
 	final int HIGHEST_RISK_SCORE = 100; // can't happen by calculation

@@ -79,7 +79,7 @@ public class QtcIvcdResults extends EpActivity {
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items);
 
-        ListView lv = (ListView) findViewById(R.id.list);
+        ListView lv = findViewById(R.id.list);
         lv.setAdapter(adapter);
 
         lv.setTextFilterEnabled(true);

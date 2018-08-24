@@ -62,16 +62,16 @@ public class OutflowVt extends LocationAlgorithm implements OnClickListener {
         setContentView(R.layout.simplealgorithm);
 	initToolbar();
 	
-		yesButton = (Button) findViewById(R.id.yes_button);
+		yesButton = findViewById(R.id.yes_button);
 		yesButton.setOnClickListener(this);
-		noButton = (Button) findViewById(R.id.no_button);
+		noButton = findViewById(R.id.no_button);
 		noButton.setOnClickListener(this);
-		backButton = (Button) findViewById(R.id.back_button);
+		backButton = findViewById(R.id.back_button);
 		backButton.setOnClickListener(this);
-		instructionsButton = (Button) findViewById(R.id.morphology_button);
+		instructionsButton = findViewById(R.id.morphology_button);
 		instructionsButton.setOnClickListener(this);
 		instructionsButton.setText(getString(R.string.instructions_label));
-		stepTextView = (TextView) findViewById(R.id.stepTextView);
+		stepTextView = findViewById(R.id.stepTextView);
 		step1();
 
 	}

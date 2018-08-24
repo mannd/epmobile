@@ -34,14 +34,14 @@ public abstract class DrugCalculator extends EpActivity implements
 		View clearButton = findViewById(R.id.clear_button);
 		clearButton.setOnClickListener(this);
 
-		calculatedDoseTextView = (TextView) findViewById(R.id.calculated_dose);
-		ccTextView = (TextView) findViewById(R.id.ccTextView);
-		weightEditText = (EditText) findViewById(R.id.weightEditText);
-		creatinineEditText = (EditText) findViewById(R.id.creatinineEditText);
-		ageEditText = (EditText) findViewById(R.id.ageEditText);
-		sexRadioGroup = (RadioGroup) findViewById(R.id.sexRadioGroup);
-		weightSpinner = (Spinner) findViewById(R.id.weight_spinner);
-		creatinineSpinner = (Spinner) findViewById(R.id.creatinine_spinner);
+		calculatedDoseTextView = findViewById(R.id.calculated_dose);
+		ccTextView = findViewById(R.id.ccTextView);
+		weightEditText = findViewById(R.id.weightEditText);
+		creatinineEditText = findViewById(R.id.creatinineEditText);
+		ageEditText = findViewById(R.id.ageEditText);
+		sexRadioGroup = findViewById(R.id.sexRadioGroup);
+		weightSpinner = findViewById(R.id.weight_spinner);
+		creatinineSpinner = findViewById(R.id.creatinine_spinner);
 
 		getPrefs();
 		setAdapters();

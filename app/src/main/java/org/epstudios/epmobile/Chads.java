@@ -45,11 +45,11 @@ public class Chads extends RiskScore {
 	protected void init() {
 		checkBox = new CheckBox[5];
 
-		checkBox[0] = (CheckBox) findViewById(R.id.chf);
-		checkBox[1] = (CheckBox) findViewById(R.id.hypertension);
-		checkBox[2] = (CheckBox) findViewById(R.id.age75);
-		checkBox[3] = (CheckBox) findViewById(R.id.diabetes);
-		checkBox[4] = (CheckBox) findViewById(R.id.stroke);
+		checkBox[0] = findViewById(R.id.chf);
+		checkBox[1] = findViewById(R.id.hypertension);
+		checkBox[2] = findViewById(R.id.age75);
+		checkBox[3] = findViewById(R.id.diabetes);
+		checkBox[4] = findViewById(R.id.stroke);
 	}
 
 	@Override

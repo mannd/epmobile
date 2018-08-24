@@ -34,11 +34,11 @@ public class AtriaBleed extends RiskScore {
     protected void init() {
         checkBox = new CheckBox[5];
 
-        checkBox[0] = (CheckBox) findViewById(R.id.anemia);
-        checkBox[1] = (CheckBox) findViewById(R.id.renal_disease);
-        checkBox[2] = (CheckBox) findViewById(R.id.age75);
-        checkBox[3] = (CheckBox) findViewById(R.id.prior_hemorrhage);
-        checkBox[4] = (CheckBox) findViewById(R.id.htn);
+        checkBox[0] = findViewById(R.id.anemia);
+        checkBox[1] = findViewById(R.id.renal_disease);
+        checkBox[2] = findViewById(R.id.age75);
+        checkBox[3] = findViewById(R.id.prior_hemorrhage);
+        checkBox[4] = findViewById(R.id.htn);
     }
 
 

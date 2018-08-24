@@ -41,7 +41,7 @@ public class EpMobile extends EpActivity {
         }
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this, R.array.main_index, android.R.layout.simple_list_item_1);
-        ListView lv = (ListView) findViewById(R.id.list);
+        ListView lv = findViewById(R.id.list);
         lv.setAdapter(adapter);
 
         lv.setTextFilterEnabled(true);

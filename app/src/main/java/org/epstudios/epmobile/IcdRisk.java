@@ -145,18 +145,18 @@ public class IcdRisk extends DiagnosticScore {
 	@Override
 	protected void init() {
 		// TODO Auto-generated method stub
-		sexCheckBox = (CheckBox) findViewById(R.id.female_sex);
-		admittedRadioGroup = (RadioGroup) findViewById(R.id.admission_reason_radio_group);
-		nyhaClassRadioGroup = (RadioGroup) findViewById(R.id.nyha_class_radio_group);
-		noPriorCabgCheckBox = (CheckBox) findViewById(R.id.no_prior_cabg);
-		currentDialysisCheckBox = (CheckBox) findViewById(R.id.current_dialysis);
-		chronicLungDiseaseCheckBox = (CheckBox) findViewById(R.id.chronic_lung_disease);
-		abnormalConductionRadioGroup = (RadioGroup) findViewById(R.id.abnormal_conduction_radio_group);
-		procedureTypeRadioGroup = (RadioGroup) findViewById(R.id.procedure_type_radio_group);
-		icdTypeRadioGroup = (RadioGroup) findViewById(R.id.icd_type_radio_group);
-		sodiumRadioGroup = (RadioGroup) findViewById(R.id.sodium_radio_group);
-		hgbRadioGroup = (RadioGroup) findViewById(R.id.hgb_radio_group);
-		bunRadioGroup = (RadioGroup) findViewById(R.id.bun_radio_group);
+		sexCheckBox = findViewById(R.id.female_sex);
+		admittedRadioGroup = findViewById(R.id.admission_reason_radio_group);
+		nyhaClassRadioGroup = findViewById(R.id.nyha_class_radio_group);
+		noPriorCabgCheckBox = findViewById(R.id.no_prior_cabg);
+		currentDialysisCheckBox = findViewById(R.id.current_dialysis);
+		chronicLungDiseaseCheckBox = findViewById(R.id.chronic_lung_disease);
+		abnormalConductionRadioGroup = findViewById(R.id.abnormal_conduction_radio_group);
+		procedureTypeRadioGroup = findViewById(R.id.procedure_type_radio_group);
+		icdTypeRadioGroup = findViewById(R.id.icd_type_radio_group);
+		sodiumRadioGroup = findViewById(R.id.sodium_radio_group);
+		hgbRadioGroup = findViewById(R.id.hgb_radio_group);
+		bunRadioGroup = findViewById(R.id.bun_radio_group);
 
 	}
 

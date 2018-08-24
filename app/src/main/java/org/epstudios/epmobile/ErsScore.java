@@ -54,22 +54,22 @@ public class ErsScore extends RiskScore {
         checkBox = new CheckBox[12];
 
         // Clinical history
-        checkBox[0] = (CheckBox) findViewById(R.id.unexplained_arrest);
-        checkBox[1] = (CheckBox) findViewById(R.id.arrhythmic_syncope);
-        checkBox[2] = (CheckBox) findViewById(R.id.unclear_syncope);
+        checkBox[0] = findViewById(R.id.unexplained_arrest);
+        checkBox[1] = findViewById(R.id.arrhythmic_syncope);
+        checkBox[2] = findViewById(R.id.unclear_syncope);
         // ECG
-        checkBox[3] = (CheckBox) findViewById(R.id.large_er);
-        checkBox[4] = (CheckBox) findViewById(R.id.dynamic_j_point);
-        checkBox[5] = (CheckBox) findViewById(R.id.j_point_elevation);
+        checkBox[3] = findViewById(R.id.large_er);
+        checkBox[4] = findViewById(R.id.dynamic_j_point);
+        checkBox[5] = findViewById(R.id.j_point_elevation);
         // Ambulatory ECG
-        checkBox[6] = (CheckBox) findViewById(R.id.short_coupled_pvcs);
+        checkBox[6] = findViewById(R.id.short_coupled_pvcs);
         // Family history
-        checkBox[7] = (CheckBox) findViewById(R.id.relative_definite_ers);
-        checkBox[8] = (CheckBox) findViewById(R.id.relative_ers_ecg);
-        checkBox[9] = (CheckBox) findViewById(R.id.one_relative_ers_ecg);
-        checkBox[10] = (CheckBox) findViewById(R.id.unexplained_scd);
+        checkBox[7] = findViewById(R.id.relative_definite_ers);
+        checkBox[8] = findViewById(R.id.relative_ers_ecg);
+        checkBox[9] = findViewById(R.id.one_relative_ers_ecg);
+        checkBox[10] = findViewById(R.id.unexplained_scd);
         // Genetic testing
-        checkBox[11] = (CheckBox) findViewById(R.id.ers_pathogenic_mutation);
+        checkBox[11] = findViewById(R.id.ers_pathogenic_mutation);
     }
 
     @Override
@@ -126,7 +126,8 @@ public class ErsScore extends RiskScore {
     }
 
     private String getResultMessage(int result) {
-        String message = String.format(Locale.getDefault(),"Risk Score = %.1f\n", result / 10.0);
+        String message = String.format(Locale.getDefault(),"Risk Score = %s\n",
+                UnitConverter.trimmedTrailingZeros(result / 10.0));
         if (result >= 50) {
             message += "Probable/definite Early Repolarization Syndrome";
         }

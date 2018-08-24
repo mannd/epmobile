@@ -29,7 +29,7 @@ public class About extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.about);
-		TextView versionTextView = (TextView) findViewById(R.id.version);
+		TextView versionTextView = findViewById(R.id.version);
 		versionTextView.setText(String.format(getString(R.string.version_string), VERSION));
 	}
 }

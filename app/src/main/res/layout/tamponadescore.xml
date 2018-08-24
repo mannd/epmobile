@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                style="@style/Header1"
+                android:text="@string/etiology_label" />
+
+            <CheckBox
+                android:id="@+id/malignant_disease"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/malignant_disease_label" />
+
+            <CheckBox
+                android:id="@+id/tuberculosis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tuberculosis_label" />
+
+            <CheckBox
+                android:id="@+id/recent_radiotherapy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/recent_radiotherapy_label" />
+
+            <CheckBox
+                android:id="@+id/recent_viral_infection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/recent_viral_infection_label" />
+
+            <CheckBox
+                android:id="@+id/recurrent_pe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/recurrent_pe_label" />
+
+            <CheckBox
+                android:id="@+id/chronic_renal_failure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chronic_renal_failure_label" />
+
+            <CheckBox
+                android:id="@+id/immunodeficiency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/immunodeficiency_label" />
+
+            <CheckBox
+                android:id="@+id/hypo_hyperthyroidism"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hypo_hyperthyroidism_label" />
+
+            <CheckBox
+                android:id="@+id/autoimmune_disease"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/autoimmune_disease_label" />
+
+            <TextView
+                style="@style/Header1"
+                android:text="@string/clinical_presentation_label" />
+
+            <CheckBox
+                android:id="@+id/dyspnea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dyspnea_label" />
+
+            <CheckBox
+                android:id="@+id/orthopnea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/orthopnea_label" />
+
+            <CheckBox
+                android:id="@+id/hypotension"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hypotension_label" />
+
+            <CheckBox
+                android:id="@+id/sinus_tachycardia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sinus_tachycardia_label" />
+
+            <CheckBox
+                android:id="@+id/oliguria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/oliguria_label" />
+
+            <CheckBox
+                android:id="@+id/pulsus_paradoxus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pulsus_paradoxus_label" />
+
+            <CheckBox
+                android:id="@+id/chest_pain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chest_pain_label" />
+
+            <CheckBox
+                android:id="@+id/friction_rub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/friction_rub_label" />
+
+            <CheckBox
+                android:id="@+id/symptom_worsening"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/symptom_worsening_label" />
+
+            <CheckBox
+                android:id="@+id/slow_evolution"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/slow_evolution_label" />
+
+            <TextView
+                style="@style/Header1"
+                android:text="@string/imaging_label" />
+
+            <CheckBox
+                android:id="@+id/cardiomegaly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cardiomegaly_label" />
+
+            <CheckBox
+                android:id="@+id/electrical_alternans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/electrical_alternans_label" />
+
+            <CheckBox
+                android:id="@+id/microvoltage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/microvoltage_label" />
+
+            <CheckBox
+                android:id="@+id/circumferential_pe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/circumferential_pe_label" />
+
+            <CheckBox
+                android:id="@+id/moderate_pe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/moderate_pe_label" />
+
+            <CheckBox
+                android:id="@+id/small_pe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/small_pe_label" />
+
+            <CheckBox
+                android:id="@+id/ra_collapse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ra_collapse_label" />
+
+            <CheckBox
+                android:id="@+id/large_ivc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/large_ivc_label" />
+
+            <CheckBox
+                android:id="@+id/rv_collapse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rv_collapse_label" />
+
+            <CheckBox
+                android:id="@+id/la_collapse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/la_collapse_label" />
+
+            <CheckBox
+                android:id="@+id/respiratory_variations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/respiratory_variations_label" />
+
+            <CheckBox
+                android:id="@+id/swinging_heart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/swinging_heart_label" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/calculate_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/calculate_label" />
+
+                <Button
+                    android:id="@+id/clear_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/clear_label" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tamponade_key" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/tamponade_reference" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

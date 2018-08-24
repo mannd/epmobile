@@ -18,7 +18,7 @@ public class DiagnosisList extends EpActivity {
 	ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
 				this, R.array.diagnosis_list,
 				android.R.layout.simple_list_item_1);
-        ListView lv = (ListView) findViewById(R.id.list);
+        ListView lv = findViewById(R.id.list);
         lv.setAdapter(adapter);
 
         lv.setTextFilterEnabled(true);
@@ -62,6 +62,8 @@ public class DiagnosisList extends EpActivity {
 					arvcOld();
 				else if (selection.equals(getString(R.string.lbbb_title)))
 				    lbbbCriteria();
+				else if (selection.equals(getString(R.string.tamponade_title)))
+					tamponade();
 			}
 		});
 	}
@@ -132,6 +134,11 @@ public class DiagnosisList extends EpActivity {
 		Intent i = new Intent(this, LinkView.class);
 		i.putExtra("EXTRA_URL", "file:///android_asset/lbbb.html");
 		i.putExtra("EXTRA_TITLE", getString(R.string.lbbb_title));
+		startActivity(i);
+	}
+
+	private void tamponade() {
+		Intent i = new Intent(this, TamponadeScore.class);
 		startActivity(i);
 	}
 }

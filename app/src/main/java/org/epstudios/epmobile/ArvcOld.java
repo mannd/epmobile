@@ -75,21 +75,21 @@ public class ArvcOld extends DiagnosticScore {
 
 	@Override
 	protected void init() {
-		rvDilatationCheckBox = (CheckBox) findViewById(R.id.rv_dilatation);
-		rvAneurysmsCheckBox = (CheckBox) findViewById(R.id.rv_aneurysms);
-		rvSegmentalDilatationCheckBox = (CheckBox) findViewById(R.id.rv_segmental_dilatation);
-		mildRvDilatationCheckBox = (CheckBox) findViewById(R.id.mild_rv_dilatation);
-		mildRvSegmentalDilatationCheckBox = (CheckBox) findViewById(R.id.mild_rv_segmental_dilatation);
-		regionalRvHypokinesiaCheckBox = (CheckBox) findViewById(R.id.regional_rv_hypokinesia);
-		fattyReplacementCheckBox = (CheckBox) findViewById(R.id.fatty_replacement);
-		twiCheckBox = (CheckBox) findViewById(R.id.twi);
-		epsilonWavesCheckBox = (CheckBox) findViewById(R.id.epsilon_waves);
-		latePotentialsCheckBox = (CheckBox) findViewById(R.id.late_potentials);
-		lbbbCheckBox = (CheckBox) findViewById(R.id.lbbb);
-		pvcsCheckBox = (CheckBox) findViewById(R.id.pvcs);
-		familialDiseaseCheckBox = (CheckBox) findViewById(R.id.familial_disease);
-		familyHxScdCheckBox = (CheckBox) findViewById(R.id.family_hx_scd);
-		familyHxCheckBox = (CheckBox) findViewById(R.id.family_hx);
+		rvDilatationCheckBox = findViewById(R.id.rv_dilatation);
+		rvAneurysmsCheckBox = findViewById(R.id.rv_aneurysms);
+		rvSegmentalDilatationCheckBox = findViewById(R.id.rv_segmental_dilatation);
+		mildRvDilatationCheckBox = findViewById(R.id.mild_rv_dilatation);
+		mildRvSegmentalDilatationCheckBox = findViewById(R.id.mild_rv_segmental_dilatation);
+		regionalRvHypokinesiaCheckBox = findViewById(R.id.regional_rv_hypokinesia);
+		fattyReplacementCheckBox = findViewById(R.id.fatty_replacement);
+		twiCheckBox = findViewById(R.id.twi);
+		epsilonWavesCheckBox = findViewById(R.id.epsilon_waves);
+		latePotentialsCheckBox = findViewById(R.id.late_potentials);
+		lbbbCheckBox = findViewById(R.id.lbbb);
+		pvcsCheckBox = findViewById(R.id.pvcs);
+		familialDiseaseCheckBox = findViewById(R.id.familial_disease);
+		familyHxScdCheckBox = findViewById(R.id.family_hx_scd);
+		familyHxCheckBox = findViewById(R.id.family_hx);
 	}
 
 	@Override

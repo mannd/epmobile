@@ -40,14 +40,14 @@ public class CycleLength extends EpActivity implements OnClickListener {
 		calculateResultButton.setOnClickListener(this);
 		View clearButton = findViewById(R.id.clear_button);
 		clearButton.setOnClickListener(this);
-		intervalRateRadioGroup = (RadioGroup) findViewById(R.id.intervalRateRadioGroup);
-		resultTextView = (TextView) findViewById(R.id.calculated_result);
-		inputEditText = (EditText) findViewById(R.id.inputEditText);
-		RadioButton clRadioButton = (RadioButton) findViewById(R.id.cl_button);
-		RadioButton hrRadioButton = (RadioButton) findViewById(R.id.hr_button);
+		intervalRateRadioGroup = findViewById(R.id.intervalRateRadioGroup);
+		resultTextView = findViewById(R.id.calculated_result);
+		inputEditText = findViewById(R.id.inputEditText);
+		RadioButton clRadioButton = findViewById(R.id.cl_button);
+		RadioButton hrRadioButton = findViewById(R.id.hr_button);
 		clRadioButton.setOnClickListener(this);
 		hrRadioButton.setOnClickListener(this);
-		measurementTextView = (TextView) findViewById(R.id.MeasurementTextView);
+		measurementTextView = findViewById(R.id.MeasurementTextView);
 		if (savedInstanceState != null) {
 			String savedLabel = savedInstanceState.getString("label");
 			String savedHint = savedInstanceState.getString("hint");
