@@ -69,16 +69,16 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 		View copyAbwButton = findViewById(R.id.copy_abw_button);
 		copyAbwButton.setOnClickListener(this);
 
-		sexRadioGroup = (RadioGroup) findViewById(R.id.sexRadioGroup);
-		weightEditText = (EditText) findViewById(R.id.weightEditText);
-		heightEditText = (EditText) findViewById(R.id.heightEditText);
-		weightSpinner = (Spinner) findViewById(R.id.weight_spinner);
-		heightSpinner = (Spinner) findViewById(R.id.height_spinner);
-		ibwTextView = (TextView) findViewById(R.id.ibwTextView);
-		abwTextView = (TextView) findViewById(R.id.abwTextView);
-		ibwResultTextView = (TextView) findViewById(R.id.ibwResultTextView);
-		abwResultTextView = (TextView) findViewById(R.id.abwResultTextView);
-		messageTextView = (TextView) findViewById(R.id.messageTextView);
+		sexRadioGroup = findViewById(R.id.sexRadioGroup);
+		weightEditText = findViewById(R.id.weightEditText);
+		heightEditText = findViewById(R.id.heightEditText);
+		weightSpinner = findViewById(R.id.weight_spinner);
+		heightSpinner = findViewById(R.id.height_spinner);
+		ibwTextView = findViewById(R.id.ibwTextView);
+		abwTextView = findViewById(R.id.abwTextView);
+		ibwResultTextView = findViewById(R.id.ibwResultTextView);
+		abwResultTextView = findViewById(R.id.abwResultTextView);
+		messageTextView = findViewById(R.id.messageTextView);
 
 		getPrefs();
 		setAdapters();

@@ -16,7 +16,7 @@ public class BrugadaEcg extends EpActivity implements OnClickListener {
         super.onCreate(savedInstanceState);
 		setContentView(R.layout.brugadaecg);
 		initToolbar();
-		Button textButton = (Button) findViewById(R.id.text_button);
+		Button textButton = findViewById(R.id.text_button);
 		textButton.setOnClickListener(this);
 	}
 

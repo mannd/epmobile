@@ -87,13 +87,13 @@ public class Estes extends RiskScore {
 	protected void init() {
 		checkBox = new CheckBox[7];
 
-		checkBox[0] = (CheckBox) findViewById(R.id.voltage);
-		checkBox[1] = (CheckBox) findViewById(R.id.strain_without_dig);
-		checkBox[2] = (CheckBox) findViewById(R.id.strain_with_dig);
-		checkBox[3] = (CheckBox) findViewById(R.id.lae);
-		checkBox[4] = (CheckBox) findViewById(R.id.lad);
-		checkBox[5] = (CheckBox) findViewById(R.id.qrs_duration);
-		checkBox[6] = (CheckBox) findViewById(R.id.intrinsicoid);
+		checkBox[0] = findViewById(R.id.voltage);
+		checkBox[1] = findViewById(R.id.strain_without_dig);
+		checkBox[2] = findViewById(R.id.strain_with_dig);
+		checkBox[3] = findViewById(R.id.lae);
+		checkBox[4] = findViewById(R.id.lad);
+		checkBox[5] = findViewById(R.id.qrs_duration);
+		checkBox[6] = findViewById(R.id.intrinsicoid);
 
 	}
 

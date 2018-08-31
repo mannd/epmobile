@@ -17,7 +17,7 @@ public class CalculatorList extends EpActivity {
         initToolbar();
 	ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this, R.array.calculator_list, android.R.layout.simple_list_item_1);
-        ListView lv = (ListView) findViewById(R.id.list);
+        ListView lv = findViewById(R.id.list);
         lv.setAdapter(adapter);
 
         lv.setTextFilterEnabled(true);

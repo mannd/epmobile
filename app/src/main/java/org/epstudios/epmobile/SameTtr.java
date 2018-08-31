@@ -78,12 +78,12 @@ public class SameTtr  extends RiskScore {
     protected void init() {
         checkBox = new CheckBox[6];
 
-        checkBox[0] = (CheckBox) findViewById(R.id.sex);
-        checkBox[1] = (CheckBox) findViewById(R.id.age);
-        checkBox[2] = (CheckBox) findViewById(R.id.medhx);
-        checkBox[3] = (CheckBox) findViewById(R.id.treatment);
-        checkBox[4] = (CheckBox) findViewById(R.id.smoking);
-        checkBox[5] = (CheckBox) findViewById(R.id.race);
+        checkBox[0] = findViewById(R.id.sex);
+        checkBox[1] = findViewById(R.id.age);
+        checkBox[2] = findViewById(R.id.medhx);
+        checkBox[3] = findViewById(R.id.treatment);
+        checkBox[4] = findViewById(R.id.smoking);
+        checkBox[5] = findViewById(R.id.race);
 
     }
 }

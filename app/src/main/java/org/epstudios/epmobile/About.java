@@ -23,13 +23,13 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 public class About extends Activity {
-	private final static String VERSION = "2.18";
+	private final static String VERSION = "2.19";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.about);
-		TextView versionTextView = (TextView) findViewById(R.id.version);
+		TextView versionTextView = findViewById(R.id.version);
 		versionTextView.setText(String.format(getString(R.string.version_string), VERSION));
 	}
 }

@@ -1311,4 +1311,56 @@
     <string name="icd_revasc_candidate">ICD implantation not indicated in candidate for revascularization.</string>
     <string name="ok_button_label">OK</string>
     <string name="version_string">Version %s</string>
+    <string name="etiology_label">Etiology</string>
+    <string name="clinical_presentation_label">Clinical Presentation</string>
+    <string name="imaging_label">Imaging</string>
+    <string name="malignant_disease_label">Malignant disease</string>
+    <string name="dyspnea_label">Dyspnea/Tachypnea</string>
+    <string name="cardiomegaly_label">Cardiomegaly on CXR</string>
+    <string name="tamponade_key">* in the absence of medications affecting heart rate,
+        hypothyroidism and uremia.
+        IVC = inferior vena cava, PE = pericardial effusion, SBP = systolic blood pressure.
+        Contraindications to pericardiocentesis include uncorrected coagulopathy,
+	INR &gt; 1.5, thrombocytopenia &lt; 50,000/mm\u00b3, small, posterior, and loculated
+	effusions, or effusions resolving under anti-inflammatory treatment.
+    </string>
+    <string name="tamponade_reference">Risti AD, Imazio M, Adler Y, et al. Triage strategy for
+        urgent management of cardiac tamponade: a position statement of the European Society of
+        Cardiology Working Group on Myocardial and Pericardial Diseases.
+        European Heart Journal. 2014;35(34):2279-2284. https://doi.org/10.1093/eurheartj/ehu217 </string>
+    <string name="tuberculosis_label">Tuberculosis</string>
+    <string name="recent_radiotherapy_label">Recent radiotherapy</string>
+    <string name="recent_viral_infection_label">Recent viral infection</string>
+    <string name="recurrent_pe_label">Recurrent PE, previous pericardiocentesis</string>
+    <string name="chronic_renal_failure_label">Chronic terminal renal failure</string>
+    <string name="immunodeficiency_label">Immunodeficiency or immunosuppression</string>
+    <string name="hypo_hyperthyroidism_label">Hypo- or hyperthyroidism</string>
+    <string name="autoimmune_disease_label">Systemic autoimmune disease</string>
+    <string name="orthopnea_label">Orthopnea (NO rales on lung auscultation)</string>
+    <string name="hypotension_label">Hypotension (SBP &lt; 95 mmHg)</string>
+    <string name="sinus_tachycardia_label">Progressive sinus tachycardia*</string>
+    <string name="oliguria_label">Oliguria</string>
+    <string name="pulsus_paradoxus_label">Pulsus paradoxus &gt; 10 mmHg</string>
+    <string name="friction_rub_label">Pericardial friction rub</string>
+    <string name="chest_pain_label">Pericardial chest pain</string>
+    <string name="symptom_worsening_label">Rapid worsening of symptoms</string>
+    <string name="slow_evolution_label">Slow evolution of the disease</string>
+    <string name="electrical_alternans_label">Electrical alternans on ECG</string>
+    <string name="microvoltage_label">Microvoltage in ECG</string>
+    <string name="circumferential_pe_label">Circumferential PE (&gt; 2 cm in diastole)</string>
+    <string name="moderate_pe_label">Moderate PE (1&#8211;2 cm in diastole)</string>
+    <string name="small_pe_label">Small PE (&lt; 1 cm in diastole), no trauma</string>
+    <string name="ra_collapse_label">Right atrial collapse &gt; &#8531; of cardiac cycle</string>
+    <string name="large_ivc_label">IVC &gt; 2.5 cm, &lt; 50% inspiratory collapse</string>
+    <string name="rv_collapse_label">Right ventricular collapse</string>
+    <string name="la_collapse_label">Left atrial collapse</string>
+    <string name="respiratory_variations_label">Mitral/tricuspid respiratory flow variations</string>
+    <string name="swinging_heart_label">Swinging heart</string>
+    <string name="urgent_pericardiocentesis_message">Urgent pericardiocentesis immediately after contraindications are ruled-out.</string>
+    <string name="postpone_pericardiocentesis_message">Pericardiocentesis can be postponed for up to 12/48 hours.</string>
+    <string name="urgent_management_message">NOTE: Urgent surgical management is recommended
+        regardless of the score for:\n1. Type A aortic dissection\n2.
+        Ventricular free wall rupture after acute myocardial infarction\n3. Severe
+	recent chest trauma\n4. Iatrogenic hemopericardium when
+        the bleeding cannot be controlled percutaneously</string>
 </resources>

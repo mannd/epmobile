@@ -46,10 +46,10 @@ public class Warfarin extends EpActivity implements
 		View instructionsButton = findViewById(R.id.instructions_button);
 		instructionsButton.setOnClickListener(this);
 
-		tabletRadioGroup = (RadioGroup) findViewById(R.id.tabletRadioGroup);
-		inrTargetRadioGroup = (RadioGroup) findViewById(R.id.inrTargetRadioGroup);
-		inrEditText = (EditText) findViewById(R.id.inrEditText);
-		weeklyDoseEditText = (EditText) findViewById(R.id.weeklyDoseEditText);
+		tabletRadioGroup = findViewById(R.id.tabletRadioGroup);
+		inrTargetRadioGroup = findViewById(R.id.inrTargetRadioGroup);
+		inrEditText = findViewById(R.id.inrEditText);
+		weeklyDoseEditText = findViewById(R.id.weeklyDoseEditText);
 
 		doseChange = new DoseChange();
 

@@ -114,34 +114,34 @@ public class Arvc extends DiagnosticScore {
 
 	@Override
 	protected void init() {
-		regionalEchoAbnormalityCheckBox = (CheckBox) findViewById(R.id.regional_echo_abnormality);
-		echoMajorRadioGroup = (RadioGroup) findViewById(R.id.echo_major_radio_group);
-		regionalMriAbnormalityCheckBox = (CheckBox) findViewById(R.id.regional_mri_abnormality);
-		mriMajorRadioGroup = (RadioGroup) findViewById(R.id.mri_major_radio_group);
-		regionalRvAngioAbnormalityCheckBox = (CheckBox) findViewById(R.id.regional_rv_angio_abnormality);
-		regionalEchoMinorAbnormalityCheckBox = (CheckBox) findViewById(R.id.regional_echo_minor_abnormality);
-		echoMinorRadioGroup = (RadioGroup) findViewById(R.id.echo_minor_radio_group);
-		minorRegionalMriAbnormalityCheckBox = (CheckBox) findViewById(R.id.minor_regional_mri_abnormality);
-		mriMinorRadioGroup = (RadioGroup) findViewById(R.id.mri_minor_radio_group);
-		majorResidualMyocytesCheckBox = (CheckBox) findViewById(R.id.major_residual_myocytes);
-		minorResidualMyocytesCheckBox = (CheckBox) findViewById(R.id.minor_residual_myocytes);
-		majorRepolarizationCheckBox = (CheckBox) findViewById(R.id.major_repolarization);
-		minorRepolarizationNoRbbbCheckBox = (CheckBox) findViewById(R.id.minor_repolarization_no_rbbb);
-		minorRepolarizationRbbbCheckBox = (CheckBox) findViewById(R.id.minor_repolarization_rbbb);
-		majorDepolarizationCheckBox = (CheckBox) findViewById(R.id.major_depolarization);
-		filteredQrsCheckBox = (CheckBox) findViewById(R.id.filtered_qrs);
-		durationTerminalQrsCheckBox = (CheckBox) findViewById(R.id.duration_terminal_qrs);
-		rootMeanSquareCheckBox = (CheckBox) findViewById(R.id.root_mean_square);
-		terminalActivationDurationCheckBox = (CheckBox) findViewById(R.id.terminal_activation_duration);
-		majorArrhythmiasCheckBox = (CheckBox) findViewById(R.id.major_arrhythmias);
-		rvotVtCheckBox = (CheckBox) findViewById(R.id.rvot_vt);
-		pvcsCheckBox = (CheckBox) findViewById(R.id.pvcs);
-		firstDegreeRelativeCheckBox = (CheckBox) findViewById(R.id.first_degree_relative);
-		pathologyCheckBox = (CheckBox) findViewById(R.id.pathology);
-		geneticCheckBox = (CheckBox) findViewById(R.id.genetic);
-		possibleFamilyHistoryCheckBox = (CheckBox) findViewById(R.id.possible_family_history);
-		familyHistorySuddenDeathCheckBox = (CheckBox) findViewById(R.id.family_history_sudden_death);
-		secondDegreeRelativeCheckBox = (CheckBox) findViewById(R.id.second_degree_relative);
+		regionalEchoAbnormalityCheckBox = findViewById(R.id.regional_echo_abnormality);
+		echoMajorRadioGroup = findViewById(R.id.echo_major_radio_group);
+		regionalMriAbnormalityCheckBox = findViewById(R.id.regional_mri_abnormality);
+		mriMajorRadioGroup = findViewById(R.id.mri_major_radio_group);
+		regionalRvAngioAbnormalityCheckBox = findViewById(R.id.regional_rv_angio_abnormality);
+		regionalEchoMinorAbnormalityCheckBox = findViewById(R.id.regional_echo_minor_abnormality);
+		echoMinorRadioGroup = findViewById(R.id.echo_minor_radio_group);
+		minorRegionalMriAbnormalityCheckBox = findViewById(R.id.minor_regional_mri_abnormality);
+		mriMinorRadioGroup = findViewById(R.id.mri_minor_radio_group);
+		majorResidualMyocytesCheckBox = findViewById(R.id.major_residual_myocytes);
+		minorResidualMyocytesCheckBox = findViewById(R.id.minor_residual_myocytes);
+		majorRepolarizationCheckBox = findViewById(R.id.major_repolarization);
+		minorRepolarizationNoRbbbCheckBox = findViewById(R.id.minor_repolarization_no_rbbb);
+		minorRepolarizationRbbbCheckBox = findViewById(R.id.minor_repolarization_rbbb);
+		majorDepolarizationCheckBox = findViewById(R.id.major_depolarization);
+		filteredQrsCheckBox = findViewById(R.id.filtered_qrs);
+		durationTerminalQrsCheckBox = findViewById(R.id.duration_terminal_qrs);
+		rootMeanSquareCheckBox = findViewById(R.id.root_mean_square);
+		terminalActivationDurationCheckBox = findViewById(R.id.terminal_activation_duration);
+		majorArrhythmiasCheckBox = findViewById(R.id.major_arrhythmias);
+		rvotVtCheckBox = findViewById(R.id.rvot_vt);
+		pvcsCheckBox = findViewById(R.id.pvcs);
+		firstDegreeRelativeCheckBox = findViewById(R.id.first_degree_relative);
+		pathologyCheckBox = findViewById(R.id.pathology);
+		geneticCheckBox = findViewById(R.id.genetic);
+		possibleFamilyHistoryCheckBox = findViewById(R.id.possible_family_history);
+		familyHistorySuddenDeathCheckBox = findViewById(R.id.family_history_sudden_death);
+		secondDegreeRelativeCheckBox = findViewById(R.id.second_degree_relative);
 	}
 
 	protected void calculateResult() {

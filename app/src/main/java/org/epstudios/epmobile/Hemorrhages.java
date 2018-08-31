@@ -33,17 +33,17 @@ public class Hemorrhages extends RiskScore {
 	protected void init() {
 		checkBox = new CheckBox[11];
 
-		checkBox[0] = (CheckBox) findViewById(R.id.hepatic_or_renal_disease);
-		checkBox[1] = (CheckBox) findViewById(R.id.etoh);
-		checkBox[2] = (CheckBox) findViewById(R.id.malignancy);
-		checkBox[3] = (CheckBox) findViewById(R.id.older);
-		checkBox[4] = (CheckBox) findViewById(R.id.platelet);
-		checkBox[REBLEED] = (CheckBox) findViewById(R.id.rebleeding);
-		checkBox[6] = (CheckBox) findViewById(R.id.htn_uncontrolled);
-		checkBox[7] = (CheckBox) findViewById(R.id.anemia);
-		checkBox[8] = (CheckBox) findViewById(R.id.genetic_factors);
-		checkBox[9] = (CheckBox) findViewById(R.id.fall_risk);
-		checkBox[10] = (CheckBox) findViewById(R.id.stroke);
+		checkBox[0] = findViewById(R.id.hepatic_or_renal_disease);
+		checkBox[1] = findViewById(R.id.etoh);
+		checkBox[2] = findViewById(R.id.malignancy);
+		checkBox[3] = findViewById(R.id.older);
+		checkBox[4] = findViewById(R.id.platelet);
+		checkBox[REBLEED] = findViewById(R.id.rebleeding);
+		checkBox[6] = findViewById(R.id.htn_uncontrolled);
+		checkBox[7] = findViewById(R.id.anemia);
+		checkBox[8] = findViewById(R.id.genetic_factors);
+		checkBox[9] = findViewById(R.id.fall_risk);
+		checkBox[10] = findViewById(R.id.stroke);
 	}
 
 	@Override

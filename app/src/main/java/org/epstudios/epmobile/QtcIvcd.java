@@ -66,12 +66,12 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
         View clearButton = findViewById(R.id.clear_button);
         clearButton.setOnClickListener(this);
 
-        intervalRateSpinner = (Spinner) findViewById(R.id.interval_rate_spinner);
-        rrEditText = (EditText) findViewById(R.id.rrEditText);
-        qtEditText = (EditText) findViewById(R.id.qtEditText);
-        qrsEditText = (EditText) findViewById(R.id.qrsEditText);
-        sexRadioGroup = (RadioGroup) findViewById(R.id.sexRadioGroup);
-        lbbbCheckBox = (CheckBox) findViewById(R.id.lbbbCheckBox);
+        intervalRateSpinner = findViewById(R.id.interval_rate_spinner);
+        rrEditText = findViewById(R.id.rrEditText);
+        qtEditText = findViewById(R.id.qtEditText);
+        qrsEditText = findViewById(R.id.qrsEditText);
+        sexRadioGroup = findViewById(R.id.sexRadioGroup);
+        lbbbCheckBox = findViewById(R.id.lbbbCheckBox);
 
 
         getPrefs();

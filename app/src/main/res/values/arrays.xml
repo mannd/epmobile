@@ -58,6 +58,7 @@
         <item>@string/arvc_2010_criteria_title</item>
         <item>@string/atrial_tachycardia_localization_title</item>
         <item>@string/brugada_syndrome_title</item>
+        <item>@string/tamponade_title</item>
         <item>@string/ers_title</item>
         <item>@string/lbbb_title</item>
         <item>@string/lvh_list_title</item>
@@ -220,4 +221,5 @@
     <string name="brugada_score_title">Brugada Shanghai Score</string>
     <string name="brugada_diagnosis_title">Brugada Diagnosis</string>
     <string name="lbbb_title">Left Bundle Branch Block</string>
+    <string name="tamponade_title">Cardiac Tamponade</string>
 </resources>

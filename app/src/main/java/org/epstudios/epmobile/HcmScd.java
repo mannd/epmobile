@@ -117,14 +117,14 @@ public class HcmScd extends RiskScore
     protected void init() {
         checkBox = new CheckBox[3];
 
-        checkBox[0] = (CheckBox) findViewById(R.id.family_hx_scd);
-        checkBox[1] = (CheckBox) findViewById(R.id.nsvt);
-        checkBox[2] = (CheckBox) findViewById(R.id.unexplained_syncope);
+        checkBox[0] = findViewById(R.id.family_hx_scd);
+        checkBox[1] = findViewById(R.id.nsvt);
+        checkBox[2] = findViewById(R.id.unexplained_syncope);
 
-        ageEditText = (EditText) findViewById(R.id.age);
-        maxLvWallThicknessEditText = (EditText) findViewById(R.id.max_lv_wall_thickness);
-        maxLvotGradientEditText = (EditText) findViewById(R.id.max_lvot_gradient);
-        laSizeEditText = (EditText) findViewById(R.id.la_size);
+        ageEditText = findViewById(R.id.age);
+        maxLvWallThicknessEditText = findViewById(R.id.max_lv_wall_thickness);
+        maxLvotGradientEditText = findViewById(R.id.max_lvot_gradient);
+        laSizeEditText = findViewById(R.id.la_size);
     }
 
     @Override

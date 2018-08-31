@@ -55,11 +55,11 @@ public class LinkView extends EpActivity implements View.OnClickListener {
             setContentView(R.layout.weblayout);
         else
             setContentView(R.layout.weblayout_no_button);
-        webView = (WebView) findViewById(R.id.web_view);
+        webView = findViewById(R.id.web_view);
         webView.loadUrl(url);
         setTitle(linkTitle);
         if (showButton) {
-            calcCrClButton = (Button) findViewById(R.id.text_button);
+            calcCrClButton = findViewById(R.id.text_button);
             calcCrClButton.setOnClickListener(this);
             calcCrClButton.setText(BUTTON_TITLE);
         }

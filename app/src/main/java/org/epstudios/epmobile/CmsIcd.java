@@ -62,28 +62,28 @@ public class CmsIcd extends DiagnosticScore {
 	protected void init() {
 		checkBox = new CheckBox[15];
 		// secondary prevention
-		checkBox[CARDIAC_ARREST] = (CheckBox) findViewById(R.id.icd_cardiac_arrest);
-		checkBox[SUS_VT] = (CheckBox) findViewById(R.id.icd_sus_vt);
+		checkBox[CARDIAC_ARREST] = findViewById(R.id.icd_cardiac_arrest);
+		checkBox[SUS_VT] = findViewById(R.id.icd_sus_vt);
 		// primary prevention
-		checkBox[PRIOR_MI] = (CheckBox) findViewById(R.id.icd_mi);
-		checkBox[ICM] = (CheckBox) findViewById(R.id.icd_ischemic_cm);
-		checkBox[NICM] = (CheckBox) findViewById(R.id.icd_nonischemic_cm);
-		checkBox[HIGH_RISK_CONDITION] = (CheckBox) findViewById(R.id.icd_familial_conditions);
+		checkBox[PRIOR_MI] = findViewById(R.id.icd_mi);
+		checkBox[ICM] = findViewById(R.id.icd_ischemic_cm);
+		checkBox[NICM] = findViewById(R.id.icd_nonischemic_cm);
+		checkBox[HIGH_RISK_CONDITION] = findViewById(R.id.icd_familial_conditions);
 		// other indications
-		checkBox[ICD_AT_ERI] = (CheckBox) findViewById(R.id.icd_replacement);
-		checkBox[TRANSPLANT_LIST] = (CheckBox) findViewById(R.id.icd_transplant_bridge);
+		checkBox[ICD_AT_ERI] = findViewById(R.id.icd_replacement);
+		checkBox[TRANSPLANT_LIST] = findViewById(R.id.icd_transplant_bridge);
 		// relative exclusions
-		checkBox[RECENT_CABG] = (CheckBox) findViewById(R.id.icd_recent_cabg);
-		checkBox[RECENT_MI] = (CheckBox) findViewById(R.id.icd_recent_mi);
-		checkBox[REVASCULARIZATION_CANDIDATE] = (CheckBox) findViewById(R.id.icd_revascularization_candidate);
+		checkBox[RECENT_CABG] = findViewById(R.id.icd_recent_cabg);
+		checkBox[RECENT_MI] = findViewById(R.id.icd_recent_mi);
+		checkBox[REVASCULARIZATION_CANDIDATE] = findViewById(R.id.icd_revascularization_candidate);
 		// absolute exclusions
-		checkBox[CARDIOGENIC_SHOCK] = (CheckBox) findViewById(R.id.icd_cardiogenic_shock);
-		checkBox[NONCARDIAC_DISEASE] = (CheckBox) findViewById(R.id.icd_bad_prognosis);
-		checkBox[BRAIN_DAMAGE] = (CheckBox) findViewById(R.id.icd_brain_damage);
-		checkBox[UNCONTROLLED_SVT] = (CheckBox) findViewById(R.id.icd_svt_uncontrolled_rate);
+		checkBox[CARDIOGENIC_SHOCK] = findViewById(R.id.icd_cardiogenic_shock);
+		checkBox[NONCARDIAC_DISEASE] = findViewById(R.id.icd_bad_prognosis);
+		checkBox[BRAIN_DAMAGE] = findViewById(R.id.icd_brain_damage);
+		checkBox[UNCONTROLLED_SVT] = findViewById(R.id.icd_svt_uncontrolled_rate);
 		// EF and NYHA radiogroups
-		efRadioGroup = (RadioGroup) findViewById(R.id.icd_ef_radio_group);
-		nyhaRadioGroup = (RadioGroup) findViewById(R.id.icd_nyha_radio_group);
+		efRadioGroup = findViewById(R.id.icd_ef_radio_group);
+		nyhaRadioGroup = findViewById(R.id.icd_nyha_radio_group);
 	}
 
 	@Override

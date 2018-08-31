@@ -117,11 +117,11 @@ public class IcdMortalityRisk extends RiskScore {
     protected void init() {
         checkBox = new CheckBox[6];
 
-        checkBox[0] = (CheckBox) findViewById(R.id.very_high_risk);
-        checkBox[1] = (CheckBox) findViewById(R.id.nyha_greater_than_2);
-        checkBox[2] = (CheckBox) findViewById(R.id.age70);
-        checkBox[3] = (CheckBox) findViewById(R.id.bun_greater_than_26);
-        checkBox[4] = (CheckBox) findViewById(R.id.qrs_greater_than_12);
-        checkBox[5] = (CheckBox) findViewById(R.id.afb_baseline);
+        checkBox[0] = findViewById(R.id.very_high_risk);
+        checkBox[1] = findViewById(R.id.nyha_greater_than_2);
+        checkBox[2] = findViewById(R.id.age70);
+        checkBox[3] = findViewById(R.id.bun_greater_than_26);
+        checkBox[4] = findViewById(R.id.qrs_greater_than_12);
+        checkBox[5] = findViewById(R.id.afb_baseline);
     }
 }

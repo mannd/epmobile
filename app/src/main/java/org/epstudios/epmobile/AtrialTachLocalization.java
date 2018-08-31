@@ -40,22 +40,22 @@ public class AtrialTachLocalization extends LocationAlgorithm implements
         setContentView(R.layout.complexalgorithm);
 	initToolbar();
 	
-		yesButton = (Button) findViewById(R.id.yes_button);
+		yesButton = findViewById(R.id.yes_button);
 		yesButton.setOnClickListener(this);
-		noButton = (Button) findViewById(R.id.no_button);
+		noButton = findViewById(R.id.no_button);
 		noButton.setOnClickListener(this);
-		backButton = (Button) findViewById(R.id.back_button);
+		backButton = findViewById(R.id.back_button);
 		backButton.setOnClickListener(this);
-		row21Button = (Button) findViewById(R.id.row_2_1_button);
+		row21Button = findViewById(R.id.row_2_1_button);
 		row21Button.setOnClickListener(this);
-		row22Button = (Button) findViewById(R.id.row_2_2_button);
+		row22Button = findViewById(R.id.row_2_2_button);
 		row22Button.setOnClickListener(this);
-		row23Button = (Button) findViewById(R.id.row_2_3_button);
+		row23Button = findViewById(R.id.row_2_3_button);
 		row23Button.setOnClickListener(this);
-		instructionsButton = (Button) findViewById(R.id.instructions_button);
+		instructionsButton = findViewById(R.id.instructions_button);
 		instructionsButton.setOnClickListener(this);
 		instructionsButton.setText(getString(R.string.instructions_label));
-		stepTextView = (TextView) findViewById(R.id.stepTextView);
+		stepTextView = findViewById(R.id.stepTextView);
 		step1();
 	}
 
