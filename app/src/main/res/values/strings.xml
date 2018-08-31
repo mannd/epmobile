@@ -919,7 +919,8 @@
     <string name="low_bun_label">&lt; 20</string>
     <string name="normal_bun_label">20 &#8211;40</string>
     <string name="high_bun_label">&gt; 40</string>
-    <string name="incomplete_radio_groups_error">Selection incomplete</string>
+    <string name="incomplete_radio_groups_error">Selection incomplete.  You
+        must make a selection from each group.</string>
     <string name="icd_result_title">Risk of In-Hospital Complications</string>
     <string name="reference_label">Reference</string>
     <string name="chads_short_reference">Gage BF et al. JAMA 2001 285:2864</string>

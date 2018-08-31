@@ -148,15 +148,15 @@ public class Arvc extends DiagnosticScore {
 		int majorCount = 0;
 		int minorCount = 0;
 		if (regionalEchoAbnormalityCheckBox.isChecked()
-				&& echoMajorRadioGroup.getCheckedRadioButtonId() > -1
+				&& echoMajorRadioGroup.getCheckedRadioButtonId() != -1
 				|| regionalMriAbnormalityCheckBox.isChecked()
-				&& mriMajorRadioGroup.getCheckedRadioButtonId() > -1
+				&& mriMajorRadioGroup.getCheckedRadioButtonId() != -1
 				|| regionalRvAngioAbnormalityCheckBox.isChecked())
 			majorCount++;
 		if (regionalEchoMinorAbnormalityCheckBox.isChecked()
-				&& echoMinorRadioGroup.getCheckedRadioButtonId() > -1
+				&& echoMinorRadioGroup.getCheckedRadioButtonId() != -1
 				|| minorRegionalMriAbnormalityCheckBox.isChecked()
-				&& mriMinorRadioGroup.getCheckedRadioButtonId() > -1)
+				&& mriMinorRadioGroup.getCheckedRadioButtonId() != -1)
 			minorCount++;
 		if (majorResidualMyocytesCheckBox.isChecked())
 			majorCount++;
