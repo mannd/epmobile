@@ -183,6 +183,7 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
             int qtm = isLBBB ? (int) QtcCalculator.qtCorrectedForLBBB(qt, qrs) : 0;
             int qtmc = isLBBB ? QtcCalculator.calculate(interval, qtm, formula) : 0;
             int qtrrqrs = (int) QtcCalculator.qtRrIvcd(qt, rate, qrs, isMale);
+            int preLbbbQtc = (int) QtcCalculator.preLbbbQtc(qt, interval, qrs, isMale);
 
             Intent intent = new Intent(this, QtcIvcdResults.class);
             intent.putExtra("isLBBB", isLBBB);
@@ -194,6 +195,7 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
             intent.putExtra("QTm", qtm);
             intent.putExtra("QTmc", qtmc);
             intent.putExtra("QTrrqrs", qtrrqrs);
+            intent.putExtra("preLbbbQtc", preLbbbQtc);
             startActivity(intent);
         } catch (NumberFormatException e) {
             AlertDialog alert = new AlertDialog.Builder(this).create();

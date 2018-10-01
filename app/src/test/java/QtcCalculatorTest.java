@@ -92,7 +92,13 @@ public class QtcCalculatorTest extends TestCase {
 	public void testTruncation() {
 		long result = QtcCalculator.calculate(888, 400, QtcFormula.BAZETT);
 		assertTrue(result == 424);
+	}
 
+	public void testPreQtcLbbb() {
+		long result = QtcCalculator.preLbbbQtc(	333, 789, 166, true);
+		assertEquals(304, result);
+		result = QtcCalculator.preLbbbQtc(	333, 789, 166, false);
+		assertEquals(297, result);
 	}
 
 
