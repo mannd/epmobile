@@ -1372,5 +1372,6 @@
         Presumably same as QTc.\n\nReference: %2$s</string>
     <string name="prelbbbqtc_reference">Yankelson L, Hochstadt A, Sadeh B, et al. New formula for defining “normal” and “prolonged” QT in patients with bundle branch block. Journal of Electrocardiology. 2018;51(3):481-486. doi:10.1016/j.jelectrocard.2017.12.039
 </string>
+    <string name="short_qrs_error">QRS duration must be at least 120 msec.</string>
 
 </resources>

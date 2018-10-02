@@ -151,6 +151,8 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
 
     }
 
+    private class ShortQrsException extends Exception {}
+
     private void calculateQtc() {
         CharSequence rateIntervalText = rrEditText.getText();
         CharSequence qtText = qtEditText.getText();
@@ -176,6 +178,9 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
             if (rateInterval <= 0 || qt <= 0 || qrs <= 0 || qrs >= qt) {
                 throw new NumberFormatException();
             }
+            else if (qrs < 120) {
+                throw new ShortQrsException();
+            }
             QtcCalculator.QtcFormula formula = QtcCalculator.QtcFormula.BAZETT;
             int qtc = QtcCalculator.calculate(interval, qt, formula);
             int jt = (int) QtcCalculator.jtInterval(qt, qrs);
@@ -198,11 +203,18 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
             intent.putExtra("preLbbbQtc", preLbbbQtc);
             startActivity(intent);
         } catch (NumberFormatException e) {
-            AlertDialog alert = new AlertDialog.Builder(this).create();
-            alert.setTitle(getString(R.string.error_dialog_title));
-            alert.setMessage(getString(R.string.qt_calculator_error));
-            alert.show();
+            showError(getString(R.string.qt_calculator_error));
+        } catch (ShortQrsException e) {
+            showError(getString(R.string.short_qrs_error));
         }
+
+    }
+
+    private void showError(String message) {
+        AlertDialog alert = new AlertDialog.Builder(this).create();
+        alert.setTitle(getString(R.string.error_dialog_title));
+        alert.setMessage(message);
+        alert.show();
     }
 
     private void clearEntries() {
