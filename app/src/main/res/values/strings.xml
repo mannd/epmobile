@@ -1365,10 +1365,10 @@
         Ventricular free wall rupture after acute myocardial infarction\n3. Severe
         recent chest trauma\n4. Iatrogenic hemopericardium when
         the bleeding cannot be controlled percutaneously</string>
-	<string name="prelbbbqtc_details_title">PreLBBB QTc</string>
-	<string name="prelbbbqtc_details">preLBBB QTc = %1$d msec.\n\nUse: Attempts to correct for the
+	<string name="prelbbbqtc_details_title">preLBBBQTc</string>
+	<string name="prelbbbqtc_details">preLBBBQTc = %1$d msec.\n\nUse: Attempts to correct for the
         prolongation of the QT interval attributable to QRS prolongation in LBBB.
-        \n\nFormula: preLBBBQTc = postLBBBQTc - postLBBBQRS + c, where c = 95 msec in males, 88 msec in females\n\nNormal values:
+        \n\nFormula: preLBBBQTc = postLBBBQTc(Bazett) - postLBBBQRS + c, where c = 95 msec in males, 88 msec in females\n\nNormal values:
         Presumably same as QTc.\n\nReference: %2$s</string>
     <string name="prelbbbqtc_reference">Yankelson L, Hochstadt A, Sadeh B, et al. New formula for defining “normal” and “prolonged” QT in patients with bundle branch block. Journal of Electrocardiology. 2018;51(3):481-486. doi:10.1016/j.jelectrocard.2017.12.039
 </string>
