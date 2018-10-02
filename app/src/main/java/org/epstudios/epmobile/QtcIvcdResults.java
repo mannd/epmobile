@@ -36,6 +36,7 @@ public class QtcIvcdResults extends EpActivity {
     static final int QTM = 4;
     static final int QTMC = 5;
     static final int QTRRQRS = 6;
+    static final int PRELBBBQTC = 7;
 
     private int qt;
     private int qtc;
@@ -44,6 +45,7 @@ public class QtcIvcdResults extends EpActivity {
     private int qtm;
     private int qtmc;
     private int qtrrqrs;
+    private int prelbbbqtc;
     private boolean isLBBB;
 
     static final String EPS = "EPS";
@@ -62,6 +64,7 @@ public class QtcIvcdResults extends EpActivity {
         qtm = getIntent().getIntExtra("QTm", 0);
         qtmc = getIntent().getIntExtra("QTmc", 0);
         qtrrqrs = getIntent().getIntExtra("QTrrqrs", 0);
+        prelbbbqtc = getIntent().getIntExtra("preLbbbQtc", 0);
         isLBBB = getIntent().getBooleanExtra("isLBBB", false);
 
         String qtMessage = makeResult(qt, "QT");
@@ -71,11 +74,12 @@ public class QtcIvcdResults extends EpActivity {
         String qtmMessage = isLBBB ? makeResult(qtm, "QTm") : getString(R.string.qtm_lbbb_error_message);
         String qtmcMessage = isLBBB ? makeResult(qtmc, "QTmc") : getString(R.string.qtmc_lbbb_error_message);
         String qtrrqrsMessage = makeResult(qtrrqrs, "QTrr,qrs");
+        String prelbbbqtcMessage = isLBBB ? makeResult(prelbbbqtc, "preLBBBQTc") : getString(R.string.prelbbbqtc_lbbb_error_message);
         String infoMessage = getString(R.string.qt_ivcd_info_message);
 
 
         String[] items = new String[] {qtMessage, qtcMessage, jtMessage, jtcMessage,
-            qtmMessage, qtmcMessage, qtrrqrsMessage, infoMessage};
+            qtmMessage, qtmcMessage, qtrrqrsMessage, prelbbbqtcMessage, infoMessage};
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items);
 
@@ -108,16 +112,15 @@ public class QtcIvcdResults extends EpActivity {
                     case QTRRQRS:
                         showQTrrqrs();
                         break;
+                    case PRELBBBQTC:
+                        showPreLBBBQTc();
+                        break;
                     default:
                         showInstructions();
                         break;
                 }
             }
         });
-
-
-
-
     }
 
     private String makeResult(int value, String label) {
@@ -164,6 +167,11 @@ public class QtcIvcdResults extends EpActivity {
         showDetails(getString(R.string.qtrrqrs_details_title), message);
     }
 
+    private void showPreLBBBQTc() {
+        String message = isLBBB? getString(R.string.prelbbbqtc_details, prelbbbqtc,
+                getString(R.string.prelbbbqtc_reference)) : getString(R.string.prelbbbqtc_lbbb_error_message);
+        showDetails(getString(R.string.prelbbbqtc_details_title), message);
+    }
     private void showInstructions() {
         showDetails(getString(R.string.qt_intructions_title),
                 getString(R.string.qt_ivcd_instructions));

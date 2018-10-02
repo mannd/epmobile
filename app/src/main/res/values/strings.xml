@@ -919,7 +919,8 @@
     <string name="low_bun_label">&lt; 20</string>
     <string name="normal_bun_label">20 &#8211;40</string>
     <string name="high_bun_label">&gt; 40</string>
-    <string name="incomplete_radio_groups_error">Selection incomplete</string>
+    <string name="incomplete_radio_groups_error">Selection incomplete.  You
+        must make a selection from each group.</string>
     <string name="icd_result_title">Risk of In-Hospital Complications</string>
     <string name="reference_label">Reference</string>
     <string name="chads_short_reference">Gage BF et al. JAMA 2001 285:2864</string>
@@ -1187,6 +1188,7 @@
     <string name="qt_ivcd_info_message">Select any result for more details</string>
     <string name="qtm_lbbb_error_message">QTm only defined for LBBB</string>
     <string name="qtmc_lbbb_error_message">QTmc only defined for LBBB</string>
+    <string name="prelbbbqtc_lbbb_error_message">preLBBB QTc only defined for LBBB</string>
     <string name="qt_details">QT = %d msec.\n\nUse: The QT varies with heart rate,
         QRS and sex, and so is usually not a good measure of repolarization independent
         of these other factors.\n\nFormula:
@@ -1198,7 +1200,7 @@
         (%2$s): Male &lt; 450 msec, Female &lt; 460 msec and &gt; 390 msec (both sexes)</string>
     <string name="qtc_reference">"Rautaharju P et al. Circulation. 2009;119:e241-e250.</string>
     <string name="qt_ivcd_instructions">Select any of the results in the list to see a dialog with detailed results</string>
-    <string name="qt_intructions_title">Details</string>
+    <string name="qt_intructions_title">Instructions</string>
     <string name="qt_details_title">Uncorrected QT</string>
     <string name="qtc_details_title">Corrected QT</string>
     <string name="qtm_reference">Bogossian H et al. New formula for evaluation of
@@ -1361,6 +1363,15 @@
     <string name="urgent_management_message">NOTE: Urgent surgical management is recommended
         regardless of the score for:\n1. Type A aortic dissection\n2.
         Ventricular free wall rupture after acute myocardial infarction\n3. Severe
-	recent chest trauma\n4. Iatrogenic hemopericardium when
+        recent chest trauma\n4. Iatrogenic hemopericardium when
         the bleeding cannot be controlled percutaneously</string>
+	<string name="prelbbbqtc_details_title">preLBBBQTc</string>
+	<string name="prelbbbqtc_details">preLBBBQTc = %1$d msec.\n\nUse: Attempts to correct for the
+        prolongation of the QT interval attributable to QRS prolongation in LBBB.
+        \n\nFormula: preLBBBQTc = postLBBBQTc(Bazett) - postLBBBQRS + c, where c = 95 msec in males, 88 msec in females\n\nNormal values:
+        Presumably same as QTc.\n\nReference: %2$s</string>
+    <string name="prelbbbqtc_reference">Yankelson L, Hochstadt A, Sadeh B, et al. New formula for defining “normal” and “prolonged” QT in patients with bundle branch block. Journal of Electrocardiology. 2018;51(3):481-486. doi:10.1016/j.jelectrocard.2017.12.039
+</string>
+    <string name="short_qrs_error">QRS duration must be at least 120 msec.</string>
+
 </resources>

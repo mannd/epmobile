@@ -73,13 +73,12 @@ public class QtcCalculator {
 		return qtSec + ((1.75 * (hr - 60) / 1000));
 	}
 
-	// TODO add QTc with IVCD methods
 	public static long qtCorrectedForLBBB(int qt, int qrs) {
         return Math.round(qt - (qrs * 0.485));
     }
 
     public static long jtInterval(int qt, int qrs) {
-        return Math.round(qt -qrs);
+        return Math.round(qt - qrs);
     }
 
     public static int jtCorrected(int qt, int rr, int qrs) {
@@ -92,5 +91,13 @@ public class QtcCalculator {
         double k = isMale ? -22 : -34;
         return Math.round(qt - 155 * (60/hr - 1) - 0.93 * (qrs - 139) + k);
     }
+
+    // From https://www.jecgonline.com/article/S0022-0736(17)30455-7/fulltext?platform=hootsuite#s0050
+    // note: assumes LBBB, values in msec
+    public static long preLbbbQtc(int qt, int rr, int qrs, boolean isMale) {
+		int k = isMale ? 95 : 88;
+		int qtc = calculate(rr, qt, QtcFormula.BAZETT);
+		return qtc - qrs + k;
+	}
 
 }

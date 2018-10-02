@@ -179,14 +179,14 @@ public class IcdRisk extends DiagnosticScore {
 	}
 
 	private boolean radioGroupsIncomplete() {
-		return admittedRadioGroup.getCheckedRadioButtonId() < 0
-				|| nyhaClassRadioGroup.getCheckedRadioButtonId() < 0
-				|| abnormalConductionRadioGroup.getCheckedRadioButtonId() < 0
-				|| procedureTypeRadioGroup.getCheckedRadioButtonId() < 0
-				|| icdTypeRadioGroup.getCheckedRadioButtonId() < 0
-				|| sodiumRadioGroup.getCheckedRadioButtonId() < 0
-				|| hgbRadioGroup.getCheckedRadioButtonId() < 0
-				|| bunRadioGroup.getCheckedRadioButtonId() < 0;
+		return admittedRadioGroup.getCheckedRadioButtonId() == -1
+				|| nyhaClassRadioGroup.getCheckedRadioButtonId() == -1
+				|| abnormalConductionRadioGroup.getCheckedRadioButtonId() == -1
+				|| procedureTypeRadioGroup.getCheckedRadioButtonId() == -1
+				|| icdTypeRadioGroup.getCheckedRadioButtonId() == -1
+				|| sodiumRadioGroup.getCheckedRadioButtonId() == -1
+				|| hgbRadioGroup.getCheckedRadioButtonId() == -1
+				|| bunRadioGroup.getCheckedRadioButtonId() == -1;
 	}
 
 }
