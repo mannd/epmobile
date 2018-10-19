@@ -1,8 +1,0 @@
-EP Mobile v2.3.1 Release Notes
-
-Changes since v2.2.2
-
-* Added Vereckei wide complex tachycardia algorithm
-
-* Added ICD in-hospital complication risk score (Dodson JA et al, JACC
-  2014 63:788).

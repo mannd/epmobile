@@ -1,5 +1,0 @@
-EP Mobile v2.3.3 Release Notes
-
-Changes since v2.3.2
-
-* Bug fixes

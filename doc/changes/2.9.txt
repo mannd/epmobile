@@ -1,4 +1,0 @@
-EP Mobile v2.9 Release Notes
-Changes since v2.8
-* Added D'Avila WPW algorithm
-* Clarified text of Arruda algorithms

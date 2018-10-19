@@ -1,8 +1,0 @@
-EP Mobile v2.11.1 Release Notes
-Changes since v2.11
-* Fixed misspelling
-
-Changes since v2.10
-* Added HCM-SCD risk calculator (ESC 2014 guidelines)
-* Modified icons
-* Minor menu restructuring and code refactoring

@@ -1,7 +1,0 @@
-v.0.2
-Changed user interface, to allow more modules.
-Added CHADS, CHADS-VASc, HAS-BLED modules.
-Added maximum QTc to settings.
-
-v0.2.1
-fixed spelling errors.

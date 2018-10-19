@@ -1,5 +1,0 @@
-EP Mobile v2.12 Release Notes
-Changes since v2.11.1
-* Updated CHA2DS2-VASc messages to reflect latest guidelines
-* Added message deprecating use of CHADS2 score
-* Edoxaban added to list of recommended anticoagulants

@@ -1,6 +1,0 @@
-EP Mobile v2.4 Release Notes
-
-Changes since v2.3.3
-
-* Copy risk score results to the clipboard with the "Copy Result"
-  button for pasting into reports.

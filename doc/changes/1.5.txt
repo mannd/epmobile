@@ -1,7 +1,0 @@
-EP Mobile v1.5 Release Notes
-
-Changes since v1.4
-
-* Can now change QTc formula within QTc calculator
-
-* Long QT Diagnosis now uses updated 2011 Schwartz score

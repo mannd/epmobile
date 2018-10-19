@@ -1,7 +1,0 @@
-EP Mobile v2.5 Release Notes
-
-Changes since v2.4
-
-* Changed to holo-light theme for Android v 4.0 and higher
-
-* Other UI tweaks

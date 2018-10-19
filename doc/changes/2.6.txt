@@ -1,5 +1,0 @@
-EP Mobile v2.6 Release Notes
-
-Changes since v2.5.1
-
-* Added para-Hisian pacing and RV apex vs base pacing to References and Tools.
