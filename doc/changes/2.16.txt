@@ -1,0 +1,7 @@
+EP Mobile 2.16 Release Notes
+Changes since 2.15
+* Added ERS score.
+* Added Brugada Shanghai score.
+* Added Brugada diagnosis.
+* Fixed toolbar colors.
+* Other bug fixes.

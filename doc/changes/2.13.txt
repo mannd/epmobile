@@ -1,0 +1,5 @@
+EP Mobile v2.13 Release Notes
+Changes since v2.12
+* Added ATRIA bleeding score
+* Added ATRIA stroke score
+* Added SAMe-TT2R2 score

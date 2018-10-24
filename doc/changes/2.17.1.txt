@@ -1,0 +1,3 @@
+EP Mobile 2.17.1 Release Notes
+Changes since 2.17
+* Fixed back arrow appearing on main menu screen.

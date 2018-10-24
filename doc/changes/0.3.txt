@@ -1,0 +1,16 @@
+EP Mobile v0.3 Release Notes
+============================
+
+Changes since v0.2.1
+--------------------
+
+* Added Dabigitran Calculator.
+
+* Added Warfarin Calculator.
+
+* Calculators now round to nearest integer for (very slighly!) more accurate
+  result.
+
+* QTc Calculator learned the Hodges QTc formula.
+
+* Removed "About" from module list.

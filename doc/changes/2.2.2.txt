@@ -1,0 +1,19 @@
+EP Mobile v2.2.3 Release Notes
+
+Changes since 2.2.2
+
+Changes since v2.2.1
+
+* Fixed broken Long QT drugs link
+
+Changes since v2.2
+
+* Fixed wrong reference in EGSYS Score
+
+Changes since v2.1
+
+* Weight Calculator now suggests which weight to use. 
+
+* Added Syncope Risk Scores: San Francisco Rule, Martin Algorithm, EGSYS Score and OESIL Score to risk stratify patients with syncope.
+
+

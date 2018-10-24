@@ -1,0 +1,14 @@
+EP Mobile v0.6 Release Notes
+============================
+
+Changes since v0.5
+--------------------
+
+* Incorporated new (November 2011) US dabigtran guidelines into 
+  Dabigatran Calculator
+
+* Drug calculator UI reformated
+
+* Drug calculator creatinine clearance and warnings colorized
+
+* Weight units (kg or lb) selectable in drug calculators

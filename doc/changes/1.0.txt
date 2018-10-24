@@ -1,0 +1,17 @@
+EP Mobile v1.0 Release Notes
+
+Changes since v0.13
+
+* Restructured menu lists.
+
+* Fixed bug in ARVC/D 2010 criteria (echo minor fractional shortening criterion was incorrect).
+
+* Added Notes button to Brugada ECG patterns.
+
+* Added Holo Theme style elements to various modules (for Android 3.0+).
+
+* Added error checking dialog to Estes LVH module.
+
+* Eliminated right facing arrows in lists, per new Android style guidelines.
+
+* Added source code link to About dialog.

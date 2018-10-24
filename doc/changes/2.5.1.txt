@@ -1,0 +1,5 @@
+EP Mobile v2.5.1 Release Notes
+
+Changes since v2.5
+
+* Android 5.0 Lollipop Material Design theme added

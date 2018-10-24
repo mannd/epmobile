@@ -1,0 +1,4 @@
+EP Mobile 2.18 Release Notes
+Changes since 2.17.1
+* Added LBBB criteria.
+* Minumum SDK changed to 14.  Target SDK 26.
