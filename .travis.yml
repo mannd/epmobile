@@ -1,9 +1,9 @@
 language: android
+sudo: true
 android:
   components:
-    - tools
-    - tools
-    - platform-tools
     - build-tools-27.0.3
+    - android-26
+    - sys-img-x86-android-26
   before_install:
     - yes | sdkmanager --licenses
