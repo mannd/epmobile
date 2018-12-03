@@ -1,0 +1,4 @@
+EP Mobile 2.15 Release Notes
+Changes since 2.13
+* Added ICD mortality risk score.
+* Changed cycle length calculator layout.

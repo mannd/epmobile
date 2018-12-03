@@ -1,0 +1,3 @@
+EP Mobile 2.19 Release Notes
+Changes since 2.18
+* Added cardiac tamponade module.

@@ -1,0 +1,3 @@
+EP Mobile 2.20 Release Notes
+Changes since 2.19
+* Added PreLBBB QTc formula
