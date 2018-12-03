@@ -1,3 +1,10 @@
+EP Mobile
+=========
+
+## Tools for electrophysiologists and cardiologists
+
+[![Build Status](https://travis-ci.org/mannd/epmobile.svg?branch=master)](https://travis-ci.org/mannd/epmobile)
+
 ## Description
 EP Mobile is an [Android](http://www.android.com) application
 that provides a set of tools for electrophysiologists and other health care
