@@ -248,6 +248,8 @@
             android:label="@string/icd_mortality_risk_title" />
         <activity android:name=".TamponadeScore"
             android:label="@string/tamponade_title" />
+        <activity android:name=".ArvcRisk"
+                  android:label = "@string/arvc_risk_title" />
     </application>
 
 </manifest>

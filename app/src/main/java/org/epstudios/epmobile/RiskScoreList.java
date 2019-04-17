@@ -56,6 +56,8 @@ public class RiskScoreList extends EpActivity {
 					orbitRiskScore();
 				else if (selection.equals(getString(R.string.icd_mortality_risk_title)))
 					icdMortalityRisk();
+				else if (selection.equals(getString(R.string.arvc_risk_title)))
+					arvcRisk();
             }
 		});
 	}
@@ -117,6 +119,10 @@ public class RiskScoreList extends EpActivity {
 
 	private void icdMortalityRisk() {
 		startActivity(new Intent(this, IcdMortalityRisk.class));
+	}
+
+	private void arvcRisk() {
+		startActivity(new Intent(this, ArvcRisk.class));
 	}
 
 }

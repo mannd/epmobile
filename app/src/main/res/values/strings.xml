@@ -1373,5 +1373,24 @@
     <string name="prelbbbqtc_reference">Yankelson L, Hochstadt A, Sadeh B, et al. New formula for defining “normal” and “prolonged” QT in patients with bundle branch block. Journal of Electrocardiology. 2018;51(3):481-486. doi:10.1016/j.jelectrocard.2017.12.039
 </string>
     <string name="short_qrs_error">QRS duration must be at least 120 msec.</string>
-
+    <string name="arvc_risk_title">ARVC Risk</string>
+    <string name="arvc_risk_full_reference">Cadrin-Tourigny J, Bosman LP, Nozza A,
+        et al. A new prediction model for ventricular arrhythmias in arrhythmogenic
+        right ventricular cardiomyopathy. Eur Heart J. 2019. doi:10.1093/eurheartj/ehz103
+</string>
+    <string name="arvc_risk_short_reference">Cadrin-Tourigny J et al. Eur Heart J. 2019.
+        doi:10.1093/eurheartj/ehz103 </string>
+    <string name="age_at_dx_label">Age at diagnosis of ARVC</string>
+    <string name="cardiac_syncope_within_6_months_label">Specify if the patient experienced syncope suspected to be caused by cardiac
+        arrhythmia in the 6 months prior to diagnosis.</string>
+    <string name="cardiac_syncope_label">Cardiac syncope (&lt; 6 months)</string>
+    <string name="number_twi_label">Number of inverted T waves</string>
+    <string name="number_twi_details">Specify the total number of inverted T-waves in precordial and inferior leads on standard 12-lead ECG.
+</string>
+    <string name="max_pvc_count_label">Max 24 hr PVC count</string>
+    <string name="hx_nsvt_label">History of NSVT</string>
+    <string name="hx_nsvt_details">Specified as a recorded ventricular tachycardia (>100bpm) ending spontaneously within 30 seconds</string>
+    <string name="rvef_label">Right ventricular ejection fraction (%)</string>
+    <string name="max_pvc_count_details">Enter the maximum number of PVCs measured in 24 hours by ECG/Holter monitoring.</string>
+    <string name="pvc_hint">Number of PVCs</string>
 </resources>

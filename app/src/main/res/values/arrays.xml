@@ -126,6 +126,7 @@
         <item>@string/warfarin_title</item>
     </array>
     <array name="risk_score_list">
+        <item>@string/arvc_risk_title</item>
         <item>@string/atria_bleeding_score_title</item>
         <item>@string/atria_stroke_score_title</item>
         <item>@string/chads_title</item>
