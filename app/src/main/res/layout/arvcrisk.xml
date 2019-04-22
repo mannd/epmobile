@@ -94,10 +94,10 @@
 
             <TextView
                 android:id="@+id/twiCountSeekBarValue"
-                style="@style/Header2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1"/>
+                android:textStyle="bold"
+                android:text=""/>
 
             <TextView
                 style="@style/Header1"
@@ -147,10 +147,10 @@
 
             <TextView
                 android:id="@+id/rvefSeekBarValue"
-                style="@style/Header2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="50"/>
+                android:textStyle="bold"
+                android:text=""/>
 
             <LinearLayout
                 android:id="@+id/linearLayout3"
@@ -169,6 +169,24 @@
                     android:layout_height="wrap_content"
                     android:text="@string/clear_label" />
             </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/arvc_disclaimer" />
+
+            <TextView
+                android:id="@+id/arvc_risk_reference"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/arvc_reference_link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="https://academic.oup.com/eurheartj/advance-article/doi/10.1093/eurheartj/ehz103/5419784"/>
+
         </LinearLayout>
 
     </ScrollView>

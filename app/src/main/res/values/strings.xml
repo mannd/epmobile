@@ -1393,4 +1393,15 @@
     <string name="rvef_label">Right ventricular ejection fraction (%)</string>
     <string name="max_pvc_count_details">Enter the maximum number of PVCs measured in 24 hours by ECG/Holter monitoring.</string>
     <string name="pvc_hint">Number of PVCs</string>
-</resources>
+    <string name="risk_sus_va_title">Risk of sustained ventricular arrhythmia</string>
+    <string name="arvc_age_out_of_range_message">Please enter age at least 14 and at most 90 years old.</string>
+    <string name="arvc_age_out_of_range_title">Age out of range</string>
+    <string name="arvc_pvc_count_range_error_message">Please enter PVC count less than 100000</string>
+    <string name="arvc_pvc_count_range_error_title">PVC count out of range</string>
+    <string name="values_range_error_message">Values out of range.</string>
+    <string name="data_incomplete_message">Data incomplete.</string>
+    <string name="arvc_disclaimer">The calculator should not be used in patients with
+    prior sustained ventricular arrhythmia or sudden cardiac arrest.
+    It is designed to provide predictions based on the clinical characteristics of
+    ARVC patients at time of their diagnosis.</string>
+  </resources>
