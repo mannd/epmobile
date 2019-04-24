@@ -19,7 +19,7 @@ EP Mobile is free, open source, and licensed under the
 [GNU GPL v3 license.](http://www.gnu.org/licenses/gpl.html)
 
 ## License
-Copyright © 2011 - 2017 [EP Studios, Inc.](http://www.epstudiossoftware.com)
+Copyright © 2011 - 2019 [EP Studios, Inc.](http://www.epstudiossoftware.com)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -47,6 +47,10 @@ It is licensed under the
 [Creative Commons Attribution 2.0 Generic License](http://creativecommons.org/licenses/by/2.0/deed.en).
 
 A complete set of references for the app is available [here](https://www.epstudiossoftware.com/ep-mobile/references-2/).
+
+The ARVC risk calculator is based on a similar calculator
+[on the web](https://arvcrisk.com).  It is based on
+[this paper](https://academic.oup.com/eurheartj/advance-article/doi/10.1093/eurheartj/ehz103/5419784) and is used with the kind permission of the investigators.
 
 ## Author
 David Mann
