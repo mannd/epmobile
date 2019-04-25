@@ -80,11 +80,6 @@
                 android:text="@string/number_twi_label" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/number_twi_details" />
-
-            <TextView
                 android:id="@+id/twiCountSeekBarValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -101,15 +96,15 @@
                 android:progress="1"/>
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/number_twi_details" />
+
+            <TextView
                 style="@style/Header1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/max_pvc_count_label" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/max_pvc_count_details" />
 
             <EditText
                 android:id="@+id/pvcCountText"
@@ -120,6 +115,11 @@
                 android:hint="@string/pvc_hint"
                 android:inputType="number"
                 android:importantForAutofill="no" tools:targetApi="o"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/max_pvc_count_details" />
 
             <TextView
                 style="@style/Header1"
@@ -153,6 +153,11 @@
                 android:layout_height="wrap_content"
                 android:max="70"
                 android:progress="1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rvef_details" />
 
             <LinearLayout
                 android:id="@+id/linearLayout3"

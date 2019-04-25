@@ -1404,4 +1404,5 @@
     prior sustained ventricular arrhythmia or sudden cardiac arrest.
     It is designed to provide predictions based on the clinical characteristics of
     ARVC patients at time of their diagnosis.</string>
-  </resources>
+    <string name="rvef_details">As measured by cardiac MRI.</string>
+</resources>
