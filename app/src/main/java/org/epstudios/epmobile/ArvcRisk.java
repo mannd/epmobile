@@ -150,7 +150,7 @@ public class ArvcRisk extends DiagnosticScore {
             double yr1Risk = model.calculateRisk(ArvcRiskModel.year1);
             message = String.format( "%s%% within 5 years\n", NumberFormat.getInstance().format(yr5Risk) );
             message += String.format( "%s%% within 2 years\n", NumberFormat.getInstance().format(yr2Risk) );
-            message += String.format( "%s%% within 1 years\n", NumberFormat.getInstance().format(yr1Risk) );
+            message += String.format( "%s%% within 1 year", NumberFormat.getInstance().format(yr1Risk) );
             displayResult(message, getString(R.string.risk_sus_va_title));
         }
         catch (Exception ex) {

@@ -84,6 +84,14 @@
                 android:layout_height="wrap_content"
                 android:text="@string/number_twi_details" />
 
+            <TextView
+                android:id="@+id/twiCountSeekBarValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text=""/>
+
             <SeekBar
                 android:id="@+id/twiCountSeekBar"
                 style="@style/Widget.AppCompat.SeekBar.Discrete"
@@ -91,13 +99,6 @@
                 android:layout_height="wrap_content"
                 android:max="9"
                 android:progress="1"/>
-
-            <TextView
-                android:id="@+id/twiCountSeekBarValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:text=""/>
 
             <TextView
                 style="@style/Header1"
@@ -138,19 +139,20 @@
                 android:layout_height="wrap_content"
                 android:text="@string/rvef_label" />
 
+            <TextView
+                android:id="@+id/rvefSeekBarValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text=""/>
+
             <SeekBar
                 android:id="@+id/rvefSeekBar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:max="70"
                 android:progress="1"/>
-
-            <TextView
-                android:id="@+id/rvefSeekBarValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:text=""/>
 
             <LinearLayout
                 android:id="@+id/linearLayout3"
