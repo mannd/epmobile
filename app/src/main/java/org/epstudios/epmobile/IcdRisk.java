@@ -40,7 +40,6 @@ public class IcdRisk extends DiagnosticScore {
 
 	@Override
 	protected void calculateResult() {
-		// TODO Auto-generated method stub
 		String message;
 		int score;
 		if (radioGroupsIncomplete()) {

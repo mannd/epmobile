@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "27.0.3"
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
 
     defaultConfig {
         applicationId "org.epstudios.epmobile"
         minSdkVersion 14
         targetSdkVersion 26
-        versionCode 56
-        versionName "2.20"
+        versionCode 57
+        versionName "2.21"
 
     }
 
@@ -27,7 +27,7 @@ android {
 }
 
 dependencies {
-    implementation 'com.android.support:appcompat-v7:26.0.0'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
     testImplementation 'junit:junit:4.12'
     testImplementation 'org.mockito:mockito-core:1.10.19'
 }
