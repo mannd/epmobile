@@ -250,6 +250,8 @@
             android:label="@string/tamponade_title" />
         <activity android:name=".ArvcRisk"
                   android:label = "@string/arvc_risk_title" />
+        <activity android:name=".LongQtTable"
+                  android:label="@string/long_qt_table_title" />
     </application>
 
 </manifest>

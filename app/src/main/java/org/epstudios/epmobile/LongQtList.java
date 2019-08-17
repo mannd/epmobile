@@ -54,6 +54,8 @@ public class LongQtList extends EpActivity {
 					lqtSubtypes();
 				else if (selection.equals(getString(R.string.lqt_ecg_title)))
 					lqtEcg();
+				else if (selection.equals(getString(R.string.long_qt_table_title)))
+					lqtTable();
 				// lqtDrugs here
 			}
 		});
@@ -71,6 +73,11 @@ public class LongQtList extends EpActivity {
 
 	private void lqtEcg() {
 		Intent i = new Intent(this, LongQtEcg.class);
+		startActivity(i);
+	}
+
+	private void lqtTable() {
+		Intent i = new Intent(this, LongQtTable.class);
 		startActivity(i);
 	}
 
