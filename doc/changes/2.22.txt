@@ -1,0 +1,3 @@
+EP Mobile 2.22 Release Notes
+Changes since 2.21
+* Added Long QT Sydromes (All) table.
