@@ -3,11 +3,22 @@ This changelog is primarily to allow F-Droid to document changes with each new v
 
 See [keepachangelog.com](https://keepachangelog.com/en/1.0.0/) for information of the format.
 
-This project roughly utilizes [Semantic Versioning](https://semver.org/spec/v2.0.0.html).  In some versions the PATCH of MAJOR.MINOR.PATCH is ommitted.  Note also that unreleased versions are omitted.
+This project roughly utilizes [Semantic Versioning](https://semver.org/spec/v2.0.0.html).  In some versions the PATCH of MAJOR.MINOR.PATCH is omitted.  Note also that unreleased versions are omitted.
+
+## [2.22] - 2019-08-17
+### Added
+- Long QT Syndromes (All).
+
+### Changes
+- Long QT subtypes renamed Long QT Syndromes (Common)
+
+## [2.21] - 2019-04-01
+### Added
+- ARVC calculator.
 
 ## [2.20] - 2018-10-02
 ### Added
-- PreLBBB QTc formula
+- PreLBBB QTc formula.
 
 ## [2.19] - 2018-08-31
 ### Added
