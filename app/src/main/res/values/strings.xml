@@ -558,7 +558,7 @@
     <!-- Long QT Subtypes -->
     <string name="lqt_syndrome_title">Long QT Syndrome</string>
     <string name="lqt_syndrome_label">Long QT Syndrome</string>
-    <string name="lqt_subtypes_title">Long QT Subtypes</string>
+    <string name="lqt_subtypes_title">Long QT Syndromes (Common)</string>
     <string name="lqt_subtypes_1_name">LQTS 1</string>
     <string name="lqt_subtypes_1_description">Frequency: 30-35%\nLocus: 11p15.5\nGene: KVLQT1 (KCNQ1)\nChannel: 
         IKs\nECG: Broad T wave\nFeatures: Episodes with stress, exercise, swimming, diving; failure
@@ -1405,4 +1405,5 @@
     It is designed to provide predictions based on the clinical characteristics of
     ARVC patients at time of their diagnosis.</string>
     <string name="rvef_details">As measured by cardiac MRI.</string>
+    <string name="long_qt_table_title">Long QT Syndromes (All)</string>
 </resources>
