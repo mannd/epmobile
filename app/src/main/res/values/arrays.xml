@@ -138,6 +138,7 @@
         <item>@string/icd_risk_title</item>
         <item>@string/icd_mortality_risk_title</item>
         <item>@string/orbit_risk_title</item>
+        <item>@string/qt_prolongation_risk_title</item>
         <item>@string/same_tt2r2_title</item>
         <item>@string/syncope_list_title</item>
     </array>
@@ -224,4 +225,5 @@
     <string name="brugada_diagnosis_title">Brugada Diagnosis</string>
     <string name="lbbb_title">Left Bundle Branch Block</string>
     <string name="tamponade_title">Cardiac Tamponade</string>
+    <string name="qt_prolongation_risk_title">QT Prolongation Risk</string>
 </resources>

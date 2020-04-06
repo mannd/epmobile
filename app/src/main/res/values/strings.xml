@@ -11,7 +11,7 @@
 		\n\nEmail: mannd@epstudiossoftware.com
 		\nWeb: www.epstudiossoftware.com
 		\nSource: github.com/mannd/epmobile
-		\n\nCopyright \u00a9 2011-2019 EP Studios, Inc.
+		\n\nCopyright \u00a9 2011-2020 EP Studios, Inc.
 		\nLicensed under GNU GPL v3.</string>
     <string name="main_index_title">EP Mobile</string>
     <string name="about_label">About</string>
@@ -1406,4 +1406,25 @@
     ARVC patients at time of their diagnosis.</string>
     <string name="rvef_details">As measured by cardiac MRI.</string>
     <string name="long_qt_table_title">Long QT Syndromes (All)</string>
+    <string name="qt_prolongation_risk_full_reference">Tisdale James E., Jaynes Heather A., Kingery Joanna R., et al.
+        Development and Validation of a Risk Score to Predict QT Interval Prolongation in Hospitalized Patients.
+        Circulation: Cardiovascular Quality and Outcomes. 2013;6(4):479-487. doi:10.1161/CIRCOUTCOMES.113.000152</string>
+    <string name="qt_prolongation_risk_short_reference">Tisdale et al., CIRC CV Qual and Outcomes 2013 6:479</string>
+    <string name="qt_prolongation_risk_label">QT Prolongation Risk</string>
+    <string name="age_factor_label">Age &#8805; 68</string>
+    <string name="female_sex_factor_label">Female sex</string>
+    <string name="loop_diuretic_factor_label">Loop diuretic</string>
+    <string name="serum_k_factor_label">Serum potassium &#8804; 3.5 mEq/L</string>
+    <string name="admission_qtc_factor_label">Admission QTc (Bazett) &#8805; 450 msec</string>
+    <string name="acute_mi_factor_label">Acute MI</string>
+    <string name="sepsis_factor_label">Sepsis</string>
+    <string name="heart_failure_label">Heart failure</string>
+    <string name="one_qtc_drug_factor_label">One QTc prolonging drug</string>
+    <string name="two_qtc_drugs_factor_label">Two or more QTc prolonging drugs</string>
+    <string name="qt_prolongation_risk_result_label">Risk of QT Prolongation</string>
+    <string name="qt_prolongation_result">QT prolongation risk score =</string>
+    <string name="qt_prolongation_result_trailer">of developing QT prolongation during hospitalization.</string>
+    <string name="qt_prolongation_low_risk">\nLow risk (~15%)</string>
+    <string name="qt_prolongation_mod_risk">\nModerate risk (~37%)</string>
+    <string name="qt_prolongation_high_risk">\nHigh risk (~73%)</string>
 </resources>
