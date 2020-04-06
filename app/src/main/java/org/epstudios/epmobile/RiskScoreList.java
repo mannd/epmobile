@@ -58,8 +58,15 @@ public class RiskScoreList extends EpActivity {
 					icdMortalityRisk();
 				else if (selection.equals(getString(R.string.arvc_risk_title)))
 					arvcRisk();
+				else if (selection.equals(getString(R.string.qt_prolongation_risk_title)))
+					qtProlongationRisk();
             }
 		});
+	}
+
+	private void qtProlongationRisk() {
+		Intent i = new Intent(this, QTProlongationRisk.class);
+		startActivity(i);
 	}
 
     private void hasBledScore() {
