@@ -1,0 +1,3 @@
+EP Mobile 2.24 Release Notes
+Changes since 2.23
+* Rotated web view now maintains scrolled position.
