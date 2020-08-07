@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 
 
@@ -34,6 +35,8 @@ public class LinkView extends EpActivity implements View.OnClickListener {
     private Button calcCrClButton;
     private static final String BUTTON_TITLE = "Calculate CrCl";
 
+    private boolean needsToRestoreState = false;
+    private float offsetToRestore;
 
     static public final int CREATININE_CLEARANCE_CALCULATOR_ACTIVITY = 123;
 
@@ -56,6 +59,7 @@ public class LinkView extends EpActivity implements View.OnClickListener {
         else
             setContentView(R.layout.weblayout_no_button);
         webView = findViewById(R.id.web_view);
+        webView.setWebViewClient(new CustomWebViewClient());
         webView.loadUrl(url);
         setTitle(linkTitle);
         if (showButton) {
@@ -63,9 +67,13 @@ public class LinkView extends EpActivity implements View.OnClickListener {
             calcCrClButton.setOnClickListener(this);
             calcCrClButton.setText(BUTTON_TITLE);
         }
-	initToolbar();
+        initToolbar();
 
-
+        OrientationChangeData data = (OrientationChangeData) getLastCustomNonConfigurationInstance();
+        if (data != null) {
+            needsToRestoreState = true;
+            offsetToRestore = data.progress;
+        }
     }
 
     public void onClick(View v) {
@@ -88,7 +96,43 @@ public class LinkView extends EpActivity implements View.OnClickListener {
 
             calcCrClButton.setText(result);
         }
-
     }
 
+    @Override
+    public Object onRetainCustomNonConfigurationInstance() {
+        OrientationChangeData data = new OrientationChangeData();
+        data.progress = calculateOffset(webView);
+        return data;
+    }
+
+    private final static class OrientationChangeData {
+        public float progress;
+    }
+
+    private float calculateOffset(WebView webView) {
+        float topPosition = webView.getTop();
+        float height = webView.getHeight();
+        float currentPosition = webView.getScrollY();
+        float percentPosition = (currentPosition - topPosition) / height;
+        return percentPosition;
+    }
+
+    private class CustomWebViewClient extends WebViewClient {
+        @Override
+        public void onPageFinished(WebView view, String url) {
+            if (needsToRestoreState) {
+                needsToRestoreState = false;
+                view.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        float webViewSize = webView.getContentHeight() - webView.getTop();
+                        float positionInWebView = webViewSize * offsetToRestore;
+                        int positionY = Math.round(webView.getTop() + positionInWebView);
+                        webView.scrollTo(0, positionY);
+                    }
+                }, 300);
+            }
+            super.onPageFinished(view, url);
+        }
+    }
 }
