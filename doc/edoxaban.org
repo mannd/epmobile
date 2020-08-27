@@ -28,7 +28,7 @@ Note: Do not use with CrCl >95 mL/min!
 |-------------------+-------------------------|
 | >50 mL/min        | 60 mg orally once daily |
 | ≥15 to <50 mL/min | 30 mg orally once daily |
-Patients with body weight ≤60 kg or receiving certain P-gp inhibitors (verpamil, quinidine, azithromycin, clarithromycin, erhythromycin, itraconazole or ketoconazole) use 30 mg once daily.
+Patients with body weight ≤60 kg or receiving certain P-gp inhibitors (verapamil, quinidine, azithromycin, clarithromycin, erythromycin, itraconazole or ketoconazole) use 30 mg once daily.
 * Dosage forms and strengths
 - Tablets
   - 15 mg
