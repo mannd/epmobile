@@ -57,7 +57,7 @@
                     android:ems="10"
                     android:gravity="end"
                     android:hint="@string/number_of_days_hint"
-                    android:inputType="numberSigned"></EditText>
+                    android:inputType="numberSigned" />
             </LinearLayout>
 
             <RadioGroup
@@ -109,13 +109,13 @@
                     android:layout_weight="1"
                     android:gravity="center_horizontal"
                     android:text="@string/date_result_label"
-                    android:textAppearance="?android:attr/textAppearanceLarge"></TextView>
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <Button
                     android:id="@+id/clear_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/clear_label"></Button>
+                    android:text="@string/clear_label" />
             </LinearLayout>
         </LinearLayout>
 

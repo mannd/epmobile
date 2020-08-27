@@ -57,26 +57,26 @@
                 android:id="@+id/row_2_1_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"></Button>
+                android:layout_weight="1" />
 
             <Button
                 android:id="@+id/row_2_2_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"></Button>
+                android:layout_weight="1" />
 
             <Button
                 android:id="@+id/row_2_3_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"></Button>
+                android:layout_weight="1" />
         </LinearLayout>
 
         <Button
             android:id="@+id/instructions_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/instructions_label"></Button>
+            android:text="@string/instructions_label" />
 
     </LinearLayout>
 

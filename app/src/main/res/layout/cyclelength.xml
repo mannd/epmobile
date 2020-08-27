@@ -25,13 +25,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
-                android:text="@string/cl_label"></RadioButton>
+                android:text="@string/cl_label" />
 
             <RadioButton
                 android:id="@+id/hr_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/hr_label"></RadioButton>
+                android:text="@string/hr_label" />
         </RadioGroup>
 
         <TableRow>
@@ -39,7 +39,7 @@
             <TextView
                 android:id="@+id/MeasurementTextView"
                 android:text="@string/cl_hint"
-                android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <EditText
                 android:id="@+id/inputEditText"
@@ -48,16 +48,16 @@
                 android:layout_weight="1"
                 android:hint="@string/cl_hint"
                 android:inputType="number"
-                android:text=""></EditText>
+                android:text="" />
         </TableRow>
 
-            <TextView
-                android:id="@+id/calculated_result"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="@string/calculated_result_label"
-                android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
+        <TextView
+            android:id="@+id/calculated_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/calculated_result_label"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
 
         <LinearLayout
@@ -70,14 +70,14 @@
                 android:id="@+id/calculate_result_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/calculate_label"></Button>
+                android:text="@string/calculate_label" />
 
 
             <Button
                 android:id="@+id/clear_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/clear_label"></Button>
+                android:text="@string/clear_label" />
         </LinearLayout>
 
 

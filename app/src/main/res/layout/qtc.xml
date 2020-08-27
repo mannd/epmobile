@@ -18,13 +18,13 @@
 
         <TableRow>
 
-            <Spinner android:id="@+id/interval_rate_spinner"></Spinner>
+            <Spinner android:id="@+id/interval_rate_spinner" />
 
             <EditText
                 android:id="@+id/rrEditText"
                 android:hint="@string/rr_hint"
                 android:inputType="number"
-                android:text=""></EditText>
+                android:text="" />
         </TableRow>
 
         <TableRow>
@@ -32,13 +32,13 @@
             <TextView
                 android:id="@+id/textView2"
                 android:text="@string/qt_label"
-                android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <EditText
                 android:id="@+id/qtEditText"
                 android:hint="@string/qt_hint"
                 android:inputType="number"
-                android:text=""></EditText>
+                android:text="" />
         </TableRow>
 
         <TableRow>
@@ -46,7 +46,7 @@
             <TextView
                 android:id="@+id/textView3"
                 android:text="@string/qtc_formula_label"
-                android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <Spinner
                 android:id="@+id/qtc_formula_spinner"

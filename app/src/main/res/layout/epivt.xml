@@ -22,12 +22,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/epicardial_vt_title"
-                android:src="@drawable/epivt"></ImageView>
+                android:src="@drawable/epivt" />
 
             <TextView
                 android:autoLink="web"
                 android:text="@string/epivt_text"
-                android:textColor="@android:color/black"></TextView>
+                android:textColor="@android:color/black" />
         </TableLayout>
 
     </ScrollView>

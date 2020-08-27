@@ -27,24 +27,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
-                android:text="@string/male_label"></RadioButton>
+                android:text="@string/male_label" />
 
             <RadioButton
                 android:id="@+id/female"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/female_label"></RadioButton>
+                android:text="@string/female_label" />
         </RadioGroup>
 
         <TableRow>
 
-            <Spinner android:id="@+id/interval_rate_spinner"></Spinner>
+            <Spinner android:id="@+id/interval_rate_spinner" />
 
             <EditText
                 android:id="@+id/rrEditText"
                 android:hint="@string/rr_hint"
                 android:inputType="number"
-                android:text=""></EditText>
+                android:text="" />
         </TableRow>
 
         <TableRow>
@@ -52,13 +52,13 @@
             <TextView
                 android:id="@+id/textView2"
                 android:text="@string/qt_label"
-                android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <EditText
                 android:id="@+id/qtEditText"
                 android:hint="@string/qt_hint"
                 android:inputType="number"
-                android:text=""></EditText>
+                android:text="" />
         </TableRow>
 
 
@@ -67,13 +67,13 @@
             <TextView
                 android:id="@+id/textView2a"
                 android:text="@string/qrs_label"
-                android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <EditText
                 android:id="@+id/qrsEditText"
                 android:hint="@string/qrs_hint"
                 android:inputType="number"
-                android:text=""></EditText>
+                android:text="" />
         </TableRow>
 
         <TableRow>

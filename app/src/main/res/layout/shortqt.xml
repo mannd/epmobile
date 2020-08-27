@@ -33,19 +33,19 @@
                     android:id="@+id/short_qt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/short_qt_label"></RadioButton>
+                    android:text="@string/short_qt_label" />
 
                 <RadioButton
                     android:id="@+id/shorter_qt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/shorter_qt_label"></RadioButton>
+                    android:text="@string/shorter_qt_label" />
 
                 <RadioButton
                     android:id="@+id/shortest_qt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/shortest_qt_label"></RadioButton>
+                    android:text="@string/shortest_qt_label" />
             </RadioGroup>
 
             <TextView

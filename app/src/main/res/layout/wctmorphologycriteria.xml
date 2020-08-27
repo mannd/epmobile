@@ -22,7 +22,7 @@
             android:orientation="vertical"
             >
 
-            <Spinner android:id="@+id/bbb_spinner"></Spinner>
+            <Spinner android:id="@+id/bbb_spinner" />
 
             <CheckBox
                 android:id="@+id/broad_r"

@@ -146,14 +146,14 @@
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/lqts_key"></TextView>
+                android:text="@string/lqts_key" />
 
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autoLink="web"
-                android:text="@string/lqts_reference"></TextView>
+                android:text="@string/lqts_reference" />
         </LinearLayout>
 
     </ScrollView>

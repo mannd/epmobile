@@ -35,7 +35,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="@string/tcl_hint"
-                    android:inputType="number"></EditText>
+                    android:inputType="number" />
             </TableRow>
 
             <TableRow>

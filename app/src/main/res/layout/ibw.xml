@@ -37,13 +37,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="true"
-                        android:text="@string/male_label"></RadioButton>
+                        android:text="@string/male_label" />
 
                     <RadioButton
                         android:id="@+id/female"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/female_label"></RadioButton>
+                        android:text="@string/female_label" />
                 </RadioGroup>
 
                 <TableRow>
@@ -55,7 +55,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/weight_hint"
-                        android:inputType="numberDecimal"></EditText>
+                        android:inputType="numberDecimal" />
                 </TableRow>
 
                 <TableRow>
@@ -67,7 +67,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/height_hint"
-                        android:inputType="numberDecimal"></EditText>
+                        android:inputType="numberDecimal" />
                 </TableRow>
 
                 <TableRow>
@@ -77,7 +77,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/ibw_label"
-                        android:textAppearance="?android:attr/textAppearanceSmall"></TextView>
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
 
                     <TextView
                         android:id="@+id/ibwResultTextView"
@@ -85,7 +85,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:hint="@string/ibw_hint"
-                        android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
                 </TableRow>
 
                 <TableRow>
@@ -95,7 +95,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/abw_label"
-                        android:textAppearance="?android:attr/textAppearanceSmall"></TextView>
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
 
                     <TextView
                         android:id="@+id/abwResultTextView"
@@ -103,7 +103,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:hint="@string/abw_hint"
-                        android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
                 </TableRow>
             </TableLayout>
 
@@ -115,33 +115,33 @@
                     android:id="@+id/calculate_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/calculate_label"></Button>
+                    android:text="@string/calculate_label" />
 
                 <Button
                     android:id="@+id/clear_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/clear_label"></Button>
+                    android:text="@string/clear_label" />
             </LinearLayout>
 
             <Button
                 android:id="@+id/copy_ibw_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/copy_ibw_label"></Button>
+                android:text="@string/copy_ibw_label" />
 
             <Button
                 android:id="@+id/copy_abw_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/copy_abw_label"></Button>
+                android:text="@string/copy_abw_label" />
 
             <TextView
                 android:id="@+id/messageTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text=""
-                android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
+                android:textAppearance="?android:attr/textAppearanceMedium" />
         </LinearLayout>
 
     </ScrollView>
