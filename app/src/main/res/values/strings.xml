@@ -836,7 +836,7 @@
     <string name="abw_lb_hint">ABW (lb)</string>
     <string name="default_height_unit_title">Default Height Unit</string>
     <string name="default_height_unit_summary">Select default unit for height</string>
-    <string name="overweight_message">Actual weight is at least 30% over Ideal Body Weight.  Recommended weight is Adjusted Body Weight (</string>
+    <string name="overweight_message" tools:ignore="PluralsCandidate">Actual weight is at least 30% over Ideal Body Weight.  Recommended weight is Adjusted Body Weight (</string>
     <string name="underheight_message">These measurements may not be useful when height is &lt; 60 inches.</string>
     <string name="underweight_message">Actual weight is less than Ideal Body Weight.  Recommended weight is Actual Weight (</string>
     <string name="normalweight_message">Weight is in the normal range.  Recommended weight is Ideal Body Weight (</string>
@@ -1189,11 +1189,11 @@
     <string name="qtm_lbbb_error_message">QTm only defined for LBBB</string>
     <string name="qtmc_lbbb_error_message">QTmc only defined for LBBB</string>
     <string name="prelbbbqtc_lbbb_error_message">preLBBB QTc only defined for LBBB</string>
-    <string name="qt_details">QT = %d msec.\n\nUse: The QT varies with heart rate,
+    <string name="qt_details" tools:ignore="PluralsCandidate">QT = %d msec.\n\nUse: The QT varies with heart rate,
         QRS and sex, and so is usually not a good measure of repolarization independent
         of these other factors.\n\nFormula:
         This is the uncorrected QT interval.\n\nNormal values: Not defined</string>
-    <string name="qtc_details">QTc = %1$d msec.\n\nUse: The QTc corrects for heart rate,
+    <string name="qtc_details" tools:ignore="PluralsCandidate">QTc = %1$d msec.\n\nUse: The QTc corrects for heart rate,
         in this case using the Bazett formula, but does not correct for increased QRS duration.
         \n\nFormula: QTc[sec] = QT[sec] / SQRT(RR[sec])\n\nNormal values (without IVCD) per
         AHA/ACC/HRS guidelines
@@ -1216,20 +1216,20 @@
     <string name="qtm_details_title">Modified QT (QTm) in LBBB</string>
     <string name="qtmc_details_title">Corrected Modified QT in LBBB (QTmc)</string>
     <string name="qtrrqrs_details_title">QT Corrected for Rate,\nQRS, and Sex (QTrr,qrs)</string>
-    <string name="jt_details">JT = %d msec.\n\nUse: The JT interval corrects for QRS duration,
+    <string name="jt_details" tools:ignore="PluralsCandidate">JT = %d msec.\n\nUse: The JT interval corrects for QRS duration,
         but does not correct for heart rate.
         \n\nFormula: JT = QT - QRS\n\nNormal values: Not defined.</string>
-    <string name="jtc_details">JTc = %d msec.\n\nUse: JTc corrects for heart rate and QRS duration, however normal values are not well established.
+    <string name="jtc_details" tools:ignore="PluralsCandidate">JTc = %d msec.\n\nUse: JTc corrects for heart rate and QRS duration, however normal values are not well established.
         \n\nFormula: JTc = QTc(Bazett) - QRS\n\nNormal values: Not defined.</string>
-    <string name="qtm_details">QTm = %1$d msec.\n\nUse: Attempts to correct for the
+    <string name="qtm_details" tools:ignore="PluralsCandidate">QTm = %1$d msec.\n\nUse: Attempts to correct for the
         prolongation of the QT interval attributable to QRS prolongation in LBBB.
         \n\nFormula: QTm = QTb - 0.485 * QRSb\n\nNormal values:
         Not defined.\n\nReference: %2$s</string>
-    <string name="qtmc_details">QTmc = %1$d msec.\n\nUse: Corrects QTm for heart rate,
+    <string name="qtmc_details" tools:ignore="PluralsCandidate">QTmc = %1$d msec.\n\nUse: Corrects QTm for heart rate,
         in this case using the Bazett formula.\n\nFormula: QTmc = QTm corrected
         for rate using Bazett formula\n\nNormal values:
         Presumably the same as QTc.\n\nReference: %2$s</string>
-    <string name="qtrrqrs_details">QTrr,qrs = %1$d msec.\n\nUse:
+    <string name="qtrrqrs_details" tools:ignore="PluralsCandidate">QTrr,qrs = %1$d msec.\n\nUse:
         Corrects QT for rate, QRS duration and sex.\n\nFormula: %2$s\n\nNormal values:
         2%% and 5%% normal limits of 460 and 450 msec.\n\nReference: %3$s</string>
     <string name="very_high_risk_label">Very High Risk (BUN \u2265 50 or Cr \u2265 2.5 mg/dL)</string>
@@ -1366,7 +1366,7 @@
         recent chest trauma\n4. Iatrogenic hemopericardium when
         the bleeding cannot be controlled percutaneously</string>
 	<string name="prelbbbqtc_details_title">preLBBBQTc</string>
-	<string name="prelbbbqtc_details">preLBBBQTc = %1$d msec.\n\nUse: Attempts to correct for the
+	<string name="prelbbbqtc_details" tools:ignore="PluralsCandidate">preLBBBQTc = %1$d msec.\n\nUse: Attempts to correct for the
         prolongation of the QT interval attributable to QRS prolongation in LBBB.
         \n\nFormula: preLBBBQTc = postLBBBQTc(Bazett) - postLBBBQRS + c, where c = 95 msec in males, 88 msec in females\n\nNormal values:
         Presumably same as QTc.\n\nReference: %2$s</string>

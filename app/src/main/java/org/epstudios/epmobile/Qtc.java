@@ -291,7 +291,7 @@ public class Qtc extends EpActivity implements OnClickListener {
 			qtcUpperLimit = QTC_UPPER_LIMIT;
 			SharedPreferences.Editor editor = prefs.edit();
 			editor.putString("maximum_qtc", String.valueOf(QTC_UPPER_LIMIT));
-			editor.commit();
+			editor.apply();
 		}
 	}
 

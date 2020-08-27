@@ -367,7 +367,7 @@ public class Warfarin extends EpActivity implements
 				doseChange.direction == Direction.INCREASE);
 		editor.putFloat("tabletDose", (float) getTabletDose());
 		editor.putFloat("weeklyDose", (float) getWeeklyDose());
-		editor.commit();
+		editor.apply();
 	}
 
 	private void clearEntries() {

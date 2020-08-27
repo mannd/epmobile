@@ -41,11 +41,7 @@ public abstract class EpActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.settings:
-                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
-                    startActivity(new Intent(this, OldPrefs.class));
-                } else {
-                    startActivity(new Intent(this, Prefs.class));
-                }
+                startActivity(new Intent(this, Prefs.class));
                 return true;
             case R.id.about:
                 startActivity(new Intent(this, About.class));
