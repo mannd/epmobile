@@ -13,7 +13,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="left"
+            android:gravity="start"
+            style="@style/Header1"
             android:text="subtype"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
@@ -22,8 +23,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:gravity="right"
+            android:gravity="end"
+            style="@style/Header2"
             android:text="channel"
+
             android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
     </LinearLayout>
     <TextView
