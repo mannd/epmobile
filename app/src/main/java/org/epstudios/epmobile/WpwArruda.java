@@ -29,6 +29,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 // Supports both Arruda and modified Arruda algorithms
+@SuppressWarnings("SpellCheckingInspection")
 public class WpwArruda extends LocationAlgorithm implements OnClickListener {
 	public final static String AS = "AS";
 	public final static String LPL = "LPL";

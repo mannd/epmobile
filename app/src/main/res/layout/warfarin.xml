@@ -146,7 +146,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="@string/inr_hint"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        android:importantForAutofill="no" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -159,7 +160,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="@string/weekly_dose_hint"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        android:importantForAutofill="no" />
                 </LinearLayout>
             </LinearLayout>
 

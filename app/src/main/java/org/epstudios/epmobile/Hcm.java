@@ -20,6 +20,7 @@ package org.epstudios.epmobile;
 
 import android.widget.CheckBox;
 
+@SuppressWarnings("SpellCheckingInspection")
 public class Hcm extends RiskScore {
 
 	@Override

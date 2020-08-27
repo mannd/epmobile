@@ -34,11 +34,12 @@ import org.w3c.dom.Text;
  * You should have received a copy of the GNU General Public License
  * along with epmobile.  If not, see <http://www.gnu.org/licenses/>.
  */
+@SuppressWarnings("SpellCheckingInspection")
 public class LongQtTable extends EpActivity {
     private TableLayout tableLayout;
     private LayoutInflater layoutInflater;
 
-    private RowData[] data = { new RowData("LQT1", "KCNQ1", "Encodes the α-subunit of the slow delayed rectifier potassium channel KV7.1 carrying the potassium current IKs."),
+    private RowData[] data = {new RowData("LQT1", "KCNQ1", "Encodes the α-subunit of the slow delayed rectifier potassium channel KV7.1 carrying the potassium current IKs."),
             new RowData("LQT2", "KCNH2", "Also known as hERG. Encodes the α-subunit of the rapid delayed rectifier potassium channel KV11.1 carrying the potassium current IKr."),
             new RowData("LQT3", "SCN5A", "Encodes the α-subunit of the cardiac sodium channel NaV1.5 carrying the sodium current INa."),
             new RowData("LQT4", "ANK2", "Encodes Ankyrin B which anchors the ion channels in the cell. Disputed whether truly disease causing versus minor QT susceptibility gene."),
@@ -54,7 +55,7 @@ public class LongQtTable extends EpActivity {
             new RowData("LQT14", "CALM1", "Encodes calmodulin-1, a calcium-binding messenger protein that interacts with the calcium current ICa(L)."),
             new RowData("LQT15", "CALM2", "Encodes calmodulin-2, a calcium-binding messenger protein that interacts with the calcium current ICa(L)."),
             new RowData("LQT16", "CALM3", "Encodes calmodulin-3, a calcium-binding messenger protein that interacts with the calcium current ICa(L)."),
-            new RowData("LQT17",  "TRDN",  "Encodes triadin, associated with the release of calcium from the sarcoplastic reticulum.  Causes exercise-induced cardiac arrest in young children.")
+            new RowData("LQT17", "TRDN", "Encodes triadin, associated with the release of calcium from the sarcoplastic reticulum.  Causes exercise-induced cardiac arrest in young children.")
     };
 
     @Override
@@ -104,7 +105,7 @@ public class LongQtTable extends EpActivity {
         }
     }
 
-    private class RowData {
+    private static class RowData {
         String subtype;
         String channel;
         String details;

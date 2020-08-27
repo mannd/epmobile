@@ -1,6 +1,4 @@
-package org.epstudios.epmobile;
-
-/**
+/*
  * Copyright (C) 2016 EP Studios, Inc.
  * www.epstudiossoftware.com
  * <p/>
@@ -22,6 +20,8 @@ package org.epstudios.epmobile;
  * along with epmobile.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+package org.epstudios.epmobile;
+
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -36,7 +36,7 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 
-
+@SuppressWarnings("SpellCheckingInspection")
 public class QtcIvcd extends EpActivity implements View.OnClickListener {
     private enum IntervalRate {
         INTERVAL, RATE
@@ -151,7 +151,7 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
 
     }
 
-    private class ShortQrsException extends Exception {}
+    private static class ShortQrsException extends Exception {}
 
     private void calculateQtc() {
         CharSequence rateIntervalText = rrEditText.getText();

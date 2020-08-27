@@ -3,7 +3,7 @@ package org.epstudios.epmobile;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
+import androidx.preference.PreferenceManager;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import java.text.DecimalFormat;
 
+@SuppressWarnings("SpellCheckingInspection")
 public abstract class DrugCalculator extends EpActivity implements
 		OnClickListener {
 

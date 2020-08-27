@@ -10,6 +10,8 @@ import android.widget.TextView;
 import java.text.NumberFormat;
 import java.util.Locale;
 
+import androidx.appcompat.widget.SwitchCompat;
+
 /**
  * Copyright (C) 2019 EP Studios, Inc.
  * www.epstudiossoftware.com
@@ -34,11 +36,11 @@ import java.util.Locale;
 public class ArvcRisk extends DiagnosticScore {
     EditText ageText;
     RadioGroup sexRadioGroup;
-    Switch syncopeSwitch;
+    SwitchCompat syncopeSwitch;
     SeekBar twiSeekBar;
     TextView twiTextView;
     EditText pvcText;
-    Switch nsvtSwitch;
+    SwitchCompat nsvtSwitch;
     SeekBar rvefSeekBar;
     TextView rvefTextView;
     TextView arvcRiskReference;

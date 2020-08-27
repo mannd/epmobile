@@ -57,7 +57,8 @@
                     android:ems="10"
                     android:gravity="end"
                     android:hint="@string/number_of_days_hint"
-                    android:inputType="numberSigned" />
+                    android:inputType="numberSigned"
+                    android:importantForAutofill="no" />
             </LinearLayout>
 
             <RadioGroup

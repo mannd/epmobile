@@ -48,7 +48,8 @@
                 android:layout_weight="1"
                 android:hint="@string/cl_hint"
                 android:inputType="number"
-                android:text="" />
+                android:text=""
+                android:importantForAutofill="no" />
         </TableRow>
 
         <TextView

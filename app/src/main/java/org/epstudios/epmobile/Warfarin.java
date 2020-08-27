@@ -87,7 +87,7 @@ public class Warfarin extends EpActivity implements
 		INCREASE, DECREASE
 	}
 
-	private class DoseChange {
+	private static class DoseChange {
 
 		public DoseChange() {
 		    this.lowEnd = 0;

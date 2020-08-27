@@ -26,6 +26,7 @@ import java.util.HashMap;
  * along with epmobile.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+@SuppressWarnings("SpellCheckingInspection")
 public class CmsIcdViewModel {
     private static final String CR = "\n";
 

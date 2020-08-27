@@ -38,7 +38,8 @@
                     android:id="@+id/age"
                     android:hint="@string/age_in_years_hint"
                     android:inputType="number"
-                    android:text="" />
+                    android:text=""
+                    android:importantForAutofill="no" />
             </TableRow>
 
                 <TableRow>
@@ -52,7 +53,8 @@
                         android:id="@+id/max_lv_wall_thickness"
                         android:hint="@string/max_lv_wall_thickness_hint"
                         android:inputType="number"
-                        android:text="" />
+                        android:text=""
+                        android:importantForAutofill="no" />
                 </TableRow>
 
                 <TableRow>
@@ -66,7 +68,8 @@
                         android:id="@+id/la_size"
                         android:hint="@string/la_size_hint"
                         android:inputType="number"
-                        android:text="" />
+                        android:text=""
+                        android:importantForAutofill="no" />
                 </TableRow>
 
                 <TableRow>
@@ -80,7 +83,8 @@
                         android:id="@+id/max_lvot_gradient"
                         android:hint="@string/max_lvot_gradient_hint"
                         android:inputType="number"
-                        android:text="" />
+                        android:text=""
+                        android:importantForAutofill="no" />
                 </TableRow>
 
 

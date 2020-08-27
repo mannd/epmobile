@@ -44,7 +44,8 @@
                 android:id="@+id/rrEditText"
                 android:hint="@string/rr_hint"
                 android:inputType="number"
-                android:text="" />
+                android:text=""
+                android:importantForAutofill="no" />
         </TableRow>
 
         <TableRow>
@@ -58,7 +59,8 @@
                 android:id="@+id/qtEditText"
                 android:hint="@string/qt_hint"
                 android:inputType="number"
-                android:text="" />
+                android:text=""
+                android:importantForAutofill="no" />
         </TableRow>
 
 
@@ -73,7 +75,8 @@
                 android:id="@+id/qrsEditText"
                 android:hint="@string/qrs_hint"
                 android:inputType="number"
-                android:text="" />
+                android:text=""
+                android:importantForAutofill="no" />
         </TableRow>
 
         <TableRow>

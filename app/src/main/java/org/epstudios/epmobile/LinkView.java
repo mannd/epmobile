@@ -87,6 +87,7 @@ public class LinkView extends EpActivity implements View.OnClickListener {
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == CREATININE_CLEARANCE_CALCULATOR_ACTIVITY &&
                 resultCode == RESULT_OK && data != null) {
             String result = data.getStringExtra("EXTRA_RESULT_STRING");

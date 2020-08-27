@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+@SuppressWarnings("SpellCheckingInspection")
 public class ReferenceList extends EpActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

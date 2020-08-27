@@ -199,16 +199,6 @@
         <item>@string/syncope_oesil_score_title</item>
         <item>@string/syncope_sf_rule_title</item>
     </array>
-    <array name="qt_ivcd_results">
-        <item>@string/qt</item>
-        <item>@string/qtc</item>
-        <item>@string/jt</item>
-        <item>@string/jtc</item>
-        <item>@string/qtm</item>
-        <item>@string/qtmc</item>
-        <item>@string/qtrrqrs</item>
-        <item>@string/qt_instructions</item>
-    </array>
 
     <string name="qt">QT</string>
     <string name="qtc">QTc</string>

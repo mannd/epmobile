@@ -35,7 +35,8 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="@string/tcl_hint"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:importantForAutofill="no" />
             </TableRow>
 
             <TableRow>
@@ -53,7 +54,8 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="@string/ppi_hint"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:importantForAutofill="no" />
             </TableRow>
 
             <CheckBox
@@ -79,7 +81,8 @@
                     android:ems="10"
                     android:enabled="false"
                     android:hint="@string/s_qrs_hint"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:importantForAutofill="no" />
             </TableRow>
 
             <TableRow>
@@ -99,7 +102,8 @@
                     android:ems="10"
                     android:enabled="false"
                     android:hint="@string/egm_qrs_hint"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:importantForAutofill="no" />
             </TableRow>
 
             <LinearLayout

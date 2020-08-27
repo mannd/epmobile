@@ -19,6 +19,7 @@ import android.widget.TextView;
 
 import java.text.DecimalFormat;
 
+@SuppressWarnings("SpellCheckingInspection")
 public class IbwCalculator extends EpActivity implements OnClickListener {
 	private RadioGroup sexRadioGroup;
 	private EditText weightEditText;

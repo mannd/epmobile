@@ -28,6 +28,7 @@ import android.widget.ListView;
  * You should have received a copy of the GNU General Public License
  * along with epmobile.  If not, see <http://www.gnu.org/licenses/>.
  */
+@SuppressWarnings("SpellCheckingInspection")
 public class QtcIvcdResults extends EpActivity {
     static final int QT = 0;
     static final int QTC = 1;

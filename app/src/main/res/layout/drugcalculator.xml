@@ -63,7 +63,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:hint="@string/age_hint"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:importantForAutofill="no" />
                 </TableRow>
 
                 <TableRow>
@@ -75,7 +76,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/weight_hint"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        android:importantForAutofill="no" />
                 </TableRow>
 
                 <TableRow>
@@ -87,7 +89,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/creatinine_hint"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        android:importantForAutofill="no" />
                 </TableRow>
             </TableLayout>
 

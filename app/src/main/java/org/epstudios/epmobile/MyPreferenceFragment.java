@@ -12,6 +12,7 @@ import android.preference.PreferenceFragment;
  */
 
 // TODO possible add same code to OldPrefs
+@SuppressWarnings("SpellCheckingInspection")
 public class MyPreferenceFragment extends PreferenceFragment
         implements SharedPreferences.OnSharedPreferenceChangeListener {
 

@@ -16,7 +16,7 @@ import android.preference.PreferenceActivity;
 
 // used for preferences in pre-Android 11
 // Note this code largely duplicates code in MyPreferencesFragment.java
-@SuppressWarnings("deprecation")
+@SuppressWarnings({"deprecation", "SpellCheckingInspection"})
 public class OldPrefs extends PreferenceActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     private String qtcFormulaDefaultValue;

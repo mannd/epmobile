@@ -55,7 +55,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/weight_hint"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        android:importantForAutofill="no" />
                 </TableRow>
 
                 <TableRow>
@@ -67,7 +68,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/height_hint"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        android:importantForAutofill="no" />
                 </TableRow>
 
                 <TableRow>

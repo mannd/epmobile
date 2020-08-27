@@ -14,6 +14,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
+@SuppressWarnings("SpellCheckingInspection")
 public class Entrainment extends EpActivity implements OnClickListener {
 	private EditText tclEditText;
 	private EditText ppiEditText;

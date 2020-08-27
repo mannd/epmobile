@@ -67,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/cardiac_syncope_label" />
 
-            <Switch
+            <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/hxSyncopeSwitch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -127,7 +127,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/hx_nsvt_label" />
 
-            <Switch
+            <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/hxNSVTSwitch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -24,6 +24,7 @@ import static org.epstudios.epmobile.CmsIcdModel.Details.NONE;
  * along with epmobile.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+@SuppressWarnings("SpellCheckingInspection")
 public class CmsIcdModel {
     // Indications
     private Boolean susVT;
@@ -342,7 +343,7 @@ public class CmsIcdModel {
         NONE
     }
 
-    public class Result {
+    public static class Result {
         public Indication indication = Indication.NONE;
         public Approval approval = Approval.NA;
         public Details details = NONE;

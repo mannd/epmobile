@@ -39,7 +39,7 @@
 * Drug interactions
 - For patients receiving apixaban at doses greater than 2.5 mg BID, the dose should be reduced 50% when it is coadministered with strong dual inhibitors of CYP3A4 and P-gp (e.g. ketoconazole, itraconazole, ritonavir, and clarithromycin).  For patients on apixaban 2.5 mg BID avoid coadministration with these drugs.
 - Simultaneous use of strong dual inducers of CYP3A4 and P-gp (e.g. rifampin, carbamazepine, phenytoin, and St. John's wort) reduces blood levels of apixaban: avoid concomitant use.
-- Simultaneous use with other anti-platelet or anti-coagualant drugs increases risk of bleeding.
+- Simultaneous use with other anti-platelet or anti-coagulant drugs increases risk of bleeding.
 * Use in specific populations
 - Pregnancy: Not recommended.
 - Nursing mothers: Discontinue drug or discontinue nursing.

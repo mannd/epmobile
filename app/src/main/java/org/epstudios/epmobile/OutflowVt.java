@@ -31,6 +31,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
+@SuppressWarnings("SpellCheckingInspection")
 public class OutflowVt extends LocationAlgorithm implements OnClickListener {
 	private Button yesButton;
 	private Button noButton;

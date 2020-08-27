@@ -1,6 +1,4 @@
-package org.epstudios.epmobile;
-
-/**
+/*
  * Copyright (C) 2017 EP Studios, Inc.
  * www.epstudiossoftware.com
  * <p>
@@ -21,6 +19,8 @@ package org.epstudios.epmobile;
  * You should have received a copy of the GNU General Public License
  * along with epmobile.  If not, see <http://www.gnu.org/licenses/>.
  */
+
+package org.epstudios.epmobile;
 
 import android.widget.CheckBox;
 
