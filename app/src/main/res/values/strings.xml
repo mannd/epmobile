@@ -1305,7 +1305,7 @@
         (40 days post-MI, 3 months post CABG or PCI).
         Note that if a pacemaker is indicated or the patient has an ICD at ERI or with lead/device malfunction,
         ICD implantation CAN proceed before waiting period expires.</string>
-    <string name="icd_approval_affected_by_waiting_period">ICD implantation doesn\'t meet criteria due to excluson or waiting period.</string>
+    <string name="icd_approval_affected_by_waiting_period">ICD implantation doesn\'t meet criteria due to exclusion or waiting period.</string>
     <string name="waiting_period_label">Waiting Periods</string>
     <string name="icd_bridge_to_transplant_message">Coverage of ICDs as a bridge to transplant is determined by local Medicare Administrative Contractors (MACs).</string>
     <string name="icd_forgot_to_check_cm_checkbox">You selected MI and patient has Class II or III heart failure.  Did you forget to select ischemic or nonischemic cardiomyopathy?</string>
