@@ -99,6 +99,7 @@ public class LinkView extends EpActivity implements View.OnClickListener {
         }
     }
 
+    // TODO: Need to replace with ViewModel to save configuration.
     @Override
     public Object onRetainCustomNonConfigurationInstance() {
         OrientationChangeData data = new OrientationChangeData();
@@ -114,8 +115,7 @@ public class LinkView extends EpActivity implements View.OnClickListener {
         float topPosition = webView.getTop();
         float height = webView.getHeight();
         float currentPosition = webView.getScrollY();
-        float percentPosition = (currentPosition - topPosition) / height;
-        return percentPosition;
+        return (currentPosition - topPosition) / height;
     }
 
     private class CustomWebViewClient extends WebViewClient {

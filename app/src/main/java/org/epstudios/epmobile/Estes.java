@@ -6,13 +6,6 @@ import android.view.MenuItem;
 import android.widget.CheckBox;
 
 public class Estes extends RiskScore {
-	private final int VOLTAGE = 0;
-	private final int STRAIN_WITHOUT_DIG = 1;
-	private final int STRAIN_WITH_DIG = 2;
-	private final int LAE = 3;
-	private final int LAD = 4;
-	private final int QRS_DURATION = 5;
-	private final int INTRINSICOID = 6;
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
@@ -30,6 +23,8 @@ public class Estes extends RiskScore {
 
 	@Override
 	protected void calculateResult() {
+		final int STRAIN_WITH_DIG = 2;
+		final int STRAIN_WITHOUT_DIG = 1;
 		if (checkBox[STRAIN_WITHOUT_DIG].isChecked()
 				&& checkBox[STRAIN_WITH_DIG].isChecked()) {
 			AlertDialog dialog = new AlertDialog.Builder(this).create();
@@ -43,6 +38,11 @@ public class Estes extends RiskScore {
 		for (int i = 0; i < checkBox.length; i++) {
 			if (checkBox[i].isChecked()) {
 				addSelectedRisk(checkBox[i].getText().toString());
+				final int INTRINSICOID = 6;
+				final int QRS_DURATION = 5;
+				final int LAD = 4;
+				final int LAE = 3;
+				final int VOLTAGE = 0;
 				switch (i) {
 				case VOLTAGE:
 				case LAE:

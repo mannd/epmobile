@@ -19,7 +19,6 @@ import android.widget.TextView;
 
 import java.text.DecimalFormat;
 
-@SuppressWarnings("SpellCheckingInspection")
 public class IbwCalculator extends EpActivity implements OnClickListener {
 	private RadioGroup sexRadioGroup;
 	private EditText weightEditText;
@@ -31,9 +30,6 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 	private TextView ibwResultTextView;
 	private TextView abwResultTextView;
 	private TextView messageTextView;
-
-	private OnItemSelectedListener itemListener;
-	private OnItemSelectedListener heightItemListener;
 
 	private enum WeightUnit {
 		KG, LB
@@ -129,10 +125,11 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 			weightSpinner.setSelection(KG_SELECTION);
 		else
 			weightSpinner.setSelection(LB_SELECTION);
-		itemListener = new OnItemSelectedListener() {
+		// do nothing
+		OnItemSelectedListener itemListener = new OnItemSelectedListener() {
 			@Override
 			public void onItemSelected(AdapterView<?> parent, View v,
-					int position, long id) {
+									   int position, long id) {
 				updateWeightUnitSelection();
 			}
 
@@ -153,10 +150,11 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 			heightSpinner.setSelection(CM_SELECTION);
 		else
 			heightSpinner.setSelection(IN_SELECTION);
-		heightItemListener = new OnItemSelectedListener() {
+		// do nothing
+		OnItemSelectedListener heightItemListener = new OnItemSelectedListener() {
 			@Override
 			public void onItemSelected(AdapterView<?> parent, View v,
-					int position, long id) {
+									   int position, long id) {
 				updateHeightUnitSelection();
 			}
 
@@ -249,21 +247,21 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 			if (underheight)
 				messageTextView
 						.setText(getString(R.string.underheight_message));
-			else if (overweight)
-				messageTextView.setText(getString(R.string.overweight_message)
-						+ formatWeight(formattedAbw, weightUnitAbbreviation));
-			else if (underweight)
+			else if (overweight) {
+				messageTextView.setText(getString(R.string.overweight_message,
+						formatWeight(formattedAbw, weightUnitAbbreviation)));
+			} else if (underweight)
 				messageTextView
-						.setText(getString(R.string.underweight_message)
-								+ formatWeight(new DecimalFormat("#.#")
+						.setText(getString(R.string.underweight_message,
+								formatWeight(new DecimalFormat("#.#")
 										.format(originalWeight),
-										weightUnitAbbreviation));
+										weightUnitAbbreviation)));
 			else
 				// normal weight
 				messageTextView
-						.setText(getString(R.string.normalweight_message)
-								+ formatWeight(formattedIbw,
-										weightUnitAbbreviation));
+						.setText(getString(R.string.normalweight_message,
+								formatWeight(formattedIbw,
+										weightUnitAbbreviation)));
 
 		} catch (NumberFormatException e) {
 			ibwResultTextView.setText(getString(R.string.invalid_warning));

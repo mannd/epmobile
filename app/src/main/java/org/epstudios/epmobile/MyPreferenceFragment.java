@@ -3,8 +3,9 @@ package org.epstudios.epmobile;
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.Preference;
-import android.preference.PreferenceFragment;
+
+import androidx.preference.Preference;
+import androidx.preference.PreferenceFragmentCompat;
 
 /**
  * Copyright (C) 2013, 2014 EP Studios, Inc.
@@ -13,7 +14,7 @@ import android.preference.PreferenceFragment;
 
 // TODO possible add same code to OldPrefs
 @SuppressWarnings("SpellCheckingInspection")
-public class MyPreferenceFragment extends PreferenceFragment
+public class MyPreferenceFragment extends PreferenceFragmentCompat
         implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     private String qtcFormulaDefaultValue;
@@ -45,7 +46,7 @@ public class MyPreferenceFragment extends PreferenceFragment
     @Override
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.settings);
+//        addPreferencesFromResource(R.xml.settings);
         Activity activity = getActivity();
         SharedPreferences sharedPreferences = getPreferenceScreen().getSharedPreferences();
         
@@ -92,6 +93,11 @@ public class MyPreferenceFragment extends PreferenceFragment
         creatUnitPref = findPreference(creatUnitKey);
         creatUnitPref.setSummary(getCreatUnit(activity, sharedPreferences));
 
+    }
+
+    @Override
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+        setPreferencesFromResource(R.xml.settings, rootKey);
     }
 
     private String getMaximumQtcSummary(String maximumQtc) {

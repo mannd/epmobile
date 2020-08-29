@@ -36,7 +36,7 @@ public class Prefs extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
-        getFragmentManager().beginTransaction()
+        getSupportFragmentManager().beginTransaction()
                 .replace(R.id.content_frame, new MyPreferenceFragment()).commit();
 
     }

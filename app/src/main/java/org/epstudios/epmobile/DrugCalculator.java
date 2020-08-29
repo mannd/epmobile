@@ -197,7 +197,7 @@ public abstract class DrugCalculator extends EpActivity implements
 			double creatinine = Double.parseDouble(creatinineText.toString());
 			double age = Double.parseDouble(ageText.toString());
 			if (age < 18 && !pediatricDosingOk()) {
-				calculatedDoseTextView.setText("Do not use!");
+				calculatedDoseTextView.setText(getString(R.string.do_not_use_warning));
 				calculatedDoseTextView.setTextColor(Color.RED);
 				ccTextView.setTextColor(Color.RED);
 				ccTextView.setText(getString(R.string.pediatric_use_warning));
@@ -209,7 +209,7 @@ public abstract class DrugCalculator extends EpActivity implements
 			ccTextView.setTextAppearance(this,
 					android.R.style.TextAppearance_Medium);
 			String ccMessage = getMessage(cc, age);
-			ccTextView.setText(ccMessage + getDisclaimer());
+			ccTextView.setText(String.format("%s%s", ccMessage, getDisclaimer()));
             creatinineClearanceReturnString = getCrClResultString(cc, isMale, age, weight, creatinine,
                     useMmolUnits);
             double dose = getDose(cc);
@@ -241,7 +241,7 @@ public abstract class DrugCalculator extends EpActivity implements
             if (dose < 0) {  // CrCl only
                 calculatedDoseTextView.setTextAppearance(this,
                         android.R.style.TextAppearance_Large);
-                calculatedDoseTextView.setText(String.valueOf(cc) + " mL/min");
+                calculatedDoseTextView.setText(String.format("%s mL/min", cc));
             }
 			else if (dose == 0) {
 				calculatedDoseTextView
@@ -252,8 +252,8 @@ public abstract class DrugCalculator extends EpActivity implements
 				calculatedDoseTextView.setTextAppearance(this,
 						android.R.style.TextAppearance_Large);
 				// format to only show decimal if non-zero
-				calculatedDoseTextView.setText(new DecimalFormat("#.#")
-						.format(dose) + doseFrequency(cc));
+				calculatedDoseTextView.setText(String.format("%s%s", new DecimalFormat("#.#")
+						.format(dose), doseFrequency(cc)));
 			}
 		} catch (NumberFormatException e) {
 			calculatedDoseTextView.setText(getString(R.string.invalid_warning));
@@ -318,7 +318,7 @@ public abstract class DrugCalculator extends EpActivity implements
 		// override for drug-specific message
 		// age is only used in some cases for warnings
 		return getString(R.string.long_creatinine_clearance_label) + " = "
-				+ String.valueOf(crCl) + " mL/min";
+				+ crCl + " mL/min";
 	}
 
     protected String getDisclaimer() {

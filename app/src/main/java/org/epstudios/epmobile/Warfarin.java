@@ -213,10 +213,10 @@ public class Warfarin extends EpActivity implements
 									doseChange.highEnd / 100.0,
 									getWeeklyDose(), increaseDose);
 					message = message + "weekly dose by "
-							+ String.valueOf(doseChange.lowEnd) + "% ("
-							+ String.valueOf(lowEndDose) + " mg/wk) to "
-							+ String.valueOf(doseChange.highEnd) + "% ("
-							+ String.valueOf(highEndDose) + " mg/wk).";
+							+ doseChange.lowEnd + "% ("
+							+ lowEndDose + " mg/wk) to "
+							+ doseChange.highEnd + "% ("
+							+ highEndDose + " mg/wk).";
 					if (weeklyDoseIsSane(getWeeklyDose(), getTabletDose()))
 						showDoses = true;
 				}

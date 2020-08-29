@@ -26,7 +26,6 @@ import android.view.View.OnClickListener;
 import android.widget.CheckBox;
 import android.widget.RadioGroup;
 
-@SuppressWarnings("SpellCheckingInspection")
 public class ShortQt extends EpActivity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

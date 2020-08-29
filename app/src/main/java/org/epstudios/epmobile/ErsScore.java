@@ -32,16 +32,6 @@ import java.util.Locale;
 public class ErsScore extends RiskScore {
     private final List<Integer> points = new ArrayList<>(Arrays.asList(30, 20, 10, 20, 15, 10, 20,
             20, 20, 10, 5, 5));
-    private final int clinicalIndexBegin = 0;
-    private final int clinicalIndexEnd = 2;
-    private final int ecgIndexBegin = 3;
-    private final int ecgIndexEnd = 5;
-    private final int ambulatoryEcgIndexBegin = 6;
-    private final int ambulatoryEcgIndexEnd = 6;
-    private final int familyIndexBegin = 7;
-    private final int familyIndexEnd = 10;
-    private final int geneticIndexBegin = 11;
-    private final int geneticIndexEnd = 11;
 
     @Override
     protected void setContentView() {
@@ -86,26 +76,36 @@ public class ErsScore extends RiskScore {
         int ambulatoryEcgScore = 0;
         int familyScore = 0;
         int geneticScore = 0;
+        int clinicalIndexEnd = 2;
+        int clinicalIndexBegin = 0;
         for (int i = clinicalIndexBegin; i <= clinicalIndexEnd; ++i) {
             if (checkBox[i].isChecked() && points.get(i) > clinicalScore) {
                 clinicalScore = points.get(i);
             }
         }
+        int ecgIndexEnd = 5;
+        int ecgIndexBegin = 3;
         for (int i = ecgIndexBegin; i <= ecgIndexEnd; ++i) {
             if (checkBox[i].isChecked() && points.get(i) > ecgScore) {
                 ecgScore = points.get(i);
             }
         }
+        int ambulatoryEcgIndexEnd = 6;
+        int ambulatoryEcgIndexBegin = 6;
         for (int i = ambulatoryEcgIndexBegin; i <= ambulatoryEcgIndexEnd; ++i) {
             if (checkBox[i].isChecked() && points.get(i) > clinicalScore) {
                 ambulatoryEcgScore = points.get(i);
             }
         }
+        int familyIndexEnd = 10;
+        int familyIndexBegin = 7;
         for (int i = familyIndexBegin; i <= familyIndexEnd; ++i) {
             if (checkBox[i].isChecked() && points.get(i) > familyScore) {
                 familyScore = points.get(i);
             }
         }
+        int geneticIndexEnd = 11;
+        int geneticIndexBegin = 11;
         for (int i = geneticIndexBegin; i <= geneticIndexEnd; ++i) {
             if (checkBox[i].isChecked() && points.get(i) > geneticScore) {
                 geneticScore = points.get(i);

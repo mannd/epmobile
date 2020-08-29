@@ -32,14 +32,6 @@ import java.util.Locale;
 public class BrugadaScore extends RiskScore {
     private final List<Integer> points = new ArrayList<>(Arrays.asList(35, 30, 20, 30, 20, 20, 10,
             5, 20, 10, 5, 5));
-    private final int ecgIndexBegin = 0;
-    private final int ecgIndexEnd = 2;
-    private final int clinicalIndexBegin = 3;
-    private final int clinicalIndexEnd = 7;
-    private final int familyIndexBegin = 8;
-    private final int familyIndexEnd = 10;
-    private final int geneticIndexBegin = 11;
-    private final int geneticIndexEnd = 11;
 
     @Override
     protected void setContentView() {
@@ -82,21 +74,29 @@ public class BrugadaScore extends RiskScore {
         int clinicalScore = 0;
         int familyScore = 0;
         int geneticScore = 0;
+        int ecgIndexEnd = 2;
+        int ecgIndexBegin = 0;
         for (int i = ecgIndexBegin; i <= ecgIndexEnd; ++i) {
             if (checkBox[i].isChecked() && points.get(i) > ecgScore) {
                 ecgScore = points.get(i);
             }
         }
+        int clinicalIndexEnd = 7;
+        int clinicalIndexBegin = 3;
         for (int i = clinicalIndexBegin; i <= clinicalIndexEnd; ++i) {
             if (checkBox[i].isChecked() && points.get(i) > clinicalScore) {
                 clinicalScore = points.get(i);
             }
         }
+        int familyIndexEnd = 10;
+        int familyIndexBegin = 8;
         for (int i = familyIndexBegin; i <= familyIndexEnd; ++i) {
             if (checkBox[i].isChecked() && points.get(i) > familyScore) {
                 familyScore = points.get(i);
             }
         }
+        int geneticIndexEnd = 11;
+        int geneticIndexBegin = 11;
         for (int i = geneticIndexBegin; i <= geneticIndexEnd; ++i) {
             if (checkBox[i].isChecked() && points.get(i) > geneticScore) {
                 geneticScore = points.get(i);
@@ -115,16 +115,16 @@ public class BrugadaScore extends RiskScore {
     }
 
     private String getResultMessage(int result) {
-        String message = String.format(Locale.getDefault(),"Risk Score = %s\n",
+        String message = String.format(Locale.getDefault(),getString(R.string.brugada_score_risk_score),
                 UnitConverter.trimmedTrailingZeros(result / 10.0));
         if (result >= 35) {
-            message += "Probable/definite Brugada Syndrome";
+            message += getString(R.string.brugada_score_probable_message);
         }
         else if (result >= 20) {
-            message += "Possible Brugada Syndrome";
+            message += getString(R.string.brugada_score_possible_message);
         }
         else {
-            message += "Non-diagnostic";
+            message += getString(R.string.nondiagnostic_message);
         }
         setResultMessage(message);
         // no short reference added here

@@ -1,17 +1,12 @@
 package org.epstudios.epmobile;
 
-import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.TypedValue;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 /**
  * Copyright (C) 2019 EP Studios, Inc.
@@ -70,7 +65,7 @@ public class LongQtTable extends EpActivity {
     }
 
     private void init() {
-        RowData rowData[] = initData();
+        RowData[] rowData = initData();
         int count = rowData.length;
         for (int i = 0; i < count; i++) {
             final View item = layoutInflater.inflate(R.layout.lqtrowlayout, tableLayout, false);
@@ -124,15 +119,6 @@ public class LongQtTable extends EpActivity {
     }
 
     private RowData[] initData() {
-        RowData rowData[] = data;
-//        RowData rowData[] = new RowData[10];
-//        for (int i = 0; i < 10; i++) {
-//            RowData row = new RowData();
-//            row.subtype = "subtype" + i;
-//            row.channel = "channel" + i;
-//            row.details = "details detail detail detail detail detail detail detail detail detail detail detail " + i;
-//            rowData[i] = row;
-//        }
-        return rowData;
+        return data;
     }
 }

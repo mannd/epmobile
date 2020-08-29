@@ -219,7 +219,7 @@ public class Qtc extends EpActivity implements OnClickListener {
 	}
 
 	private void showQtcFormula() {
-		qtcFormulaTextView.setText("QTc formula used was " + qtcFormula);
+		qtcFormulaTextView.setText(getString(R.string.qtc_formula_used, qtcFormula));
 	}
 
 	private void calculateQtc() {
@@ -237,7 +237,7 @@ public class Qtc extends EpActivity implements OnClickListener {
 			Toast.makeText(this, "QTc Formula is " + qtcFormula,
 					Toast.LENGTH_LONG).show();
 			int qtc = QtcCalculator.calculate(rr, qt, formula);
-			qtcTextView.setText("QTc = " + String.valueOf(qtc) + " msec");
+			qtcTextView.setText(getString(R.string.qtc_result,  String.valueOf(qtc)));
 			if (qtc >= qtcUpperLimit)
 				qtcTextView.setTextColor(Color.RED);
 			else

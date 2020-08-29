@@ -94,6 +94,7 @@ public class CycleLength extends EpActivity implements OnClickListener {
 			break;
 		case R.id.cl_button:
 		case R.id.hr_button:
+			resultTextView.setText(getString(R.string.calculated_result_label));
 			setInputHint();
 			setMeasurementTextView();
 			break;
@@ -123,11 +124,9 @@ public class CycleLength extends EpActivity implements OnClickListener {
 				throw new NumberFormatException();
 			result = calculate(result);
 			if (intervalRateRadioGroup.getCheckedRadioButtonId() == R.id.cl_button)
-				resultTextView.setText("Rate = " + String.valueOf(result)
-						+ " bpm");
+				resultTextView.setText(getString(R.string.cl_result_as_rate, String.valueOf(result)));
 			else
-				resultTextView.setText("Interval = " + String.valueOf(result)
-						+ " msec");
+				resultTextView.setText(getString(R.string.cl_result_as_interval, String.valueOf(result)));
 		} catch (NumberFormatException e) {
 			resultTextView.setText(getString(R.string.invalid_warning));
 			resultTextView.setTextColor(Color.RED);

@@ -174,7 +174,7 @@ public class QtcIvcdResults extends EpActivity {
         showDetails(getString(R.string.prelbbbqtc_details_title), message);
     }
     private void showInstructions() {
-        showDetails(getString(R.string.qt_intructions_title),
+        showDetails(getString(R.string.qt_instructions_title),
                 getString(R.string.qt_ivcd_instructions));
     }
 

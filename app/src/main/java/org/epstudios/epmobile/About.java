@@ -30,6 +30,6 @@ public class About extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.about);
 		TextView versionTextView = findViewById(R.id.version);
-		versionTextView.setText(String.format(getString(R.string.version_string), VERSION));
+		versionTextView.setText(getString(R.string.version_string, VERSION));
 	}
 }

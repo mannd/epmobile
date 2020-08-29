@@ -14,7 +14,6 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
-@SuppressWarnings("SpellCheckingInspection")
 public class Entrainment extends EpActivity implements OnClickListener {
 	private EditText tclEditText;
 	private EditText ppiEditText;
@@ -169,7 +168,7 @@ public class Entrainment extends EpActivity implements OnClickListener {
 			}
 
 			message = getString(R.string.ppi_minus_tcl_label)
-					+ String.valueOf(ppiMinusTcl) + ". " + message;
+					+ ppiMinusTcl + ". " + message;
 			resultTextView.setText(message);
 
 		} catch (NumberFormatException e) {

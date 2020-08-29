@@ -34,8 +34,6 @@ import android.widget.TextView;
 @SuppressWarnings("SpellCheckingInspection")
 public class MitralAnnularVt extends LocationAlgorithm implements
 		OnClickListener {
-	private Button yesButton;
-	private Button noButton;
 	protected Button backButton;
 	private Button instructionsButton;
 	protected TextView stepTextView;
@@ -58,10 +56,10 @@ public class MitralAnnularVt extends LocationAlgorithm implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.simplealgorithm);
 	initToolbar();
-	
-		yesButton = findViewById(R.id.yes_button);
+
+		Button yesButton = findViewById(R.id.yes_button);
 		yesButton.setOnClickListener(this);
-		noButton = findViewById(R.id.no_button);
+		Button noButton = findViewById(R.id.no_button);
 		noButton.setOnClickListener(this);
 		backButton = findViewById(R.id.back_button);
 		backButton.setOnClickListener(this);

@@ -2,7 +2,6 @@ package org.epstudios.epmobile;
 
 import android.widget.CheckBox;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

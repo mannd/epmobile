@@ -192,7 +192,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:autoLink="web"
-                android:text="https://academic.oup.com/eurheartj/advance-article/doi/10.1093/eurheartj/ehz103/5419784"/>
+                android:text="@string/arvc_reference_link"/>
 
         </LinearLayout>
 
