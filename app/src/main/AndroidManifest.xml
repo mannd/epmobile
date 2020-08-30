@@ -34,6 +34,7 @@
             android:label="@string/dofetilide_label"/>
         <activity
             android:name=".CycleLength"
+            android:windowSoftInputMode="adjustResize"
             android:label="@string/cycle_length_label"/>
         <activity
             android:name=".Prefs"
@@ -187,7 +188,8 @@
             android:label="@string/day_calculator_title"/>
         <activity
             android:name=".Entrainment"
-            android:label="@string/entrainment_title"/>
+            android:label="@string/entrainment_title"
+            android:configChanges="orientation|screenSize" />
         <activity
             android:name=".IbwCalculator"
             android:label="@string/ibw_calculator_title"/>

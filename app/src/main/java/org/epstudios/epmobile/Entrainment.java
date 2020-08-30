@@ -26,10 +26,10 @@ public class Entrainment extends EpActivity implements OnClickListener {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.entrainment);
-	initToolbar();
-	tclEditText = findViewById(R.id.tclEditText);
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.entrainment);
+		initToolbar();
+		tclEditText = findViewById(R.id.tclEditText);
 		ppiEditText = findViewById(R.id.ppiEditText);
 		sqrsEditText = findViewById(R.id.sqrsEditText);
 		egmQrsEditText = findViewById(R.id.egmQrsEditText);

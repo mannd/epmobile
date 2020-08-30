@@ -30,7 +30,7 @@
     <string name="qt_hint">QT (msec)</string>
     <string name="qtc_result_label">QTc (msec)</string>
     <string name="qtc_formula_label">QTc Formula</string>
-    <string name="calculate_label">Calculate!</string>
+    <string name="calculate_label">Calculate</string>
     <string name="clear_label">Clear</string>
     <string name="dose_result_label">Dose</string>
     <string name="weight_hint">Weight (kg)</string>

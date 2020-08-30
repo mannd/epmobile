@@ -67,20 +67,20 @@ public class LongQtTable extends EpActivity {
     private void init() {
         RowData[] rowData = initData();
         int count = rowData.length;
-        for (int i = 0; i < count; i++) {
+        for (RowData rowDatum : rowData) {
             final View item = layoutInflater.inflate(R.layout.lqtrowlayout, tableLayout, false);
             final TextView subtype_view = (TextView) item.findViewById(R.id.lqt_subtype);
             final TextView channel_view = (TextView) item.findViewById(R.id.lqt_channel);
             final TextView details_view = (TextView) item.findViewById(R.id.lqt_details);
 
-            subtype_view.setText(rowData[i].subtype);
-            channel_view.setText(rowData[i].channel);
-            details_view.setText(rowData[i].details);
+            subtype_view.setText(rowDatum.subtype);
+            channel_view.setText(rowDatum.channel);
+            details_view.setText(rowDatum.details);
 
 
             TableLayout.LayoutParams trParamsSep = new TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT,
                     TableLayout.LayoutParams.WRAP_CONTENT);
-            tableLayout.addView(item, trParamsSep );
+            tableLayout.addView(item, trParamsSep);
 
             // add separator row
             final TableRow trSep = new TableRow(this);

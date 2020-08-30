@@ -1,18 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
     <include layout="@layout/toolbar" />
 
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/buttonBarStyle"
+        android:divider="?android:dividerVertical"
+        android:orientation="horizontal"
+        android:showDividers="middle"
+        android:layout_alignParentBottom="true"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/calculate_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/short_calculate_label" />
+
+        <Button
+            android:id="@+id/clear_all_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/clear_all_label" />
+
+        <Button
+            android:id="@+id/clear_keep_tcl_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/clear_keep_tcl_label" />
+
+        <Button
+            android:id="@+id/instructions_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/help_label" />
+    </LinearLayout>
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_marginBottom="@dimen/activity_vertical_margin">
+        android:layout_marginTop="@dimen/activity_vertical_margin">
 
         <TableLayout
             android:layout_width="match_parent"
@@ -106,41 +149,6 @@
                     android:importantForAutofill="no" />
             </TableRow>
 
-            <LinearLayout
-                android:id="@+id/linearLayout3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center">
-
-                <Button
-                    android:id="@+id/calculate_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/short_calculate_label" />
-
-                <Button
-                    android:id="@+id/clear_all_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/clear_all_label" />
-
-                <Button
-                    android:id="@+id/clear_keep_tcl_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/clear_keep_tcl_label" />
-
-                <Button
-                    android:id="@+id/instructions_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/help_label" />
-            </LinearLayout>
 
             <TextView
                 android:id="@+id/resultTextView"
@@ -151,4 +159,4 @@
 
     </ScrollView>
 
-</LinearLayout>
+</RelativeLayout>

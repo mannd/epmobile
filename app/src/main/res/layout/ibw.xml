@@ -1,25 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <include layout="@layout/toolbar" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/calculateButtonsLayout"
+            style="?android:attr/buttonBarStyle"
+            android:divider="?android:dividerVertical"
+            android:orientation="horizontal"
+            android:showDividers="middle"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/calculate_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="?android:attr/buttonBarButtonStyle"
+                android:text="@string/calculate_label" />
+
+            <Button
+                android:id="@+id/clear_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="?android:attr/buttonBarButtonStyle"
+                android:text="@string/clear_label" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/copyButtonsLayout"
+            style="?android:attr/buttonBarStyle"
+            android:divider="?android:dividerVertical"
+            android:orientation="horizontal"
+            android:showDividers="middle"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/copy_ibw_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="?android:attr/buttonBarButtonStyle"
+                android:text="@string/copy_ibw_label" />
+
+            <Button
+                android:id="@+id/copy_abw_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="?android:attr/buttonBarButtonStyle"
+                android:text="@string/copy_abw_label" />
+        </LinearLayout>
+    </LinearLayout>
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_marginBottom="@dimen/activity_vertical_margin"
-        >
+        android:layout_marginTop="@dimen/activity_vertical_margin">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-           >
+            >
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -109,35 +169,6 @@
                 </TableRow>
             </TableLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <Button
-                    android:id="@+id/calculate_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/calculate_label" />
-
-                <Button
-                    android:id="@+id/clear_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/clear_label" />
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/copy_ibw_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/copy_ibw_label" />
-
-            <Button
-                android:id="@+id/copy_abw_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/copy_abw_label" />
-
             <TextView
                 android:id="@+id/messageTextView"
                 android:layout_width="match_parent"
@@ -148,4 +179,4 @@
 
     </ScrollView>
 
-</LinearLayout>
+</RelativeLayout>

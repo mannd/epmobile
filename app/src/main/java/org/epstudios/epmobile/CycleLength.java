@@ -36,7 +36,7 @@ public class CycleLength extends EpActivity implements OnClickListener {
 		setContentView(R.layout.cyclelength);
 		initToolbar();
 		
-        View calculateResultButton = findViewById(R.id.calculate_result_button);
+        View calculateResultButton = findViewById(R.id.calculate_button);
 		calculateResultButton.setOnClickListener(this);
 		View clearButton = findViewById(R.id.clear_button);
 		clearButton.setOnClickListener(this);
@@ -86,7 +86,7 @@ public class CycleLength extends EpActivity implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-		case R.id.calculate_result_button:
+		case R.id.calculate_button:
 			calculateResult();
 			break;
 		case R.id.clear_button:

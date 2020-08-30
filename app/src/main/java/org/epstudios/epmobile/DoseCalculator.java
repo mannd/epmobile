@@ -16,7 +16,7 @@ public class DoseCalculator {
 	}
 
 	// order in which to add or subtract doses
-	private static final int orderedDays[] = { MON, FRI, WED, SAT, TUE, THU,
+	private static final int[] orderedDays = { MON, FRI, WED, SAT, TUE, THU,
 			SUN };
 
 	public DoseCalculator(double tabletDose, double weeklyDose) {

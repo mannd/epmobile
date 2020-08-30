@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <include layout="@layout/toolbar" />
+    <include layout="@layout/calculatebuttons" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_above="@id/calculateButtonsLayout"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_marginBottom="@dimen/activity_vertical_margin"
-        >
+        android:layout_marginTop="@dimen/activity_vertical_margin">
 
 
         <LinearLayout
@@ -312,25 +313,8 @@
                     android:text="@string/high_bun_label" />
             </RadioGroup>
 
-            <LinearLayout
-                android:id="@+id/linearLayout3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <Button
-                    android:id="@+id/calculate_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/calculate_label" />
-
-                <Button
-                    android:id="@+id/clear_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/clear_label" />
-            </LinearLayout>
         </LinearLayout>
 
     </ScrollView>
 
-</LinearLayout>
+</RelativeLayout>

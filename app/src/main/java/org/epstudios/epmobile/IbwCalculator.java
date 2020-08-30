@@ -40,7 +40,7 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 	}
 
 	private enum WeightMeasurement {
-		IBW, ABW
+		IBW, ABW, ORIGINALW
 	}
 
 	private final static int KG_SELECTION = 0;
@@ -107,10 +107,10 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 			clearEntries();
 			break;
 		case R.id.copy_ibw_button:
-			copyIbwOrAbw(WeightMeasurement.IBW);
+			copyWeight(WeightMeasurement.IBW);
 			break;
 		case R.id.copy_abw_button:
-			copyIbwOrAbw(WeightMeasurement.ABW);
+			copyWeight(WeightMeasurement.ABW);
 			break;
 		}
 	}
@@ -275,27 +275,26 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 		return weight + " " + units + ").";
 	}
 
-	@SuppressWarnings("deprecation")
-	// clipboard handled differently depending on Android version
-	private void copyIbwOrAbw(WeightMeasurement weightType) {
+	// TODO: Change this so that recommended weight is copied to clipboard.
+	private void copyWeight(WeightMeasurement weightType) {
 		String textToCopy;
 		if (weightType == WeightMeasurement.IBW)
 			textToCopy = ibwResultTextView.getText().toString();
-		else
+//		else if (weightType == WeightMeasurement.ABW)
+        else
 			textToCopy = abwResultTextView.getText().toString();
-		int sdk = android.os.Build.VERSION.SDK_INT;
-		if (sdk < android.os.Build.VERSION_CODES.HONEYCOMB) {
-			android.text.ClipboardManager clipboard = (android.text.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-			if (clipboard != null) {
-				clipboard.setText(textToCopy);
-			}
-		} else {
-			android.content.ClipboardManager clipboard = (android.content.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-			android.content.ClipData clip = android.content.ClipData
-					.newPlainText("Copied Text", textToCopy);
-			if (clipboard != null) {
-				clipboard.setPrimaryClip(clip);
-			}
+//		else {
+//			CharSequence weightText = weightEditText.getText();
+//			double weight = Double.parseDouble(weightText.toString());
+//			textToCopy = formatWeight(new DecimalFormat("#.#")
+//							.format(weight),
+//					weightUnitAbbreviation)));
+//		}
+		android.content.ClipboardManager clipboard = (android.content.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+		android.content.ClipData clip = android.content.ClipData
+				.newPlainText("Copied Text", textToCopy);
+		if (clipboard != null) {
+			clipboard.setPrimaryClip(clip);
 		}
 	}
 
