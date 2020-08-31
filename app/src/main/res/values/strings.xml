@@ -820,8 +820,6 @@
     <string name="ibw_calculator_title">Body Weight Calculator</string>
     <string name="height_hint">Height (cm)</string>
     <string name="height_inches_hint">Height (in)</string>
-    <string name="copy_ibw_label">Copy IBW To Clipboard</string>
-    <string name="copy_abw_label">Copy ABW to Clipboard</string>
     <string name="ibw_label">Ideal Body Weight (kg)</string>
     <string name="ibw_hint">IBW (kg)</string>
     <string name="ibw_lb_label">Ideal Body Weight (lb)</string>

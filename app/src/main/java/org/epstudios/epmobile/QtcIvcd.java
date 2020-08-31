@@ -61,7 +61,7 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
         setContentView(R.layout.qtcivcd);
 	initToolbar();
 	
-        View calculateQtcButton = findViewById(R.id.calculate_qtc_button);
+        View calculateQtcButton = findViewById(R.id.calculate_button);
         calculateQtcButton.setOnClickListener(this);
         View clearButton = findViewById(R.id.clear_button);
         clearButton.setOnClickListener(this);
@@ -98,7 +98,7 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.calculate_qtc_button:
+            case R.id.calculate_button:
                 calculateQtc();
                 break;
             case R.id.clear_button:

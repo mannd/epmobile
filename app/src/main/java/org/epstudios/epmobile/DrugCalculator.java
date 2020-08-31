@@ -30,7 +30,7 @@ public abstract class DrugCalculator extends EpActivity implements
         setContentView(R.layout.drugcalculator);
 	initToolbar();
 	
-		View calculateDoseButton = findViewById(R.id.calculate_dose_button);
+		View calculateDoseButton = findViewById(R.id.calculate_button);
 		calculateDoseButton.setOnClickListener(this);
 		View clearButton = findViewById(R.id.clear_button);
 		clearButton.setOnClickListener(this);
@@ -89,7 +89,7 @@ public abstract class DrugCalculator extends EpActivity implements
     @Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-		case R.id.calculate_dose_button:
+		case R.id.calculate_button:
 			calculateDose();
 			break;
 		case R.id.clear_button:

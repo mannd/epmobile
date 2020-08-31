@@ -30,7 +30,7 @@ public class DayCalculator extends EpActivity implements OnClickListener {
 		setContentView(R.layout.daycalculator);
 		initToolbar();
 		
-        View calculateDateButton = findViewById(R.id.calculate_date_button);
+        View calculateDateButton = findViewById(R.id.calculate_button);
 		calculateDateButton.setOnClickListener(this);
 		View clearButton = findViewById(R.id.clear_button);
 		clearButton.setOnClickListener(this);
@@ -87,7 +87,7 @@ public class DayCalculator extends EpActivity implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-		case R.id.calculate_date_button:
+		case R.id.calculate_button:
 			calculateDays();
 			break;
 		case R.id.clear_button:
