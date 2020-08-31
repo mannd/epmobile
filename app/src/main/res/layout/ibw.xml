@@ -6,17 +6,12 @@
 
     <include layout="@layout/toolbar" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="vertical">
-
         <LinearLayout
             android:id="@+id/calculateButtonsLayout"
             style="?android:attr/buttonBarStyle"
             android:divider="?android:dividerVertical"
             android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
             android:showDividers="middle"
             android:gravity="center"
             android:layout_width="match_parent"
@@ -39,34 +34,19 @@
                 android:text="@string/clear_label" />
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/copyButtonsLayout"
-            style="?android:attr/buttonBarStyle"
-            android:divider="?android:dividerVertical"
-            android:orientation="horizontal"
-            android:showDividers="middle"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <Button
-                android:id="@+id/copy_ibw_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                style="?android:attr/buttonBarButtonStyle"
-                android:text="@string/copy_ibw_label" />
+    <TextView
+        android:id="@+id/messageTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/scrollView"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
-            <Button
-                android:id="@+id/copy_abw_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                style="?android:attr/buttonBarButtonStyle"
-                android:text="@string/copy_abw_label" />
-        </LinearLayout>
-    </LinearLayout>
 
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -169,12 +149,6 @@
                 </TableRow>
             </TableLayout>
 
-            <TextView
-                android:id="@+id/messageTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textAppearance="?android:attr/textAppearanceMedium" />
         </LinearLayout>
 
     </ScrollView>

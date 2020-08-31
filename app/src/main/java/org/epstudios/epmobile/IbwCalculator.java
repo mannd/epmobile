@@ -61,10 +61,6 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 		calculateButton.setOnClickListener(this);
 		View clearButton = findViewById(R.id.clear_button);
 		clearButton.setOnClickListener(this);
-		View copyIbwButton = findViewById(R.id.copy_ibw_button);
-		copyIbwButton.setOnClickListener(this);
-		View copyAbwButton = findViewById(R.id.copy_abw_button);
-		copyAbwButton.setOnClickListener(this);
 
 		sexRadioGroup = findViewById(R.id.sexRadioGroup);
 		weightEditText = findViewById(R.id.weightEditText);
@@ -105,12 +101,6 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 			break;
 		case R.id.clear_button:
 			clearEntries();
-			break;
-		case R.id.copy_ibw_button:
-			copyWeight(WeightMeasurement.IBW);
-			break;
-		case R.id.copy_abw_button:
-			copyWeight(WeightMeasurement.ABW);
 			break;
 		}
 	}
@@ -275,21 +265,13 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 		return weight + " " + units + ").";
 	}
 
-	// TODO: Change this so that recommended weight is copied to clipboard.
+	// TODO: probably delete this method.
 	private void copyWeight(WeightMeasurement weightType) {
 		String textToCopy;
 		if (weightType == WeightMeasurement.IBW)
 			textToCopy = ibwResultTextView.getText().toString();
-//		else if (weightType == WeightMeasurement.ABW)
         else
 			textToCopy = abwResultTextView.getText().toString();
-//		else {
-//			CharSequence weightText = weightEditText.getText();
-//			double weight = Double.parseDouble(weightText.toString());
-//			textToCopy = formatWeight(new DecimalFormat("#.#")
-//							.format(weight),
-//					weightUnitAbbreviation)));
-//		}
 		android.content.ClipboardManager clipboard = (android.content.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
 		android.content.ClipData clip = android.content.ClipData
 				.newPlainText("Copied Text", textToCopy);
