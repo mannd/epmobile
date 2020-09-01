@@ -47,7 +47,7 @@ public class Qtc extends EpActivity implements OnClickListener {
         setContentView(R.layout.qtc);
 	initToolbar();
 	
-		View calculateQtcButton = findViewById(R.id.calculate_qtc_button);
+		View calculateQtcButton = findViewById(R.id.calculate_button);
 		calculateQtcButton.setOnClickListener(this);
 		View clearButton = findViewById(R.id.clear_button);
 		clearButton.setOnClickListener(this);
@@ -69,8 +69,7 @@ public class Qtc extends EpActivity implements OnClickListener {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case android.R.id.home:
+		if (item.getItemId() == android.R.id.home) {
 			Intent parentActivityIntent = new Intent(this, CalculatorList.class);
 			parentActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
 					| Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -105,7 +104,7 @@ public class Qtc extends EpActivity implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-		case R.id.calculate_qtc_button:
+		case R.id.calculate_button:
 			calculateQtc();
 			break;
 		case R.id.clear_button:
@@ -251,14 +250,13 @@ public class Qtc extends EpActivity implements OnClickListener {
 
 	private QtcFormula getQtcFormula(String name) {
 		switch (name) {
-			case "BAZETT":
-				return QtcFormula.BAZETT;
 			case "FRIDERICIA":
 				return QtcFormula.FRIDERICIA;
 			case "SAGIE":
 				return QtcFormula.SAGIE;
 			case "HODGES":
 				return QtcFormula.HODGES;
+			case "BAZETT":
 			default:
 				return QtcFormula.BAZETT;
 		}

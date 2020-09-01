@@ -28,18 +28,19 @@ import static java.lang.Math.round;
  */
 public class ArvcRiskModel {
     public static final double year5 = 0.800813822845434;
-    public static final double year4 = 0.837312364505388;
-    public static final double year3 = 0.849912331481654;
+    // Durations below from paper but not currently used in app.
+    //public static final double year4 = 0.837312364505388;
+    //public static final double year3 = 0.849912331481654;
     public static final double year2 = 0.875734032965286;
     public static final double year1 = 0.921429983419349;
 
-    private int sex;
-    private int age;
-    private int hxSyncope;
-    private int hxNSVT;
-    private int pvcCount;
-    private int twiCount;
-    private int rvef;
+    private final int sex;
+    private final int age;
+    private final int hxSyncope;
+    private final int hxNSVT;
+    private final int pvcCount;
+    private final int twiCount;
+    private final int rvef;
 
     ArvcRiskModel(int sex, int age, int hxSyncope, int hxNSVT, int pvcCount,
                   int twiCount, int rvef) {

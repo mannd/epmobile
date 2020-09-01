@@ -189,7 +189,7 @@ public abstract class DrugCalculator extends EpActivity implements
 		CharSequence weightText = weightEditText.getText();
 		CharSequence creatinineText = creatinineEditText.getText();
 		CharSequence ageText = ageEditText.getText();
-		Boolean isMale = sexRadioGroup.getCheckedRadioButtonId() == R.id.male;
+		boolean isMale = sexRadioGroup.getCheckedRadioButtonId() == R.id.male;
 		try {
 			double weight = Double.parseDouble(weightText.toString());
 			if (getWeightUnitSelection().equals(WeightUnit.LB))

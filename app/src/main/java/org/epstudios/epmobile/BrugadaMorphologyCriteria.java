@@ -70,8 +70,7 @@ public class BrugadaMorphologyCriteria extends EpActivity implements
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case android.R.id.home:
+		if (item.getItemId() == android.R.id.home) {
 			Intent parentActivityIntent = new Intent(this,
 					WctAlgorithmList.class);
 			parentActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
@@ -147,8 +146,8 @@ public class BrugadaMorphologyCriteria extends EpActivity implements
 		rbbbV6.add(3);
 		rbbbV6.add(4);
 		rbbbV6.add(5);
-		Boolean inV1 = false;
-		Boolean inV6 = false;
+		boolean inV1 = false;
+		boolean inV6 = false;
 		for (int i = 0; i < lbbbCheckBox.length; i++) {
 			if (lbbbCheckBox[i].isChecked() && lbbbV1.contains(i))
 				inV1 = true;

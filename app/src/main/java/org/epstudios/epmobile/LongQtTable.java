@@ -34,7 +34,7 @@ public class LongQtTable extends EpActivity {
     private TableLayout tableLayout;
     private LayoutInflater layoutInflater;
 
-    private RowData[] data = {new RowData("LQT1", "KCNQ1", "Encodes the α-subunit of the slow delayed rectifier potassium channel KV7.1 carrying the potassium current IKs."),
+    private final RowData[] data = {new RowData("LQT1", "KCNQ1", "Encodes the α-subunit of the slow delayed rectifier potassium channel KV7.1 carrying the potassium current IKs."),
             new RowData("LQT2", "KCNH2", "Also known as hERG. Encodes the α-subunit of the rapid delayed rectifier potassium channel KV11.1 carrying the potassium current IKr."),
             new RowData("LQT3", "SCN5A", "Encodes the α-subunit of the cardiac sodium channel NaV1.5 carrying the sodium current INa."),
             new RowData("LQT4", "ANK2", "Encodes Ankyrin B which anchors the ion channels in the cell. Disputed whether truly disease causing versus minor QT susceptibility gene."),
@@ -58,7 +58,7 @@ public class LongQtTable extends EpActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.longqttable);
         initToolbar();
-        tableLayout = (TableLayout)findViewById(R.id.lqt_table);
+        tableLayout = findViewById(R.id.lqt_table);
         layoutInflater = LayoutInflater.from(this);
         init();
 
@@ -66,12 +66,11 @@ public class LongQtTable extends EpActivity {
 
     private void init() {
         RowData[] rowData = initData();
-        int count = rowData.length;
         for (RowData rowDatum : rowData) {
             final View item = layoutInflater.inflate(R.layout.lqtrowlayout, tableLayout, false);
-            final TextView subtype_view = (TextView) item.findViewById(R.id.lqt_subtype);
-            final TextView channel_view = (TextView) item.findViewById(R.id.lqt_channel);
-            final TextView details_view = (TextView) item.findViewById(R.id.lqt_details);
+            final TextView subtype_view = item.findViewById(R.id.lqt_subtype);
+            final TextView channel_view = item.findViewById(R.id.lqt_channel);
+            final TextView details_view = item.findViewById(R.id.lqt_details);
 
             subtype_view.setText(rowDatum.subtype);
             channel_view.setText(rowDatum.channel);
@@ -101,20 +100,14 @@ public class LongQtTable extends EpActivity {
     }
 
     private static class RowData {
-        String subtype;
-        String channel;
-        String details;
+        final String subtype;
+        final String channel;
+        final String details;
 
         RowData(String subtype, String channel, String details) {
             this.subtype = subtype;
             this.channel = channel;
             this.details = details;
-        }
-
-        RowData() {
-            subtype = "";
-            channel = "";
-            details = "";
         }
     }
 

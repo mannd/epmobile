@@ -28,6 +28,7 @@
             android:theme="@android:style/Theme.Dialog"/>
         <activity
             android:name=".Qtc"
+            android:windowSoftInputMode="adjustResize"
             android:label="@string/qtc_calculator_title"/>
         <activity
             android:name=".Dofetilide"

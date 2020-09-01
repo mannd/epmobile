@@ -144,13 +144,13 @@ public class MyPreferenceFragment extends PreferenceFragmentCompat
 
     private String getWarfarinTablet(Activity activity, SharedPreferences sharedPreferences) {
         String[] warfarinTabletArray = activity.getResources().getStringArray(R.array.warfarin_tablets);
-        Integer warfarinTabletIndex = Integer.parseInt(sharedPreferences.getString(warfarinTabletKey, warfarinTabletDefaultValue));
+        int warfarinTabletIndex = Integer.parseInt(sharedPreferences.getString(warfarinTabletKey, warfarinTabletDefaultValue));
         return warfarinTabletArray[warfarinTabletIndex];
     }
 
     private String getInrTarget(Activity activity, SharedPreferences sharedPreferences) {
         String[] inrTargetArray = activity.getResources().getStringArray(R.array.inr_targets);
-        Integer inrTargetIndex = Integer.parseInt(sharedPreferences.getString(inrTargetKey, inrTargetDefaultValue));
+        int inrTargetIndex = Integer.parseInt(sharedPreferences.getString(inrTargetKey, inrTargetDefaultValue));
         return inrTargetArray[inrTargetIndex];
     }
 

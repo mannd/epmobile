@@ -97,10 +97,7 @@ public class ArvcRisk extends DiagnosticScore {
         if (rvef < minEF) {
             return minEF;
         }
-        if (rvef > maxEF) {
-            return maxEF;
-        }
-        return rvef;
+        return Math.min(rvef, maxEF);
     }
 
     //@Override

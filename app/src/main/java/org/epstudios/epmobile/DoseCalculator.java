@@ -89,8 +89,8 @@ public class DoseCalculator {
 		}
 	}
 
-	private Boolean allHalfTablets(double[] doses) {
-		Boolean allHalfTabs = true;
+	private boolean allHalfTablets(double[] doses) {
+		boolean allHalfTabs = true;
 		for (double dose : doses)
 			if (dose > 0.5) {
 				allHalfTabs = false;
@@ -99,8 +99,8 @@ public class DoseCalculator {
 		return allHalfTabs;
 	}
 
-	private Boolean allDoubleTablets(double[] doses) {
-		Boolean allDoubleTabs = true;
+	private boolean allDoubleTablets(double[] doses) {
+		boolean allDoubleTabs = true;
 		for (double dose : doses)
 			if (dose != 2.0) {
 				allDoubleTabs = false;

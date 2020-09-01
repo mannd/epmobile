@@ -39,9 +39,9 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 		CM, IN
 	}
 
-	private enum WeightMeasurement {
-		IBW, ABW, ORIGINALW
-	}
+//	private enum WeightMeasurement {
+//		IBW, ABW, ORIGINALW
+//	}
 
 	private final static int KG_SELECTION = 0;
 	private final static int LB_SELECTION = 1;
@@ -81,15 +81,14 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case android.R.id.home:
-			Intent parentActivityIntent = new Intent(this, CalculatorList.class);
-			parentActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
-					| Intent.FLAG_ACTIVITY_NEW_TASK);
-			startActivity(parentActivityIntent);
-			finish();
-			return true;
-		}
+        if (item.getItemId() == android.R.id.home) {
+            Intent parentActivityIntent = new Intent(this, CalculatorList.class);
+            parentActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+                    | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(parentActivityIntent);
+            finish();
+            return true;
+        }
 		return super.onOptionsItemSelected(item);
 	}
 
@@ -205,7 +204,7 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 		messageTextView.setText(null);
 		// make sure message white with 2 calculations in row, 1st invalid
 		resetResultTextColor();
-		Boolean isMale = sexRadioGroup.getCheckedRadioButtonId() == R.id.male;
+		boolean isMale = sexRadioGroup.getCheckedRadioButtonId() == R.id.male;
 		CharSequence weightText = weightEditText.getText();
 		CharSequence heightText = heightEditText.getText();
 		try {
@@ -266,19 +265,19 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 	}
 
 	// TODO: probably delete this method.
-	private void copyWeight(WeightMeasurement weightType) {
-		String textToCopy;
-		if (weightType == WeightMeasurement.IBW)
-			textToCopy = ibwResultTextView.getText().toString();
-        else
-			textToCopy = abwResultTextView.getText().toString();
-		android.content.ClipboardManager clipboard = (android.content.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-		android.content.ClipData clip = android.content.ClipData
-				.newPlainText("Copied Text", textToCopy);
-		if (clipboard != null) {
-			clipboard.setPrimaryClip(clip);
-		}
-	}
+//	private void copyWeight(WeightMeasurement weightType) {
+//		String textToCopy;
+//		if (weightType == WeightMeasurement.IBW)
+//			textToCopy = ibwResultTextView.getText().toString();
+//        else
+//			textToCopy = abwResultTextView.getText().toString();
+//		android.content.ClipboardManager clipboard = (android.content.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+//		android.content.ClipData clip = android.content.ClipData
+//				.newPlainText("Copied Text", textToCopy);
+//		if (clipboard != null) {
+//			clipboard.setPrimaryClip(clip);
+//		}
+//	}
 
 	public static double idealBodyWeight(double height, boolean isMale) {
 		double weight = height > 60.0 ? (height - 60.0) * 2.3 : 0.0;

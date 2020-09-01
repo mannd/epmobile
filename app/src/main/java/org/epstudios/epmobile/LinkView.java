@@ -30,6 +30,7 @@ import android.widget.Button;
  * along with EP Mobile.  If not, see <http://www.gnu.org/licenses/>.
  * <p/>
  */
+@SuppressWarnings("deprecation")
 public class LinkView extends EpActivity implements View.OnClickListener {
     private WebView webView;
     private Button calcCrClButton;
@@ -47,7 +48,7 @@ public class LinkView extends EpActivity implements View.OnClickListener {
         Bundle extras = getIntent().getExtras();
         String url = "";
         String linkTitle = "";
-        Boolean showButton = false;
+        boolean showButton = false;
         if (extras != null) {
             url  = extras.getString("EXTRA_URL");
             linkTitle = extras.getString("EXTRA_TITLE");
@@ -77,11 +78,9 @@ public class LinkView extends EpActivity implements View.OnClickListener {
     }
 
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.text_button:
-                Intent i = new Intent(this, CreatinineClearanceCalculator.class);
-                startActivityForResult(i, CREATININE_CLEARANCE_CALCULATOR_ACTIVITY);
-                break;
+        if (v.getId() == R.id.text_button) {
+            Intent i = new Intent(this, CreatinineClearanceCalculator.class);
+            startActivityForResult(i, CREATININE_CLEARANCE_CALCULATOR_ACTIVITY);
         }
     }
 

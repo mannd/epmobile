@@ -82,14 +82,13 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                Intent parentActivityIntent = new Intent(this, CalculatorList.class);
-                parentActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
-                        | Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(parentActivityIntent);
-                finish();
-                return true;
+        if (item.getItemId() == android.R.id.home) {
+            Intent parentActivityIntent = new Intent(this, CalculatorList.class);
+            parentActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+                    | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(parentActivityIntent);
+            finish();
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -158,8 +157,8 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
         CharSequence qtText = qtEditText.getText();
         CharSequence qrsText = qrsEditText.getText();
         IntervalRate intervalRateSelection = getIntervalRateSelection();
-        Boolean isMale = sexRadioGroup.getCheckedRadioButtonId() == R.id.male;
-        Boolean isLBBB = lbbbCheckBox.isChecked();
+        boolean isMale = sexRadioGroup.getCheckedRadioButtonId() == R.id.male;
+        boolean isLBBB = lbbbCheckBox.isChecked();
         try {
             int interval;
             double rate;
