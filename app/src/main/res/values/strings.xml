@@ -719,7 +719,7 @@
     <string name="long_qt_drugs_title">Long QT Drugs (link)</string>
     <string name="long_qt_drugs_link">https://www.crediblemeds.org</string>
     <string name="brugada_drugs_title">Brugada Drugs (link)</string>
-    <string name="brugada_drugs_link">http://www.brugadadrugs.org</string>
+    <string name="brugada_drugs_link">https://www.brugadadrugs.org</string>
     <string name="apixaban_calculator_title">Apixaban Calculator</string>
     <string name="apixaban_drug_interaction_at_5_mg_message">Use 2.5 mg twice daily when administered with
         strong dual inhibitors of CYP3A4 and P-gp.</string>
