@@ -1,6 +1,5 @@
 package org.epstudios.epmobile;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -331,16 +330,18 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 				.getDefaultSharedPreferences(getBaseContext());
 		String weightUnitPreference = prefs.getString("default_weight_unit",
 				"KG");
-		if (weightUnitPreference.equals("KG"))
-			defaultWeightUnitSelection = WeightUnit.KG;
-		else
-			defaultWeightUnitSelection = WeightUnit.LB;
 		String heightUnitPreference = prefs.getString("default_height_unit",
 				"CM");
-		if (heightUnitPreference.equals("CM"))
-			defaultHeightUnitSelection = HeightUnit.CM;
-		else
-			defaultHeightUnitSelection = HeightUnit.IN;
+		if (weightUnitPreference != null && heightUnitPreference != null) {
+			if (weightUnitPreference.equals("KG"))
+				defaultWeightUnitSelection = WeightUnit.KG;
+			else
+				defaultWeightUnitSelection = WeightUnit.LB;
+			if (heightUnitPreference.equals("CM"))
+				defaultHeightUnitSelection = HeightUnit.CM;
+			else
+				defaultHeightUnitSelection = HeightUnit.IN;
+		}
 	}
 
 }

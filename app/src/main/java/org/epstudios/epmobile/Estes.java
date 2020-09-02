@@ -68,7 +68,7 @@ public class Estes extends RiskScore {
 			message += getString(R.string.estes_no_lvh_message);
 		else if (result == 4)
 			message += getString(R.string.estes_probable_lvh_message);
-		else if (result > 4)
+		else
 			message += getString(R.string.estes_definite_lvh_message);
 		setResultMessage(message);
 		// short reference not added here, is on the layout

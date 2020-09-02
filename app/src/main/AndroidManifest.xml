@@ -40,9 +40,9 @@
         <activity
             android:name=".Prefs"
             android:label="@string/settings_title"/>
-        <activity
-            android:name=".OldPrefs"
-            android:label="EP Mobile Settings"/>
+<!--        <activity-->
+<!--            android:name=".OldPrefs"-->
+<!--            android:label="EP Mobile Settings"/>-->
         <activity
             android:name=".HasBled"
             android:label="@string/hasbled_title"/>

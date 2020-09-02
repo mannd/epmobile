@@ -28,9 +28,8 @@ public class Edoxaban extends DrugCalculator {
             return 0;
         if (crClr > 50)
             return 60;
-        if (crClr >= 15)
+        else
             return 30;
-        return 0;
     }
 
     @Override

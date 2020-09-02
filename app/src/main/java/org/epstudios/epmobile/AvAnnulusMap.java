@@ -28,8 +28,10 @@ public class AvAnnulusMap extends EpActivity {
 			Toast.makeText(this, message, Toast.LENGTH_LONG).show();
 			String location1 = extras.getString("location1");
 			String location2 = extras.getString("location2");
-			setApLocation(location1);
-			setApLocation(location2);
+			if (location1 != null)
+				setApLocation(location1);
+			if (location2 != null)
+				setApLocation(location2);
 		} else
 			setTitle(getString(R.string.anatomy_av_annulus_title));
 	}

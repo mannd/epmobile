@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import androidx.preference.PreferenceManager;
+
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -301,16 +302,18 @@ public abstract class DrugCalculator extends EpActivity implements
 				.getDefaultSharedPreferences(getBaseContext());
 		String weightUnitPreference = prefs.getString("default_weight_unit",
 				"KG");
-		if (weightUnitPreference.equals("KG"))
-			defaultWeightUnitSelection = WeightUnit.KG;
-		else
-			defaultWeightUnitSelection = WeightUnit.LB;
 		String creatinineUnitPreference = prefs.getString(
 				getString(R.string.creatinine_clearance_unit_key), "MG");
-		if (creatinineUnitPreference.equals("MG"))
-			defaultCreatinineUnitSelection = CreatinineUnit.MG;
-		else
-			defaultCreatinineUnitSelection = CreatinineUnit.MMOL;
+		if (weightUnitPreference != null && creatinineUnitPreference != null) {
+			if (weightUnitPreference.equals("KG"))
+				defaultWeightUnitSelection = WeightUnit.KG;
+			else
+				defaultWeightUnitSelection = WeightUnit.LB;
+			if (creatinineUnitPreference.equals("MG"))
+				defaultCreatinineUnitSelection = CreatinineUnit.MG;
+			else
+				defaultCreatinineUnitSelection = CreatinineUnit.MMOL;
+		}
 	}
 
 	protected String getMessage(int crCl, double age) {

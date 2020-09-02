@@ -38,8 +38,10 @@ public class CmsIcdModel {
     private EF ef;
     private Nyha nyha;
     // Exclusions and waiting periods
+    @SuppressWarnings("CanBeFinal")
     private Boolean cabgWithin3Months;
     private Boolean miWithin40Days;
+    @SuppressWarnings("CanBeFinal")
     private Boolean candidateForRevasc;
     private Boolean cardiogenicShock;
     private Boolean nonCardiacDisease;
@@ -133,16 +135,8 @@ public class CmsIcdModel {
         this.nyha = nyha;
     }
 
-    public void setCabgWithin3Months(Boolean cabgWithin3Months) {
-        this.cabgWithin3Months = cabgWithin3Months;
-    }
-
     public void setMiWithin40Days(Boolean miWithin40Days) {
         this.miWithin40Days = miWithin40Days;
-    }
-
-    public void setCandidateForRevasc(Boolean candidateForRevasc) {
-        this.candidateForRevasc = candidateForRevasc;
     }
 
     public void setCardiogenicShock(Boolean cardiogenicShock) {

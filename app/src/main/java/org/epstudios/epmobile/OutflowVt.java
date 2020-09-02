@@ -39,8 +39,6 @@ public class OutflowVt extends LocationAlgorithm implements OnClickListener {
 	private Button instructionsButton;
 	protected TextView stepTextView;
 
-	protected boolean mitralAnnularVt = false;
-
 	private boolean isRvot = false;
 	private boolean isLvot = false;
 	private boolean isIndeterminate = false;

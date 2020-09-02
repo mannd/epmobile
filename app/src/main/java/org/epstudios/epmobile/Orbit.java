@@ -89,6 +89,7 @@ public class Orbit extends RiskScore {
                 risk = "2.4";
                 break;
             case 3:
+                //noinspection DuplicateBranchesInSwitch
                 risk = "4.7";
                 break;
             case 4:

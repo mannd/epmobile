@@ -1367,8 +1367,6 @@
         et al. A new prediction model for ventricular arrhythmias in arrhythmogenic
         right ventricular cardiomyopathy. Eur Heart J. 2019. doi:10.1093/eurheartj/ehz103
 </string>
-    <string name="arvc_risk_short_reference">Cadrin-Tourigny J et al. Eur Heart J. 2019.
-        doi:10.1093/eurheartj/ehz103 </string>
     <string name="age_at_dx_label">Age at diagnosis of ARVC</string>
     <string name="cardiac_syncope_within_6_months_label">Specify if the patient experienced syncope suspected to be caused by cardiac
         arrhythmia in the 6 months prior to diagnosis.</string>

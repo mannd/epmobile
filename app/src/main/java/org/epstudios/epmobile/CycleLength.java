@@ -29,6 +29,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+
 public class CycleLength extends EpActivity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -69,8 +71,9 @@ public class CycleLength extends EpActivity implements OnClickListener {
 		return super.onOptionsItemSelected(item);
 	}
 
+
 	@Override
-	protected void onSaveInstanceState(Bundle outState) {
+	protected void onSaveInstanceState(@NonNull Bundle outState) {
 		super.onSaveInstanceState(outState);
 		outState.putString("label", measurementTextView.getText().toString());
 		outState.putString("hint", inputEditText.getHint().toString());

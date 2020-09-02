@@ -110,6 +110,7 @@ public class ChadsVasc extends RiskScore {
 			risk = "9.6";
 			break;
 		case 8:
+			//noinspection DuplicateBranchesInSwitch
 			risk = "6.7";
 			break;
 		case 9:

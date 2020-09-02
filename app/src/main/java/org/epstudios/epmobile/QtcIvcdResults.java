@@ -49,8 +49,6 @@ public class QtcIvcdResults extends EpActivity {
     private int prelbbbqtc;
     private boolean isLBBB;
 
-    static final String EPS = "EPS";
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

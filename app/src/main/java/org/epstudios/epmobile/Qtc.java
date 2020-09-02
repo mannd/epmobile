@@ -151,7 +151,7 @@ public class Qtc extends EpActivity implements OnClickListener {
 		QtcFormula f = getQtcFormula(qtcFormula);
 		switch (f) {
 		case BAZETT:
-			formula = BAZETT_FORMULA;
+		    // already initialized to BAZETT_FORMULA
 			break;
 		case FRIDERICIA:
 			formula = FRIDERICIA_FORMULA;
@@ -278,18 +278,22 @@ public class Qtc extends EpActivity implements OnClickListener {
 		qtcFormula = prefs.getString("qtc_formula", "BAZETT");
 		String intervalRatePreference = prefs.getString("interval_rate",
 				"INTERVAL");
-		if (intervalRatePreference.equals("INTERVAL"))
-			defaultIntervalRateSelection = IntervalRate.INTERVAL;
-		else
-			defaultIntervalRateSelection = IntervalRate.RATE;
+		if (intervalRatePreference != null) {
+			if (intervalRatePreference.equals("INTERVAL"))
+				defaultIntervalRateSelection = IntervalRate.INTERVAL;
+			else
+				defaultIntervalRateSelection = IntervalRate.RATE;
+		}
 		String s = prefs.getString("maximum_qtc", "");
-		try {
-			qtcUpperLimit = Integer.parseInt(s);
-		} catch (NumberFormatException e) {
-			qtcUpperLimit = QTC_UPPER_LIMIT;
-			SharedPreferences.Editor editor = prefs.edit();
-			editor.putString("maximum_qtc", String.valueOf(QTC_UPPER_LIMIT));
-			editor.apply();
+		if (s != null) {
+			try {
+				qtcUpperLimit = Integer.parseInt(s);
+			} catch (NumberFormatException e) {
+				qtcUpperLimit = QTC_UPPER_LIMIT;
+				SharedPreferences.Editor editor = prefs.edit();
+				editor.putString("maximum_qtc", String.valueOf(QTC_UPPER_LIMIT));
+				editor.apply();
+			}
 		}
 	}
 

@@ -105,15 +105,6 @@ public class ArvcRisk extends DiagnosticScore {
         return getString(R.string.arvc_risk_full_reference);
     }
 
-    //@Override
-    protected String getRiskLabel() {
-        return getString(R.string.arvc_risk_title);
-    }
-
-    //@Override
-    protected String getShortReference() {
-        return getString(R.string.arvc_risk_short_reference);
-    }
 
     @Override
     protected void calculateResult() {

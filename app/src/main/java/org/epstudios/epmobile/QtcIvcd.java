@@ -174,6 +174,7 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
             }
             int qt = Integer.parseInt(qtText.toString());
             int qrs = Integer.parseInt(qrsText.toString());
+            //noinspection ConditionCoveredByFurtherCondition
             if (rateInterval <= 0 || qt <= 0 || qrs <= 0 || qrs >= qt) {
                 throw new NumberFormatException();
             }
@@ -228,10 +229,12 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
                 .getDefaultSharedPreferences(getBaseContext());
         String intervalRatePreference = prefs.getString("interval_rate",
                 "INTERVAL");
-        if (intervalRatePreference.equals("INTERVAL"))
-            defaultIntervalRateSelection = IntervalRate.INTERVAL;
-        else
-            defaultIntervalRateSelection = IntervalRate.RATE;
+        if (intervalRatePreference != null){
+            if (intervalRatePreference.equals("INTERVAL"))
+                defaultIntervalRateSelection = IntervalRate.INTERVAL;
+            else
+                defaultIntervalRateSelection = IntervalRate.RATE;
+        }
     }
 
 }

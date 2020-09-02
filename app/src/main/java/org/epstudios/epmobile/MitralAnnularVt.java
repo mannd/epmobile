@@ -38,8 +38,6 @@ public class MitralAnnularVt extends LocationAlgorithm implements
 	private Button instructionsButton;
 	protected TextView stepTextView;
 
-	protected boolean mitralAnnularVt = false;
-
 	private boolean isNotMitralAnnular = false;
 	private boolean isAnteroLateral = false;
 	private boolean isAnteroMedial = false;

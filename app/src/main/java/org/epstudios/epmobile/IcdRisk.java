@@ -106,7 +106,8 @@ public class IcdRisk extends DiagnosticScore {
 			score += 12;
 			break;
 		case R.id.generator_replacement_malfunction:
-			score += 13;
+            //noinspection DuplicateBranchesInSwitch
+            score += 13;
 			break;
 		case R.id.generator_replacement_other:
 			score += 14;
