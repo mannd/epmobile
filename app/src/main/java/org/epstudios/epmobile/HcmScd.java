@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (C) 2015 EP Studios, Inc.
  * www.epstudiossoftware.com
  * <p/>

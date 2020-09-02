@@ -13,8 +13,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="left"
-            android:text="subtype"
+            android:gravity="start"
+            style="@style/Header1"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
         <TextView
@@ -22,14 +22,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:gravity="right"
-            android:text="channel"
+            android:gravity="end"
+            style="@style/Header2"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
     </LinearLayout>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/lqt_details"
-        android:text="details"/>
-
+        android:id="@+id/lqt_details" />
 </LinearLayout>

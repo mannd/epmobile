@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/morphology_label"
-                android:src="@drawable/lbbbmorphology"></ImageView>
+                android:src="@drawable/lbbbmorphology" />
 
             <TextView
                 android:text="@string/rbbb_wct_label"
@@ -40,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/morphology_label"
-                android:src="@drawable/rbbbmorphology"></ImageView>
+                android:src="@drawable/rbbbmorphology" />
 
             <TextView
                 android:text="@string/wellens_reference"

@@ -30,7 +30,7 @@ public class DayCalculator extends EpActivity implements OnClickListener {
 		setContentView(R.layout.daycalculator);
 		initToolbar();
 		
-        View calculateDateButton = findViewById(R.id.calculate_date_button);
+        View calculateDateButton = findViewById(R.id.calculate_button);
 		calculateDateButton.setOnClickListener(this);
 		View clearButton = findViewById(R.id.clear_button);
 		clearButton.setOnClickListener(this);
@@ -40,7 +40,7 @@ public class DayCalculator extends EpActivity implements OnClickListener {
 		numberOfDaysEditText = findViewById(R.id.numberOfDaysEditText);
 		reverseTimeCheckBox = findViewById(R.id.reverseTimeCheckBox);
 		calculatedDateTextView = findViewById(R.id.calculated_date);
-		numberOfDaysEditText.setText("90");
+		numberOfDaysEditText.setText(R.string.dc_default_number_of_days);
 
 		dayRadioGroup
 				.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -72,22 +72,21 @@ public class DayCalculator extends EpActivity implements OnClickListener {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case android.R.id.home:
-			Intent parentActivityIntent = new Intent(this, CalculatorList.class);
-			parentActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
-					| Intent.FLAG_ACTIVITY_NEW_TASK);
-			startActivity(parentActivityIntent);
-			finish();
-			return true;
-		}
+        if (item.getItemId() == android.R.id.home) {
+            Intent parentActivityIntent = new Intent(this, CalculatorList.class);
+            parentActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+                    | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(parentActivityIntent);
+            finish();
+            return true;
+        }
 		return super.onOptionsItemSelected(item);
 	}
 
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-		case R.id.calculate_date_button:
+		case R.id.calculate_button:
 			calculateDays();
 			break;
 		case R.id.clear_button:
@@ -121,7 +120,7 @@ public class DayCalculator extends EpActivity implements OnClickListener {
 		numberOfDaysEditText.setText(null);
 		calculatedDateTextView.setText(getString(R.string.date_result_label));
 		dayRadioGroup.check(R.id.ninetyRadio);
-		numberOfDaysEditText.setText("90");
+		numberOfDaysEditText.setText(getString(R.string.dc_default_number_of_days));
 		calculatedDateTextView.setTextAppearance(this,
 				android.R.style.TextAppearance_Large);
 

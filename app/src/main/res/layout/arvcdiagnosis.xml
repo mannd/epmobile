@@ -1,26 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent" >
 
     <include layout="@layout/toolbar" />
+    <include layout="@layout/calculatebuttons" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_above="@id/calculateButtonsLayout"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_marginBottom="@dimen/activity_vertical_margin"
-
-        >
+        android:layout_marginTop="@dimen/activity_vertical_margin">
 
         <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            >
+            android:layout_height="wrap_content" >
 
             <TextView
                 style="@style/Header1"
@@ -46,19 +43,19 @@
                     android:id="@+id/major_plax_criteria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/major_plax_criteria"></RadioButton>
+                    android:text="@string/major_plax_criteria" />
 
                 <RadioButton
                     android:id="@+id/major_psax_criteria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/major_psax_criteria"></RadioButton>
+                    android:text="@string/major_psax_criteria" />
 
                 <RadioButton
                     android:id="@+id/fractional_area_criteria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/fractional_area_criteria"></RadioButton>
+                    android:text="@string/fractional_area_criteria" />
             </RadioGroup>
 
             <TextView
@@ -77,13 +74,13 @@
                     android:id="@+id/major_mri_volume_criteria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/major_mri_volume_criteria"></RadioButton>
+                    android:text="@string/major_mri_volume_criteria" />
 
                 <RadioButton
                     android:id="@+id/major_mri_ef_criteria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/major_mri_ef_criteria"></RadioButton>
+                    android:text="@string/major_mri_ef_criteria" />
             </RadioGroup>
 
             <TextView
@@ -113,19 +110,19 @@
                     android:id="@+id/minor_plax_criteria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/minor_plax_criteria"></RadioButton>
+                    android:text="@string/minor_plax_criteria" />
 
                 <RadioButton
                     android:id="@+id/minor_psax_criteria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/minor_psax_criteria"></RadioButton>
+                    android:text="@string/minor_psax_criteria" />
 
                 <RadioButton
                     android:id="@+id/echo_fractional_area_criteria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/fractional_area_minor_criteria"></RadioButton>
+                    android:text="@string/fractional_area_minor_criteria" />
             </RadioGroup>
 
             <TextView
@@ -144,7 +141,7 @@
                     android:id="@+id/minor_mri_volume_criteria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/minor_mri_volume_criteria"></RadioButton>
+                    android:text="@string/minor_mri_volume_criteria" />
 
                 <RadioButton
                     android:id="@+id/minor_mri_ef_criteria"
@@ -213,8 +210,7 @@
                 style="@style/Header2"
                 android:text="@string/minor" />
 
-            <TextView
-                android:text="@string/saecg_label"></TextView>
+            <TextView android:text="@string/saecg_label" />
 
             <CheckBox
                 android:id="@+id/filtered_qrs"
@@ -228,8 +224,7 @@
                 android:id="@+id/root_mean_square"
                 android:text="@string/root_mean_square_label" />
 
-            <TextView
-                android:text="@string/terminal_activation_label"></TextView>
+            <TextView android:text="@string/terminal_activation_label" />
 
             <CheckBox
                 android:id="@+id/terminal_activation_duration"
@@ -295,23 +290,6 @@
                 android:id="@+id/second_degree_relative"
                 android:text="@string/second_degree_relative_label" />
 
-            <LinearLayout
-                android:id="@+id/linearLayout3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <Button
-                    android:id="@+id/calculate_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/calculate_label" />
-
-                <Button
-                    android:id="@+id/clear_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/clear_label" />
-            </LinearLayout>
 
             <TextView
                 android:text="@string/arvc_key" />
@@ -323,4 +301,4 @@
 
     </ScrollView>
 
-</LinearLayout>
+</RelativeLayout>

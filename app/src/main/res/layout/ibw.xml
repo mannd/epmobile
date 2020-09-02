@@ -1,25 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <include layout="@layout/toolbar" />
 
-    <ScrollView
+        <LinearLayout
+            android:id="@+id/calculateButtonsLayout"
+            style="?android:attr/buttonBarStyle"
+            android:divider="?android:dividerVertical"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:showDividers="middle"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/calculate_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="?android:attr/buttonBarButtonStyle"
+                android:text="@string/calculate_label" />
+
+            <Button
+                android:id="@+id/clear_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="?android:attr/buttonBarButtonStyle"
+                android:text="@string/clear_label" />
+        </LinearLayout>
+
+    <TextView
+        android:id="@+id/messageTextView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/scrollView"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_marginBottom="@dimen/activity_vertical_margin"
-        >
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-           >
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin">
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -37,13 +71,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="true"
-                        android:text="@string/male_label"></RadioButton>
+                        android:text="@string/male_label" />
 
                     <RadioButton
                         android:id="@+id/female"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/female_label"></RadioButton>
+                        android:text="@string/female_label" />
                 </RadioGroup>
 
                 <TableRow>
@@ -55,7 +89,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/weight_hint"
-                        android:inputType="numberDecimal"></EditText>
+                        android:inputType="numberDecimal"
+                        android:importantForAutofill="no" />
                 </TableRow>
 
                 <TableRow>
@@ -67,7 +102,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/height_hint"
-                        android:inputType="numberDecimal"></EditText>
+                        android:inputType="numberDecimal"
+                        android:importantForAutofill="no" />
                 </TableRow>
 
                 <TableRow>
@@ -77,7 +113,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/ibw_label"
-                        android:textAppearance="?android:attr/textAppearanceSmall"></TextView>
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
 
                     <TextView
                         android:id="@+id/ibwResultTextView"
@@ -85,7 +121,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:hint="@string/ibw_hint"
-                        android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
                 </TableRow>
 
                 <TableRow>
@@ -95,7 +131,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/abw_label"
-                        android:textAppearance="?android:attr/textAppearanceSmall"></TextView>
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
 
                     <TextView
                         android:id="@+id/abwResultTextView"
@@ -103,47 +139,11 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:hint="@string/abw_hint"
-                        android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
                 </TableRow>
             </TableLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <Button
-                    android:id="@+id/calculate_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/calculate_label"></Button>
-
-                <Button
-                    android:id="@+id/clear_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/clear_label"></Button>
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/copy_ibw_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/copy_ibw_label"></Button>
-
-            <Button
-                android:id="@+id/copy_abw_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/copy_abw_label"></Button>
-
-            <TextView
-                android:id="@+id/messageTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
-        </LinearLayout>
 
     </ScrollView>
 
-</LinearLayout>
+</RelativeLayout>

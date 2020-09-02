@@ -37,7 +37,7 @@ This project roughly utilizes [Semantic Versioning](https://semver.org/spec/v2.0
 - LBBB criteria.
 
 ### Changes
-- Minumum SDK changed to 14.  Target SDK 26.
+- Minimum SDK changed to 14.  Target SDK 26.
 
 ## [2.17.1] - 2018-02-26
 ### Fixed
@@ -341,11 +341,11 @@ Changes since v2.10
 
 ## [0.6] - 2011-11-12
 ### Added
-- Incorporated new (November 2011) US dabigtran guidelines into 
+- Incorporated new (November 2011) US dabigatran guidelines into
   Dabigatran Calculator.
 
 ### Changed
-- Drug calculator UI reformated
+- Drug calculator UI reformatted
 - Drug calculator creatinine clearance and warnings colorized
 - Weight units (kg or lb) selectable in drug calculators
 
@@ -371,12 +371,12 @@ Changes since v2.10
 
 ## [0.3.1] - 2011-09-17
 ### Added
-- Dabigitran Calculator.
+- Dabigatran Calculator.
 - Warfarin Calculator.
 
 ### Changed
 - QTc Calculator learned the Hodges QTc formula.
-- Calculators now round to nearest integer for (very slighly!) more accurate
+- Calculators now round to nearest integer for (very slightly!) more accurate
   result.
 
 ### Removed

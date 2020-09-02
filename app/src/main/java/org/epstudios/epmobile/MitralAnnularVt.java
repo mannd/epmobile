@@ -31,15 +31,12 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
+@SuppressWarnings("SpellCheckingInspection")
 public class MitralAnnularVt extends LocationAlgorithm implements
 		OnClickListener {
-	private Button yesButton;
-	private Button noButton;
 	protected Button backButton;
 	private Button instructionsButton;
 	protected TextView stepTextView;
-
-	protected boolean mitralAnnularVt = false;
 
 	private boolean isNotMitralAnnular = false;
 	private boolean isAnteroLateral = false;
@@ -57,10 +54,10 @@ public class MitralAnnularVt extends LocationAlgorithm implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.simplealgorithm);
 	initToolbar();
-	
-		yesButton = findViewById(R.id.yes_button);
+
+		Button yesButton = findViewById(R.id.yes_button);
 		yesButton.setOnClickListener(this);
-		noButton = findViewById(R.id.no_button);
+		Button noButton = findViewById(R.id.no_button);
 		noButton.setOnClickListener(this);
 		backButton = findViewById(R.id.back_button);
 		backButton.setOnClickListener(this);
@@ -74,15 +71,14 @@ public class MitralAnnularVt extends LocationAlgorithm implements
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case android.R.id.home:
-			Intent parentActivityIntent = new Intent(this, VtList.class);
-			parentActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
-					| Intent.FLAG_ACTIVITY_NEW_TASK);
-			startActivity(parentActivityIntent);
-			finish();
-			return true;
-		}
+        if (item.getItemId() == android.R.id.home) {
+            Intent parentActivityIntent = new Intent(this, VtList.class);
+            parentActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+                    | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(parentActivityIntent);
+            finish();
+            return true;
+        }
 		return super.onOptionsItemSelected(item);
 	}
 

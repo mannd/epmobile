@@ -38,16 +38,15 @@ public class Vereckei extends EpActivity implements OnClickListener {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case android.R.id.home:
-			Intent parentActivityIntent = new Intent(this,
-					WctAlgorithmList.class);
-			parentActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
-					| Intent.FLAG_ACTIVITY_NEW_TASK);
-			startActivity(parentActivityIntent);
-			finish();
-			return true;
-		}
+        if (item.getItemId() == android.R.id.home) {
+            Intent parentActivityIntent = new Intent(this,
+                    WctAlgorithmList.class);
+            parentActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+                    | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(parentActivityIntent);
+            finish();
+            return true;
+        }
 		return super.onOptionsItemSelected(item);
 	}
 
@@ -75,7 +74,7 @@ public class Vereckei extends EpActivity implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.yes_button:
-			displayVtResult(step);
+			displayVtResult();
 			break;
 		case R.id.no_button:
 			getNoResult();
@@ -119,7 +118,7 @@ public class Vereckei extends EpActivity implements OnClickListener {
 		}
 	}
 
-	private void displayVtResult(int step) {
+	private void displayVtResult() {
 		AlertDialog dialog = new AlertDialog.Builder(this).create();
 		String message;
 		message = getString(R.string.vt_result);

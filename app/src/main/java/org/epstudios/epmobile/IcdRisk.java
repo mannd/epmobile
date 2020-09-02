@@ -21,15 +21,14 @@ public class IcdRisk extends DiagnosticScore {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case android.R.id.home:
-			Intent parentActivityIntent = new Intent(this, RiskScoreList.class);
-			parentActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
-					| Intent.FLAG_ACTIVITY_NEW_TASK);
-			startActivity(parentActivityIntent);
-			finish();
-			return true;
-		}
+        if (item.getItemId() == android.R.id.home) {
+            Intent parentActivityIntent = new Intent(this, RiskScoreList.class);
+            parentActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+                    | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(parentActivityIntent);
+            finish();
+            return true;
+        }
 		return super.onOptionsItemSelected(item);
 	}
 
@@ -107,7 +106,8 @@ public class IcdRisk extends DiagnosticScore {
 			score += 12;
 			break;
 		case R.id.generator_replacement_malfunction:
-			score += 13;
+            //noinspection DuplicateBranchesInSwitch
+            score += 13;
 			break;
 		case R.id.generator_replacement_other:
 			score += 14;

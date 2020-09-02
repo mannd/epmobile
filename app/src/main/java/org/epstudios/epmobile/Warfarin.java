@@ -58,16 +58,15 @@ public class Warfarin extends EpActivity implements
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case android.R.id.home:
-			Intent parentActivityIntent = new Intent(this,
-					DrugDoseCalculatorList.class);
-			parentActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
-					| Intent.FLAG_ACTIVITY_NEW_TASK);
-			startActivity(parentActivityIntent);
-			finish();
-			return true;
-		}
+        if (item.getItemId() == android.R.id.home) {
+            Intent parentActivityIntent = new Intent(this,
+                    DrugDoseCalculatorList.class);
+            parentActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+                    | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(parentActivityIntent);
+            finish();
+            return true;
+        }
 		return super.onOptionsItemSelected(item);
 	}
 
@@ -87,7 +86,7 @@ public class Warfarin extends EpActivity implements
 		INCREASE, DECREASE
 	}
 
-	private class DoseChange {
+	private static class DoseChange {
 
 		public DoseChange() {
 		    this.lowEnd = 0;
@@ -184,7 +183,7 @@ public class Warfarin extends EpActivity implements
 
 	private void calculateResult() {
 		String message = "";
-		Boolean showDoses = false;
+		boolean showDoses = false;
 		try {
 			getRange();
 			double inr = Double.parseDouble(inrEditText.getText().toString());
@@ -213,10 +212,10 @@ public class Warfarin extends EpActivity implements
 									doseChange.highEnd / 100.0,
 									getWeeklyDose(), increaseDose);
 					message = message + "weekly dose by "
-							+ String.valueOf(doseChange.lowEnd) + "% ("
-							+ String.valueOf(lowEndDose) + " mg/wk) to "
-							+ String.valueOf(doseChange.highEnd) + "% ("
-							+ String.valueOf(highEndDose) + " mg/wk).";
+							+ doseChange.lowEnd + "% ("
+							+ lowEndDose + " mg/wk) to "
+							+ doseChange.highEnd + "% ("
+							+ highEndDose + " mg/wk).";
 					if (weeklyDoseIsSane(getWeeklyDose(), getTabletDose()))
 						showDoses = true;
 				}
@@ -367,7 +366,7 @@ public class Warfarin extends EpActivity implements
 				doseChange.direction == Direction.INCREASE);
 		editor.putFloat("tabletDose", (float) getTabletDose());
 		editor.putFloat("weeklyDose", (float) getWeeklyDose());
-		editor.commit();
+		editor.apply();
 	}
 
 	private void clearEntries() {

@@ -1,17 +1,12 @@
 package org.epstudios.epmobile;
 
-import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.TypedValue;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 /**
  * Copyright (C) 2019 EP Studios, Inc.
@@ -34,11 +29,12 @@ import org.w3c.dom.Text;
  * You should have received a copy of the GNU General Public License
  * along with epmobile.  If not, see <http://www.gnu.org/licenses/>.
  */
+@SuppressWarnings("SpellCheckingInspection")
 public class LongQtTable extends EpActivity {
     private TableLayout tableLayout;
     private LayoutInflater layoutInflater;
 
-    private RowData[] data = { new RowData("LQT1", "KCNQ1", "Encodes the α-subunit of the slow delayed rectifier potassium channel KV7.1 carrying the potassium current IKs."),
+    private final RowData[] data = {new RowData("LQT1", "KCNQ1", "Encodes the α-subunit of the slow delayed rectifier potassium channel KV7.1 carrying the potassium current IKs."),
             new RowData("LQT2", "KCNH2", "Also known as hERG. Encodes the α-subunit of the rapid delayed rectifier potassium channel KV11.1 carrying the potassium current IKr."),
             new RowData("LQT3", "SCN5A", "Encodes the α-subunit of the cardiac sodium channel NaV1.5 carrying the sodium current INa."),
             new RowData("LQT4", "ANK2", "Encodes Ankyrin B which anchors the ion channels in the cell. Disputed whether truly disease causing versus minor QT susceptibility gene."),
@@ -54,7 +50,7 @@ public class LongQtTable extends EpActivity {
             new RowData("LQT14", "CALM1", "Encodes calmodulin-1, a calcium-binding messenger protein that interacts with the calcium current ICa(L)."),
             new RowData("LQT15", "CALM2", "Encodes calmodulin-2, a calcium-binding messenger protein that interacts with the calcium current ICa(L)."),
             new RowData("LQT16", "CALM3", "Encodes calmodulin-3, a calcium-binding messenger protein that interacts with the calcium current ICa(L)."),
-            new RowData("LQT17",  "TRDN",  "Encodes triadin, associated with the release of calcium from the sarcoplastic reticulum.  Causes exercise-induced cardiac arrest in young children.")
+            new RowData("LQT17", "TRDN", "Encodes triadin, associated with the release of calcium from the sarcoplastic reticulum.  Causes exercise-induced cardiac arrest in young children.")
     };
 
     @Override
@@ -62,29 +58,28 @@ public class LongQtTable extends EpActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.longqttable);
         initToolbar();
-        tableLayout = (TableLayout)findViewById(R.id.lqt_table);
+        tableLayout = findViewById(R.id.lqt_table);
         layoutInflater = LayoutInflater.from(this);
         init();
 
     }
 
     private void init() {
-        RowData rowData[] = initData();
-        int count = rowData.length;
-        for (int i = 0; i < count; i++) {
+        RowData[] rowData = initData();
+        for (RowData rowDatum : rowData) {
             final View item = layoutInflater.inflate(R.layout.lqtrowlayout, tableLayout, false);
-            final TextView subtype_view = (TextView) item.findViewById(R.id.lqt_subtype);
-            final TextView channel_view = (TextView) item.findViewById(R.id.lqt_channel);
-            final TextView details_view = (TextView) item.findViewById(R.id.lqt_details);
+            final TextView subtype_view = item.findViewById(R.id.lqt_subtype);
+            final TextView channel_view = item.findViewById(R.id.lqt_channel);
+            final TextView details_view = item.findViewById(R.id.lqt_details);
 
-            subtype_view.setText(rowData[i].subtype);
-            channel_view.setText(rowData[i].channel);
-            details_view.setText(rowData[i].details);
+            subtype_view.setText(rowDatum.subtype);
+            channel_view.setText(rowDatum.channel);
+            details_view.setText(rowDatum.details);
 
 
             TableLayout.LayoutParams trParamsSep = new TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT,
                     TableLayout.LayoutParams.WRAP_CONTENT);
-            tableLayout.addView(item, trParamsSep );
+            tableLayout.addView(item, trParamsSep);
 
             // add separator row
             final TableRow trSep = new TableRow(this);
@@ -104,34 +99,19 @@ public class LongQtTable extends EpActivity {
         }
     }
 
-    private class RowData {
-        String subtype;
-        String channel;
-        String details;
+    private static class RowData {
+        final String subtype;
+        final String channel;
+        final String details;
 
         RowData(String subtype, String channel, String details) {
             this.subtype = subtype;
             this.channel = channel;
             this.details = details;
         }
-
-        RowData() {
-            subtype = "";
-            channel = "";
-            details = "";
-        }
     }
 
     private RowData[] initData() {
-        RowData rowData[] = data;
-//        RowData rowData[] = new RowData[10];
-//        for (int i = 0; i < 10; i++) {
-//            RowData row = new RowData();
-//            row.subtype = "subtype" + i;
-//            row.channel = "channel" + i;
-//            row.details = "details detail detail detail detail detail detail detail detail detail detail detail " + i;
-//            rowData[i] = row;
-//        }
-        return rowData;
+        return data;
     }
 }

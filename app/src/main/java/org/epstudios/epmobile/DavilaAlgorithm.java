@@ -47,6 +47,7 @@ public class DavilaAlgorithm extends WpwArruda {
                 step = 6;  // aVL +?
                 break;
             case 6:
+                //noinspection DuplicateBranchesInSwitch
                 step = 7;  // AS
                 break;
             case 7:
@@ -56,6 +57,7 @@ public class DavilaAlgorithm extends WpwArruda {
                 step = 12; // MS
                 break;
             case 13:
+                //noinspection DuplicateBranchesInSwitch
                 step = 14; // V2 + ?
                 break;
             case 14:
@@ -94,6 +96,7 @@ public class DavilaAlgorithm extends WpwArruda {
                 step = 8;  // LL
                 break;
             case 10:
+                //noinspection DuplicateBranchesInSwitch
                 step = 11;
                 break;
             case 11:

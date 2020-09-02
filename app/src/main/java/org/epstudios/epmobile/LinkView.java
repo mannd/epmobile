@@ -30,6 +30,7 @@ import android.widget.Button;
  * along with EP Mobile.  If not, see <http://www.gnu.org/licenses/>.
  * <p/>
  */
+@SuppressWarnings("deprecation")
 public class LinkView extends EpActivity implements View.OnClickListener {
     private WebView webView;
     private Button calcCrClButton;
@@ -47,7 +48,7 @@ public class LinkView extends EpActivity implements View.OnClickListener {
         Bundle extras = getIntent().getExtras();
         String url = "";
         String linkTitle = "";
-        Boolean showButton = false;
+        boolean showButton = false;
         if (extras != null) {
             url  = extras.getString("EXTRA_URL");
             linkTitle = extras.getString("EXTRA_TITLE");
@@ -77,16 +78,15 @@ public class LinkView extends EpActivity implements View.OnClickListener {
     }
 
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.text_button:
-                Intent i = new Intent(this, CreatinineClearanceCalculator.class);
-                startActivityForResult(i, CREATININE_CLEARANCE_CALCULATOR_ACTIVITY);
-                break;
+        if (v.getId() == R.id.text_button) {
+            Intent i = new Intent(this, CreatinineClearanceCalculator.class);
+            startActivityForResult(i, CREATININE_CLEARANCE_CALCULATOR_ACTIVITY);
         }
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == CREATININE_CLEARANCE_CALCULATOR_ACTIVITY &&
                 resultCode == RESULT_OK && data != null) {
             String result = data.getStringExtra("EXTRA_RESULT_STRING");
@@ -98,6 +98,7 @@ public class LinkView extends EpActivity implements View.OnClickListener {
         }
     }
 
+    // TODO: Need to replace with ViewModel to save configuration.
     @Override
     public Object onRetainCustomNonConfigurationInstance() {
         OrientationChangeData data = new OrientationChangeData();
@@ -113,8 +114,7 @@ public class LinkView extends EpActivity implements View.OnClickListener {
         float topPosition = webView.getTop();
         float height = webView.getHeight();
         float currentPosition = webView.getScrollY();
-        float percentPosition = (currentPosition - topPosition) / height;
-        return percentPosition;
+        return (currentPosition - topPosition) / height;
     }
 
     private class CustomWebViewClient extends WebViewClient {

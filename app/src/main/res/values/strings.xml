@@ -30,7 +30,7 @@
     <string name="qt_hint">QT (msec)</string>
     <string name="qtc_result_label">QTc (msec)</string>
     <string name="qtc_formula_label">QTc Formula</string>
-    <string name="calculate_label">Calculate!</string>
+    <string name="calculate_label">Calculate</string>
     <string name="clear_label">Clear</string>
     <string name="dose_result_label">Dose</string>
     <string name="weight_hint">Weight (kg)</string>
@@ -53,7 +53,6 @@
 		color code (with red) abnormally high QTc values</string>
     <string name="maximum_qtc_default_value">440</string>
     <string name="settings_label">Settings</string>
-    <string name="settings_shortcut">s</string>
     <string name="settings_title">EP Mobile Settings</string>
     <string name="hasbled_title">HAS-BLED Score</string>
     <string name="htn_label">Hypertension (systolic BP \u2267 160)</string>
@@ -169,8 +168,6 @@
     <string name="normal_ep_values_reference">Reference: Josephson ME. Clinical Cardiac
 		Electrophysiology. Techniques and Interpretations. 2nd Edition 1993.
 		Lea &amp; Febiger.</string>
-    <string name="arvc_list_title">ARVC/D Diagnosis</string>
-    <string name="arvc_title">ARVC/D Diagnosis</string>
     <string name="arvc_2010_criteria_title">ARVC/D Diagnosis (2010)</string>
     <string name="global_dysfunction_label">I. Global or regional dysfunction and structural
 		alterations</string>
@@ -276,7 +273,7 @@
 	    when dronedarone or systemic ketoconazole is administered with dabigatran.</string>
     <string name="dabigatran_warning_75_years_old">There may be increased bleeding risk at age over 75 years.</string>
     <string name="rivaroxaban_calculator_title">Rivaroxaban Calculator</string>
-    <string name="rivaroxaban_dosing_message">"Take dose with evening meal."</string>
+    <string name="rivaroxaban_dosing_message">Take dose with evening meal.</string>
     <string name="icd_calculator_title">CMS ICD Criteria (2018)</string>
     <string name="short_qt_title">Short QT Syndrome Diagnosis</string>
     <string name="qtc_label">QTc Interval</string>
@@ -729,10 +726,9 @@
     <string name="apixaban_dual_inhibitors">(e.g. ketoconazole, itraconazole, ritonavir, clarithromycin)</string>
     <string name="apixaban_drug_interaction_at_2_5_mg_message">Avoid coadministration with strong dual inhibitors of CYP3A4 and P-gp.</string>
     <string name="invalid_warning">Invalid!</string>
-    <string name="dose_undefined_warning">"Dose undefined."</string>
     <string name="pediatric_use_warning">Pediatric dosing is not recommended or not calculated.
   	    by EP Mobile.</string>
-    <string name="do_not_use_warning">"Do not use!"</string>
+    <string name="do_not_use_warning">Do not use!</string>
     <!-- Atrial tachycardia algorithm Kistler PM et al. -->
     <string name="atrial_tachycardia_localization_title">Atrial Tachycardia Location</string>
     <string name="at_v1_morphology_label">P Wave Morphology in Lead V1?</string>
@@ -824,8 +820,6 @@
     <string name="ibw_calculator_title">Body Weight Calculator</string>
     <string name="height_hint">Height (cm)</string>
     <string name="height_inches_hint">Height (in)</string>
-    <string name="copy_ibw_label">Copy IBW To Clipboard</string>
-    <string name="copy_abw_label">Copy ABW to Clipboard</string>
     <string name="ibw_label">Ideal Body Weight (kg)</string>
     <string name="ibw_hint">IBW (kg)</string>
     <string name="ibw_lb_label">Ideal Body Weight (lb)</string>
@@ -836,10 +830,10 @@
     <string name="abw_lb_hint">ABW (lb)</string>
     <string name="default_height_unit_title">Default Height Unit</string>
     <string name="default_height_unit_summary">Select default unit for height</string>
-    <string name="overweight_message">Actual weight is at least 30% over Ideal Body Weight.  Recommended weight is Adjusted Body Weight (</string>
+    <string name="overweight_message" tools:ignore="PluralsCandidate">Actual weight is at least 30%% over Ideal Body Weight.  Recommended weight is Adjusted Body Weight (%s</string>
     <string name="underheight_message">These measurements may not be useful when height is &lt; 60 inches.</string>
-    <string name="underweight_message">Actual weight is less than Ideal Body Weight.  Recommended weight is Actual Weight (</string>
-    <string name="normalweight_message">Weight is in the normal range.  Recommended weight is Ideal Body Weight (</string>
+    <string name="underweight_message">Actual weight is less than Ideal Body Weight.  Recommended weight is Actual Weight (%s</string>
+    <string name="normalweight_message">Weight is in the normal range.  Recommended weight is Ideal Body Weight (%s</string>
     <string name="pound_abbreviation">lb</string>
     <string name="kg_abbreviation">kg</string>
     <string name="syncope_list_title">Syncope Risk Scores</string>
@@ -968,7 +962,6 @@
    		from: http://heart.bmj.com/content/87/2/169.full</string>
     <string name="hcm_combined_sus_va_risk_label">Cardiac arrest and/or spontaneous
    	    sustained VT</string>
-    <string name="hcm_label">HCM Sudden Death Risk</string>
     <string name="syncope_sf_rule_full_reference">Quinn J, McDermott D, Stiell I,
         Kohn M, Wells G. Prospective validation of the San Francisco Syncope rule
         to predict patients with serious outcomes. 2006 May [cited 2014 Jun
@@ -1020,7 +1013,6 @@
         Polarity of QRS in Lead V1 is + or \u00b1 ?</string>
     <string name="davila_positive_iii">Lead III polarity + ?</string>
     <string name="davila_plus_minus_iii">Lead III polarity \u00b1 ?</string>
-    <string name="davila_minus_iii">Lead III polarity - ?</string>
     <string name="lp_location">Left Posterior</string>
     <string name="psma_location">Left Posteroseptal (Posteroseptal Mitral Annulus)</string>
     <string name="davila_positive_avl">Lead aVL polarity + ?</string>
@@ -1028,7 +1020,6 @@
     (deep Q followed by small r and s in a negative QRS complex in lead III)?</string>
     <string name="davila_positive_ii">Lead II polarity + ?</string>
     <string name="davila_positive_v2">Lead V2 polarity + ?</string>
-    <string name="davila_negative_v2">Lead V2 polarity - ?</string>
     <string name="davila_ps_location">Posteroseptal</string>
     <string name="davila_rps_location">Right Posteroseptal (Posteroseptal Tricuspid Annulus)</string>
     <string name="davila_ms_location">Mid-septal (Mid-septal Tricuspid Annulus</string>
@@ -1145,7 +1136,6 @@
     <string name="same_race_label">Race (non-Caucasian)</string>
     <string name="same_sex_label">Sex (female)</string>
     <string name="same_age_label">Age (&lt;60 y)</string>
-    <string name="same_ttr_title">SAMe-TT\u2082R\u2082</string>
     <string name="same_short_reference">Apostolakis S et al.
         Chest 2013;144:1555</string>
     <string name="same_full_reference">Apostolakis S, Sullivan RM, Olshansky B,
@@ -1189,18 +1179,18 @@
     <string name="qtm_lbbb_error_message">QTm only defined for LBBB</string>
     <string name="qtmc_lbbb_error_message">QTmc only defined for LBBB</string>
     <string name="prelbbbqtc_lbbb_error_message">preLBBB QTc only defined for LBBB</string>
-    <string name="qt_details">QT = %d msec.\n\nUse: The QT varies with heart rate,
+    <string name="qt_details" tools:ignore="PluralsCandidate">QT = %d msec.\n\nUse: The QT varies with heart rate,
         QRS and sex, and so is usually not a good measure of repolarization independent
         of these other factors.\n\nFormula:
         This is the uncorrected QT interval.\n\nNormal values: Not defined</string>
-    <string name="qtc_details">QTc = %1$d msec.\n\nUse: The QTc corrects for heart rate,
+    <string name="qtc_details" tools:ignore="PluralsCandidate">QTc = %1$d msec.\n\nUse: The QTc corrects for heart rate,
         in this case using the Bazett formula, but does not correct for increased QRS duration.
         \n\nFormula: QTc[sec] = QT[sec] / SQRT(RR[sec])\n\nNormal values (without IVCD) per
         AHA/ACC/HRS guidelines
         (%2$s): Male &lt; 450 msec, Female &lt; 460 msec and &gt; 390 msec (both sexes)</string>
-    <string name="qtc_reference">"Rautaharju P et al. Circulation. 2009;119:e241-e250.</string>
+    <string name="qtc_reference">Rautaharju P et al. Circulation. 2009;119:e241-e250.</string>
     <string name="qt_ivcd_instructions">Select any of the results in the list to see a dialog with detailed results</string>
-    <string name="qt_intructions_title">Instructions</string>
+    <string name="qt_instructions_title">Instructions</string>
     <string name="qt_details_title">Uncorrected QT</string>
     <string name="qtc_details_title">Corrected QT</string>
     <string name="qtm_reference">Bogossian H et al. New formula for evaluation of
@@ -1216,20 +1206,20 @@
     <string name="qtm_details_title">Modified QT (QTm) in LBBB</string>
     <string name="qtmc_details_title">Corrected Modified QT in LBBB (QTmc)</string>
     <string name="qtrrqrs_details_title">QT Corrected for Rate,\nQRS, and Sex (QTrr,qrs)</string>
-    <string name="jt_details">JT = %d msec.\n\nUse: The JT interval corrects for QRS duration,
+    <string name="jt_details" tools:ignore="PluralsCandidate">JT = %d msec.\n\nUse: The JT interval corrects for QRS duration,
         but does not correct for heart rate.
         \n\nFormula: JT = QT - QRS\n\nNormal values: Not defined.</string>
-    <string name="jtc_details">JTc = %d msec.\n\nUse: JTc corrects for heart rate and QRS duration, however normal values are not well established.
+    <string name="jtc_details" tools:ignore="PluralsCandidate">JTc = %d msec.\n\nUse: JTc corrects for heart rate and QRS duration, however normal values are not well established.
         \n\nFormula: JTc = QTc(Bazett) - QRS\n\nNormal values: Not defined.</string>
-    <string name="qtm_details">QTm = %1$d msec.\n\nUse: Attempts to correct for the
+    <string name="qtm_details" tools:ignore="PluralsCandidate">QTm = %1$d msec.\n\nUse: Attempts to correct for the
         prolongation of the QT interval attributable to QRS prolongation in LBBB.
         \n\nFormula: QTm = QTb - 0.485 * QRSb\n\nNormal values:
         Not defined.\n\nReference: %2$s</string>
-    <string name="qtmc_details">QTmc = %1$d msec.\n\nUse: Corrects QTm for heart rate,
+    <string name="qtmc_details" tools:ignore="PluralsCandidate">QTmc = %1$d msec.\n\nUse: Corrects QTm for heart rate,
         in this case using the Bazett formula.\n\nFormula: QTmc = QTm corrected
         for rate using Bazett formula\n\nNormal values:
         Presumably the same as QTc.\n\nReference: %2$s</string>
-    <string name="qtrrqrs_details">QTrr,qrs = %1$d msec.\n\nUse:
+    <string name="qtrrqrs_details" tools:ignore="PluralsCandidate">QTrr,qrs = %1$d msec.\n\nUse:
         Corrects QT for rate, QRS duration and sex.\n\nFormula: %2$s\n\nNormal values:
         2%% and 5%% normal limits of 460 and 450 msec.\n\nReference: %3$s</string>
     <string name="very_high_risk_label">Very High Risk (BUN \u2265 50 or Cr \u2265 2.5 mg/dL)</string>
@@ -1305,7 +1295,6 @@
         (40 days post-MI, 3 months post CABG or PCI).
         Note that if a pacemaker is indicated or the patient has an ICD at ERI or with lead/device malfunction,
         ICD implantation CAN proceed before waiting period expires.</string>
-    <string name="icd_approval_affected_by_waiting_period">ICD implantation doesn\'t meet criteria due to excluson or waiting period.</string>
     <string name="waiting_period_label">Waiting Periods</string>
     <string name="icd_bridge_to_transplant_message">Coverage of ICDs as a bridge to transplant is determined by local Medicare Administrative Contractors (MACs).</string>
     <string name="icd_forgot_to_check_cm_checkbox">You selected MI and patient has Class II or III heart failure.  Did you forget to select ischemic or nonischemic cardiomyopathy?</string>
@@ -1366,7 +1355,7 @@
         recent chest trauma\n4. Iatrogenic hemopericardium when
         the bleeding cannot be controlled percutaneously</string>
 	<string name="prelbbbqtc_details_title">preLBBBQTc</string>
-	<string name="prelbbbqtc_details">preLBBBQTc = %1$d msec.\n\nUse: Attempts to correct for the
+	<string name="prelbbbqtc_details" tools:ignore="PluralsCandidate">preLBBBQTc = %1$d msec.\n\nUse: Attempts to correct for the
         prolongation of the QT interval attributable to QRS prolongation in LBBB.
         \n\nFormula: preLBBBQTc = postLBBBQTc(Bazett) - postLBBBQRS + c, where c = 95 msec in males, 88 msec in females\n\nNormal values:
         Presumably same as QTc.\n\nReference: %2$s</string>
@@ -1378,8 +1367,6 @@
         et al. A new prediction model for ventricular arrhythmias in arrhythmogenic
         right ventricular cardiomyopathy. Eur Heart J. 2019. doi:10.1093/eurheartj/ehz103
 </string>
-    <string name="arvc_risk_short_reference">Cadrin-Tourigny J et al. Eur Heart J. 2019.
-        doi:10.1093/eurheartj/ehz103 </string>
     <string name="age_at_dx_label">Age at diagnosis of ARVC</string>
     <string name="cardiac_syncope_within_6_months_label">Specify if the patient experienced syncope suspected to be caused by cardiac
         arrhythmia in the 6 months prior to diagnosis.</string>
@@ -1427,4 +1414,30 @@
     <string name="qt_prolongation_low_risk">\nLow risk (~15%)</string>
     <string name="qt_prolongation_mod_risk">\nModerate risk (~37%)</string>
     <string name="qt_prolongation_high_risk">\nHigh risk (~73%)</string>
+    <string name="arvc_reference_link">https://academic.oup.com/eurheartj/advance-article/doi/10.1093/eurheartj/ehz103/5419784</string>
+    <string name="cl_result_as_rate">Rate = %s bpm</string>
+    <string name="cl_result_as_interval">Interval = %s msec</string>
+    <string name="dc_default_number_of_days">90</string>
+    <string name="increase">Increase</string>
+    <string name="decrease">Decrease</string>
+    <string name="reference_full">\nReference: %s</string>
+    <string name="arvc_5_y_risk">%s%% within 5 years\n</string>
+    <string name="arvc_2_y_risk">%s%% within 2 years\n</string>
+    <string name="arvc_1_y_risk">%s%% within 1 year</string>
+    <string name="brugada_score_risk_score">Risk Score = %s\n</string>
+    <string name="brugada_score_probable_message">Probable/definite Brugada Syndrome</string>
+    <string name="brugada_score_possible_message">Possible Brugada Syndrome</string>
+    <string name="nondiagnostic_message">Non-diagnostic</string>
+    <string name="dose_table_dose_change">%s%% %s</string>
+    <string name="qtc_formula_used">QTc formula used was %s </string>
+    <string name="qtc_result">QTc = %s msec</string>
+    <string name="icd_mortality_risk_title">ICD Mortality Risk</string>
+    <string name="brugada_syndrome_title">Brugada Syndrome</string>
+    <string name="ers_title">Early Repolarization Syndrome</string>
+    <string name="brugada_score_title">Brugada Shanghai Score</string>
+    <string name="brugada_diagnosis_title">Brugada Diagnosis</string>
+    <string name="lbbb_title">Left Bundle Branch Block</string>
+    <string name="tamponade_title">Cardiac Tamponade</string>
+    <string name="qt_prolongation_risk_title">QT Prolongation Risk</string>
+    <string name="warfarin_dose_title">Warfarin Dose (%s mg tabs)</string>
 </resources>

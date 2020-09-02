@@ -6,30 +6,24 @@ import android.view.MenuItem;
 import android.widget.CheckBox;
 
 public class Estes extends RiskScore {
-	private final int VOLTAGE = 0;
-	private final int STRAIN_WITHOUT_DIG = 1;
-	private final int STRAIN_WITH_DIG = 2;
-	private final int LAE = 3;
-	private final int LAD = 4;
-	private final int QRS_DURATION = 5;
-	private final int INTRINSICOID = 6;
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case android.R.id.home:
-			Intent parentActivityIntent = new Intent(this, LvhList.class);
-			parentActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
-					| Intent.FLAG_ACTIVITY_NEW_TASK);
-			startActivity(parentActivityIntent);
-			finish();
-			return true;
-		}
+        if (item.getItemId() == android.R.id.home) {
+            Intent parentActivityIntent = new Intent(this, LvhList.class);
+            parentActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+                    | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(parentActivityIntent);
+            finish();
+            return true;
+        }
 		return super.onOptionsItemSelected(item);
 	}
 
 	@Override
 	protected void calculateResult() {
+		final int STRAIN_WITH_DIG = 2;
+		final int STRAIN_WITHOUT_DIG = 1;
 		if (checkBox[STRAIN_WITHOUT_DIG].isChecked()
 				&& checkBox[STRAIN_WITH_DIG].isChecked()) {
 			AlertDialog dialog = new AlertDialog.Builder(this).create();
@@ -43,6 +37,11 @@ public class Estes extends RiskScore {
 		for (int i = 0; i < checkBox.length; i++) {
 			if (checkBox[i].isChecked()) {
 				addSelectedRisk(checkBox[i].getText().toString());
+				final int INTRINSICOID = 6;
+				final int QRS_DURATION = 5;
+				final int LAD = 4;
+				final int LAE = 3;
+				final int VOLTAGE = 0;
 				switch (i) {
 				case VOLTAGE:
 				case LAE:
@@ -69,7 +68,7 @@ public class Estes extends RiskScore {
 			message += getString(R.string.estes_no_lvh_message);
 		else if (result == 4)
 			message += getString(R.string.estes_probable_lvh_message);
-		else if (result > 4)
+		else
 			message += getString(R.string.estes_definite_lvh_message);
 		setResultMessage(message);
 		// short reference not added here, is on the layout

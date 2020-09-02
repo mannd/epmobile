@@ -30,6 +30,7 @@ import android.widget.TextView;
  * along with epmobile.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+@SuppressWarnings("SpellCheckingInspection")
 public class BrugadaList extends EpActivity {
 
     	@Override
