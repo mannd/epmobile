@@ -7,6 +7,9 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 
+import androidx.webkit.WebSettingsCompat;
+import androidx.webkit.WebViewFeature;
+
 
 /**
  * Copyright (C) 2015 EP Studios, Inc.
@@ -62,6 +65,9 @@ public class LinkView extends EpActivity implements View.OnClickListener {
         webView = findViewById(R.id.web_view);
         webView.setWebViewClient(new CustomWebViewClient());
         webView.loadUrl(url);
+        if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK)) {
+            WebSettingsCompat.setForceDark(webView.getSettings(), WebSettingsCompat.FORCE_DARK_ON);
+        }
         setTitle(linkTitle);
         if (showButton) {
             calcCrClButton = findViewById(R.id.text_button);

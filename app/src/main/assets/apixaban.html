@@ -3,14 +3,20 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title></title>
-<!-- 2015-03-10 Tue 16:31 -->
-<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta  name="generator" content="Org-mode" />
-<meta  name="author" content="David Mann" />
+<!-- 2020-09-02 Wed 17:30 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="David Mann" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
   .todo   { font-family: monospace; color: red; }
   .done   { font-family: monospace; color: green; }
   .priority { font-family: monospace; color: orange; }
@@ -18,9 +24,9 @@
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -47,30 +53,127 @@
     border: 1px solid black;
   }
   pre.src:hover:before { display: inline;}
-  pre.src-sh:before    { content: 'sh'; }
-  pre.src-bash:before  { content: 'sh'; }
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
   pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-R:before     { content: 'R'; }
-  pre.src-perl:before  { content: 'Perl'; }
-  pre.src-java:before  { content: 'Java'; }
-  pre.src-sql:before   { content: 'SQL'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
 
   table { border-collapse:collapse; }
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.right  { text-align: center;  }
-  th.left   { text-align: center;   }
-  th.center { text-align: center; }
-  td.right  { text-align: right;  }
-  td.left   { text-align: left;   }
-  td.center { text-align: center; }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara:nth-child(2) { display: inline; }
-  .footpara { display: block; }
+  .footpara { display: inline; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -87,14 +190,16 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
+<link rel="stylesheet" type="text/css" href="./org.css"/>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2013 Free Software Foundation, Inc.
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -138,47 +243,47 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title"></h1>
-<div id="outline-container-unnumbered-1" class="outline-2">
-<h2 id="unnumbered-1">Dosage and administration</h2>
-<div class="outline-text-2" id="text-unnumbered-1">
-</div><div id="outline-container-unnumbered-2" class="outline-3">
-<h3 id="unnumbered-2">Nonvalvular atrial fibrillation</h3>
-<div class="outline-text-3" id="text-unnumbered-2">
+<div id="outline-container-org2b0d282" class="outline-2">
+<h2 id="org2b0d282">Dosage and administration</h2>
+<div class="outline-text-2" id="text-org2b0d282">
+</div>
+<div id="outline-container-org8a1b41a" class="outline-3">
+<h3 id="org8a1b41a">Nonvalvular atrial fibrillation</h3>
+<div class="outline-text-3" id="text-org8a1b41a">
 <ul class="org-ul">
 <li>Recommended dose is 5 mg orally twice daily.</li>
 <li>In patients with at least 2 of the following: age ≥80 yrs, body weight ≤60 kg, or serum creatinine ≥1.5 mg/dL, recommended dose is 2.5 mg PO BID.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-unnumbered-3" class="outline-3">
-<h3 id="unnumbered-3">Prophylaxis of DVT following hip or knee replacement surgery</h3>
-<div class="outline-text-3" id="text-unnumbered-3">
+<div id="outline-container-orge0b9f4c" class="outline-3">
+<h3 id="orge0b9f4c">Prophylaxis of DVT following hip or knee replacement surgery</h3>
+<div class="outline-text-3" id="text-orge0b9f4c">
 <ul class="org-ul">
 <li>Recommended dose is 2.5 mg PO BID.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-unnumbered-4" class="outline-3">
-<h3 id="unnumbered-4">Treatment of DVT and PE</h3>
-<div class="outline-text-3" id="text-unnumbered-4">
+<div id="outline-container-org15bf296" class="outline-3">
+<h3 id="org15bf296">Treatment of DVT and PE</h3>
+<div class="outline-text-3" id="text-org15bf296">
 <ul class="org-ul">
 <li>Recommended dose is 10 mg PO BID for 7 days, then 5 mg PO BID.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-unnumbered-5" class="outline-3">
-<h3 id="unnumbered-5">Reduction in the risk of recurrent DVT and PE following initial therapy</h3>
-<div class="outline-text-3" id="text-unnumbered-5">
+<div id="outline-container-org9c8ec4a" class="outline-3">
+<h3 id="org9c8ec4a">Reduction in the risk of recurrent DVT and PE following initial therapy</h3>
+<div class="outline-text-3" id="text-org9c8ec4a">
 <ul class="org-ul">
 <li>Recommended dose is 2.5 mg PO BID.</li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-unnumbered-6" class="outline-2">
-<h2 id="unnumbered-6">Dosage forms and strengths</h2>
-<div class="outline-text-2" id="text-unnumbered-6">
+<div id="outline-container-org37d61b7" class="outline-2">
+<h2 id="org37d61b7">Dosage forms and strengths</h2>
+<div class="outline-text-2" id="text-org37d61b7">
 <ul class="org-ul">
 <li>Tablets
 <ul class="org-ul">
@@ -188,35 +293,35 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
-<div id="outline-container-unnumbered-7" class="outline-2">
-<h2 id="unnumbered-7">Contraindications</h2>
-<div class="outline-text-2" id="text-unnumbered-7">
+<div id="outline-container-org3daf1ff" class="outline-2">
+<h2 id="org3daf1ff">Contraindications</h2>
+<div class="outline-text-2" id="text-org3daf1ff">
 <ul class="org-ul">
 <li>Active pathological bleeding</li>
 <li>Severe hypersensitivity to apixaban</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-unnumbered-8" class="outline-2">
-<h2 id="unnumbered-8">Warnings and precautions</h2>
-<div class="outline-text-2" id="text-unnumbered-8">
+<div id="outline-container-org18f10f7" class="outline-2">
+<h2 id="org18f10f7">Warnings and precautions</h2>
+<div class="outline-text-2" id="text-org18f10f7">
 <ul class="org-ul">
 <li>Bleeding: serious and potentially fatal bleeding.  Promptly evaluate signs and symptoms of blood loss.</li>
 <li>Prosthetic heart valves: Use is not recommended.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-unnumbered-9" class="outline-2">
-<h2 id="unnumbered-9">Adverse reactions</h2>
-<div class="outline-text-2" id="text-unnumbered-9">
+<div id="outline-container-org4329a1c" class="outline-2">
+<h2 id="org4329a1c">Adverse reactions</h2>
+<div class="outline-text-2" id="text-org4329a1c">
 <ul class="org-ul">
 <li>Most common adverse reactions (&gt;1%) are related to bleeding</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-unnumbered-10" class="outline-2">
-<h2 id="unnumbered-10">Drug interactions</h2>
-<div class="outline-text-2" id="text-unnumbered-10">
+<div id="outline-container-org9e05e47" class="outline-2">
+<h2 id="org9e05e47">Drug interactions</h2>
+<div class="outline-text-2" id="text-org9e05e47">
 <ul class="org-ul">
 <li>For patients receiving apixaban at doses greater than 2.5 mg BID, the dose should be reduced 50% when it is coadministered with strong dual inhibitors of CYP3A4 and P-gp (e.g. ketoconazole, itraconazole, ritonavir, and clarithromycin).  For patients on apixaban 2.5 mg BID avoid coadministration with these drugs.</li>
 <li>Simultaneous use of strong dual inducers of CYP3A4 and P-gp (e.g. rifampin, carbamazepine, phenytoin, and St. John's wort) reduces blood levels of apixaban: avoid concomitant use.</li>
@@ -224,9 +329,9 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
-<div id="outline-container-unnumbered-11" class="outline-2">
-<h2 id="unnumbered-11">Use in specific populations</h2>
-<div class="outline-text-2" id="text-unnumbered-11">
+<div id="outline-container-org52f9bc4" class="outline-2">
+<h2 id="org52f9bc4">Use in specific populations</h2>
+<div class="outline-text-2" id="text-org52f9bc4">
 <ul class="org-ul">
 <li>Pregnancy: Not recommended.</li>
 <li>Nursing mothers: Discontinue drug or discontinue nursing.</li>

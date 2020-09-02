@@ -14,6 +14,7 @@
 #+LINK_UP:   
 #+LINK_HOME: 
 #+XSLT:
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./org.css"/>
 * Note
 - Sotalol should only be prescribed by physicians experienced in its use.  This outline is no substitute for a comprehensive familiarity with the drug and its packaging information.
 - Also note that packaging information is different for Betapace and Betapace AF, though information for both forms of sotalol are given here.

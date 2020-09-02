@@ -14,6 +14,7 @@
 #+LINK_UP:   
 #+LINK_HOME: 
 #+XSLT:
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./org.css"/>
 * Note
 - Dofetilide is available only to hospitals and prescribers who have received appropriate dosing and treatment initiation education.
 * Dosage and administration
