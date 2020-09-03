@@ -3,14 +3,20 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title></title>
-<!-- 2015-03-10 Tue 21:07 -->
-<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta  name="generator" content="Org-mode" />
-<meta  name="author" content="David Mann" />
+<!-- 2020-09-02 Wed 17:32 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="David Mann" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
   .todo   { font-family: monospace; color: red; }
   .done   { font-family: monospace; color: green; }
   .priority { font-family: monospace; color: orange; }
@@ -18,9 +24,9 @@
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -47,30 +53,127 @@
     border: 1px solid black;
   }
   pre.src:hover:before { display: inline;}
-  pre.src-sh:before    { content: 'sh'; }
-  pre.src-bash:before  { content: 'sh'; }
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
   pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-R:before     { content: 'R'; }
-  pre.src-perl:before  { content: 'Perl'; }
-  pre.src-java:before  { content: 'Java'; }
-  pre.src-sql:before   { content: 'SQL'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
 
   table { border-collapse:collapse; }
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.right  { text-align: center;  }
-  th.left   { text-align: center;   }
-  th.center { text-align: center; }
-  td.right  { text-align: right;  }
-  td.left   { text-align: left;   }
-  td.center { text-align: center; }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara:nth-child(2) { display: inline; }
-  .footpara { display: block; }
+  .footpara { display: inline; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -87,14 +190,16 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
+<link rel="stylesheet" type="text/css" href="./org.css"/>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2013 Free Software Foundation, Inc.
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -138,157 +243,156 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title"></h1>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
-<col  class="left" />
+<col  class="org-left" />
 
-<col  class="left" />
+<col  class="org-left" />
 
-<col  class="left" />
+<col  class="org-left" />
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="left">Criterion</th>
-<th scope="col" class="left">Value</th>
-<th scope="col" class="left">Reference</th>
+<th scope="col" class="org-left">Criterion</th>
+<th scope="col" class="org-left">Value</th>
+<th scope="col" class="org-left">Reference</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="left">Tall R V<sub>1</sub></td>
-<td class="left">&gt;6 mm</td>
-<td class="left">Myers</td>
+<td class="org-left">Tall R V<sub>1</sub></td>
+<td class="org-left">&gt;6 mm</td>
+<td class="org-left">Myers</td>
 </tr>
 
 <tr>
-<td class="left">Increased R:S ratio V<sub>1</sub></td>
-<td class="left">&gt;1.0</td>
-<td class="left">Myers</td>
+<td class="org-left">Increased R:S ratio V<sub>1</sub></td>
+<td class="org-left">&gt;1.0</td>
+<td class="org-left">Myers</td>
 </tr>
 
 <tr>
-<td class="left">Deep S V<sub>5</sub></td>
-<td class="left">&gt;10 mm</td>
-<td class="left">Myers</td>
+<td class="org-left">Deep S V<sub>5</sub></td>
+<td class="org-left">&gt;10 mm</td>
+<td class="org-left">Myers</td>
 </tr>
 
 <tr>
-<td class="left">Deep S V<sub>6</sub></td>
-<td class="left">&gt;3 mm</td>
-<td class="left">Myers</td>
+<td class="org-left">Deep S V<sub>6</sub></td>
+<td class="org-left">&gt;3 mm</td>
+<td class="org-left">Myers</td>
 </tr>
 
 <tr>
-<td class="left">Tall R aVR</td>
-<td class="left">&gt;4 mm</td>
-<td class="left">Sokolow</td>
+<td class="org-left">Tall R aVR</td>
+<td class="org-left">&gt;4 mm</td>
+<td class="org-left">Sokolow</td>
 </tr>
 
 <tr>
-<td class="left">Small S V<sub>1</sub></td>
-<td class="left">&lt;2 mm</td>
-<td class="left">Myers</td>
+<td class="org-left">Small S V<sub>1</sub></td>
+<td class="org-left">&lt;2 mm</td>
+<td class="org-left">Myers</td>
 </tr>
 
 <tr>
-<td class="left">Small R V<sub>5,6</sub></td>
-<td class="left">&lt;3 mm</td>
-<td class="left">Myers</td>
+<td class="org-left">Small R V<sub>5,6</sub></td>
+<td class="org-left">&lt;3 mm</td>
+<td class="org-left">Myers</td>
 </tr>
 
 <tr>
-<td class="left">Reduced R:S ratio V<sub>5</sub></td>
-<td class="left">&lt;0.75</td>
-<td class="left">Myers</td>
+<td class="org-left">Reduced R:S ratio V<sub>5</sub></td>
+<td class="org-left">&lt;0.75</td>
+<td class="org-left">Myers</td>
 </tr>
 
 <tr>
-<td class="left">Reduced R:S ratio V<sub>6</sub></td>
-<td class="left">&lt;0.4</td>
-<td class="left">Myers</td>
+<td class="org-left">Reduced R:S ratio V<sub>6</sub></td>
+<td class="org-left">&lt;0.4</td>
+<td class="org-left">Myers</td>
 </tr>
 
 <tr>
-<td class="left">Reduced R:S V<sub>5</sub> to R:S V<sub>1</sub></td>
-<td class="left">&lt;0.04</td>
-<td class="left">Sokolow</td>
+<td class="org-left">Reduced R:S V<sub>5</sub> to R:S V<sub>1</sub></td>
+<td class="org-left">&lt;0.04</td>
+<td class="org-left">Sokolow</td>
 </tr>
 
 <tr>
-<td class="left">(R I+S III)-(S I+R III)</td>
-<td class="left">&lt;15 mm</td>
-<td class="left">Lewis</td>
+<td class="org-left">(R I+S III)-(S I+R III)</td>
+<td class="org-left">&lt;15 mm</td>
+<td class="org-left">Lewis</td>
 </tr>
 
 <tr>
-<td class="left">Max R V<sub>1,2</sub>+max S I, aVL-S V<sub>1</sub></td>
-<td class="left">&gt;6 mm</td>
-<td class="left">Butler</td>
+<td class="org-left">Max R V<sub>1,2</sub>+max S I, aVL-S V<sub>1</sub></td>
+<td class="org-left">&gt;6 mm</td>
+<td class="org-left">Butler</td>
 </tr>
 
 <tr>
-<td class="left">R V<sub>1</sub>+S V<sub>5,6</sub></td>
-<td class="left">&gt;10.5 mm</td>
-<td class="left">Sokolow</td>
+<td class="org-left">R V<sub>1</sub>+S V<sub>5,6</sub></td>
+<td class="org-left">&gt;10.5 mm</td>
+<td class="org-left">Sokolow</td>
 </tr>
 
 <tr>
-<td class="left">R peak V1 (QRS duration &lt;0.12 sec)</td>
-<td class="left">&gt;0.035 sec</td>
-<td class="left">Myers</td>
+<td class="org-left">R peak V1 (QRS duration &lt;0.12 sec)</td>
+<td class="org-left">&gt;0.035 sec</td>
+<td class="org-left">Myers</td>
 </tr>
 
 <tr>
-<td class="left">QR V<sub>1</sub></td>
-<td class="left">Present</td>
-<td class="left">Myers</td>
+<td class="org-left">QR V<sub>1</sub></td>
+<td class="org-left">Present</td>
+<td class="org-left">Myers</td>
 </tr>
 </tbody>
 <tbody>
 <tr>
-<td class="left"><b>Supporting Criteria</b></td>
-<td class="left">&#xa0;</td>
-<td class="left">&#xa0;</td>
+<td class="org-left"><b>Supporting Criteria</b></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 </tbody>
 <tbody>
 <tr>
-<td class="left">RSR V<sub>1</sub> (QRS duration &gt;0.12 sec)</td>
-<td class="left">Present</td>
-<td class="left">&#xa0;</td>
+<td class="org-left">RSR V<sub>1</sub> (QRS duration &gt;0.12 sec)</td>
+<td class="org-left">Present</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="left">S&gt;R in I, II, III</td>
-<td class="left">Present</td>
-<td class="left">&#xa0;</td>
+<td class="org-left">S&gt;R in I, II, III</td>
+<td class="org-left">Present</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="left">S I and Q III</td>
-<td class="left">Present</td>
-<td class="left">&#xa0;</td>
+<td class="org-left">S I and Q III</td>
+<td class="org-left">Present</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="left">R:S V<sub>1</sub>&gt;R:S V<sub>3,4</sub></td>
-<td class="left">Present</td>
-<td class="left">&#xa0;</td>
+<td class="org-left">R:S V<sub>1</sub>&gt;R:S V<sub>3,4</sub></td>
+<td class="org-left">Present</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="left">Negative T-wave V<sub>1</sub> through V<sub>3</sub></td>
-<td class="left">Present</td>
-<td class="left">&#xa0;</td>
+<td class="org-left">Negative T-wave V<sub>1</sub> through V<sub>3</sub></td>
+<td class="org-left">Present</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="left">P II amplitude</td>
-<td class="left">&gt;2.5 mm</td>
-<td class="left">&#xa0;</td>
+<td class="org-left">P II amplitude</td>
+<td class="org-left">&gt;2.5 mm</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 </tbody>
 </table>
@@ -296,9 +400,9 @@ for the JavaScript code in this tag.
 Amplitudes are given in millimeters, where 1 mm=0.1 mV.
 </p>
 
-<div id="outline-container-unnumbered-1" class="outline-2">
-<h2 id="unnumbered-1">References</h2>
-<div class="outline-text-2" id="text-unnumbered-1">
+<div id="outline-container-orgeba9337" class="outline-2">
+<h2 id="orgeba9337">References</h2>
+<div class="outline-text-2" id="text-orgeba9337">
 <ul class="org-ul">
 <li>Table from: Hancock EW, Deal BJ, Mirvis DM, et al. AHA/ACC/HRS recommendations for the standardization and interpretation of the electrocardiogram.  Part V: Electrocardiogram changes associated with cardiac chamber hypertrophy.  J Am Coll Cardiol 2009;53:992. <a href="http://content.onlinejacc.org/article.aspx?articleid=1139534">http://content.onlinejacc.org/article.aspx?articleid=1139534</a></li>
 <li>Myers GB, Klein HA, Stofer BE. Electrocardiographic diagnosis of right ventricular hypertrophy.  Am Heart J 1948;35:1.</li>

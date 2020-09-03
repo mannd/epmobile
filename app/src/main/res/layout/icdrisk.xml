@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <include layout="@layout/toolbar" />
+    <include layout="@layout/calculatebuttons" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_above="@id/calculateButtonsLayout"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_marginBottom="@dimen/activity_vertical_margin"
-        >
+        android:layout_marginTop="@dimen/activity_vertical_margin">
 
 
         <LinearLayout
@@ -40,22 +41,21 @@
                 android:layout_height="wrap_content">
 
                 <RadioButton
-                    android:id="@+id/for_procedure"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/for_procedure_label"></RadioButton>
+                    android:text="@string/for_procedure_label" />
 
                 <RadioButton
                     android:id="@+id/for_heart_failure"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/for_heart_failure_label"></RadioButton>
+                    android:text="@string/for_heart_failure_label" />
 
                 <RadioButton
                     android:id="@+id/for_other_reason"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/other_label"></RadioButton>
+                    android:text="@string/other_label" />
             </RadioGroup>
 
             <TextView
@@ -70,22 +70,21 @@
                 android:layout_height="wrap_content">
 
                 <RadioButton
-                    android:id="@+id/class_one_or_two"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/class_one_or_two_label"></RadioButton>
+                    android:text="@string/class_one_or_two_label" />
 
                 <RadioButton
                     android:id="@+id/class_three"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/class_three_label"></RadioButton>
+                    android:text="@string/class_three_label" />
 
                 <RadioButton
                     android:id="@+id/class_four"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/class_four_label"></RadioButton>
+                    android:text="@string/class_four_label" />
             </RadioGroup>
 
             <View style="@style/Divider" />
@@ -120,22 +119,21 @@
                 android:layout_height="wrap_content">
 
                 <RadioButton
-                    android:id="@+id/no_abnormal_conduction"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/no_abnormal_conduction_label"></RadioButton>
+                    android:text="@string/no_abnormal_conduction_label" />
 
                 <RadioButton
                     android:id="@+id/yes_lbbb"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/yes_lbbb_label"></RadioButton>
+                    android:text="@string/yes_lbbb_label" />
 
                 <RadioButton
                     android:id="@+id/yes_other"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/yes_other_label"></RadioButton>
+                    android:text="@string/yes_other_label" />
             </RadioGroup>
 
             <TextView
@@ -153,43 +151,42 @@
                     android:id="@+id/initial_implant"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/initial_implant_label"></RadioButton>
+                    android:text="@string/initial_implant_label" />
 
                 <RadioButton
-                    android:id="@+id/generator_replacement_eri"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/generator_replacement_eri_label"></RadioButton>
+                    android:text="@string/generator_replacement_eri_label" />
 
                 <RadioButton
                     android:id="@+id/generator_replacement_infection"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/generator_replacement_infection_label"></RadioButton>
+                    android:text="@string/generator_replacement_infection_label" />
 
                 <RadioButton
                     android:id="@+id/generator_replacement_device_relocation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/generator_replacement_device_relocation_label"></RadioButton>
+                    android:text="@string/generator_replacement_device_relocation_label" />
 
                 <RadioButton
                     android:id="@+id/generator_replacement_upgrade"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/generator_replacement_upgrade_label"></RadioButton>
+                    android:text="@string/generator_replacement_upgrade_label" />
 
                 <RadioButton
                     android:id="@+id/generator_replacement_malfunction"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/generator_replacement_malfunction_label"></RadioButton>
+                    android:text="@string/generator_replacement_malfunction_label" />
 
                 <RadioButton
                     android:id="@+id/generator_replacement_other"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/generator_replacement_other_label"></RadioButton>
+                    android:text="@string/generator_replacement_other_label" />
             </RadioGroup>
 
             <TextView
@@ -204,22 +201,21 @@
                 android:layout_height="wrap_content">
 
                 <RadioButton
-                    android:id="@+id/single_chamber"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/single_chamber_label"></RadioButton>
+                    android:text="@string/single_chamber_label" />
 
                 <RadioButton
                     android:id="@+id/dual_chamber"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/dual_chamber_label"></RadioButton>
+                    android:text="@string/dual_chamber_label" />
 
                 <RadioButton
                     android:id="@+id/crt_d"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/crt_d_label"></RadioButton>
+                    android:text="@string/crt_d_label" />
             </RadioGroup>
 
             <TextView
@@ -237,19 +233,18 @@
                     android:id="@+id/low_sodium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/low_sodium_label"></RadioButton>
+                    android:text="@string/low_sodium_label" />
 
                 <RadioButton
-                    android:id="@+id/normal_sodium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/normal_sodium_label"></RadioButton>
+                    android:text="@string/normal_sodium_label" />
 
                 <RadioButton
                     android:id="@+id/high_sodium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/high_sodium_label"></RadioButton>
+                    android:text="@string/high_sodium_label" />
             </RadioGroup>
 
             <TextView
@@ -267,19 +262,18 @@
                     android:id="@+id/low_hgb"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/low_hgb_label"></RadioButton>
+                    android:text="@string/low_hgb_label" />
 
                 <RadioButton
                     android:id="@+id/normal_hgb"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/normal_hgb_label"></RadioButton>
+                    android:text="@string/normal_hgb_label" />
 
                 <RadioButton
-                    android:id="@+id/high_hgb"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/high_hgb_label"></RadioButton>
+                    android:text="@string/high_hgb_label" />
             </RadioGroup>
 
             <TextView
@@ -294,43 +288,25 @@
                 android:layout_height="wrap_content">
 
                 <RadioButton
-                    android:id="@+id/low_bun"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/low_bun_label"></RadioButton>
+                    android:text="@string/low_bun_label" />
 
                 <RadioButton
                     android:id="@+id/normal_bun"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/normal_bun_label"></RadioButton>
+                    android:text="@string/normal_bun_label" />
 
                 <RadioButton
                     android:id="@+id/high_bun"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/high_bun_label"></RadioButton>
+                    android:text="@string/high_bun_label" />
             </RadioGroup>
 
-            <LinearLayout
-                android:id="@+id/linearLayout3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <Button
-                    android:id="@+id/calculate_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/calculate_label" />
-
-                <Button
-                    android:id="@+id/clear_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/clear_label" />
-            </LinearLayout>
         </LinearLayout>
 
     </ScrollView>
 
-</LinearLayout>
+</RelativeLayout>

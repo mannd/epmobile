@@ -3,7 +3,8 @@ package org.epstudios.epmobile;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
+import androidx.preference.PreferenceManager;
+
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 
 import java.text.DecimalFormat;
 
+@SuppressWarnings("SpellCheckingInspection")
 public abstract class DrugCalculator extends EpActivity implements
 		OnClickListener {
 
@@ -29,7 +31,7 @@ public abstract class DrugCalculator extends EpActivity implements
         setContentView(R.layout.drugcalculator);
 	initToolbar();
 	
-		View calculateDoseButton = findViewById(R.id.calculate_dose_button);
+		View calculateDoseButton = findViewById(R.id.calculate_button);
 		calculateDoseButton.setOnClickListener(this);
 		View clearButton = findViewById(R.id.clear_button);
 		clearButton.setOnClickListener(this);
@@ -88,7 +90,7 @@ public abstract class DrugCalculator extends EpActivity implements
     @Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-		case R.id.calculate_dose_button:
+		case R.id.calculate_button:
 			calculateDose();
 			break;
 		case R.id.clear_button:
@@ -188,7 +190,7 @@ public abstract class DrugCalculator extends EpActivity implements
 		CharSequence weightText = weightEditText.getText();
 		CharSequence creatinineText = creatinineEditText.getText();
 		CharSequence ageText = ageEditText.getText();
-		Boolean isMale = sexRadioGroup.getCheckedRadioButtonId() == R.id.male;
+		boolean isMale = sexRadioGroup.getCheckedRadioButtonId() == R.id.male;
 		try {
 			double weight = Double.parseDouble(weightText.toString());
 			if (getWeightUnitSelection().equals(WeightUnit.LB))
@@ -196,7 +198,7 @@ public abstract class DrugCalculator extends EpActivity implements
 			double creatinine = Double.parseDouble(creatinineText.toString());
 			double age = Double.parseDouble(ageText.toString());
 			if (age < 18 && !pediatricDosingOk()) {
-				calculatedDoseTextView.setText("Do not use!");
+				calculatedDoseTextView.setText(getString(R.string.do_not_use_warning));
 				calculatedDoseTextView.setTextColor(Color.RED);
 				ccTextView.setTextColor(Color.RED);
 				ccTextView.setText(getString(R.string.pediatric_use_warning));
@@ -208,7 +210,7 @@ public abstract class DrugCalculator extends EpActivity implements
 			ccTextView.setTextAppearance(this,
 					android.R.style.TextAppearance_Medium);
 			String ccMessage = getMessage(cc, age);
-			ccTextView.setText(ccMessage + getDisclaimer());
+			ccTextView.setText(String.format("%s%s", ccMessage, getDisclaimer()));
             creatinineClearanceReturnString = getCrClResultString(cc, isMale, age, weight, creatinine,
                     useMmolUnits);
             double dose = getDose(cc);
@@ -240,7 +242,7 @@ public abstract class DrugCalculator extends EpActivity implements
             if (dose < 0) {  // CrCl only
                 calculatedDoseTextView.setTextAppearance(this,
                         android.R.style.TextAppearance_Large);
-                calculatedDoseTextView.setText(String.valueOf(cc) + " mL/min");
+                calculatedDoseTextView.setText(String.format("%s mL/min", cc));
             }
 			else if (dose == 0) {
 				calculatedDoseTextView
@@ -251,8 +253,8 @@ public abstract class DrugCalculator extends EpActivity implements
 				calculatedDoseTextView.setTextAppearance(this,
 						android.R.style.TextAppearance_Large);
 				// format to only show decimal if non-zero
-				calculatedDoseTextView.setText(new DecimalFormat("#.#")
-						.format(dose) + doseFrequency(cc));
+				calculatedDoseTextView.setText(String.format("%s%s", new DecimalFormat("#.#")
+						.format(dose), doseFrequency(cc)));
 			}
 		} catch (NumberFormatException e) {
 			calculatedDoseTextView.setText(getString(R.string.invalid_warning));
@@ -300,16 +302,18 @@ public abstract class DrugCalculator extends EpActivity implements
 				.getDefaultSharedPreferences(getBaseContext());
 		String weightUnitPreference = prefs.getString("default_weight_unit",
 				"KG");
-		if (weightUnitPreference.equals("KG"))
-			defaultWeightUnitSelection = WeightUnit.KG;
-		else
-			defaultWeightUnitSelection = WeightUnit.LB;
 		String creatinineUnitPreference = prefs.getString(
 				getString(R.string.creatinine_clearance_unit_key), "MG");
-		if (creatinineUnitPreference.equals("MG"))
-			defaultCreatinineUnitSelection = CreatinineUnit.MG;
-		else
-			defaultCreatinineUnitSelection = CreatinineUnit.MMOL;
+		if (weightUnitPreference != null && creatinineUnitPreference != null) {
+			if (weightUnitPreference.equals("KG"))
+				defaultWeightUnitSelection = WeightUnit.KG;
+			else
+				defaultWeightUnitSelection = WeightUnit.LB;
+			if (creatinineUnitPreference.equals("MG"))
+				defaultCreatinineUnitSelection = CreatinineUnit.MG;
+			else
+				defaultCreatinineUnitSelection = CreatinineUnit.MMOL;
+		}
 	}
 
 	protected String getMessage(int crCl, double age) {
@@ -317,7 +321,7 @@ public abstract class DrugCalculator extends EpActivity implements
 		// override for drug-specific message
 		// age is only used in some cases for warnings
 		return getString(R.string.long_creatinine_clearance_label) + " = "
-				+ String.valueOf(crCl) + " mL/min";
+				+ crCl + " mL/min";
 	}
 
     protected String getDisclaimer() {

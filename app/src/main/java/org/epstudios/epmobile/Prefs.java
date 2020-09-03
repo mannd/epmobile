@@ -19,8 +19,8 @@
 package org.epstudios.epmobile;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.view.MenuItem;
 
 public class Prefs extends AppCompatActivity {
@@ -36,19 +36,17 @@ public class Prefs extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
-        getFragmentManager().beginTransaction()
+        getSupportFragmentManager().beginTransaction()
                 .replace(R.id.content_frame, new MyPreferenceFragment()).commit();
 
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            // Respond to the action bar's Up/Home button
-            case android.R.id.home:
-                // NavUtils.navigateUpFromSameTask(this);
-                finish();
-                return true;
+        // Respond to the action bar's Up/Home button
+        if (item.getItemId() == android.R.id.home) {// NavUtils.navigateUpFromSameTask(this);
+            finish();
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }

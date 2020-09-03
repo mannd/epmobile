@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
     <include layout="@layout/toolbar" />
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
@@ -22,10 +24,9 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/step_1"
-            android:textAppearance="?android:attr/textAppearanceLarge"></TextView>
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <LinearLayout
-            android:id="@+id/linearLayout1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/activity_vertical_margin">
@@ -35,29 +36,34 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/yes"></Button>
+                android:text="@string/yes"
+                tools:ignore="ButtonStyle" />
 
             <Button
                 android:id="@+id/no_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/no"></Button>
+                android:text="@string/no"
+                tools:ignore="ButtonStyle" />
 
             <Button
                 android:id="@+id/back_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/back"></Button>
+                android:text="@string/back"
+                tools:ignore="ButtonStyle" />
         </LinearLayout>
-
-        <Button
-            android:id="@+id/morphology_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/morphology_label"></Button>
 
     </LinearLayout>
 
-</LinearLayout>
+    <Button
+        android:id="@+id/morphology_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_alignParentBottom="true"
+        android:text="@string/morphology_label" />
+
+</RelativeLayout>

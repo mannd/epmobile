@@ -61,8 +61,7 @@ public class AtrialTachLocalization extends LocationAlgorithm implements
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case android.R.id.home:
+		if (item.getItemId() == android.R.id.home) {
 			Intent parentActivityIntent = new Intent(this, DiagnosisList.class);
 			parentActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
 					| Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -75,7 +74,6 @@ public class AtrialTachLocalization extends LocationAlgorithm implements
 
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
 		switch (v.getId()) {
 		case R.id.yes_button:
 			getYesResult();

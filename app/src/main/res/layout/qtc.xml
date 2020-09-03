@@ -1,52 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
     <include layout="@layout/toolbar" />
+    <include layout="@layout/calculatebuttons" />
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:stretchColumns="*"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_marginBottom="@dimen/activity_vertical_margin"
-        >
+        android:layout_marginTop="@dimen/activity_vertical_margin">
 
         <TableRow>
 
-            <Spinner android:id="@+id/interval_rate_spinner"></Spinner>
+            <Spinner android:id="@+id/interval_rate_spinner" />
 
             <EditText
                 android:id="@+id/rrEditText"
                 android:hint="@string/rr_hint"
                 android:inputType="number"
-                android:text=""></EditText>
+                android:text=""
+                android:importantForAutofill="no" />
         </TableRow>
 
         <TableRow>
 
             <TextView
-                android:id="@+id/textView2"
                 android:text="@string/qt_label"
-                android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <EditText
                 android:id="@+id/qtEditText"
                 android:hint="@string/qt_hint"
                 android:inputType="number"
-                android:text=""></EditText>
+                android:text=""
+                android:importantForAutofill="no" />
         </TableRow>
 
         <TableRow>
 
             <TextView
-                android:id="@+id/textView3"
                 android:text="@string/qtc_formula_label"
-                android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <Spinner
                 android:id="@+id/qtc_formula_spinner"
@@ -55,16 +55,9 @@
         </TableRow>
 
         <LinearLayout
-            android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/activity_vertical_margin">
-
-            <Button
-                android:id="@+id/calculate_qtc_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/calculate_label" />
 
             <TextView
                 android:id="@+id/calculated_qtc"
@@ -75,20 +68,16 @@
                 android:text="@string/qtc_result_label"
                 android:textAppearance="?android:attr/textAppearanceMedium"/>
 
-            <Button
-                android:id="@+id/clear_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/clear_label"/>
         </LinearLayout>
 
         <TextView
             android:id="@+id/qtc_formula"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
             android:layout_weight="1"
             android:textAppearance="?android:attr/textAppearanceMedium"/>
 
     </TableLayout>
 
-</LinearLayout>
+</RelativeLayout>

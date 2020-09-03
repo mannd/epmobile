@@ -66,6 +66,7 @@ public class ChadsVasc extends RiskScore {
 				getString(R.string.chadsvasc_title));
 	}
 
+	//  https://www.mdcalc.com/cha2ds2-vasc-score-atrial-fibrillation-stroke-risk
 	private String getResultMessage(int result) {
 		String message;
 		if (result < 1)
@@ -82,48 +83,60 @@ public class ChadsVasc extends RiskScore {
 		else
 			message = getString(R.string.high_chadsvasc_message);
 		String risk = "";
+		String neuroRisk = "";
 		switch (result) {
 		case 0:
-			risk = "0";
+			risk = "0.2";
+			neuroRisk = "0.3";
 			break;
 		case 1:
-			risk = "1.3";
+			risk = "0.6";
+			neuroRisk = "0.9";
 			break;
 		case 2:
 			risk = "2.2";
+			neuroRisk = "2.9";
 			break;
 		case 3:
 			risk = "3.2";
+			neuroRisk = "4.6";
 			break;
 		case 4:
-			risk = "4.0";
+			risk = "4.8";
+			neuroRisk = "6.7";
 			break;
 		case 5:
-			risk = "6.7";
+			risk = "7.2";
+			neuroRisk = "10.0";
 			break;
 		case 6:
-			risk = "9.8";
+			risk = "9.7";
+			neuroRisk = "13.6";
 			break;
 		case 7:
-			risk = "9.6";
+			risk = "11.2";
+			neuroRisk = "15.7";
 			break;
 		case 8:
-			risk = "6.7";
+			risk = "10.8";
+			neuroRisk = "15.2";
 			break;
 		case 9:
-			risk = "15.2";
+			risk = "12.23";
+			neuroRisk = "17.4";
 			break;
 		}
-		risk = "Annual stroke risk is " + risk + "%";
+		risk = "Annual ischemic stroke risk is " + risk + "%";
+		neuroRisk = "Annual stroke/TIA/peripheral emboli risk is " + neuroRisk + "%";
 		message = getRiskLabel() + " score = " + result + "\n" + message + "\n"
-				+ risk;
+				+ risk + "\n" + neuroRisk;
 		setResultMessage(message);
 		return resultWithShortReference();
 	}
 
 	@Override
 	protected String getFullReference() {
-		return getString(R.string.chadsvasc_full_reference);
+		return getString(R.string.chads_chadsvasc_full_reference);
 	}
 
 	@Override
@@ -133,6 +146,6 @@ public class ChadsVasc extends RiskScore {
 
 	@Override
 	protected String getShortReference() {
-		return getString(R.string.chadsvasc_short_reference);
+		return getString(R.string.chads_chadsvasc_short_reference);
 	}
 }

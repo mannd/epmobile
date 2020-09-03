@@ -95,7 +95,6 @@ public class HasBled extends RiskScore {
 
 	@Override
 	protected String getFullReference() {
-		// TODO Auto-generated method stub
 		return getString(R.string.hasbled_full_reference);
 	}
 

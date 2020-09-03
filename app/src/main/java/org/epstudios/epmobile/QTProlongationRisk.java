@@ -43,7 +43,7 @@ public class QTProlongationRisk extends RiskScore {
     protected void calculateResult() {
         int result = 0;
         clearSelectedRisks();
-        int points[] = {1,1,1,2,2,2,3,3,3,6};
+        int[] points = {1,1,1,2,2,2,3,3,3,6};
         for (int n = 0; n < 10; n++) {
             if (checkBox[n].isChecked()) {
                 addSelectedRisk(checkBox[n].getText().toString());

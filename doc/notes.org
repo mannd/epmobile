@@ -47,7 +47,7 @@
    | Hx Bleeding or Anemia          |     1 |
    | Labile INR (< 60% therapeutic) |     1 |
    | Elderly (65 or older)          |     1 |
-   | Drugs - antiplatet             |     1 |
+   | Drugs - antiplatelet             |     1 |
    | Drugs - EtOH (>= 8 drinks/wk)  |     1 |
    - Score of 3 or more indicates caution in using AC and increased 1 year
      risk of bleeding.
@@ -139,7 +139,7 @@
 *** ECGpedia
     - LBBB VT
       - Initial R > 40 ms in V1 or V2 => VT
-      - RS > 100 ms in V1 or V2 => VT (redundent, already in Step 1?, Brugada)
+      - RS > 100 ms in V1 or V2 => VT (redundant, already in Step 1?, Brugada)
       - Slurred or notched S in V1 or V2 => VT
       - Q to nadir QS > 60 ms in V1 or V2 => VT
       - Q or QS in V6 => VT
@@ -337,7 +337,7 @@
 *** Drug Dose Calculators
 **** Dabigatran Calculator
 **** Dofetilide Calculator
-**** Rovaroxaban Calculator
+**** Rivaroxaban Calculator
 **** Warfarin Calculator
 *** QTc Calculator
 ** Diagnosis
@@ -572,10 +572,10 @@
 *** Pradaxa
     - metabolized by P-gp
     - not metabolized by CYP450 enzymes
-    - reduce dose to 75 mg bid when dronederone or ketoconazole
+    - reduce dose to 75 mg bid when dronedarone or ketoconazole
       administered and CrCl 30-50 mL/min
     - increase Pradaxa levels
-      - dronederone
+      - dronedarone
       - ketoconazole
       - verapamil (probably not clinically important)
       - no important effect from amiodarone
@@ -592,7 +592,7 @@
     - multiple CYP450 enzymes involved in metabolism, esp CYP2C9
     - some common/cardiac drugs that interact
       - amiodarone, cipro, mexiletine, BCPs, propafenone, propranolol,
-        verapmil, amlodipine, atorvastatin, cimetidine, diltiazem
+        verapamil, amlodipine, atorvastatin, cimetidine, diltiazem
 *** sotalol
     - not metabolized, only renally excreted unchanged
     - AFB package insert dosing
@@ -605,7 +605,7 @@
 ** Kistler et al. Summary
    - in V1, - or + /- P 100% specific RA
    - in V1, -/+ or + P 100% sensitive LA
-   - Algoritm sensitivity = 93%
+   - Algorithm sensitivity = 93%
    - P wave must have discrete iso segment before (i.e. not fused with
      T wave, etc.)
    - isoelectric means no P-wave deviation from the baseline of >=
@@ -781,8 +781,8 @@ Possible point scores range from 0 to 12 for those without a prior stroke and fr
   - [ ] git flow release finish vx.y
   - [ ] git push --tags origin master
   - [ ] git push origin develop
-  - [ ] refresh android studio epmobgile
-  - [ ] make/sign epmobile.apk, save it in dev/epmobileapp/later_verisons/
+  - [ ] refresh android studio epmobile
+  - [ ] make/sign epmobile.apk, save it in dev/epmobileapp/later_versions/
   - [ ] on market.android.com update product details
   - [ ] upload apk, deactivate old one
   - [ ] Tweet It! (after confirming it's on the Market)

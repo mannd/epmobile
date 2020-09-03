@@ -18,6 +18,7 @@
 
 package org.epstudios.epmobile;
 
+@SuppressWarnings("SpellCheckingInspection")
 public class QtcCalculator {
 	public enum QtcFormula {
 		BAZETT, FRIDERICIA, SAGIE, HODGES

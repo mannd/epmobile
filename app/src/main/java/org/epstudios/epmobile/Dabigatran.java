@@ -19,7 +19,6 @@
 package org.epstudios.epmobile;
 
 public class Dabigatran extends DrugCalculator {
-	// / TODO need to fix these colors for both themes
 	@Override
 	protected String getMessage(int crCl, double age) {
 		String msg = super.getMessage(crCl, age);

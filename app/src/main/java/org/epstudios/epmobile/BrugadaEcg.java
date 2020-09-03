@@ -21,10 +21,8 @@ public class BrugadaEcg extends EpActivity implements OnClickListener {
 	}
 
 	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.text_button:
+		if (v.getId() == R.id.text_button) {
 			displayHelp();
-			break;
 		}
 	}
 

@@ -26,10 +26,10 @@ public class Entrainment extends EpActivity implements OnClickListener {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.entrainment);
-	initToolbar();
-	tclEditText = findViewById(R.id.tclEditText);
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.entrainment);
+		initToolbar();
+		tclEditText = findViewById(R.id.tclEditText);
 		ppiEditText = findViewById(R.id.ppiEditText);
 		sqrsEditText = findViewById(R.id.sqrsEditText);
 		egmQrsEditText = findViewById(R.id.egmQrsEditText);
@@ -67,15 +67,14 @@ public class Entrainment extends EpActivity implements OnClickListener {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case android.R.id.home:
-			Intent parentActivityIntent = new Intent(this, ReferenceList.class);
-			parentActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
-					| Intent.FLAG_ACTIVITY_NEW_TASK);
-			startActivity(parentActivityIntent);
-			finish();
-			return true;
-		}
+        if (item.getItemId() == android.R.id.home) {
+            Intent parentActivityIntent = new Intent(this, ReferenceList.class);
+            parentActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+                    | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(parentActivityIntent);
+            finish();
+            return true;
+        }
 		return super.onOptionsItemSelected(item);
 	}
 
@@ -168,7 +167,7 @@ public class Entrainment extends EpActivity implements OnClickListener {
 			}
 
 			message = getString(R.string.ppi_minus_tcl_label)
-					+ String.valueOf(ppiMinusTcl) + ". " + message;
+					+ ppiMinusTcl + ". " + message;
 			resultTextView.setText(message);
 
 		} catch (NumberFormatException e) {

@@ -6,7 +6,7 @@ import android.widget.CheckBox;
 public class OesilScore extends SyncopeRiskScore {
 	// These scores are from the validation group in the paper.
 	// The derivation cohort had slightly different scores.
-	final String risk[] = new String[] { "0", "0.6", "14", "29", "52.9" };
+	final String[] risk = new String[] { "0", "0.6", "14", "29", "52.9" };
 
 	@Override
 	protected void setContentView() {

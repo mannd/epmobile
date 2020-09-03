@@ -28,6 +28,7 @@ import android.widget.ListView;
  * You should have received a copy of the GNU General Public License
  * along with epmobile.  If not, see <http://www.gnu.org/licenses/>.
  */
+@SuppressWarnings("SpellCheckingInspection")
 public class QtcIvcdResults extends EpActivity {
     static final int QT = 0;
     static final int QTC = 1;
@@ -48,15 +49,12 @@ public class QtcIvcdResults extends EpActivity {
     private int prelbbbqtc;
     private boolean isLBBB;
 
-    static final String EPS = "EPS";
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.selectionlist);
 	initToolbar();
 
-        // TODO update labels
         qt = getIntent().getIntExtra("QT", 0);
         qtc = getIntent().getIntExtra("QTc", 0);
         jt = getIntent().getIntExtra("JT", 0);
@@ -173,7 +171,7 @@ public class QtcIvcdResults extends EpActivity {
         showDetails(getString(R.string.prelbbbqtc_details_title), message);
     }
     private void showInstructions() {
-        showDetails(getString(R.string.qt_intructions_title),
+        showDetails(getString(R.string.qt_instructions_title),
                 getString(R.string.qt_ivcd_instructions));
     }
 

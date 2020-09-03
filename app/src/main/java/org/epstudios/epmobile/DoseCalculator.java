@@ -16,7 +16,7 @@ public class DoseCalculator {
 	}
 
 	// order in which to add or subtract doses
-	private static final int orderedDays[] = { MON, FRI, WED, SAT, TUE, THU,
+	private static final int[] orderedDays = { MON, FRI, WED, SAT, TUE, THU,
 			SUN };
 
 	public DoseCalculator(double tabletDose, double weeklyDose) {
@@ -39,7 +39,7 @@ public class DoseCalculator {
 	}
 
 	public double[] weeklyDoses() {
-		double result[] = new double[NUM_DAYS];
+		double[] result = new double[NUM_DAYS];
 		for (int i = 0; i < NUM_DAYS; ++i) {
 			result[i] = 1.0;
 		}
@@ -89,19 +89,23 @@ public class DoseCalculator {
 		}
 	}
 
-	private Boolean allHalfTablets(double[] doses) {
-		Boolean allHalfTabs = true;
+	private boolean allHalfTablets(double[] doses) {
+		boolean allHalfTabs = true;
 		for (double dose : doses)
-			if (dose > 0.5)
+			if (dose > 0.5) {
 				allHalfTabs = false;
+				break;
+			}
 		return allHalfTabs;
 	}
 
-	private Boolean allDoubleTablets(double[] doses) {
-		Boolean allDoubleTabs = true;
+	private boolean allDoubleTablets(double[] doses) {
+		boolean allDoubleTabs = true;
 		for (double dose : doses)
-			if (dose != 2.0)
+			if (dose != 2.0) {
 				allDoubleTabs = false;
+				break;
+			}
 		return allDoubleTabs;
 	}
 

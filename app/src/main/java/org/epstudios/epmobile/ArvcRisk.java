@@ -4,11 +4,11 @@ import android.text.TextUtils;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
-import android.widget.Switch;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
-import java.util.Locale;
+
+import androidx.appcompat.widget.SwitchCompat;
 
 /**
  * Copyright (C) 2019 EP Studios, Inc.
@@ -34,11 +34,11 @@ import java.util.Locale;
 public class ArvcRisk extends DiagnosticScore {
     EditText ageText;
     RadioGroup sexRadioGroup;
-    Switch syncopeSwitch;
+    SwitchCompat syncopeSwitch;
     SeekBar twiSeekBar;
     TextView twiTextView;
     EditText pvcText;
-    Switch nsvtSwitch;
+    SwitchCompat nsvtSwitch;
     SeekBar rvefSeekBar;
     TextView rvefTextView;
     TextView arvcRiskReference;
@@ -87,7 +87,7 @@ public class ArvcRisk extends DiagnosticScore {
             }
         });
         arvcRiskReference = findViewById(R.id.arvc_risk_reference);
-        arvcRiskReference.setText("\nReference: " + getFullReference());
+        arvcRiskReference.setText(getString(R.string.reference_full, getFullReference()));
         clearEntries();
     }
 
@@ -97,10 +97,7 @@ public class ArvcRisk extends DiagnosticScore {
         if (rvef < minEF) {
             return minEF;
         }
-        if (rvef > maxEF) {
-            return maxEF;
-        }
-        return rvef;
+        return Math.min(rvef, maxEF);
     }
 
     //@Override
@@ -108,15 +105,6 @@ public class ArvcRisk extends DiagnosticScore {
         return getString(R.string.arvc_risk_full_reference);
     }
 
-    //@Override
-    protected String getRiskLabel() {
-        return getString(R.string.arvc_risk_title);
-    }
-
-    //@Override
-    protected String getShortReference() {
-        return getString(R.string.arvc_risk_short_reference);
-    }
 
     @Override
     protected void calculateResult() {
@@ -148,9 +136,9 @@ public class ArvcRisk extends DiagnosticScore {
             double yr5Risk = model.calculateRisk(ArvcRiskModel.year5);
             double yr2Risk = model.calculateRisk(ArvcRiskModel.year2);
             double yr1Risk = model.calculateRisk(ArvcRiskModel.year1);
-            message = String.format( "%s%% within 5 years\n", NumberFormat.getInstance().format(yr5Risk) );
-            message += String.format( "%s%% within 2 years\n", NumberFormat.getInstance().format(yr2Risk) );
-            message += String.format( "%s%% within 1 year", NumberFormat.getInstance().format(yr1Risk) );
+            message = getString(R.string.arvc_5_y_risk, NumberFormat.getInstance().format(yr5Risk));
+            message += getString(R.string.arvc_2_y_risk, NumberFormat.getInstance().format(yr2Risk));
+            message += getString(R.string.arvc_1_y_risk, NumberFormat.getInstance().format(yr1Risk));
             displayResult(message, getString(R.string.risk_sus_va_title));
         }
         catch (Exception ex) {

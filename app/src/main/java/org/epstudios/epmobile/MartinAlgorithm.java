@@ -4,7 +4,7 @@ import android.view.View;
 import android.widget.CheckBox;
 
 public class MartinAlgorithm extends SyncopeRiskScore {
-	final int risk[] = new int[] { 0, 5, 16, 27, 27 };
+	final int[] risk = new int[] { 0, 5, 16, 27, 27 };
 
 	@Override
 	protected void setContentView() {

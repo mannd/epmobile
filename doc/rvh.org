@@ -14,6 +14,7 @@
 #+LINK_UP:   
 #+LINK_HOME: 
 #+XSLT:
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./org.css"/>
 | Criterion                          | Value      | Reference |
 |------------------------------------+------------+-----------|
 | Tall R V_1                         | >6 mm      | Myers     |
@@ -43,7 +44,7 @@
 Amplitudes are given in millimeters, where 1 mm=0.1 mV.
 
 * References
-- Table from: Hancock EW, Deal BJ, Mirvis DM, et al. AHA/ACCF/HRS recommendations for the standardization and interpretation of the electrocardiogram.  Part V: Electrocardiogram changes associated with cardiac chamber hypertrophy.  J Am Coll Cardiol 2009;53:992. http://content.onlinejacc.org/article.aspx?articleid=1139534
+- Table from: Hancock EW, Deal BJ, Mirvis DM, et al. AHA/ACC/HRS recommendations for the standardization and interpretation of the electrocardiogram.  Part V: Electrocardiogram changes associated with cardiac chamber hypertrophy.  J Am Coll Cardiol 2009;53:992. http://content.onlinejacc.org/article.aspx?articleid=1139534
 - Myers GB, Klein HA, Stofer BE. Electrocardiographic diagnosis of right ventricular hypertrophy.  Am Heart J 1948;35:1.
 - Sokolow M, Lyon TP. The ventricular complex in left ventricular hypertrophy as obtained by unipolar and limb leads.  Am Heart J 1949;37:161.
 - Lewis T. Observations upon ventricular hypertrophy with special reference to preponderance of one or the other chamber.  Heart 1914;5:367.

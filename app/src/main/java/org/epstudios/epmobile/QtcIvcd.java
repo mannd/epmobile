@@ -1,6 +1,4 @@
-package org.epstudios.epmobile;
-
-/**
+/*
  * Copyright (C) 2016 EP Studios, Inc.
  * www.epstudiossoftware.com
  * <p/>
@@ -22,6 +20,8 @@ package org.epstudios.epmobile;
  * along with epmobile.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+package org.epstudios.epmobile;
+
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -36,7 +36,7 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 
-
+@SuppressWarnings("SpellCheckingInspection")
 public class QtcIvcd extends EpActivity implements View.OnClickListener {
     private enum IntervalRate {
         INTERVAL, RATE
@@ -61,7 +61,7 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
         setContentView(R.layout.qtcivcd);
 	initToolbar();
 	
-        View calculateQtcButton = findViewById(R.id.calculate_qtc_button);
+        View calculateQtcButton = findViewById(R.id.calculate_button);
         calculateQtcButton.setOnClickListener(this);
         View clearButton = findViewById(R.id.clear_button);
         clearButton.setOnClickListener(this);
@@ -82,14 +82,13 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                Intent parentActivityIntent = new Intent(this, CalculatorList.class);
-                parentActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
-                        | Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(parentActivityIntent);
-                finish();
-                return true;
+        if (item.getItemId() == android.R.id.home) {
+            Intent parentActivityIntent = new Intent(this, CalculatorList.class);
+            parentActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+                    | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(parentActivityIntent);
+            finish();
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -98,7 +97,7 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.calculate_qtc_button:
+            case R.id.calculate_button:
                 calculateQtc();
                 break;
             case R.id.clear_button:
@@ -151,15 +150,15 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
 
     }
 
-    private class ShortQrsException extends Exception {}
+    private static class ShortQrsException extends Exception {}
 
     private void calculateQtc() {
         CharSequence rateIntervalText = rrEditText.getText();
         CharSequence qtText = qtEditText.getText();
         CharSequence qrsText = qrsEditText.getText();
         IntervalRate intervalRateSelection = getIntervalRateSelection();
-        Boolean isMale = sexRadioGroup.getCheckedRadioButtonId() == R.id.male;
-        Boolean isLBBB = lbbbCheckBox.isChecked();
+        boolean isMale = sexRadioGroup.getCheckedRadioButtonId() == R.id.male;
+        boolean isLBBB = lbbbCheckBox.isChecked();
         try {
             int interval;
             double rate;
@@ -175,6 +174,7 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
             }
             int qt = Integer.parseInt(qtText.toString());
             int qrs = Integer.parseInt(qrsText.toString());
+            //noinspection ConditionCoveredByFurtherCondition
             if (rateInterval <= 0 || qt <= 0 || qrs <= 0 || qrs >= qt) {
                 throw new NumberFormatException();
             }
@@ -229,10 +229,12 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
                 .getDefaultSharedPreferences(getBaseContext());
         String intervalRatePreference = prefs.getString("interval_rate",
                 "INTERVAL");
-        if (intervalRatePreference.equals("INTERVAL"))
-            defaultIntervalRateSelection = IntervalRate.INTERVAL;
-        else
-            defaultIntervalRateSelection = IntervalRate.RATE;
+        if (intervalRatePreference != null){
+            if (intervalRatePreference.equals("INTERVAL"))
+                defaultIntervalRateSelection = IntervalRate.INTERVAL;
+            else
+                defaultIntervalRateSelection = IntervalRate.RATE;
+        }
     }
 
 }

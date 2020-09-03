@@ -5,7 +5,7 @@ import android.widget.CheckBox;
 public class EgsysScore extends SyncopeRiskScore {
 	// These scores are from the validation group in the paper.
 	// The derivation cohort had slightly different scores.
-	final int points[] = new int[] { 4, 3, 3, 2, -1, -1 };
+	final int[] points = new int[] { 4, 3, 3, 2, -1, -1 };
 
 	@Override
 	protected void setContentView() {

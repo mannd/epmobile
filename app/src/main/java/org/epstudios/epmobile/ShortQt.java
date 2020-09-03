@@ -137,7 +137,7 @@ public class ShortQt extends EpActivity implements OnClickListener {
 			message += "High probability";
 		else if (score == 3)
 			message += "Intermediate probability";
-		else if (score <= 2)
+		else
 			message += "Low probability";
 		message += " of Short QT Syndrome";
 		dialog.setMessage(message);

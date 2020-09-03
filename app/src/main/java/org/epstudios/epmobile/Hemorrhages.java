@@ -20,6 +20,7 @@ package org.epstudios.epmobile;
 
 import android.widget.CheckBox;
 
+@SuppressWarnings("SpellCheckingInspection")
 public class Hemorrhages extends RiskScore {
 	final static private int REBLEED = 5; // this is the only risk worth 2
 											// points

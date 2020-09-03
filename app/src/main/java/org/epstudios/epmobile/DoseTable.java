@@ -20,13 +20,12 @@ package org.epstudios.epmobile;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
+import androidx.preference.PreferenceManager;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 
-public class DoseTable extends EpActivity implements
-		OnClickListener {
+public class DoseTable extends EpActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,20 +34,18 @@ public class DoseTable extends EpActivity implements
 	
 		SharedPreferences prefs = PreferenceManager
 				.getDefaultSharedPreferences(getBaseContext());
-		lowEnd = prefs.getInt("lowEnd", 0);
-		highEnd = prefs.getInt("highEnd", 0);
-		increase = prefs.getBoolean("increase", true);
-		tabletDose = prefs.getFloat("tabletDose", 0);
+		int lowEnd = prefs.getInt("lowEnd", 0);
+		int highEnd = prefs.getInt("highEnd", 0);
+		Boolean increase = prefs.getBoolean("increase", true);
+		double tabletDose = prefs.getFloat("tabletDose", 0);
 		double weeklyDose = prefs.getFloat("weeklyDose", 0);
 
-		this.setTitle("Warfarin Dose (" + String.valueOf(tabletDose)
-				+ " mg tabs)");
+		this.setTitle(getString(R.string.warfarin_dose_title, String.valueOf(tabletDose)));
 		TextView percent1TextView = findViewById(R.id.percent1);
-		percent1TextView.setText(String.valueOf(lowEnd) + "% "
-				+ (increase ? "Increase" : "Decrease"));
+		String changeDirection = increase ? getString(R.string.increase) : getString(R.string.decrease);
+		percent1TextView.setText(getString(R.string.dose_table_dose_change, String.valueOf(lowEnd), changeDirection));
 		TextView percent2TextView = findViewById(R.id.percent2);
-		percent2TextView.setText(String.valueOf(highEnd) + "% "
-				+ (increase ? "Increase" : "Decrease"));
+		percent2TextView.setText(getString(R.string.dose_table_dose_change, String.valueOf(highEnd), changeDirection));
 
 		double newLowEndWeeklyDose = Warfarin.getNewDoseFromPercentage(
 				lowEnd / 100.0, weeklyDose, increase);
@@ -57,22 +54,28 @@ public class DoseTable extends EpActivity implements
 		DoseCalculator doseCalculator = new DoseCalculator(tabletDose,
 				newLowEndWeeklyDose);
 		double[] result = doseCalculator.weeklyDoses();
+		int SUN = 0;
 		((TextView) findViewById(R.id.sunDose1))
 				.setText(formatDose(result[SUN]));
+		int MON = 1;
 		((TextView) findViewById(R.id.monDose1))
 				.setText(formatDose(result[MON]));
+		int TUE = 2;
 		((TextView) findViewById(R.id.tueDose1))
 				.setText(formatDose(result[TUE]));
+		int WED = 3;
 		((TextView) findViewById(R.id.wedDose1))
 				.setText(formatDose(result[WED]));
+		int THU = 4;
 		((TextView) findViewById(R.id.thuDose1))
 				.setText(formatDose(result[THU]));
+		int FRI = 5;
 		((TextView) findViewById(R.id.friDose1))
 				.setText(formatDose(result[FRI]));
+		int SAT = 6;
 		((TextView) findViewById(R.id.satDose1))
 				.setText(formatDose(result[SAT]));
-		String totalWeeklyLowDose = String
-				.valueOf(totalDose(result, tabletDose)) + " mg/wk";
+		String totalWeeklyLowDose = totalDose(result, tabletDose) + " mg/wk";
 		((TextView) findViewById(R.id.weeklyDose1)).setText(totalWeeklyLowDose);
 		doseCalculator.setWeeklyDose(newHighEndWeeklyDose);
 		result = doseCalculator.weeklyDoses();
@@ -90,31 +93,12 @@ public class DoseTable extends EpActivity implements
 				.setText(formatDose(result[FRI]));
 		((TextView) findViewById(R.id.satDose2))
 				.setText(formatDose(result[SAT]));
-		String totalWeeklyHighDose = String.valueOf(totalDose(result,
-				tabletDose)) + " mg/wk";
+		String totalWeeklyHighDose = totalDose(result,
+				tabletDose) + " mg/wk";
 		((TextView) findViewById(R.id.weeklyDose2))
 				.setText(totalWeeklyHighDose);
 
 	}
-
-	@Override
-	public void onClick(View arg0) {
-		// TODO Auto-generated method stub
-
-	}
-
-	private final int SUN = 0;
-	private final int MON = 1;
-	private final int TUE = 2;
-	private final int WED = 3;
-	private final int THU = 4;
-	private final int FRI = 5;
-	private final int SAT = 6;
-
-	private int lowEnd;
-	private int highEnd;
-	private Boolean increase;
-	private double tabletDose;
 
 	private double totalDose(double[] doses, double tabletDose) {
 		double total = 0.0;
@@ -123,7 +107,7 @@ public class DoseTable extends EpActivity implements
 	}
 
 	private String formatDose(double dose) {
-		return String.valueOf(dose) + " tab";
+		return dose + " tab";
 	}
 
 }

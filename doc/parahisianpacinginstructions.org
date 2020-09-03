@@ -13,6 +13,7 @@
 #+LINK_UP:   
 #+LINK_HOME: 
 #+XSLT:
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./org.css"/>
 * Use
 - Distinguish retrograde accessory pathway (AP) conduction from retrograde AV nodal (AVN) conduction.
 - Useful for assessing retrograde conduction when SVT not inducible in patient with WPW or concealed septal AP, and post-ablation to exclude continued retrograde AP conduction.

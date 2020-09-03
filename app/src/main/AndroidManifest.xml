@@ -6,8 +6,9 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
@@ -28,19 +29,21 @@
             android:theme="@android:style/Theme.Dialog"/>
         <activity
             android:name=".Qtc"
+            android:windowSoftInputMode="adjustResize"
             android:label="@string/qtc_calculator_title"/>
         <activity
             android:name=".Dofetilide"
             android:label="@string/dofetilide_label"/>
         <activity
             android:name=".CycleLength"
+            android:windowSoftInputMode="adjustResize"
             android:label="@string/cycle_length_label"/>
         <activity
             android:name=".Prefs"
             android:label="@string/settings_title"/>
-        <activity
-            android:name=".OldPrefs"
-            android:label="EP Mobile Settings"/>
+<!--        <activity-->
+<!--            android:name=".OldPrefs"-->
+<!--            android:label="EP Mobile Settings"/>-->
         <activity
             android:name=".HasBled"
             android:label="@string/hasbled_title"/>
@@ -187,7 +190,8 @@
             android:label="@string/day_calculator_title"/>
         <activity
             android:name=".Entrainment"
-            android:label="@string/entrainment_title"/>
+            android:label="@string/entrainment_title"
+            android:configChanges="orientation|screenSize" />
         <activity
             android:name=".IbwCalculator"
             android:label="@string/ibw_calculator_title"/>
