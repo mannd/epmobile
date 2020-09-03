@@ -143,7 +143,6 @@ public class IcdRisk extends DiagnosticScore {
 
 	@Override
 	protected void init() {
-		// TODO Auto-generated method stub
 		sexCheckBox = findViewById(R.id.female_sex);
 		admittedRadioGroup = findViewById(R.id.admission_reason_radio_group);
 		nyhaClassRadioGroup = findViewById(R.id.nyha_class_radio_group);
@@ -161,7 +160,6 @@ public class IcdRisk extends DiagnosticScore {
 
 	@Override
 	protected void clearEntries() {
-		// TODO Auto-generated method stub
 		sexCheckBox.setChecked(false);
 		admittedRadioGroup.clearCheck();
 		nyhaClassRadioGroup.clearCheck();

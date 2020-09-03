@@ -60,7 +60,6 @@
             <TableRow>
 
                 <TextView
-                    android:id="@+id/textView2"
                     android:text="@string/qt_label"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -76,7 +75,6 @@
             <TableRow>
 
                 <TextView
-                    android:id="@+id/textView2a"
                     android:text="@string/qrs_label"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 

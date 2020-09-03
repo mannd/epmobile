@@ -24,7 +24,6 @@
             >
 
             <TextView
-                android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/index_event_label"
@@ -45,7 +44,6 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/number_of_days_label"
@@ -76,13 +74,11 @@
                     android:text="@string/days_90" />
 
                 <RadioButton
-                    android:id="@+id/fortyRadio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/days_40" />
 
                 <RadioButton
-                    android:id="@+id/thirtyRadio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/days_30" />
@@ -95,7 +91,6 @@
                 android:text="@string/reverse_time_label" />
 
             <LinearLayout
-                android:id="@+id/linearLayout3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 

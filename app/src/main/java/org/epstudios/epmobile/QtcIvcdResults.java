@@ -55,7 +55,6 @@ public class QtcIvcdResults extends EpActivity {
         setContentView(R.layout.selectionlist);
 	initToolbar();
 
-        // TODO update labels
         qt = getIntent().getIntExtra("QT", 0);
         qtc = getIntent().getIntExtra("QTc", 0);
         jt = getIntent().getIntExtra("JT", 0);

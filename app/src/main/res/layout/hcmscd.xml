@@ -31,7 +31,6 @@
             <TableRow>
 
                 <TextView
-                    android:id="@+id/textView2"
                     android:text="@string/age_in_years_label"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -46,7 +45,6 @@
                 <TableRow>
 
                     <TextView
-                        android:id="@+id/textView3"
                         android:text="@string/max_lv_wall_thickness_label"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -61,7 +59,6 @@
                 <TableRow>
 
                     <TextView
-                        android:id="@+id/textView5"
                         android:text="@string/la_size_label"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -76,7 +73,6 @@
                 <TableRow>
 
                     <TextView
-                        android:id="@+id/textView4"
                         android:text="@string/max_lvot_gradient_label"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 

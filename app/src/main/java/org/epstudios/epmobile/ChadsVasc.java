@@ -66,7 +66,6 @@ public class ChadsVasc extends RiskScore {
 				getString(R.string.chadsvasc_title));
 	}
 
-	// TODO: Update ChadsVasc risks: see https://pubmed.ncbi.nlm.nih.gov/22473219/,
 	//  https://www.mdcalc.com/cha2ds2-vasc-score-atrial-fibrillation-stroke-risk
 	private String getResultMessage(int result) {
 		String message;
@@ -119,7 +118,6 @@ public class ChadsVasc extends RiskScore {
 			neuroRisk = "15.7";
 			break;
 		case 8:
-			//noinspection DuplicateBranchesInSwitch
 			risk = "10.8";
 			neuroRisk = "15.2";
 			break;

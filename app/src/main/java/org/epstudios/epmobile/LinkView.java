@@ -104,7 +104,7 @@ public class LinkView extends EpActivity implements View.OnClickListener {
         }
     }
 
-    // TODO: Need to replace with ViewModel to save configuration.
+    // TODO: Need to replace with ViewModel to save configuration.  Will leave for now.
     @Override
     public Object onRetainCustomNonConfigurationInstance() {
         OrientationChangeData data = new OrientationChangeData();

@@ -40,19 +40,16 @@
             <RadioGroup android:id="@+id/echo_major_radio_group">
 
                 <RadioButton
-                    android:id="@+id/major_plax_criteria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/major_plax_criteria" />
 
                 <RadioButton
-                    android:id="@+id/major_psax_criteria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/major_psax_criteria" />
 
                 <RadioButton
-                    android:id="@+id/fractional_area_criteria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/fractional_area_criteria" />
@@ -71,13 +68,11 @@
             <RadioGroup android:id="@+id/mri_major_radio_group">
 
                 <RadioButton
-                    android:id="@+id/major_mri_volume_criteria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/major_mri_volume_criteria" />
 
                 <RadioButton
-                    android:id="@+id/major_mri_ef_criteria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/major_mri_ef_criteria" />
@@ -107,19 +102,16 @@
             <RadioGroup android:id="@+id/echo_minor_radio_group">
 
                 <RadioButton
-                    android:id="@+id/minor_plax_criteria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/minor_plax_criteria" />
 
                 <RadioButton
-                    android:id="@+id/minor_psax_criteria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/minor_psax_criteria" />
 
                 <RadioButton
-                    android:id="@+id/echo_fractional_area_criteria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/fractional_area_minor_criteria" />
@@ -138,13 +130,11 @@
             <RadioGroup android:id="@+id/mri_minor_radio_group">
 
                 <RadioButton
-                    android:id="@+id/minor_mri_volume_criteria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/minor_mri_volume_criteria" />
 
                 <RadioButton
-                    android:id="@+id/minor_mri_ef_criteria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/minor_mri_ef_criteria"/>

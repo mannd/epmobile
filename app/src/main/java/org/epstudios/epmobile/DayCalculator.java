@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DateFormat;
 import java.util.Calendar;
@@ -106,9 +107,9 @@ public class DayCalculator extends EpActivity implements OnClickListener {
 			cal.add(Calendar.DATE, number);
 			// DateFormat =
 			// SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
-			calculatedDateTextView.setText(DateFormat.getDateInstance(
-					DateFormat.MEDIUM).format(cal.getTime()));
-
+            String message = DateFormat.getDateInstance(DateFormat.MEDIUM).format(cal.getTime());
+			calculatedDateTextView.setText(message);
+			Toast.makeText(this, message, Toast.LENGTH_LONG).show();
 		} catch (NumberFormatException e) {
 			calculatedDateTextView.setText(getString(R.string.invalid_warning));
 			calculatedDateTextView.setTextColor(Color.RED);

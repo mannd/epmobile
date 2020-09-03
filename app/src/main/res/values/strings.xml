@@ -917,12 +917,6 @@
         must make a selection from each group.</string>
     <string name="icd_result_title">Risk of In-Hospital Complications</string>
     <string name="reference_label">Reference</string>
-    <string name="chads_short_reference">Gage BF et al. JAMA 2001 285:2864</string>
-    <string name="chads_full_reference">Gage BF, Waterman AD, Shannon W, Boechler M, Rich MW, Radford
-   		MJ. Validation of clinical classification schemes for predicting
-   		stroke. JAMA [Internet]. 2001 Jun 13 [cited 2014 Jun
-   		6];285(22):2864-70. Available from:
-   		http://jama.jamanetwork.com/article.aspx?articleid=193912</string>
     <string name="none_label">None</string>
     <string name="chads_label">CHADS\u2082</string>
     <string name="chadsvasc_label">CHA\u2082DS\u2082-VASc</string>
@@ -936,20 +930,12 @@
 		atrial fibrillation: the Euro Heart Survey. Chest
 		[Internet]. 2010 Nov [cited 2014 Jun 6];138(5):1093-100.
 		Available from: http://journal.publications.chestnet.org/article.aspx?articleid=1045174"</string>
-    <string name="chadsvasc_short_reference">Lip GY et al. Stroke 2010 137:263</string>
     <string name="chads_chadsvasc_full_reference">Friberg L, Rosenqvist M, Lip GYH.
         Evaluation of risk stratification schemes for ischaemic stroke and bleeding
         in 182 678 patients with atrial fibrillation:
         the Swedish Atrial Fibrillation cohort study.
         Eur Heart J. 2012;33(12):1500-1510. doi:10.1093/eurheartj/ehr488</string>
     <string name="chads_chadsvasc_short_reference">Friberg L et al. Eur Heart J 2012 33:1500</string>
-    <string name="chadsvasc_full_reference">Lip GY, Frison L, Halperin JL, Lane DA.
-		Identifying patients at high risk for stroke despite
-		anticoagulation: a comparison of contemporary stroke
-		risk stratification schemes in an anticoagulated atrial
-		fibrillation cohort. Stroke [Internet]. 2010 Oct 21
-		[cited 2014 Jun 6];41:2731-8. Available from:
-		http://stroke.ahajournals.org/content/41/12/2731.full.pdf</string>
     <string name="hemorrhages_full_reference">Gage BF, Yan Y, Milligan PE,
 	    Waterman AD, Culverhouse R, Rich MW,
    		Radford MJ. Clinical classification schemes for predicting

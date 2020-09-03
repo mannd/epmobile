@@ -74,7 +74,6 @@ public class AtrialTachLocalization extends LocationAlgorithm implements
 
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
 		switch (v.getId()) {
 		case R.id.yes_button:
 			getYesResult();

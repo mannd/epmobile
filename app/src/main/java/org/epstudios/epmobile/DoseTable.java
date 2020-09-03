@@ -25,8 +25,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 
-public class DoseTable extends EpActivity implements
-		OnClickListener {
+public class DoseTable extends EpActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,12 +97,6 @@ public class DoseTable extends EpActivity implements
 				tabletDose) + " mg/wk";
 		((TextView) findViewById(R.id.weeklyDose2))
 				.setText(totalWeeklyHighDose);
-
-	}
-
-	@Override
-	public void onClick(View arg0) {
-		// TODO Auto-generated method stub
 
 	}
 

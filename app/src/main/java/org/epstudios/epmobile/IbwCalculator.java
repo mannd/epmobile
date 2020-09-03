@@ -263,21 +263,6 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 		return weight + " " + units + ").";
 	}
 
-	// TODO: probably delete this method.
-//	private void copyWeight(WeightMeasurement weightType) {
-//		String textToCopy;
-//		if (weightType == WeightMeasurement.IBW)
-//			textToCopy = ibwResultTextView.getText().toString();
-//        else
-//			textToCopy = abwResultTextView.getText().toString();
-//		android.content.ClipboardManager clipboard = (android.content.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-//		android.content.ClipData clip = android.content.ClipData
-//				.newPlainText("Copied Text", textToCopy);
-//		if (clipboard != null) {
-//			clipboard.setPrimaryClip(clip);
-//		}
-//	}
-
 	public static double idealBodyWeight(double height, boolean isMale) {
 		double weight = height > 60.0 ? (height - 60.0) * 2.3 : 0.0;
 		if (isMale)
@@ -288,7 +273,6 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 	}
 
 	public static double adjustedBodyWeight(double ibw, double actualWeight) {
-		// TODO setting to choose 0.3 or 0.4 for correction factor??
 		// for now, literature seems to support 0.4 as best correction factor
 		double abw = ibw + 0.4 * (actualWeight - ibw);
 		abw = actualWeight > ibw ? abw : actualWeight;
