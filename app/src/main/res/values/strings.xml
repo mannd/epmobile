@@ -937,6 +937,12 @@
 		[Internet]. 2010 Nov [cited 2014 Jun 6];138(5):1093-100.
 		Available from: http://journal.publications.chestnet.org/article.aspx?articleid=1045174"</string>
     <string name="chadsvasc_short_reference">Lip GY et al. Stroke 2010 137:263</string>
+    <string name="chads_chadsvasc_full_reference">Friberg L, Rosenqvist M, Lip GYH.
+        Evaluation of risk stratification schemes for ischaemic stroke and bleeding
+        in 182 678 patients with atrial fibrillation:
+        the Swedish Atrial Fibrillation cohort study.
+        Eur Heart J. 2012;33(12):1500-1510. doi:10.1093/eurheartj/ehr488</string>
+    <string name="chads_chadsvasc_short_reference">Friberg L et al. Eur Heart J 2012 33:1500</string>
     <string name="chadsvasc_full_reference">Lip GY, Frison L, Halperin JL, Lane DA.
 		Identifying patients at high risk for stroke despite
 		anticoagulation: a comparison of contemporary stroke

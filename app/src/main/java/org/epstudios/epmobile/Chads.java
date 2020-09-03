@@ -33,12 +33,12 @@ public class Chads extends RiskScore {
 
 	@Override
 	protected String getShortReference() {
-		return getString(R.string.chads_short_reference);
+		return getString(R.string.chads_chadsvasc_short_reference);
 	}
 
 	@Override
 	protected String getFullReference() {
-		return getString(R.string.chads_full_reference);
+		return getString(R.string.chads_chadsvasc_full_reference);
 	}
 
 	@Override
@@ -78,35 +78,43 @@ public class Chads extends RiskScore {
 			message = getString(R.string.high_chads_message);
 		message += "\n" + getString(R.string.chads_proviso_message);
 		String risk = "";
+		String neuroRisk = "";
 		switch (result) {
 		case 0:
-			risk = "1.9";
+			risk = "0.6";
+			neuroRisk = "0.9";
 			break;
 		case 1:
-			risk = "2.8";
+			risk = "3.0";
+			neuroRisk = "4.3";
 			break;
 		case 2:
-			risk = "4.0";
+			risk = "4.2";
+			neuroRisk = "6.1";
 			break;
 		case 3:
-			risk = "5.9";
+			risk = "7.1";
+			neuroRisk = "9.9";
 			break;
 		case 4:
-			risk = "8.5";
+			risk = "11.1";
+			neuroRisk = "14.9";
 			break;
 		case 5:
 			risk = "12.5";
+			neuroRisk = "16.7";
 			break;
 		case 6:
-			risk = "18.2";
+			risk = "13.0";
+			neuroRisk = "17.2";
 			break;
 		}
 		risk = "Annual stroke risk is " + risk + "%";
+		neuroRisk = "Annual stroke/TIA/peripheral emboli risk is " + neuroRisk + "%";
 		message = getRiskLabel() + " score = " + result + "\n" + message + "\n"
-				+ risk;
+				+ risk + "\n" + neuroRisk;
 		setResultMessage(message);
 		return resultWithShortReference();
-
 	}
 
 }
