@@ -1,5 +1,5 @@
 language: android
-sudo: true
+dist: trusty
 android:
   components:
     - build-tools-30.0.2
