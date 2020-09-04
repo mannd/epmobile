@@ -11,13 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <WebView
+        <WebView
             android:id="@+id/web_view"
             android:layout_above="@id/text_button"
             android:layout_width="match_parent"
             android:padding="@dimen/activity_horizontal_margin"
             android:layout_height="match_parent"
-        android:clickable="false">
+            android:clickable="false">
         </WebView>
 
         <Button

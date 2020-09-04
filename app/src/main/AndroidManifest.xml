@@ -226,6 +226,7 @@
             android:label="@string/drug_reference_title">
         </activity>
         <activity android:name=".LinkView"
+            android:configChanges="orientation|screenSize"
             android:label = "">
         </activity>
         <activity android:name=".CreatinineClearanceCalculator"

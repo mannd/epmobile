@@ -39,9 +39,6 @@ public class LinkView extends EpActivity implements View.OnClickListener {
     private Button calcCrClButton;
     private static final String BUTTON_TITLE = "Calculate CrCl";
 
-    private boolean needsToRestoreState = false;
-    private float offsetToRestore;
-
     static public final int CREATININE_CLEARANCE_CALCULATOR_ACTIVITY = 123;
 
     @Override
@@ -63,7 +60,6 @@ public class LinkView extends EpActivity implements View.OnClickListener {
         else
             setContentView(R.layout.weblayout_no_button);
         webView = findViewById(R.id.web_view);
-        webView.setWebViewClient(new CustomWebViewClient());
         webView.loadUrl(url);
         if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK)) {
             WebSettingsCompat.setForceDark(webView.getSettings(), WebSettingsCompat.FORCE_DARK_ON);
@@ -76,11 +72,6 @@ public class LinkView extends EpActivity implements View.OnClickListener {
         }
         initToolbar();
 
-        OrientationChangeData data = (OrientationChangeData) getLastCustomNonConfigurationInstance();
-        if (data != null) {
-            needsToRestoreState = true;
-            offsetToRestore = data.progress;
-        }
     }
 
     public void onClick(View v) {
@@ -104,41 +95,4 @@ public class LinkView extends EpActivity implements View.OnClickListener {
         }
     }
 
-    // TODO: Need to replace with ViewModel to save configuration.  Will leave for now.
-    @Override
-    public Object onRetainCustomNonConfigurationInstance() {
-        OrientationChangeData data = new OrientationChangeData();
-        data.progress = calculateOffset(webView);
-        return data;
-    }
-
-    private final static class OrientationChangeData {
-        public float progress;
-    }
-
-    private float calculateOffset(WebView webView) {
-        float topPosition = webView.getTop();
-        float height = webView.getHeight();
-        float currentPosition = webView.getScrollY();
-        return (currentPosition - topPosition) / height;
-    }
-
-    private class CustomWebViewClient extends WebViewClient {
-        @Override
-        public void onPageFinished(WebView view, String url) {
-            if (needsToRestoreState) {
-                needsToRestoreState = false;
-                view.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        float webViewSize = webView.getContentHeight() - webView.getTop();
-                        float positionInWebView = webViewSize * offsetToRestore;
-                        int positionY = Math.round(webView.getTop() + positionInWebView);
-                        webView.scrollTo(0, positionY);
-                    }
-                }, 300);
-            }
-            super.onPageFinished(view, url);
-        }
-    }
 }
