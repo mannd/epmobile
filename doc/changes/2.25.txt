@@ -1,0 +1,10 @@
+EP Mobile 2.25 Release Notes
+Changes since 2.24
+* Update launcher icons
+* Update Chads, ChadsVasc risk percentages
+* Support dark mode
+* Update Brugada drugs url
+* Center certain views on screen
+* Buttons now borderless and at bottom of screen
+* Pass lint tests
+* Fix typos
