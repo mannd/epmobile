@@ -5,8 +5,21 @@ See [keepachangelog.com](https://keepachangelog.com/en/1.0.0/) for information o
 
 This project roughly utilizes [Semantic Versioning](https://semver.org/spec/v2.0.0.html).  In some versions the PATCH of MAJOR.MINOR.PATCH is omitted.  Note also that unreleased versions are omitted.
 
-## [2.24] - 2020-08007
-### FIXED
+## (2.25) - 2020-09-03
+### Fixed
+- Fixed some typos.
+### Added
+- Support dark mode.
+### Changes
+- New launcher icons (white on black).
+- Center certain views on screen.
+- Update Chads, ChadsVasc risks.
+- Update Brugada drugs url.
+- Buttons are now borderless and at bottom of screen.
+- Pass lint tests.
+
+## [2.24] - 2020-08-07
+### Fixed
 - Fixed web view going back to top of page when rotating device.
 
 ## [2.23] - 2020-04-06
