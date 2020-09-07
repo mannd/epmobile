@@ -1,0 +1,3 @@
+EP Mobile 2.25.1 Release Notes
+Changes since 2.25
+* Fix crash on pre-KitKat systems

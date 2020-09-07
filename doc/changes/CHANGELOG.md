@@ -5,7 +5,15 @@ See [keepachangelog.com](https://keepachangelog.com/en/1.0.0/) for information o
 
 This project roughly utilizes [Semantic Versioning](https://semver.org/spec/v2.0.0.html).  In some versions the PATCH of MAJOR.MINOR.PATCH is omitted.  Note also that unreleased versions are omitted.
 
-## (2.25) - 2020-09-03
+## [2.25.2] - 2020-09-07
+### Fixed
+- Fixed web views being stuck in dark mode
+
+## [2.25.1] - 2020-09-05
+### Fixed
+- Fixed crash on pre-KitKat devices
+
+## [2.25] - 2020-09-03
 ### Fixed
 - Fixed some typos.
 ### Added
