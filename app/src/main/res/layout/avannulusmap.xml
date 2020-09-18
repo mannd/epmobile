@@ -9,8 +9,8 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/avannulus_frame"
-        android:background="@android:color/white">
+        android:id="@+id/avannulus_frame">
+
 
         <ImageView
             android:layout_width="match_parent"

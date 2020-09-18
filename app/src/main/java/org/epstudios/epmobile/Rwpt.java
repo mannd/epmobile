@@ -27,7 +27,7 @@ public class Rwpt extends EpActivity {
 	protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.rwpt);
-	initToolbar();
+	    initToolbar();
 	}
 
 	@Override
