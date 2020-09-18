@@ -9,8 +9,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="@dimen/activity_horizontal_margin"
-        android:background="@android:color/white">
+        android:padding="@dimen/activity_horizontal_margin">
 
         <TableLayout
             android:layout_width="match_parent"
@@ -20,8 +19,7 @@
             <TextView
                 android:layout_height="wrap_content"
                 android:text="@string/lbbb_wct_label"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/black" />
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -32,8 +30,7 @@
 
             <TextView
                 android:text="@string/rbbb_wct_label"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/black" />
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -43,8 +40,7 @@
                 android:src="@drawable/rbbbmorphology" />
 
             <TextView
-                android:text="@string/wellens_reference"
-                android:textColor="@android:color/black" />
+                android:text="@string/wellens_reference" />
         </TableLayout>
 
     </ScrollView>

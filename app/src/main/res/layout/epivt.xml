@@ -9,8 +9,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="@dimen/activity_horizontal_margin"
-        android:background="@android:color/white">
+        android:padding="@dimen/activity_horizontal_margin">
 
         <TableLayout
             android:layout_width="match_parent"
@@ -25,8 +24,7 @@
 
             <TextView
                 android:autoLink="web"
-                android:text="@string/epivt_text"
-                android:textColor="@android:color/black" />
+                android:text="@string/epivt_text" />
         </TableLayout>
 
     </ScrollView>

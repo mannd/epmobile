@@ -20,7 +20,6 @@ public class AvAnnulusMap extends EpActivity {
 	ImageView background = findViewById(R.id.avannulus_image);
 		background.setImageResource(R.drawable.modgrayavannulus);
 		frame = findViewById(R.id.avannulus_frame);
-		frame.setBackgroundColor(Color.WHITE);
 
 		Bundle extras = getIntent().getExtras();
 		if (extras != null) {
