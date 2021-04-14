@@ -9,6 +9,8 @@ This project roughly utilizes [Semantic Versioning](https://semver.org/spec/v2.0
 ### Fixed
 - Fixed regression that disabled maintenance of screen position of
   html-based view on rotation.
+- Fixed problems with dark mode of html views.
+- Fixed view too wide with rotation of html views.
 
 ## [2.25.3] - 2020-09-18
 ### Changes
