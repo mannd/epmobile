@@ -1,0 +1,3 @@
+EP Mobile 2.25.3 Release Notes
+Changes since 2.25.2
+* Fixed regression that disabled maintenance of screen position of html-based view on rotation.
