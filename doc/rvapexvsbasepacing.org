@@ -13,6 +13,7 @@
 #+LINK_UP:   
 #+LINK_HOME: 
 #+XSLT:
+#+HTML_HEAD: <style  type="text/css">:root { color-scheme: light dark; }</style>
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./org.css"/>
 * Use
 - Determine if retrograde conduction is via a septal accessory pathway (AP) or the AV node (AVN).

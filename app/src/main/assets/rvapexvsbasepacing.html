@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-09-02 Wed 17:31 -->
+<!-- 2021-04-14 Wed 12:06 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>RV Apex vs Base Pacing</title>
@@ -40,7 +40,7 @@
   }
   pre.src {
     position: relative;
-    overflow: visible;
+    overflow: auto;
     padding-top: 1.2em;
   }
   pre.src:before {
@@ -52,7 +52,7 @@
     padding: 3px;
     border: 1px solid black;
   }
-  pre.src:hover:before { display: inline;}
+  pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
@@ -193,69 +193,46 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
+<style  type="text/css">:root { color-scheme: light dark; }</style>
 <link rel="stylesheet" type="text/css" href="./org.css"/>
 <script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2020 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
 </script>
 </head>
 <body>
 <div id="content">
 <h1 class="title">RV Apex vs Base Pacing</h1>
-<div id="outline-container-org8befdb1" class="outline-2">
-<h2 id="org8befdb1">Use</h2>
-<div class="outline-text-2" id="text-org8befdb1">
+<div id="outline-container-orgef88703" class="outline-2">
+<h2 id="orgef88703">Use</h2>
+<div class="outline-text-2" id="text-orgef88703">
 <ul class="org-ul">
 <li>Determine if retrograde conduction is via a septal accessory pathway (AP) or the AV node (AVN).</li>
 <li>Useful when SVT is not inducible or post-ablation to exclude continued retrograde AP conduction.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org860d9be" class="outline-2">
-<h2 id="org860d9be">Technique</h2>
-<div class="outline-text-2" id="text-org860d9be">
+<div id="outline-container-orgd8f75a3" class="outline-2">
+<h2 id="orgd8f75a3">Technique</h2>
+<div class="outline-text-2" id="text-orgd8f75a3">
 <ul class="org-ul">
 <li>Using a deflectable catheter, position at apex and then at posterior base of RV in 30° RAO view.</li>
 <li>Ventricular pacing at each site at same pacing cycle length.</li>
@@ -263,9 +240,9 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
-<div id="outline-container-org477fc8a" class="outline-2">
-<h2 id="org477fc8a">Results</h2>
-<div class="outline-text-2" id="text-org477fc8a">
+<div id="outline-container-org140076f" class="outline-2">
+<h2 id="org140076f">Results</h2>
+<div class="outline-text-2" id="text-org140076f">
 <ul class="org-ul">
 <li>S-A is shorter pacing at base compared with apex in patients with AP conduction only.</li>
 <li>S-A is longer pacing at base compared with apex in patients with retrograde AVN conduction only.</li>
@@ -274,9 +251,9 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
-<div id="outline-container-org9ae3b25" class="outline-2">
-<h2 id="org9ae3b25">Reference</h2>
-<div class="outline-text-2" id="text-org9ae3b25">
+<div id="outline-container-orgbfefee1" class="outline-2">
+<h2 id="orgbfefee1">Reference</h2>
+<div class="outline-text-2" id="text-orgbfefee1">
 <p>
 Martínez-Alday JD, Almendral J, Arenal A, et al. Identification of concealed posteroseptal Kent pathways by comparison of ventriculoatrial intervals from apical and posterobasal right ventricular sites.  Circulation 1994; 89: 1060-1067.
 <a href="http://circ.ahajournals.org/content/89/3/1060.abstract?ijkey=33950406ac6141d4fb927e205814d0bd992c33c9&amp;keytype2=tf_ipsecsha">http://circ.ahajournals.org/content/89/3/1060.abstract?ijkey=33950406ac6141d4fb927e205814d0bd992c33c9&amp;keytype2=tf_ipsecsha</a>

@@ -5,6 +5,17 @@ See [keepachangelog.com](https://keepachangelog.com/en/1.0.0/) for information o
 
 This project roughly utilizes [Semantic Versioning](https://semver.org/spec/v2.0.0.html).  In some versions the PATCH of MAJOR.MINOR.PATCH is omitted.  Note also that unreleased versions are omitted.
 
+## [2.25.4] - 2021-04-14
+### Fixed
+- Fixed regression that disabled maintenance of screen position of
+  html-based view on rotation.
+- Fixed problems with dark mode of html views.
+- Fixed view too wide with rotation of html views.
+
+## [2.25.3] - 2020-09-18
+### Changes
+- Provide night mode images
+
 ## [2.25.2] - 2020-09-07
 ### Fixed
 - Fixed web views being stuck in dark mode
