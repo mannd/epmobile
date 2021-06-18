@@ -2,9 +2,6 @@ package org.epstudios.epmobile;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -23,23 +20,19 @@ public class SyncopeRiskScoreList extends EpActivity {
 
         lv.setTextFilterEnabled(true);
 
-		lv.setOnItemClickListener(new OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-				String selection = ((TextView) view).getText().toString();
-				if (selection.equals(getString(R.string.syncope_sf_rule_title)))
-					syncopeSfRule();
-				else if (selection
-						.equals(getString(R.string.syncope_martin_title)))
-					martinAlgorithm();
-				else if (selection
-						.equals(getString(R.string.syncope_oesil_score_title)))
-					oesilScore();
-				else if (selection
-						.equals(getString(R.string.syncope_egsys_score_title)))
-					egsysScore();
-			}
+		lv.setOnItemClickListener((parent, view, position, id) -> {
+			String selection = ((TextView) view).getText().toString();
+			if (selection.equals(getString(R.string.syncope_sf_rule_title)))
+				syncopeSfRule();
+			else if (selection
+					.equals(getString(R.string.syncope_martin_title)))
+				martinAlgorithm();
+			else if (selection
+					.equals(getString(R.string.syncope_oesil_score_title)))
+				oesilScore();
+			else if (selection
+					.equals(getString(R.string.syncope_egsys_score_title)))
+				egsysScore();
 		});
 	}
 

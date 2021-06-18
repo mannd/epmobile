@@ -44,29 +44,25 @@ public class DayCalculator extends EpActivity implements OnClickListener {
 		numberOfDaysEditText.setText(R.string.dc_default_number_of_days);
 
 		dayRadioGroup
-				.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-
-					@Override
-					public void onCheckedChanged(RadioGroup group, int checkedId) {
-						RadioButton checkedRadioButton = group
-								.findViewById(checkedId);
-						int index = group.indexOfChild(checkedRadioButton);
-						int number = 0;
-						switch (index) {
-						case 0:
-							number = 90;
-							break;
-						case 1:
-							number = 40;
-							break;
-						case 2:
-							number = 30;
-							break;
-						// else still = 0;
-						}
-						if (number != 0)
-							numberOfDaysEditText.setText(String.valueOf(number));
+				.setOnCheckedChangeListener((group, checkedId) -> {
+					RadioButton checkedRadioButton = group
+							.findViewById(checkedId);
+					int index = group.indexOfChild(checkedRadioButton);
+					int number = 0;
+					switch (index) {
+					case 0:
+						number = 90;
+						break;
+					case 1:
+						number = 40;
+						break;
+					case 2:
+						number = 30;
+						break;
+					// else still = 0;
 					}
+					if (number != 0)
+						numberOfDaysEditText.setText(String.valueOf(number));
 				});
 
 	}
@@ -86,13 +82,12 @@ public class DayCalculator extends EpActivity implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.calculate_button:
+		final int id = v.getId();
+		if (id == R.id.calculate_button) {
 			calculateDays();
-			break;
-		case R.id.clear_button:
+		}
+		else if (id == R.id.clear_button) {
 			clearEntries();
-			break;
 		}
 	}
 

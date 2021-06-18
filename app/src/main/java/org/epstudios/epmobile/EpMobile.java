@@ -20,12 +20,11 @@ package org.epstudios.epmobile;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatDelegate;
 
 public class EpMobile extends EpActivity {
     @Override
@@ -46,23 +45,19 @@ public class EpMobile extends EpActivity {
 
         lv.setTextFilterEnabled(true);
 
-        lv.setOnItemClickListener(new OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-                String selection = ((TextView) view).getText().toString();
-                if (selection.equals(getString(R.string.calculator_list_title)))
-                    calculatorList();
-                else if (selection
-                        .equals(getString(R.string.reference_list_title)))
-                    referenceList();
-                else if (selection
-                        .equals(getString(R.string.risk_score_list_title)))
-                    riskScores();
-                else if (selection
-                        .equals(getString(R.string.diagnosis_list_title)))
-                    diagnosisList();
-            }
+        lv.setOnItemClickListener((parent, view, position, id) -> {
+            String selection = ((TextView) view).getText().toString();
+            if (selection.equals(getString(R.string.calculator_list_title)))
+                calculatorList();
+            else if (selection
+                    .equals(getString(R.string.reference_list_title)))
+                referenceList();
+            else if (selection
+                    .equals(getString(R.string.risk_score_list_title)))
+                riskScores();
+            else if (selection
+                    .equals(getString(R.string.diagnosis_list_title)))
+                diagnosisList();
         });
     }
 

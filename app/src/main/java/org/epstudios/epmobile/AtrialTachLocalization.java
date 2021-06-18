@@ -74,30 +74,28 @@ public class AtrialTachLocalization extends LocationAlgorithm implements
 
 	@Override
 	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.yes_button:
+		final int id = v.getId();
+		if (id == R.id.yes_button ) {
 			getYesResult();
-			break;
-		case R.id.no_button:
-			getNoResult();
-			break;
-		case R.id.back_button:
-			getBackResult();
-			break;
-		case R.id.row_2_1_button:
-			getRow21Result();
-			break;
-		case R.id.row_2_2_button:
-			getRow22Result();
-			break;
-		case R.id.row_2_3_button:
-			getRow23Result();
-			break;
-		case R.id.instructions_button:
-			displayInstructions();
-			break;
 		}
-
+		else if (id == R.id.no_button) {
+			getNoResult();
+		}
+		else if (id == R.id.back_button) {
+			getBackResult();
+		}
+		else if (id == R.id.row_2_1_button) {
+			getRow21Result();
+		}
+		else if (id == R.id.row_2_2_button) {
+			getRow22Result();
+		}
+		else if (id == R.id.row_2_3_button) {
+			getRow23Result();
+		}
+		else if (id == R.id.instructions_button) {
+			displayInstructions();
+		}
 	}
 
 	protected void step1() {
@@ -267,20 +265,12 @@ public class AtrialTachLocalization extends LocationAlgorithm implements
 		dialog.setTitle(getString(R.string.atrial_tachycardia_localization_title));
 		dialog.setButton(DialogInterface.BUTTON_POSITIVE,
 				getString(R.string.done_label),
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						finish();
-					}
-				});
+				(dialog12, which) -> finish());
 		dialog.setButton(DialogInterface.BUTTON_NEGATIVE,
 				getString(R.string.reset_label),
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						resetSteps();
-						step1();
-					}
+				(dialog1, which) -> {
+					resetSteps();
+					step1();
 				});
 		dialog.show();
 	}

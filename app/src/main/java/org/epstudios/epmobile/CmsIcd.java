@@ -110,34 +110,34 @@ public class CmsIcd extends DiagnosticScore {
 
 	private void createViewModel() {
 		CmsIcdModel.EF ef;
-		switch (efRadioGroup.getCheckedRadioButtonId()) {
-			case R.id.icd_ef_lt_30:
-				ef = CmsIcdModel.EF.LESS_THAN_30;
-				break;
-			case R.id.icd_ef_lt_35:
-				ef = CmsIcdModel.EF.FROM_30_TO_35;
-				break;
-			case R.id.icd_ef_gt_35:
-				ef = CmsIcdModel.EF.MORE_THAN_35;
-				break;
-			default:
-				ef = CmsIcdModel.EF.NA;
+		int checkedRadioButtonId = efRadioGroup.getCheckedRadioButtonId();
+		if (checkedRadioButtonId == R.id.icd_ef_lt_30) {
+			ef = CmsIcdModel.EF.LESS_THAN_30;
+		}
+		else if (checkedRadioButtonId == R.id.icd_ef_lt_35) {
+			ef = CmsIcdModel.EF.FROM_30_TO_35;
+		}
+		else if (checkedRadioButtonId == R.id.icd_ef_gt_35) {
+			ef = CmsIcdModel.EF.MORE_THAN_35;
+		}
+		else {
+			ef = CmsIcdModel.EF.NA;
 		}
 		CmsIcdModel.Nyha nyha;
-		switch (nyhaRadioGroup.getCheckedRadioButtonId()) {
-			case R.id.icd_nyha1:
-				nyha = CmsIcdModel.Nyha.I;
-				break;
-			case R.id.icd_nyha2:
-				nyha = CmsIcdModel.Nyha.II;
-				break;
-			case R.id.icd_nyha3:
-				nyha = CmsIcdModel.Nyha.III;
-				break;
-			case R.id.icd_nyha4:
-				nyha = CmsIcdModel.Nyha.IV;
-				break;
-			default:
+		checkedRadioButtonId = nyhaRadioGroup.getCheckedRadioButtonId();
+		if (checkedRadioButtonId == R.id.icd_nyha1) {
+			nyha = CmsIcdModel.Nyha.I;
+		}
+		else if (checkedRadioButtonId == R.id.icd_nyha2) {
+			nyha = CmsIcdModel.Nyha.II;
+		}
+		else if (checkedRadioButtonId == R.id.icd_nyha3) {
+			nyha = CmsIcdModel.Nyha.III;
+		}
+		else if (checkedRadioButtonId == R.id.icd_nyha4) {
+			nyha = CmsIcdModel.Nyha.IV;
+		}
+		else {
 				nyha = CmsIcdModel.Nyha.NA;
 		}
 		viewModel = new CmsIcdViewModel(this, checkBox[SUS_VT].isChecked(),

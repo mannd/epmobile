@@ -2,9 +2,6 @@ package org.epstudios.epmobile;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -22,20 +19,16 @@ public class VtList extends EpActivity {
 
         lv.setTextFilterEnabled(true);
 
-		lv.setOnItemClickListener(new OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-				String selection = ((TextView) view).getText().toString();
-				if (selection.equals(getString(R.string.epicardial_vt_title)))
-					epicardialVt();
-				else if (selection
-						.equals(getString(R.string.outflow_tract_vt_title)))
-					outflowTractVt();
-				else if (selection
-						.equals(getString(R.string.mitral_annular_vt_title)))
-					mitralAnnularVt();
-			}
+		lv.setOnItemClickListener((parent, view, position, id) -> {
+			String selection = ((TextView) view).getText().toString();
+			if (selection.equals(getString(R.string.epicardial_vt_title)))
+				epicardialVt();
+			else if (selection
+					.equals(getString(R.string.outflow_tract_vt_title)))
+				outflowTractVt();
+			else if (selection
+					.equals(getString(R.string.mitral_annular_vt_title)))
+				mitralAnnularVt();
 		});
 	}
 

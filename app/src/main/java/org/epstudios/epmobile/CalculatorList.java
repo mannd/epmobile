@@ -2,9 +2,6 @@ package org.epstudios.epmobile;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -21,33 +18,29 @@ public class CalculatorList extends EpActivity {
         lv.setAdapter(adapter);
 
         lv.setTextFilterEnabled(true);
-		lv.setOnItemClickListener(new OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-				String selection = ((TextView) view).getText().toString();
-				if (selection
-						.equals(getString(R.string.cycle_length_calculator_title)))
-					intervalRateCalculator();
-				else if (selection
-						.equals(getString(R.string.qtc_calculator_title)))
-					qtcCalculator();
-				else if (selection
-						.equals(getString(R.string.drug_dose_calculator_list_title)))
-					drugDoseCalculators();
-				else if (selection
-						.equals(getString(R.string.day_calculator_title)))
-					icdDayCalculator();
-				else if (selection
-						.equals(getString(R.string.ibw_calculator_title)))
-					ibwCalculator();
-                else if (selection.equals(getString(R.string.creatinine_clearance_calculator_title)))
-                    creatinineClearanceCalculator();
-				else if (selection.equals(getString(R.string.qtc_ivcd_calculator_title)))
-					qtcIvcdCalculator();
+		lv.setOnItemClickListener((parent, view, position, id) -> {
+			String selection = ((TextView) view).getText().toString();
+			if (selection
+					.equals(getString(R.string.cycle_length_calculator_title)))
+				intervalRateCalculator();
+			else if (selection
+					.equals(getString(R.string.qtc_calculator_title)))
+				qtcCalculator();
+			else if (selection
+					.equals(getString(R.string.drug_dose_calculator_list_title)))
+				drugDoseCalculators();
+			else if (selection
+					.equals(getString(R.string.day_calculator_title)))
+				icdDayCalculator();
+			else if (selection
+					.equals(getString(R.string.ibw_calculator_title)))
+				ibwCalculator();
+else if (selection.equals(getString(R.string.creatinine_clearance_calculator_title)))
+creatinineClearanceCalculator();
+			else if (selection.equals(getString(R.string.qtc_ivcd_calculator_title)))
+				qtcIvcdCalculator();
 
 
-			}
 		});
 	}
 

@@ -20,9 +20,6 @@ package org.epstudios.epmobile;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -41,33 +38,29 @@ public class DrugDoseCalculatorList extends EpActivity {
 
         lv.setTextFilterEnabled(true);
 
-		lv.setOnItemClickListener(new OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-				String selection = ((TextView) view).getText().toString();
-				if (selection
-						.equals(getString(R.string.dabigatran_calculator_title)))
-					dabigatranCalculator();
-				else if (selection
-						.equals(getString(R.string.dofetilide_calculator_title)))
-					dofetilideCalculator();
-				else if (selection
-						.equals(getString(R.string.rivaroxaban_calculator_title)))
-					rivaroxabanCalculator();
-				else if (selection.equals(getString(R.string.warfarin_title)))
-					warfarinCalculator();
-				else if (selection
-						.equals(getString(R.string.sotalol_calculator_title)))
-					sotalolCalculator();
-				else if (selection
-						.equals(getString(R.string.apixaban_calculator_title)))
-					apixabanCalculator();
-                else if (selection
-                        .equals(getString(R.string.edoxaban_calculator_title)))
-                    edoxabanCalculator();
+		lv.setOnItemClickListener((parent, view, position, id) -> {
+			String selection = ((TextView) view).getText().toString();
+			if (selection
+					.equals(getString(R.string.dabigatran_calculator_title)))
+				dabigatranCalculator();
+			else if (selection
+					.equals(getString(R.string.dofetilide_calculator_title)))
+				dofetilideCalculator();
+			else if (selection
+					.equals(getString(R.string.rivaroxaban_calculator_title)))
+				rivaroxabanCalculator();
+			else if (selection.equals(getString(R.string.warfarin_title)))
+				warfarinCalculator();
+			else if (selection
+					.equals(getString(R.string.sotalol_calculator_title)))
+				sotalolCalculator();
+			else if (selection
+					.equals(getString(R.string.apixaban_calculator_title)))
+				apixabanCalculator();
+else if (selection
+.equals(getString(R.string.edoxaban_calculator_title)))
+edoxabanCalculator();
 
-			}
 		});
 	}
 

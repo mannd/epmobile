@@ -87,19 +87,17 @@ public class CycleLength extends EpActivity implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.calculate_button:
+		final int id = v.getId();
+		if (id == R.id.calculate_button) {
 			calculateResult();
-			break;
-		case R.id.clear_button:
+		}
+		else if (id == R.id.clear_button) {
 			clearEntries();
-			break;
-		case R.id.cl_button:
-		case R.id.hr_button:
+		}
+		else if (id == R.id.cl_button || id == R.id.hr_button){
 			resultTextView.setText(getString(R.string.calculated_result_label));
 			setInputHint();
 			setMeasurementTextView();
-			break;
 		}
 	}
 

@@ -2,9 +2,6 @@ package org.epstudios.epmobile;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -24,47 +21,43 @@ public class DiagnosisList extends EpActivity {
         lv.setTextFilterEnabled(true);
 
 
-		lv.setOnItemClickListener(new OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-				String selection = ((TextView) view).getText().toString();
-				if (selection
-						.equals(getString(R.string.wct_algorithm_list_title)))
-					wctAlgorithm();
-				else if (selection.equals(getString(R.string.short_qt_title)))
-					shortQt();
-				else if (selection
-						.equals(getString(R.string.wpw_algorithm_list_title)))
-					wpw();
-				else if (selection
-						.equals(getString(R.string.lqt_syndrome_title)))
-					longQt();
-				else if (selection.equals(getString(R.string.lvh_list_title)))
-					lvhList();
-				else if (selection
-						.equals(getString(R.string.brugada_syndrome_title)))
-					brugadaList();
-				else if (selection.equals(getString(R.string.ers_title)))
-					ersScore();
-				else if (selection.equals(getString(R.string.vt_list_title)))
-					vtList();
-				else if (selection
-						.equals(getString(R.string.atrial_tachycardia_localization_title)))
-					atrialTachLocalization();
-                else if (selection.equals(getString(R.string.rvh_title)))
-                    rvhCriteria();
-				else if (selection
-						.equals(getString(R.string.arvc_2010_criteria_title)))
-					arvc2010();
-				else if (selection
-						.equals(getString(R.string.arvc_old_criteria_title)))
-					arvcOld();
-				else if (selection.equals(getString(R.string.lbbb_title)))
-				    lbbbCriteria();
-				else if (selection.equals(getString(R.string.tamponade_title)))
-					tamponade();
-			}
+		lv.setOnItemClickListener((parent, view, position, id) -> {
+			String selection = ((TextView) view).getText().toString();
+			if (selection
+					.equals(getString(R.string.wct_algorithm_list_title)))
+				wctAlgorithm();
+			else if (selection.equals(getString(R.string.short_qt_title)))
+				shortQt();
+			else if (selection
+					.equals(getString(R.string.wpw_algorithm_list_title)))
+				wpw();
+			else if (selection
+					.equals(getString(R.string.lqt_syndrome_title)))
+				longQt();
+			else if (selection.equals(getString(R.string.lvh_list_title)))
+				lvhList();
+			else if (selection
+					.equals(getString(R.string.brugada_syndrome_title)))
+				brugadaList();
+			else if (selection.equals(getString(R.string.ers_title)))
+				ersScore();
+			else if (selection.equals(getString(R.string.vt_list_title)))
+				vtList();
+			else if (selection
+					.equals(getString(R.string.atrial_tachycardia_localization_title)))
+				atrialTachLocalization();
+else if (selection.equals(getString(R.string.rvh_title)))
+rvhCriteria();
+			else if (selection
+					.equals(getString(R.string.arvc_2010_criteria_title)))
+				arvc2010();
+			else if (selection
+					.equals(getString(R.string.arvc_old_criteria_title)))
+				arvcOld();
+			else if (selection.equals(getString(R.string.lbbb_title)))
+				lbbbCriteria();
+			else if (selection.equals(getString(R.string.tamponade_title)))
+				tamponade();
 		});
 	}
 

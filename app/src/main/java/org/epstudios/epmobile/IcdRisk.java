@@ -92,26 +92,23 @@ public class IcdRisk extends DiagnosticScore {
 			score += 2;
 		}
 		int procedureType = procedureTypeRadioGroup.getCheckedRadioButtonId();
-		switch (procedureType) {
-		case R.id.initial_implant:
+		if (procedureType == R.id.initial_implant) {
 			score += 13;
-			break;
-		case R.id.generator_replacement_infection:
+		}
+		else if (procedureType == R.id.generator_replacement_infection) {
 			score += 17;
-			break;
-		case R.id.generator_replacement_device_relocation:
+		}
+		else if (procedureType == R.id.generator_replacement_device_relocation) {
 			score += 18;
-			break;
-		case R.id.generator_replacement_upgrade:
+		}
+		else if (procedureType == R.id.generator_replacement_upgrade) {
 			score += 12;
-			break;
-		case R.id.generator_replacement_malfunction:
-            //noinspection DuplicateBranchesInSwitch
-            score += 13;
-			break;
-		case R.id.generator_replacement_other:
+		}
+		else if (procedureType == R.id.generator_replacement_malfunction) {
+			score += 13;
+		}
+		else if (procedureType == R.id.generator_replacement_other) {
 			score += 14;
-			break;
 		}
 		if (icdTypeRadioGroup.getCheckedRadioButtonId() == R.id.dual_chamber) {
 			score += 4;

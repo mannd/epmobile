@@ -93,13 +93,12 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.calculate_button:
+		final int id = v.getId();
+		if (id == R.id.calculate_button) {
 			calculate();
-			break;
-		case R.id.clear_button:
+		}
+		else if (id == R.id.clear_button) {
 			clearEntries();
-			break;
 		}
 	}
 

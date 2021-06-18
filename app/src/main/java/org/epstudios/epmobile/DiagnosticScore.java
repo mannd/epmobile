@@ -45,13 +45,12 @@ abstract public class DiagnosticScore extends EpActivity implements
 
 	@Override
 	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.calculate_button:
+		final int id = v.getId();
+		if (id == R.id.calculate_button) {
 			calculateResult();
-			break;
-		case R.id.clear_button:
+		}
+		else if (id == R.id.clear_button) {
 			clearEntries();
-			break;
 		}
 	}
 
@@ -67,18 +66,10 @@ abstract public class DiagnosticScore extends EpActivity implements
 		dialog.setMessage(message);
 		dialog.setButton(DialogInterface.BUTTON_POSITIVE,
 				getString(R.string.reset_label),
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						clearEntries();
-					}
-				});
+				(dialog12, which) -> clearEntries());
 		dialog.setButton(DialogInterface.BUTTON_NEUTRAL,
 				getString(R.string.dont_reset_label),
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-					}
+				(dialog1, which) -> {
 				});
 		dialog.setTitle(title);
 		dialog.show();

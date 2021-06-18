@@ -105,16 +105,15 @@ public class Warfarin extends EpActivity implements
 
 	@Override
 	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.calculate_button:
+		final int id = v.getId();
+		if (id == R.id.calculate_button) {
 			calculateResult();
-			break;
-		case R.id.clear_button:
+		}
+		else if (id == R.id.clear_button) {
 			clearEntries();
-			break;
-		case R.id.instructions_button:
+		}
+		else if (id == R.id.instructions_button) {
 			displayInstructions();
-			break;
 		}
 	}
 
@@ -133,36 +132,38 @@ public class Warfarin extends EpActivity implements
 	}
 
 	private double getTabletDose() {
-		double dose = 5.0;
+		double dose;
 		int id = tabletRadioGroup.getCheckedRadioButtonId();
-		switch (id) {
-		case R.id.tablet1:
+		if (id == R.id.tablet1) {
 			dose = 1.0;
-			break;
-		case R.id.tablet2:
+		}
+		else if (id == R.id.tablet2) {
 			dose = 2.0;
-			break;
-		case R.id.tablet3:
+		}
+		else if (id == R.id.tablet3) {
 			dose = 2.5;
-			break;
-		case R.id.tablet4:
+		}
+		else if (id == R.id.tablet4) {
 			dose = 3.0;
-			break;
-		case R.id.tablet5:
+		}
+		else if (id == R.id.tablet5) {
 			dose = 4.0;
-			break;
-		case R.id.tablet6:
+		}
+		else if (id == R.id.tablet6) {
 			dose = 5.0;
-			break;
-		case R.id.tablet7:
+		}
+		else if (id == R.id.tablet7) {
 			dose = 6.0;
-			break;
-		case R.id.tablet8:
+		}
+		else if (id == R.id.tablet8) {
 			dose = 7.5;
-			break;
-		case R.id.tablet9:
+		}
+		else if (id == R.id.tablet9) {
 			dose = 10.0;
-			break;
+		}
+		else {
+			// default
+			dose = 5.0;
 		}
 		return dose;
 	}
@@ -323,28 +324,15 @@ public class Warfarin extends EpActivity implements
 		dialog.setTitle(getString(R.string.warfarin_result_title));
 		dialog.setButton(DialogInterface.BUTTON_POSITIVE,
 				getString(R.string.reset_label),
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						clearEntries();
-					}
-				});
+				(dialog13, which) -> clearEntries());
 		dialog.setButton(DialogInterface.BUTTON_NEUTRAL,
 				getString(R.string.dont_reset_label),
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-					}
+				(dialog12, which) -> {
 				});
 		if (showDoses) {
 			dialog.setButton(DialogInterface.BUTTON_NEGATIVE,
 					getString(R.string.dosing_label),
-					new DialogInterface.OnClickListener() {
-						@Override
-						public void onClick(DialogInterface dialog, int which) {
-							displayDoses();
-						}
-					});
+					(dialog1, which) -> displayDoses());
 		}
 		dialog.show();
 	}

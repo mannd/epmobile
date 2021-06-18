@@ -39,10 +39,10 @@ public class CmsIcdModel {
     private Nyha nyha;
     // Exclusions and waiting periods
     @SuppressWarnings("CanBeFinal")
-    private Boolean cabgWithin3Months;
+    private final Boolean cabgWithin3Months;
     private Boolean miWithin40Days;
     @SuppressWarnings("CanBeFinal")
-    private Boolean candidateForRevasc;
+    private final Boolean candidateForRevasc;
     private Boolean cardiogenicShock;
     private Boolean nonCardiacDisease;
     private Boolean brainDamage;

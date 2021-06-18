@@ -114,13 +114,12 @@ public class BrugadaMorphologyCriteria extends EpActivity implements
 
 	@Override
 	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.calculate_button:
+		final int id = v.getId();
+		if (id == R.id.calculate_button) {
 			calculateResult();
-			break;
-		case R.id.clear_button:
+		}
+		else if (id == R.id.clear_button) {
 			clearEntries();
-			break;
 		}
 	}
 
@@ -185,17 +184,9 @@ public class BrugadaMorphologyCriteria extends EpActivity implements
 		dialog.setMessage(message);
 		dialog.setTitle(getString(R.string.wct_result_label));
 		dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Done",
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						finish();
-					}
-				});
+				(dialog12, which) -> finish());
 		dialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Back",
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-					}
+				(dialog1, which) -> {
 				});
 		dialog.show();
 	}
@@ -209,17 +200,9 @@ public class BrugadaMorphologyCriteria extends EpActivity implements
 		dialog.setMessage(message);
 		dialog.setTitle(getString(R.string.wct_result_label));
 		dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Done",
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						finish();
-					}
-				});
+				(dialog12, which) -> finish());
 		dialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Back",
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-					}
+				(dialog1, which) -> {
 				});
 		dialog.show();
 	}

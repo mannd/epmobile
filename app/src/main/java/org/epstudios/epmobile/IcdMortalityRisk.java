@@ -26,7 +26,6 @@ import android.widget.CheckBox;
 public class IcdMortalityRisk extends RiskScore {
     final int VHR_SCORE = 99;
 
-    @SuppressWarnings("SpellCheckingInspection")
     private static class RiskResult {
         int conv;
         int icd;
