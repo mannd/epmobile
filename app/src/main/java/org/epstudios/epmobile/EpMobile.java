@@ -24,6 +24,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatDelegate;
+
 public class EpMobile extends EpActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
