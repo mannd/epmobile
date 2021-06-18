@@ -20,9 +20,6 @@ package org.epstudios.epmobile;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -41,24 +38,20 @@ public class WpwAlgorithmList extends EpActivity {
 
         lv.setTextFilterEnabled(true);
 
-		lv.setOnItemClickListener(new OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-				String selection = ((TextView) view).getText().toString();
-				if (selection.equals(getString(R.string.arruda_title)))
-					arrudaAlgorithm();
-				else if (selection
-						.equals(getString(R.string.modified_arruda_title)))
-					modifiedArrudaAlgorithm();
-				else if (selection.equals(getString(R.string.milstein_title)))
-					milsteinAlgorithm();
-				else if (selection
-						.equals(getString(R.string.anatomy_av_annulus_title)))
-					avAnnulusMap();
-                else if (selection.equals(getString(R.string.davila_title)))
-                    davilaAlgorithm();
-			}
+		lv.setOnItemClickListener((parent, view, position, id) -> {
+			String selection = ((TextView) view).getText().toString();
+			if (selection.equals(getString(R.string.arruda_title)))
+				arrudaAlgorithm();
+			else if (selection
+					.equals(getString(R.string.modified_arruda_title)))
+				modifiedArrudaAlgorithm();
+			else if (selection.equals(getString(R.string.milstein_title)))
+				milsteinAlgorithm();
+			else if (selection
+					.equals(getString(R.string.anatomy_av_annulus_title)))
+				avAnnulusMap();
+else if (selection.equals(getString(R.string.davila_title)))
+davilaAlgorithm();
 		});
 	}
 

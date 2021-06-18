@@ -2,8 +2,6 @@ package org.epstudios.epmobile;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -44,22 +42,18 @@ public class BrugadaList extends EpActivity {
         lv.setAdapter(adapter);
 
         lv.setTextFilterEnabled(true);
-		lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-				String selection = ((TextView) view).getText().toString();
-				if (selection
-						.equals(getString(R.string.brugada_ecg_title)))
-					brugadaEcg();
-				else if (selection
-						.equals(getString(R.string.brugada_diagnosis_title)))
-					brugadaDiagnosis();
-				else if (selection
-						.equals(getString(R.string.brugada_score_title)))
-					brugadaScore();
+		lv.setOnItemClickListener((parent, view, position, id) -> {
+			String selection = ((TextView) view).getText().toString();
+			if (selection
+					.equals(getString(R.string.brugada_ecg_title)))
+				brugadaEcg();
+			else if (selection
+					.equals(getString(R.string.brugada_diagnosis_title)))
+				brugadaDiagnosis();
+			else if (selection
+					.equals(getString(R.string.brugada_score_title)))
+				brugadaScore();
 
-			}
 		});
 	}
 

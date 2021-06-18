@@ -20,9 +20,6 @@ package org.epstudios.epmobile;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -40,24 +37,20 @@ public class LongQtList extends EpActivity {
 
         lv.setTextFilterEnabled(true);
 
-		lv.setOnItemClickListener(new OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-				String selection = ((TextView) view).getText().toString();
-				if (selection
-						.equals(getString(R.string.long_qt_syndrome_diagnosis_title)))
-					lqtsDiagnosis();
+		lv.setOnItemClickListener((parent, view, position, id) -> {
+			String selection = ((TextView) view).getText().toString();
+			if (selection
+					.equals(getString(R.string.long_qt_syndrome_diagnosis_title)))
+				lqtsDiagnosis();
 
-				else if (selection
-						.equals(getString(R.string.lqt_subtypes_title)))
-					lqtSubtypes();
-				else if (selection.equals(getString(R.string.lqt_ecg_title)))
-					lqtEcg();
-				else if (selection.equals(getString(R.string.long_qt_table_title)))
-					lqtTable();
-				// lqtDrugs here
-			}
+			else if (selection
+					.equals(getString(R.string.lqt_subtypes_title)))
+				lqtSubtypes();
+			else if (selection.equals(getString(R.string.lqt_ecg_title)))
+				lqtEcg();
+			else if (selection.equals(getString(R.string.long_qt_table_title)))
+				lqtTable();
+			// lqtDrugs here
 		});
 	}
 

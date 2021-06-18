@@ -38,16 +38,18 @@ public abstract class EpActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.settings:
-                startActivity(new Intent(this, Prefs.class));
-                return true;
-            case R.id.about:
-                startActivity(new Intent(this, About.class));
-                return true;
-            case android.R.id.home:
-                finish();
-                return true;
+        final int itemId = item.getItemId();
+        if (itemId ==  R.id.settings) {
+            startActivity(new Intent(this, Prefs.class));
+            return true;
+        }
+        else if (itemId == R.id.about) {
+            startActivity(new Intent(this, About.class));
+            return true;
+        }
+        else if (itemId == android.R.id.home) {
+            finish();
+            return true;
         }
         return false;
     }

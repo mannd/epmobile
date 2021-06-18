@@ -2,9 +2,6 @@ package org.epstudios.epmobile;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -23,45 +20,41 @@ public class RiskScoreList extends EpActivity {
 
         lv.setTextFilterEnabled(true);
 
-		lv.setOnItemClickListener(new OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-				String selection = ((TextView) view).getText().toString();
-				if (selection.equals(getString(R.string.chads_title)))
-					chadsScore();
-				else if (selection.equals(getString(R.string.chadsvasc_title)))
-					chadsVascScore();
-				else if (selection.equals(getString(R.string.hasbled_title)))
-					hasBledScore();
-				else if (selection.equals(getString(R.string.hcm_title)))
-					hcmScore();
-				else if (selection
-						.equals(getString(R.string.hemorrhages_title)))
-					hemorrhagesScore();
-				else if (selection
-						.equals(getString(R.string.syncope_list_title)))
-					syncopeRiskScores();
-				else if (selection.equals(getString(R.string.icd_risk_title)))
-					icdRiskScore();
-                else if (selection.equals(getString(R.string.hcm_scd_esc_score_title)))
-                    hcmScdRisk();
-				else if (selection.equals(getString(R.string.same_tt2r2_title)))
-					sameTt2r2Score();
-                else if (selection.equals(getString(R.string.atria_bleeding_score_title)))
-                    atriaBleedingScore();
-                else if (selection.equals(getString(R.string.atria_stroke_score_title)))
-                    atriaStrokeScore();
-				else if (selection.equals(getString(R.string.orbit_risk_title)))
-					orbitRiskScore();
-				else if (selection.equals(getString(R.string.icd_mortality_risk_title)))
-					icdMortalityRisk();
-				else if (selection.equals(getString(R.string.arvc_risk_title)))
-					arvcRisk();
-				else if (selection.equals(getString(R.string.qt_prolongation_risk_title)))
-					qtProlongationRisk();
-            }
-		});
+		lv.setOnItemClickListener((parent, view, position, id) -> {
+			String selection = ((TextView) view).getText().toString();
+			if (selection.equals(getString(R.string.chads_title)))
+				chadsScore();
+			else if (selection.equals(getString(R.string.chadsvasc_title)))
+				chadsVascScore();
+			else if (selection.equals(getString(R.string.hasbled_title)))
+				hasBledScore();
+			else if (selection.equals(getString(R.string.hcm_title)))
+				hcmScore();
+			else if (selection
+					.equals(getString(R.string.hemorrhages_title)))
+				hemorrhagesScore();
+			else if (selection
+					.equals(getString(R.string.syncope_list_title)))
+				syncopeRiskScores();
+			else if (selection.equals(getString(R.string.icd_risk_title)))
+				icdRiskScore();
+else if (selection.equals(getString(R.string.hcm_scd_esc_score_title)))
+hcmScdRisk();
+			else if (selection.equals(getString(R.string.same_tt2r2_title)))
+				sameTt2r2Score();
+else if (selection.equals(getString(R.string.atria_bleeding_score_title)))
+atriaBleedingScore();
+else if (selection.equals(getString(R.string.atria_stroke_score_title)))
+atriaStrokeScore();
+			else if (selection.equals(getString(R.string.orbit_risk_title)))
+				orbitRiskScore();
+			else if (selection.equals(getString(R.string.icd_mortality_risk_title)))
+				icdMortalityRisk();
+			else if (selection.equals(getString(R.string.arvc_risk_title)))
+				arvcRisk();
+			else if (selection.equals(getString(R.string.qt_prolongation_risk_title)))
+				qtProlongationRisk();
+});
 	}
 
 	private void qtProlongationRisk() {

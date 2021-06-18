@@ -56,41 +56,30 @@ public abstract class RiskScore extends DiagnosticScore {
 		dialog.setMessage(message);
 		dialog.setButton(DialogInterface.BUTTON_POSITIVE,
 				getString(R.string.reset_label),
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						clearEntries();
-					}
-				});
+				(dialog13, which) -> clearEntries());
 		dialog.setButton(DialogInterface.BUTTON_NEUTRAL,
 				getString(R.string.dont_reset_label),
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-					}
+				(dialog12, which) -> {
 				});
 		dialog.setButton(DialogInterface.BUTTON_NEGATIVE,
 				getString(R.string.copy_report_label),
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						// clipboard handled differently depending on Android
-						// version
-						String textToCopy = getFullRiskReport();
-						showToast();
-						int sdk = android.os.Build.VERSION.SDK_INT;
-						if (sdk < android.os.Build.VERSION_CODES.HONEYCOMB) {
-							android.text.ClipboardManager clipboard = (android.text.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-							if (clipboard != null) {
-								clipboard.setText(textToCopy);
-							}
-						} else {
-							android.content.ClipboardManager clipboard = (android.content.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-							android.content.ClipData clip = android.content.ClipData
-									.newPlainText("Copied Text", textToCopy);
-							if (clipboard != null) {
-								clipboard.setPrimaryClip(clip);
-							}
+				(dialog1, which) -> {
+					// clipboard handled differently depending on Android
+					// version
+					String textToCopy = getFullRiskReport();
+					showToast();
+					int sdk = android.os.Build.VERSION.SDK_INT;
+					if (sdk < android.os.Build.VERSION_CODES.HONEYCOMB) {
+						android.text.ClipboardManager clipboard = (android.text.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+						if (clipboard != null) {
+							clipboard.setText(textToCopy);
+						}
+					} else {
+						android.content.ClipboardManager clipboard = (android.content.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+						android.content.ClipData clip = android.content.ClipData
+								.newPlainText("Copied Text", textToCopy);
+						if (clipboard != null) {
+							clipboard.setPrimaryClip(clip);
 						}
 					}
 				});

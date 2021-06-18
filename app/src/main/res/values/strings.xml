@@ -557,7 +557,7 @@
     <string name="lqt_syndrome_label">Long QT Syndrome</string>
     <string name="lqt_subtypes_title">Long QT Syndromes (Common)</string>
     <string name="lqt_subtypes_1_name">LQTS 1</string>
-    <string name="lqt_subtypes_1_description">Frequency: 30-35%\nLocus: 11p15.5\nGene: KVLQT1 (KCNQ1)\nChannel: 
+    <string name="lqt_subtypes_1_description" tools:ignore="Typos">Frequency: 30-35%\nLocus: 11p15.5\nGene: KVLQT1 (KCNQ1)\nChannel:
         IKs\nECG: Broad T wave\nFeatures: Episodes with stress, exercise, swimming, diving; failure
     	of QT to shorten with exercise</string>
     <string name="lqt_subtypes_2_name">LQTS 2</string>
@@ -630,7 +630,7 @@
     <string name="hps_erp_normal">330–450 msec</string>
     <string name="verp">Ventricular ERP</string>
     <string name="verp_normal">170–290 msec</string>
-    <string name="step_1">Step1</string>
+    <string name="step_1" tools:ignore="Typos">Step1</string>
     <string name="vt_list_title">Ventricular Tachycardia</string>
     <string name="epicardial_vt_title">Epicardial vs Endocardial VT</string>
     <string name="outflow_tract_vt_title">Outflow Tract VT Location</string>

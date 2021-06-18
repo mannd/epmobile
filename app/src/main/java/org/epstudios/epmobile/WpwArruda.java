@@ -89,16 +89,15 @@ public class WpwArruda extends LocationAlgorithm implements OnClickListener {
 	}
 
 	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.yes_button:
+		final int id = v.getId();
+		if (id == R.id.yes_button) {
 			getYesResult();
-			break;
-		case R.id.no_button:
+		}
+		else if (id == R.id.no_button) {
 			getNoResult();
-			break;
-		case R.id.back_button:
+		}
+		else if (id == R.id.back_button) {
 			getBackResult();
-			break;
 		}
 	}
 
@@ -274,30 +273,19 @@ public class WpwArruda extends LocationAlgorithm implements OnClickListener {
 		dialog.setTitle(getString(R.string.pathway_location_label));
 		dialog.setButton(DialogInterface.BUTTON_POSITIVE,
 				getString(R.string.done_label),
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						finish();
-					}
-				});
+				(dialog13, which) -> finish());
 		dialog.setButton(DialogInterface.BUTTON_NEGATIVE,
 				getString(R.string.reset_label),
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						resetSteps();
-						gotoStep();
-					}
+				(dialog12, which) -> {
+					resetSteps();
+					gotoStep();
 				});
 		dialog.setButton(DialogInterface.BUTTON_NEUTRAL,
 				getString(R.string.show_map_label),
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						showMap();
-						resetSteps();
-						gotoStep();
-					}
+				(dialog1, which) -> {
+					showMap();
+					resetSteps();
+					gotoStep();
 				});
 		dialog.show();
 	}

@@ -46,19 +46,15 @@ public class Entrainment extends EpActivity implements OnClickListener {
 		clearAllButton.setOnClickListener(this);
 		helpButton.setOnClickListener(this);
 
-		concealedFusionCheckBox.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				boolean checked = concealedFusionCheckBox.isChecked();
-				sqrsTextView.setEnabled(checked);
-				sqrsEditText.setEnabled(checked);
-				egmQrsTextView.setEnabled(checked);
-				egmQrsEditText.setEnabled(checked);
-				if (!checked) {
-					sqrsEditText.setText(null);
-					egmQrsEditText.setText(null);
-				}
-
+		concealedFusionCheckBox.setOnClickListener(v -> {
+			boolean checked = concealedFusionCheckBox.isChecked();
+			sqrsTextView.setEnabled(checked);
+			sqrsEditText.setEnabled(checked);
+			egmQrsTextView.setEnabled(checked);
+			egmQrsEditText.setEnabled(checked);
+			if (!checked) {
+				sqrsEditText.setText(null);
+				egmQrsEditText.setText(null);
 			}
 
 		});
@@ -80,20 +76,18 @@ public class Entrainment extends EpActivity implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.calculate_button:
+		final int id = v.getId();
+		if (id == R.id.calculate_button) {
 			calculate();
-			break;
-		case R.id.clear_keep_tcl_button:
+		}
+		else if (id == R.id.clear_keep_tcl_button) {
 			clearKeepTcl();
-			break;
-
-		case R.id.clear_all_button:
+		}
+		else if (id == R.id.clear_all_button) {
 			clear();
-			break;
-		case R.id.instructions_button:
+		}
+		else if (id == R.id.instructions_button) {
 			displayInstructions();
-			break;
 		}
 	}
 

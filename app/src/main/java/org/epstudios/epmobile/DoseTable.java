@@ -21,8 +21,7 @@ package org.epstudios.epmobile;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import androidx.preference.PreferenceManager;
-import android.view.View;
-import android.view.View.OnClickListener;
+
 import android.widget.TextView;
 
 public class DoseTable extends EpActivity {

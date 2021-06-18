@@ -20,9 +20,6 @@ package org.epstudios.epmobile;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -41,20 +38,16 @@ public class WctAlgorithmList extends EpActivity {
 
         lv.setTextFilterEnabled(true);
 
-		lv.setOnItemClickListener(new OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-				String selection = ((TextView) view).getText().toString();
-				if (selection.equals(getString(R.string.brugada_wct_title)))
-					brugadaAlgorithm();
-				else if (selection.equals(getString(R.string.morphology_title)))
-					morphologyCriteria();
-				else if (selection.equals(getString(R.string.rwpt_title)))
-					ultraSimpleBrugadaAlgorithm();
-				else if (selection.equals(getString(R.string.vereckei_title)))
-					vereckeiAlgorithm();
-			}
+		lv.setOnItemClickListener((parent, view, position, id) -> {
+			String selection = ((TextView) view).getText().toString();
+			if (selection.equals(getString(R.string.brugada_wct_title)))
+				brugadaAlgorithm();
+			else if (selection.equals(getString(R.string.morphology_title)))
+				morphologyCriteria();
+			else if (selection.equals(getString(R.string.rwpt_title)))
+				ultraSimpleBrugadaAlgorithm();
+			else if (selection.equals(getString(R.string.vereckei_title)))
+				vereckeiAlgorithm();
 		});
 	}
 

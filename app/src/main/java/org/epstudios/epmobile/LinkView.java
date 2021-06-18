@@ -59,6 +59,10 @@ public class LinkView extends EpActivity implements View.OnClickListener {
             showButton = extras.getBoolean("EXTRA_SHOW_BUTTON");
 
         }
+        if (url == null) {
+            return;
+        }
+
         if (showButton)
             setContentView(R.layout.weblayout);
         else
@@ -135,14 +139,11 @@ public class LinkView extends EpActivity implements View.OnClickListener {
         public void onPageFinished(WebView view, String url) {
             if (needsToRestoreState) {
                 needsToRestoreState = false;
-                view.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        float webViewSize = webView.getContentHeight() - webView.getTop();
-                        float positionInWebView = webViewSize * offsetToRestore;
-                        int positionY = Math.round(webView.getTop() + positionInWebView);
-                        webView.scrollTo(0, positionY);
-                    }
+                view.postDelayed(() -> {
+                    float webViewSize = webView.getContentHeight() - webView.getTop();
+                    float positionInWebView = webViewSize * offsetToRestore;
+                    int positionY = Math.round(webView.getTop() + positionInWebView);
+                    webView.scrollTo(0, positionY);
                 }, 300);
             }
             super.onPageFinished(view, url);

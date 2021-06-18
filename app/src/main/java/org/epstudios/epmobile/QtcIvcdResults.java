@@ -2,8 +2,6 @@ package org.epstudios.epmobile;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -85,38 +83,35 @@ public class QtcIvcdResults extends EpActivity {
         lv.setAdapter(adapter);
 
         lv.setTextFilterEnabled(true);
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                switch (position) {
-                    case QT:
-                        showQT();
-                        break;
-                    case QTC:
-                        showQTc();
-                        break;
-                    case JT:
-                        showJT();
-                        break;
-                    case JTC:
-                        showJTc();
-                        break;
-                    case QTM:
-                        showQTM();
-                        break;
-                    case QTMC:
-                        showQTMC();
-                        break;
-                    case QTRRQRS:
-                        showQTrrqrs();
-                        break;
-                    case PRELBBBQTC:
-                        showPreLBBBQTc();
-                        break;
-                    default:
-                        showInstructions();
-                        break;
-                }
+        lv.setOnItemClickListener((parent, view, position, id) -> {
+            switch (position) {
+                case QT:
+                    showQT();
+                    break;
+                case QTC:
+                    showQTc();
+                    break;
+                case JT:
+                    showJT();
+                    break;
+                case JTC:
+                    showJTc();
+                    break;
+                case QTM:
+                    showQTM();
+                    break;
+                case QTMC:
+                    showQTMC();
+                    break;
+                case QTRRQRS:
+                    showQTrrqrs();
+                    break;
+                case PRELBBBQTC:
+                    showPreLBBBQTc();
+                    break;
+                default:
+                    showInstructions();
+                    break;
             }
         });
     }
