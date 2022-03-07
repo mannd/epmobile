@@ -5,6 +5,17 @@ See [keepachangelog.com](https://keepachangelog.com/en/1.0.0/) for information o
 
 This project roughly utilizes [Semantic Versioning](https://semver.org/spec/v2.0.0.html).  In some versions the PATCH of MAJOR.MINOR.PATCH is omitted.  Note also that unreleased versions are omitted.
 
+## [2.26.1] - 2022-03-07
+### Fixed
+- Broken link to reference for Warfarin Clinic calculator
+
+## [2.26.0] - 2021-06-19
+### Fixed
+- Enlarged LQT ECG
+- Fixed problem with dark mode
+### Added
+- Android 11 support
+
 ## [2.25.4] - 2021-04-14
 ### Fixed
 - Fixed regression that disabled maintenance of screen position of

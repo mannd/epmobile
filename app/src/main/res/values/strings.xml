@@ -11,7 +11,7 @@
 		\n\nEmail: mannd@epstudiossoftware.com
 		\nWeb: www.epstudiossoftware.com
 		\nSource: github.com/mannd/epmobile
-		\n\nCopyright \u00a9 2011-2021 EP Studios, Inc.
+		\n\nCopyright \u00a9 2011-2022 EP Studios, Inc.
 		\nLicensed under GNU GPL v3.</string>
     <string name="main_index_title">EP Mobile</string>
     <string name="about_label">About</string>
@@ -117,7 +117,7 @@
     <string name="warfarin_result_title">Suggested Warfarin Dosing</string>
     <string name="warfarin_reference">Reference: Horton J, Bushwick B: American Family
 		Physician. Feb 1, 1999.
-		http://www.aafp.org/afp/990201ap/635.html</string>
+		https://www.aafp.org/afp/1999/0201/p635.html</string>
     <string name="wct_algorithm_list_title">Wide Complex Tachycardia</string>
     <string name="wct_algorithm_title">Wide Complex Tachycardia</string>
     <string name="brugada_vt_title">Brugada Criteria SVT vs VT</string>
