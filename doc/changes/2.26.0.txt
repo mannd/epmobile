@@ -1,0 +1,5 @@
+EP Mobile 2.26.0 Release Notes
+Changes since 2.25.4
+* Enlarged LQT ECG
+* Fixed problem with dark mode
+* Android 11 support
