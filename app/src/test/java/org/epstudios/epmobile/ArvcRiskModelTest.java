@@ -30,27 +30,32 @@ public class ArvcRiskModelTest {
     public void testCalculateRisk() {
         ArvcRiskModel pt1 = new ArvcRiskModel(0, 48, 0, 0,
                 1, 4, 55 );
-        assertEquals(3.0, pt1.calculateRisk(ArvcRiskModel.year5), 0.0001);
-        assertEquals(1.8, pt1.calculateRisk(ArvcRiskModel.year2), 0.0001);
-        assertEquals(1.1, pt1.calculateRisk(ArvcRiskModel.year1), 0.0001);
+        assertEquals(2.4, pt1.calculateRisk(ArvcRiskModel.year5), 0.0001);
+        assertEquals(1.4, pt1.calculateRisk(ArvcRiskModel.year2), 0.0001);
+        assertEquals(0.9, pt1.calculateRisk(ArvcRiskModel.year1), 0.0001);
 
         ArvcRiskModel pt2 = new ArvcRiskModel(1, 50, 0, 0,
                 312, 3, 48 );
-        assertEquals(12.7, pt2.calculateRisk(ArvcRiskModel.year5), 0.0001);
-        assertEquals(7.8, pt2.calculateRisk(ArvcRiskModel.year2), 0.0001);
-        assertEquals(4.9, pt2.calculateRisk(ArvcRiskModel.year1), 0.0001);
+        assertEquals(10.1, pt2.calculateRisk(ArvcRiskModel.year5), 0.0001);
+        assertEquals(6.2, pt2.calculateRisk(ArvcRiskModel.year2), 0.0001);
+        assertEquals(3.8, pt2.calculateRisk(ArvcRiskModel.year1), 0.0001);
 
         ArvcRiskModel pt3 = new ArvcRiskModel(0, 22, 0, 1,
                 20527, 4, 28 );
-        assertEquals(72.8, pt3.calculateRisk(ArvcRiskModel.year5), 0.0001);
-        assertEquals(54.0, pt3.calculateRisk(ArvcRiskModel.year2), 0.0001);
-        assertEquals(38.1, pt3.calculateRisk(ArvcRiskModel.year1), 0.0001);
+        assertEquals(64.1, pt3.calculateRisk(ArvcRiskModel.year5), 0.0001);
+        assertEquals(45.8, pt3.calculateRisk(ArvcRiskModel.year2), 0.0001);
+        assertEquals(31.4, pt3.calculateRisk(ArvcRiskModel.year1), 0.0001);
 
         ArvcRiskModel pt4 = new ArvcRiskModel(1, 15, 1, 0,
                 1800, 5, 66 );
-        assertEquals(45.2, pt4.calculateRisk(ArvcRiskModel.year5), 0.0001);
-        assertEquals(30.2, pt4.calculateRisk(ArvcRiskModel.year2), 0.0001);
-        assertEquals(19.9, pt4.calculateRisk(ArvcRiskModel.year1), 0.0001);
+        assertEquals(37.7, pt4.calculateRisk(ArvcRiskModel.year5), 0.0001);
+        assertEquals(24.6, pt4.calculateRisk(ArvcRiskModel.year2), 0.0001);
+        assertEquals(16.0, pt4.calculateRisk(ArvcRiskModel.year1), 0.0001);
+        ArvcRiskModel pt5 = new ArvcRiskModel(1, 15, 1, 0,
+                0, 5, 66 );
+        assertEquals(12.4, pt5.calculateRisk(ArvcRiskModel.year5), 0.0001);
+        assertEquals(7.6, pt5.calculateRisk(ArvcRiskModel.year2), 0.0001);
+        assertEquals(4.8, pt5.calculateRisk(ArvcRiskModel.year1), 0.0001);
     }
 
 
