@@ -803,8 +803,14 @@
 		to the TCL.  Sites with concealed fusion but long PPI intervals are
 		probably adjacent bystander tracts.  Pacing sites within the critical
 		isthmus are associated with a much higher chance of successful
-		tachycardia termination with ablation than other sites.</string>
-    <string name="entrainment_reference">Stevenson WG et al. JACC 1997;29:1180.\nhttp://content.onlinejacc.org/article.aspx?articleid=1121699 </string>
+		tachycardia termination with ablation than other sites.
+        EP Mobile uses the criteria of El-Shalakany et al. to identify
+        VT sites with high likelihood of ablation success.</string>
+    <string name="entrainment_reference">Stevenson WG et al.
+        JACC 1997;29:1180.
+        \nhttp://content.onlinejacc.org/article.aspx?articleid=1121699
+        \nEl-Shalakany A et al. Circulation 1999;99:2283.\n
+        https://doi.org/10.1161/01.cir.99.17.2283</string>
     <string name="entrainment_remote_site_message">Remote site from reentry circuit.</string>
     <string name="entrainment_outer_loop_message">Outer loop of reentry circuit.</string>
     <string name="entrainment_inner_loop_message">Inner loop or isthmus site of reentry circuit.</string>
@@ -1433,4 +1439,5 @@
     <string name="tamponade_title">Cardiac Tamponade</string>
     <string name="qt_prolongation_risk_title">QT Prolongation Risk</string>
     <string name="warfarin_dose_title">Warfarin Dose (%s mg tabs)</string>
+    <string name="entrainment_high_chance_success">\ Site has high chance of ablation success, if ablating VT.</string>
 </resources>
