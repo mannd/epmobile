@@ -5,6 +5,11 @@ See [keepachangelog.com](https://keepachangelog.com/en/1.0.0/) for information o
 
 This project roughly utilizes [Semantic Versioning](https://semver.org/spec/v2.0.0.html).  In some versions the PATCH of MAJOR.MINOR.PATCH is omitted.  Note also that unreleased versions are omitted.
 
+## [2.27.0] - 2022-05-27
+### Changes
+- Update ARVC calculator to reflect new parameters based on updated reference
+- Update Entrainment map to show when site is likely to be successful
+
 ## [2.26.1] - 2022-03-07
 ### Fixed
 - Broken link to reference for Warfarin Clinic calculator
