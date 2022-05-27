@@ -803,8 +803,14 @@
 		to the TCL.  Sites with concealed fusion but long PPI intervals are
 		probably adjacent bystander tracts.  Pacing sites within the critical
 		isthmus are associated with a much higher chance of successful
-		tachycardia termination with ablation than other sites.</string>
-    <string name="entrainment_reference">Stevenson WG et al. JACC 1997;29:1180.\nhttp://content.onlinejacc.org/article.aspx?articleid=1121699 </string>
+		tachycardia termination with ablation than other sites.
+        EP Mobile uses the criteria of El-Shalakany et al. to identify
+        VT sites with high likelihood of ablation success.</string>
+    <string name="entrainment_reference">Stevenson WG et al.
+        JACC 1997;29:1180.
+        \nhttp://content.onlinejacc.org/article.aspx?articleid=1121699
+        \nEl-Shalakany A et al. Circulation 1999;99:2283.\n
+        https://doi.org/10.1161/01.cir.99.17.2283</string>
     <string name="entrainment_remote_site_message">Remote site from reentry circuit.</string>
     <string name="entrainment_outer_loop_message">Outer loop of reentry circuit.</string>
     <string name="entrainment_inner_loop_message">Inner loop or isthmus site of reentry circuit.</string>
@@ -1355,17 +1361,18 @@
 </string>
     <string name="short_qrs_error">QRS duration must be at least 120 msec.</string>
     <string name="arvc_risk_title">ARVC Risk</string>
-    <string name="arvc_risk_full_reference">Cadrin-Tourigny J, Bosman LP, Nozza A,
-        et al. A new prediction model for ventricular arrhythmias in arrhythmogenic
-        right ventricular cardiomyopathy. Eur Heart J. 2019. doi:10.1093/eurheartj/ehz103
-</string>
+    <string name="arvc_risk_full_reference">Cardrin-Tourigny J, Bosman LP, Nozza A, et al.
+        A new prediction model for ventricular arrhythmias in arrhythmogenic
+        right ventricular cardiomyopathy.
+        European Heart Journal. Published online April 20, 2022:ehac180. doi:10.1093/eurheartj/ehac180
+    </string>
     <string name="age_at_dx_label">Age at diagnosis of ARVC</string>
     <string name="cardiac_syncope_within_6_months_label">Specify if the patient experienced syncope suspected to be caused by cardiac
         arrhythmia in the 6 months prior to diagnosis.</string>
     <string name="cardiac_syncope_label">Cardiac syncope (&lt; 6 months)</string>
     <string name="number_twi_label">Number of inverted T waves</string>
     <string name="number_twi_details">Specify the total number of inverted T-waves in precordial and inferior leads on standard 12-lead ECG.
-</string>
+    </string>
     <string name="max_pvc_count_label">Max 24 hr PVC count</string>
     <string name="hx_nsvt_label">History of NSVT</string>
     <string name="hx_nsvt_details">Specified as a recorded ventricular tachycardia (>100bpm) ending spontaneously within 30 seconds</string>
@@ -1406,7 +1413,7 @@
     <string name="qt_prolongation_low_risk">\nLow risk (~15%)</string>
     <string name="qt_prolongation_mod_risk">\nModerate risk (~37%)</string>
     <string name="qt_prolongation_high_risk">\nHigh risk (~73%)</string>
-    <string name="arvc_reference_link">https://academic.oup.com/eurheartj/advance-article/doi/10.1093/eurheartj/ehz103/5419784</string>
+    <string name="arvc_reference_link">https://academic.oup.com/eurheartj/advance-article/doi/10.1093/eurheartj/ehac180/6569858</string>
     <string name="cl_result_as_rate">Rate = %s bpm</string>
     <string name="cl_result_as_interval">Interval = %s msec</string>
     <string name="dc_default_number_of_days">90</string>
@@ -1432,4 +1439,5 @@
     <string name="tamponade_title">Cardiac Tamponade</string>
     <string name="qt_prolongation_risk_title">QT Prolongation Risk</string>
     <string name="warfarin_dose_title">Warfarin Dose (%s mg tabs)</string>
+    <string name="entrainment_high_chance_success">\ Site has high chance of ablation success, if ablating VT.</string>
 </resources>

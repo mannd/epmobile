@@ -69,6 +69,7 @@ public class LinkView extends EpActivity implements View.OnClickListener {
             setContentView(R.layout.weblayout_no_button);
         webView = findViewById(R.id.web_view);
         webView.setWebViewClient(new CustomWebViewClient());
+
         webView.loadUrl(url);
         // See https://stackoverflow.com/questions/57449900/letting-webview-on-android-work-with-prefers-color-scheme-dark
         int nightModeFlags = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;

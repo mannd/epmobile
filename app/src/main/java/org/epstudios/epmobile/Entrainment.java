@@ -149,12 +149,17 @@ public class Entrainment extends EpActivity implements OnClickListener {
 							invalidSqrs = true;
 						}
 						if (hasEgmQrs && !invalidSqrs) {
-							int egmMinusQrs = egmQrs - sqrs;
+							int egmMinusQrs = Math.abs(egmQrs - sqrs);
 							message += " ";
-							if (Math.abs(egmMinusQrs) <= 20)
+							if (egmMinusQrs <= 20)
 								message += getString(R.string.entrainment_egm_match_message);
 							else
 								message += getString(R.string.entrainment_egm_no_match_message);
+							boolean hasHighChanceOfSuccess = ppiMinusTcl <= 10 && egmQrs / tcl <= 0.7
+									&& egmMinusQrs <= 10;
+							if (hasHighChanceOfSuccess) {
+								message += getString(R.string.entrainment_high_chance_success);
+							}
 						}
 					}
 				}
@@ -168,7 +173,6 @@ public class Entrainment extends EpActivity implements OnClickListener {
 			resultTextView.setText(getString(R.string.invalid_warning));
 			resultTextView.setTextColor(Color.RED);
 		}
-
 	}
 
 	private void clearKeepTcl() {

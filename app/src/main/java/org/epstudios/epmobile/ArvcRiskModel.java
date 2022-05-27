@@ -27,12 +27,12 @@ import static java.lang.Math.round;
  * along with epmobile.  If not, see <http://www.gnu.org/licenses/>.
  */
 public class ArvcRiskModel {
-    public static final double year5 = 0.800813822845434;
+    public static final double year5 = 0.83956384494683;
     // Durations below from paper but not currently used in app.
     //public static final double year4 = 0.837312364505388;
     //public static final double year3 = 0.849912331481654;
-    public static final double year2 = 0.875734032965286;
-    public static final double year1 = 0.921429983419349;
+    public static final double year2 = 0.900806775419695;
+    public static final double year1 = 0.93761042413069;
 
     private final int sex;
     private final int age;
