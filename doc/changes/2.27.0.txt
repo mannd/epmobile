@@ -1,0 +1,4 @@
+EP Mobile 2.27.0 Release Notes
+Changes since 2.26.1
+* Update ARVC risk calculator since original reference was retracted and resubmitted with new parameters
+* Update Entrainment Map to show message when site is likely to be successful
