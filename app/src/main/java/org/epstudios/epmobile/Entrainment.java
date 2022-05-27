@@ -158,7 +158,7 @@ public class Entrainment extends EpActivity implements OnClickListener {
 							boolean hasHighChanceOfSuccess = ppiMinusTcl <= 10 && egmQrs / tcl <= 0.7
 									&& egmMinusQrs <= 10;
 							if (hasHighChanceOfSuccess) {
-								message += " Site has high chance of ablation success, if ablating VT.";
+								message += getString(R.string.entrainment_high_chance_success);
 							}
 						}
 					}
