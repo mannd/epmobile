@@ -275,11 +275,11 @@ public class Warfarin extends EpActivity implements
 			doseChange.lowEnd = 5;
 			doseChange.highEnd = 15;
 			doseChange.direction = Direction.INCREASE;
-		} else if (inr > 3.5 && inr < 4.6) {
+		} else if (inr > 3.5 && inr <= 4.6) {
 			doseChange.lowEnd = 5;
 			doseChange.highEnd = 15;
 			doseChange.direction = Direction.DECREASE;
-		} else if (inr >= 4.6 && inr < 5.2) {
+		} else if (inr > 4.6 && inr <= 5.2) {
 			doseChange.lowEnd = 10;
 			doseChange.highEnd = 20;
 			doseChange.message = "Withhold no dose or one dose.";
@@ -299,7 +299,7 @@ public class Warfarin extends EpActivity implements
 		if (inr < 2.0) {
 			doseChange.lowEnd = 5;
 			doseChange.highEnd = 20;
-		} else if (inr >= 3.0 && inr < 3.6) {
+		} else if (inr > 3.0 && inr < 3.6) {
 			doseChange.lowEnd = 5;
 			doseChange.highEnd = 15;
 			doseChange.direction = Direction.DECREASE;
