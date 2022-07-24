@@ -5,6 +5,10 @@ See [keepachangelog.com](https://keepachangelog.com/en/1.0.0/) for information o
 
 This project roughly utilizes [Semantic Versioning](https://semver.org/spec/v2.0.0.html).  In some versions the PATCH of MAJOR.MINOR.PATCH is omitted.  Note also that unreleased versions are omitted.
 
+## [2.28.0] - 2022-07-24
+### Fixed
+- Fixed gap in Warfarin calculator dose ranges
+
 ## [2.27.0] - 2022-05-27
 ### Changes
 - Update ARVC calculator to reflect new parameters based on updated reference
