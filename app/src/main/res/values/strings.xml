@@ -1193,7 +1193,7 @@
     <string name="qtc_details_title">Corrected QT</string>
     <string name="qtm_reference">Bogossian H et al. New formula for evaluation of
         the QT interval in patients with left bundle branch block. Heart Rhythm
-        2004;11:2273-2277.</string>
+        2014;11:2273-2277.</string>
     <string name="qtrrqrs_formula">QTrr,qrs = QT - 155 x (60/HR - 1)
         - 0.93 x (QRS - 139) + k, k = -22 ms for men and -34 ms for women</string>
     <string name="qtrrqrs_reference">Rautaharju P et al. Assessment of prolonged QT
