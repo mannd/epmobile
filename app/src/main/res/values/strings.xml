@@ -1194,6 +1194,11 @@
     <string name="qtm_reference">Bogossian H et al. New formula for evaluation of
         the QT interval in patients with left bundle branch block. Heart Rhythm
         2014;11:2273-2277.</string>
+    <string name="qtm_new_reference">Bogossian H, et al.
+        QTc evaluation in patients with bundle branch block.
+        Int J Cardiol Heart Vasc. 2020;30:100636.</string>
+    <string name="qtm_new_details_title">Modified QT (Bogossian)</string>
+    <string name="qtmc_new_details_title">Corrected Modified QT (Bogossian)</string>
     <string name="qtrrqrs_formula">QTrr,qrs = QT - 155 x (60/HR - 1)
         - 0.93 x (QRS - 139) + k, k = -22 ms for men and -34 ms for women</string>
     <string name="qtrrqrs_reference">Rautaharju P et al. Assessment of prolonged QT
@@ -1216,6 +1221,14 @@
     <string name="qtmc_details" tools:ignore="PluralsCandidate">QTmc = %1$d msec.\n\nUse: Corrects QTm for heart rate,
         in this case using the Bazett formula.\n\nFormula: QTmc = QTm corrected
         for rate using Bazett formula\n\nNormal values:
+        Presumably the same as QTc.\n\nReference: %2$s</string>
+    <string name="qtm_new_details" tools:ignore="PluralsCandidate">QTm = %1$d msec.\n\nUse: Attempts to correct for the
+        prolongation of the QT interval attributable to QRS prolongation.
+        \n\nFormula: QTm = QTb - 0.50 * QRSb\n\nNormal values:
+        Not defined.\n\nReference: %2$s</string>
+    <string name="qtmc_new_details" tools:ignore="PluralsCandidate">QTmc = %1$d msec.\n\nUse: Corrects QTm for heart rate,
+        in this case using the Bazett formula.\n\nFormula: QTmc = QTm corrected
+        using selected QTc formula.\n\nNormal values:
         Presumably the same as QTc.\n\nReference: %2$s</string>
     <string name="qtrrqrs_details" tools:ignore="PluralsCandidate">QTrr,qrs = %1$d msec.\n\nUse:
         Corrects QT for rate, QRS duration and sex.\n\nFormula: %2$s\n\nNormal values:

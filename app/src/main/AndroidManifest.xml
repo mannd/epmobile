@@ -16,7 +16,8 @@
 
         <activity
             android:name=".EpMobile"
-            android:label="@string/main_index_title">
+            android:label="@string/main_index_title"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
