@@ -75,7 +75,7 @@ public class QtcCalculator {
 	}
 
 	public static long qtCorrectedForLBBB(int qt, int qrs) {
-        return Math.round(qt - (qrs * 0.485));
+        return Math.round(qt - (qrs * 0.5));
     }
 
     public static long jtInterval(int qt, int qrs) {
@@ -95,9 +95,9 @@ public class QtcCalculator {
 
     // From https://www.jecgonline.com/article/S0022-0736(17)30455-7/fulltext?platform=hootsuite#s0050
     // note: assumes LBBB, values in msec
-    public static long preLbbbQtc(int qt, int rr, int qrs, boolean isMale) {
+    public static long preLbbbQtc(int qt, int rr, int qrs, boolean isMale, QtcFormula formula) {
 		int k = isMale ? 95 : 88;
-		int qtc = calculate(rr, qt, QtcFormula.BAZETT);
+		int qtc = calculate(rr, qt, formula);
 		return qtc - qrs + k;
 	}
 

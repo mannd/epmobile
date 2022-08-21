@@ -46,6 +46,7 @@ public class QtcIvcdResults extends EpActivity {
     private int qtrrqrs;
     private int prelbbbqtc;
     private boolean isLBBB;
+    private String formulaName;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -62,13 +63,14 @@ public class QtcIvcdResults extends EpActivity {
         qtrrqrs = getIntent().getIntExtra("QTrrqrs", 0);
         prelbbbqtc = getIntent().getIntExtra("preLbbbQtc", 0);
         isLBBB = getIntent().getBooleanExtra("isLBBB", false);
+        formulaName = getIntent().getStringExtra("QTcFormula");
 
         String qtMessage = makeResult(qt, "QT");
         String qtcMessage = makeResult(qtc, "QTc");
         String jtMessage = makeResult(jt, "JT");
         String jtcMessage = makeResult(jtc, "JTc");
-        String qtmMessage = isLBBB ? makeResult(qtm, "QTm") : getString(R.string.qtm_lbbb_error_message);
-        String qtmcMessage = isLBBB ? makeResult(qtmc, "QTmc") : getString(R.string.qtmc_lbbb_error_message);
+        String qtmMessage =  makeResult(qtm, "QTm");
+        String qtmcMessage =  makeResult(qtmc, "QTmc");
         String qtrrqrsMessage = makeResult(qtrrqrs, "QTrr,qrs");
         String prelbbbqtcMessage = isLBBB ? makeResult(prelbbbqtc, "preLBBBQTc") : getString(R.string.prelbbbqtc_lbbb_error_message);
         String infoMessage = getString(R.string.qt_ivcd_info_message);
@@ -126,7 +128,7 @@ public class QtcIvcdResults extends EpActivity {
     }
 
     private void showQTc() {
-        String message = getString(R.string.qtc_details, qtc,
+        String message = getString(R.string.qtc_details, qtc, formulaName,
                 getString(R.string.qtc_reference));
         showDetails(getString(R.string.qtc_details_title), message);
     }
@@ -142,15 +144,14 @@ public class QtcIvcdResults extends EpActivity {
     }
 
     private void showQTM() {
-        String message = isLBBB ? getString(R.string.qtm_details, qtm, getString(R.string.qtm_reference))
-                : getString(R.string.qtm_lbbb_error_message);
-        showDetails(getString(R.string.qtm_details_title), message);
+        String message = getString(R.string.qtm_details, qtm, getString(R.string.qtm_new_reference));
+        showDetails(getString(R.string.qtm_new_details_title), message);
     }
 
     private void showQTMC() {
-        String message = isLBBB? getString(R.string.qtmc_details, qtmc, getString(R.string.qtm_reference))
-                : getString(R.string.qtmc_lbbb_error_message);
-        showDetails(getString(R.string.qtmc_details_title), message);
+        String message = getString(R.string.qtmc_details, qtmc, formulaName,
+                getString(R.string.qtm_new_reference));
+        showDetails(getString(R.string.qtmc_new_details_title), message);
     }
 
     private void showQTrrqrs() {
