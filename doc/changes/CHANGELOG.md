@@ -5,6 +5,15 @@ See [keepachangelog.com](https://keepachangelog.com/en/1.0.0/) for information o
 
 This project roughly utilizes [Semantic Versioning](https://semver.org/spec/v2.0.0.html).  In some versions the PATCH of MAJOR.MINOR.PATCH is omitted.  Note also that unreleased versions are omitted.
 
+## [2.29.0] - 2022-08-20
+### Changes
+- Update QTm and QTmc to 2020 update of Bogossian formula
+- QTc formula can now be selected in QTc with IVCD module
+### Fixed
+- Minor formating changes in QTc calculators
+- Text in QTc IVCD results reflects recommended QTc formulas to be
+  used with each IVCD correction formula
+
 ## [2.28.0] - 2022-07-24
 ### Fixed
 - Fixed gap in Warfarin calculator dose ranges
