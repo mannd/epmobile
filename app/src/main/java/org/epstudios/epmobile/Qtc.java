@@ -41,6 +41,27 @@ public class Qtc extends EpActivity implements OnClickListener {
 		INTERVAL, RATE
 	}
 
+	private Spinner intervalRateSpinner;
+	private TextView qtcTextView;
+	private EditText rrEditText;
+	private EditText qtEditText;
+	private TextView qtcFormulaTextView;
+	private String qtcFormula;
+	private OnItemSelectedListener itemListener;
+	private Spinner qtcFormulaSpinner;
+
+	private int qtcUpperLimit;
+	private final static int QTC_UPPER_LIMIT = 440;
+	private final static int INTERVAL_SELECTION = 0;
+	private final static int RATE_SELECTION = 1;
+
+	private final static int BAZETT_FORMULA = 0;
+	private final static int FRIDERICIA_FORMULA = 1;
+	private final static int SAGIE_FORMULA = 2;
+	private final static int HODGES_FORMULA = 3;
+
+	private IntervalRate defaultIntervalRateSelection = IntervalRate.INTERVAL;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -79,27 +100,6 @@ public class Qtc extends EpActivity implements OnClickListener {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-
-	private Spinner intervalRateSpinner;
-	private TextView qtcTextView;
-	private EditText rrEditText;
-	private EditText qtEditText;
-	private TextView qtcFormulaTextView;
-	private String qtcFormula;
-	private OnItemSelectedListener itemListener;
-	private Spinner qtcFormulaSpinner;
-
-	private int qtcUpperLimit;
-	private final static int QTC_UPPER_LIMIT = 440;
-	private final static int INTERVAL_SELECTION = 0;
-	private final static int RATE_SELECTION = 1;
-
-	private final static int BAZETT_FORMULA = 0;
-	private final static int FRIDERICIA_FORMULA = 1;
-	private final static int SAGIE_FORMULA = 2;
-	private final static int HODGES_FORMULA = 3;
-
-	private IntervalRate defaultIntervalRateSelection = IntervalRate.INTERVAL;
 
 	@Override
 	public void onClick(View v) {

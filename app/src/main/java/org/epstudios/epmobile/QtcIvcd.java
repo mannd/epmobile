@@ -36,6 +36,8 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 
+import org.epstudios.epmobile.QtcCalculator.QtcFormula;
+
 @SuppressWarnings("SpellCheckingInspection")
 public class QtcIvcd extends EpActivity implements View.OnClickListener {
     private enum IntervalRate {
@@ -48,19 +50,28 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
     private EditText qtEditText;
     private EditText qrsEditText;
     private CheckBox lbbbCheckBox;
-
+    private Spinner qtcFormulaSpinner;
 
     private final static int INTERVAL_SELECTION = 0;
     private final static int RATE_SELECTION = 1;
 
+    private final static int BAZETT_FORMULA = 0;
+    private final static int FRIDERICIA_FORMULA = 1;
+    private final static int SAGIE_FORMULA = 2;
+    private final static int HODGES_FORMULA = 3;
+
+    private String qtcFormula;
+
     private IntervalRate defaultIntervalRateSelection = IntervalRate.INTERVAL;
+
+    private AdapterView.OnItemSelectedListener itemListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.qtcivcd);
-	initToolbar();
-	
+        initToolbar();
+
         View calculateQtcButton = findViewById(R.id.calculate_button);
         calculateQtcButton.setOnClickListener(this);
         View clearButton = findViewById(R.id.clear_button);
@@ -72,10 +83,11 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
         qrsEditText = findViewById(R.id.qrsEditText);
         sexRadioGroup = findViewById(R.id.sexRadioGroup);
         lbbbCheckBox = findViewById(R.id.lbbbCheckBox);
-
+        qtcFormulaSpinner = findViewById(R.id.qtc_formula_spinner);
 
         getPrefs();
         setAdapters();
+        setFormulaAdapters();
         clearEntries();
 
     }
@@ -132,6 +144,60 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
         intervalRateSpinner.setOnItemSelectedListener(itemListener);
     }
 
+    private void setFormulaAdapters() {
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this, R.array.formula_names,
+                android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        qtcFormulaSpinner.setAdapter(adapter);
+        int formula = BAZETT_FORMULA;
+        QtcCalculator.QtcFormula f = getQtcFormula(qtcFormula);
+        switch (f) {
+            case BAZETT:
+                // already initialized to BAZETT_FORMULA
+                break;
+            case FRIDERICIA:
+                formula = FRIDERICIA_FORMULA;
+                break;
+            case SAGIE:
+                formula = SAGIE_FORMULA;
+                break;
+            case HODGES:
+                formula = HODGES_FORMULA;
+                break;
+        }
+        qtcFormulaSpinner.setSelection(formula);
+        itemListener = new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View v,
+                                       int position, long id) {
+                updateQtcFormula();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // do nothing
+            }
+
+        };
+
+        qtcFormulaSpinner.setOnItemSelectedListener(itemListener);
+    }
+
+    private QtcCalculator.QtcFormula getQtcFormula(String name) {
+        switch (name) {
+            case "FRIDERICIA":
+                return QtcCalculator.QtcFormula.FRIDERICIA;
+            case "SAGIE":
+                return QtcCalculator.QtcFormula.SAGIE;
+            case "HODGES":
+                return QtcCalculator.QtcFormula.HODGES;
+            case "BAZETT":
+            default:
+                return QtcCalculator.QtcFormula.BAZETT;
+        }
+    }
+
     private void updateIntervalRateSelection() {
         IntervalRate intervalRateSelection = getIntervalRateSelection();
         if (intervalRateSelection.equals(IntervalRate.INTERVAL))
@@ -140,13 +206,30 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
             rrEditText.setHint(getString(R.string.hr_hint));
     }
 
+    private void updateQtcFormula() {
+        int result = qtcFormulaSpinner.getSelectedItemPosition();
+        switch (result) {
+            case BAZETT_FORMULA:
+                qtcFormula = "BAZETT";
+                break;
+            case FRIDERICIA_FORMULA:
+                qtcFormula = "FRIDERICIA";
+                break;
+            case SAGIE_FORMULA:
+                qtcFormula = "SAGIE";
+                break;
+            case HODGES_FORMULA:
+                qtcFormula = "HODGES";
+                break;
+        }
+    }
+
     private IntervalRate getIntervalRateSelection() {
         String result = intervalRateSpinner.getSelectedItem().toString();
         if (result.startsWith("RR"))
             return IntervalRate.INTERVAL;
         else
             return IntervalRate.RATE;
-
     }
 
     private static class ShortQrsException extends Exception {}
@@ -180,14 +263,16 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
             else if (qrs < 120) {
                 throw new ShortQrsException();
             }
-            QtcCalculator.QtcFormula formula = QtcCalculator.QtcFormula.BAZETT;
+            QtcCalculator.QtcFormula formula = getQtcFormula(qtcFormula);
             int qtc = QtcCalculator.calculate(interval, qt, formula);
             int jt = (int) QtcCalculator.jtInterval(qt, qrs);
-            int jtc = QtcCalculator.jtCorrected(qt, interval, qrs);
-            int qtm = isLBBB ? (int) QtcCalculator.qtCorrectedForLBBB(qt, qrs) : 0;
-            int qtmc = isLBBB ? QtcCalculator.calculate(interval, qtm, formula) : 0;
+            int jtc = qtc - qrs;
+            // We no longer use BAZETT by default in calculating JTc.
+            //int jtc = QtcCalculator.jtCorrected(qt, interval, qrs);
+            int qtm = (int) QtcCalculator.qtCorrectedForLBBB(qt, qrs);
+            int qtmc = QtcCalculator.calculate(interval, qtm, formula);
             int qtrrqrs = (int) QtcCalculator.qtRrIvcd(qt, rate, qrs, isMale);
-            int preLbbbQtc = (int) QtcCalculator.preLbbbQtc(qt, interval, qrs, isMale);
+            int preLbbbQtc = (int) QtcCalculator.preLbbbQtc(qt, interval, qrs, isMale, formula);
 
             Intent intent = new Intent(this, QtcIvcdResults.class);
             intent.putExtra("isLBBB", isLBBB);
@@ -200,6 +285,7 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
             intent.putExtra("QTmc", qtmc);
             intent.putExtra("QTrrqrs", qtrrqrs);
             intent.putExtra("preLbbbQtc", preLbbbQtc);
+            intent.putExtra("QTcFormula", formula.name());
             startActivity(intent);
         } catch (NumberFormatException e) {
             showError(getString(R.string.qt_calculator_error));
@@ -226,6 +312,7 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
     private void getPrefs() {
         SharedPreferences prefs = PreferenceManager
                 .getDefaultSharedPreferences(getBaseContext());
+        qtcFormula = prefs.getString("qtc_formula", "BAZETT");
         String intervalRatePreference = prefs.getString("interval_rate",
                 "INTERVAL");
         if (intervalRatePreference != null){
