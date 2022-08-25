@@ -75,11 +75,11 @@ public class QtcCalculatorTest extends TestCase {
 
 	public void testQTcLBBB() {
 		long result = QtcCalculator.qtCorrectedForLBBB(360, 144);
-		assertTrue(result == 290);
+		assertEquals(288, result);
 		result = QtcCalculator.qtCorrectedForLBBB(444, 197);
-		assertTrue(result == 348);
+		assertEquals(346, result);
 		result = QtcCalculator.qtCorrectedForLBBB(400, 0);
-		assertTrue(result == 400);
+		assertEquals(400, result);
 	}
 
 	public void testQTcBBBSex() {
@@ -95,9 +95,9 @@ public class QtcCalculatorTest extends TestCase {
 	}
 
 	public void testPreQtcLbbb() {
-		long result = QtcCalculator.preLbbbQtc(	333, 789, 166, true);
+		long result = QtcCalculator.preLbbbQtc(	333, 789, 166, true, QtcFormula.BAZETT);
 		assertEquals(304, result);
-		result = QtcCalculator.preLbbbQtc(	333, 789, 166, false);
+		result = QtcCalculator.preLbbbQtc(	333, 789, 166, false, QtcFormula.BAZETT);
 		assertEquals(297, result);
 	}
 
