@@ -29,7 +29,7 @@ public abstract class DrugCalculator extends EpActivity implements
 	protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.drugcalculator);
-	initToolbar();
+		initToolbar();
 	
 		View calculateDoseButton = findViewById(R.id.calculate_button);
 		calculateDoseButton.setOnClickListener(this);

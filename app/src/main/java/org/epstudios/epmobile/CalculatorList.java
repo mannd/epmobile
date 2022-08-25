@@ -35,12 +35,12 @@ public class CalculatorList extends EpActivity {
 			else if (selection
 					.equals(getString(R.string.ibw_calculator_title)))
 				ibwCalculator();
-else if (selection.equals(getString(R.string.creatinine_clearance_calculator_title)))
-creatinineClearanceCalculator();
+			else if (selection.equals(getString(R.string.creatinine_clearance_calculator_title)))
+				creatinineClearanceCalculator();
 			else if (selection.equals(getString(R.string.qtc_ivcd_calculator_title)))
 				qtcIvcdCalculator();
-
-
+			else if (selection.equals(getString(R.string.gfr_calculator_title)))
+				gfrCalculator();
 		});
 	}
 
@@ -75,7 +75,10 @@ creatinineClearanceCalculator();
     }
 
 	private void qtcIvcdCalculator() {
-        startActivity(new Intent(this, QtcIvcd.class));
+		startActivity(new Intent(this, QtcIvcd.class));
 	}
 
+	private void gfrCalculator() {
+		startActivity(new Intent(this, GfrCalculator.class));
+	}
 }

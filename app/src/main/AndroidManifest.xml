@@ -259,6 +259,8 @@
                   android:label="@string/long_qt_table_title" />
         <activity android:name=".QTProlongationRisk"
             android:label="@string/qt_prolongation_risk_title" />
+        <activity android:name=".GfrCalculator"
+            android:label="@string/gfr_calculator_title" />
     </application>
 
 </manifest>

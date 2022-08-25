@@ -80,6 +80,7 @@
         <item>@string/day_calculator_title</item>
         <item>@string/drug_dose_calculator_list_title</item>
         <item>@string/cycle_length_calculator_title</item>
+        <item>@string/gfr_calculator_title</item>
         <item>@string/qtc_calculator_title</item>
         <item>@string/qtc_ivcd_calculator_title</item>
     </array>
@@ -200,4 +201,5 @@
         <item>@string/syncope_sf_rule_title</item>
     </array>
 
+    <string name="gfr_calculator_title">GFR Calculator</string>
 </resources>
