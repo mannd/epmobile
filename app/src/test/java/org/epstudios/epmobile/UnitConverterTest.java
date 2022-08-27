@@ -1,3 +1,5 @@
+package org.epstudios.epmobile;
+
 import junit.framework.TestCase;
 
 import org.epstudios.epmobile.UnitConverter;

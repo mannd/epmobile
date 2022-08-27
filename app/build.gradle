@@ -5,7 +5,7 @@ android {
 
     defaultConfig {
         applicationId "org.epstudios.epmobile"
-        minSdkVersion 14
+        minSdkVersion 21
         targetSdkVersion 33
         versionCode 75
         versionName "2.29.1"
