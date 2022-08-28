@@ -33,6 +33,9 @@ public abstract class EpActivity extends AppCompatActivity {
         super.onCreateOptionsMenu(menu);
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
+        if (hideNotes()) {
+            menu.getItem(0).setVisible(false);
+        }
         return true;
     }
 
@@ -51,6 +54,11 @@ public abstract class EpActivity extends AppCompatActivity {
             finish();
             return true;
         }
+        else if (itemId == R.id.notes) {
+            if (!hideNotes()) {
+                showNotes();
+            }
+        }
         return false;
     }
 
@@ -65,6 +73,14 @@ public abstract class EpActivity extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
+    }
+
+    protected boolean hideNotes() {
+        return true;
+    }
+
+    protected void showNotes() {
+        System.out.print("showNotes should be overriden.");
     }
 
 }

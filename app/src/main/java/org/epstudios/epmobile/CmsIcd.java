@@ -86,10 +86,13 @@ public class CmsIcd extends DiagnosticScore {
 	}
 
 	@Override
-	public void onClick(View v) {
-		super.onClick(v);
-		if (v.getId() == R.id.instructions_button)
-			displayInstructions();
+	protected void showNotes() {
+		displayInstructions();
+	}
+
+	@Override
+	protected boolean hideNotes() {
+		return false;
 	}
 
 	private void displayInstructions() {
