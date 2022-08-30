@@ -36,8 +36,6 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 
-import org.epstudios.epmobile.QtcCalculator.QtcFormula;
-
 @SuppressWarnings("SpellCheckingInspection")
 public class QtcIvcd extends EpActivity implements View.OnClickListener {
     private enum IntervalRate {
@@ -63,8 +61,6 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
     private String qtcFormula;
 
     private IntervalRate defaultIntervalRateSelection = IntervalRate.INTERVAL;
-
-    private AdapterView.OnItemSelectedListener itemListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -167,7 +163,8 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
                 break;
         }
         qtcFormulaSpinner.setSelection(formula);
-        itemListener = new AdapterView.OnItemSelectedListener() {
+        // do nothing
+        AdapterView.OnItemSelectedListener itemListener = new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View v,
                                        int position, long id) {
@@ -315,12 +312,10 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
         qtcFormula = prefs.getString("qtc_formula", "BAZETT");
         String intervalRatePreference = prefs.getString("interval_rate",
                 "INTERVAL");
-        if (intervalRatePreference != null){
-            if (intervalRatePreference.equals("INTERVAL"))
-                defaultIntervalRateSelection = IntervalRate.INTERVAL;
-            else
-                defaultIntervalRateSelection = IntervalRate.RATE;
-        }
+        if (intervalRatePreference.equals("INTERVAL"))
+            defaultIntervalRateSelection = IntervalRate.INTERVAL;
+        else
+            defaultIntervalRateSelection = IntervalRate.RATE;
     }
 
 }

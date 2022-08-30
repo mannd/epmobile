@@ -47,12 +47,6 @@
     Make sure all lists are in alphabetic order.  The order
     below may change if the strings are translated into a different language.
     -->
-    <array name="main_index">
-        <item>@string/calculator_list_title</item>
-        <item>@string/diagnosis_list_title</item>
-        <item>@string/reference_list_title</item>
-        <item>@string/risk_score_list_title</item>
-    </array>
     <array name="diagnosis_list">
         <item>@string/arvc_old_criteria_title</item>
         <item>@string/arvc_2010_criteria_title</item>

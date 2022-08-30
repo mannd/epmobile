@@ -303,16 +303,14 @@ public abstract class DrugCalculator extends EpActivity implements
 				"KG");
 		String creatinineUnitPreference = prefs.getString(
 				getString(R.string.creatinine_clearance_unit_key), "MG");
-		if (weightUnitPreference != null && creatinineUnitPreference != null) {
-			if (weightUnitPreference.equals("KG"))
-				defaultWeightUnitSelection = WeightUnit.KG;
-			else
-				defaultWeightUnitSelection = WeightUnit.LB;
-			if (creatinineUnitPreference.equals("MG"))
-				defaultCreatinineUnitSelection = CreatinineUnit.MG;
-			else
-				defaultCreatinineUnitSelection = CreatinineUnit.MMOL;
-		}
+		if (weightUnitPreference.equals("KG"))
+			defaultWeightUnitSelection = WeightUnit.KG;
+		else
+			defaultWeightUnitSelection = WeightUnit.LB;
+		if (creatinineUnitPreference.equals("MG"))
+			defaultCreatinineUnitSelection = CreatinineUnit.MG;
+		else
+			defaultCreatinineUnitSelection = CreatinineUnit.MMOL;
 	}
 
 	protected String getMessage(int crCl, double age) {

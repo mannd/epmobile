@@ -31,6 +31,7 @@ public class ArvcRiskModel {
     // Durations below from paper but not currently used in app.
     //public static final double year4 = 0.837312364505388;
     //public static final double year3 = 0.849912331481654;
+    @SuppressWarnings("CommentedOutCode")
     public static final double year2 = 0.900806775419695;
     public static final double year1 = 0.93761042413069;
 

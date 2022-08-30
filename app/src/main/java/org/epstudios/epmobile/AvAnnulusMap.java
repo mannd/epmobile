@@ -1,7 +1,6 @@
 package org.epstudios.epmobile;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.ViewGroup.LayoutParams;
@@ -15,9 +14,9 @@ public class AvAnnulusMap extends EpActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-        setContentView(R.layout.avannulusmap);
-	initToolbar();
-	ImageView background = findViewById(R.id.avannulus_image);
+		setContentView(R.layout.avannulusmap);
+		initToolbar();
+		ImageView background = findViewById(R.id.avannulus_image);
 		background.setImageResource(R.drawable.modgrayavannulus);
 		frame = findViewById(R.id.avannulus_frame);
 

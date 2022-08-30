@@ -38,10 +38,6 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 		CM, IN
 	}
 
-//	private enum WeightMeasurement {
-//		IBW, ABW, ORIGINALW
-//	}
-
 	private final static int KG_SELECTION = 0;
 	private final static int LB_SELECTION = 1;
 	private final static int CM_SELECTION = 0;
@@ -315,16 +311,14 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
 				"KG");
 		String heightUnitPreference = prefs.getString("default_height_unit",
 				"CM");
-		if (weightUnitPreference != null && heightUnitPreference != null) {
-			if (weightUnitPreference.equals("KG"))
-				defaultWeightUnitSelection = WeightUnit.KG;
-			else
-				defaultWeightUnitSelection = WeightUnit.LB;
-			if (heightUnitPreference.equals("CM"))
-				defaultHeightUnitSelection = HeightUnit.CM;
-			else
-				defaultHeightUnitSelection = HeightUnit.IN;
-		}
+		if (weightUnitPreference.equals("KG"))
+			defaultWeightUnitSelection = WeightUnit.KG;
+		else
+			defaultWeightUnitSelection = WeightUnit.LB;
+		if (heightUnitPreference.equals("CM"))
+			defaultHeightUnitSelection = HeightUnit.CM;
+		else
+			defaultHeightUnitSelection = HeightUnit.IN;
 	}
 
 }

@@ -70,17 +70,17 @@ public class GfrCalculator extends  EpActivity implements View.OnClickListener {
     }
 
     private void setAdapters() {
-        ArrayAdapter<CharSequence> creatAdapter = ArrayAdapter
+        ArrayAdapter<CharSequence> creatinineAdapter = ArrayAdapter
                 .createFromResource(this, R.array.creatinine_unit_labels,
                         android.R.layout.simple_spinner_item);
-        creatAdapter
+        creatinineAdapter
                 .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        creatinineSpinner.setAdapter(creatAdapter);
+        creatinineSpinner.setAdapter(creatinineAdapter);
 //        if (defaultCreatinineUnitSelection.equals(DrugCalculator.CreatinineUnit.MG))
 //            creatinineSpinner.setSelection(MG_SELECTION);
 //        else
 //            creatinineSpinner.setSelection(MMOL_SELECTION);
-        AdapterView.OnItemSelectedListener creatItemListener = new AdapterView.OnItemSelectedListener() {
+        AdapterView.OnItemSelectedListener creatinineItemListener = new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View v,
                                        int position, long id) {
@@ -93,7 +93,7 @@ public class GfrCalculator extends  EpActivity implements View.OnClickListener {
             }
 
         };
-        creatinineSpinner.setOnItemSelectedListener(creatItemListener);
+        creatinineSpinner.setOnItemSelectedListener(creatinineItemListener);
     }
 
     private void updateCreatinineUnitSelection() {

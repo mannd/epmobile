@@ -84,7 +84,7 @@ public abstract class EpActivity extends AppCompatActivity {
     }
 
     protected void showNotes() {
-        System.out.print("showNotes should be overriden.");
+        System.out.print("showNotes should be overridden.");
     }
 
     protected void displayNotes(@StringRes int titleId, @StringRes int messageId) {

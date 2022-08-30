@@ -277,22 +277,18 @@ public class Qtc extends EpActivity implements OnClickListener {
 		qtcFormula = prefs.getString("qtc_formula", "BAZETT");
 		String intervalRatePreference = prefs.getString("interval_rate",
 				"INTERVAL");
-		if (intervalRatePreference != null) {
-			if (intervalRatePreference.equals("INTERVAL"))
-				defaultIntervalRateSelection = IntervalRate.INTERVAL;
-			else
-				defaultIntervalRateSelection = IntervalRate.RATE;
-		}
+		if (intervalRatePreference.equals("INTERVAL"))
+			defaultIntervalRateSelection = IntervalRate.INTERVAL;
+		else
+			defaultIntervalRateSelection = IntervalRate.RATE;
 		String s = prefs.getString("maximum_qtc", "");
-		if (s != null) {
-			try {
-				qtcUpperLimit = Integer.parseInt(s);
-			} catch (NumberFormatException e) {
-				qtcUpperLimit = QTC_UPPER_LIMIT;
-				SharedPreferences.Editor editor = prefs.edit();
-				editor.putString("maximum_qtc", String.valueOf(QTC_UPPER_LIMIT));
-				editor.apply();
-			}
+		try {
+			qtcUpperLimit = Integer.parseInt(s);
+		} catch (NumberFormatException e) {
+			qtcUpperLimit = QTC_UPPER_LIMIT;
+			SharedPreferences.Editor editor = prefs.edit();
+			editor.putString("maximum_qtc", String.valueOf(QTC_UPPER_LIMIT));
+			editor.apply();
 		}
 	}
 
