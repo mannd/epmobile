@@ -18,8 +18,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 package org.epstudios.epmobile;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
@@ -29,7 +33,7 @@ import android.view.MenuItem;
 //adds option menu functions
 public abstract class EpActivity extends AppCompatActivity {
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(@NonNull Menu menu) {
         super.onCreateOptionsMenu(menu);
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
@@ -83,4 +87,12 @@ public abstract class EpActivity extends AppCompatActivity {
         System.out.print("showNotes should be overriden.");
     }
 
+    protected void displayNotes(@StringRes int titleId, @StringRes int messageId) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(titleId);
+        builder.setMessage(messageId);
+        builder.setPositiveButton(getString(R.string.ok_button_label), null);
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
 }

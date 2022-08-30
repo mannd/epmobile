@@ -96,13 +96,10 @@ public class CmsIcd extends DiagnosticScore {
 	}
 
 	private void displayInstructions() {
-		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setMessage(getString(R.string.cms_icd_instructions));
-		builder.setTitle(getString(R.string.icd_calculator_title));
-		builder.setPositiveButton(getString(R.string.ok_button_label), null);
-		AlertDialog alert = builder.create();
-		alert.show();
+		displayNotes(R.string.icd_calculator_title, R.string.cms_icd_instructions);
 	}
+
+
 
 	@Override
 	protected void calculateResult() {

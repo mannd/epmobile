@@ -23,6 +23,7 @@
                 <Button
                     android:id="@+id/calculators_button"
                     android:layout_gravity="center_vertical"
+                    android:layout_margin="15dip"
                     android:width="150dip"
                     android:height="150dip"
                     android:backgroundTint="@android:color/holo_green_light"
@@ -34,6 +35,7 @@
                 <Button
                     android:id="@+id/diagnosis_button"
                     android:layout_gravity="center_vertical"
+                    android:layout_margin="15dip"
                     android:width="150dip"
                     android:height="150dip"
                     android:backgroundTint="@android:color/holo_orange_light"
@@ -52,6 +54,7 @@
                 <Button
                     android:id="@+id/reference_button"
                     android:layout_gravity="center_vertical"
+                    android:layout_margin="15dip"
                     android:width="150dip"
                     android:height="150dip"
                     android:backgroundTint="@android:color/holo_blue_light"
@@ -63,10 +66,11 @@
                 <Button
                     android:id="@+id/risk_scores_button"
                     android:layout_gravity="center_vertical"
+                    android:layout_margin="15dip"
                     android:width="150dip"
                     android:height="150dip"
                     android:backgroundTint="@android:color/holo_red_light"
-                    android:drawableTop="@drawable/ic_dice_svgrepo_com"
+                    android:drawableTop="@drawable/ic_gauge_svgrepo_com"
                     android:padding="20dip"
                     android:textColor="#000000"
                     android:text="@string/risk_score_list_title" />
