@@ -5,6 +5,11 @@ See [keepachangelog.com](https://keepachangelog.com/en/1.0.0/) for information o
 
 This project roughly utilizes [Semantic Versioning](https://semver.org/spec/v2.0.0.html).  In some versions the PATCH of MAJOR.MINOR.PATCH is omitted.  Note also that unreleased versions are omitted.
 
+## [2.29.1] - 2022-08-30
+### Fixed
+- Fix bottom system toolbar not being dark in dark mode on Android 10
+- Fix bug in Entrainment calculator
+
 ## [2.29.0] - 2022-08-20
 ### Changes
 - Update QTm and QTmc to 2020 update of Bogossian formula

@@ -155,7 +155,8 @@ public class Entrainment extends EpActivity implements OnClickListener {
 								message += getString(R.string.entrainment_egm_match_message);
 							else
 								message += getString(R.string.entrainment_egm_no_match_message);
-							boolean hasHighChanceOfSuccess = ppiMinusTcl <= 10 && egmQrs / tcl <= 0.7
+							// Note: iOS version uses doubles, so no bug there.
+							boolean hasHighChanceOfSuccess = ppiMinusTcl <= 10 && egmQrs / (double) tcl <= 0.7
 									&& egmMinusQrs <= 10;
 							if (hasHighChanceOfSuccess) {
 								message += getString(R.string.entrainment_high_chance_success);

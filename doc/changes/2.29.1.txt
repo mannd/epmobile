@@ -1,0 +1,4 @@
+EP Mobile 2.29.1 Release Notes
+Changes since 2.29.0
+* Fix bottom system toolbar not being dark in dark mode on Android 10
+* Fix bug in Entrainment calculator
