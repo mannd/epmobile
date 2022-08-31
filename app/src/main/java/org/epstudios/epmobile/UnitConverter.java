@@ -21,22 +21,22 @@ package org.epstudios.epmobile;
 import java.text.DecimalFormat;
 
 public class UnitConverter {
-	public static double lbsToKgs(double weight) {
-		final double conversionFactor = 0.45359237;
-		return weight * conversionFactor;
-	}
+    public static double lbsToKgs(double weight) {
+        final double conversionFactor = 0.45359237;
+        return weight * conversionFactor;
+    }
 
-	public static double kgsToLbs(double weight) {
-		final double conversionFactor = 2.20462262;
-		return weight * conversionFactor;
-	}
+    public static double kgsToLbs(double weight) {
+        final double conversionFactor = 2.20462262;
+        return weight * conversionFactor;
+    }
 
-	public static double cmsToIns(double distance) {
-		final double conversionFactor = 0.39370;
-		return distance * conversionFactor;
-	}
+    public static double cmsToIns(double distance) {
+        final double conversionFactor = 0.39370;
+        return distance * conversionFactor;
+    }
 
-	public static String trimmedTrailingZeros(double value) {
-		return new DecimalFormat("#.#").format(value);
-	}
+    public static String trimmedTrailingZeros(double value) {
+        return new DecimalFormat("#.#").format(value);
+    }
 }

@@ -28,7 +28,7 @@ import android.widget.RadioGroup;
 public class AtriaStroke extends RiskScore {
 
     private RadioGroup radioGroup;
-    
+
     @Override
     protected String getFullReference() {
         return getString(R.string.atria_stroke_full_reference);
@@ -71,16 +71,13 @@ public class AtriaStroke extends RiskScore {
         if (radioButtonId == R.id.age85) {
             result += (hasStrokeHx ? 9 : 6);
             addSelectedRisk(getString(R.string.atria_stroke_age_85));
-        }
-        else if (radioButtonId == R.id.age75) {
+        } else if (radioButtonId == R.id.age75) {
             result += (hasStrokeHx ? 7 : 5);
             addSelectedRisk(getString(R.string.atria_stroke_age_75));
-        }
-        else if (radioButtonId == R.id.age65) {
+        } else if (radioButtonId == R.id.age65) {
             result += (hasStrokeHx ? 7 : 3);
             addSelectedRisk(getString(R.string.atria_stroke_age_65));
-        }
-        else if (radioButtonId == R.id.agelessthan65) {
+        } else if (radioButtonId == R.id.agelessthan65) {
             result += hasStrokeHx ? 8 : 0;
             // Don't put in selectedRisks if risk is 0.
             if (hasStrokeHx) {

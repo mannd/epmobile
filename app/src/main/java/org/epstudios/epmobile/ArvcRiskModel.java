@@ -70,7 +70,7 @@ public class ArvcRiskModel {
     }
 
     public double calculateRisk(double baselineSurvival, double linearPredictor) {
-        return roundToOnePlace( 100 * (1.0 - pow(baselineSurvival, exp(linearPredictor))));
+        return roundToOnePlace(100 * (1.0 - pow(baselineSurvival, exp(linearPredictor))));
     }
 
     private double roundToOnePlace(double value) {

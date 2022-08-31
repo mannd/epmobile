@@ -61,7 +61,7 @@ public final class TamponadeScore extends RiskScore {
         int result = 0;
         for (int i = 0; i < points.size(); i++) {
             if (checkBox[i].isChecked()) {
-               result += points.get(i);
+                result += points.get(i);
             }
         }
         String message = getResultMessage(result);
@@ -70,12 +70,11 @@ public final class TamponadeScore extends RiskScore {
     }
 
     private String getResultMessage(int result) {
-        String message = String.format(Locale.getDefault(),"Risk Score = %s\n",
+        String message = String.format(Locale.getDefault(), "Risk Score = %s\n",
                 UnitConverter.trimmedTrailingZeros(result / 10.0));
         if (result >= 60) {
             message += getString(R.string.urgent_pericardiocentesis_message);
-        }
-        else {
+        } else {
             message += getString(R.string.postpone_pericardiocentesis_message);
         }
         setResultMessage(message);

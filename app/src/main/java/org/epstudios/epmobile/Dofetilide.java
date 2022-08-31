@@ -20,20 +20,20 @@ package org.epstudios.epmobile;
 
 public class Dofetilide extends DrugCalculator {
 
-	@Override
-	protected int getDose(int crClr) {
-		if (crClr > 60)
-			return 500;
-		if (crClr >= 40)
-			return 250;
-		if (crClr >= 20)
-			return 125;
-		return 0;
-	}
+    @Override
+    protected int getDose(int crClr) {
+        if (crClr > 60)
+            return 500;
+        if (crClr >= 40)
+            return 250;
+        if (crClr >= 20)
+            return 125;
+        return 0;
+    }
 
-	@Override
-	protected String doseFrequency(int crCl) {
-		return " mcg BID";
-	}
+    @Override
+    protected String doseFrequency(int crCl) {
+        return " mcg BID";
+    }
 
 }

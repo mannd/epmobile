@@ -25,53 +25,53 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 public class LongQtList extends EpActivity {
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.selectionlist);
-	initToolbar();
-	ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-				this, R.array.lqts_list, android.R.layout.simple_list_item_1);
+        initToolbar();
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this, R.array.lqts_list, android.R.layout.simple_list_item_1);
         ListView lv = findViewById(R.id.list);
         lv.setAdapter(adapter);
 
         lv.setTextFilterEnabled(true);
 
-		lv.setOnItemClickListener((parent, view, position, id) -> {
-			String selection = ((TextView) view).getText().toString();
-			if (selection
-					.equals(getString(R.string.long_qt_syndrome_diagnosis_title)))
-				lqtsDiagnosis();
+        lv.setOnItemClickListener((parent, view, position, id) -> {
+            String selection = ((TextView) view).getText().toString();
+            if (selection
+                    .equals(getString(R.string.long_qt_syndrome_diagnosis_title)))
+                lqtsDiagnosis();
 
-			else if (selection
-					.equals(getString(R.string.lqt_subtypes_title)))
-				lqtSubtypes();
-			else if (selection.equals(getString(R.string.lqt_ecg_title)))
-				lqtEcg();
-			else if (selection.equals(getString(R.string.long_qt_table_title)))
-				lqtTable();
-			// lqtDrugs here
-		});
-	}
+            else if (selection
+                    .equals(getString(R.string.lqt_subtypes_title)))
+                lqtSubtypes();
+            else if (selection.equals(getString(R.string.lqt_ecg_title)))
+                lqtEcg();
+            else if (selection.equals(getString(R.string.long_qt_table_title)))
+                lqtTable();
+            // lqtDrugs here
+        });
+    }
 
-	private void lqtsDiagnosis() {
-		Intent i = new Intent(this, LongQt.class);
-		startActivity(i);
-	}
+    private void lqtsDiagnosis() {
+        Intent i = new Intent(this, LongQt.class);
+        startActivity(i);
+    }
 
-	private void lqtSubtypes() {
-		Intent i = new Intent(this, LongQtSubtypes.class);
-		startActivity(i);
-	}
+    private void lqtSubtypes() {
+        Intent i = new Intent(this, LongQtSubtypes.class);
+        startActivity(i);
+    }
 
-	private void lqtEcg() {
-		Intent i = new Intent(this, LongQtEcg.class);
-		startActivity(i);
-	}
+    private void lqtEcg() {
+        Intent i = new Intent(this, LongQtEcg.class);
+        startActivity(i);
+    }
 
-	private void lqtTable() {
-		Intent i = new Intent(this, LongQtTable.class);
-		startActivity(i);
-	}
+    private void lqtTable() {
+        Intent i = new Intent(this, LongQtTable.class);
+        startActivity(i);
+    }
 
 }

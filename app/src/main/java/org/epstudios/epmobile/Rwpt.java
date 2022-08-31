@@ -23,15 +23,15 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 public class Rwpt extends EpActivity {
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.rwpt);
-	    initToolbar();
-	}
+        initToolbar();
+    }
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             Intent parentActivityIntent = new Intent(this,
                     WctAlgorithmList.class);
@@ -41,6 +41,6 @@ public class Rwpt extends EpActivity {
             finish();
             return true;
         }
-		return super.onOptionsItemSelected(item);
-	}
+        return super.onOptionsItemSelected(item);
+    }
 }

@@ -73,14 +73,11 @@ public class EpMobile extends EpActivity implements View.OnClickListener {
         final int id = v.getId();
         if (id == R.id.calculators_button) {
             calculatorList();
-        }
-        else if (id == R.id.diagnosis_button) {
+        } else if (id == R.id.diagnosis_button) {
             diagnosisList();
-        }
-        else if (id == R.id.reference_button) {
+        } else if (id == R.id.reference_button) {
             referenceList();
-        }
-        else if (id == R.id.risk_scores_button) {
+        } else if (id == R.id.risk_scores_button) {
             riskScores();
         }
     }

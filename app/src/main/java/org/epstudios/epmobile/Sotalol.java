@@ -20,29 +20,29 @@ package org.epstudios.epmobile;
 
 public class Sotalol extends DrugCalculator {
 
-	@Override
-	protected int getDose(int crCl) {
-		if (crCl >= 40)
-			return 80;
-		return 0;
-	}
+    @Override
+    protected int getDose(int crCl) {
+        if (crCl >= 40)
+            return 80;
+        return 0;
+    }
 
-	@Override
-	protected String doseFrequency(int crCl) {
-		if (crCl > 60)
-			return " mg BID";
-		if (crCl >= 40)
-			return " mg daily";
-		return "";
-	}
+    @Override
+    protected String doseFrequency(int crCl) {
+        if (crCl > 60)
+            return " mg BID";
+        if (crCl >= 40)
+            return " mg daily";
+        return "";
+    }
 
-	@Override
-	protected String getMessage(int crCl, double age) {
-		String msg = super.getMessage(crCl, age);
-		if (crCl >= 40) {
-			msg += "\n" + getString(R.string.sotalol_dosing_message);
-			msg += doseFrequency(crCl) + ".";
-		}
-		return msg;
-	}
+    @Override
+    protected String getMessage(int crCl, double age) {
+        String msg = super.getMessage(crCl, age);
+        if (crCl >= 40) {
+            msg += "\n" + getString(R.string.sotalol_dosing_message);
+            msg += doseFrequency(crCl) + ".";
+        }
+        return msg;
+    }
 }

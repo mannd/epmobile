@@ -107,8 +107,7 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
         final int id = v.getId();
         if (id == R.id.calculate_button) {
             calculateQtc();
-        }
-        else if (id == R.id.clear_button) {
+        } else if (id == R.id.clear_button) {
             clearEntries();
         }
     }
@@ -229,7 +228,8 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
             return IntervalRate.RATE;
     }
 
-    private static class ShortQrsException extends Exception {}
+    private static class ShortQrsException extends Exception {
+    }
 
     private void calculateQtc() {
         CharSequence rateIntervalText = rrEditText.getText();
@@ -246,8 +246,7 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
             if (intervalRateSelection.equals(IntervalRate.RATE)) {
                 interval = (int) Math.round(60000.0 / rateInterval);
                 rate = rateInterval;
-            }
-            else {
+            } else {
                 interval = rateInterval;
                 rate = Math.round(60000.0 / rateInterval);
             }
@@ -256,8 +255,7 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
             //noinspection ConditionCoveredByFurtherCondition
             if (rateInterval <= 0 || qt <= 0 || qrs <= 0 || qrs >= qt) {
                 throw new NumberFormatException();
-            }
-            else if (qrs < 120) {
+            } else if (qrs < 120) {
                 throw new ShortQrsException();
             }
             QtcCalculator.QtcFormula formula = getQtcFormula(qtcFormula);

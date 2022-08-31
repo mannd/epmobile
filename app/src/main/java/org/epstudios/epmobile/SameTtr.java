@@ -23,7 +23,7 @@ import android.widget.CheckBox;
  * You should have received a copy of the GNU General Public License
  * along with epmobile.  If not, see <http://www.gnu.org/licenses/>.
  */
-public class SameTtr  extends RiskScore {
+public class SameTtr extends RiskScore {
 
     @Override
     protected String getFullReference() {

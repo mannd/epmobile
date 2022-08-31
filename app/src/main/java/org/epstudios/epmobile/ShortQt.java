@@ -27,152 +27,150 @@ import android.widget.CheckBox;
 import android.widget.RadioGroup;
 
 public class ShortQt extends EpActivity implements OnClickListener {
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.shortqt);
-	initToolbar();
-	
-		View calculateButton = findViewById(R.id.calculate_button);
-		calculateButton.setOnClickListener(this);
-		View clearButton = findViewById(R.id.clear_button);
-		clearButton.setOnClickListener(this);
-		View instructionsButton = findViewById(R.id.instructions_button);
-		instructionsButton.setOnClickListener(this);
+        initToolbar();
 
-		qtcRadioGroup = findViewById(R.id.qtc_radio_group);
-		shortJtCheckBox = findViewById(R.id.short_jt);
-		suddenCardiacArrestCheckBox = findViewById(R.id.sudden_cardiac_arrest);
-		polymorphicVtCheckBox = findViewById(R.id.polymorphic_vt);
-		unexplainedSyncopeCheckBox = findViewById(R.id.unexplained_syncope);
-		afbCheckBox = findViewById(R.id.afb);
-		relativeWithSqtsCheckBox = findViewById(R.id.relative_with_sqts);
-		relativeWithSdCheckBox = findViewById(R.id.relative_with_sd);
-		sidsCheckBox = findViewById(R.id.sids);
-		genotypePositiveCheckBox = findViewById(R.id.genotype_positive);
-		mutationCheckBox = findViewById(R.id.mutation);
+        View calculateButton = findViewById(R.id.calculate_button);
+        calculateButton.setOnClickListener(this);
+        View clearButton = findViewById(R.id.clear_button);
+        clearButton.setOnClickListener(this);
+        View instructionsButton = findViewById(R.id.instructions_button);
+        instructionsButton.setOnClickListener(this);
 
-		clearEntries();
+        qtcRadioGroup = findViewById(R.id.qtc_radio_group);
+        shortJtCheckBox = findViewById(R.id.short_jt);
+        suddenCardiacArrestCheckBox = findViewById(R.id.sudden_cardiac_arrest);
+        polymorphicVtCheckBox = findViewById(R.id.polymorphic_vt);
+        unexplainedSyncopeCheckBox = findViewById(R.id.unexplained_syncope);
+        afbCheckBox = findViewById(R.id.afb);
+        relativeWithSqtsCheckBox = findViewById(R.id.relative_with_sqts);
+        relativeWithSdCheckBox = findViewById(R.id.relative_with_sd);
+        sidsCheckBox = findViewById(R.id.sids);
+        genotypePositiveCheckBox = findViewById(R.id.genotype_positive);
+        mutationCheckBox = findViewById(R.id.mutation);
 
-	}
+        clearEntries();
 
-	// Algorithm
+    }
 
-	private RadioGroup qtcRadioGroup;
-	private CheckBox shortJtCheckBox;
-	private CheckBox suddenCardiacArrestCheckBox;
-	private CheckBox polymorphicVtCheckBox;
-	private CheckBox unexplainedSyncopeCheckBox;
-	private CheckBox afbCheckBox;
-	private CheckBox relativeWithSqtsCheckBox;
-	private CheckBox relativeWithSdCheckBox;
-	private CheckBox sidsCheckBox;
-	private CheckBox genotypePositiveCheckBox;
-	private CheckBox mutationCheckBox;
+    // Algorithm
 
-	@Override
-	public void onClick(View v) {
-		final int id = v.getId();
-		if (id == R.id.calculate_button) {
-			calculateResult();
-		}
-		else if (id == R.id.clear_button) {
-			clearEntries();
-		}
-		else if (id == R.id.instructions_button) {
-			displayInstructions();
-		}
-	}
+    private RadioGroup qtcRadioGroup;
+    private CheckBox shortJtCheckBox;
+    private CheckBox suddenCardiacArrestCheckBox;
+    private CheckBox polymorphicVtCheckBox;
+    private CheckBox unexplainedSyncopeCheckBox;
+    private CheckBox afbCheckBox;
+    private CheckBox relativeWithSqtsCheckBox;
+    private CheckBox relativeWithSdCheckBox;
+    private CheckBox sidsCheckBox;
+    private CheckBox genotypePositiveCheckBox;
+    private CheckBox mutationCheckBox;
 
-	private void calculateResult() {
-		int score = 0;
-		// ECG criteria
-		// one of the short QT intervals must be selected to get other points
-		if (qtcRadioGroup.getCheckedRadioButtonId() == -1
-				&& !shortJtCheckBox.isChecked()) {
-			displayResult(score);
-			return;
-		}
-		if (qtcRadioGroup.getCheckedRadioButtonId() == R.id.short_qt)
-			score++;
-		else if (qtcRadioGroup.getCheckedRadioButtonId() == R.id.shorter_qt)
-			score += 2;
-		else if (qtcRadioGroup.getCheckedRadioButtonId() == R.id.shortest_qt)
-			score += 3;
-		// Short JT is very specific for SQTS
-		if (shortJtCheckBox.isChecked())
-			score++;
-		// Clinical history
-		// points can be received for only one of the next 3 selections
-		if (suddenCardiacArrestCheckBox.isChecked())
-			score += 2;
-		else if (polymorphicVtCheckBox.isChecked())
-			score += 2;
-		else if (unexplainedSyncopeCheckBox.isChecked())
-			score++;
-		if (afbCheckBox.isChecked())
-			score++;
-		// Family history
-		// points can be received only once in this section
-		if (relativeWithSqtsCheckBox.isChecked())
-			score += 2;
-		else if (relativeWithSdCheckBox.isChecked())
-			score++;
-		else if (sidsCheckBox.isChecked())
-			score++;
-		// Genotype
-		if (genotypePositiveCheckBox.isChecked())
-			score += 2;
-		if (mutationCheckBox.isChecked())
-			score++;
+    @Override
+    public void onClick(View v) {
+        final int id = v.getId();
+        if (id == R.id.calculate_button) {
+            calculateResult();
+        } else if (id == R.id.clear_button) {
+            clearEntries();
+        } else if (id == R.id.instructions_button) {
+            displayInstructions();
+        }
+    }
 
-		displayResult(score);
-	}
+    private void calculateResult() {
+        int score = 0;
+        // ECG criteria
+        // one of the short QT intervals must be selected to get other points
+        if (qtcRadioGroup.getCheckedRadioButtonId() == -1
+                && !shortJtCheckBox.isChecked()) {
+            displayResult(score);
+            return;
+        }
+        if (qtcRadioGroup.getCheckedRadioButtonId() == R.id.short_qt)
+            score++;
+        else if (qtcRadioGroup.getCheckedRadioButtonId() == R.id.shorter_qt)
+            score += 2;
+        else if (qtcRadioGroup.getCheckedRadioButtonId() == R.id.shortest_qt)
+            score += 3;
+        // Short JT is very specific for SQTS
+        if (shortJtCheckBox.isChecked())
+            score++;
+        // Clinical history
+        // points can be received for only one of the next 3 selections
+        if (suddenCardiacArrestCheckBox.isChecked())
+            score += 2;
+        else if (polymorphicVtCheckBox.isChecked())
+            score += 2;
+        else if (unexplainedSyncopeCheckBox.isChecked())
+            score++;
+        if (afbCheckBox.isChecked())
+            score++;
+        // Family history
+        // points can be received only once in this section
+        if (relativeWithSqtsCheckBox.isChecked())
+            score += 2;
+        else if (relativeWithSdCheckBox.isChecked())
+            score++;
+        else if (sidsCheckBox.isChecked())
+            score++;
+        // Genotype
+        if (genotypePositiveCheckBox.isChecked())
+            score += 2;
+        if (mutationCheckBox.isChecked())
+            score++;
 
-	private void displayResult(int score) {
-		AlertDialog dialog = new AlertDialog.Builder(this).create();
-		String message = "Score = " + score + "\n";
-		if (score >= 4)
-			message += "High probability";
-		else if (score == 3)
-			message += "Intermediate probability";
-		else
-			message += "Low probability";
-		message += " of Short QT Syndrome";
-		dialog.setMessage(message);
-		dialog.setButton(DialogInterface.BUTTON_POSITIVE,
-				getString(R.string.reset_label),
-				(dialog12, which) -> clearEntries());
-		dialog.setButton(DialogInterface.BUTTON_NEUTRAL,
-				getString(R.string.dont_reset_label),
-				(dialog1, which) -> {
-				});
-		dialog.setTitle(getString(R.string.short_qt_title));
+        displayResult(score);
+    }
 
-		dialog.show();
-	}
+    private void displayResult(int score) {
+        AlertDialog dialog = new AlertDialog.Builder(this).create();
+        String message = "Score = " + score + "\n";
+        if (score >= 4)
+            message += "High probability";
+        else if (score == 3)
+            message += "Intermediate probability";
+        else
+            message += "Low probability";
+        message += " of Short QT Syndrome";
+        dialog.setMessage(message);
+        dialog.setButton(DialogInterface.BUTTON_POSITIVE,
+                getString(R.string.reset_label),
+                (dialog12, which) -> clearEntries());
+        dialog.setButton(DialogInterface.BUTTON_NEUTRAL,
+                getString(R.string.dont_reset_label),
+                (dialog1, which) -> {
+                });
+        dialog.setTitle(getString(R.string.short_qt_title));
 
-	private void displayInstructions() {
-		AlertDialog dialog = new AlertDialog.Builder(this).create();
-		String message = getString(R.string.sqts_instructions);
-		dialog.setMessage(message);
-		dialog.setTitle(getString(R.string.short_qt_title));
-		dialog.show();
-	}
+        dialog.show();
+    }
 
-	private void clearEntries() {
-		qtcRadioGroup.clearCheck();
-		shortJtCheckBox.setChecked(false);
-		suddenCardiacArrestCheckBox.setChecked(false);
-		polymorphicVtCheckBox.setChecked(false);
-		unexplainedSyncopeCheckBox.setChecked(false);
-		afbCheckBox.setChecked(false);
-		relativeWithSqtsCheckBox.setChecked(false);
-		relativeWithSdCheckBox.setChecked(false);
-		sidsCheckBox.setChecked(false);
-		genotypePositiveCheckBox.setChecked(false);
-		mutationCheckBox.setChecked(false);
+    private void displayInstructions() {
+        AlertDialog dialog = new AlertDialog.Builder(this).create();
+        String message = getString(R.string.sqts_instructions);
+        dialog.setMessage(message);
+        dialog.setTitle(getString(R.string.short_qt_title));
+        dialog.show();
+    }
 
-	}
+    private void clearEntries() {
+        qtcRadioGroup.clearCheck();
+        shortJtCheckBox.setChecked(false);
+        suddenCardiacArrestCheckBox.setChecked(false);
+        polymorphicVtCheckBox.setChecked(false);
+        unexplainedSyncopeCheckBox.setChecked(false);
+        afbCheckBox.setChecked(false);
+        relativeWithSqtsCheckBox.setChecked(false);
+        relativeWithSdCheckBox.setChecked(false);
+        sidsCheckBox.setChecked(false);
+        genotypePositiveCheckBox.setChecked(false);
+        mutationCheckBox.setChecked(false);
+
+    }
 
 }

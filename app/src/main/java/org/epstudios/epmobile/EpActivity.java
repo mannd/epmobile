@@ -26,6 +26,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -46,19 +47,16 @@ public abstract class EpActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         final int itemId = item.getItemId();
-        if (itemId ==  R.id.settings) {
+        if (itemId == R.id.settings) {
             startActivity(new Intent(this, Prefs.class));
             return true;
-        }
-        else if (itemId == R.id.about) {
+        } else if (itemId == R.id.about) {
             startActivity(new Intent(this, About.class));
             return true;
-        }
-        else if (itemId == android.R.id.home) {
+        } else if (itemId == android.R.id.home) {
             finish();
             return true;
-        }
-        else if (itemId == R.id.notes) {
+        } else if (itemId == R.id.notes) {
             if (!hideNotes()) {
                 showNotes();
             }

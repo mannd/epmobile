@@ -25,55 +25,55 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 public class WpwAlgorithmList extends EpActivity {
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.selectionlist);
-	initToolbar();
-	ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-				this, R.array.wpw_algorithm_list,
-				android.R.layout.simple_list_item_1);
+        initToolbar();
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this, R.array.wpw_algorithm_list,
+                android.R.layout.simple_list_item_1);
         ListView lv = findViewById(R.id.list);
         lv.setAdapter(adapter);
 
         lv.setTextFilterEnabled(true);
 
-		lv.setOnItemClickListener((parent, view, position, id) -> {
-			String selection = ((TextView) view).getText().toString();
-			if (selection.equals(getString(R.string.arruda_title)))
-				arrudaAlgorithm();
-			else if (selection
-					.equals(getString(R.string.modified_arruda_title)))
-				modifiedArrudaAlgorithm();
-			else if (selection.equals(getString(R.string.milstein_title)))
-				milsteinAlgorithm();
-			else if (selection
-					.equals(getString(R.string.anatomy_av_annulus_title)))
-				avAnnulusMap();
-else if (selection.equals(getString(R.string.davila_title)))
-davilaAlgorithm();
-		});
-	}
+        lv.setOnItemClickListener((parent, view, position, id) -> {
+            String selection = ((TextView) view).getText().toString();
+            if (selection.equals(getString(R.string.arruda_title)))
+                arrudaAlgorithm();
+            else if (selection
+                    .equals(getString(R.string.modified_arruda_title)))
+                modifiedArrudaAlgorithm();
+            else if (selection.equals(getString(R.string.milstein_title)))
+                milsteinAlgorithm();
+            else if (selection
+                    .equals(getString(R.string.anatomy_av_annulus_title)))
+                avAnnulusMap();
+            else if (selection.equals(getString(R.string.davila_title)))
+                davilaAlgorithm();
+        });
+    }
 
-	private void arrudaAlgorithm() {
-		Intent i = new Intent(this, WpwArruda.class);
-		startActivity(i);
-	}
+    private void arrudaAlgorithm() {
+        Intent i = new Intent(this, WpwArruda.class);
+        startActivity(i);
+    }
 
-	private void modifiedArrudaAlgorithm() {
-		Intent i = new Intent(this, WpwModifiedArruda.class);
-		startActivity(i);
-	}
+    private void modifiedArrudaAlgorithm() {
+        Intent i = new Intent(this, WpwModifiedArruda.class);
+        startActivity(i);
+    }
 
-	private void milsteinAlgorithm() {
-		Intent i = new Intent(this, WpwMilstein.class);
-		startActivity(i);
-	}
+    private void milsteinAlgorithm() {
+        Intent i = new Intent(this, WpwMilstein.class);
+        startActivity(i);
+    }
 
-	private void avAnnulusMap() {
-		Intent i = new Intent(this, AvAnnulusMap.class);
-		startActivity(i);
-	}
+    private void avAnnulusMap() {
+        Intent i = new Intent(this, AvAnnulusMap.class);
+        startActivity(i);
+    }
 
     private void davilaAlgorithm() {
         Intent i = new Intent(this, DavilaAlgorithm.class);

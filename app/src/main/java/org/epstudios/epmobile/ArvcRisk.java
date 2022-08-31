@@ -140,8 +140,7 @@ public class ArvcRisk extends DiagnosticScore {
             message += getString(R.string.arvc_2_y_risk, NumberFormat.getInstance().format(yr2Risk));
             message += getString(R.string.arvc_1_y_risk, NumberFormat.getInstance().format(yr1Risk));
             displayResult(message, getString(R.string.risk_sus_va_title));
-        }
-        catch (Exception ex) {
+        } catch (Exception ex) {
             message = getString(R.string.values_range_error_message);
             displayResult(message, getString(R.string.error_dialog_title));
         }

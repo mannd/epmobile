@@ -43,7 +43,7 @@ public class QTProlongationRisk extends RiskScore {
     protected void calculateResult() {
         int result = 0;
         clearSelectedRisks();
-        int[] points = {1,1,1,2,2,2,3,3,3,6};
+        int[] points = {1, 1, 1, 2, 2, 2, 3, 3, 3, 6};
         for (int n = 0; n < 10; n++) {
             if (checkBox[n].isChecked()) {
                 addSelectedRisk(checkBox[n].getText().toString());
@@ -64,11 +64,9 @@ public class QTProlongationRisk extends RiskScore {
         String resultTrailer = " " + getString(R.string.qt_prolongation_result_trailer);
         if (result < 7) {
             message += getString(R.string.qt_prolongation_low_risk) + resultTrailer;
-        }
-        else if (result < 11) {
+        } else if (result < 11) {
             message += getString(R.string.qt_prolongation_mod_risk) + resultTrailer;
-        }
-        else {  // result >= 11
+        } else {  // result >= 11
             message += getString(R.string.qt_prolongation_high_risk) + resultTrailer;
         }
         setResultMessage(message);

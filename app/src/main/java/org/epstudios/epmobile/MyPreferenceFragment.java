@@ -106,8 +106,7 @@ public class MyPreferenceFragment extends PreferenceFragmentCompat
         // if they enter empty string, show default (and it will be default)
         if (maximumQtc.length() == 0) {
             maximumQtc = requireActivity().getString(R.string.no_default_qtc_selected_error_message);
-        }
-        else {
+        } else {
             maximumQtc += " " + msec;
         }
         return maximumQtc;

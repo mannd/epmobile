@@ -25,50 +25,50 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 public class WctAlgorithmList extends EpActivity {
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.selectionlist);
-	initToolbar();
-	ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-				this, R.array.wct_algorithm_list,
-				android.R.layout.simple_list_item_1);
+        initToolbar();
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this, R.array.wct_algorithm_list,
+                android.R.layout.simple_list_item_1);
         ListView lv = findViewById(R.id.list);
         lv.setAdapter(adapter);
 
         lv.setTextFilterEnabled(true);
 
-		lv.setOnItemClickListener((parent, view, position, id) -> {
-			String selection = ((TextView) view).getText().toString();
-			if (selection.equals(getString(R.string.brugada_wct_title)))
-				brugadaAlgorithm();
-			else if (selection.equals(getString(R.string.morphology_title)))
-				morphologyCriteria();
-			else if (selection.equals(getString(R.string.rwpt_title)))
-				ultraSimpleBrugadaAlgorithm();
-			else if (selection.equals(getString(R.string.vereckei_title)))
-				vereckeiAlgorithm();
-		});
-	}
+        lv.setOnItemClickListener((parent, view, position, id) -> {
+            String selection = ((TextView) view).getText().toString();
+            if (selection.equals(getString(R.string.brugada_wct_title)))
+                brugadaAlgorithm();
+            else if (selection.equals(getString(R.string.morphology_title)))
+                morphologyCriteria();
+            else if (selection.equals(getString(R.string.rwpt_title)))
+                ultraSimpleBrugadaAlgorithm();
+            else if (selection.equals(getString(R.string.vereckei_title)))
+                vereckeiAlgorithm();
+        });
+    }
 
-	private void brugadaAlgorithm() {
-		Intent i = new Intent(this, Brugada.class);
-		startActivity(i);
-	}
+    private void brugadaAlgorithm() {
+        Intent i = new Intent(this, Brugada.class);
+        startActivity(i);
+    }
 
-	private void morphologyCriteria() {
-		Intent i = new Intent(this, WctMorphologyCriteria.class);
-		startActivity(i);
-	}
+    private void morphologyCriteria() {
+        Intent i = new Intent(this, WctMorphologyCriteria.class);
+        startActivity(i);
+    }
 
-	private void ultraSimpleBrugadaAlgorithm() {
-		Intent i = new Intent(this, Rwpt.class);
-		startActivity(i);
-	}
+    private void ultraSimpleBrugadaAlgorithm() {
+        Intent i = new Intent(this, Rwpt.class);
+        startActivity(i);
+    }
 
-	private void vereckeiAlgorithm() {
-		Intent i = new Intent(this, Vereckei.class);
-		startActivity(i);
-	}
+    private void vereckeiAlgorithm() {
+        Intent i = new Intent(this, Vereckei.class);
+        startActivity(i);
+    }
 
 }

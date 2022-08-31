@@ -30,7 +30,7 @@ import android.widget.TextView;
  * You should have received a copy of the GNU General Public License
  * along with epmobile.  If not, see <http://www.gnu.org/licenses/>.
  */
-public class GfrCalculator extends  EpActivity implements View.OnClickListener {
+public class GfrCalculator extends EpActivity implements View.OnClickListener {
     private TextView calculatedResultTextView;
     private EditText creatinineEditText;
     private RadioGroup sexRadioGroup;
@@ -54,8 +54,7 @@ public class GfrCalculator extends  EpActivity implements View.OnClickListener {
         final int id = v.getId();
         if (id == R.id.calculate_button) {
             calculateResult();
-        }
-        else if (id == R.id.clear_button) {
+        } else if (id == R.id.clear_button) {
             clearEntries();
         }
 

@@ -37,7 +37,7 @@ public class Gfr {
         double gfr = 141.0 * Math.pow(minCr, alpha) * Math.pow(maxCr, -1.209)
                 * Math.pow(0.993, age);
         if (!isMale) {
-           gfr *= 1.018;
+            gfr *= 1.018;
         }
         if (isBlack) {
             gfr *= 1.159;

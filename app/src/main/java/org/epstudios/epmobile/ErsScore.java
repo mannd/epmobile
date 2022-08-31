@@ -115,8 +115,7 @@ public class ErsScore extends RiskScore {
         if (ecgScore == 0) {
             message = "Score requires at least 1 ECG finding.";
             setResultMessage(message);
-        }
-        else {
+        } else {
             result = clinicalScore + ecgScore + ambulatoryEcgScore
                     + familyScore + geneticScore;
             message = getResultMessage(result);
@@ -125,15 +124,13 @@ public class ErsScore extends RiskScore {
     }
 
     private String getResultMessage(int result) {
-        String message = String.format(Locale.getDefault(),"Risk Score = %s\n",
+        String message = String.format(Locale.getDefault(), "Risk Score = %s\n",
                 UnitConverter.trimmedTrailingZeros(result / 10.0));
         if (result >= 50) {
             message += "Probable/definite Early Repolarization Syndrome";
-        }
-        else if (result >= 30) {
+        } else if (result >= 30) {
             message += "Possible Early Repolarization Syndrome";
-        }
-        else {
+        } else {
             message += "Non-diagnostic";
         }
         setResultMessage(message);

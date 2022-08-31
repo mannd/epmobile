@@ -52,7 +52,7 @@ public class QtcIvcdResults extends EpActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.selectionlist);
-	initToolbar();
+        initToolbar();
 
         qt = getIntent().getIntExtra("QT", 0);
         qtc = getIntent().getIntExtra("QTc", 0);
@@ -69,15 +69,15 @@ public class QtcIvcdResults extends EpActivity {
         String qtcMessage = makeResult(qtc, "QTc");
         String jtMessage = makeResult(jt, "JT");
         String jtcMessage = makeResult(jtc, "JTc");
-        String qtmMessage =  makeResult(qtm, "QTm");
-        String qtmcMessage =  makeResult(qtmc, "QTmc");
+        String qtmMessage = makeResult(qtm, "QTm");
+        String qtmcMessage = makeResult(qtmc, "QTmc");
         String qtrrqrsMessage = makeResult(qtrrqrs, "QTrr,qrs");
         String prelbbbqtcMessage = isLBBB ? makeResult(prelbbbqtc, "preLBBBQTc") : getString(R.string.prelbbbqtc_lbbb_error_message);
         String infoMessage = getString(R.string.qt_ivcd_info_message);
 
 
-        String[] items = new String[] {qtMessage, qtcMessage, jtMessage, jtcMessage,
-            qtmMessage, qtmcMessage, qtrrqrsMessage, prelbbbqtcMessage, infoMessage};
+        String[] items = new String[]{qtMessage, qtcMessage, jtMessage, jtcMessage,
+                qtmMessage, qtmcMessage, qtrrqrsMessage, prelbbbqtcMessage, infoMessage};
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items);
 
@@ -162,10 +162,11 @@ public class QtcIvcdResults extends EpActivity {
     }
 
     private void showPreLBBBQTc() {
-        String message = isLBBB? getString(R.string.prelbbbqtc_details, prelbbbqtc,
+        String message = isLBBB ? getString(R.string.prelbbbqtc_details, prelbbbqtc,
                 getString(R.string.prelbbbqtc_reference)) : getString(R.string.prelbbbqtc_lbbb_error_message);
         showDetails(getString(R.string.prelbbbqtc_details_title), message);
     }
+
     private void showInstructions() {
         showDetails(getString(R.string.qt_instructions_title),
                 getString(R.string.qt_ivcd_instructions));

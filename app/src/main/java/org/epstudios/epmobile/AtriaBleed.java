@@ -61,7 +61,7 @@ public class AtriaBleed extends RiskScore {
     protected void calculateResult() {
         int result = 0;
         clearSelectedRisks();
-         for (int i = 0; i < checkBox.length; i++) {
+        for (int i = 0; i < checkBox.length; i++) {
             if (checkBox[i].isChecked()) {
                 addSelectedRisk(checkBox[i].getText().toString());
                 if (i == 0 || i == 1)
@@ -88,9 +88,6 @@ public class AtriaBleed extends RiskScore {
         setResultMessage(message);
         return resultWithShortReference();
     }
-
-
-
 
 
 }

@@ -27,8 +27,7 @@ import android.widget.EditText;
 
 import java.text.DecimalFormat;
 
-public class HcmScd extends RiskScore
-{
+public class HcmScd extends RiskScore {
     private static final int NO_ERROR = 8999;
     private static final int NUMBER_EXCEPTION = 9000;
     private static final int AGE_OUT_OF_RANGE = 9001;
@@ -151,7 +150,7 @@ public class HcmScd extends RiskScore
         laSizeEditText.getText().clear();
     }
 
-    private String getResultMessage(double result,int errorCode) {
+    private String getResultMessage(double result, int errorCode) {
         String message = "";
         switch (errorCode) {
             case NUMBER_EXCEPTION:
@@ -182,11 +181,9 @@ public class HcmScd extends RiskScore
             String recommendations;
             if (result < 4) {
                 recommendations = getString(R.string.icd_not_indicated_message);
-            }
-            else if (result < 6) {
+            } else if (result < 6) {
                 recommendations = getString(R.string.icd_may_be_considered_message);
-            }
-            else {
+            } else {
                 recommendations = getString(R.string.icd_should_be_considered_message);
             }
             message = message + "\n" + recommendations;

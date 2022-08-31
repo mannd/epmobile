@@ -23,15 +23,15 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 public class LongQtSubtypes extends EpActivity {
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lqtsubtypes);
-	initToolbar();
-	}
+        initToolbar();
+    }
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             Intent parentActivityIntent = new Intent(this, LongQtList.class);
             parentActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
@@ -40,6 +40,6 @@ public class LongQtSubtypes extends EpActivity {
             finish();
             return true;
         }
-		return super.onOptionsItemSelected(item);
-	}
+        return super.onOptionsItemSelected(item);
+    }
 }

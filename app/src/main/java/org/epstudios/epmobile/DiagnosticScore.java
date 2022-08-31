@@ -25,55 +25,54 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 abstract public class DiagnosticScore extends EpActivity implements
-		OnClickListener {
+        OnClickListener {
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView();
-		initToolbar();
+        initToolbar();
 
-		View calculateButton = findViewById(R.id.calculate_button);
-		calculateButton.setOnClickListener(this);
-		View clearButton = findViewById(R.id.clear_button);
-		clearButton.setOnClickListener(this);
+        View calculateButton = findViewById(R.id.calculate_button);
+        calculateButton.setOnClickListener(this);
+        View clearButton = findViewById(R.id.clear_button);
+        clearButton.setOnClickListener(this);
 
-		init();
+        init();
 
-		clearEntries();
-	}
+        clearEntries();
+    }
 
-	@Override
-	public void onClick(View v) {
-		final int id = v.getId();
-		if (id == R.id.calculate_button) {
-			calculateResult();
-		}
-		else if (id == R.id.clear_button) {
-			clearEntries();
-		}
-	}
+    @Override
+    public void onClick(View v) {
+        final int id = v.getId();
+        if (id == R.id.calculate_button) {
+            calculateResult();
+        } else if (id == R.id.clear_button) {
+            clearEntries();
+        }
+    }
 
-	abstract protected void calculateResult();
+    abstract protected void calculateResult();
 
-	abstract protected void setContentView();
+    abstract protected void setContentView();
 
-	abstract protected void init();
+    abstract protected void init();
 
-	protected void displayResult(String message, String title) {
-		// put message in class field so inner class can use
-		AlertDialog dialog = new AlertDialog.Builder(this).create();
-		dialog.setMessage(message);
-		dialog.setButton(DialogInterface.BUTTON_POSITIVE,
-				getString(R.string.reset_label),
-				(dialog12, which) -> clearEntries());
-		dialog.setButton(DialogInterface.BUTTON_NEUTRAL,
-				getString(R.string.dont_reset_label),
-				(dialog1, which) -> {
-				});
-		dialog.setTitle(title);
-		dialog.show();
-	}
+    protected void displayResult(String message, String title) {
+        // put message in class field so inner class can use
+        AlertDialog dialog = new AlertDialog.Builder(this).create();
+        dialog.setMessage(message);
+        dialog.setButton(DialogInterface.BUTTON_POSITIVE,
+                getString(R.string.reset_label),
+                (dialog12, which) -> clearEntries());
+        dialog.setButton(DialogInterface.BUTTON_NEUTRAL,
+                getString(R.string.dont_reset_label),
+                (dialog1, which) -> {
+                });
+        dialog.setTitle(title);
+        dialog.show();
+    }
 
-	abstract protected void clearEntries();
+    abstract protected void clearEntries();
 }

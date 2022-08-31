@@ -72,8 +72,7 @@ public class IcdMortalityRisk extends RiskScore {
         String message;
         if (score >= VHR_SCORE) {
             message = getString(R.string.very_high_risk_label) + "\n" + getString(R.string.vhr_message, risk.conv, risk.icd);
-        }
-        else {
+        } else {
             message = getRiskLabel() + " score = " + score + "\n" + getString(R.string.not_vhr_message,
                     risk.conv, risk.icd);
         }

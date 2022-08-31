@@ -31,47 +31,47 @@ import android.widget.TextView;
 @SuppressWarnings("SpellCheckingInspection")
 public class BrugadaList extends EpActivity {
 
-    	@Override
-	public void onCreate(Bundle savedInstanceState) {
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.selectionlist);
         initToolbar();
-	ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this, R.array.brugada_list, android.R.layout.simple_list_item_1);
         ListView lv = findViewById(R.id.list);
         lv.setAdapter(adapter);
 
         lv.setTextFilterEnabled(true);
-		lv.setOnItemClickListener((parent, view, position, id) -> {
-			String selection = ((TextView) view).getText().toString();
-			if (selection
-					.equals(getString(R.string.brugada_ecg_title)))
-				brugadaEcg();
-			else if (selection
-					.equals(getString(R.string.brugada_diagnosis_title)))
-				brugadaDiagnosis();
-			else if (selection
-					.equals(getString(R.string.brugada_score_title)))
-				brugadaScore();
+        lv.setOnItemClickListener((parent, view, position, id) -> {
+            String selection = ((TextView) view).getText().toString();
+            if (selection
+                    .equals(getString(R.string.brugada_ecg_title)))
+                brugadaEcg();
+            else if (selection
+                    .equals(getString(R.string.brugada_diagnosis_title)))
+                brugadaDiagnosis();
+            else if (selection
+                    .equals(getString(R.string.brugada_score_title)))
+                brugadaScore();
 
-		});
-	}
+        });
+    }
 
-	private void brugadaEcg() {
-		Intent i = new Intent(this, BrugadaEcg.class);
-		startActivity(i);
-	}
+    private void brugadaEcg() {
+        Intent i = new Intent(this, BrugadaEcg.class);
+        startActivity(i);
+    }
 
-   private void brugadaDiagnosis() {
-		Intent i = new Intent(this, LinkView.class);
+    private void brugadaDiagnosis() {
+        Intent i = new Intent(this, LinkView.class);
         i.putExtra("EXTRA_URL", "file:///android_asset/brugadadiagnosis.html");
         i.putExtra("EXTRA_TITLE", getString((R.string.brugada_diagnosis_title)));
         startActivity(i);
-	}
+    }
 
-	private void brugadaScore() {
-		Intent i = new Intent(this, BrugadaScore.class);
-		startActivity(i);
-	}
+    private void brugadaScore() {
+        Intent i = new Intent(this, BrugadaScore.class);
+        startActivity(i);
+    }
 
 }

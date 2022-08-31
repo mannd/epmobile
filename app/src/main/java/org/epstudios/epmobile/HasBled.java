@@ -21,91 +21,91 @@ package org.epstudios.epmobile;
 import android.widget.CheckBox;
 
 public class HasBled extends RiskScore {
-	@Override
-	protected void setContentView() {
-		setContentView(R.layout.hasbled);
-	}
+    @Override
+    protected void setContentView() {
+        setContentView(R.layout.hasbled);
+    }
 
-	@Override
-	protected void init() {
-		checkBox = new CheckBox[9];
+    @Override
+    protected void init() {
+        checkBox = new CheckBox[9];
 
-		checkBox[0] = findViewById(R.id.hypertension);
-		checkBox[1] = findViewById(R.id.abnormal_renal_function);
-		checkBox[2] = findViewById(R.id.abnormal_liver_function);
-		checkBox[3] = findViewById(R.id.stroke);
-		checkBox[4] = findViewById(R.id.bleeding);
-		checkBox[5] = findViewById(R.id.labile_inr);
-		checkBox[6] = findViewById(R.id.age65);
-		checkBox[7] = findViewById(R.id.drug);
-		checkBox[8] = findViewById(R.id.etoh);
-	}
+        checkBox[0] = findViewById(R.id.hypertension);
+        checkBox[1] = findViewById(R.id.abnormal_renal_function);
+        checkBox[2] = findViewById(R.id.abnormal_liver_function);
+        checkBox[3] = findViewById(R.id.stroke);
+        checkBox[4] = findViewById(R.id.bleeding);
+        checkBox[5] = findViewById(R.id.labile_inr);
+        checkBox[6] = findViewById(R.id.age65);
+        checkBox[7] = findViewById(R.id.drug);
+        checkBox[8] = findViewById(R.id.etoh);
+    }
 
-	@Override
-	protected void calculateResult() {
-		int result = 0;
-		clearSelectedRisks();
-		for (CheckBox aCheckBox : checkBox) {
-			if (aCheckBox.isChecked()) {
-				addSelectedRisk(aCheckBox.getText().toString());
-				result++;
-			}
-		}
-		displayResult(getResultMessage(result),
-				getString(R.string.hasbled_title));
-	}
+    @Override
+    protected void calculateResult() {
+        int result = 0;
+        clearSelectedRisks();
+        for (CheckBox aCheckBox : checkBox) {
+            if (aCheckBox.isChecked()) {
+                addSelectedRisk(aCheckBox.getText().toString());
+                result++;
+            }
+        }
+        displayResult(getResultMessage(result),
+                getString(R.string.hasbled_title));
+    }
 
-	private String getResultMessage(int result) {
-		String message;
-		if (result < 3)
-			message = getString(R.string.normal_hasbled);
-		else
-			message = getString(R.string.abnormal_hasbled);
-		String risk = "";
-		switch (result) {
-		case 0:
-		case 1:
-			risk = "1.02-1.13";
-			break;
-		case 2:
-			risk = "1.88";
-			break;
-		case 3:
-			risk = "3.74";
-			break;
-		case 4:
-			risk = "8.70";
-			break;
-		case 5:
-			risk = "12.50";
-			break;
-		case 6:
-		case 7:
-		case 8:
-		case 9:
-			risk = "> 12.50";
-			break;
-		}
-		risk = "Bleeding risk is " + risk + " bleeds per 100 patient-years.";
-		message = getRiskLabel() + " score = " + result + "\n" + message + "\n"
-				+ risk;
-		setResultMessage(message);
-		return resultWithShortReference();
-	}
+    private String getResultMessage(int result) {
+        String message;
+        if (result < 3)
+            message = getString(R.string.normal_hasbled);
+        else
+            message = getString(R.string.abnormal_hasbled);
+        String risk = "";
+        switch (result) {
+            case 0:
+            case 1:
+                risk = "1.02-1.13";
+                break;
+            case 2:
+                risk = "1.88";
+                break;
+            case 3:
+                risk = "3.74";
+                break;
+            case 4:
+                risk = "8.70";
+                break;
+            case 5:
+                risk = "12.50";
+                break;
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+                risk = "> 12.50";
+                break;
+        }
+        risk = "Bleeding risk is " + risk + " bleeds per 100 patient-years.";
+        message = getRiskLabel() + " score = " + result + "\n" + message + "\n"
+                + risk;
+        setResultMessage(message);
+        return resultWithShortReference();
+    }
 
-	@Override
-	protected String getFullReference() {
-		return getString(R.string.hasbled_full_reference);
-	}
+    @Override
+    protected String getFullReference() {
+        return getString(R.string.hasbled_full_reference);
+    }
 
-	@Override
-	protected String getRiskLabel() {
-		return getString(R.string.hasbled_label);
-	}
+    @Override
+    protected String getRiskLabel() {
+        return getString(R.string.hasbled_label);
+    }
 
-	@Override
-	protected String getShortReference() {
-		return getString(R.string.hasbled_short_reference);
-	}
+    @Override
+    protected String getShortReference() {
+        return getString(R.string.hasbled_short_reference);
+    }
 
 }
