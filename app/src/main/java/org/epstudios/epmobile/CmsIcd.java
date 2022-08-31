@@ -91,11 +91,9 @@ public class CmsIcd extends DiagnosticScore {
     }
 
     protected void showReference() {
-//        showAlertDialog(R.string.reference_title, R.string.cms_icd_references);
-//        showAlertDialogWithLink(R.string.reference_label,
-//                Html.fromHtml("This is a reference.  <a href='https://google.com'>Click Here</a>"));
-        showAlertDialogWithLink(R.string.reference_label,
-                Html.fromHtml(getString(R.string.cms_icd_references)));
+        String message =  convertReferenceToHtmlString(getString(R.string.cms_icd_references),
+                getString(R.string.cms_icd_link));
+        showAlertDialog("Reference", Html.fromHtml(message));
     }
 
     @Override

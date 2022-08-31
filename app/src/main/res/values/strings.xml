@@ -391,9 +391,8 @@
         MI = myocardial infarction. NYHA = New York Heart Association. PCI = percutaneous coronary intervention.
         SVT = supraventricular tachycardia.
         VT = ventricular tachycardia/tachyarrhythmia. VF = ventricular fibrillation.</string>
-    <string name="cms_icd_references">Reference: CMS: Decision Memo for Implantable Cardioverter Defibrillators (CAG-00157R4) Feb 15, 2018.
-        <![CDATA[<a href ="https://www.cms.gov/medicare-coverage-database/details/nca-decision-memo.aspx?NCAId=288">Link</a>]]></string>
-    <string name="test_link"><![CDATA[<a href="https://google.com">Google link</a>]]></string>
+    <string name="cms_icd_references">CMS: Decision Memo for Implantable Cardioverter Defibrillators (CAG-00157R4) Feb 15, 2018.</string>
+    <string name="cms_icd_link">https://www.cms.gov/medicare-coverage-database/details/nca-decision-memo.aspx?NCAId=288</string>
     <string name="cms_icd_shared_decision_message">Shared decision making encounter using evidence-based decision tool
         necessary prior to ICD implant.</string>
     <string name="hemorrhages_title">HEMORR\u2082HAGES Score</string>
@@ -1448,5 +1447,5 @@
     <string name="gfr_reference_label">Levey AS, Stevens LA, Schmid CH, et al.
         A new equation to estimate glomerular filtration rate. Ann Intern Med.
         2009;150(9):604-612. doi:10.7326/0003-4819-150-9-200905050-00006</string>
-    <string name="notes_label">Instructions</string>
+    <string name="notes_label">Notes</string>
 </resources>

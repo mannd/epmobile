@@ -27,6 +27,7 @@ import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.text.Html;
 import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
 import android.view.Menu;
@@ -98,6 +99,7 @@ public abstract class EpActivity extends AppCompatActivity {
     }
 
     protected void showNotes() {
+
         System.out.print("showNotes should be overridden.");
     }
 
@@ -124,5 +126,53 @@ public abstract class EpActivity extends AppCompatActivity {
         AlertDialog alert = builder.create();
         alert.show();
         ((TextView)alert.findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance());
+    }
+
+    protected void showReferenceAlertDialog(@StringRes int titleId, String reference, Spanned link) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.reference_label);
+        builder.setTitle(titleId);
+        Spanned message = link;
+        builder.setMessage(message);
+        builder.setPositiveButton(getString(R.string.ok_button_label), null);
+        AlertDialog alert = builder.create();
+        alert.show();
+        ((TextView)alert.findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance());
+    }
+
+    protected Spanned convertReferenceToHtml(@StringRes int referenceId, @StringRes int linkId) {
+        String reference = getString(referenceId);
+        String link = getString(linkId);
+        if (reference == null || link == null) {
+            return null;
+        }
+        String html = convertReferenceToHtmlString(reference, link);
+        return Html.fromHtml(html);
+    }
+
+    protected void showAlertDialog(String title, Spanned message) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(title);
+        builder.setMessage(message);
+        builder.setPositiveButton(getString(R.string.ok_button_label), null);
+        AlertDialog alert = builder.create();
+        alert.show();
+        ((TextView)alert.findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance());
+    }
+
+
+    protected void showAlertDialog(String title, String message) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(title);
+        builder.setMessage(message);
+        builder.setPositiveButton(getString(R.string.ok_button_label), null);
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
+
+    public static String convertReferenceToHtmlString(String reference, String link) {
+        String html = "<p>" + reference + "<br/><a href =\"" + link + "\">Link to reference</a></p>" ;
+        return html;
     }
 }
