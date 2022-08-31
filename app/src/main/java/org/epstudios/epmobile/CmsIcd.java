@@ -2,6 +2,9 @@ package org.epstudios.epmobile;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.Spannable;
+import android.text.Spanned;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
@@ -34,8 +37,6 @@ public class CmsIcd extends DiagnosticScore {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        View instructionsButton = findViewById(R.id.instructions_button);
-        instructionsButton.setOnClickListener(this);
     }
 
     @Override
@@ -86,7 +87,15 @@ public class CmsIcd extends DiagnosticScore {
 
     @Override
     protected void showNotes() {
-        displayInstructions();
+        showAlertDialogWithLink(R.string.icd_calculator_title, R.string.cms_icd_instructions);
+    }
+
+    protected void showReference() {
+//        showAlertDialog(R.string.reference_title, R.string.cms_icd_references);
+//        showAlertDialogWithLink(R.string.reference_label,
+//                Html.fromHtml("This is a reference.  <a href='https://google.com'>Click Here</a>"));
+        showAlertDialogWithLink(R.string.reference_label,
+                Html.fromHtml(getString(R.string.cms_icd_references)));
     }
 
     @Override
@@ -94,10 +103,10 @@ public class CmsIcd extends DiagnosticScore {
         return false;
     }
 
-    private void displayInstructions() {
-        displayNotes(R.string.icd_calculator_title, R.string.cms_icd_instructions);
+    @Override
+    protected boolean hideReference() {
+        return false;
     }
-
 
     @Override
     protected void calculateResult() {

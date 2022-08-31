@@ -4,6 +4,9 @@
         android:id="@+id/notes"
         android:title="@string/notes_label" />
     <item
+        android:id="@+id/reference"
+        android:title="@string/reference_label" />
+    <item
         android:id="@+id/settings"
         android:title="@string/settings_label" />
     <item

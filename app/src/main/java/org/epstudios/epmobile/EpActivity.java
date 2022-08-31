@@ -27,9 +27,12 @@ import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.text.Spanned;
+import android.text.method.LinkMovementMethod;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 //adds option menu functions
 public abstract class EpActivity extends AppCompatActivity {
@@ -39,7 +42,16 @@ public abstract class EpActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
         if (hideNotes()) {
-            menu.getItem(0).setVisible(false);
+            MenuItem notesItem = menu.findItem(R.id.notes);
+            if (notesItem != null) {
+                notesItem.setVisible(false);
+            }
+        }
+        if (hideReference()) {
+            MenuItem referenceItem = menu.findItem(R.id.reference);
+            if (referenceItem != null) {
+                referenceItem.setVisible(false);
+            }
         }
         return true;
     }
@@ -59,6 +71,10 @@ public abstract class EpActivity extends AppCompatActivity {
         } else if (itemId == R.id.notes) {
             if (!hideNotes()) {
                 showNotes();
+            }
+        } else if (itemId == R.id.reference) {
+            if (!hideReference()) {
+                showReference();
             }
         }
         return false;
@@ -85,12 +101,28 @@ public abstract class EpActivity extends AppCompatActivity {
         System.out.print("showNotes should be overridden.");
     }
 
-    protected void displayNotes(@StringRes int titleId, @StringRes int messageId) {
+    protected boolean hideReference() { return true; }
+
+    protected void showReference() {
+        System.out.print("showReference should be overridden.");
+    }
+
+    protected void showAlertDialogWithLink(@StringRes int titleId, @StringRes int messageId) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(titleId);
         builder.setMessage(messageId);
         builder.setPositiveButton(getString(R.string.ok_button_label), null);
         AlertDialog alert = builder.create();
         alert.show();
+    }
+
+    protected void showAlertDialogWithLink(@StringRes int titleId, Spanned message) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(titleId);
+        builder.setMessage(message);
+        builder.setPositiveButton(getString(R.string.ok_button_label), null);
+        AlertDialog alert = builder.create();
+        alert.show();
+        ((TextView)alert.findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance());
     }
 }
