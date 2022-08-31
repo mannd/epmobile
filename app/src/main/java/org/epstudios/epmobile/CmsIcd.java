@@ -2,11 +2,7 @@ package org.epstudios.epmobile;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Html;
-import android.text.Spannable;
-import android.text.Spanned;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.CheckBox;
 import android.widget.RadioGroup;
 
@@ -86,23 +82,22 @@ public class CmsIcd extends DiagnosticScore {
     }
 
     @Override
-    protected void showNotes() {
-        showAlertDialogWithLink(R.string.icd_calculator_title, R.string.cms_icd_instructions);
+    protected void showActivityInstructions() {
+        showAlertDialog(R.string.icd_calculator_title, R.string.cms_icd_instructions);
     }
 
-    protected void showReference() {
-        String message =  convertReferenceToHtmlString(getString(R.string.cms_icd_references),
-                getString(R.string.cms_icd_link));
-        showAlertDialog("Reference", Html.fromHtml(message));
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.cms_icd_references,
+                R.string.cms_icd_link);
     }
 
     @Override
-    protected boolean hideNotes() {
+    protected boolean hideInstructionsMenuItem() {
         return false;
     }
 
     @Override
-    protected boolean hideReference() {
+    protected boolean hideReferenceMenuItem() {
         return false;
     }
 

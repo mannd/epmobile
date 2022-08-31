@@ -42,13 +42,13 @@ public abstract class EpActivity extends AppCompatActivity {
         super.onCreateOptionsMenu(menu);
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
-        if (hideNotes()) {
+        if (hideInstructionsMenuItem()) {
             MenuItem notesItem = menu.findItem(R.id.notes);
             if (notesItem != null) {
                 notesItem.setVisible(false);
             }
         }
-        if (hideReference()) {
+        if (hideReferenceMenuItem()) {
             MenuItem referenceItem = menu.findItem(R.id.reference);
             if (referenceItem != null) {
                 referenceItem.setVisible(false);
@@ -70,12 +70,12 @@ public abstract class EpActivity extends AppCompatActivity {
             finish();
             return true;
         } else if (itemId == R.id.notes) {
-            if (!hideNotes()) {
-                showNotes();
+            if (!hideInstructionsMenuItem()) {
+                showActivityInstructions();
             }
         } else if (itemId == R.id.reference) {
-            if (!hideReference()) {
-                showReference();
+            if (!hideReferenceMenuItem()) {
+                showActivityReference();
             }
         }
         return false;
@@ -94,22 +94,24 @@ public abstract class EpActivity extends AppCompatActivity {
         }
     }
 
-    protected boolean hideNotes() {
+    // Override in inherited activities to show these menu items.
+    // Default is to hide these menu items.
+    protected boolean hideInstructionsMenuItem() {
         return true;
     }
 
-    protected void showNotes() {
+    protected boolean hideReferenceMenuItem() { return true; }
 
+    // Override to inherited activities
+    protected void showActivityInstructions() {
         System.out.print("showNotes should be overridden.");
     }
 
-    protected boolean hideReference() { return true; }
-
-    protected void showReference() {
+    protected void showActivityReference() {
         System.out.print("showReference should be overridden.");
     }
 
-    protected void showAlertDialogWithLink(@StringRes int titleId, @StringRes int messageId) {
+    final protected void showAlertDialog(@StringRes int titleId, @StringRes int messageId) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(titleId);
         builder.setMessage(messageId);
@@ -118,9 +120,9 @@ public abstract class EpActivity extends AppCompatActivity {
         alert.show();
     }
 
-    protected void showAlertDialogWithLink(@StringRes int titleId, Spanned message) {
+    final protected void showAlertDialog(String title, Spanned message) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(titleId);
+        builder.setTitle(title);
         builder.setMessage(message);
         builder.setPositiveButton(getString(R.string.ok_button_label), null);
         AlertDialog alert = builder.create();
@@ -128,51 +130,42 @@ public abstract class EpActivity extends AppCompatActivity {
         ((TextView)alert.findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance());
     }
 
-    protected void showReferenceAlertDialog(@StringRes int titleId, String reference, Spanned link) {
+    final protected void showAlertDialog(String title, String message) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(R.string.reference_label);
-        builder.setTitle(titleId);
-        Spanned message = link;
+        builder.setTitle(title);
         builder.setMessage(message);
         builder.setPositiveButton(getString(R.string.ok_button_label), null);
         AlertDialog alert = builder.create();
         alert.show();
-        ((TextView)alert.findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance());
     }
 
-    protected Spanned convertReferenceToHtml(@StringRes int referenceId, @StringRes int linkId) {
+    // TODO: handle multiple references...
+    // Need array of [reference, link] tuples
+    final protected void showReferenceAlertDialog(@StringRes int reference,
+                                                  @StringRes int link) {
+        Spanned html = convertReferenceToHtml(R.string.cms_icd_references,
+                R.string.cms_icd_link);
+        if (html != null) {
+            showAlertDialog(getString(R.string.reference_label), html);
+        } else {
+            showAlertDialog(getString(R.string.error_dialog_title),
+                    getString(R.string.error_message));
+        }
+    }
+
+    public static String convertReferenceToHtmlString(@NonNull String reference, @NonNull String link) {
+        String html = "<p>" + reference + "<br/><a href =\"" + link + "\">Link to reference</a></p>" ;
+        return html;
+    }
+
+    public Spanned convertReferenceToHtml(@StringRes int referenceId,
+                                                 @StringRes int linkId) {
         String reference = getString(referenceId);
         String link = getString(linkId);
         if (reference == null || link == null) {
             return null;
         }
-        String html = convertReferenceToHtmlString(reference, link);
-        return Html.fromHtml(html);
-    }
-
-    protected void showAlertDialog(String title, Spanned message) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(title);
-        builder.setMessage(message);
-        builder.setPositiveButton(getString(R.string.ok_button_label), null);
-        AlertDialog alert = builder.create();
-        alert.show();
-        ((TextView)alert.findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance());
-    }
-
-
-    protected void showAlertDialog(String title, String message) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(title);
-        builder.setMessage(message);
-        builder.setPositiveButton(getString(R.string.ok_button_label), null);
-        AlertDialog alert = builder.create();
-        alert.show();
-    }
-
-
-    public static String convertReferenceToHtmlString(String reference, String link) {
-        String html = "<p>" + reference + "<br/><a href =\"" + link + "\">Link to reference</a></p>" ;
-        return html;
+        String htmlString = convertReferenceToHtmlString(reference, link);
+        return Html.fromHtml(htmlString);
     }
 }
