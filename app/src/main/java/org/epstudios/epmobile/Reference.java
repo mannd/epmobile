@@ -26,7 +26,6 @@ import androidx.annotation.StringRes;
  * along with epmobile.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-// TODO: Refactor to hold strings, with two constructors
 public class Reference {
     public Reference(Context context, int textId, int linkId) {
         this.text= context.getString(textId);

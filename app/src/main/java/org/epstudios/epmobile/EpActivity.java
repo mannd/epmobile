@@ -182,19 +182,30 @@ public abstract class EpActivity extends AppCompatActivity {
     }
 
     public static String convertReferenceToHtmlString(@NonNull String reference,
-                                                      @NonNull String link) {
-        String html = "<p>" + reference + "<br/><a href =\"" + link + "\">Link to reference</a></p>" ;
+                                                      String link) {
+        String html = "";
+        if (link != null) {
+            html = "<p>" + reference +
+                    "<br/><a href =\"" +
+                    link + "\">Link to reference</a></p>";
+        } else {
+            html = "<p>" + reference + "<br/><i>No link available</i></p>";
+        }
         return html;
     }
 
     public static String convertReferencesToHtmlString(Reference[] references) {
         String htmlString = "";
         for (Reference reference: references ) {
-            if (reference.getText() == null || reference.getLink() == null) {
+            // Only forbidden combo is reference == null.  Can have a null
+            // link if the paper is old.
+            if (reference.getText() != null) {
+                htmlString += convertReferenceToHtmlString(reference.getText(),
+                        reference.getLink());
+            }
+            else {
                 return null;
             }
-            htmlString += convertReferenceToHtmlString(reference.getText(),
-                    reference.getLink());
         }
         return htmlString;
     }
@@ -203,11 +214,14 @@ public abstract class EpActivity extends AppCompatActivity {
                                           @StringRes int linkId) {
         String reference = getString(referenceId);
         String link = getString(linkId);
-        if (reference == null || link == null) {
+        // Only forbidden combo is reference == null.  Can have a null
+        // link if the paper is old.
+        if (reference != null) {
+            String htmlString = convertReferenceToHtmlString(reference, link);
+            return Html.fromHtml(htmlString);
+        } else {
             return null;
         }
-        String htmlString = convertReferenceToHtmlString(reference, link);
-        return Html.fromHtml(htmlString);
     }
 
     // Handle multiple references.

@@ -39,5 +39,15 @@ public class HtmlTest {
         references[1] = new Reference("TestRef2", "https://bing.com");
         String result1 = EpActivity.convertReferencesToHtmlString(references);
         assertEquals(result1, "<p>TestRef1<br/><a href =\"https://google.com\">Link to reference</a></p><p>TestRef2<br/><a href =\"https://bing.com\">Link to reference</a></p>");
+        // get error with no reference
+        references[0] = new Reference(null, "https://google.com");
+        String result2 = EpActivity.convertReferencesToHtmlString(references);
+        assertEquals(result2, null);
+        // allow null link
+        references[0] = new Reference("Testing", null);
+        String result3 = EpActivity.convertReferencesToHtmlString(references);
+        assertEquals(result3, "<p>Testing<br/><i>No link available</i></p><p>TestRef2<br/><a href =\"https://bing.com\">Link to reference</a></p>");
+
+
     }
 }

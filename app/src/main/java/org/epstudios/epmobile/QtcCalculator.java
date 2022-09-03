@@ -100,5 +100,4 @@ public class QtcCalculator {
         int qtc = calculate(rr, qt, formula);
         return qtc - qrs + k;
     }
-
 }
