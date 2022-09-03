@@ -298,20 +298,27 @@ public class Qtc extends EpActivity implements OnClickListener {
 
     @Override
     protected void showActivityReference() {
-        Reference referenceBazett = new Reference(this, R.string.qtc_calculator_reference_bazett,
+        Reference referenceBazett = new Reference(this,
+                R.string.qtc_calculator_reference_bazett,
                 R.string.qtc_calculator_link_bazett);
-        Reference referenceFridericia = new Reference(this, R.string.qtc_calculator_reference_fridericia,
+        Reference referenceFridericia = new Reference(this,
+                R.string.qtc_calculator_reference_fridericia,
                 R.string.qtc_calculator_link_fridericia);
-        Reference referenceSagie = new Reference(this, R.string.qtc_calculator_reference_sagie,
+        Reference referenceSagie = new Reference(this,
+                R.string.qtc_calculator_reference_sagie,
                 R.string.qtc_calculator_link_sagie);
         Reference referenceHodges = new Reference(
                 getString(R.string.qtc_calculator_reference_hodges),
                 null);
-        Reference[] references = new Reference[4];
+        Reference referenceQtcLimits = new Reference(this,
+                R.string.qtc_limits_reference,
+                R.string.qtc_limits_link);
+        Reference[] references = new Reference[5];
         references[0] = referenceBazett;
         references[1] = referenceFridericia;
         references[2] = referenceSagie;
         references[3] = referenceHodges;
+        references[4] = referenceQtcLimits;
         showReferenceAlertDialog(references);
     }
 }

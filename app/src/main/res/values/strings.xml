@@ -1257,11 +1257,36 @@
         \n\nFormula: %2$s\n\nNormal values (without IVCD) per
         AHA/ACC/HRS guidelines
         (%3$s): Male &lt; 450 msec, Female &lt; 460 msec and &gt; 390 msec (both sexes)</string>
-    <string name="qtc_reference">Rautaharju P et al. Circulation. 2009;119:e241-e250.</string>
+    <string name="qtc_limits_reference">Rautaharju PM, Surawicz B, Gettes LS.
+        AHA/ACCF/HRS Recommendations for the Standardization and Interpretation
+        of the Electrocardiogram Part IV: The ST Segment, T and U Waves,
+        and the QT Interval: A Scientific Statement From the American Heart
+        Association Electrocardiography and Arrhythmias Committee, Council on
+        Clinical Cardiology; the American College of Cardiology Foundation;
+        and the Heart Rhythm Society: Endorsed by the International
+        Society for Computerized Electrocardiology. Circulation.
+        2009;119(10):e241-e250.</string>
+    <string name="qtc_limits_short_reference">Rautaharju et al., Circulation.
+        2009;119(10):e241-e250.</string>
+    <string name="qtc_limits_link">https://doi.org/10.1161/CIRCULATIONAHA.108.191096</string>
     <string name="qt_ivcd_instructions">Select any of the results in the list to see a dialog with detailed results</string>
     <string name="qt_instructions_title">Instructions</string>
     <string name="qt_details_title">Uncorrected QT</string>
     <string name="qtc_details_title">Corrected QT</string>
+    <string name="qtc_ivcd_reference_bogossian">Bogossian H, Linz D, 
+        Heijman J, et al. QTc evaluation in patients with bundle branch 
+        block. Int J Cardiol Heart Vasc. 2020;30:100636.</string>
+    <string name="qtc_ivcd_link_bogossian">https://doi.org/10.1016/j.ijcha.2020.100636</string>
+    <string name="qtc_ivcd_reference_rautaharju">Rautaharju PM, Zhang ZM,
+        Prineas R, Heiss G. Assessment of prolonged QT and JT
+        intervals in ventricular conduction defects. American Journal of
+        Cardiology. 2004;93(8):1017-1021.</string>
+    <string name="qtc_ivcd_link_rautaharju">https://doi.org/10.1016/j.amjcard.2003.12.055</string>
+    <string name="qtc_ivcd_reference_yankelson">Yankelson L, Hochstadt A,
+        Sadeh B, et al. New formula for defining “normal” and “prolonged”
+        QT in patients with bundle branch block. Journal of Electrocardiology.
+        2018;51(3):481-486.</string>
+    <string name="qtc_ivcd_link_yankelson">https://doi.org/10.1016/j.jelectrocard.2017.12.039</string>
     <string name="qtm_new_reference">Bogossian H, et al.
         QTc evaluation in patients with bundle branch block.
         Int J Cardiol Heart Vasc. 2020;30:100636.</string>

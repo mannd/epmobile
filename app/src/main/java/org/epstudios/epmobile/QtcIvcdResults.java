@@ -129,7 +129,7 @@ public class QtcIvcdResults extends EpActivity {
 
     private void showQTc() {
         String message = getString(R.string.qtc_details, qtc, formulaName,
-                getString(R.string.qtc_reference));
+                getString(R.string.qtc_limits_short_reference));
         showDetails(getString(R.string.qtc_details_title), message);
     }
 
@@ -177,5 +177,36 @@ public class QtcIvcdResults extends EpActivity {
         alert.setTitle(title);
         alert.setMessage(message);
         alert.show();
+    }
+
+
+    // Note this is duplicate code used in QTcIVCD also.
+    // No easy way to DRY this that I can think of.
+    // WARNING: Any changes need to be duplicated in QTcIVCD.
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        Reference referenceBogossian = new Reference(this,
+                R.string.qtc_ivcd_reference_bogossian,
+                R.string.qtc_ivcd_link_bogossian);
+        Reference referenceRautaharju = new Reference(this,
+                R.string.qtc_ivcd_reference_rautaharju,
+                R.string.qtc_ivcd_link_rautaharju);
+        Reference referenceYankelson = new Reference(this,
+                R.string.qtc_ivcd_reference_yankelson,
+                R.string.qtc_ivcd_link_yankelson);
+        Reference referenceQtcLimits = new Reference(this,
+                R.string.qtc_limits_reference,
+                R.string.qtc_limits_link);
+        Reference[] references = new Reference[4];
+        references[0] = referenceBogossian;
+        references[1] = referenceRautaharju;
+        references[2] = referenceYankelson;
+        references[3] = referenceQtcLimits;
+        showReferenceAlertDialog(references);
     }
 }
