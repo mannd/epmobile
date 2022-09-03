@@ -42,8 +42,9 @@ public abstract class EpActivity extends AppCompatActivity {
         super.onCreateOptionsMenu(menu);
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
+
         if (hideInstructionsMenuItem()) {
-            MenuItem notesItem = menu.findItem(R.id.notes);
+            MenuItem notesItem = menu.findItem(R.id.instructions);
             if (notesItem != null) {
                 notesItem.setVisible(false);
             }
@@ -52,6 +53,12 @@ public abstract class EpActivity extends AppCompatActivity {
             MenuItem referenceItem = menu.findItem(R.id.reference);
             if (referenceItem != null) {
                 referenceItem.setVisible(false);
+            }
+        }
+        if (hideKeyMenuItem()) {
+            MenuItem keyItem = menu.findItem(R.id.key);
+            if (keyItem != null) {
+                keyItem.setVisible(false);
             }
         }
         return true;
@@ -69,13 +76,17 @@ public abstract class EpActivity extends AppCompatActivity {
         } else if (itemId == android.R.id.home) {
             finish();
             return true;
-        } else if (itemId == R.id.notes) {
+        } else if (itemId == R.id.instructions) {
             if (!hideInstructionsMenuItem()) {
                 showActivityInstructions();
             }
         } else if (itemId == R.id.reference) {
             if (!hideReferenceMenuItem()) {
                 showActivityReference();
+            }
+        } else if (itemId == R.id.key) {
+            if (!hideKeyMenuItem()) {
+                showActivityKey();
             }
         }
         return false;
@@ -102,6 +113,8 @@ public abstract class EpActivity extends AppCompatActivity {
 
     protected boolean hideReferenceMenuItem() { return true; }
 
+    protected boolean hideKeyMenuItem() { return true; }
+
     // Override to inherited activities
     protected void showActivityInstructions() {
         System.out.print("showNotes should be overridden.");
@@ -109,6 +122,10 @@ public abstract class EpActivity extends AppCompatActivity {
 
     protected void showActivityReference() {
         System.out.print("showReference should be overridden.");
+    }
+
+    protected void showActivityKey() {
+        System.out.print("showKey should be overridden.");
     }
 
     final protected void showAlertDialog(@StringRes int titleId, @StringRes int messageId) {
@@ -141,10 +158,9 @@ public abstract class EpActivity extends AppCompatActivity {
 
     // TODO: handle multiple references...
     // Need array of [reference, link] tuples
-    final protected void showReferenceAlertDialog(@StringRes int reference,
-                                                  @StringRes int link) {
-        Spanned html = convertReferenceToHtml(R.string.cms_icd_references,
-                R.string.cms_icd_link);
+    final protected void showReferenceAlertDialog(@StringRes int referenceId,
+                                                  @StringRes int linkId) {
+        Spanned html = convertReferenceToHtml(referenceId, linkId);
         if (html != null) {
             showAlertDialog(getString(R.string.reference_label), html);
         } else {
@@ -153,13 +169,40 @@ public abstract class EpActivity extends AppCompatActivity {
         }
     }
 
-    public static String convertReferenceToHtmlString(@NonNull String reference, @NonNull String link) {
+    final protected void showReferenceAlertDialog(Reference[] references) {
+        Spanned html = convertReferencesToHtml(references);
+        if (html != null) {
+            showAlertDialog(getString(R.string.reference_label), html);
+        } else {
+            showAlertDialog(getString(R.string.error_dialog_title),
+                    getString(R.string.error_message));
+        }
+    }
+
+    final protected void showKeyAlertDialog(@StringRes int keyId) {
+        showAlertDialog(R.string.key_label, keyId);
+    }
+
+    public static String convertReferenceToHtmlString(@NonNull String reference,
+                                                      @NonNull String link) {
         String html = "<p>" + reference + "<br/><a href =\"" + link + "\">Link to reference</a></p>" ;
         return html;
     }
 
+    public static String convertReferencesToHtmlString(Reference[] references) {
+        String htmlString = "";
+        for (Reference reference: references ) {
+            if (reference.getText() == null || reference.getLink() == null) {
+                return null;
+            }
+            htmlString += convertReferenceToHtmlString(reference.getText(),
+                    reference.getLink());
+        }
+        return htmlString;
+    }
+
     public Spanned convertReferenceToHtml(@StringRes int referenceId,
-                                                 @StringRes int linkId) {
+                                          @StringRes int linkId) {
         String reference = getString(referenceId);
         String link = getString(linkId);
         if (reference == null || link == null) {
@@ -167,5 +210,15 @@ public abstract class EpActivity extends AppCompatActivity {
         }
         String htmlString = convertReferenceToHtmlString(reference, link);
         return Html.fromHtml(htmlString);
+    }
+
+    // Handle multiple references.
+    public Spanned convertReferencesToHtml(Reference[] references) {
+        String htmlString = convertReferencesToHtmlString(references);
+        if (htmlString == null) {
+            return null;
+        } else {
+            return Html.fromHtml(htmlString);
+        }
     }
 }

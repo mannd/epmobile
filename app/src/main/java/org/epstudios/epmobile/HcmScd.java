@@ -194,4 +194,35 @@ public class HcmScd extends RiskScore {
         return message;
     }
 
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        Reference[] references = new Reference[2];
+        references[0] = new Reference(this, R.string.hcm_scd_reference_1, R.string.hcm_scd_link_1);
+        references[1] = new Reference(this, R.string.hcm_scd_reference_2, R.string.hcm_scd_link_2);
+        showReferenceAlertDialog(references);
+    }
+
+    @Override
+    protected boolean hideKeyMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityKey() {
+        showKeyAlertDialog(R.string.hcm_scd_key);
+    }
+
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    protected void showActivityInstructions() {
+        showAlertDialog(R.string.hcm_scd_esc_score_title, R.string.hcm_scd_esc_score_instructions);
+    }
 }

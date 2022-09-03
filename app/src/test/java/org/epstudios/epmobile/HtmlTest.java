@@ -34,5 +34,10 @@ public class HtmlTest {
     public void testHtml() {
         String result = EpActivity.convertReferenceToHtmlString("Test Reference", "https://www.google.com");
         assertEquals(result, "<p>Test Reference<br/><a href =\"https://www.google.com\">Link to reference</a></p>");
+        Reference[] references = new Reference[2];
+        references[0] = new Reference("TestRef1", "https://google.com");
+        references[1] = new Reference("TestRef2", "https://bing.com");
+        String result1 = EpActivity.convertReferencesToHtmlString(references);
+        assertEquals(result1, "<p>TestRef1<br/><a href =\"https://google.com\">Link to reference</a></p><p>TestRef2<br/><a href =\"https://bing.com\">Link to reference</a></p>");
     }
 }

@@ -86,9 +86,15 @@ public class CmsIcd extends DiagnosticScore {
         showAlertDialog(R.string.icd_calculator_title, R.string.cms_icd_instructions);
     }
 
+    @Override
     protected void showActivityReference() {
-        showReferenceAlertDialog(R.string.cms_icd_references,
+        showReferenceAlertDialog(R.string.cms_icd_reference,
                 R.string.cms_icd_link);
+    }
+
+    @Override
+    protected void showActivityKey() {
+        showKeyAlertDialog(R.string.cms_icd_key);
     }
 
     @Override
@@ -98,6 +104,11 @@ public class CmsIcd extends DiagnosticScore {
 
     @Override
     protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected boolean hideKeyMenuItem() {
         return false;
     }
 

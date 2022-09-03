@@ -320,4 +320,26 @@ public class IbwCalculator extends EpActivity implements OnClickListener {
             defaultHeightUnitSelection = HeightUnit.IN;
     }
 
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityInstructions() {
+        showAlertDialog(R.string.ibw_calculator_title,
+                R.string.ibw_calculator_instructions );
+    }
+
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.ibw_calculator_reference,
+                R.string.ibw_calculator_link);
+    }
+
 }
