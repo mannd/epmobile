@@ -188,8 +188,8 @@
             android:name=".AtrialTachLocalization"
             android:label="@string/atrial_tachycardia_localization_title"/>
         <activity
-            android:name=".DayCalculator"
-            android:label="@string/day_calculator_title"/>
+            android:name=".DateCalculator"
+            android:label="@string/date_calculator_title"/>
         <activity
             android:name=".Entrainment"
             android:label="@string/entrainment_title"

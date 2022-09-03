@@ -70,7 +70,7 @@
     </array>
     <array name="calculator_list">
         <item>@string/creatinine_clearance_calculator_title</item>
-        <item>@string/day_calculator_title</item>
+        <item>@string/date_calculator_title</item>
         <item>@string/drug_dose_calculator_list_title</item>
         <item>@string/cycle_length_calculator_title</item>
         <item>@string/gfr_calculator_title</item>

@@ -104,4 +104,15 @@ public class GfrCalculator extends EpActivity implements View.OnClickListener {
 //                    .setHint(getString(R.string.creatinine_mmol_hint));
     }
 
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.gfr_reference,
+                R.string.gfr_link);
+    }
+
 }

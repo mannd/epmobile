@@ -18,7 +18,7 @@ import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-public class DayCalculator extends EpActivity implements OnClickListener {
+public class DateCalculator extends EpActivity implements OnClickListener {
     private DatePicker indexDatePicker;
     private RadioGroup dayRadioGroup;
     private EditText numberOfDaysEditText;
@@ -121,4 +121,14 @@ public class DayCalculator extends EpActivity implements OnClickListener {
 
     }
 
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityInstructions() {
+        showAlertDialog(R.string.date_calculator_title,
+                R.string.date_calculator_instructions);
+    }
 }

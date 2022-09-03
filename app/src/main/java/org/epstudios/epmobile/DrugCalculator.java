@@ -325,4 +325,15 @@ public abstract class DrugCalculator extends EpActivity implements
 
     abstract protected int getDose(int crCl);
 
+
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityInstructions() {
+        showAlertDialog(R.string.drug_dose_calculators_title,
+                R.string.drug_calculator_instructions);
+    }
 }

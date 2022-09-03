@@ -30,7 +30,7 @@ public class CalculatorList extends EpActivity {
                     .equals(getString(R.string.drug_dose_calculator_list_title)))
                 drugDoseCalculators();
             else if (selection
-                    .equals(getString(R.string.day_calculator_title)))
+                    .equals(getString(R.string.date_calculator_title)))
                 icdDayCalculator();
             else if (selection
                     .equals(getString(R.string.ibw_calculator_title)))
@@ -60,7 +60,7 @@ public class CalculatorList extends EpActivity {
     }
 
     private void icdDayCalculator() {
-        Intent i = new Intent(this, DayCalculator.class);
+        Intent i = new Intent(this, DateCalculator.class);
         startActivity(i);
     }
 

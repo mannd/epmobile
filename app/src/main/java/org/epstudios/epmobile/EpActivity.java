@@ -156,8 +156,6 @@ public abstract class EpActivity extends AppCompatActivity {
         alert.show();
     }
 
-    // TODO: handle multiple references...
-    // Need array of [reference, link] tuples
     final protected void showReferenceAlertDialog(@StringRes int referenceId,
                                                   @StringRes int linkId) {
         Spanned html = convertReferenceToHtml(referenceId, linkId);
@@ -172,7 +170,7 @@ public abstract class EpActivity extends AppCompatActivity {
     final protected void showReferenceAlertDialog(Reference[] references) {
         Spanned html = convertReferencesToHtml(references);
         if (html != null) {
-            showAlertDialog(getString(R.string.reference_label), html);
+            showAlertDialog(getString(R.string.references_label), html);
         } else {
             showAlertDialog(getString(R.string.error_dialog_title),
                     getString(R.string.error_message));
