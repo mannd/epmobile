@@ -10,33 +10,34 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class BrugadaEcg extends EpActivity implements OnClickListener {
+final class BrugadaEcg extends EpActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.brugadaecg);
         initToolbar();
-        Button textButton = findViewById(R.id.text_button);
-        textButton.setOnClickListener(this);
     }
 
-    public void onClick(View v) {
-        if (v.getId() == R.id.text_button) {
-            displayHelp();
-        }
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
     }
 
-    private void displayHelp() {
-        final SpannableString message = new SpannableString(
-                getString(R.string.brugada_ecg_description) + "\n\n"
-                        + getString(R.string.brugada_ecg_reference));
-        Linkify.addLinks(message, Linkify.WEB_URLS);
-        final AlertDialog dialog = new AlertDialog.Builder(this)
-                .setMessage(message)
-                .setTitle(getString(R.string.brugada_ecg_description_title))
-                .create();
-        dialog.show();
-        ((TextView) dialog.findViewById(android.R.id.message))
-                .setMovementMethod(LinkMovementMethod.getInstance());
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.brugada_ecg_reference,
+                R.string.brugada_ecg_link);
     }
+
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityInstructions() {
+        showAlertDialog(R.string.brugada_ecg_description_title,
+                R.string.brugada_ecg_description);
+    }
+
 }

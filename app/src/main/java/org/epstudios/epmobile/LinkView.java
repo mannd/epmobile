@@ -150,6 +150,4 @@ public class LinkView extends EpActivity implements View.OnClickListener {
             super.onPageFinished(view, url);
         }
     }
-
-
 }

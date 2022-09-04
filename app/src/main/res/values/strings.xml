@@ -635,8 +635,16 @@
         subjects.\n\nType 3: Saddle back pattern 
         with &lt; 2 mm J point elevation and &lt;
         1 mm ST elevation with positive T wave.  Not uncommon in healthy subjects.</string>
-    <string name="brugada_ecg_reference">Reference:
-        http://circ.ahajournals.org/content/106/19/2514.full#F1</string>
+    <string name="brugada_ecg_reference">Wilde AAM, Antzelevitch C, Borggrefe M,
+        et al. Proposed Diagnostic Criteria for the Brugada Syndrome.
+        Circulation. 2002;106(19):2514-2519.</string>
+    <string name="brugada_ecg_link">https://doi.org/10.1161/01.CIR.0000034169.45752.4A</string>
+    <string name="brugada_diagnosis_reference">Priori SG, Wilde AA, Horie M,
+        et al. HRS/EHRA/APHRS Expert Consensus Statement on the Diagnosis and
+        Management of Patients with Inherited Primary Arrhythmia Syndromes:
+        Document endorsed by HRS, EHRA, and APHRS in May 2013 and by ACCF, AHA,
+        PACES, and AEPC in June 2013. Heart Rhythm. 2013;10(12):1932-1963.</string>
+    <string name="brugada_diagnosis_link">https://doi.org/10.1016/j.hrthm.2013.05.01 </string>
     <string name="calculator_list_title">Calculators</string>
     <string name="calculator_title">Calculators</string>
     <string name="diagnosis_list_title">Diagnosis</string>
@@ -1363,12 +1371,17 @@
     <string name="suspicious_scd_label">Suspicious SCD (fever, nocturnal, Brugada aggravating drugs) in first- or second-degree relative</string>
     <string name="unexplained_scd_label">Unexplained SCD &lt; 45 years in first- or second-degree relative with negative autopsy</string>
     <string name="pathogenic_mutation_label">Probable pathogenic mutation in Brugada susceptibility gene</string>
-    <string name="brugada_score_reference">Antzelevitch C, Yan GX, Ackerman MJ, Borggrefe M, Corrado D, Guo J, et al.
-        J-wave syndromes expert consensus conference report: Emerging concepts and gaps in knowledge.
-        J Arrhythmia. [Internet] 2016 Oct [cited 2017 Sep 28];32(5):315-339.
-        Available from: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5063270/</string>
-    <string name="brugada_score_key">VF = ventricular fibrillation.  VT = ventricular tachycardia.
-	    SCD = sudden cardiac death.</string>
+    <string name="brugada_score_reference">Antzelevitch C, Yan GX, Ackerman MJ,
+        et al. J-Wave syndromes expert consensus conference report: Emerging
+        concepts and gaps in knowledge. J Arrhythm. 2016;32(5):315-339.</string>
+    <string name="brugada_score_link">https://doi.org/10.1016/j.joa.2016.07.002</string>
+    <string name="brugada_score_full_reference">Antzelevitch C, Yan GX, Ackerman
+        MJ, et al. J-Wave syndromes expert consensus conference report:
+        Emerging concepts and gaps in knowledge. J Arrhythm. 2016;32(5):315-339.
+        doi:10.1016/j.joa.2016.07.002</string>
+    <string name="brugada_score_key">VF = ventricular fibrillation.
+        \nVT = ventricular tachycardia.
+        \nSCD = sudden cardiac death.</string>
     <string name="large_er_label">ER ≥ 0.2 mV in ≥ 2 inferior and/or lateral ECG leads with horizontal/descending ST segment (\'IIa pattern\')</string>
     <string name="dynamic_j_point_label">Dynamic changes in J-point elevation (≥ 0.1 mV) in ≥ 2 inferior and/or lateral leads</string>
     <string name="j_point_elevation_label">≥ 0.1 mV J-point elevation in at least 2 inferior and/or lateral ECG leads</string>

@@ -64,8 +64,8 @@
         <item>@string/wpw_algorithm_list_title</item>
     </array>
     <array name="brugada_list">
-        <item>@string/brugada_ecg_title</item>
         <item>@string/brugada_diagnosis_title</item>
+        <item>@string/brugada_ecg_title</item>
         <item>@string/brugada_score_title</item>
     </array>
     <array name="calculator_list">

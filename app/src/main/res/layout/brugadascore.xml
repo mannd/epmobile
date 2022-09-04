@@ -100,7 +100,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/unexplained_scd_label" />
 
-
             <TextView
                 style="@style/Header1"
                 android:text="@string/genetic_test_result_label" />
@@ -111,16 +110,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/pathogenic_mutation_label" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/brugada_score_key" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:autoLink="web"
-                android:text="@string/brugada_score_reference" />
         </LinearLayout>
 
     </ScrollView>

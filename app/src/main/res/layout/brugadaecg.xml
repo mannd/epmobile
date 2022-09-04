@@ -18,12 +18,6 @@
             android:contentDescription="@string/brugada_ecg_title"
             android:src="@drawable/brugadaecg" />
 
-        <Button
-            android:id="@+id/text_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/text_label" />
-
     </FrameLayout>
 
 </LinearLayout>
