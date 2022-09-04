@@ -135,4 +135,14 @@ public class ArvcOld extends DiagnosticScore {
     private CheckBox familyHxScdCheckBox;
     private CheckBox familyHxCheckBox;
 
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.arvc_old_reference,
+                R.string.arvc_old_link);
+    }
 }

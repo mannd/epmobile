@@ -22,7 +22,6 @@ public class AtrialTachLocalization extends LocationAlgorithm implements
     private Button row21Button;
     private Button row22Button;
     private Button row23Button;
-    private Button instructionsButton;
     protected TextView stepTextView;
 
     // Steps on non-linear in this algorithm
@@ -52,9 +51,6 @@ public class AtrialTachLocalization extends LocationAlgorithm implements
         row22Button.setOnClickListener(this);
         row23Button = findViewById(R.id.row_2_3_button);
         row23Button.setOnClickListener(this);
-        instructionsButton = findViewById(R.id.instructions_button);
-        instructionsButton.setOnClickListener(this);
-        instructionsButton.setText(getString(R.string.instructions_label));
         stepTextView = findViewById(R.id.stepTextView);
         step1();
     }
@@ -87,8 +83,6 @@ public class AtrialTachLocalization extends LocationAlgorithm implements
             getRow22Result();
         } else if (id == R.id.row_2_3_button) {
             getRow23Result();
-        } else if (id == R.id.instructions_button) {
-            displayInstructions();
         }
     }
 
@@ -103,7 +97,6 @@ public class AtrialTachLocalization extends LocationAlgorithm implements
         row21Button.setVisibility(View.VISIBLE);
         row22Button.setVisibility(View.VISIBLE);
         row23Button.setVisibility(View.VISIBLE);
-        instructionsButton.setVisibility(View.VISIBLE);
     }
 
     private void getBackResult() {
@@ -200,25 +193,11 @@ public class AtrialTachLocalization extends LocationAlgorithm implements
         }
     }
 
-    private void displayInstructions() {
-        AlertDialog dialog = new AlertDialog.Builder(this).create();
-        final SpannableString message = new SpannableString(
-                getString(R.string.at_localization_instructions) + "\n"
-                        + getString(R.string.at_localization_reference));
-        Linkify.addLinks(message, Linkify.WEB_URLS);
-        dialog.setMessage(message);
-        dialog.setTitle(getString(R.string.atrial_tachycardia_localization_title));
-        dialog.show();
-        ((TextView) dialog.findViewById(android.R.id.message))
-                .setMovementMethod(LinkMovementMethod.getInstance());
-    }
-
     protected void gotoStep() {
         if (step > 1) {
             row21Button.setVisibility(View.GONE);
             row22Button.setVisibility(View.GONE);
             row23Button.setVisibility(View.GONE);
-            instructionsButton.setVisibility(View.GONE);
             yesButton.setText(getString(R.string.yes));
             noButton.setText(getString(R.string.no));
             backButton.setText(getString(R.string.back));
@@ -267,6 +246,28 @@ public class AtrialTachLocalization extends LocationAlgorithm implements
                     step1();
                 });
         dialog.show();
+    }
+
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityInstructions() {
+        showAlertDialog(R.string.atrial_tachycardia_localization_title,
+                R.string.at_localization_instructions);
+    }
+
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.at_localization_reference,
+                R.string.at_localization_link);
     }
 
 }

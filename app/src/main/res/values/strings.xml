@@ -553,9 +553,13 @@
 	    (&lt; 35 yrs) due to suspected ARVC/D</string>
     <string name="arvc_old_family_hx">Family history of ARVC/D based on these
 	    criteria</string>
-    <string name="arvc_old_reference">Reference: McKenna WJ et al. Br Heart J. 1994;71:215.
- 	    http://www.ncbi.nlm.nih.gov/sites/ppmc/articles/PMC483655/</string>
-
+    <string name="arvc_old_reference">McKenna WJ, Thiene G, Nava A, et al.
+        Diagnosis of arrhythmogenic right ventricular dysplasia/cardiomyopathy.
+        Task Force of the Working Group Myocardial and Pericardial Disease
+        of the European Society of Cardiology and of the Scientific Council on
+        Cardiomyopathies of the International Society and Federation of
+        Cardiology. Br Heart J. 1994;71(3):215-218.</string>
+    <string name="arvc_old_link">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC483655/</string>
     <!-- LVH -->
     <string name="lvh_list_title">Left Ventricular Hypertrophy</string>
     <string name="lvh_title">Left Ventricular Hypertrophy</string>
@@ -796,8 +800,10 @@
     <string name="negative_in_all_inf_leads_step">Negative P in All Inferior Leads?</string>
     <string name="sinus_rhythm_p_wave_step">Sinus Rhythm P Wave Morphology?</string>
     <string name="plus_minus_label">Pos/Neg</string>
-    <string name="at_localization_reference">Kistler et al. JACC 2006;48:1010.
-		J Am Coll Cardiol. 2006;48(5):1010-1017. http://content.onlinejacc.org/article.aspx?articleid=1137857</string>
+    <string name="at_localization_reference"> Kistler PM, Roberts-Thomson Kurt
+        C., Haqqani HM, et al. P-Wave Morphology in Focal Atrial Tachycardia.
+        Journal of the American College of Cardiology. 2006;48(5):1010-1017.</string>
+    <string name="at_localization_link">https://doi.org/10.1016/j.jacc.2006.03.058</string>
     <string name="at_localization_instructions">This algorithm applies only to focal atrial tachycardia.
         To be accurate, the P wave must have a discrete isoelectric segment before its start, i.e. don\'t use
         a P wave that is fused onto the end of a T wave.  Iso means isoelectric, defined as a &lt; 0.05 mV
