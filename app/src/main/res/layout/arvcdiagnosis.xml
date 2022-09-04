@@ -279,14 +279,6 @@
             <CheckBox
                 android:id="@+id/second_degree_relative"
                 android:text="@string/second_degree_relative_label" />
-
-
-            <TextView
-                android:text="@string/arvc_key" />
-
-            <TextView
-                android:autoLink="web"
-                android:text="@string/arvc_reference" />
         </TableLayout>
 
     </ScrollView>

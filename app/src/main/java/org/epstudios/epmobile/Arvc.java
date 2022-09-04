@@ -233,4 +233,25 @@ public class Arvc extends DiagnosticScore {
         familyHistorySuddenDeathCheckBox.setChecked(false);
         secondDegreeRelativeCheckBox.setChecked(false);
     }
+
+    @Override
+    protected boolean hideKeyMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityKey() {
+        showKeyAlertDialog(R.string.arvc_2010_key);
+    }
+
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.arvc_reference_2010,
+                R.string.arvc_link_2010);
+    }
 }
