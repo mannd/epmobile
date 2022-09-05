@@ -57,7 +57,6 @@ public class LinkView extends EpActivity implements View.OnClickListener {
             url = extras.getString("EXTRA_URL");
             linkTitle = extras.getString("EXTRA_TITLE");
             showButton = extras.getBoolean("EXTRA_SHOW_BUTTON");
-
         }
         if (url == null) {
             return;

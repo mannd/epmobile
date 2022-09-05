@@ -223,13 +223,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/tamponade_key" />
+                android:text="@string/tamponade_footnote" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:autoLink="web"
-                android:text="@string/tamponade_reference" />
         </LinearLayout>
 
     </ScrollView>

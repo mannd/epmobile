@@ -1424,17 +1424,25 @@
     <string name="malignant_disease_label">Malignant disease</string>
     <string name="dyspnea_label">Dyspnea/Tachypnea</string>
     <string name="cardiomegaly_label">Cardiomegaly on CXR</string>
-    <string name="tamponade_key">* in the absence of medications affecting heart rate,
+    <string name="tamponade_footnote">* in the absence of medications affecting heart rate,
         hypothyroidism and uremia.
-        IVC = inferior vena cava, PE = pericardial effusion, SBP = systolic blood pressure.
-        Contraindications to pericardiocentesis include uncorrected coagulopathy,
-	INR &gt; 1.5, thrombocytopenia &lt; 50,000/mm\u00b3, small, posterior, and loculated
-	effusions, or effusions resolving under anti-inflammatory treatment.
-    </string>
-    <string name="tamponade_reference">Risti AD, Imazio M, Adler Y, et al. Triage strategy for
-        urgent management of cardiac tamponade: a position statement of the European Society of
-        Cardiology Working Group on Myocardial and Pericardial Diseases.
-        European Heart Journal. 2014;35(34):2279-2284. https://doi.org/10.1093/eurheartj/ehu217 </string>
+        \n\nContraindications to pericardiocentesis include uncorrected coagulopathy,
+        INR &gt; 1.5, thrombocytopenia &lt; 50,000/mm\u00b3, small, posterior, and loculated
+        effusions, or effusions resolving under anti-inflammatory treatment.</string>
+    <string name="tamponade_key">IVC = inferior vena cava,
+        \nPE = pericardial effusion,
+        \nSBP = systolic blood pressure.</string>
+    <string name="tamponade_reference">Ristić AD, Imazio M, Adler Y, et al.
+        Triage strategy for urgent management of cardiac tamponade: a position
+        statement of the European Society of Cardiology Working Group on
+        Myocardial and Pericardial Diseases. European Heart Journal.
+        2014;35(34):2279-2284.</string>
+    <string name="tamponade_link">https://doi.org/10.1093/eurheartj/ehu217</string>
+    <string name="tamponade_full_reference">Ristić AD, Imazio M, Adler Y, et al.
+        Triage strategy for urgent management of cardiac tamponade: a position
+        statement of the European Society of Cardiology Working Group on
+        Myocardial and Pericardial Diseases. European Heart Journal.
+        2014;35(34):2279-2284. doi:10.1093/eurheartj/ehu217</string>
     <string name="tuberculosis_label">Tuberculosis</string>
     <string name="recent_radiotherapy_label">Recent radiotherapy</string>
     <string name="recent_viral_infection_label">Recent viral infection</string>
