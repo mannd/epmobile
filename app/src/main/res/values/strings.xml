@@ -1138,9 +1138,11 @@
         any age.\nNSVT
         = nonsustained ventricular tachycardia: 3 consecutive ventricular beats
         at a rate of 120 bpm or more and &lt;30 sec duration on Holter monitoring (minimum 24 hrs) at or prior to evaluation.</string>
-    <string name="hcm_scd_reference_1">2014 ESC Guidelines on diagnosis and management of hypertrophic cardiomyopathy
-        | European Heart Journal | Oxford Academic.</string>
-    <string name="hcm_scd_link_1">https://academic.oup.com/eurheartj/article/35/39/2733/853385#sec-16</string>
+    <string name="hcm_scd_reference_1">2014 ESC Guidelines on diagnosis and
+        management of hypertrophic cardiomyopathy: The Task Force for the
+        Diagnosis and Management of Hypertrophic Cardiomyopathy of the European
+        Society of Cardiology (ESC). Eur Heart J. 2014;35(39):2733-2779.</string>
+    <string name="hcm_scd_link_1">https://doi.org/10.1093/eurheartj/ehu284</string>
     <string name="hcm_scd_reference_2">O’Mahony C, Jichi F, Pavlou M, et al.
         A novel clinical risk prediction model for sudden cardiac death in hypertrophic cardiomyopathy
         (HCM Risk-SCD). European Heart Journal. 2014;35(30):2010-2020.</string>
@@ -1162,12 +1164,6 @@
     <string name="icd_not_indicated_message">ICD generally not indicated.</string>
     <string name="icd_may_be_considered_message">ICD may be considered.</string>
     <string name="icd_should_be_considered_message">ICD should be considered.</string>
-    <string name="hcm_scd_2014_full_reference" tools:ignore="Typos">O\'Mahony C., Jichi F., Pavlou M.,
-        Monserrat L., Anastasakis A., Rapezzi C.  A novel clinical risk prediction
-        model for sudden cardiac death in hypertrophic cardiomyopathy (HCM Risk-SCD).
-        Eur Heart J [Internet] 2014 Aug [cited 2015 May 29];35(30):2010–2020.
-        Available from: http://doi.org/10.1093/eurheartj/eht439
-    </string>
     <string name="same_tt2r2_title">SAMe-TT\u2082R\u2082 Score</string>
     <string name="atria_bleeding_score_title">ATRIA Bleeding Risk Score</string>
     <string name="atria_stroke_score_title">ATRIA Stroke Risk Score</string>
@@ -1375,10 +1371,6 @@
         et al. J-Wave syndromes expert consensus conference report: Emerging
         concepts and gaps in knowledge. J Arrhythm. 2016;32(5):315-339.</string>
     <string name="brugada_score_link">https://doi.org/10.1016/j.joa.2016.07.002</string>
-    <string name="brugada_score_full_reference">Antzelevitch C, Yan GX, Ackerman
-        MJ, et al. J-Wave syndromes expert consensus conference report:
-        Emerging concepts and gaps in knowledge. J Arrhythm. 2016;32(5):315-339.
-        doi:10.1016/j.joa.2016.07.002</string>
     <string name="brugada_score_key">VF = ventricular fibrillation.
         \nVT = ventricular tachycardia.
         \nSCD = sudden cardiac death.</string>
@@ -1424,11 +1416,6 @@
     <string name="malignant_disease_label">Malignant disease</string>
     <string name="dyspnea_label">Dyspnea/Tachypnea</string>
     <string name="cardiomegaly_label">Cardiomegaly on CXR</string>
-    <string name="tamponade_footnote">* in the absence of medications affecting heart rate,
-        hypothyroidism and uremia.
-        \n\nContraindications to pericardiocentesis include uncorrected coagulopathy,
-        INR &gt; 1.5, thrombocytopenia &lt; 50,000/mm\u00b3, small, posterior, and loculated
-        effusions, or effusions resolving under anti-inflammatory treatment.</string>
     <string name="tamponade_key">IVC = inferior vena cava,
         \nPE = pericardial effusion,
         \nSBP = systolic blood pressure.</string>
@@ -1438,11 +1425,11 @@
         Myocardial and Pericardial Diseases. European Heart Journal.
         2014;35(34):2279-2284.</string>
     <string name="tamponade_link">https://doi.org/10.1093/eurheartj/ehu217</string>
-    <string name="tamponade_full_reference">Ristić AD, Imazio M, Adler Y, et al.
-        Triage strategy for urgent management of cardiac tamponade: a position
-        statement of the European Society of Cardiology Working Group on
-        Myocardial and Pericardial Diseases. European Heart Journal.
-        2014;35(34):2279-2284. doi:10.1093/eurheartj/ehu217</string>
+    <string name="tamponade_instructions">Use this scoring system to triage
+        a patient with pericardial tamponade.
+        \n\nContraindications to pericardiocentesis include uncorrected coagulopathy,
+        INR &gt; 1.5, thrombocytopenia &lt; 50,000/mm\u00b3, small, posterior, and loculated
+        effusions, or effusions resolving under anti-inflammatory treatment.</string>
     <string name="tuberculosis_label">Tuberculosis</string>
     <string name="recent_radiotherapy_label">Recent radiotherapy</string>
     <string name="recent_viral_infection_label">Recent viral infection</string>
@@ -1453,7 +1440,9 @@
     <string name="autoimmune_disease_label">Systemic autoimmune disease</string>
     <string name="orthopnea_label">Orthopnea (NO rales on lung auscultation)</string>
     <string name="hypotension_label">Hypotension (SBP &lt; 95 mmHg)</string>
-    <string name="sinus_tachycardia_label">Progressive sinus tachycardia*</string>
+    <string name="sinus_tachycardia_label">Progressive sinus tachycardia
+        (in the absence of medications affecting heart rate,
+        hypothyroidism and uremia)</string>
     <string name="oliguria_label">Oliguria</string>
     <string name="pulsus_paradoxus_label">Pulsus paradoxus &gt; 10 mmHg</string>
     <string name="friction_rub_label">Pericardial friction rub</string>

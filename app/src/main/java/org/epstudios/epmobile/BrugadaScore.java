@@ -131,7 +131,8 @@ public class BrugadaScore extends RiskScore {
 
     @Override
     protected String getFullReference() {
-        return getString(R.string.brugada_score_full_reference);
+        return convertReferenceToText(R.string.brugada_score_reference,
+                R.string.brugada_score_link);
     }
 
     @Override

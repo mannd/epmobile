@@ -128,7 +128,13 @@ public class HcmScd extends RiskScore {
 
     @Override
     protected String getFullReference() {
-        return getString(R.string.hcm_scd_2014_full_reference);
+
+        String reference1 = convertReferenceToText(R.string.hcm_scd_reference_1,
+                R.string.hcm_scd_link_1);
+        String reference2 = convertReferenceToText(R.string.hcm_scd_reference_2,
+                R.string.hcm_scd_link_2);
+        String fullReference = reference1 + "\n" + reference2;
+        return fullReference;
     }
 
     @Override

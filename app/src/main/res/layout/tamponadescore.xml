@@ -220,11 +220,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/swinging_heart_label" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/tamponade_footnote" />
-
         </LinearLayout>
 
     </ScrollView>

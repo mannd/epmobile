@@ -224,6 +224,17 @@ public abstract class EpActivity extends AppCompatActivity {
         }
     }
 
+    public String convertReferenceToText(@StringRes int referenceId,
+                                         @StringRes int linkId) {
+        String reference = getString(referenceId);
+        String link = getString(linkId);
+        if (reference != null) {
+            String referencePlusLink = reference + " " + link;
+            return referencePlusLink;
+        }
+        return null;
+    }
+
     // Handle multiple references.
     public Spanned convertReferencesToHtml(Reference[] references) {
         String htmlString = convertReferencesToHtmlString(references);

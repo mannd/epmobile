@@ -36,7 +36,8 @@ public final class TamponadeScore extends RiskScore {
 
     @Override
     protected String getFullReference() {
-        return getString(R.string.tamponade_full_reference);
+        return convertReferenceToText(R.string.tamponade_reference,
+                R.string.tamponade_link);
     }
 
     @Override
@@ -124,26 +125,35 @@ public final class TamponadeScore extends RiskScore {
         checkBox[30] = findViewById(R.id.swinging_heart);
     }
 
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
 
-        @Override
-        protected boolean hideReferenceMenuItem() {
-            return false;
-        }
+    protected void showActivityInstructions() {
+        showAlertDialog(R.string.tamponade_title,
+                R.string.tamponade_instructions);
+    }
 
-        @Override
-        protected void showActivityReference() {
-            showReferenceAlertDialog(R.string.tamponade_reference,
-                    R.string.tamponade_link);
-        }
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
 
-        @Override
-        protected boolean hideKeyMenuItem() {
-            return false;
-        }
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.tamponade_reference,
+                R.string.tamponade_link);
+    }
 
-        @Override
-        protected void showActivityKey() {
-            showKeyAlertDialog(R.string.tamponade_key);
-        }
+    @Override
+    protected boolean hideKeyMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityKey() {
+        showKeyAlertDialog(R.string.tamponade_key);
+    }
 
 }
