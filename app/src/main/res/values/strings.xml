@@ -1384,8 +1384,11 @@
     <string name="ambulatory_ecg_label">Ambulatory ECG Monitoring</string>
     <string name="ecg_label">12-lead ECG</string>
     <string name="short_coupled_pvcs_label">Short-coupled PVCs with R on ascending limb or peak of T wave</string>
-    <string name="ers_score_key">ER = Early repolarization.  PVCs = Premature ventricular complexes VF = ventricular fibrillation.  VT = ventricular tachycardia.
-	    SCD = sudden cardiac death.</string>
+    <string name="ers_score_key">ER = Early repolarization.
+        \nPVCs = Premature ventricular complexes
+        \nVF = ventricular fibrillation.
+        \nVT = ventricular tachycardia.
+	    \nSCD = sudden cardiac death.</string>
     <string name="absolute_exclusions_label">Absolute Exclusions</string>
     <string name="personal_hx_vt_ca_label">Personal history of sustained VT or CA due to VF with:</string>
     <string name="ejection_fraction_label">EF</string>

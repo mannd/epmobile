@@ -142,7 +142,8 @@ public class ErsScore extends RiskScore {
     @Override
     // Note ERS score reference is identical to Brugada reference, so below is OK
     protected String getFullReference() {
-        return getString(R.string.brugada_score_reference);
+        return convertReferenceToText(R.string.brugada_score_reference,
+                R.string.brugada_score_link);
     }
 
     @Override
@@ -155,6 +156,29 @@ public class ErsScore extends RiskScore {
         // no short reference given, since it is in layout
         return null;
     }
+
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    // ERS score has same reference as brugada score
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.brugada_score_reference,
+                R.string.brugada_score_link);
+    }
+
+    @Override
+    protected boolean hideKeyMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityKey() {
+        showKeyAlertDialog(R.string.ers_score_key);
+    }
+
 }
 
 

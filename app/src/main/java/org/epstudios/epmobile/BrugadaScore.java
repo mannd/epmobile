@@ -147,26 +147,26 @@ public class BrugadaScore extends RiskScore {
     }
 
 
-        @Override
-        protected boolean hideReferenceMenuItem() {
-            return false;
-        }
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
 
-        @Override
-        protected void showActivityReference() {
-            showReferenceAlertDialog(R.string.brugada_score_reference,
-                    R.string.brugada_score_link);
-        }
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.brugada_score_reference,
+                R.string.brugada_score_link);
+    }
 
-        @Override
-        protected boolean hideKeyMenuItem() {
-            return false;
-        }
+    @Override
+    protected boolean hideKeyMenuItem() {
+        return false;
+    }
 
-        @Override
-        protected void showActivityKey() {
-            showKeyAlertDialog(R.string.brugada_score_key);
-        }
+    @Override
+    protected void showActivityKey() {
+        showKeyAlertDialog(R.string.brugada_score_key);
+    }
 
 }
 
