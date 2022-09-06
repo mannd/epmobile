@@ -44,8 +44,8 @@
 Amplitudes are given in millimeters, where 1 mm=0.1 mV.
 
 * References
-- Table from: Hancock EW, Deal BJ, Mirvis DM, et al. AHA/ACC/HRS recommendations for the standardization and interpretation of the electrocardiogram.  Part V: Electrocardiogram changes associated with cardiac chamber hypertrophy.  J Am Coll Cardiol 2009;53:992. http://content.onlinejacc.org/article.aspx?articleid=1139534
-- Myers GB, Klein HA, Stofer BE. Electrocardiographic diagnosis of right ventricular hypertrophy.  Am Heart J 1948;35:1.
-- Sokolow M, Lyon TP. The ventricular complex in left ventricular hypertrophy as obtained by unipolar and limb leads.  Am Heart J 1949;37:161.
-- Lewis T. Observations upon ventricular hypertrophy with special reference to preponderance of one or the other chamber.  Heart 1914;5:367.
-- Butler PM, Leggett SI, Howe CM.  Identification of electrocardiographic criteria for diagnosis of right ventricular hypertrophy due to mitral stenosis.  Am J Cardiol 1986;57:639.
+- Hancock EW, Deal BJ, Mirvis DM, Okin P, Kligfield P, Gettes LS. AHA/ACCF/HRS Recommendations for the Standardization and Interpretation of the Electrocardiogram. Journal of the American College of Cardiology. 2009;53(11):992-1002. https://doi.org/10.1016/j.jacc.2008.12.015
+- Butler PM, Leggett SI, Howe CM, Freye CJ, Hindman NB, Wagner GS. Identification of electrocardiographic criteria for diagnosis of right ventricular hypertrophy due to mitral stenosis. Am J Cardiol. 1986;57(8):639-643. https://doi.org/10.1016/0002-9149(86)90850-7
+- Myers GB, Klein HA, Stofer BE. The electrocardiographic diagnosis of right ventricular hypertrophy. Am Heart J. 1948;35(1):1-40. https://doi.org/10.1016/0002-8703(48)90182-3
+
+
