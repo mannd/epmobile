@@ -24,4 +24,15 @@ public class LvhVoltage extends EpActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.other_lvh_reference,
+                R.string.other_lvh_link);
+    }
 }

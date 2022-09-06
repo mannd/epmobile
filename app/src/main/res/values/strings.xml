@@ -586,7 +586,10 @@
     <string name="other_lvh_lead_v5_label">R in V5 or V6</string>
     <string name="other_lvh_lead_v5_result">> 26 mm</string>
     <string name="other_lvh_key">LVH present if any of above voltage criteria met.</string>
-    <string name="other_lvh_reference">Reference: Hsieh BP et al. Am Heart J 2005;150:161.</string>
+    <string name="other_lvh_reference">Hsieh BP, Pham MX, Froelicher VF.
+        Prognostic value of electrocardiographic criteria for left ventricular
+        hypertrophy. American Heart Journal. 2005;150(1):161-167.</string>
+    <string name="other_lvh_link">https://doi.org/10.1016/j.ahj.2004.08.041</string>
     <string name="estes_voltage_label">Any limb-lead R or S \u2265 20 mm
         or S V1 or V2 \u2265 30 mm or R V5 or V6 \u2265 30 mm</string>
     <string name="estes_strain_without_dig_label">Left ventricular strain pattern without digitalis</string>
@@ -1032,11 +1035,10 @@
    		Fibrillation (NRAF). Am Heart J [Internet]. 2006 [cited 2014 Jun
    		6];151:713-9. Available from:
    		http://www.hematology.fi/system/files/HEMORRHAGES-score.pdf</string>
-    <string name="estes_short_reference">Reference: Romhilt DW et al. Am Heart J.1968;75:752.</string>
-    <string name="estes_full_reference">Romhilt DW, Estes EH Jr.
-        A point-score system for the ECG diagnosis
-   		of left ventricular hypertrophy. Am Heart J.
-   		1968 Jun;75(6):752-8.</string>
+    <string name="estes_full_reference">Romhilt DW, Estes EH. A point-score
+        system for the ECG diagnosis of left ventricular hypertrophy.
+        Am Heart J. 1968;75(6):752-758.</string>
+    <string name="estes_link">https://doi.org/10.1016/0002-8703(68)90035-5</string>
     <string name="hcm_full_reference">McKenna WJ. Behr ER. Hypertrophic cardiomyopathy:
 	    management, risk stratification, and prevention of sudden death. Heart
    		[Internet]. 2002 Feb [cited 2014 Jun 6];87(2):169-176. Available

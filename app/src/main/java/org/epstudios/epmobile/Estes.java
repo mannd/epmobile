@@ -98,7 +98,8 @@ public class Estes extends RiskScore {
 
     @Override
     protected String getFullReference() {
-        return getString(R.string.estes_full_reference);
+        return convertReferenceToText(R.string.estes_full_reference,
+                R.string.estes_link);
     }
 
     @Override
@@ -112,4 +113,26 @@ public class Estes extends RiskScore {
         // as it is already at the bottom of the layout.
         return null;
     }
+
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.estes_full_reference,
+                R.string.estes_link);
+    }
+
+    @Override
+    protected boolean hideKeyMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityKey() {
+        showKeyAlertDialog(R.string.estes_key);
+    }
+
 }
