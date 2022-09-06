@@ -124,16 +124,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/family_hx_scd_label" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/lqts_key" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:autoLink="web"
-                android:text="@string/lqts_reference" />
         </LinearLayout>
 
     </ScrollView>

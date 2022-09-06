@@ -514,19 +514,26 @@
     <string name="torsade_label">Torsade de pointes</string>
     <string name="t_wave_alternans_label">T wave alternans</string>
     <string name="notched_t_wave_label">Notched T wave in 3 leads</string>
-    <string name="low_hr_label">Low heart rate for age*</string>
+    <string name="low_hr_label">Low heart rate for age (resting heart rate below 2nd percentile for age)</string>
     <string name="clinical_hx_label">Clinical History</string>
     <string name="syncope_with_stress_label">Syncope with stress</string>
     <string name="syncope_without_stress_label">Syncope without stress</string>
     <string name="congenital_deafness_label">Congenital deafness</string>
     <string name="family_hx_lqt_label">Family members with definite LQTS</string>
     <string name="family_hx_scd_label">Unexplained SCD \u003c age 30 in immediate family</string>
-    <string name="lqts_key">ECG findings in absence of medications that affect ECG, 
-        LQTS = long QT syndrome, QTc calculated by Bazett formula,
-        SCD = sudden cardiac death, *resting heart rate below 2nd percentile for age.
-        Note: the same family member cannot be counted more than once.</string>
-    <string name="lqts_reference">Schwartz PJ et al.  Circulation 2011;124:2181.
-        http://circ.ahajournals.org/content/124/20/2181</string>
+    <string name="lqts_key">LQTS = long QT syndrome
+        \nQTc calculated by Bazett formula
+        \nSCD = sudden cardiac deat </string>
+    <string name="lqts_diagnosis_reference">Schwartz PJ, Crotti L. QTc behavior
+        during exercise and genetic testing for the long-QT syndrome.
+        Circulation. 2011;124(20):2181-2184.</string>
+    <string name="lqts_diagnosis_link">https://doi.org/10.1161/CIRCULATIONAHA.111.062182</string>
+    <string name="lqts_diagnosis_instructions">Use this calculator to determine
+        if a subject is likely to have congenital Long QT Syndrome.  In the original
+        article, the QTc was determined by the Bazett formula, and it must be
+        measured in the absence of medications or electrolyte conditions that
+        affect the QT interval.  For family history, the same family member
+        cannot be counted in each category.</string>
     <!-- ARVC 1994 criteria -->
     <string name="arvc_old_criteria_title">ARVC/D Diagnosis (1994)</string>
     <string name="arvc_old_rv_dilatation">Severe dilatation and reduction
@@ -621,11 +628,6 @@
     <string name="lqt_subtypes_4_name">LQTS 4</string>
     <string name="lqt_subtypes_4_description">Frequency: 1-2%\nLocus: 4q25-27\nGene: ANKB\nChannel:
     	INaKATP, INaCa exchange\nECG: Variable QT prolongation\nFeatures: No specific features</string>
-    <string name="lqt_subtypes_5_name">LQTS 5 – 11</string>
-    <string name="lqt_subtypes_5_description" tools:ignore="StringFormatInvalid">Remaining subtypes all &lt;1% frequency (some just single families)
-   	    without distinguishing features.  One exception is LQTS 8 which affects the ICaL channel, has
-   	    alternating T waves on ECG, and is associated with Timothy Syndrome.</string>
-    <string name="lqt_subtypes_reference">\nReferences:\nhttp://www.geneticheartdisease.org/lqts_gene_table.htm\n\nhttp://en.ecgpedia.org/wiki/Long_QT_Syndrome</string>
     <string name="lqt_ecg_title">Long QT ECG Patterns</string>
     <string name="brugada_ecg_title">Brugada ECG Patterns</string>
     <string name="text_label">Notes</string>
@@ -1514,6 +1516,11 @@
     ARVC patients at time of their diagnosis.</string>
     <string name="rvef_details">As measured by cardiac MRI.</string>
     <string name="long_qt_table_title">Long QT Syndromes (All)</string>
+    <string name="lqts_table_reference">Adler A, Novelli V, Amin AS, et al. An
+        International, Multicentered, Evidence-Based Reappraisal of Genes
+        Reported to Cause Congenital Long QT Syndrome. Circulation.
+        2020;141(6):418-428.</string>
+    <string name="lqts_table_link">https://doi.org/10.1161/CIRCULATIONAHA.119.043132</string>
     <string name="qt_prolongation_risk_full_reference">Tisdale James E., Jaynes Heather A., Kingery Joanna R., et al.
         Development and Validation of a Risk Score to Predict QT Interval Prolongation in Hospitalized Patients.
         Circulation: Cardiovascular Quality and Outcomes. 2013;6(4):479-487. doi:10.1161/CIRCOUTCOMES.113.000152</string>

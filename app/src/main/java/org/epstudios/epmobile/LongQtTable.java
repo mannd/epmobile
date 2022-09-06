@@ -114,4 +114,17 @@ public class LongQtTable extends EpActivity {
     private RowData[] initData() {
         return data;
     }
+
+
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.lqts_table_reference,
+                R.string.lqts_table_link);
+    }
+
 }

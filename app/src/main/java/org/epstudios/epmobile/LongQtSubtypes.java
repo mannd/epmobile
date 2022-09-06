@@ -42,4 +42,17 @@ public class LongQtSubtypes extends EpActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.lqts_table_reference,
+                R.string.lqts_table_link);
+    }
+
 }
