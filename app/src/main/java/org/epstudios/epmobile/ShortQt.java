@@ -24,39 +24,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.CheckBox;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-public class ShortQt extends EpActivity implements OnClickListener {
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.shortqt);
-        initToolbar();
-
-        View calculateButton = findViewById(R.id.calculate_button);
-        calculateButton.setOnClickListener(this);
-        View clearButton = findViewById(R.id.clear_button);
-        clearButton.setOnClickListener(this);
-        View instructionsButton = findViewById(R.id.instructions_button);
-        instructionsButton.setOnClickListener(this);
-
-        qtcRadioGroup = findViewById(R.id.qtc_radio_group);
-        shortJtCheckBox = findViewById(R.id.short_jt);
-        suddenCardiacArrestCheckBox = findViewById(R.id.sudden_cardiac_arrest);
-        polymorphicVtCheckBox = findViewById(R.id.polymorphic_vt);
-        unexplainedSyncopeCheckBox = findViewById(R.id.unexplained_syncope);
-        afbCheckBox = findViewById(R.id.afb);
-        relativeWithSqtsCheckBox = findViewById(R.id.relative_with_sqts);
-        relativeWithSdCheckBox = findViewById(R.id.relative_with_sd);
-        sidsCheckBox = findViewById(R.id.sids);
-        genotypePositiveCheckBox = findViewById(R.id.genotype_positive);
-        mutationCheckBox = findViewById(R.id.mutation);
-
-        clearEntries();
-
-    }
-
-    // Algorithm
+public class ShortQt extends RiskScore implements OnClickListener {
 
     private RadioGroup qtcRadioGroup;
     private CheckBox shortJtCheckBox;
@@ -77,54 +48,98 @@ public class ShortQt extends EpActivity implements OnClickListener {
             calculateResult();
         } else if (id == R.id.clear_button) {
             clearEntries();
-        } else if (id == R.id.instructions_button) {
-            displayInstructions();
         }
     }
 
-    private void calculateResult() {
+    protected void calculateResult() {
         int score = 0;
         // ECG criteria
         // one of the short QT intervals must be selected to get other points
-        if (qtcRadioGroup.getCheckedRadioButtonId() == -1
+        // TODO: addselected radio button to comple copied risks.
+        int selectedQTcId = qtcRadioGroup.getCheckedRadioButtonId();
+        if (selectedQTcId == -1
                 && !shortJtCheckBox.isChecked()) {
             displayResult(score);
             return;
         }
-        if (qtcRadioGroup.getCheckedRadioButtonId() == R.id.short_qt)
+        if (selectedQTcId == R.id.short_qt)
             score++;
-        else if (qtcRadioGroup.getCheckedRadioButtonId() == R.id.shorter_qt)
+        else if (selectedQTcId == R.id.shorter_qt)
             score += 2;
-        else if (qtcRadioGroup.getCheckedRadioButtonId() == R.id.shortest_qt)
+        else if (selectedQTcId == R.id.shortest_qt)
             score += 3;
+        RadioButton qtcRadioButton = (RadioButton) findViewById(selectedQTcId);
+        if (qtcRadioButton != null) {
+            addSelectedRisk("QTc " + qtcRadioButton.getText().toString());
+        }
         // Short JT is very specific for SQTS
-        if (shortJtCheckBox.isChecked())
+        if (shortJtCheckBox.isChecked()) {
             score++;
+            addSelectedRisk(shortJtCheckBox.getText().toString());
+        }
         // Clinical history
         // points can be received for only one of the next 3 selections
-        if (suddenCardiacArrestCheckBox.isChecked())
+        if (suddenCardiacArrestCheckBox.isChecked()) {
             score += 2;
-        else if (polymorphicVtCheckBox.isChecked())
+            addSelectedRisk(suddenCardiacArrestCheckBox.getText().toString());
+        }
+        else if (polymorphicVtCheckBox.isChecked()) {
             score += 2;
-        else if (unexplainedSyncopeCheckBox.isChecked())
+            addSelectedRisk(polymorphicVtCheckBox.getText().toString());
+        }
+        else if (unexplainedSyncopeCheckBox.isChecked()) {
             score++;
-        if (afbCheckBox.isChecked())
+            addSelectedRisk(unexplainedSyncopeCheckBox.getText().toString());
+        }
+        if (afbCheckBox.isChecked()) {
             score++;
+            addSelectedRisk(afbCheckBox.getText().toString());
+        }
         // Family history
         // points can be received only once in this section
-        if (relativeWithSqtsCheckBox.isChecked())
+        if (relativeWithSqtsCheckBox.isChecked()) {
             score += 2;
-        else if (relativeWithSdCheckBox.isChecked())
+            addSelectedRisk(relativeWithSqtsCheckBox.getText().toString());
+        }
+        else if (relativeWithSdCheckBox.isChecked()) {
             score++;
-        else if (sidsCheckBox.isChecked())
+            addSelectedRisk(relativeWithSdCheckBox.getText().toString());
+        }
+        else if (sidsCheckBox.isChecked()) {
             score++;
+            addSelectedRisk(sidsCheckBox.getText().toString());
+        }
         // Genotype
-        if (genotypePositiveCheckBox.isChecked())
+        if (genotypePositiveCheckBox.isChecked()) {
             score += 2;
-        if (mutationCheckBox.isChecked())
+            addSelectedRisk(genotypePositiveCheckBox.getText().toString());
+        }
+        if (mutationCheckBox.isChecked()) {
             score++;
+            addSelectedRisk(mutationCheckBox.getText().toString());
+        }
 
         displayResult(score);
+    }
+
+    @Override
+    protected void setContentView() {
+        setContentView(R.layout.shortqt);
+    }
+
+    @Override
+    protected void init() {
+        qtcRadioGroup = findViewById(R.id.qtc_radio_group);
+        shortJtCheckBox = findViewById(R.id.short_jt);
+        suddenCardiacArrestCheckBox = findViewById(R.id.sudden_cardiac_arrest);
+        polymorphicVtCheckBox = findViewById(R.id.polymorphic_vt);
+        unexplainedSyncopeCheckBox = findViewById(R.id.unexplained_syncope);
+        afbCheckBox = findViewById(R.id.afb);
+        relativeWithSqtsCheckBox = findViewById(R.id.relative_with_sqts);
+        relativeWithSdCheckBox = findViewById(R.id.relative_with_sd);
+        sidsCheckBox = findViewById(R.id.sids);
+        genotypePositiveCheckBox = findViewById(R.id.genotype_positive);
+        mutationCheckBox = findViewById(R.id.mutation);
     }
 
     private void displayResult(int score) {
@@ -137,28 +152,11 @@ public class ShortQt extends EpActivity implements OnClickListener {
         else
             message += "Low probability";
         message += " of Short QT Syndrome";
-        dialog.setMessage(message);
-        dialog.setButton(DialogInterface.BUTTON_POSITIVE,
-                getString(R.string.reset_label),
-                (dialog12, which) -> clearEntries());
-        dialog.setButton(DialogInterface.BUTTON_NEUTRAL,
-                getString(R.string.dont_reset_label),
-                (dialog1, which) -> {
-                });
-        dialog.setTitle(getString(R.string.short_qt_title));
-
-        dialog.show();
+        setResultMessage(message);
+        super.displayResult(message, getString(R.string.short_qt_title));
     }
 
-    private void displayInstructions() {
-        AlertDialog dialog = new AlertDialog.Builder(this).create();
-        String message = getString(R.string.sqts_instructions);
-        dialog.setMessage(message);
-        dialog.setTitle(getString(R.string.short_qt_title));
-        dialog.show();
-    }
-
-    private void clearEntries() {
+    protected void clearEntries() {
         qtcRadioGroup.clearCheck();
         shortJtCheckBox.setChecked(false);
         suddenCardiacArrestCheckBox.setChecked(false);
@@ -170,7 +168,43 @@ public class ShortQt extends EpActivity implements OnClickListener {
         sidsCheckBox.setChecked(false);
         genotypePositiveCheckBox.setChecked(false);
         mutationCheckBox.setChecked(false);
-
     }
 
+    @Override
+    protected String getFullReference() {
+        return convertReferenceToText(R.string.sqts_reference,
+                R.string.sqts_link);
+    }
+
+    @Override
+    protected String getRiskLabel() {
+        return getString(R.string.short_qt_title);
+    }
+
+    @Override
+    protected String getShortReference() {
+        return null;
+    }
+
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.sqts_reference,
+                R.string.sqts_link);
+    }
+
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityInstructions() {
+        showAlertDialog(R.string.short_qt_title,
+                R.string.sqts_instructions);
+    }
 }

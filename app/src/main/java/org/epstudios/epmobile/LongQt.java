@@ -153,17 +153,6 @@ public class LongQt extends RiskScore implements OnClickListener {
         message += "Long QT Syndrome";
         setResultMessage(message);
         super.displayResult(message, getString(R.string.long_qt_syndrome_diagnosis_title));
-//        dialog.setMessage(message);
-//        dialog.setButton(DialogInterface.BUTTON_POSITIVE,
-//                getString(R.string.reset_label),
-//                (dialog12, which) -> clearEntries());
-//        dialog.setButton(DialogInterface.BUTTON_NEUTRAL,
-//                getString(R.string.dont_reset_label),
-//                (dialog1, which) -> {
-//                });
-//        dialog.setTitle(getString(R.string.long_qt_syndrome_diagnosis_title));
-//
-//        dialog.show();
     }
 
     protected void clearEntries() {
