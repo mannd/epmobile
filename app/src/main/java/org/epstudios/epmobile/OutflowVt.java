@@ -31,11 +31,15 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.sql.Ref;
+
+import androidx.annotation.StringRes;
+
 public class OutflowVt extends LocationAlgorithm implements OnClickListener {
     private Button yesButton;
     private Button noButton;
     protected Button backButton;
-    private Button instructionsButton;
+    private Button morphologyButton;
     protected TextView stepTextView;
 
     private boolean isRvot = false;
@@ -66,9 +70,10 @@ public class OutflowVt extends LocationAlgorithm implements OnClickListener {
         noButton.setOnClickListener(this);
         backButton = findViewById(R.id.back_button);
         backButton.setOnClickListener(this);
-        instructionsButton = findViewById(R.id.morphology_button);
-        instructionsButton.setOnClickListener(this);
-        instructionsButton.setText(getString(R.string.instructions_label));
+        // Morphology button no longer used for instructions
+        // since v2.30.0.
+        morphologyButton = findViewById(R.id.morphology_button);
+        morphologyButton.setVisibility(View.GONE);
         stepTextView = findViewById(R.id.stepTextView);
         step1();
 
@@ -95,21 +100,7 @@ public class OutflowVt extends LocationAlgorithm implements OnClickListener {
             getNoResult();
         } else if (id == R.id.back_button) {
             getBackResult();
-        } else if (id == R.id.morphology_button) {
-            displayInstructions();
         }
-    }
-
-    private void displayInstructions() {
-        AlertDialog dialog = new AlertDialog.Builder(this).create();
-        final SpannableString message = new SpannableString(
-                getString(R.string.outflow_vt_instructions));
-        Linkify.addLinks(message, Linkify.WEB_URLS);
-        dialog.setMessage(message);
-        dialog.setTitle(getString(R.string.outflow_tract_vt_title));
-        dialog.show();
-        ((TextView) dialog.findViewById(android.R.id.message))
-                .setMovementMethod(LinkMovementMethod.getInstance());
     }
 
     private void getBackResult() {
@@ -203,14 +194,11 @@ public class OutflowVt extends LocationAlgorithm implements OnClickListener {
         stepTextView
                 .setText(getString(R.string.outflow_vt_late_transition_step));
         backButton.setEnabled(false);
-        instructionsButton.setVisibility(View.VISIBLE);
     }
 
     protected void gotoStep() {
         if (step != indeterminateLocationStep)
             resetButtons();
-        if (step > 1)
-            instructionsButton.setVisibility(View.GONE);
         switch (step) {
             case lateTransitionStep:
                 step1();
@@ -286,4 +274,34 @@ public class OutflowVt extends LocationAlgorithm implements OnClickListener {
         }
         return message;
     }
+
+
+        @Override
+        protected boolean hideReferenceMenuItem() {
+            return false;
+        }
+
+        @Override
+        protected void showActivityReference() {
+            Reference[] references = new Reference[3];
+            references[0] = new Reference(this, R.string.outflow_vt_reference_0,
+                    R.string.outflow_vt_link_0);
+            references[1] = new Reference(this, R.string.outflow_vt_reference_1,
+                    R.string.outflow_vt_link_1);
+            references[2] = new Reference(this, R.string.outflow_vt_reference_2,
+                    R.string.outflow_vt_link_2);
+            showReferenceAlertDialog(references);
+        }
+
+        @Override
+        protected boolean hideInstructionsMenuItem() {
+            return false;
+        }
+
+        @Override
+        protected void showActivityInstructions() {
+            showAlertDialog(R.string.outflow_tract_vt_title,
+                    R.string.outflow_vt_instructions);
+        }
+
 }

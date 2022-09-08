@@ -24,4 +24,16 @@ public class EpiVt extends EpActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
+        @Override
+        protected boolean hideReferenceMenuItem() {
+            return false;
+        }
+
+        @Override
+        protected void showActivityReference() {
+            showReferenceAlertDialog(R.string.epivt_reference,
+                    R.string.epivt_link);
+        }
 }

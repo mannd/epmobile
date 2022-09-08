@@ -708,8 +708,12 @@
         the peak of the R wave in V2. ID of \u2265 85 msec predicts epicardial origin
         (Sens 87%, Spec 90%).\n\nShortest RS complex (RS): Measured from the earliest
         ventricular activation to the nadir of the first S wave in any precordial lead.
-        RS \u2265 121 msec predicts epicardial origin (Sens 76%, Spec 85%).\n\nReference:
-        http://circ.ahajournals.org/content/109/15/1842.full</string>
+        RS \u2265 121 msec predicts epicardial origin (Sens 76%, Spec 85%).</string>
+    <string name="epivt_reference">Berruezo A, Mont L, Nava S, Chueca E,
+        Bartholomay E, Brugada J. Electrocardiographic Recognition of the
+        Epicardial Origin of Ventricular Tachycardias. Circulation.
+        2004;109(15):1842-1847.</string>
+    <string name="epivt_link">https://doi.org/10.1161/01.CIR.0000125525.04081.4B</string>
     <string name="outflow_vt_late_transition_step">QRS transition (first precordial lead with R > S) V4 or later?</string>
     <string name="outflow_vt_free_wall_step">QRS duration \u2265 140 msec or R wave notching in inferior leads?</string>
     <string name="outflow_vt_anterior_location_step">Negative or isoelectric QRS in I?</string>
@@ -729,21 +733,46 @@
     <string name="mitral_annular_vt_label">\nSubvalvular Location.\nVT from the aorto-mitral 
         continuity often has a qR pattern in V1.  VT from the mitral annulus has an R in V1.</string>
     <string name="indeterminate_location">Location cannot be determined.</string>
-    <string name="outflow_vt_instructions">Ventricular tachycardia and premature ventricular complexes
- 		can arise from either the right
-        or left ventricular outflow tract (RVOT or LVOT).  Outflow tract VT has a vertical axis and
-        a left bundle branch block pattern in the precordial leads.  The earlier the precordial transition lead,
-        the more likely the VT is from the LVOT.  If the precordial transition is in lead V3
-        it is not possible to use an algorithm to determine from which ventricle the VT arises.
-        See Tanner et al. JACC 2005;45:418. http://content.onlinejacc.org/cgi/content/short/45/3/418.
-        \nThis algorithm was developed from Joshi S and Wilber DJ, J Cardiovasc Electrophysiol 2005;16:Suppl I:S52,
-        Bala R and Marchlinski FE, Heart Rhythm 2007;4:366, and Srivathsan K et al. Indian Pacing Electrophysiol J
-        2005;5:106. http://cogprints.org/4219/1/srivathsan.htm</string>
+    <string name="outflow_vt_instructions">Ventricular tachycardia and premature
+        ventricular complexes can arise from either the right or left
+        ventricular outflow tract (RVOT or LVOT).  Outflow tract VT has a
+        vertical axis and a left bundle branch block pattern in the precordial leads.
+        The earlier the precordial transition lead, the more likely the VT is
+        from the LVOT.  If the precordial transition is in lead V3
+        it is not possible to use an algorithm to determine from which
+        ventricle the VT arises.</string>
+    <string name="outflow_vt_reference_0">Tanner H, Hindricks G, Schirdewahn P,
+        et al. Outflow tract tachycardia with R/S transition in lead V3.
+        Journal of the American College of Cardiology. 2005;45(3):418-423.</string>
+    <string name="outflow_vt_link_0">https://doi.org/10.1016/j.jacc.2004.10.037</string>
+    <string name="outflow_vt_reference_1">Srivathsan K, Lester SJ, Appleton CP,
+        Scott LRP, Munger TM. Ventricular tachycardia in the absence of
+        structural heart disease. Indian Pacing Electrophysiol J.
+        2005;5(2):106-121.</string>
+    <string name="outflow_vt_link_1">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1502082/</string>
+    <string name="outflow_vt_reference_2">Joshi S, Wilber DJ. Ablation of
+        idiopathic right ventricular outflow tract tachycardia:
+        current perspectives. J Cardiovasc Electrophysiol.
+        2005;16 Suppl 1:S52-58.</string>
+    <string name="outflow_vt_link_2">https://doi.org/10.1111/j.1540-8167.2005.50163.x</string>
     <string name="mitral_annular_vt_instructions" formatted="false"> Use this module to predict the
-		location of idiopathic mitral annular ventricular tachycardia or premature ventricular complexes based on the ECG.  Note that this module does not deal with
-		mitral isthmus VT in the setting of inferior infarction (see Wilber D et al. Circulation 1995;92:3481
-		http://circ.ahajournals.org/content/92/12/3481.long)
-		Reference: Tada H et al.  JACC 2005;45:877.</string>
+		location of idiopathic mitral annular ventricular tachycardia or premature
+        ventricular complexes based on the ECG.  Note that this module does not deal with
+		mitral isthmus VT in the setting of inferior infarction (see Wilber DJ,
+        Kopp DE, Glascock DO DN, Kinder CA, Kall JG. Catheter Ablation of the
+        Mitral Isthmus for Ventricular Tachycardia Associated With Inferior
+        Infarction. Circulation. 1995;92(12):3481-3489.
+        https://doi.org/10.1161/01.CIR.92.12.3481 )</string>
+    <string name="mitral_annular_vt_reference_0">Tada H, Ito S, Naito S, et al.
+        Idiopathic ventricular arrhythmia arising from the mitral annulus:
+        a distinct subgroup of idiopathic ventricular arrhythmias.
+        J Am Coll Cardiol. 2005;45(6):877-886.</string>
+    <string name="mitral_annular_vt_link_0">https://doi.org/10.1016/j.jacc.2004.12.025</string>
+    <string name="mitral_annular_vt_reference_1">Wilber DJ, Kopp DE, Glascock
+        DO DN, Kinder CA, Kall JG. Catheter Ablation of the Mitral Isthmus for
+        Ventricular Tachycardia Associated With Inferior Infarction.
+        Circulation. 1995;92(12):3481-3489.</string>
+    <string name="mitral_annular_vt_link_1">https://doi.org/10.1161/01.CIR.92.12.3481</string>
     <string name="mavt_initial_step">Precordial transition (first precordial lead with R > S) in V1 or V2
 	    with R or Rs pattern in V2 to V5 (R/S > 3 in V2-V4)?</string>
     <string name="mavt_positive_qrs_inferior_leads_step">Positive QRS in inferior leads?</string>

@@ -31,11 +31,13 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.sql.Ref;
+
 @SuppressWarnings("SpellCheckingInspection")
 public class MitralAnnularVt extends LocationAlgorithm implements
         OnClickListener {
     protected Button backButton;
-    private Button instructionsButton;
+    private Button morphologyButton;
     protected TextView stepTextView;
 
     private boolean isNotMitralAnnular = false;
@@ -61,12 +63,11 @@ public class MitralAnnularVt extends LocationAlgorithm implements
         noButton.setOnClickListener(this);
         backButton = findViewById(R.id.back_button);
         backButton.setOnClickListener(this);
-        instructionsButton = findViewById(R.id.morphology_button);
-        instructionsButton.setOnClickListener(this);
-        instructionsButton.setText(getString(R.string.instructions_label));
         stepTextView = findViewById(R.id.stepTextView);
+        // Morphology button not used in this activity.
+        morphologyButton = findViewById(R.id.morphology_button);
+        morphologyButton.setVisibility(View.GONE);
         step1();
-
     }
 
     @Override
@@ -90,21 +91,7 @@ public class MitralAnnularVt extends LocationAlgorithm implements
             getNoResult();
         } else if (id == R.id.back_button) {
             getBackResult();
-        } else if (id == R.id.morphology_button) {
-            displayInstructions();
         }
-    }
-
-    private void displayInstructions() {
-        AlertDialog dialog = new AlertDialog.Builder(this).create();
-        final SpannableString message = new SpannableString(
-                getString(R.string.mitral_annular_vt_instructions));
-        Linkify.addLinks(message, Linkify.WEB_URLS);
-        dialog.setMessage(message);
-        dialog.setTitle(getString(R.string.mitral_annular_vt_title));
-        dialog.show();
-        ((TextView) dialog.findViewById(android.R.id.message))
-                .setMovementMethod(LinkMovementMethod.getInstance());
     }
 
     private void getBackResult() {
@@ -163,12 +150,9 @@ public class MitralAnnularVt extends LocationAlgorithm implements
     protected void step1() {
         stepTextView.setText(getString(R.string.mavt_initial_step));
         backButton.setEnabled(false);
-        instructionsButton.setVisibility(View.VISIBLE);
     }
 
     protected void gotoStep() {
-        if (step > 1)
-            instructionsButton.setVisibility(View.GONE);
         switch (step) {
             case initialStep:
                 step1();
@@ -227,4 +211,35 @@ public class MitralAnnularVt extends LocationAlgorithm implements
             message = getString(R.string.indeterminate_location);
         return message;
     }
+
+
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        Reference[] references = new Reference[2];
+        references[0] = new Reference(this, R.string.mitral_annular_vt_reference_0,
+                R.string.mitral_annular_vt_link_0);
+        references[1] = new Reference(this, R.string.mitral_annular_vt_reference_1,
+                R.string.mitral_annular_vt_link_1);
+        showReferenceAlertDialog(references);
+    }
+
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityInstructions() {
+        // We use displayInstructions here to allow the link in the
+        // instructions to display as a link, which showAlertDialog
+        // does not do.
+        displayInstructionsWithLinks(R.string.mitral_annular_vt_title,
+                R.string.mitral_annular_vt_instructions);
+    }
+
 }
