@@ -58,7 +58,7 @@ public class BrugadaList extends EpActivity {
     }
 
     private void brugadaEcg() {
-        Intent i = new Intent(this, BrugadaEcg.class);
+     Intent i = new Intent(this, BrugadaEcg.class);
         startActivity(i);
     }
 

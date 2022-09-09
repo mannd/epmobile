@@ -150,7 +150,11 @@
 		Tachycardia.</string>
     <string name="svt_result">Wide complex tachycardia is most likely
 		Supraventricular Tachycardia.</string>
-    <string name="brugada_reference">Reference: Brugada P, et al. Circ 1991;83:1649.</string>
+    <string name="brugada_wct_reference">Brugada P, Brugada J, Mont L, Smeets J,
+        Andries EW. A new approach to the differential diagnosis of a
+        regular tachycardia with a wide QRS complex.
+        Circulation. 1991;83(5):1649-1659.</string>
+    <string name="brugada_wct_link">https://doi.org/10.1161/01.cir.83.5.1649</string>
     <string name="wct_result_label">WCT Result</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
@@ -754,7 +758,7 @@
         idiopathic right ventricular outflow tract tachycardia:
         current perspectives. J Cardiovasc Electrophysiol.
         2005;16 Suppl 1:S52-58.</string>
-    <string name="outflow_vt_link_2">https://doi.org/10.1111/j.1540-8167.2005.50163.x</string>
+    <string name="outflow_vt_link_2">https://doi.org/10.1111/j.1540–8167.2005.50163.x</string>
     <string name="mitral_annular_vt_instructions" formatted="false"> Use this module to predict the
 		location of idiopathic mitral annular ventricular tachycardia or premature
         ventricular complexes based on the ECG.  Note that this module does not deal with
