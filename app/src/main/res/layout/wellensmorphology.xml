@@ -37,8 +37,6 @@
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/morphology_label"
                 android:src="@drawable/rbbbmorphology" />
-
-            <TextView android:text="@string/wellens_reference" />
         </TableLayout>
 
     </ScrollView>

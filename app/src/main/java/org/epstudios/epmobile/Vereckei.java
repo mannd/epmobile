@@ -119,7 +119,7 @@ public class Vereckei extends EpActivity implements OnClickListener {
         AlertDialog dialog = new AlertDialog.Builder(this).create();
         String message;
         message = getString(R.string.vt_result);
-        message = message + "\n" + getString(R.string.verecki_reference);
+        message = message + "\n" + getString(R.string.vereckei_reference);
         dialog.setMessage(message);
         dialog.setTitle(getString(R.string.wct_result_label));
         dialog.setCanceledOnTouchOutside(false);
@@ -136,7 +136,6 @@ public class Vereckei extends EpActivity implements OnClickListener {
         AlertDialog dialog = new AlertDialog.Builder(this).create();
         String message;
         message = getString(R.string.svt_result);
-        message = message + "\n" + getString(R.string.verecki_reference);
         dialog.setMessage(message);
         dialog.setTitle(getString(R.string.wct_result_label));
         dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Done",
@@ -147,4 +146,15 @@ public class Vereckei extends EpActivity implements OnClickListener {
         dialog.show();
     }
 
+
+        @Override
+        protected boolean hideReferenceMenuItem() {
+            return false;
+        }
+
+        @Override
+        protected void showActivityReference() {
+            showReferenceAlertDialog(R.string.vereckei_reference,
+                    R.string.vereckei_link);
+        }
 }

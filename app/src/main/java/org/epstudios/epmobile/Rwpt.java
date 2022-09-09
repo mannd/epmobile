@@ -43,4 +43,16 @@ public class Rwpt extends EpActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
+        @Override
+        protected boolean hideReferenceMenuItem() {
+            return false;
+        }
+
+        @Override
+        protected void showActivityReference() {
+            showReferenceAlertDialog(R.string.rwpt_reference,
+                    R.string.rwpt_link);
+        }
 }

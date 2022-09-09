@@ -43,4 +43,16 @@ public class WctMorphologyCriteria extends EpActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
+        @Override
+        protected boolean hideReferenceMenuItem() {
+            return false;
+        }
+
+        @Override
+        protected void showActivityReference() {
+            showReferenceAlertDialog(R.string.wellens_reference,
+                    R.string.wellens_link);
+        }
 }

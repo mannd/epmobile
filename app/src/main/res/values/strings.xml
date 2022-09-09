@@ -179,11 +179,18 @@
     <string name="rwpt_text">R wave peak time in lead II (RWPT).
 		Measure the onset of the QRS in ECG lead II to the first
 		change in polarity (nadir Q or peak R). RWPT \u2265 50 msec
-		strongly suggests VT (positive likelihood ratio 34.8).
-		Reference: Pava LF, et al. Heart Rhythm 2010;7:922.</string>
+		strongly suggests VT (positive likelihood ratio 34.8).</string>
+    <string name="rwpt_reference">Pava LF, Perafán P, Badiel M, et al.
+        R-wave peak time at DII: a new criterion for differentiating
+        between wide complex QRS tachycardias. Heart Rhythm. 2010;7(7):922-926.
+        </string>
+    <string name="rwpt_link">https://doi.org/10.1016/j.hrthm.2010.03.001</string>
     <string name="rbbb_wct_label">"RBBB" Tachycardia</string>
     <string name="lbbb_wct_label">"LBBB" Tachycardia</string>
-    <string name="wellens_reference">From Wellens et al. Am J Med 1978;64:27.</string>
+    <string name="wellens_reference">Wellens HJ, Bär FW, Lie KI. The value of
+        the electrocardiogram in the differential diagnosis of a tachycardia
+        with a widened QRS complex. Am J Med. 1978;64(1):27-33.</string>
+    <string name="wellens_link">https://doi.org/10.1016/0002-9343(78)90176-6</string>
     <string name="normal_ep_values_title">Normal EP Values</string>
     <string name="basic_intervals_label">Basic Conduction Intervals</string>
     <string name="sinus_node_label">Sinus Node Function</string>
@@ -999,7 +1006,11 @@
     <string name="vereckei_step3_label">Notching on the initial downstroke of a predominantly negative QRS complex in aVR?</string>
     <string name="vereckei_step4_label">Ratio of voltage of initial and final 40 msec of QRS complex in aVR
 	    (Vi/Vt) \u2264 1?</string>
-    <string name="verecki_reference">Reference: Vereckei A et al. Heart Rhythm 2008 5:89.</string>
+    <string name="vereckei_reference">Vereckei A, Duray G, Szénási G, Altemose GT,
+        Miller JM. New algorithm using only lead aVR for differential
+        diagnosis of wide QRS complex tachycardia. Heart Rhythm.
+        2008;5(1):89-98.</string>
+    <string name="vereckei_link">https://doi.org/10.1016/j.hrthm.2007.09.020</string>
     <string name="icd_risk_title">ICD Implantation Risk</string>
     <string name="icd_risk_reference">Reference: Dodson JA et al. JACC 2014 8:788.\n</string>
     <string name="female_sex_label">Female sex</string>
