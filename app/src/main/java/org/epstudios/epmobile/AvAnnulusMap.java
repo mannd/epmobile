@@ -105,4 +105,16 @@ public class AvAnnulusMap extends EpActivity {
                 LayoutParams.MATCH_PARENT));
         frame.addView(foreground);
     }
+
+
+        @Override
+        protected boolean hideReferenceMenuItem() {
+            return false;
+        }
+
+        @Override
+        protected void showActivityReference() {
+            showReferenceAlertDialog(R.string.av_annulus_map_reference,
+                    R.string.av_annulus_map_link);
+        }
 }

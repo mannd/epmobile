@@ -363,4 +363,26 @@ public class WpwArruda extends LocationAlgorithm implements OnClickListener {
         i.putExtra("location2", location2);
         startActivity(i);
     }
+
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.arruda_reference,
+                R.string.arruda_link);
+    }
+
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityInstructions() {
+        showAlertDialog(R.string.arruda_title,
+                R.string.arruda_instructions);
+    }
 }

@@ -147,4 +147,20 @@ public class WpwMilstein extends WpwArruda {
         }
     }
 
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.milstein_reference,
+                R.string.milstein_link);
+    }
+
+    // Since Milstein overrides Arruda class, need to rehide instructions
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return true;
+    }
 }

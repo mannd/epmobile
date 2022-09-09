@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-
     <string name="app_name">EP Mobile</string>
     <string name="about_text">EP Mobile is a package of
 		useful cardiac electrophysiology
@@ -477,10 +476,28 @@
     <string name="wpw_algorithm_title">WPW Pathway Location</string>
     <string name="wpw_algorithm_list_title">WPW Pathway Location</string>
     <string name="arruda_title">Arruda Algorithm</string>
+    <string name="arruda_reference">Arruda MS, McClelland JH, Wang X, et al.
+        Development and validation of an ECG algorithm for identifying
+        accessory pathway ablation site in Wolff-Parkinson-White syndrome.
+        J Cardiovasc Electrophysiol. 1998;9(1):2-12.</string>
+    <string name="arruda_link">https://doi.org/10.1111/j.1540-8167.1998.tb00861.x</string>
     <string name="modified_arruda_title">Modified Arruda Algorithm</string>
+    <string name="modified_arruda_reference">Szilágyi SM, Szilágyi L, Görög LK,
+        et al. An Enhanced Accessory Pathway Localization Method for Efficient
+        Treatment of Wolff-Parkinson-White Syndrome. In: Ruiz-Shulcloper J,
+        Kropatsch WG, eds. Progress in Pattern Recognition, Image Analysis and
+        Applications. Vol 5197. Lecture Notes in Computer Science.
+        Springer Berlin Heidelberg; 2008:269-276.</string>
+    <string name="modified_arruda_link">https://doi.org/10.1007/978-3-540-85920-8_33</string>
     <string name="milstein_title">Milstein Algorithm</string>
-    <string name="arruda_step_1">Note this algorithm uses polarity of initial delta
-        wave (positive +, negative -, or isoelectric \u00b1)\n\nLead I delta \u00b1 or -\n or V1 R/S \u2265 1?</string>
+    <string name="milstein_reference">Milstein S, Sharma AD, Guiraudon GM,
+        Klein GJ. An algorithm for the electrocardiographic localization of
+        accessory pathways in the Wolff-Parkinson-White syndrome.
+        Pacing Clin Electrophysiol. 1987;10(3 Pt 1):555-563.</string>
+    <string name="milstein_link">https://doi.org/10.1111/j.1540-8159.1987.tb04520.x</string>
+    <string name="arruda_instructions">Note this algorithm uses polarity of initial 20 msec of the delta
+        wave (positive +, negative -, or isoelectric \u00b1)</string>
+    <string name="arruda_step_1">Lead I delta \u00b1 or -\n or V1 R/S \u2265 1?</string>
     <string name="arruda_step_2_3">Pathway is Left Free Wall\nLead aVF delta + ?</string>
     <string name="arruda_step_6_7">Pathway is Left Free Wall\nLead I delta \u00b1 or Lead V1 S \u00b1 ?</string>
     <string name="arruda_step_8a">Lead V1 delta + ?</string>
@@ -510,6 +527,9 @@
     <string name="rl_location">Right Lateral</string>
     <string name="undetermined_location">Undetermined Location</string>
     <string name="av_annulus_map_title">Accessory Pathway Location</string>
+    <string name="av_annulus_map_reference">The AV annulus map is modified from Gray\'s
+        Anatomy 20th edition.</string>
+    <string name="av_annulus_map_link">https://en.wikipedia.org/wiki/File:Gray495.png</string>
     <string name="milstein_step_1">Q or isoelectric delta wave in Leads I, aVL, or V6?</string>
     <string name="milstein_step_2_5">LBBB (+ QRS \u2265 90 msec in Lead I and rS in V1 and V2)?</string>
     <string name="milstein_step_3">Q or isoelectric delta wave two of Leads II, III, aVF?</string>
@@ -765,7 +785,7 @@
         idiopathic right ventricular outflow tract tachycardia:
         current perspectives. J Cardiovasc Electrophysiol.
         2005;16 Suppl 1:S52-58.</string>
-    <string name="outflow_vt_link_2">https://doi.org/10.1111/j.1540–8167.2005.50163.x</string>
+    <string name="outflow_vt_link_2">https://doi.org/10.1111/j.1540-8167.2005.50163.x</string>
     <string name="mitral_annular_vt_instructions" formatted="false"> Use this module to predict the
 		location of idiopathic mitral annular ventricular tachycardia or premature
         ventricular complexes based on the ECG.  Note that this module does not deal with
@@ -1141,8 +1161,14 @@
     <string name="no_default_qtc_selected_error_message">No entry (440 msec will be used)</string>
     <string name="edoxaban_calculator_title">Edoxaban Calculator</string>
     <string name="davila_title">D\'Avila Algorithm</string>
-    <string name="davila_step_1">Note that this algorithm uses QRS polarity, not delta wave polarity!\n\n
-        Polarity of QRS in Lead V1 is + or \u00b1 ?</string>
+    <string name="davila_reference">d’Avila A, Brugada J, Skeberis V, Andries E,
+        Sosa E, Brugada P. A fast and reliable algorithm to localize accessory
+        pathways based on the polarity of the QRS complex on the surface
+        ECG during sinus rhythm. Pacing Clin Electrophysiol.
+        1995;18(9 Pt 1):1615-1627.</string>
+    <string name="davila_link">https://doi.org/10.1111/j.1540-8159.1995.tb06983.x</string>
+    <string name="davila_instructions">Note that this algorithm uses QRS polarity, not delta wave polarity!</string>
+    <string name="davila_step_1">Polarity of QRS in Lead V1 is + or \u00b1 ?</string>
     <string name="davila_positive_iii">Lead III polarity + ?</string>
     <string name="davila_plus_minus_iii">Lead III polarity \u00b1 ?</string>
     <string name="lp_location">Left Posterior</string>

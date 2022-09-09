@@ -196,5 +196,27 @@ public class DavilaAlgorithm extends WpwArruda {
         }
     }
 
+
+        @Override
+        protected boolean hideReferenceMenuItem() {
+            return false;
+        }
+
+        @Override
+        protected void showActivityReference() {
+            showReferenceAlertDialog(R.string.davila_reference,
+                    R.string.davila_link);
+        }
+
+        @Override
+        protected boolean hideInstructionsMenuItem() {
+            return false;
+        }
+
+        @Override
+        protected void showActivityInstructions() {
+            showAlertDialog(R.string.davila_title,
+                    R.string.davila_instructions);
+        }
 }
 
