@@ -116,4 +116,14 @@ public class DrugReferenceList extends EpActivity {
         startActivity(i);
     }
 
+        @Override
+        protected boolean hideInstructionsMenuItem() {
+            return false;
+        }
+
+        @Override
+        protected void showActivityInstructions() {
+            showAlertDialog(R.string.drug_reference_title,
+                    R.string.drug_reference_instructions);
+        }
 }

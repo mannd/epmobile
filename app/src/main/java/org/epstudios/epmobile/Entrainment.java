@@ -40,11 +40,9 @@ public class Entrainment extends EpActivity implements OnClickListener {
         View calcButton = findViewById(R.id.calculate_button);
         View clearKeepTclButton = findViewById(R.id.clear_keep_tcl_button);
         View clearAllButton = findViewById(R.id.clear_all_button);
-        View helpButton = findViewById(R.id.instructions_button);
         calcButton.setOnClickListener(this);
         clearKeepTclButton.setOnClickListener(this);
         clearAllButton.setOnClickListener(this);
-        helpButton.setOnClickListener(this);
 
         concealedFusionCheckBox.setOnClickListener(v -> {
             boolean checked = concealedFusionCheckBox.isChecked();
@@ -56,7 +54,6 @@ public class Entrainment extends EpActivity implements OnClickListener {
                 sqrsEditText.setText(null);
                 egmQrsEditText.setText(null);
             }
-
         });
 
     }
@@ -83,8 +80,6 @@ public class Entrainment extends EpActivity implements OnClickListener {
             clearKeepTcl();
         } else if (id == R.id.clear_all_button) {
             clear();
-        } else if (id == R.id.instructions_button) {
-            displayInstructions();
         }
     }
 
@@ -192,16 +187,29 @@ public class Entrainment extends EpActivity implements OnClickListener {
         clearKeepTcl();
     }
 
-    private void displayInstructions() {
-        final SpannableString message = new SpannableString(
-                getString(R.string.entrainment_instructions) + "\n\n"
-                        + getString(R.string.entrainment_reference));
-        Linkify.addLinks(message, Linkify.WEB_URLS);
-        final AlertDialog dialog = new AlertDialog.Builder(this).create();
-        dialog.setMessage(message);
-        dialog.setTitle(getString(R.string.entrainment_title));
-        dialog.show();
-        ((TextView) dialog.findViewById(android.R.id.message))
-                .setMovementMethod(LinkMovementMethod.getInstance());
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        Reference[] references = new Reference[2];
+        references[0] = new Reference(this, R.string.entrainment_reference_0,
+                R.string.entrainment_link_0);
+        references[1] = new Reference(this, R.string.entrainment_reference_1,
+                R.string.entrainment_link_1);
+        showReferenceAlertDialog(references);
+    }
+
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityInstructions() {
+        showAlertDialog(R.string.entrainment_title,
+                R.string.entrainment_instructions);
     }
 }

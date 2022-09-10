@@ -913,18 +913,19 @@
     <string name="clear_all_label">Clear All</string>
     <string name="help_label">Help</string>
     <string name="clear_keep_tcl_label">Clear</string>
-    <string name="entrainment_instructions">This Entrainment Mapping module is most suited for mapping ischemic
+    <string name="entrainment_instructions">This Entrainment Mapping module is most
+        suited for mapping ischemic
 		ventricular tachycardia (VT), but principles of entrainment apply to
 		all reentrant arrhythmias.  Entrainment is performed by pacing during
 		stable VT (or other reentrant tachycardia) for approximately 8-15 beat
 		trains at 20-40 msec shorter than the tachycardia cycle length (TCL).
 		Make sure all electrograms are "entrained", i.e. the CL shortens to
-		the pacing CL.  The post-pacing interval (PPI) is measured from the
+		the pacing CL.\n\nThe post-pacing interval (PPI) is measured from the
 		last pacing stimulus to the next electrogram recorded from the pacing
-		site.  Concealed fusion is present if the tachycardia morphology does
+		site.\n\nConcealed fusion is present if the tachycardia morphology does
 		not change during entrainment.  If there is concealed fusion then the
 		pacing site is in an area of slow conduction near the critical isthmus
-		of the reentry circuit.  During VT if a discrete electrogram (EG) is
+		of the reentry circuit.\n\nDuring VT if a discrete electrogram (EG) is
 		present prior to the QRS onset then the EG-QRS interval can be
 		measured.  During entrainment with concealed fusion, if there is a
 		delay between the pacing stimulus to onset of the QRS (S-QRS), then
@@ -937,11 +938,15 @@
 		tachycardia termination with ablation than other sites.
         EP Mobile uses the criteria of El-Shalakany et al. to identify
         VT sites with high likelihood of ablation success.</string>
-    <string name="entrainment_reference">Stevenson WG et al.
-        JACC 1997;29:1180.
-        \nhttp://content.onlinejacc.org/article.aspx?articleid=1121699
-        \nEl-Shalakany A et al. Circulation 1999;99:2283.\n
-        https://doi.org/10.1161/01.cir.99.17.2283</string>
+    <string name="entrainment_reference_0">Stevenson WG, Friedman PL, Sager PT, et al.
+        Exploring Postinfarction Reentrant Ventricular Tachycardia With Entrainment Mapping.
+        Journal of the American College of Cardiology. 1997;29(6):1180-1189.</string>
+    <string name="entrainment_link_0">https://doi.org/10.1016/S0735-1097(97)00065-X</string>
+    <string name="entrainment_reference_1">El-Shalakany A, Hadjis T, Papageorgiou P, Monahan K,
+        Epstein L, Josephson ME. Entrainment/Mapping Criteria for the Prediction of
+        Termination of Ventricular Tachycardia by Single Radiofrequency Lesion in
+        Patients With Coronary Artery Disease. Circulation. 1999;99(17):2283-2289.</string>
+    <string name="entrainment_link_1">https://doi.org/10.1161/01.CIR.99.17.2283</string>
     <string name="entrainment_remote_site_message">Remote site from reentry circuit.</string>
     <string name="entrainment_outer_loop_message">Outer loop of reentry circuit.</string>
     <string name="entrainment_inner_loop_message">Inner loop or isthmus site of reentry circuit.</string>
@@ -1190,6 +1195,13 @@
     <string name="edoxaban">Edoxaban</string>
     <string name="rivaroxaban">Rivaroxaban</string>
     <string name="sotalol">Sotalol</string>
+    <string name="drug_reference_instructions">These drug references are summarized from
+        the each drug\'s package insert, all of which are available online.  For
+        calculating drug doses, consider using the drug dose calculators in the Calculators
+        section of the app.  You can also directly measure creatinine clearance by tapping
+        the Calculate CrCl button at the bottom of the screen and calculate the appropriate
+        drug dose based on the information in these drug references.
+    </string>
     <string name="drug_dose_disclaimer">\nMore information can be found in the Drug Reference
         modules.</string>
     <string name="af_drug_dose_disclaimer">\nDoses calculated here are only for the nonvalvular
