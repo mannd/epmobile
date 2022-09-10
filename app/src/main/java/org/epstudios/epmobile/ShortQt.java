@@ -52,6 +52,7 @@ public class ShortQt extends RiskScore implements OnClickListener {
     }
 
     protected void calculateResult() {
+        clearSelectedRisks();
         int score = 0;
         // ECG criteria
         // one of the short QT intervals must be selected to get other points

@@ -31,7 +31,7 @@ import androidx.appcompat.widget.SwitchCompat;
  * You should have received a copy of the GNU General Public License
  * along with epmobile.  If not, see <http://www.gnu.org/licenses/>.
  */
-public class ArvcRisk extends DiagnosticScore {
+public class ArvcRisk extends RiskScore {
     EditText ageText;
     RadioGroup sexRadioGroup;
     SwitchCompat syncopeSwitch;
@@ -86,8 +86,6 @@ public class ArvcRisk extends DiagnosticScore {
 
             }
         });
-        arvcRiskReference = findViewById(R.id.arvc_risk_reference);
-        arvcRiskReference.setText(getString(R.string.reference_full, getFullReference()));
         clearEntries();
     }
 
@@ -102,12 +100,25 @@ public class ArvcRisk extends DiagnosticScore {
 
     //@Override
     protected String getFullReference() {
-        return getString(R.string.arvc_risk_full_reference);
+        String fullReference = convertReferenceToText(R.string.arvc_risk_full_reference,
+                R.string.arvc_risk_link);
+        return fullReference;
+    }
+
+    @Override
+    protected String getRiskLabel() {
+        return getString(R.string.arvc_risk_title);
+    }
+
+    @Override
+    protected String getShortReference() {
+        return null;
     }
 
 
     @Override
     protected void calculateResult() {
+        clearSelectedRisks();
         String message;
         if (dataIncomplete()) {
             message = getString(R.string.data_incomplete_message);
@@ -147,6 +158,14 @@ public class ArvcRisk extends DiagnosticScore {
     }
 
     @Override
+    protected void displayResult(String message, String title) {
+        addSelectedRisk("N/A");
+        String resultMessage = "Risk of sustained ventricular arrhythmias:\n" + message;
+        setResultMessage(resultMessage);
+        super.displayResult(message, title);
+    }
+
+    @Override
     protected void setContentView() {
         setContentView(R.layout.arvcrisk);
     }
@@ -168,5 +187,30 @@ public class ArvcRisk extends DiagnosticScore {
                 || TextUtils.isEmpty(ageText.getText())
                 || TextUtils.isEmpty(pvcText.getText());
     }
+
+
+        @Override
+        protected boolean hideReferenceMenuItem() {
+            return false;
+        }
+
+        @Override
+        protected void showActivityReference() {
+            showReferenceAlertDialog(R.string.arvc_risk_full_reference,
+                    R.string.arvc_risk_link);
+        }
+
+        @Override
+        protected boolean hideInstructionsMenuItem() {
+            return false;
+        }
+
+        @Override
+        protected void showActivityInstructions() {
+            showAlertDialog(R.string.arvc_risk_title,
+                    R.string.arvc_disclaimer);
+        }
+
+
 
 }
