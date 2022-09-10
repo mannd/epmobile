@@ -9,4 +9,15 @@ public class NormalEpValues extends EpActivity {
         setContentView(R.layout.normalepvalues);
         initToolbar();
     }
+
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.normal_ep_values_reference,
+                R.string.normal_ep_values_link);
+    }
 }

@@ -28,5 +28,5 @@
 - Note that patients with combined retrograde AP and AV nodal conduction were excluded from the study population.  However change in atrial activation sequence when pacing at the 2 sites suggests combined retrograde AP and AVN conduction.
 - Note that only patients with posteroseptal APs were included in the study, though the technique is probably also applicable to patients with anteroseptal or para-Hisian APs, as long as basal pacing site is close to the AP.
 * Reference
-Martínez-Alday JD, Almendral J, Arenal A, et al. Identification of concealed posteroseptal Kent pathways by comparison of ventriculoatrial intervals from apical and posterobasal right ventricular sites.  Circulation 1994; 89: 1060-1067.
-http://circ.ahajournals.org/content/89/3/1060.abstract?ijkey=33950406ac6141d4fb927e205814d0bd992c33c9&keytype2=tf_ipsecsha
+Martínez-Alday JD, Almendral J, Arenal A, et al. Identification of concealed posteroseptal Kent pathways by comparison of ventriculoatrial intervals from apical and posterobasal right ventricular sites. Circulation. 1994;89(3):1060-1067.
+https://doi.org/10.1161/01.cir.89.3.1060

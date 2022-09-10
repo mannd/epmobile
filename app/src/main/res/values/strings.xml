@@ -194,9 +194,9 @@
     <string name="basic_intervals_label">Basic Conduction Intervals</string>
     <string name="sinus_node_label">Sinus Node Function</string>
     <string name="refractory_periods_label">Refractory Periods and Block Cycle Lengths</string>
-    <string name="normal_ep_values_reference">Reference: Josephson ME. Clinical Cardiac
-		Electrophysiology. Techniques and Interpretations. 2nd Edition 1993.
-		Lea &amp; Febiger.</string>
+    <string name="normal_ep_values_reference">Josephson ME. Clinical Cardiac Electrophysiology:
+        Techniques and Interpretations. 4th edition. Lippincott Williams &amp; Wilkins; 2008.</string>
+    <string name="normal_ep_values_link">https://www.amazon.com/Clinical-Cardiac-Electrophysiology-Techniques-Interpretations/dp/0781777399</string>
     <string name="arvc_2010_criteria_title">ARVC/D Diagnosis (2010)</string>
     <string name="global_dysfunction_label">I. Global or regional dysfunction and structural
 		alterations</string>

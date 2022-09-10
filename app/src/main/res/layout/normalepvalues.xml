@@ -164,8 +164,6 @@
                     android:text="@string/verp_normal" />
             </TableRow>
 
-            <TextView
-                android:text="@string/normal_ep_values_reference" />
         </TableLayout>
 
     </ScrollView>
