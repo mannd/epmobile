@@ -31,7 +31,8 @@ public class AtriaStroke extends RiskScore {
 
     @Override
     protected String getFullReference() {
-        return getString(R.string.atria_stroke_full_reference);
+        return convertReferenceToText(R.string.atria_stroke_full_reference,
+                R.string.atria_stroke_link);
     }
 
     @Override
@@ -41,7 +42,7 @@ public class AtriaStroke extends RiskScore {
 
     @Override
     protected String getShortReference() {
-        return getString(R.string.atria_stroke_short_reference);
+        return null;
     }
 
     @Override
@@ -116,7 +117,6 @@ public class AtriaStroke extends RiskScore {
         checkBox[4] = findViewById(R.id.proteinuria);
         checkBox[5] = findViewById(R.id.renal_disease);
         checkBox[6] = findViewById(R.id.stroke);
-
         radioGroup = findViewById(R.id.age);
     }
 
@@ -124,5 +124,18 @@ public class AtriaStroke extends RiskScore {
     protected void clearEntries() {
         super.clearEntries();
         radioGroup.clearCheck();
+    }
+
+
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    // FIXME: DEBUG alert dialog not appearing here
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.atria_stroke_full_reference,
+                R.string.atria_stroke_link);
     }
 }

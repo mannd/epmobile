@@ -44,7 +44,9 @@ public class AtriaBleed extends RiskScore {
 
     @Override
     protected String getFullReference() {
-        return getString(R.string.atria_bleed_full_reference);
+        String reference = convertReferenceToText(R.string.atria_bleed_full_reference,
+                R.string.atria_bleed_link);
+        return reference;
     }
 
     @Override
@@ -54,7 +56,7 @@ public class AtriaBleed extends RiskScore {
 
     @Override
     protected String getShortReference() {
-        return getString(R.string.atria_bleed_short_reference);
+        return null;
     }
 
     @Override
@@ -87,6 +89,18 @@ public class AtriaBleed extends RiskScore {
         message = getRiskLabel() + " score = " + result + "\n" + message;
         setResultMessage(message);
         return resultWithShortReference();
+    }
+
+
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.atria_bleed_full_reference,
+                R.string.atria_bleed_link);
     }
 
 

@@ -1262,11 +1262,10 @@
     <string name="atria_prior_hemorrhage_label">Any prior hemorrhage</string>
     <string name="atria_htn_label">Diagnosed hypertension</string>
     <string name="atria_bleed_short_reference">Fang MC et al. JACC 2011 58:395</string>
-    <string name="atria_bleed_full_reference">Fang MC, Go, AS, Chang Y, Borowsky LH, Pomernacki NK,
-        Udaltsova N, Singer DE.  A new risk scheme to predict warfarin-associated
-        hemorrhage.  The ATRIA Study.  J Am Coll Cardiol [Internet]. 2011 Jul 2011
-        [cited 2015 Nov 29];58(4):395-401.  Available from:
-        http://content.onlinejacc.org/article.aspx?articleid=1146658</string>
+    <string name="atria_bleed_full_reference">Fang MC, Go AS, Chang Y, et al. A New Risk Scheme to
+        Predict Warfarin-Associated Hemorrhage. Journal of the American College of Cardiology.
+        2011;58(4):395-401.</string>
+    <string name="atria_bleed_link">https://doi.org/10.1016/j.jacc.2011.03.031</string>
     <string name="atria_bleed_risk_label">ATRIA bleeding risk</string>
     <string name="low_atria_bleed_message">Low bleeding risk on warfarin
         (hemorrhage rate 0.8% per year).</string>
@@ -1278,12 +1277,10 @@
         to warfarin.</string>
     <string name="atria_stroke_short_reference">Singer DE et al.
         J Am Heart Assoc 2013 2:e000250</string>
-    <string name="atria_stroke_full_reference">Singer DE, Chang Y, Borowsky LH,
-        Fang MC, Pomernacki NK, Udaltsova N, Reynolds K, Go AS.  A new risk scheme to predict
-        ischemic stroke and other thromboembolism in atrial fibrillation: the ATRIA study
-        stroke risk score.  J Am Heart Assoc [Internet].  2013 Jun 19 [cited 2015 Nov
-        29];2:e000250.  Available from:
-        http://jaha.ahajournals.org/content/2/3/e000250</string>
+    <string name="atria_stroke_full_reference">Singer DE, Chang Y, Borowsky LH, et al. A new risk
+        scheme to predict ischemic stroke and other thromboembolism in atrial fibrillation:
+        the ATRIA study stroke risk score. J Am Heart Assoc. 2013;2(3):e000250.</string>
+    <string name="atria_stroke_link">https://doi.org/10.1161/JAHA.113.000250</string>
     <string name="atria_stroke_age_85">Age 85 or greater</string>
     <string name="atria_stroke_age_75">Age 75 to 84</string>
     <string name="atria_stroke_age_65">Age 65 to 74</string>
