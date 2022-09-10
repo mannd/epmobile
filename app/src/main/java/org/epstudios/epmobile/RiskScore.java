@@ -110,9 +110,12 @@ public abstract class RiskScore extends DiagnosticScore {
         return resultMessage;
     }
 
+    // No more short references,
+    // This just returns the result message, eventually should refactor this method away.
     protected String resultWithShortReference() {
-        return getResultMessage() + "\n" + getString(R.string.reference_label)
-                + ": " + getShortReference() + ".";
+        return getResultMessage();
+//        return getResultMessage() + "\n" + getString(R.string.reference_label)
+//                + ": " + getShortReference() + ".";
     }
 
     protected void clearSelectedRisks() {
