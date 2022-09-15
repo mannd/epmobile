@@ -139,6 +139,4 @@ public abstract class RiskScore extends DiagnosticScore {
 
     // this is the R.string.risk_label, not risk_title. No "score" attached
     abstract protected String getRiskLabel();
-
-    abstract protected String getShortReference();
 }

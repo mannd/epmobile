@@ -64,9 +64,4 @@ public class SyncopeSfRule extends SyncopeRiskScore {
     protected String getRiskLabel() {
         return getString(R.string.syncope_sf_rule_label);
     }
-
-    @Override
-    protected String getShortReference() {
-        return getString(R.string.syncope_sf_rule_reference);
-    }
 }

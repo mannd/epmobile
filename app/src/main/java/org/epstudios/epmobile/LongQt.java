@@ -181,42 +181,36 @@ public class LongQt extends RiskScore implements OnClickListener {
     }
 
     @Override
-    protected String getShortReference() {
-        return null;
+    protected boolean hideReferenceMenuItem() {
+        return false;
     }
 
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.lqts_diagnosis_reference,
+                R.string.lqts_diagnosis_link);
+    }
 
-        @Override
-        protected boolean hideReferenceMenuItem() {
-            return false;
-        }
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
 
-        @Override
-        protected void showActivityReference() {
-            showReferenceAlertDialog(R.string.lqts_diagnosis_reference,
-                    R.string.lqts_diagnosis_link);
-        }
+    @Override
+    protected void showActivityInstructions() {
+        showAlertDialog(R.string.long_qt_syndrome_diagnosis_title,
+                R.string.lqts_diagnosis_instructions);
+    }
 
-        @Override
-        protected boolean hideInstructionsMenuItem() {
-            return false;
-        }
+    @Override
+    protected boolean hideKeyMenuItem() {
+        return false;
+    }
 
-        @Override
-        protected void showActivityInstructions() {
-            showAlertDialog(R.string.long_qt_syndrome_diagnosis_title,
-                    R.string.lqts_diagnosis_instructions);
-        }
-
-        @Override
-        protected boolean hideKeyMenuItem() {
-            return false;
-        }
-
-        @Override
-        protected void showActivityKey() {
-            showKeyAlertDialog(R.string.lqts_key);
-        }
+    @Override
+    protected void showActivityKey() {
+        showKeyAlertDialog(R.string.lqts_key);
+    }
 
 
 

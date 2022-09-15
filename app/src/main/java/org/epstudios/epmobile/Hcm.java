@@ -107,10 +107,4 @@ public class Hcm extends RiskScore {
     protected String getRiskLabel() {
         return getString(R.string.hcm_title);
     }
-
-    @Override
-    protected String getShortReference() {
-        // no short reference given, since it is in layout
-        return null;
-    }
 }

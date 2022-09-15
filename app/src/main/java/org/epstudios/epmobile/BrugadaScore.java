@@ -141,13 +141,6 @@ public class BrugadaScore extends RiskScore {
     }
 
     @Override
-    protected String getShortReference() {
-        // no short reference given, since it is in layout
-        return null;
-    }
-
-
-    @Override
     protected boolean hideReferenceMenuItem() {
         return false;
     }

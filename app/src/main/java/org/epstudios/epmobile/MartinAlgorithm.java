@@ -65,9 +65,4 @@ public class MartinAlgorithm extends SyncopeRiskScore {
     protected String getRiskLabel() {
         return getString(R.string.syncope_martin_title);
     }
-
-    @Override
-    protected String getShortReference() {
-        return getString(R.string.martin_algorithm_reference);
-    }
 }

@@ -109,9 +109,4 @@ public class Hemorrhages extends RiskScore {
     protected String getRiskLabel() {
         return getString(R.string.hemorrhages_label);
     }
-
-    @Override
-    protected String getShortReference() {
-        return getString(R.string.hemorrhages_reference);
-    }
 }

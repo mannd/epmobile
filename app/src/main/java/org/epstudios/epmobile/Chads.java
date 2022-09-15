@@ -32,13 +32,12 @@ public class Chads extends RiskScore {
     }
 
     @Override
-    protected String getShortReference() {
-        return getString(R.string.chads_chadsvasc_short_reference);
-    }
-
-    @Override
     protected String getFullReference() {
-        return getString(R.string.chads_chadsvasc_full_reference);
+        String ref1 = convertReferenceToText(R.string.chads_original_reference,
+                R.string.chads_original_link);
+        String ref2 = convertReferenceToText(R.string.chads_chadsvasc_full_reference,
+                R.string.chads_chadsvasc_link);
+        return ref1 + "\n" + ref2;
     }
 
     @Override
@@ -115,6 +114,21 @@ public class Chads extends RiskScore {
                 + risk + "\n" + neuroRisk;
         setResultMessage(message);
         return resultWithShortReference();
+    }
+
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        Reference[] references = new Reference[2];
+        references[0] = new Reference(this, R.string.chads_original_reference,
+                R.string.chads_original_link);
+        references[1] = new Reference(this, R.string.chads_chadsvasc_full_reference,
+                R.string.chads_chadsvasc_link);
+        showReferenceAlertDialog(references);
     }
 
 }

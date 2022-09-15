@@ -79,9 +79,4 @@ public class EgsysScore extends SyncopeRiskScore {
     protected String getRiskLabel() {
         return getString(R.string.syncope_egsys_label);
     }
-
-    @Override
-    protected String getShortReference() {
-        return getString(R.string.egsys_score_reference);
-    }
 }

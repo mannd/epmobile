@@ -102,10 +102,4 @@ public class HasBled extends RiskScore {
     protected String getRiskLabel() {
         return getString(R.string.hasbled_label);
     }
-
-    @Override
-    protected String getShortReference() {
-        return getString(R.string.hasbled_short_reference);
-    }
-
 }

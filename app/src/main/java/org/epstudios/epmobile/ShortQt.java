@@ -183,11 +183,6 @@ public class ShortQt extends RiskScore implements OnClickListener {
     }
 
     @Override
-    protected String getShortReference() {
-        return null;
-    }
-
-    @Override
     protected boolean hideReferenceMenuItem() {
         return false;
     }

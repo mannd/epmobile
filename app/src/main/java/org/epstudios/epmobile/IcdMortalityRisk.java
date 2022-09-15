@@ -47,11 +47,6 @@ public class IcdMortalityRisk extends RiskScore {
     }
 
     @Override
-    protected String getShortReference() {
-        return getString(R.string.icd_mortality_risk_short_reference);
-    }
-
-    @Override
     protected void calculateResult() {
         int result = 0;
         clearSelectedRisks();

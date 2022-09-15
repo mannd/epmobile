@@ -35,11 +35,6 @@ public class QTProlongationRisk extends RiskScore {
     }
 
     @Override
-    protected String getShortReference() {
-        return getString(R.string.qt_prolongation_risk_short_reference);
-    }
-
-    @Override
     protected void calculateResult() {
         int result = 0;
         clearSelectedRisks();

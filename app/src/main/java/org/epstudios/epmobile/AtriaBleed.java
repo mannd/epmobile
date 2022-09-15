@@ -55,11 +55,6 @@ public class AtriaBleed extends RiskScore {
     }
 
     @Override
-    protected String getShortReference() {
-        return null;
-    }
-
-    @Override
     protected void calculateResult() {
         int result = 0;
         clearSelectedRisks();

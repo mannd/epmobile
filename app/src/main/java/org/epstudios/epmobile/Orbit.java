@@ -37,11 +37,6 @@ public class Orbit extends RiskScore {
     }
 
     @Override
-    protected String getShortReference() {
-        return getString(R.string.orbit_short_reference);
-    }
-
-    @Override
     protected void calculateResult() {
         int result = 0;
         clearSelectedRisks();

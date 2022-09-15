@@ -456,7 +456,6 @@
     <string name="low_risk_hemorrhages">Low risk of bleeding.</string>
     <string name="intermediate_risk_hemorrhages">Intermediate risk of bleeding.</string>
     <string name="high_risk_hemorrhages">High risk of bleeding.</string>
-    <string name="hemorrhages_reference">Gage BF et al. Am Heart J 2006;151:713</string>
     <string name="hepatic_or_renal_disease_label">Hepatic (cirrhosis, \u2265 2-fold
         elevation of AST or ALT, or albumin &lt; 3.6 g/dL) or renal disease (Cr clearance &lt; 30 mL/min)</string>
     <string name="etoh_hemorrhages_label">Ethanol use (history of EtOH abuse, recent hospitalization for EtOH-related illness, and
@@ -1008,15 +1007,12 @@
     <string name="low_bp_label">Systolic BP &lt; 90 mmHg</string>
     <string name="no_sf_rule_risk_message">No or little risk of serious events at 30 days.</string>
     <string name="high_sf_rule_risk_message" formatted="false">Risk of serious events at 30 days (98% sensitive and 56% specific).</string>
-    <string name="syncope_sf_rule_reference">Quinn J et al. Ann Emerg Med 2006 47:448</string>
     <string name="history_vt_label">History of ventricular arrhythmia</string>
     <string name="history_chf_label">History of congestive heart failure</string>
     <string name="age_over_45_label">Age &gt; 45 years</string>
     <string name="history_cv_disease_label">History of cardiovascular disease</string>
     <string name="lack_of_prodrome_label">Lack of prodrome</string>
     <string name="age_over_65_label">Age &gt; 65 years</string>
-    <string name="martin_algorithm_reference">Martin TP et al. Ann Emerg Med 1997 29:459</string>
-    <string name="oesil_score_reference">Colivicchi F et al. Eur Heart J 2003 24:811</string>
     <string name="palps_before_syncope_label">Palpitations before syncope</string>
     <string name="abnormal_ecg_or_heart_disease_label">Abnormal ECG or heart disease</string>
     <string name="syncope_during_effort_label">Syncope during effort</string>
@@ -1024,7 +1020,6 @@
     <string name="autonomic_prodrome_label">Autonomic prodrome (nausea, vomiting)</string>
     <string name="predisposing_factors_label">Predisposing and/or precipitating factors (warm-crowded place,
         prolonged standing, fear, pain, emotion)</string>
-    <string name="egsys_score_reference">Del Rosso A et al. Heart 2008 94:1630</string>
     <string name="vereckei_title">Vereckei aVR Algorithm</string>
     <string name="vereckei_step1_label">Initial R in aVR?</string>
     <string name="vereckei_step2_label">Initial r or q in aVR with width > 40 msec?</string>
@@ -1089,19 +1084,28 @@
     <string name="hasbled_label">HAS-BLED</string>
     <string name="hemorrhages_label">HEMORR\u2082HAGES</string>
     <string name="estes_criteria_label">Romhilt-Estes LVH score</string>
-    <string name="hasbled_short_reference">Pisters R et al. Chest 2010 138:1093</string>
     <string name="hasbled_full_reference">Pisters R, Lane DA, Nieuwlaat R, de Vos CB, Crijns HJ,
 		Lip GY. A novel user-friendly score (HAS-BLED) to assess
 		1-year risk of major bleeding in patients with
 		atrial fibrillation: the Euro Heart Survey. Chest
 		[Internet]. 2010 Nov [cited 2014 Jun 6];138(5):1093-100.
 		Available from: http://journal.publications.chestnet.org/article.aspx?articleid=1045174"</string>
+    <string name="chads_original_reference">Gage BF, Waterman AD, Shannon W, Boechler M, Rich MW,
+        Radford MJ. Validation of Clinical Classification Schemes for Predicting
+        StrokeResults From the National Registry of Atrial Fibrillation.
+        JAMA. 2001;285(22):2864-2870.</string>
+    <string name="chads_original_link">https://doi.org/10.1001/jama.285.22.2864</string>
     <string name="chads_chadsvasc_full_reference">Friberg L, Rosenqvist M, Lip GYH.
         Evaluation of risk stratification schemes for ischaemic stroke and bleeding
         in 182 678 patients with atrial fibrillation:
         the Swedish Atrial Fibrillation cohort study.
-        Eur Heart J. 2012;33(12):1500-1510. doi:10.1093/eurheartj/ehr488</string>
-    <string name="chads_chadsvasc_short_reference">Friberg L et al. Eur Heart J 2012 33:1500</string>
+        Eur Heart J. 2012;33(12):1500-1510.</string>
+    <string name="chads_chadsvasc_link">https://doi.org/10.1093/eurheartj/ehr488</string>
+    <string name="chadsvasc_original_reference">Lip GYH, Nieuwlaat R, Pisters R, Lane DA, Crijns HJGM.
+        Refining clinical risk stratification for predicting stroke and thromboembolism in atrial
+        fibrillation using a novel risk factor-based approach: the euro heart survey on atrial
+        fibrillation. Chest. 2010;137(2):263-272.</string>
+    <string name="chadsvasc_original_link">https://doi.org/10.1378/chest.09-1584</string>
     <string name="hemorrhages_full_reference">Gage BF, Yan Y, Milligan PE,
 	    Waterman AD, Culverhouse R, Rich MW,
    		Radford MJ. Clinical classification schemes for predicting
@@ -1306,8 +1310,6 @@
     <string name="same_race_label">Race (non-Caucasian)</string>
     <string name="same_sex_label">Sex (female)</string>
     <string name="same_age_label">Age (&lt;60 y)</string>
-    <string name="same_short_reference">Apostolakis S et al.
-        Chest 2013;144:1555</string>
     <string name="same_full_reference">Apostolakis S, Sullivan RM, Olshansky B,
         Lip GYH.  Factors affecting quality of anticoagulation control among
         patients with atrial fibrillation on warfarin.  The
@@ -1336,7 +1338,6 @@
         The ORBIT Bleeding Score: A Simple Bedside Score to Assess Bleeding Risk in Atrial Fibrillation.
         Eur Heart J [Internet].  2015 [cited 2016 Mar 13] 36(46):3258-3264.
         Available from: http://www.medscape.com/viewarticle/855941_1</string>
-    <string name="orbit_short_reference">O\'Brien EC et al.  Eur Heart J 2016;36:3258</string>
     <string name="orbit_risk_title">ORBIT Bleeding Risk Score</string>
     <string name="qrs_label">QRS (msec)</string>
     <string name="qrs_hint">QRS (msec)</string>
@@ -1428,8 +1429,6 @@
         J Am Coll Cardiol [Internet] 2008 Jan [cited 2016 Sep 1];51(3):288-296.
         Available from
         http://content.onlinejacc.org/article.aspx?articleid=1187155</string>
-    <string name="icd_mortality_risk_short_reference">Goldenberg I et al.
-        JACC 2008;51:288</string>
     <string name="vhr_message">In the Very High Risk group there is high (50%%) 2 year mortality
         in MADIT-II type patients regardless of therapy (conventional therapy %1$d%%,
         ICD %2$d%% mortality).</string>

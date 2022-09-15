@@ -41,11 +41,6 @@ public class AtriaStroke extends RiskScore {
     }
 
     @Override
-    protected String getShortReference() {
-        return null;
-    }
-
-    @Override
     protected void calculateResult() {
         int radioButtonId = radioGroup.getCheckedRadioButtonId();
         if (radioButtonId == -1) {

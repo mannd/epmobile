@@ -111,12 +111,6 @@ public class ArvcRisk extends RiskScore {
     }
 
     @Override
-    protected String getShortReference() {
-        return null;
-    }
-
-
-    @Override
     protected void calculateResult() {
         clearSelectedRisks();
         String message;

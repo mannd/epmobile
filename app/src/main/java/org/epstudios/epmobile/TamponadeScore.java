@@ -46,11 +46,6 @@ public final class TamponadeScore extends RiskScore {
     }
 
     @Override
-    protected String getShortReference() {
-        return null;
-    }
-
-    @Override
     protected void calculateResult() {
         clearSelectedRisks();
         for (CheckBox selection : checkBox) {

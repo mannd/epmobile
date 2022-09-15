@@ -108,13 +108,6 @@ public class Estes extends RiskScore {
     }
 
     @Override
-    protected String getShortReference() {
-        // short ref not used in Estes result dialog,
-        // as it is already at the bottom of the layout.
-        return null;
-    }
-
-    @Override
     protected boolean hideReferenceMenuItem() {
         return false;
     }
