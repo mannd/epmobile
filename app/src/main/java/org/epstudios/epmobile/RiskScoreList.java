@@ -78,7 +78,7 @@ public class RiskScoreList extends EpActivity {
     }
 
     private void hcmScore() {
-        Intent i = new Intent(this, Hcm.class);
+        Intent i = new Intent(this, HcmScd2002.class);
         startActivity(i);
     }
 

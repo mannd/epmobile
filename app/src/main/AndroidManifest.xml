@@ -103,7 +103,7 @@
             android:name=".RiskScoreList"
             android:label="@string/risk_scores_title"/>
         <activity
-            android:name=".Hcm"
+            android:name=".HcmScd2002"
             android:label="@string/hcm_title"/>
         <activity
             android:name=".CmsIcd"

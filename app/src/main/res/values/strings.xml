@@ -387,13 +387,15 @@
     <string name="hcm_low_risk_text">Patients without any major risk factors (even if
 	    minor risk factors are present) are considered to be at low risk for SD.
 	    ICD implantation is not recommended.</string>
-    <string name="hcm_key">BP = blood pressure. VF = ventricular fibrillation.  VT = ventricular tachycardia.
-	    SD = unexpected sudden death.  Abnormal exercise BP = failure to augment and maintain systolic
+    <string name="hcm_scd_2002_key">BP = blood pressure.
+        \nVF = ventricular fibrillation.
+        \nVT = ventricular tachycardia.
+        \nSD = unexpected sudden death.
+        \nAbnormal exercise BP = failure to augment and maintain systolic
 	    BP \u003e 25 mm Hg with exercise.</string>
-    <string name="hcm_reference">References: Maron B et al.  Eur Heart J 2003:1965.
-	    http://eurheartj.oxfordjournals.org/content/24/21/1965.full
-	    McKenna WJ et al. Heart 2002;87:169.
-	    http://heart.bmj.com/content/87/2/169.full</string>
+    <string name="hcm_scd_2002_reference">McKenna WJ. Hypertrophic cardiomyopathy: management,
+        risk stratification, and prevention of sudden death. Heart. 2002;87(2):169-176.</string>
+    <string name="hcm_scd_2002_link">https://doi.org/10.1136/heart.87.2.169</string>
 
     <!-- ICD CMS criteria -->
     <string name="secondary_prevention_label">Secondary Prevention</string>
@@ -1032,7 +1034,11 @@
         2008;5(1):89-98.</string>
     <string name="vereckei_link">https://doi.org/10.1016/j.hrthm.2007.09.020</string>
     <string name="icd_risk_title">ICD Implantation Risk</string>
-    <string name="icd_risk_reference">Reference: Dodson JA et al. JACC 2014 8:788.\n</string>
+    <string name="icd_risk_reference">Dodson John A., Reynolds Matthew R., Bao Haikun, et al.
+        Developing a Risk Model for In-Hospital Adverse Events Following
+        Implantable Cardioverter-Defibrillator Implantation. Journal of the American College
+        of Cardiology. 2014;63(8):788-796.</string>
+    <string name="icd_risk_link">https://doi.org/10.1016/j.jacc.2013.09.079</string>
     <string name="female_sex_label">Female sex</string>
     <string name="admission_reason_label">Reason for admission</string>
     <string name="for_procedure_label">For procedure</string>
@@ -1073,8 +1079,7 @@
     <string name="low_bun_label">&lt; 20</string>
     <string name="normal_bun_label">20 &#8211;40</string>
     <string name="high_bun_label">&gt; 40</string>
-    <string name="incomplete_radio_groups_error">Selection incomplete.  You
-        must make a selection from each group.</string>
+    <string name="incomplete_radio_groups_error">Selection incomplete.</string>
     <string name="icd_result_title">Risk of In-Hospital Complications</string>
     <string name="reference_label">Reference</string>
     <string name="references_label">References</string>
@@ -1084,12 +1089,11 @@
     <string name="hasbled_label">HAS-BLED</string>
     <string name="hemorrhages_label">HEMORR\u2082HAGES</string>
     <string name="estes_criteria_label">Romhilt-Estes LVH score</string>
-    <string name="hasbled_full_reference">Pisters R, Lane DA, Nieuwlaat R, de Vos CB, Crijns HJ,
-		Lip GY. A novel user-friendly score (HAS-BLED) to assess
-		1-year risk of major bleeding in patients with
-		atrial fibrillation: the Euro Heart Survey. Chest
-		[Internet]. 2010 Nov [cited 2014 Jun 6];138(5):1093-100.
-		Available from: http://journal.publications.chestnet.org/article.aspx?articleid=1045174"</string>
+    <string name="hasbled_full_reference">Pisters R, Lane DA, Nieuwlaat R, de Vos CB, Crijns HJGM,
+        Lip GYH. A novel user-friendly score (HAS-BLED) to assess 1-year risk of major
+        bleeding in patients with atrial fibrillation: the Euro Heart Survey.
+        Chest. 2010;138(5):1093-1100.</string>
+    <string name="hasbled_link">https://doi.org/10.1378/chest.10-0134</string>
     <string name="chads_original_reference">Gage BF, Waterman AD, Shannon W, Boechler M, Rich MW,
         Radford MJ. Validation of Clinical Classification Schemes for Predicting
         StrokeResults From the National Registry of Atrial Fibrillation.
@@ -1106,13 +1110,10 @@
         fibrillation using a novel risk factor-based approach: the euro heart survey on atrial
         fibrillation. Chest. 2010;137(2):263-272.</string>
     <string name="chadsvasc_original_link">https://doi.org/10.1378/chest.09-1584</string>
-    <string name="hemorrhages_full_reference">Gage BF, Yan Y, Milligan PE,
-	    Waterman AD, Culverhouse R, Rich MW,
-   		Radford MJ. Clinical classification schemes for predicting
-   		hemorrhage: results from the National Registry of Atrial
-   		Fibrillation (NRAF). Am Heart J [Internet]. 2006 [cited 2014 Jun
-   		6];151:713-9. Available from:
-   		http://www.hematology.fi/system/files/HEMORRHAGES-score.pdf</string>
+    <string name="hemorrhages_full_reference">Gage BF, Yan Y, Milligan PE, et al. Clinical
+        classification schemes for predicting hemorrhage: results from the National
+        Registry of Atrial Fibrillation (NRAF). Am Heart J. 2006;151(3):713-719.</string>
+    <string name="hemorrhages_link">https://doi.org/10.1016/j.ahj.2005.04.017</string>
     <string name="estes_full_reference">Romhilt DW, Estes EH. A point-score
         system for the ECG diagnosis of left ventricular hypertrophy.
         Am Heart J. 1968;75(6):752-758.</string>
@@ -1265,7 +1266,6 @@
         or hemodialysis)</string>
     <string name="atria_prior_hemorrhage_label">Any prior hemorrhage</string>
     <string name="atria_htn_label">Diagnosed hypertension</string>
-    <string name="atria_bleed_short_reference">Fang MC et al. JACC 2011 58:395</string>
     <string name="atria_bleed_full_reference">Fang MC, Go AS, Chang Y, et al. A New Risk Scheme to
         Predict Warfarin-Associated Hemorrhage. Journal of the American College of Cardiology.
         2011;58(4):395-401.</string>
@@ -1604,7 +1604,6 @@
     <string name="qt_prolongation_risk_full_reference">Tisdale James E., Jaynes Heather A., Kingery Joanna R., et al.
         Development and Validation of a Risk Score to Predict QT Interval Prolongation in Hospitalized Patients.
         Circulation: Cardiovascular Quality and Outcomes. 2013;6(4):479-487. doi:10.1161/CIRCOUTCOMES.113.000152</string>
-    <string name="qt_prolongation_risk_short_reference">Tisdale et al., CIRC CV Qual and Outcomes 2013 6:479</string>
     <string name="qt_prolongation_risk_label">QT Prolongation Risk</string>
     <string name="age_factor_label">Age &#8805; 68</string>
     <string name="female_sex_factor_label">Female sex</string>

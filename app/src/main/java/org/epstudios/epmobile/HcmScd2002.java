@@ -21,7 +21,7 @@ package org.epstudios.epmobile;
 import android.widget.CheckBox;
 
 @SuppressWarnings("SpellCheckingInspection")
-public class Hcm extends RiskScore {
+public class HcmScd2002 extends RiskScore {
 
     @Override
     protected void setContentView() {
@@ -95,16 +95,38 @@ public class Hcm extends RiskScore {
         setResultMessage(message);
         // no short reference added here
         return message;
-
     }
 
     @Override
     protected String getFullReference() {
-        return getString(R.string.hcm_full_reference);
+        return convertReferenceToText(R.string.hcm_scd_2002_reference,
+                R.string.hcm_scd_2002_link);
     }
 
     @Override
     protected String getRiskLabel() {
         return getString(R.string.hcm_title);
     }
+
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.hcm_scd_2002_reference,
+                R.string.hcm_scd_2002_link);
+    }
+
+    @Override
+    protected boolean hideKeyMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityKey() {
+        showKeyAlertDialog(R.string.hcm_scd_2002_key);
+    }
+
 }

@@ -95,11 +95,23 @@ public class HasBled extends RiskScore {
 
     @Override
     protected String getFullReference() {
-        return getString(R.string.hasbled_full_reference);
+        return convertReferenceToText(R.string.hasbled_full_reference,
+                R.string.hasbled_link);
     }
 
     @Override
     protected String getRiskLabel() {
         return getString(R.string.hasbled_label);
+    }
+
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.hasbled_full_reference,
+                R.string.hasbled_link);
     }
 }

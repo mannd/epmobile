@@ -173,10 +173,7 @@ public class QtcIvcdResults extends EpActivity {
     }
 
     private void showDetails(String title, String message) {
-        AlertDialog alert = new AlertDialog.Builder(this).create();
-        alert.setTitle(title);
-        alert.setMessage(message);
-        alert.show();
+        showAlertDialog(title, message);
     }
 
 

@@ -102,11 +102,23 @@ public class Hemorrhages extends RiskScore {
 
     @Override
     protected String getFullReference() {
-        return getString(R.string.hemorrhages_full_reference);
+        return convertReferenceToText(R.string.hemorrhages_full_reference,
+                R.string.hemorrhages_link);
     }
 
     @Override
     protected String getRiskLabel() {
         return getString(R.string.hemorrhages_label);
+    }
+
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.hemorrhages_full_reference,
+                R.string.hemorrhages_link);
     }
 }

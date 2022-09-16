@@ -41,7 +41,6 @@ public class ArvcRisk extends RiskScore {
     SwitchCompat nsvtSwitch;
     SeekBar rvefSeekBar;
     TextView rvefTextView;
-    TextView arvcRiskReference;
 
     @Override
     protected void init() {
@@ -182,29 +181,25 @@ public class ArvcRisk extends RiskScore {
                 || TextUtils.isEmpty(pvcText.getText());
     }
 
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
 
-        @Override
-        protected boolean hideReferenceMenuItem() {
-            return false;
-        }
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.arvc_risk_full_reference,
+                R.string.arvc_risk_link);
+    }
 
-        @Override
-        protected void showActivityReference() {
-            showReferenceAlertDialog(R.string.arvc_risk_full_reference,
-                    R.string.arvc_risk_link);
-        }
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
 
-        @Override
-        protected boolean hideInstructionsMenuItem() {
-            return false;
-        }
-
-        @Override
-        protected void showActivityInstructions() {
-            showAlertDialog(R.string.arvc_risk_title,
-                    R.string.arvc_disclaimer);
-        }
-
-
-
+    @Override
+    protected void showActivityInstructions() {
+        showAlertDialog(R.string.arvc_risk_title,
+                R.string.arvc_disclaimer);
+    }
 }

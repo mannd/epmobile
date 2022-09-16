@@ -5,7 +5,7 @@ import android.view.MenuItem;
 import android.widget.CheckBox;
 import android.widget.RadioGroup;
 
-public class IcdRisk extends DiagnosticScore {
+public class IcdRisk extends RiskScore {
     CheckBox sexCheckBox;
     RadioGroup admittedRadioGroup;
     RadioGroup nyhaClassRadioGroup;
@@ -56,9 +56,15 @@ public class IcdRisk extends DiagnosticScore {
         } else {
             message += "\nIntermediate risk of complications (between 0.3% and 4.2%)";
         }
-        message += "\n" + getString(R.string.icd_risk_reference);
         displayResult(message, getString(R.string.icd_result_title));
+    }
 
+    @Override
+    protected void displayResult(String message, String title) {
+        addSelectedRisk("N/A");
+        String resultMessage = getString(R.string.icd_result_title) + "\n" + message;
+        setResultMessage(resultMessage);
+        super.displayResult(message, title);
     }
 
     private int calculateScore() {
@@ -148,6 +154,7 @@ public class IcdRisk extends DiagnosticScore {
         hgbRadioGroup = findViewById(R.id.hgb_radio_group);
         bunRadioGroup = findViewById(R.id.bun_radio_group);
 
+        clearEntries();
     }
 
     @Override
@@ -167,6 +174,17 @@ public class IcdRisk extends DiagnosticScore {
 
     }
 
+    @Override
+    protected String getFullReference() {
+        return convertReferenceToText(R.string.icd_risk_reference,
+                R.string.icd_risk_link);
+    }
+
+    @Override
+    protected String getRiskLabel() {
+        return getString(R.string.icd_risk_title);
+    }
+
     private boolean radioGroupsIncomplete() {
         return admittedRadioGroup.getCheckedRadioButtonId() == -1
                 || nyhaClassRadioGroup.getCheckedRadioButtonId() == -1
@@ -178,4 +196,14 @@ public class IcdRisk extends DiagnosticScore {
                 || bunRadioGroup.getCheckedRadioButtonId() == -1;
     }
 
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.icd_risk_reference,
+                R.string.icd_risk_link);
+    }
 }
