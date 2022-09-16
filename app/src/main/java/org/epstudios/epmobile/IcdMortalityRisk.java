@@ -38,7 +38,8 @@ public class IcdMortalityRisk extends RiskScore {
 
     @Override
     protected String getFullReference() {
-        return getString(R.string.icd_mortality_risk_full_reference);
+        return convertReferenceToText(R.string.icd_mortality_risk_full_reference,
+                R.string.icd_mortality_risk_link);
     }
 
     @Override
@@ -117,5 +118,16 @@ public class IcdMortalityRisk extends RiskScore {
         checkBox[3] = findViewById(R.id.bun_greater_than_26);
         checkBox[4] = findViewById(R.id.qrs_greater_than_12);
         checkBox[5] = findViewById(R.id.afb_baseline);
+    }
+
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.icd_mortality_risk_full_reference,
+                R.string.icd_mortality_risk_link);
     }
 }
