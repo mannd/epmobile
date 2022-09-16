@@ -72,11 +72,35 @@ public class EgsysScore extends SyncopeRiskScore {
 
     @Override
     protected String getFullReference() {
-        return getString(R.string.syncope_egsys_full_reference);
+        return convertReferenceToText(R.string.syncope_egsys_full_reference,
+                R.string.syncope_egsys_link);
     }
 
     @Override
     protected String getRiskLabel() {
         return getString(R.string.syncope_egsys_label);
+    }
+
+
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.syncope_egsys_full_reference,
+                R.string.syncope_egsys_link);
+    }
+
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityInstructions() {
+        showAlertDialog(R.string.syncope_egsys_score_title,
+                R.string.syncope_egsys_instructions);
     }
 }

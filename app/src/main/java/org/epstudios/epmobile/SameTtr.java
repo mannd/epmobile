@@ -27,7 +27,8 @@ public class SameTtr extends RiskScore {
 
     @Override
     protected String getFullReference() {
-        return getString(R.string.same_full_reference);
+        return convertReferenceToText(R.string.same_full_reference,
+                R.string.same_link);
     }
 
     @Override
@@ -79,6 +80,28 @@ public class SameTtr extends RiskScore {
         checkBox[3] = findViewById(R.id.treatment);
         checkBox[4] = findViewById(R.id.smoking);
         checkBox[5] = findViewById(R.id.race);
+    }
 
+
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.same_full_reference,
+                R.string.same_link);
+    }
+
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityInstructions() {
+        showAlertDialog(R.string.same_tt2r2_title,
+                R.string.same_instructions);
     }
 }

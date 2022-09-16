@@ -59,11 +59,34 @@ public class OesilScore extends SyncopeRiskScore {
 
     @Override
     protected String getFullReference() {
-        return getString(R.string.syncope_oesil_full_reference);
+        return convertReferenceToText(R.string.syncope_oesil_full_reference,
+                R.string.syncope_oesil_link);
     }
 
     @Override
     protected String getRiskLabel() {
         return getString(R.string.syncope_oesil_label);
+    }
+
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.syncope_oesil_full_reference,
+                R.string.syncope_oesil_link);
+    }
+
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityInstructions() {
+        showAlertDialog(R.string.syncope_oesil_score_title,
+                R.string.syncope_oesil_instructions);
     }
 }

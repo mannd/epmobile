@@ -57,11 +57,34 @@ public class SyncopeSfRule extends SyncopeRiskScore {
 
     @Override
     protected String getFullReference() {
-        return getString(R.string.syncope_sf_rule_full_reference);
+        return convertReferenceToText(R.string.syncope_sf_rule_full_reference,
+                R.string.syncope_sf_rule_link);
     }
 
     @Override
     protected String getRiskLabel() {
         return getString(R.string.syncope_sf_rule_label);
+    }
+
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.syncope_sf_rule_full_reference,
+                R.string.syncope_sf_rule_link);
+    }
+
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityInstructions() {
+        showAlertDialog(R.string.syncope_sf_rule_title,
+                R.string.syncope_sf_rule_instructions);
     }
 }

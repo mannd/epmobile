@@ -1124,32 +1124,35 @@
    		from: http://heart.bmj.com/content/87/2/169.full</string>
     <string name="hcm_combined_sus_va_risk_label">Cardiac arrest and/or spontaneous
    	    sustained VT</string>
-    <string name="syncope_sf_rule_full_reference">Quinn J, McDermott D, Stiell I,
-        Kohn M, Wells G. Prospective validation of the San Francisco Syncope rule
-        to predict patients with serious outcomes. 2006 May [cited 2014 Jun
-   		6];47(5):448-54. Available from:
-   		http://www.annemergmed.com/article/S0196-0644(05)01959-1/abstract</string>
+    <string name="syncope_sf_rule_full_reference">Quinn J, McDermott D, Stiell I, Kohn M, Wells G.
+        Prospective validation of the San Francisco Syncope Rule to predict patients with serious
+        outcomes. Ann Emerg Med. 2006;47(5):448-454.</string>
+    <string name="syncope_sf_rule_link">https://doi.org/10.1016/j.annemergmed.2005.11.019</string>
+    <string name="syncope_sf_rule_instructions">Use this rule to assess the risk of serious
+        events within 30 days of presentation with syncope.</string>
     <string name="syncope_sf_rule_label">SF Rule</string>
-    <string name="syncope_martin_full_reference">Martin TP, Hanusa BH, Kapoor WN.
-	    Risk stratification of patients with syncope. Ann Emerg Med [Internet].
-	    1997 April [cited 2014 Jun 6];29(4):459-66. Available from:
-   		http://www.annemergmed.com/article/S0196-0644(97)70217-8/abstract</string>
+    <string name="syncope_martin_full_reference">Martin TP, Hanusa BH, Kapoor WN. Risk stratification
+        of patients with syncope. Ann Emerg Med. 1997;29(4):459-466.</string>
+    <string name="syncope_martin_link">https://doi.org/10.1016/s0196-0644(97)70217-8</string>
+    <string name="syncope_martin_instructions">Use this algorithm to stratify the risk of
+        arrhythmias or mortality within 1 year in Emergency Department patients
+        presenting with syncope.</string>
     <string name="syncope_martin_result_label">1-year severe arrhythmia or arrhythmic death risk</string>
     <string name="syncope_oesil_label">OESIL</string>
-    <string name="syncope_oesil_full_reference">Colivicchi F, Ammirati F, Melina D,
-        Guido V, Imperoli G, Santini M, for the OESIL (Osservatorio Epidemiologico
-        sulla Sincope nel Lazio) Study Investigators. Development and prospective
-        validation of a risk stratification system for patients with syncope in the
-   		emergency department: the OESIL risk score. Eur Heart J
-   		[Internet]. 2003 [cited 2014 Jun 6];24:811-19. Available from:
-   		http://eurheartj.oxfordjournals.org/content/24/9/811.full.pdf</string>
+    <string name="syncope_oesil_full_reference">Colivicchi F, Ammirati F, Melina D, et al.
+        Development and prospective validation of a risk stratification system for patients with
+        syncope in the emergency department: the OESIL risk score.
+        Eur Heart J. 2003;24(9):811-819.</string>
+    <string name="syncope_oesil_link">https://doi.org/10.1016/s0195-668x(02)00827-8</string>
+    <string name="syncope_oesil_instructions">Use this score to assess the one year total
+        mortality risk for patients presenting to the Emergency Department with syncope.</string>
     <string name="syncope_egsys_label">EGSYS</string>
-    <string name="syncope_egsys_full_reference">Del Rosso A, Ungar A, Maggi R,
-   	    Giada F, Petix NR, De Santo T, Menozzi C, Brignole M. Clinical predictors
-   	    of cardiac syncope at initial evaluation in patients referred urgently to
-   	    a general hospital: the EGSYS score. Heart [Internet]. 2008 Dec [cited 2014
-   		Jun 6];94(12):1620-6. Available from:
-   		http://heart.bmj.com/content/94/12/1620.abstract</string>
+    <string name="syncope_egsys_full_reference">Del Rosso A, Ungar A, Maggi R, et al. Clinical
+        predictors of cardiac syncope at initial evaluation in patients referred urgently to a
+        general hospital: the EGSYS score. Heart. 2008;94(12):1620-1626.</string>
+    <string name="syncope_egsys_link">https://doi.org/10.1136/hrt.2008.143123</string>
+    <string name="syncope_egsys_instructions">Use this score to predict whether a patient
+        presenting with syncope is likely to have a cardiac cause for their syncope.</string>
     <string name="rva_vs_rvb_pacing_title">RV Apex vs Base Pacing</string>
     <string name="para_hisian_pacing_title">Para-Hisian Pacing</string>
     <string name="qtc_formula_key">qtc_formula</string>
@@ -1310,12 +1313,12 @@
     <string name="same_race_label">Race (non-Caucasian)</string>
     <string name="same_sex_label">Sex (female)</string>
     <string name="same_age_label">Age (&lt;60 y)</string>
-    <string name="same_full_reference">Apostolakis S, Sullivan RM, Olshansky B,
-        Lip GYH.  Factors affecting quality of anticoagulation control among
-        patients with atrial fibrillation on warfarin.  The
-        SAMe-TT\u2082R\u2082 Score.  Chest [Internet].  2013 Nov
-        [cited 2015 Dec 2] 144(5):1555-1563.  Available from:
-        http://journal.publications.chestnet.org/article.aspx?articleid=1686270</string>
+    <string name="same_full_reference">Apostolakis S, Sullivan RM, Olshansky B, Lip GYH. Factors
+        affecting quality of anticoagulation control among patients with atrial fibrillation on
+        warfarin: the SAMe-TT₂R₂ score. Chest. 2013;144(5):1555-1563.</string>
+    <string name="same_link">https://doi.org/10.1378/chest.13-0054</string>
+    <string name="same_instructions">This score predicts poor INR control in patients
+        on warfarin.</string>
     <string name="same_risk_label">SAMe-TT\u2082R\u2082</string>
     <string name="low_same_risk_message">Patient likely to have good
         anticoagulation control on warfarin with high (\u226565%) TTR
@@ -1598,9 +1601,12 @@
         Reported to Cause Congenital Long QT Syndrome. Circulation.
         2020;141(6):418-428.</string>
     <string name="lqts_table_link">https://doi.org/10.1161/CIRCULATIONAHA.119.043132</string>
-    <string name="qt_prolongation_risk_full_reference">Tisdale James E., Jaynes Heather A., Kingery Joanna R., et al.
-        Development and Validation of a Risk Score to Predict QT Interval Prolongation in Hospitalized Patients.
-        Circulation: Cardiovascular Quality and Outcomes. 2013;6(4):479-487. doi:10.1161/CIRCOUTCOMES.113.000152</string>
+    <string name="qt_prolongation_risk_full_reference">Tisdale JE, Jaynes HA, Kingery JR, et al. Development and Validation of a Risk
+        Score to Predict QT Interval Prolongation in Hospitalized Patients. Circulation:
+        Cardiovascular Quality and Outcomes. 2013;6(4):479-487.</string>
+    <string name="qt_prolongation_risk_link">https:/doi.org/10.1161/CIRCOUTCOMES.113.000152</string>
+    <string name="qt_prolongation_risk_instructions">This risk score predicts the occurence of QTc
+        interval prolongation during hospitalization.</string>
     <string name="qt_prolongation_risk_label">QT Prolongation Risk</string>
     <string name="age_factor_label">Age &#8805; 68</string>
     <string name="female_sex_factor_label">Female sex</string>

@@ -26,7 +26,8 @@ import android.widget.CheckBox;
 public class QTProlongationRisk extends RiskScore {
     @Override
     protected String getFullReference() {
-        return getString(R.string.qt_prolongation_risk_full_reference);
+        return convertReferenceToText(R.string.qt_prolongation_risk_full_reference,
+                R.string.qt_prolongation_risk_link);
     }
 
     @Override
@@ -87,5 +88,27 @@ public class QTProlongationRisk extends RiskScore {
         checkBox[7] = findViewById(R.id.heart_failure_factor);
         checkBox[8] = findViewById(R.id.one_qtc_drug_factor);
         checkBox[9] = findViewById(R.id.two_qtc_drugs_factor);
+    }
+
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.qt_prolongation_risk_full_reference,
+                R.string.qt_prolongation_risk_link);
+    }
+
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityInstructions() {
+        showAlertDialog(R.string.qt_prolongation_risk_title,
+                R.string.qt_prolongation_risk_instructions);
     }
 }

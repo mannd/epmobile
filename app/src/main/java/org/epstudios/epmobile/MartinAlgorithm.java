@@ -58,11 +58,34 @@ public class MartinAlgorithm extends SyncopeRiskScore {
 
     @Override
     protected String getFullReference() {
-        return getString(R.string.syncope_martin_full_reference);
+        return convertReferenceToText(R.string.syncope_martin_full_reference,
+                R.string.syncope_martin_link);
     }
 
     @Override
     protected String getRiskLabel() {
         return getString(R.string.syncope_martin_title);
+    }
+
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.syncope_martin_full_reference,
+                R.string.syncope_martin_link);
+    }
+
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityInstructions() {
+        showAlertDialog(R.string.syncope_martin_title,
+                R.string.syncope_martin_instructions);
     }
 }
