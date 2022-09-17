@@ -42,6 +42,7 @@
 | Negative T-wave V_1 through V_3    | Present    |           |
 | P II amplitude                     | >2.5 mm    |           |
 Amplitudes are given in millimeters, where 1 mm=0.1 mV.
+Adapted from Table 2 of Hancock et al.
 
 * References
 - Hancock EW, Deal BJ, Mirvis DM, Okin P, Kligfield P, Gettes LS. AHA/ACCF/HRS Recommendations for the Standardization and Interpretation of the Electrocardiogram. Journal of the American College of Cardiology. 2009;53(11):992-1002. https://doi.org/10.1016/j.jacc.2008.12.015

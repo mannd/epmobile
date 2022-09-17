@@ -346,4 +346,15 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
         showReferenceAlertDialog(references);
     }
 
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityInstructions() {
+        showAlertDialog(R.string.qtc_ivcd_calculator_title,
+                R.string.qtc_ivcd_calculator_instructions);
+    }
+
 }

@@ -1683,4 +1683,6 @@
     <string name="apple_instructions">Use this score to predict the risk of recurrent atrial
         fibrillation after initial or repeat catheter ablation.  You can use the
         GFR Calculator to determine estimated GFR.</string>
+    <string name="qtc_ivcd_calculator_instructions">Use this calculator to estimate the QTc when there
+        is an intraventricular conduction delay.</string>
 </resources>
