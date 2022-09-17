@@ -58,4 +58,25 @@ public class CreatinineClearanceCalculator extends DrugCalculator {
         setResult(RESULT_OK, mIntent);
     }
 
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.creatinine_clearance_reference,
+                R.string.creatinine_clearance_link);
+    }
+
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityInstructions() {
+        showAlertDialog(R.string.creatinine_clearance_calculator_title,
+                R.string.creatinine_clearance_instructions);
+    }
 }

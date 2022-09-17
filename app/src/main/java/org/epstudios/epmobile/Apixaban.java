@@ -20,13 +20,13 @@ package org.epstudios.epmobile;
 
 public class Apixaban extends DrugCalculator {
 
-	@Override
-	protected int getDose(int crCl) {
+    @Override
+    protected int getDose(int crCl) {
         // note only warning now if CrCl < 15, apixaban not prohibited
-		return USE_APIXABAN_DOSING;
-	}
+        return USE_APIXABAN_DOSING;
+    }
 
-	@Override
+    @Override
     protected String getDisclaimer() {
         return getString(R.string.af_drug_dose_disclaimer) + super.getDisclaimer();
     }

@@ -6,12 +6,15 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:allowBackup="false"
+        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme"
+        android:enableOnBackInvokedCallback="true"
+
         tools:ignore="UnusedAttribute">
 
         <activity
@@ -100,7 +103,7 @@
             android:name=".RiskScoreList"
             android:label="@string/risk_scores_title"/>
         <activity
-            android:name=".Hcm"
+            android:name=".HcmScd2002"
             android:label="@string/hcm_title"/>
         <activity
             android:name=".CmsIcd"
@@ -187,8 +190,8 @@
             android:name=".AtrialTachLocalization"
             android:label="@string/atrial_tachycardia_localization_title"/>
         <activity
-            android:name=".DayCalculator"
-            android:label="@string/day_calculator_title"/>
+            android:name=".DateCalculator"
+            android:label="@string/date_calculator_title"/>
         <activity
             android:name=".Entrainment"
             android:label="@string/entrainment_title"
@@ -259,6 +262,10 @@
                   android:label="@string/long_qt_table_title" />
         <activity android:name=".QTProlongationRisk"
             android:label="@string/qt_prolongation_risk_title" />
+        <activity android:name=".GfrCalculator"
+            android:label="@string/gfr_calculator_title" />
+        <activity android:name=".AppleScore"
+            android:label="@string/apple_score_title" />
     </application>
 
 </manifest>

@@ -50,12 +50,14 @@ public class MyPreferenceFragment extends PreferenceFragmentCompat
         Activity activity = getActivity();
         SharedPreferences sharedPreferences = getPreferenceScreen().getSharedPreferences();
 
+
         msec = (Objects.requireNonNull(activity)).getString(R.string.msec);
 
 
         qtcFormulaDefaultValue = activity.getString(R.string.qtc_formula_default_value);
         qtcFormulaKey = activity.getString(R.string.qtc_formula_key);
         qtcFormulaPref = findPreference(qtcFormulaKey);
+        assert sharedPreferences != null;
         (Objects.requireNonNull(qtcFormulaPref)).setSummary(sharedPreferences.getString(qtcFormulaKey, qtcFormulaDefaultValue));
 
         maximumQtcDefaultValue = activity.getString(R.string.maximum_qtc_default_value);
@@ -104,8 +106,7 @@ public class MyPreferenceFragment extends PreferenceFragmentCompat
         // if they enter empty string, show default (and it will be default)
         if (maximumQtc.length() == 0) {
             maximumQtc = requireActivity().getString(R.string.no_default_qtc_selected_error_message);
-        }
-        else {
+        } else {
             maximumQtc += " " + msec;
         }
         return maximumQtc;
@@ -166,14 +167,14 @@ public class MyPreferenceFragment extends PreferenceFragmentCompat
     @Override
     public void onResume() {
         super.onResume();
-        getPreferenceScreen().getSharedPreferences()
+        Objects.requireNonNull(getPreferenceScreen().getSharedPreferences())
                 .registerOnSharedPreferenceChangeListener(this);
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        getPreferenceScreen().getSharedPreferences()
+        Objects.requireNonNull(getPreferenceScreen().getSharedPreferences())
                 .unregisterOnSharedPreferenceChangeListener(this);
     }
 

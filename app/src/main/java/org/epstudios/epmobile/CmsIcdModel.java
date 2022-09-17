@@ -72,6 +72,7 @@ public class CmsIcdModel {
         this.brainDamage = brainDamage;
         this.uncontrolledSvt = uncontrolledSvt;
     }
+
     // a "default" constructor for testing
     public CmsIcdModel() {
         this.susVT = false;
@@ -162,60 +163,49 @@ public class CmsIcdModel {
         if (absoluteExclusion()) {
             result.approval = Approval.NOT_APPROVED;
             result.details = Details.ABSOLUTE_EXCLUSION;
-        }
-        else if (noIndications()) {
+        } else if (noIndications()) {
             result.approval = Approval.NOT_APPROVED;
             result.details = Details.NO_INDICATIONS;
-        }
-        else if (noEF()) {
+        } else if (noEF()) {
             result.approval = Approval.NOT_APPROVED;
             result.details = Details.NO_EF;
-        }
-        else if (secondaryPrevention()) {
+        } else if (secondaryPrevention()) {
             result.details = Details.NONE;
             result.approval = Approval.APPROVED;
             result.indication = Indication.SECONDARY;
-        }
-        else if (highRiskCondition) {
+        } else if (highRiskCondition) {
             result.details = Details.NONE;
             result.approval = Approval.APPROVED;
             result.indication = Indication.PRIMARY;
             result.needsSdmEncounter = true;
-        }
-        else if (icdAtEri) {
+        } else if (icdAtEri) {
             if (waitingPeriod()) {
                 result.details = Details.WAITING_PERIOD_EXCEPTION;
             }
             result.approval = Approval.APPROVED;
             result.indication = Indication.OTHER;
-        }
-        else if (primaryPrevention() && noNyha()) {
+        } else if (primaryPrevention() && noNyha()) {
             result.approval = Approval.APPROVAL_UNCLEAR;
             result.indication = Indication.PRIMARY;
             result.details = Details.NO_NYHA;
-        }
-        else if (madit2Indication() || scdHeftIndication()) {
+        } else if (madit2Indication() || scdHeftIndication()) {
             result.indication = Indication.PRIMARY;
             result.details = getExclusionDetails();
             result.needsSdmEncounter = !temporaryExclusion();
             result.approval = temporaryExclusion() ? Approval.NOT_APPROVED : Approval.APPROVED;
-        }
-        else if (forgotIcm()) {
+        } else if (forgotIcm()) {
             result.approval = Approval.NOT_APPROVED;
             result.indication = Indication.PRIMARY;
             result.details = Details.FORGOT_ICM;
-        }
-        else if (forgotMI()) {
+        } else if (forgotMI()) {
             result.approval = Approval.NOT_APPROVED;
             result.indication = Indication.PRIMARY;
             result.details = Details.FORGOT_MI;
-        }
-        else if (transplantList) {
+        } else if (transplantList) {
             result.approval = Approval.APPROVAL_UNCLEAR;
             result.indication = Indication.OTHER;
             result.details = Details.BRIDGE_TO_TRANSPLANT;
-        }
-        else {
+        } else {
             result.indication = Indication.PRIMARY;
             result.approval = Approval.NOT_APPROVED;
         }
@@ -246,11 +236,9 @@ public class CmsIcdModel {
     private Details getExclusionDetails() {
         if (candidateForRevasc) {
             return Details.CANDIDATE_FOR_REVASC;
-        }
-        else if (waitingPeriod()) {
+        } else if (waitingPeriod()) {
             return Details.NEEDS_WAITING_PERIOD;
-        }
-        else {
+        } else {
             return Details.NONE;
         }
     }
@@ -272,7 +260,7 @@ public class CmsIcdModel {
         return !(secondaryPrevention() || primaryPrevention() || otherIndication());
     }
 
-    private  Boolean secondaryPrevention() {
+    private Boolean secondaryPrevention() {
         return cardiacArrest || susVT;
     }
 

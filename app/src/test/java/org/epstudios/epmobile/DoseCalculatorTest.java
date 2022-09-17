@@ -1,4 +1,4 @@
-/*  EP Mobile -- Mobile tools for electrophysiologists
+package org.epstudios.epmobile;/*  EP Mobile -- Mobile tools for electrophysiologists
     Copyright (C) 2011 EP Studios, Inc.
     www.epstudiossoftware.com
 
@@ -18,8 +18,13 @@
 
 import junit.framework.TestCase;
 
+import org.epstudios.epmobile.CreatinineClearance;
 import org.epstudios.epmobile.DoseCalculator;
 import org.epstudios.epmobile.Warfarin;
+import org.junit.Assert;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class DoseCalculatorTest extends TestCase {
 
@@ -211,4 +216,26 @@ public class DoseCalculatorTest extends TestCase {
 		return num == 0.0;
 	}
 
+	public static class CreatinineClearanceTest {
+		@Test
+		public void testCalculate() {
+			Assert.assertEquals(0, CreatinineClearance.calculate(true, 0, 0, 0, false));
+			Assert.assertEquals(0, CreatinineClearance.calculate(true, 140, 0, 0, false));
+			Assert.assertEquals(58,
+					CreatinineClearance.calculate(true, 77, 65, 0.98, false));
+			Assert.assertEquals((int) (0.85 * 58),
+					CreatinineClearance.calculate(false, 77, 65, 0.98, false));
+			// next one tests for round off, precise answer is 47.79, should round
+			// to 48
+			Assert.assertEquals(48,
+					CreatinineClearance.calculate(true, 77, 65, 1.19, false));
+			// test microMol/L units
+			Assert.assertEquals(56, CreatinineClearance.calculate(true, 77, 65, 90, true));
+			Assert.assertEquals(48, CreatinineClearance.calculate(false, 77, 65, 90, true));
+			Assert.assertEquals(47.5,
+					CreatinineClearance.calculateDouble(false, 77, 65, 90, true),
+					0.1);
+
+		}
+	}
 }

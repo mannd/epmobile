@@ -15,7 +15,7 @@ This project roughly utilizes [Semantic Versioning](https://semver.org/spec/v2.0
 - Update QTm and QTmc to 2020 update of Bogossian formula
 - QTc formula can now be selected in QTc with IVCD module
 ### Fixed
-- Minor formating changes in QTc calculators
+- Minor formatting changes in QTc calculators
 - Text in QTc IVCD results reflects recommended QTc formulas to be
   used with each IVCD correction formula
 

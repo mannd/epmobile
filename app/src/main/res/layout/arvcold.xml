@@ -168,12 +168,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/arvc_old_family_hx" />
-
-            <TextView
-                android:autoLink="web"
-                android:text="@string/arvc_old_reference" />
         </TableLayout>
-
     </ScrollView>
-
 </RelativeLayout>

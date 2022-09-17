@@ -36,7 +36,7 @@ public class DrugReferenceList extends EpActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.selectionlist);
         initToolbar();
-	ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this, R.array.drug_reference_list,
                 android.R.layout.simple_list_item_1);
         ListView lv = findViewById(R.id.list);
@@ -116,4 +116,14 @@ public class DrugReferenceList extends EpActivity {
         startActivity(i);
     }
 
+        @Override
+        protected boolean hideInstructionsMenuItem() {
+            return false;
+        }
+
+        @Override
+        protected void showActivityInstructions() {
+            showAlertDialog(R.string.drug_reference_title,
+                    R.string.drug_reference_instructions);
+        }
 }

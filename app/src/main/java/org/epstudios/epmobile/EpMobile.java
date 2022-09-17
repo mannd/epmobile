@@ -20,45 +20,32 @@ package org.epstudios.epmobile;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.Button;
 
-import androidx.appcompat.app.AppCompatDelegate;
+public class EpMobile extends EpActivity implements View.OnClickListener {
 
-public class EpMobile extends EpActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.selectionlist);
+        setContentView(R.layout.mainscreen);
+        Button calculatorButton = findViewById(R.id.calculators_button);
+        Button diagnosisButton = findViewById(R.id.diagnosis_button);
+        Button referenceButton = findViewById(R.id.reference_button);
+        Button riskScoresButton = findViewById(R.id.risk_scores_button);
+
+        calculatorButton.setOnClickListener(this);
+        diagnosisButton.setOnClickListener(this);
+        referenceButton.setOnClickListener(this);
+        riskScoresButton.setOnClickListener(this);
+
         initToolbar();
         // only EP Mobile main screen has no back arrow
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         }
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                this, R.array.main_index, android.R.layout.simple_list_item_1);
-        ListView lv = findViewById(R.id.list);
-        lv.setAdapter(adapter);
-
-        lv.setTextFilterEnabled(true);
-
-        lv.setOnItemClickListener((parent, view, position, id) -> {
-            String selection = ((TextView) view).getText().toString();
-            if (selection.equals(getString(R.string.calculator_list_title)))
-                calculatorList();
-            else if (selection
-                    .equals(getString(R.string.reference_list_title)))
-                referenceList();
-            else if (selection
-                    .equals(getString(R.string.risk_score_list_title)))
-                riskScores();
-            else if (selection
-                    .equals(getString(R.string.diagnosis_list_title)))
-                diagnosisList();
-        });
     }
 
     private void calculatorList() {
@@ -81,4 +68,17 @@ public class EpMobile extends EpActivity {
         startActivity(i);
     }
 
+    @Override
+    public void onClick(View v) {
+        final int id = v.getId();
+        if (id == R.id.calculators_button) {
+            calculatorList();
+        } else if (id == R.id.diagnosis_button) {
+            diagnosisList();
+        } else if (id == R.id.reference_button) {
+            referenceList();
+        } else if (id == R.id.risk_scores_button) {
+            riskScores();
+        }
+    }
 }

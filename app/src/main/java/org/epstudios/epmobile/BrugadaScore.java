@@ -46,17 +46,17 @@ public class BrugadaScore extends RiskScore {
         checkBox[0] = findViewById(R.id.spontaneous_type_1_ecg);
         checkBox[1] = findViewById(R.id.fever_type_1_ecg);
         checkBox[2] = findViewById(R.id.type_2_3_ecg);
-	// Clinical history
+        // Clinical history
         checkBox[3] = findViewById(R.id.unexplained_arrest);
         checkBox[4] = findViewById(R.id.agonal_respirations);
         checkBox[5] = findViewById(R.id.arrhythmic_syncope);
         checkBox[6] = findViewById(R.id.unclear_syncope);
         checkBox[7] = findViewById(R.id.afl_afb);
-	// Family history
+        // Family history
         checkBox[8] = findViewById(R.id.relative_definite_brugada);
         checkBox[9] = findViewById(R.id.suspicious_scd);
         checkBox[10] = findViewById(R.id.unexplained_scd);
-	// Genetic testing
+        // Genetic testing
         checkBox[11] = findViewById(R.id.pathogenic_mutation);
     }
 
@@ -106,8 +106,7 @@ public class BrugadaScore extends RiskScore {
         if (ecgScore == 0) {
             message = "Score requires at least 1 ECG finding.";
             setResultMessage(message);
-        }
-        else {
+        } else {
             result = ecgScore + clinicalScore + familyScore + geneticScore;
             message = getResultMessage(result);
         }
@@ -115,15 +114,13 @@ public class BrugadaScore extends RiskScore {
     }
 
     private String getResultMessage(int result) {
-        String message = String.format(Locale.getDefault(),getString(R.string.brugada_score_risk_score),
+        String message = String.format(Locale.getDefault(), getString(R.string.brugada_score_risk_score),
                 UnitConverter.trimmedTrailingZeros(result / 10.0));
         if (result >= 35) {
             message += getString(R.string.brugada_score_probable_message);
-        }
-        else if (result >= 20) {
+        } else if (result >= 20) {
             message += getString(R.string.brugada_score_possible_message);
-        }
-        else {
+        } else {
             message += getString(R.string.nondiagnostic_message);
         }
         setResultMessage(message);
@@ -134,7 +131,8 @@ public class BrugadaScore extends RiskScore {
 
     @Override
     protected String getFullReference() {
-        return getString(R.string.brugada_score_reference);
+        return convertReferenceToText(R.string.brugada_score_reference,
+                R.string.brugada_score_link);
     }
 
     @Override
@@ -143,9 +141,25 @@ public class BrugadaScore extends RiskScore {
     }
 
     @Override
-    protected String getShortReference() {
-        // no short reference given, since it is in layout
-        return null;
+    protected boolean hideReferenceMenuItem() {
+        return false;
     }
+
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.brugada_score_reference,
+                R.string.brugada_score_link);
+    }
+
+    @Override
+    protected boolean hideKeyMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityKey() {
+        showKeyAlertDialog(R.string.brugada_score_key);
+    }
+
 }
 

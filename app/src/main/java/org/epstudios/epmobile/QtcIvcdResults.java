@@ -52,7 +52,7 @@ public class QtcIvcdResults extends EpActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.selectionlist);
-	initToolbar();
+        initToolbar();
 
         qt = getIntent().getIntExtra("QT", 0);
         qtc = getIntent().getIntExtra("QTc", 0);
@@ -69,15 +69,15 @@ public class QtcIvcdResults extends EpActivity {
         String qtcMessage = makeResult(qtc, "QTc");
         String jtMessage = makeResult(jt, "JT");
         String jtcMessage = makeResult(jtc, "JTc");
-        String qtmMessage =  makeResult(qtm, "QTm");
-        String qtmcMessage =  makeResult(qtmc, "QTmc");
+        String qtmMessage = makeResult(qtm, "QTm");
+        String qtmcMessage = makeResult(qtmc, "QTmc");
         String qtrrqrsMessage = makeResult(qtrrqrs, "QTrr,qrs");
         String prelbbbqtcMessage = isLBBB ? makeResult(prelbbbqtc, "preLBBBQTc") : getString(R.string.prelbbbqtc_lbbb_error_message);
         String infoMessage = getString(R.string.qt_ivcd_info_message);
 
 
-        String[] items = new String[] {qtMessage, qtcMessage, jtMessage, jtcMessage,
-            qtmMessage, qtmcMessage, qtrrqrsMessage, prelbbbqtcMessage, infoMessage};
+        String[] items = new String[]{qtMessage, qtcMessage, jtMessage, jtcMessage,
+                qtmMessage, qtmcMessage, qtrrqrsMessage, prelbbbqtcMessage, infoMessage};
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items);
 
@@ -129,7 +129,7 @@ public class QtcIvcdResults extends EpActivity {
 
     private void showQTc() {
         String message = getString(R.string.qtc_details, qtc, formulaName,
-                getString(R.string.qtc_reference));
+                getString(R.string.qtc_limits_short_reference));
         showDetails(getString(R.string.qtc_details_title), message);
     }
 
@@ -162,19 +162,48 @@ public class QtcIvcdResults extends EpActivity {
     }
 
     private void showPreLBBBQTc() {
-        String message = isLBBB? getString(R.string.prelbbbqtc_details, prelbbbqtc,
+        String message = isLBBB ? getString(R.string.prelbbbqtc_details, prelbbbqtc,
                 getString(R.string.prelbbbqtc_reference)) : getString(R.string.prelbbbqtc_lbbb_error_message);
         showDetails(getString(R.string.prelbbbqtc_details_title), message);
     }
+
     private void showInstructions() {
         showDetails(getString(R.string.qt_instructions_title),
                 getString(R.string.qt_ivcd_instructions));
     }
 
     private void showDetails(String title, String message) {
-        AlertDialog alert = new AlertDialog.Builder(this).create();
-        alert.setTitle(title);
-        alert.setMessage(message);
-        alert.show();
+        showAlertDialog(title, message);
+    }
+
+
+    // Note this is duplicate code used in QTcIVCD also.
+    // No easy way to DRY this that I can think of.
+    // WARNING: Any changes need to be duplicated in QTcIVCD.
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        Reference referenceBogossian = new Reference(this,
+                R.string.qtc_ivcd_reference_bogossian,
+                R.string.qtc_ivcd_link_bogossian);
+        Reference referenceRautaharju = new Reference(this,
+                R.string.qtc_ivcd_reference_rautaharju,
+                R.string.qtc_ivcd_link_rautaharju);
+        Reference referenceYankelson = new Reference(this,
+                R.string.qtc_ivcd_reference_yankelson,
+                R.string.qtc_ivcd_link_yankelson);
+        Reference referenceQtcLimits = new Reference(this,
+                R.string.qtc_limits_reference,
+                R.string.qtc_limits_link);
+        Reference[] references = new Reference[4];
+        references[0] = referenceBogossian;
+        references[1] = referenceRautaharju;
+        references[2] = referenceYankelson;
+        references[3] = referenceQtcLimits;
+        showReferenceAlertDialog(references);
     }
 }

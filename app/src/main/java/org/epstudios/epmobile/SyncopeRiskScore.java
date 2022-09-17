@@ -5,8 +5,8 @@ import android.view.MenuItem;
 
 public abstract class SyncopeRiskScore extends RiskScore {
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             Intent parentActivityIntent = new Intent(this,
                     SyncopeRiskScoreList.class);
@@ -16,7 +16,7 @@ public abstract class SyncopeRiskScore extends RiskScore {
             finish();
             return true;
         }
-		return super.onOptionsItemSelected(item);
-	}
+        return super.onOptionsItemSelected(item);
+    }
 
 }

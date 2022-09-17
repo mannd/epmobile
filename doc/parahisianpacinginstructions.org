@@ -32,5 +32,5 @@
   - Loss of HB-RB capture with increase in S-A interval indicates exclusive retrograde AVN conduction.  H-A interval is unchanged.
 - Note slowly conducting AP or distant AP can give false AVN only response.
 * Reference
-Hirao K, Otomo K, Wang X, et al. Para-Hisian pacing. A new method for differentiating retrograde conduction over an accessory AV pathway from conduction over the AV node.  Circulation 1996; 94: 1027-1035.
-http://circ.ahajournals.org/content/94/5/1027.full
+Hirao K, Otomo K, Wang X, et al. Para-Hisian pacing. A new method for differentiating retrograde conduction over an accessory AV pathway from conduction over the AV node. Circulation. 1996;94(5):1027-1035.
+https://doi.org/10.1161/01.cir.94.5.1027

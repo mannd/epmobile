@@ -25,20 +25,15 @@ import android.widget.CheckBox;
  */
 public class Orbit extends RiskScore {
 
-
     @Override
     protected String getFullReference() {
-        return getString(R.string.orbit_full_reference);
+        return convertReferenceToText(R.string.orbit_full_reference,
+                R.string.orbit_link);
     }
 
     @Override
     protected String getRiskLabel() {
         return getString(R.string.orbit_label);
-    }
-
-    @Override
-    protected String getShortReference() {
-        return getString(R.string.orbit_short_reference);
     }
 
     @Override
@@ -108,4 +103,14 @@ public class Orbit extends RiskScore {
         return resultWithShortReference();
     }
 
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.orbit_full_reference,
+                R.string.orbit_link);
+    }
 }

@@ -23,15 +23,15 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 public class WctMorphologyCriteria extends EpActivity {
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.wellensmorphology);
-	initToolbar();
-	}
+        initToolbar();
+    }
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             Intent parentActivityIntent = new Intent(this,
                     WctAlgorithmList.class);
@@ -41,6 +41,18 @@ public class WctMorphologyCriteria extends EpActivity {
             finish();
             return true;
         }
-		return super.onOptionsItemSelected(item);
-	}
+        return super.onOptionsItemSelected(item);
+    }
+
+
+        @Override
+        protected boolean hideReferenceMenuItem() {
+            return false;
+        }
+
+        @Override
+        protected void showActivityReference() {
+            showReferenceAlertDialog(R.string.wellens_reference,
+                    R.string.wellens_link);
+        }
 }

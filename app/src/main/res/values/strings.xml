@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-
     <string name="app_name">EP Mobile</string>
     <string name="about_text">EP Mobile is a package of
 		useful cardiac electrophysiology
@@ -9,6 +8,7 @@
 		and are not meant to substitute for clinical judgment.
 		If you have suggestions or comments, please contact us.
 		\n\nEmail: mannd@epstudiossoftware.com
+        \nIcons: svgrepo.com
 		\nWeb: www.epstudiossoftware.com
 		\nSource: github.com/mannd/epmobile
 		\n\nCopyright \u00a9 2011-2022 EP Studios, Inc.
@@ -21,6 +21,23 @@
     <string name="dabigatran_calculator_title">Dabigatran Calculator</string>
     <string name="dabigatran_label">Dabigatran Calculator</string>
     <string name="qtc_calculator_title">QTc Calculator</string>
+    <string name="qtc_calculator_reference_bazett">Bazett H. C.
+        An analysis of the time‐relations of electrocardiograms.
+        Annals of Noninvasive Electrocardiology. 2006;2(2):177-194.</string>
+    <string name="qtc_calculator_link_bazett">https://doi.org/10.1111/j.1542-474X.1997.tb00325.x</string>
+    <string name="qtc_calculator_reference_fridericia">Fridericia LS.
+        Die Systolendauer im Elektrokardiogramm bei normalen Menschen
+        und bei Herzkranken. Acta Medica Scandinavica.
+        1920;53(1):469-486.</string>
+    <string name="qtc_calculator_link_fridericia">https://doi.org/10.1111/j.0954-6820.1920.tb18266.x</string>
+    <string name="qtc_calculator_reference_sagie">Sagie A, Larson MG,
+        Goldberg RJ, Bengtson JR, Levy D. An improved method for
+        adjusting the QT interval for heart rate (the Framingham Heart Study).
+        American Journal of Cardiology. 1992;70(7):797-801.</string>
+    <string name="qtc_calculator_link_sagie">https://doi.org/10.1016/0002-9149(92)90562-D</string>
+    <string name="qtc_calculator_reference_hodges">Hodges M, Salerno D,
+        Erlinen D. Bazett’s QT correction reviewed: evidence that a linear
+        QT correction for heart rate is better. J Am Coll Cardiol. 1983;1:694.</string>
     <string name="cycle_length_label">Interval/Rate Conversion</string>
     <string name="cycle_length_calculator_title">Interval/Rate Conversion</string>
     <string name="rr_hint">RR (msec)</string>
@@ -115,9 +132,10 @@
     <string name="default_inr_target_summary">Default INR target range</string>
     <string name="dose_table_title">Suggested Weekly Warfarin Doses</string>
     <string name="warfarin_result_title">Suggested Warfarin Dosing</string>
-    <string name="warfarin_reference">Reference: Horton J, Bushwick B: American Family
-		Physician. Feb 1, 1999.
-		https://www.aafp.org/afp/1999/0201/p635.html</string>
+    <string name="warfarin_reference">Horton JD, Bushwick BM.
+        Warfarin Therapy: Evolving Strategies in Anticoagulation.
+        afp. 1999;59(3):635-646.</string>
+    <string name="warfarin_link">https://www.aafp.org/pubs/afp/issues/1999/0201/p635.html</string>
     <string name="wct_algorithm_list_title">Wide Complex Tachycardia</string>
     <string name="wct_algorithm_title">Wide Complex Tachycardia</string>
     <string name="brugada_vt_title">Brugada Criteria SVT vs VT</string>
@@ -131,7 +149,11 @@
 		Tachycardia.</string>
     <string name="svt_result">Wide complex tachycardia is most likely
 		Supraventricular Tachycardia.</string>
-    <string name="brugada_reference">Reference: Brugada P, et al. Circ 1991;83:1649.</string>
+    <string name="brugada_wct_reference">Brugada P, Brugada J, Mont L, Smeets J,
+        Andries EW. A new approach to the differential diagnosis of a
+        regular tachycardia with a wide QRS complex.
+        Circulation. 1991;83(5):1649-1659.</string>
+    <string name="brugada_wct_link">https://doi.org/10.1161/01.cir.83.5.1649</string>
     <string name="wct_result_label">WCT Result</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
@@ -156,18 +178,25 @@
     <string name="rwpt_text">R wave peak time in lead II (RWPT).
 		Measure the onset of the QRS in ECG lead II to the first
 		change in polarity (nadir Q or peak R). RWPT \u2265 50 msec
-		strongly suggests VT (positive likelihood ratio 34.8).
-		Reference: Pava LF, et al. Heart Rhythm 2010;7:922.</string>
+		strongly suggests VT (positive likelihood ratio 34.8).</string>
+    <string name="rwpt_reference">Pava LF, Perafán P, Badiel M, et al.
+        R-wave peak time at DII: a new criterion for differentiating
+        between wide complex QRS tachycardias. Heart Rhythm. 2010;7(7):922-926.
+        </string>
+    <string name="rwpt_link">https://doi.org/10.1016/j.hrthm.2010.03.001</string>
     <string name="rbbb_wct_label">"RBBB" Tachycardia</string>
     <string name="lbbb_wct_label">"LBBB" Tachycardia</string>
-    <string name="wellens_reference">From Wellens et al. Am J Med 1978;64:27.</string>
+    <string name="wellens_reference">Wellens HJ, Bär FW, Lie KI. The value of
+        the electrocardiogram in the differential diagnosis of a tachycardia
+        with a widened QRS complex. Am J Med. 1978;64(1):27-33.</string>
+    <string name="wellens_link">https://doi.org/10.1016/0002-9343(78)90176-6</string>
     <string name="normal_ep_values_title">Normal EP Values</string>
     <string name="basic_intervals_label">Basic Conduction Intervals</string>
     <string name="sinus_node_label">Sinus Node Function</string>
     <string name="refractory_periods_label">Refractory Periods and Block Cycle Lengths</string>
-    <string name="normal_ep_values_reference">Reference: Josephson ME. Clinical Cardiac
-		Electrophysiology. Techniques and Interpretations. 2nd Edition 1993.
-		Lea &amp; Febiger.</string>
+    <string name="normal_ep_values_reference">Josephson ME. Clinical Cardiac Electrophysiology:
+        Techniques and Interpretations. 4th edition. Lippincott Williams &amp; Wilkins; 2008.</string>
+    <string name="normal_ep_values_link">https://www.amazon.com/Clinical-Cardiac-Electrophysiology-Techniques-Interpretations/dp/0781777399</string>
     <string name="arvc_2010_criteria_title">ARVC/D Diagnosis (2010)</string>
     <string name="global_dysfunction_label">I. Global or regional dysfunction and structural
 		alterations</string>
@@ -254,14 +283,33 @@
 	years of age) due to suspected ARVC/D in a first-degree relative</string>
     <string name="second_degree_relative_label">ARVC/D confirmed pathologically or by 
 	current Task Force Criteria in a second-degree relative</string>
-    <string name="arvc_key">BSA = body surface area. PLAX = parasternal long
-		axis view. PSAX = parasternal short
-		axis view. RVOT = RV outflow tract.</string>
-    <string name="arvc_reference">Reference: Marcus FI et al. Circulation
-		2010;121:1533.
-		http://circ.ahajournals.org/content/121/13/1533.long</string>
+    <string name="arvc_2010_key">BSA = body surface area.
+        \nPLAX = parasternal long axis view.
+        \nPSAX = parasternal short axis view.
+        \nRVOT = RV outflow tract.</string>
+    <string name="arvc_reference_2010">Marcus FI, McKenna WJ, Sherrill D, et al.
+        Diagnosis of arrhythmogenic right ventricular cardiomyopathy/dysplasia:
+        Proposed Modification of the Task Force Criteria. European Heart Journal.
+        2010;31(7):806-814.</string>
+    <string name="arvc_link_2010">https://doi.org/10.1093/eurheartj/ehq025</string>
     <string name="qtc_settings">QTc Calculator Settings</string>
     <string name="warfarin_settings">Warfarin Settings</string>
+    <string name="creatinine_clearance_instructions">This calculator and all the drug
+        calculators (except Warfarin) use the Cockcroft-Gault formula, which is the recommended
+        formula for calculating creatinine clearance for determining drug doses.  You can consider
+        using the Weight Calculator to adjust body weight for determining
+        creatinine clearance.\n\nIf you wish to calculate a normalized GFR to estimate
+        renal function, use the GFR Calculator instead.
+    </string>
+    <string name="creatinine_clearance_reference">Cockcroft DW, Gault H.
+        Prediction of Creatinine Clearance from Serum Creatinine.
+        NEF. 1976;16(1):31-41.</string>
+    <string name="creatinine_clearance_link">https://doi.org/10.1159/000180580</string>
+    <string name="drug_calculator_instructions">The drug calculators use the
+        Cockcroft-Gault formula for determining creatinine clearance, and the formulas
+        used are derived from the drug package inserts.  See the Drug Reference module
+        in the Reference and Tools section of the app.  Also, consider using the
+        Weight Calculator to adjust the weight to better estimate creatinine clearance</string>
     <string name="drug_calculator_settings">Other Calculator Settings</string>
     <string name="default_weight_unit_title">Default Weight Unit</string>
     <string name="default_weight_unit_summary">Select default unit for weight</string>
@@ -295,7 +343,10 @@
     <string name="genotype_positive_label">Genotype positive</string>
     <string name="mutation_label">Mutation of undetermined significance
 	    in a culprit gene</string>
-    <string name="sqts_reference">Gollob M, et al. J Am Coll Cardiol 2011;57:802.</string>
+    <string name="sqts_reference"> Gollob MH, Redpath CJ, Roberts JD. The short
+        QT syndrome: proposed diagnostic criteria. J Am Coll Cardiol.
+        2011;57(7):802-812.</string>
+    <string name="sqts_link">https://doi.org/10.1016/j.jacc.2010.09.048</string>
     <string name="instructions_label">Instructions</string>
     <string name="sqts_instructions">Electrocardiogram must be recorded in the absence of modifiers
 	    known to shorten the QT.  Jpoint-Tpeak interval must be measured in the precordial lead
@@ -336,13 +387,15 @@
     <string name="hcm_low_risk_text">Patients without any major risk factors (even if
 	    minor risk factors are present) are considered to be at low risk for SD.
 	    ICD implantation is not recommended.</string>
-    <string name="hcm_key">BP = blood pressure. VF = ventricular fibrillation.  VT = ventricular tachycardia.
-	    SD = unexpected sudden death.  Abnormal exercise BP = failure to augment and maintain systolic
+    <string name="hcm_scd_2002_key">BP = blood pressure.
+        \nVF = ventricular fibrillation.
+        \nVT = ventricular tachycardia.
+        \nSD = unexpected sudden death.
+        \nAbnormal exercise BP = failure to augment and maintain systolic
 	    BP \u003e 25 mm Hg with exercise.</string>
-    <string name="hcm_reference">References: Maron B et al.  Eur Heart J 2003:1965.
-	    http://eurheartj.oxfordjournals.org/content/24/21/1965.full
-	    McKenna WJ et al. Heart 2002;87:169.
-	    http://heart.bmj.com/content/87/2/169.full</string>
+    <string name="hcm_scd_2002_reference">McKenna WJ. Hypertrophic cardiomyopathy: management,
+        risk stratification, and prevention of sudden death. Heart. 2002;87(2):169-176.</string>
+    <string name="hcm_scd_2002_link">https://doi.org/10.1136/heart.87.2.169</string>
 
     <!-- ICD CMS criteria -->
     <string name="secondary_prevention_label">Secondary Prevention</string>
@@ -381,24 +434,30 @@
         as to whether a particular patient is covered.
         This module is only intended as a guide to the NCD and is not definitive.
         The module has been updated to the latest 2018 CMS guidelines.</string>
-    <string name="cms_icd_key">AF = atrial fibrillation.  CA = cardiac arrest.
-        CABG = coronary artery bypass grafting.  CM = cardiomyopathy.
-        CMS = Centers for Medicare and Medicaid Services.
-        EF = ejection fraction. EPS = electrophysiology study.
-        HCM = hypertrophic cardiomyopathy. ICD = implantable cardioverter defibrillator.
-        OMT = optimal medical therapy.
-        MI = myocardial infarction. NYHA = New York Heart Association. PCI = percutaneous coronary intervention.
-        SVT = supraventricular tachycardia.
-        VT = ventricular tachycardia/tachyarrhythmia. VF = ventricular fibrillation.</string>
-    <string name="cms_icd_references">Reference: CMS: Decision Memo for Implantable Cardioverter Defibrillators (CAG-00157R4) Feb 15, 2018.
-        https://www.cms.gov/medicare-coverage-database/details/nca-decision-memo.aspx?NCAId=288</string>
+    <string name="cms_icd_key">AF = atrial fibrillation.\nCA
+        = cardiac arrest.\nCABG
+        = coronary artery bypass grafting.\nCM
+        = cardiomyopathy.\nCMS
+        = Centers for Medicare and Medicaid Services.\nEF
+        = ejection fraction.\nEPS
+        = electrophysiology study.\nHCM
+        = hypertrophic cardiomyopathy.\nICD
+        = implantable cardioverter defibrillator.\nOMT
+        = optimal medical therapy.\nMI
+        = myocardial infarction.\nNYHA
+        = New York Heart Association.\nPCI
+        = percutaneous coronary intervention.\nSVT
+        = supraventricular tachycardia.\nVT
+        = ventricular tachycardia/tachyarrhythmia.\nVF
+        = ventricular fibrillation.\n</string>
+    <string name="cms_icd_reference">CMS: Decision Memo for Implantable Cardioverter Defibrillators (CAG-00157R4) Feb 15, 2018.</string>
+    <string name="cms_icd_link">https://www.cms.gov/medicare-coverage-database/details/nca-decision-memo.aspx?NCAId=288</string>
     <string name="cms_icd_shared_decision_message">Shared decision making encounter using evidence-based decision tool
         necessary prior to ICD implant.</string>
     <string name="hemorrhages_title">HEMORR\u2082HAGES Score</string>
     <string name="low_risk_hemorrhages">Low risk of bleeding.</string>
     <string name="intermediate_risk_hemorrhages">Intermediate risk of bleeding.</string>
     <string name="high_risk_hemorrhages">High risk of bleeding.</string>
-    <string name="hemorrhages_reference">Gage BF et al. Am Heart J 2006;151:713</string>
     <string name="hepatic_or_renal_disease_label">Hepatic (cirrhosis, \u2265 2-fold
         elevation of AST or ALT, or albumin &lt; 3.6 g/dL) or renal disease (Cr clearance &lt; 30 mL/min)</string>
     <string name="etoh_hemorrhages_label">Ethanol use (history of EtOH abuse, recent hospitalization for EtOH-related illness, and
@@ -418,10 +477,28 @@
     <string name="wpw_algorithm_title">WPW Pathway Location</string>
     <string name="wpw_algorithm_list_title">WPW Pathway Location</string>
     <string name="arruda_title">Arruda Algorithm</string>
+    <string name="arruda_reference">Arruda MS, McClelland JH, Wang X, et al.
+        Development and validation of an ECG algorithm for identifying
+        accessory pathway ablation site in Wolff-Parkinson-White syndrome.
+        J Cardiovasc Electrophysiol. 1998;9(1):2-12.</string>
+    <string name="arruda_link">https://doi.org/10.1111/j.1540-8167.1998.tb00861.x</string>
     <string name="modified_arruda_title">Modified Arruda Algorithm</string>
+    <string name="modified_arruda_reference">Szilágyi SM, Szilágyi L, Görög LK,
+        et al. An Enhanced Accessory Pathway Localization Method for Efficient
+        Treatment of Wolff-Parkinson-White Syndrome. In: Ruiz-Shulcloper J,
+        Kropatsch WG, eds. Progress in Pattern Recognition, Image Analysis and
+        Applications. Vol 5197. Lecture Notes in Computer Science.
+        Springer Berlin Heidelberg; 2008:269-276.</string>
+    <string name="modified_arruda_link">https://doi.org/10.1007/978-3-540-85920-8_33</string>
     <string name="milstein_title">Milstein Algorithm</string>
-    <string name="arruda_step_1">Note this algorithm uses polarity of initial delta
-        wave (positive +, negative -, or isoelectric \u00b1)\n\nLead I delta \u00b1 or -\n or V1 R/S \u2265 1?</string>
+    <string name="milstein_reference">Milstein S, Sharma AD, Guiraudon GM,
+        Klein GJ. An algorithm for the electrocardiographic localization of
+        accessory pathways in the Wolff-Parkinson-White syndrome.
+        Pacing Clin Electrophysiol. 1987;10(3 Pt 1):555-563.</string>
+    <string name="milstein_link">https://doi.org/10.1111/j.1540-8159.1987.tb04520.x</string>
+    <string name="arruda_instructions">Note this algorithm uses polarity of initial 20 msec of the delta
+        wave (positive +, negative -, or isoelectric \u00b1)</string>
+    <string name="arruda_step_1">Lead I delta \u00b1 or -\n or V1 R/S \u2265 1?</string>
     <string name="arruda_step_2_3">Pathway is Left Free Wall\nLead aVF delta + ?</string>
     <string name="arruda_step_6_7">Pathway is Left Free Wall\nLead I delta \u00b1 or Lead V1 S \u00b1 ?</string>
     <string name="arruda_step_8a">Lead V1 delta + ?</string>
@@ -451,6 +528,9 @@
     <string name="rl_location">Right Lateral</string>
     <string name="undetermined_location">Undetermined Location</string>
     <string name="av_annulus_map_title">Accessory Pathway Location</string>
+    <string name="av_annulus_map_reference">The AV annulus map is modified from Gray\'s
+        Anatomy 20th edition.</string>
+    <string name="av_annulus_map_link">https://en.wikipedia.org/wiki/File:Gray495.png</string>
     <string name="milstein_step_1">Q or isoelectric delta wave in Leads I, aVL, or V6?</string>
     <string name="milstein_step_2_5">LBBB (+ QRS \u2265 90 msec in Lead I and rS in V1 and V2)?</string>
     <string name="milstein_step_3">Q or isoelectric delta wave two of Leads II, III, aVF?</string>
@@ -469,19 +549,26 @@
     <string name="torsade_label">Torsade de pointes</string>
     <string name="t_wave_alternans_label">T wave alternans</string>
     <string name="notched_t_wave_label">Notched T wave in 3 leads</string>
-    <string name="low_hr_label">Low heart rate for age*</string>
+    <string name="low_hr_label">Low heart rate for age (resting heart rate below 2nd percentile for age)</string>
     <string name="clinical_hx_label">Clinical History</string>
     <string name="syncope_with_stress_label">Syncope with stress</string>
     <string name="syncope_without_stress_label">Syncope without stress</string>
     <string name="congenital_deafness_label">Congenital deafness</string>
     <string name="family_hx_lqt_label">Family members with definite LQTS</string>
     <string name="family_hx_scd_label">Unexplained SCD \u003c age 30 in immediate family</string>
-    <string name="lqts_key">ECG findings in absence of medications that affect ECG, 
-        LQTS = long QT syndrome, QTc calculated by Bazett formula,
-        SCD = sudden cardiac death, *resting heart rate below 2nd percentile for age.
-        Note: the same family member cannot be counted more than once.</string>
-    <string name="lqts_reference">Schwartz PJ et al.  Circulation 2011;124:2181.
-        http://circ.ahajournals.org/content/124/20/2181</string>
+    <string name="lqts_key">LQTS = long QT syndrome
+        \nQTc calculated by Bazett formula
+        \nSCD = sudden cardiac deat </string>
+    <string name="lqts_diagnosis_reference">Schwartz PJ, Crotti L. QTc behavior
+        during exercise and genetic testing for the long-QT syndrome.
+        Circulation. 2011;124(20):2181-2184.</string>
+    <string name="lqts_diagnosis_link">https://doi.org/10.1161/CIRCULATIONAHA.111.062182</string>
+    <string name="lqts_diagnosis_instructions">Use this calculator to determine
+        if a subject is likely to have congenital Long QT Syndrome.  In the original
+        article, the QTc was determined by the Bazett formula, and it must be
+        measured in the absence of medications or electrolyte conditions that
+        affect the QT interval.  For family history, the same family member
+        cannot be counted in each category.</string>
     <!-- ARVC 1994 criteria -->
     <string name="arvc_old_criteria_title">ARVC/D Diagnosis (1994)</string>
     <string name="arvc_old_rv_dilatation">Severe dilatation and reduction
@@ -511,9 +598,13 @@
 	    (&lt; 35 yrs) due to suspected ARVC/D</string>
     <string name="arvc_old_family_hx">Family history of ARVC/D based on these
 	    criteria</string>
-    <string name="arvc_old_reference">Reference: McKenna WJ et al. Br Heart J. 1994;71:215.
- 	    http://www.ncbi.nlm.nih.gov/sites/ppmc/articles/PMC483655/</string>
-
+    <string name="arvc_old_reference">McKenna WJ, Thiene G, Nava A, et al.
+        Diagnosis of arrhythmogenic right ventricular dysplasia/cardiomyopathy.
+        Task Force of the Working Group Myocardial and Pericardial Disease
+        of the European Society of Cardiology and of the Scientific Council on
+        Cardiomyopathies of the International Society and Federation of
+        Cardiology. Br Heart J. 1994;71(3):215-218.</string>
+    <string name="arvc_old_link">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC483655/</string>
     <!-- LVH -->
     <string name="lvh_list_title">Left Ventricular Hypertrophy</string>
     <string name="lvh_title">Left Ventricular Hypertrophy</string>
@@ -537,7 +628,10 @@
     <string name="other_lvh_lead_v5_label">R in V5 or V6</string>
     <string name="other_lvh_lead_v5_result">> 26 mm</string>
     <string name="other_lvh_key">LVH present if any of above voltage criteria met.</string>
-    <string name="other_lvh_reference">Reference: Hsieh BP et al. Am Heart J 2005;150:161.</string>
+    <string name="other_lvh_reference">Hsieh BP, Pham MX, Froelicher VF.
+        Prognostic value of electrocardiographic criteria for left ventricular
+        hypertrophy. American Heart Journal. 2005;150(1):161-167.</string>
+    <string name="other_lvh_link">https://doi.org/10.1016/j.ahj.2004.08.041</string>
     <string name="estes_voltage_label">Any limb-lead R or S \u2265 20 mm
         or S V1 or V2 \u2265 30 mm or R V5 or V6 \u2265 30 mm</string>
     <string name="estes_strain_without_dig_label">Left ventricular strain pattern without digitalis</string>
@@ -569,11 +663,6 @@
     <string name="lqt_subtypes_4_name">LQTS 4</string>
     <string name="lqt_subtypes_4_description">Frequency: 1-2%\nLocus: 4q25-27\nGene: ANKB\nChannel:
     	INaKATP, INaCa exchange\nECG: Variable QT prolongation\nFeatures: No specific features</string>
-    <string name="lqt_subtypes_5_name">LQTS 5 – 11</string>
-    <string name="lqt_subtypes_5_description" tools:ignore="StringFormatInvalid">Remaining subtypes all &lt;1% frequency (some just single families)
-   	    without distinguishing features.  One exception is LQTS 8 which affects the ICaL channel, has
-   	    alternating T waves on ECG, and is associated with Timothy Syndrome.</string>
-    <string name="lqt_subtypes_reference">\nReferences:\nhttp://www.geneticheartdisease.org/lqts_gene_table.htm\n\nhttp://en.ecgpedia.org/wiki/Long_QT_Syndrome</string>
     <string name="lqt_ecg_title">Long QT ECG Patterns</string>
     <string name="brugada_ecg_title">Brugada ECG Patterns</string>
     <string name="text_label">Notes</string>
@@ -586,8 +675,16 @@
         subjects.\n\nType 3: Saddle back pattern 
         with &lt; 2 mm J point elevation and &lt;
         1 mm ST elevation with positive T wave.  Not uncommon in healthy subjects.</string>
-    <string name="brugada_ecg_reference">Reference:
-        http://circ.ahajournals.org/content/106/19/2514.full#F1</string>
+    <string name="brugada_ecg_reference">Wilde AAM, Antzelevitch C, Borggrefe M,
+        et al. Proposed Diagnostic Criteria for the Brugada Syndrome.
+        Circulation. 2002;106(19):2514-2519.</string>
+    <string name="brugada_ecg_link">https://doi.org/10.1161/01.CIR.0000034169.45752.4A</string>
+    <string name="brugada_diagnosis_reference">Priori SG, Wilde AA, Horie M,
+        et al. HRS/EHRA/APHRS Expert Consensus Statement on the Diagnosis and
+        Management of Patients with Inherited Primary Arrhythmia Syndromes:
+        Document endorsed by HRS, EHRA, and APHRS in May 2013 and by ACCF, AHA,
+        PACES, and AEPC in June 2013. Heart Rhythm. 2013;10(12):1932-1963.</string>
+    <string name="brugada_diagnosis_link">https://doi.org/10.1016/j.hrthm.2013.05.01 </string>
     <string name="calculator_list_title">Calculators</string>
     <string name="calculator_title">Calculators</string>
     <string name="diagnosis_list_title">Diagnosis</string>
@@ -643,8 +740,12 @@
         the peak of the R wave in V2. ID of \u2265 85 msec predicts epicardial origin
         (Sens 87%, Spec 90%).\n\nShortest RS complex (RS): Measured from the earliest
         ventricular activation to the nadir of the first S wave in any precordial lead.
-        RS \u2265 121 msec predicts epicardial origin (Sens 76%, Spec 85%).\n\nReference:
-        http://circ.ahajournals.org/content/109/15/1842.full</string>
+        RS \u2265 121 msec predicts epicardial origin (Sens 76%, Spec 85%).</string>
+    <string name="epivt_reference">Berruezo A, Mont L, Nava S, Chueca E,
+        Bartholomay E, Brugada J. Electrocardiographic Recognition of the
+        Epicardial Origin of Ventricular Tachycardias. Circulation.
+        2004;109(15):1842-1847.</string>
+    <string name="epivt_link">https://doi.org/10.1161/01.CIR.0000125525.04081.4B</string>
     <string name="outflow_vt_late_transition_step">QRS transition (first precordial lead with R > S) V4 or later?</string>
     <string name="outflow_vt_free_wall_step">QRS duration \u2265 140 msec or R wave notching in inferior leads?</string>
     <string name="outflow_vt_anterior_location_step">Negative or isoelectric QRS in I?</string>
@@ -664,21 +765,46 @@
     <string name="mitral_annular_vt_label">\nSubvalvular Location.\nVT from the aorto-mitral 
         continuity often has a qR pattern in V1.  VT from the mitral annulus has an R in V1.</string>
     <string name="indeterminate_location">Location cannot be determined.</string>
-    <string name="outflow_vt_instructions">Ventricular tachycardia and premature ventricular complexes
- 		can arise from either the right
-        or left ventricular outflow tract (RVOT or LVOT).  Outflow tract VT has a vertical axis and
-        a left bundle branch block pattern in the precordial leads.  The earlier the precordial transition lead,
-        the more likely the VT is from the LVOT.  If the precordial transition is in lead V3
-        it is not possible to use an algorithm to determine from which ventricle the VT arises.
-        See Tanner et al. JACC 2005;45:418. http://content.onlinejacc.org/cgi/content/short/45/3/418.
-        \nThis algorithm was developed from Joshi S and Wilber DJ, J Cardiovasc Electrophysiol 2005;16:Suppl I:S52,
-        Bala R and Marchlinski FE, Heart Rhythm 2007;4:366, and Srivathsan K et al. Indian Pacing Electrophysiol J
-        2005;5:106. http://cogprints.org/4219/1/srivathsan.htm</string>
+    <string name="outflow_vt_instructions">Ventricular tachycardia and premature
+        ventricular complexes can arise from either the right or left
+        ventricular outflow tract (RVOT or LVOT).  Outflow tract VT has a
+        vertical axis and a left bundle branch block pattern in the precordial leads.
+        The earlier the precordial transition lead, the more likely the VT is
+        from the LVOT.  If the precordial transition is in lead V3
+        it is not possible to use an algorithm to determine from which
+        ventricle the VT arises.</string>
+    <string name="outflow_vt_reference_0">Tanner H, Hindricks G, Schirdewahn P,
+        et al. Outflow tract tachycardia with R/S transition in lead V3.
+        Journal of the American College of Cardiology. 2005;45(3):418-423.</string>
+    <string name="outflow_vt_link_0">https://doi.org/10.1016/j.jacc.2004.10.037</string>
+    <string name="outflow_vt_reference_1">Srivathsan K, Lester SJ, Appleton CP,
+        Scott LRP, Munger TM. Ventricular tachycardia in the absence of
+        structural heart disease. Indian Pacing Electrophysiol J.
+        2005;5(2):106-121.</string>
+    <string name="outflow_vt_link_1">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1502082/</string>
+    <string name="outflow_vt_reference_2">Joshi S, Wilber DJ. Ablation of
+        idiopathic right ventricular outflow tract tachycardia:
+        current perspectives. J Cardiovasc Electrophysiol.
+        2005;16 Suppl 1:S52-58.</string>
+    <string name="outflow_vt_link_2">https://doi.org/10.1111/j.1540-8167.2005.50163.x</string>
     <string name="mitral_annular_vt_instructions" formatted="false"> Use this module to predict the
-		location of idiopathic mitral annular ventricular tachycardia or premature ventricular complexes based on the ECG.  Note that this module does not deal with
-		mitral isthmus VT in the setting of inferior infarction (see Wilber D et al. Circulation 1995;92:3481
-		http://circ.ahajournals.org/content/92/12/3481.long)
-		Reference: Tada H et al.  JACC 2005;45:877.</string>
+		location of idiopathic mitral annular ventricular tachycardia or premature
+        ventricular complexes based on the ECG.  Note that this module does not deal with
+		mitral isthmus VT in the setting of inferior infarction (see Wilber DJ,
+        Kopp DE, Glascock DO DN, Kinder CA, Kall JG. Catheter Ablation of the
+        Mitral Isthmus for Ventricular Tachycardia Associated With Inferior
+        Infarction. Circulation. 1995;92(12):3481-3489.
+        https://doi.org/10.1161/01.CIR.92.12.3481 )</string>
+    <string name="mitral_annular_vt_reference_0">Tada H, Ito S, Naito S, et al.
+        Idiopathic ventricular arrhythmia arising from the mitral annulus:
+        a distinct subgroup of idiopathic ventricular arrhythmias.
+        J Am Coll Cardiol. 2005;45(6):877-886.</string>
+    <string name="mitral_annular_vt_link_0">https://doi.org/10.1016/j.jacc.2004.12.025</string>
+    <string name="mitral_annular_vt_reference_1">Wilber DJ, Kopp DE, Glascock
+        DO DN, Kinder CA, Kall JG. Catheter Ablation of the Mitral Isthmus for
+        Ventricular Tachycardia Associated With Inferior Infarction.
+        Circulation. 1995;92(12):3481-3489.</string>
+    <string name="mitral_annular_vt_link_1">https://doi.org/10.1161/01.CIR.92.12.3481</string>
     <string name="mavt_initial_step">Precordial transition (first precordial lead with R > S) in V1 or V2
 	    with R or Rs pattern in V2 to V5 (R/S > 3 in V2-V4)?</string>
     <string name="mavt_positive_qrs_inferior_leads_step">Positive QRS in inferior leads?</string>
@@ -754,13 +880,19 @@
     <string name="negative_in_all_inf_leads_step">Negative P in All Inferior Leads?</string>
     <string name="sinus_rhythm_p_wave_step">Sinus Rhythm P Wave Morphology?</string>
     <string name="plus_minus_label">Pos/Neg</string>
-    <string name="at_localization_reference">Kistler et al. JACC 2006;48:1010.
-		J Am Coll Cardiol. 2006;48(5):1010-1017. http://content.onlinejacc.org/article.aspx?articleid=1137857</string>
+    <string name="at_localization_reference"> Kistler PM, Roberts-Thomson Kurt
+        C., Haqqani HM, et al. P-Wave Morphology in Focal Atrial Tachycardia.
+        Journal of the American College of Cardiology. 2006;48(5):1010-1017.</string>
+    <string name="at_localization_link">https://doi.org/10.1016/j.jacc.2006.03.058</string>
     <string name="at_localization_instructions">This algorithm applies only to focal atrial tachycardia.
         To be accurate, the P wave must have a discrete isoelectric segment before its start, i.e. don\'t use
         a P wave that is fused onto the end of a T wave.  Iso means isoelectric, defined as a &lt; 0.05 mV
         deviation from the baseline.  The algorithm sensitivity in the original study was 93%.</string>
-    <string name="day_calculator_title">Date Calculator</string>
+    <string name="date_calculator_title">Date Calculator</string>
+    <string name="date_calculator_instructions">Use this calculator to do date arithmetic.
+        Set the starting date to the index date (such as today) and then enter the number of days
+        in the future or past that you are adding or subtracting.  Turn Subtract days on
+        to subtract days from the index date.</string>
     <string name="index_event_label">Index Event Date</string>
     <string name="number_of_days_label">Number of Days</string>
     <string name="number_of_days_hint">Days</string>
@@ -782,18 +914,19 @@
     <string name="clear_all_label">Clear All</string>
     <string name="help_label">Help</string>
     <string name="clear_keep_tcl_label">Clear</string>
-    <string name="entrainment_instructions">This Entrainment Mapping module is most suited for mapping ischemic
+    <string name="entrainment_instructions">This Entrainment Mapping module is most
+        suited for mapping ischemic
 		ventricular tachycardia (VT), but principles of entrainment apply to
 		all reentrant arrhythmias.  Entrainment is performed by pacing during
 		stable VT (or other reentrant tachycardia) for approximately 8-15 beat
 		trains at 20-40 msec shorter than the tachycardia cycle length (TCL).
 		Make sure all electrograms are "entrained", i.e. the CL shortens to
-		the pacing CL.  The post-pacing interval (PPI) is measured from the
+		the pacing CL.\n\nThe post-pacing interval (PPI) is measured from the
 		last pacing stimulus to the next electrogram recorded from the pacing
-		site.  Concealed fusion is present if the tachycardia morphology does
+		site.\n\nConcealed fusion is present if the tachycardia morphology does
 		not change during entrainment.  If there is concealed fusion then the
 		pacing site is in an area of slow conduction near the critical isthmus
-		of the reentry circuit.  During VT if a discrete electrogram (EG) is
+		of the reentry circuit.\n\nDuring VT if a discrete electrogram (EG) is
 		present prior to the QRS onset then the EG-QRS interval can be
 		measured.  During entrainment with concealed fusion, if there is a
 		delay between the pacing stimulus to onset of the QRS (S-QRS), then
@@ -806,11 +939,15 @@
 		tachycardia termination with ablation than other sites.
         EP Mobile uses the criteria of El-Shalakany et al. to identify
         VT sites with high likelihood of ablation success.</string>
-    <string name="entrainment_reference">Stevenson WG et al.
-        JACC 1997;29:1180.
-        \nhttp://content.onlinejacc.org/article.aspx?articleid=1121699
-        \nEl-Shalakany A et al. Circulation 1999;99:2283.\n
-        https://doi.org/10.1161/01.cir.99.17.2283</string>
+    <string name="entrainment_reference_0">Stevenson WG, Friedman PL, Sager PT, et al.
+        Exploring Postinfarction Reentrant Ventricular Tachycardia With Entrainment Mapping.
+        Journal of the American College of Cardiology. 1997;29(6):1180-1189.</string>
+    <string name="entrainment_link_0">https://doi.org/10.1016/S0735-1097(97)00065-X</string>
+    <string name="entrainment_reference_1">El-Shalakany A, Hadjis T, Papageorgiou P, Monahan K,
+        Epstein L, Josephson ME. Entrainment/Mapping Criteria for the Prediction of
+        Termination of Ventricular Tachycardia by Single Radiofrequency Lesion in
+        Patients With Coronary Artery Disease. Circulation. 1999;99(17):2283-2289.</string>
+    <string name="entrainment_link_1">https://doi.org/10.1161/01.CIR.99.17.2283</string>
     <string name="entrainment_remote_site_message">Remote site from reentry circuit.</string>
     <string name="entrainment_outer_loop_message">Outer loop of reentry circuit.</string>
     <string name="entrainment_inner_loop_message">Inner loop or isthmus site of reentry circuit.</string>
@@ -823,7 +960,26 @@
     <string name="proximal_site_label">Isthmus proximal site.</string>
     <string name="entry_site_label">Inner loop site.</string>
     <string name="invalid_sqrs_label">Invalid S-QRS (&gt;TCL) ignored!</string>
-    <string name="ibw_calculator_title">Body Weight Calculator</string>
+    <string name="ibw_calculator_title">Weight Calculator</string>
+    <string name="ibw_calculator_instructions">Although the package inserts for the drugs
+        included in the drug dose calculators recommend using actual uncorrected body
+        weight and the Cockcroft-Gault formula for Creatinine Clearance, some authorities
+        feel that using a corrected body weight may be more accurate.\n\nThis
+        calculator determines the Ideal Body Weight and Adjusted Body Weight
+        from the height, sex, and actual body weight.
+        The Adjusted Body Weight formula here uses a correction factor of 0.4,
+        which may give a more accurate measurement of Creatinine Clearance than
+        other factors.  The formulas are not accurate if the height is less than
+        60 inches.\n\nPatients who are underweight (weight &lt; Ideal Body Weight)
+        should use actual weight for Creatinine Clearance determination.
+        Normal weight patients can use Ideal Body Weight, and overweight
+        (defined in this calculator as weight 30% or more over Ideal Body Weight)
+        should use the Adjusted Body Weight.</string>
+    <string name="ibw_calculator_reference">Winter MA, Guhr KN, Berg GM.
+        Impact of various body weights and serum creatinine concentrations
+        on the bias and accuracy of the Cockcroft-Gault equation.
+        Pharmacotherapy. 2012;32(7):604-612.</string>
+    <string name="ibw_calculator_link">https://doi.org/10.1002/j.1875-9114.2012.01098.x</string>
     <string name="height_hint">Height (cm)</string>
     <string name="height_inches_hint">Height (in)</string>
     <string name="ibw_label">Ideal Body Weight (kg)</string>
@@ -853,15 +1009,12 @@
     <string name="low_bp_label">Systolic BP &lt; 90 mmHg</string>
     <string name="no_sf_rule_risk_message">No or little risk of serious events at 30 days.</string>
     <string name="high_sf_rule_risk_message" formatted="false">Risk of serious events at 30 days (98% sensitive and 56% specific).</string>
-    <string name="syncope_sf_rule_reference">Quinn J et al. Ann Emerg Med 2006 47:448</string>
     <string name="history_vt_label">History of ventricular arrhythmia</string>
     <string name="history_chf_label">History of congestive heart failure</string>
     <string name="age_over_45_label">Age &gt; 45 years</string>
     <string name="history_cv_disease_label">History of cardiovascular disease</string>
     <string name="lack_of_prodrome_label">Lack of prodrome</string>
     <string name="age_over_65_label">Age &gt; 65 years</string>
-    <string name="martin_algorithm_reference">Martin TP et al. Ann Emerg Med 1997 29:459</string>
-    <string name="oesil_score_reference">Colivicchi F et al. Eur Heart J 2003 24:811</string>
     <string name="palps_before_syncope_label">Palpitations before syncope</string>
     <string name="abnormal_ecg_or_heart_disease_label">Abnormal ECG or heart disease</string>
     <string name="syncope_during_effort_label">Syncope during effort</string>
@@ -869,16 +1022,23 @@
     <string name="autonomic_prodrome_label">Autonomic prodrome (nausea, vomiting)</string>
     <string name="predisposing_factors_label">Predisposing and/or precipitating factors (warm-crowded place,
         prolonged standing, fear, pain, emotion)</string>
-    <string name="egsys_score_reference">Del Rosso A et al. Heart 2008 94:1630</string>
     <string name="vereckei_title">Vereckei aVR Algorithm</string>
     <string name="vereckei_step1_label">Initial R in aVR?</string>
     <string name="vereckei_step2_label">Initial r or q in aVR with width > 40 msec?</string>
     <string name="vereckei_step3_label">Notching on the initial downstroke of a predominantly negative QRS complex in aVR?</string>
     <string name="vereckei_step4_label">Ratio of voltage of initial and final 40 msec of QRS complex in aVR
 	    (Vi/Vt) \u2264 1?</string>
-    <string name="verecki_reference">Reference: Vereckei A et al. Heart Rhythm 2008 5:89.</string>
+    <string name="vereckei_reference">Vereckei A, Duray G, Szénási G, Altemose GT,
+        Miller JM. New algorithm using only lead aVR for differential
+        diagnosis of wide QRS complex tachycardia. Heart Rhythm.
+        2008;5(1):89-98.</string>
+    <string name="vereckei_link">https://doi.org/10.1016/j.hrthm.2007.09.020</string>
     <string name="icd_risk_title">ICD Implantation Risk</string>
-    <string name="icd_risk_reference">Reference: Dodson JA et al. JACC 2014 8:788.\n</string>
+    <string name="icd_risk_reference">Dodson John A., Reynolds Matthew R., Bao Haikun, et al.
+        Developing a Risk Model for In-Hospital Adverse Events Following
+        Implantable Cardioverter-Defibrillator Implantation. Journal of the American College
+        of Cardiology. 2014;63(8):788-796.</string>
+    <string name="icd_risk_link">https://doi.org/10.1016/j.jacc.2013.09.079</string>
     <string name="female_sex_label">Female sex</string>
     <string name="admission_reason_label">Reason for admission</string>
     <string name="for_procedure_label">For procedure</string>
@@ -919,73 +1079,80 @@
     <string name="low_bun_label">&lt; 20</string>
     <string name="normal_bun_label">20 &#8211;40</string>
     <string name="high_bun_label">&gt; 40</string>
-    <string name="incomplete_radio_groups_error">Selection incomplete.  You
-        must make a selection from each group.</string>
+    <string name="incomplete_radio_groups_error">Selection incomplete.</string>
     <string name="icd_result_title">Risk of In-Hospital Complications</string>
     <string name="reference_label">Reference</string>
+    <string name="references_label">References</string>
     <string name="none_label">None</string>
     <string name="chads_label">CHADS\u2082</string>
     <string name="chadsvasc_label">CHA\u2082DS\u2082-VASc</string>
     <string name="hasbled_label">HAS-BLED</string>
     <string name="hemorrhages_label">HEMORR\u2082HAGES</string>
     <string name="estes_criteria_label">Romhilt-Estes LVH score</string>
-    <string name="hasbled_short_reference">Pisters R et al. Chest 2010 138:1093</string>
-    <string name="hasbled_full_reference">Pisters R, Lane DA, Nieuwlaat R, de Vos CB, Crijns HJ,
-		Lip GY. A novel user-friendly score (HAS-BLED) to assess
-		1-year risk of major bleeding in patients with
-		atrial fibrillation: the Euro Heart Survey. Chest
-		[Internet]. 2010 Nov [cited 2014 Jun 6];138(5):1093-100.
-		Available from: http://journal.publications.chestnet.org/article.aspx?articleid=1045174"</string>
+    <string name="hasbled_full_reference">Pisters R, Lane DA, Nieuwlaat R, de Vos CB, Crijns HJGM,
+        Lip GYH. A novel user-friendly score (HAS-BLED) to assess 1-year risk of major
+        bleeding in patients with atrial fibrillation: the Euro Heart Survey.
+        Chest. 2010;138(5):1093-1100.</string>
+    <string name="hasbled_link">https://doi.org/10.1378/chest.10-0134</string>
+    <string name="chads_original_reference">Gage BF, Waterman AD, Shannon W, Boechler M, Rich MW,
+        Radford MJ. Validation of Clinical Classification Schemes for Predicting
+        StrokeResults From the National Registry of Atrial Fibrillation.
+        JAMA. 2001;285(22):2864-2870.</string>
+    <string name="chads_original_link">https://doi.org/10.1001/jama.285.22.2864</string>
     <string name="chads_chadsvasc_full_reference">Friberg L, Rosenqvist M, Lip GYH.
         Evaluation of risk stratification schemes for ischaemic stroke and bleeding
         in 182 678 patients with atrial fibrillation:
         the Swedish Atrial Fibrillation cohort study.
-        Eur Heart J. 2012;33(12):1500-1510. doi:10.1093/eurheartj/ehr488</string>
-    <string name="chads_chadsvasc_short_reference">Friberg L et al. Eur Heart J 2012 33:1500</string>
-    <string name="hemorrhages_full_reference">Gage BF, Yan Y, Milligan PE,
-	    Waterman AD, Culverhouse R, Rich MW,
-   		Radford MJ. Clinical classification schemes for predicting
-   		hemorrhage: results from the National Registry of Atrial
-   		Fibrillation (NRAF). Am Heart J [Internet]. 2006 [cited 2014 Jun
-   		6];151:713-9. Available from:
-   		http://www.hematology.fi/system/files/HEMORRHAGES-score.pdf</string>
-    <string name="estes_short_reference">Reference: Romhilt DW et al. Am Heart J.1968;75:752.</string>
-    <string name="estes_full_reference">Romhilt DW, Estes EH Jr.
-        A point-score system for the ECG diagnosis
-   		of left ventricular hypertrophy. Am Heart J.
-   		1968 Jun;75(6):752-8.</string>
+        Eur Heart J. 2012;33(12):1500-1510.</string>
+    <string name="chads_chadsvasc_link">https://doi.org/10.1093/eurheartj/ehr488</string>
+    <string name="chadsvasc_original_reference">Lip GYH, Nieuwlaat R, Pisters R, Lane DA, Crijns HJGM.
+        Refining clinical risk stratification for predicting stroke and thromboembolism in atrial
+        fibrillation using a novel risk factor-based approach: the euro heart survey on atrial
+        fibrillation. Chest. 2010;137(2):263-272.</string>
+    <string name="chadsvasc_original_link">https://doi.org/10.1378/chest.09-1584</string>
+    <string name="hemorrhages_full_reference">Gage BF, Yan Y, Milligan PE, et al. Clinical
+        classification schemes for predicting hemorrhage: results from the National
+        Registry of Atrial Fibrillation (NRAF). Am Heart J. 2006;151(3):713-719.</string>
+    <string name="hemorrhages_link">https://doi.org/10.1016/j.ahj.2005.04.017</string>
+    <string name="estes_full_reference">Romhilt DW, Estes EH. A point-score
+        system for the ECG diagnosis of left ventricular hypertrophy.
+        Am Heart J. 1968;75(6):752-758.</string>
+    <string name="estes_link">https://doi.org/10.1016/0002-8703(68)90035-5</string>
     <string name="hcm_full_reference">McKenna WJ. Behr ER. Hypertrophic cardiomyopathy:
 	    management, risk stratification, and prevention of sudden death. Heart
    		[Internet]. 2002 Feb [cited 2014 Jun 6];87(2):169-176. Available
    		from: http://heart.bmj.com/content/87/2/169.full</string>
     <string name="hcm_combined_sus_va_risk_label">Cardiac arrest and/or spontaneous
    	    sustained VT</string>
-    <string name="syncope_sf_rule_full_reference">Quinn J, McDermott D, Stiell I,
-        Kohn M, Wells G. Prospective validation of the San Francisco Syncope rule
-        to predict patients with serious outcomes. 2006 May [cited 2014 Jun
-   		6];47(5):448-54. Available from:
-   		http://www.annemergmed.com/article/S0196-0644(05)01959-1/abstract</string>
+    <string name="syncope_sf_rule_full_reference">Quinn J, McDermott D, Stiell I, Kohn M, Wells G.
+        Prospective validation of the San Francisco Syncope Rule to predict patients with serious
+        outcomes. Ann Emerg Med. 2006;47(5):448-454.</string>
+    <string name="syncope_sf_rule_link">https://doi.org/10.1016/j.annemergmed.2005.11.019</string>
+    <string name="syncope_sf_rule_instructions">Use this rule to assess the risk of serious
+        events within 30 days of presentation with syncope.</string>
     <string name="syncope_sf_rule_label">SF Rule</string>
-    <string name="syncope_martin_full_reference">Martin TP, Hanusa BH, Kapoor WN.
-	    Risk stratification of patients with syncope. Ann Emerg Med [Internet].
-	    1997 April [cited 2014 Jun 6];29(4):459-66. Available from:
-   		http://www.annemergmed.com/article/S0196-0644(97)70217-8/abstract</string>
+    <string name="syncope_martin_full_reference">Martin TP, Hanusa BH, Kapoor WN. Risk stratification
+        of patients with syncope. Ann Emerg Med. 1997;29(4):459-466.</string>
+    <string name="syncope_martin_link">https://doi.org/10.1016/s0196-0644(97)70217-8</string>
+    <string name="syncope_martin_instructions">Use this algorithm to stratify the risk of
+        arrhythmias or mortality within 1 year in Emergency Department patients
+        presenting with syncope.</string>
     <string name="syncope_martin_result_label">1-year severe arrhythmia or arrhythmic death risk</string>
     <string name="syncope_oesil_label">OESIL</string>
-    <string name="syncope_oesil_full_reference">Colivicchi F, Ammirati F, Melina D,
-        Guido V, Imperoli G, Santini M, for the OESIL (Osservatorio Epidemiologico
-        sulla Sincope nel Lazio) Study Investigators. Development and prospective
-        validation of a risk stratification system for patients with syncope in the
-   		emergency department: the OESIL risk score. Eur Heart J
-   		[Internet]. 2003 [cited 2014 Jun 6];24:811-19. Available from:
-   		http://eurheartj.oxfordjournals.org/content/24/9/811.full.pdf</string>
+    <string name="syncope_oesil_full_reference">Colivicchi F, Ammirati F, Melina D, et al.
+        Development and prospective validation of a risk stratification system for patients with
+        syncope in the emergency department: the OESIL risk score.
+        Eur Heart J. 2003;24(9):811-819.</string>
+    <string name="syncope_oesil_link">https://doi.org/10.1016/s0195-668x(02)00827-8</string>
+    <string name="syncope_oesil_instructions">Use this score to assess the one year total
+        mortality risk for patients presenting to the Emergency Department with syncope.</string>
     <string name="syncope_egsys_label">EGSYS</string>
-    <string name="syncope_egsys_full_reference">Del Rosso A, Ungar A, Maggi R,
-   	    Giada F, Petix NR, De Santo T, Menozzi C, Brignole M. Clinical predictors
-   	    of cardiac syncope at initial evaluation in patients referred urgently to
-   	    a general hospital: the EGSYS score. Heart [Internet]. 2008 Dec [cited 2014
-   		Jun 6];94(12):1620-6. Available from:
-   		http://heart.bmj.com/content/94/12/1620.abstract</string>
+    <string name="syncope_egsys_full_reference">Del Rosso A, Ungar A, Maggi R, et al. Clinical
+        predictors of cardiac syncope at initial evaluation in patients referred urgently to a
+        general hospital: the EGSYS score. Heart. 2008;94(12):1620-1626.</string>
+    <string name="syncope_egsys_link">https://doi.org/10.1136/hrt.2008.143123</string>
+    <string name="syncope_egsys_instructions">Use this score to predict whether a patient
+        presenting with syncope is likely to have a cardiac cause for their syncope.</string>
     <string name="rva_vs_rvb_pacing_title">RV Apex vs Base Pacing</string>
     <string name="para_hisian_pacing_title">Para-Hisian Pacing</string>
     <string name="qtc_formula_key">qtc_formula</string>
@@ -1007,8 +1174,14 @@
     <string name="no_default_qtc_selected_error_message">No entry (440 msec will be used)</string>
     <string name="edoxaban_calculator_title">Edoxaban Calculator</string>
     <string name="davila_title">D\'Avila Algorithm</string>
-    <string name="davila_step_1">Note that this algorithm uses QRS polarity, not delta wave polarity!\n\n
-        Polarity of QRS in Lead V1 is + or \u00b1 ?</string>
+    <string name="davila_reference">d’Avila A, Brugada J, Skeberis V, Andries E,
+        Sosa E, Brugada P. A fast and reliable algorithm to localize accessory
+        pathways based on the polarity of the QRS complex on the surface
+        ECG during sinus rhythm. Pacing Clin Electrophysiol.
+        1995;18(9 Pt 1):1615-1627.</string>
+    <string name="davila_link">https://doi.org/10.1111/j.1540-8159.1995.tb06983.x</string>
+    <string name="davila_instructions">Note that this algorithm uses QRS polarity, not delta wave polarity!</string>
+    <string name="davila_step_1">Polarity of QRS in Lead V1 is + or \u00b1 ?</string>
     <string name="davila_positive_iii">Lead III polarity + ?</string>
     <string name="davila_plus_minus_iii">Lead III polarity \u00b1 ?</string>
     <string name="lp_location">Left Posterior</string>
@@ -1021,7 +1194,7 @@
     <string name="davila_ps_location">Posteroseptal</string>
     <string name="davila_rps_location">Right Posteroseptal (Posteroseptal Tricuspid Annulus)</string>
     <string name="davila_ms_location">Mid-septal (Mid-septal Tricuspid Annulus</string>
-    <string name="creatinine_clearance_calculator_title">Creatinine Clearance Calculator</string>
+    <string name="creatinine_clearance_calculator_title">Creatinine Clearance</string>
     <string name="drug_reference_title">Drug Reference</string>
     <string name="rvh_title">Right Ventricular Hypertrophy</string>
     <string name="apixaban">Apixaban</string>
@@ -1030,6 +1203,13 @@
     <string name="edoxaban">Edoxaban</string>
     <string name="rivaroxaban">Rivaroxaban</string>
     <string name="sotalol">Sotalol</string>
+    <string name="drug_reference_instructions">These drug references are summarized from
+        the each drug\'s package insert, all of which are available online.  For
+        calculating drug doses, consider using the drug dose calculators in the Calculators
+        section of the app.  You can also directly measure creatinine clearance by tapping
+        the Calculate CrCl button at the bottom of the screen and calculate the appropriate
+        drug dose based on the information in these drug references.
+    </string>
     <string name="drug_dose_disclaimer">\nMore information can be found in the Drug Reference
         modules.</string>
     <string name="af_drug_dose_disclaimer">\nDoses calculated here are only for the nonvalvular
@@ -1037,24 +1217,33 @@
     <string name="apixaban_esrd_caution">\nUse with caution in patients with ESRD on dialysis</string>
     <string name="short_creatinine_clearance_label">CrCl</string>
     <string name="hcm_scd_esc_score_title">HCM SCD Risk (2014)</string>
-    <string name="hcm_scd_key">Age = age at evaluation. Wall thickness = maximum left ventricular
-        wall thickness.  Note all echo measurements via transthoracic echo.
-        LA (left atrial)
-        diameter measured in parasternal long axis.
-        Gradient = maximum left ventricular outflow tract gradient determined at
+    <string name="hcm_scd_esc_score_instructions" formatted="false">This risk score calculates the 5 year
+        risk of sudden cardiac death in patients with hypertrophic cardiomyopathy.
+        See the Key menu item for exact definitions of the parameters.
+        ICD implantation is recommended if the risk is \u2265 6% and ICD implantation can
+        be considered if the risk is \u2265 4%.
+    </string>
+    <string name="hcm_scd_key">Age = age at evaluation.\nWall thickness
+        = maximum left ventricular wall thickness.  Note all echo measurements via transthoracic echo.
+        LA (left atrial) diameter measured in parasternal long axis.\nGradient
+        = maximum left ventricular outflow tract gradient determined at
         rest and with Valsalva using pulsed and continuous wave Doppler from the apical 3 and
         5 chamber views. Peak outflow gradients determined by modified Bernoulli equation:
-        Gradient = 4V\u00B2, where V is the peak aortic outflow velocity.
-        Family hx of SCD = history of sudden cardiac death in 1 or more first degree
+        Gradient = 4V\u00B2, where V is the peak aortic outflow velocity.\nFamily hx of SCD
+        = history of sudden cardiac death in 1 or more first degree
         relatives under 40 years old or in a first degree relative with confirmed HCM at
-        any age. NSVT = nonsustained ventricular tachycardia: 3 consecutive ventricular beats
-        at a rate of 120 bpm or more and &lt;30 sec
-        duration on Holter monitoring (minimum 24 hrs) at or prior to evaluation.</string>
-    <string name="hcm_scd_reference">References: Elliott PM et al. 2014 ESC guidelines on
-        diagnosis and management of hypertrophic cardiomyopathy. Eur Heart J 2014;35:2733,
-        http://eurheartj.oxfordjournals.org/content/35/39/2733#sec-16
-        O\'Mahony C et al.  Eur Heart J 2014;35:2010, http://eurheartj.oxfordjournals.org/content/35/30/2010.long
-        </string>
+        any age.\nNSVT
+        = nonsustained ventricular tachycardia: 3 consecutive ventricular beats
+        at a rate of 120 bpm or more and &lt;30 sec duration on Holter monitoring (minimum 24 hrs) at or prior to evaluation.</string>
+    <string name="hcm_scd_reference_1">2014 ESC Guidelines on diagnosis and
+        management of hypertrophic cardiomyopathy: The Task Force for the
+        Diagnosis and Management of Hypertrophic Cardiomyopathy of the European
+        Society of Cardiology (ESC). Eur Heart J. 2014;35(39):2733-2779.</string>
+    <string name="hcm_scd_link_1">https://doi.org/10.1093/eurheartj/ehu284</string>
+    <string name="hcm_scd_reference_2">O’Mahony C, Jichi F, Pavlou M, et al.
+        A novel clinical risk prediction model for sudden cardiac death in hypertrophic cardiomyopathy
+        (HCM Risk-SCD). European Heart Journal. 2014;35(30):2010-2020.</string>
+    <string name="hcm_scd_link_2">https://doi.org/10.1093/eurheartj/eht439</string>
     <string name="age_in_years_label">Age in years</string>
     <string name="age_in_years_hint">Age (yr)</string>
     <string name="max_lv_wall_thickness_hint">Thickness (mm)</string>
@@ -1072,12 +1261,6 @@
     <string name="icd_not_indicated_message">ICD generally not indicated.</string>
     <string name="icd_may_be_considered_message">ICD may be considered.</string>
     <string name="icd_should_be_considered_message">ICD should be considered.</string>
-    <string name="hcm_scd_2014_full_reference" tools:ignore="Typos">O\'Mahony C., Jichi F., Pavlou M.,
-        Monserrat L., Anastasakis A., Rapezzi C.  A novel clinical risk prediction
-        model for sudden cardiac death in hypertrophic cardiomyopathy (HCM Risk-SCD).
-        Eur Heart J [Internet] 2014 Aug [cited 2015 May 29];35(30):2010–2020.
-        Available from: http://doi.org/10.1093/eurheartj/eht439
-    </string>
     <string name="same_tt2r2_title">SAMe-TT\u2082R\u2082 Score</string>
     <string name="atria_bleeding_score_title">ATRIA Bleeding Risk Score</string>
     <string name="atria_stroke_score_title">ATRIA Stroke Risk Score</string>
@@ -1086,12 +1269,10 @@
         or hemodialysis)</string>
     <string name="atria_prior_hemorrhage_label">Any prior hemorrhage</string>
     <string name="atria_htn_label">Diagnosed hypertension</string>
-    <string name="atria_bleed_short_reference">Fang MC et al. JACC 2011 58:395</string>
-    <string name="atria_bleed_full_reference">Fang MC, Go, AS, Chang Y, Borowsky LH, Pomernacki NK,
-        Udaltsova N, Singer DE.  A new risk scheme to predict warfarin-associated
-        hemorrhage.  The ATRIA Study.  J Am Coll Cardiol [Internet]. 2011 Jul 2011
-        [cited 2015 Nov 29];58(4):395-401.  Available from:
-        http://content.onlinejacc.org/article.aspx?articleid=1146658</string>
+    <string name="atria_bleed_full_reference">Fang MC, Go AS, Chang Y, et al. A New Risk Scheme to
+        Predict Warfarin-Associated Hemorrhage. Journal of the American College of Cardiology.
+        2011;58(4):395-401.</string>
+    <string name="atria_bleed_link">https://doi.org/10.1016/j.jacc.2011.03.031</string>
     <string name="atria_bleed_risk_label">ATRIA bleeding risk</string>
     <string name="low_atria_bleed_message">Low bleeding risk on warfarin
         (hemorrhage rate 0.8% per year).</string>
@@ -1103,12 +1284,10 @@
         to warfarin.</string>
     <string name="atria_stroke_short_reference">Singer DE et al.
         J Am Heart Assoc 2013 2:e000250</string>
-    <string name="atria_stroke_full_reference">Singer DE, Chang Y, Borowsky LH,
-        Fang MC, Pomernacki NK, Udaltsova N, Reynolds K, Go AS.  A new risk scheme to predict
-        ischemic stroke and other thromboembolism in atrial fibrillation: the ATRIA study
-        stroke risk score.  J Am Heart Assoc [Internet].  2013 Jun 19 [cited 2015 Nov
-        29];2:e000250.  Available from:
-        http://jaha.ahajournals.org/content/2/3/e000250</string>
+    <string name="atria_stroke_full_reference">Singer DE, Chang Y, Borowsky LH, et al. A new risk
+        scheme to predict ischemic stroke and other thromboembolism in atrial fibrillation:
+        the ATRIA study stroke risk score. J Am Heart Assoc. 2013;2(3):e000250.</string>
+    <string name="atria_stroke_link">https://doi.org/10.1161/JAHA.113.000250</string>
     <string name="atria_stroke_age_85">Age 85 or greater</string>
     <string name="atria_stroke_age_75">Age 75 to 84</string>
     <string name="atria_stroke_age_65">Age 65 to 74</string>
@@ -1134,14 +1313,12 @@
     <string name="same_race_label">Race (non-Caucasian)</string>
     <string name="same_sex_label">Sex (female)</string>
     <string name="same_age_label">Age (&lt;60 y)</string>
-    <string name="same_short_reference">Apostolakis S et al.
-        Chest 2013;144:1555</string>
-    <string name="same_full_reference">Apostolakis S, Sullivan RM, Olshansky B,
-        Lip GYH.  Factors affecting quality of anticoagulation control among
-        patients with atrial fibrillation on warfarin.  The
-        SAMe-TT\u2082R\u2082 Score.  Chest [Internet].  2013 Nov
-        [cited 2015 Dec 2] 144(5):1555-1563.  Available from:
-        http://journal.publications.chestnet.org/article.aspx?articleid=1686270</string>
+    <string name="same_full_reference">Apostolakis S, Sullivan RM, Olshansky B, Lip GYH. Factors
+        affecting quality of anticoagulation control among patients with atrial fibrillation on
+        warfarin: the SAMe-TT₂R₂ score. Chest. 2013;144(5):1555-1563.</string>
+    <string name="same_link">https://doi.org/10.1378/chest.13-0054</string>
+    <string name="same_instructions">This score predicts poor INR control in patients
+        on warfarin.</string>
     <string name="same_risk_label">SAMe-TT\u2082R\u2082</string>
     <string name="low_same_risk_message">Patient likely to have good
         anticoagulation control on warfarin with high (\u226565%) TTR
@@ -1159,12 +1336,10 @@
     <string name="low_orbit_message">Low bleeding risk.</string>
     <string name="medium_orbit_message">Medium bleeding risk.</string>
     <string name="high_orbit_message">High bleeding risk.</string>
-    <string name="orbit_full_reference">O\'Brien EC, Simon DN, Thomas LE, Hylek EM, Gersh BJ, Ansell JE,
-        Kowey PR, Mahaffey KW, Chang P, Fonarow GC, Pencina MJ, Piccini JP, Peterson ED.
-        The ORBIT Bleeding Score: A Simple Bedside Score to Assess Bleeding Risk in Atrial Fibrillation.
-        Eur Heart J [Internet].  2015 [cited 2016 Mar 13] 36(46):3258-3264.
-        Available from: http://www.medscape.com/viewarticle/855941_1</string>
-    <string name="orbit_short_reference">O\'Brien EC et al.  Eur Heart J 2016;36:3258</string>
+    <string name="orbit_full_reference">O\’Brien EC, Simon DN, Thomas LE, et al.
+        The ORBIT bleeding score: a simple bedside score to assess bleeding
+        risk in atrial fibrillation. Eur Heart J. 2015;36(46):3258-3264.</string>
+    <string name="orbit_link">https://doi.org/10.1093/eurheartj/ehv476</string>
     <string name="orbit_risk_title">ORBIT Bleeding Risk Score</string>
     <string name="qrs_label">QRS (msec)</string>
     <string name="qrs_hint">QRS (msec)</string>
@@ -1184,14 +1359,36 @@
         \n\nFormula: %2$s\n\nNormal values (without IVCD) per
         AHA/ACC/HRS guidelines
         (%3$s): Male &lt; 450 msec, Female &lt; 460 msec and &gt; 390 msec (both sexes)</string>
-    <string name="qtc_reference">Rautaharju P et al. Circulation. 2009;119:e241-e250.</string>
+    <string name="qtc_limits_reference">Rautaharju PM, Surawicz B, Gettes LS.
+        AHA/ACCF/HRS Recommendations for the Standardization and Interpretation
+        of the Electrocardiogram Part IV: The ST Segment, T and U Waves,
+        and the QT Interval: A Scientific Statement From the American Heart
+        Association Electrocardiography and Arrhythmias Committee, Council on
+        Clinical Cardiology; the American College of Cardiology Foundation;
+        and the Heart Rhythm Society: Endorsed by the International
+        Society for Computerized Electrocardiology. Circulation.
+        2009;119(10):e241-e250.</string>
+    <string name="qtc_limits_short_reference">Rautaharju et al., Circulation.
+        2009;119(10):e241-e250.</string>
+    <string name="qtc_limits_link">https://doi.org/10.1161/CIRCULATIONAHA.108.191096</string>
     <string name="qt_ivcd_instructions">Select any of the results in the list to see a dialog with detailed results</string>
     <string name="qt_instructions_title">Instructions</string>
     <string name="qt_details_title">Uncorrected QT</string>
     <string name="qtc_details_title">Corrected QT</string>
-    <string name="qtm_reference">Bogossian H et al. New formula for evaluation of
-        the QT interval in patients with left bundle branch block. Heart Rhythm
-        2014;11:2273-2277.</string>
+    <string name="qtc_ivcd_reference_bogossian">Bogossian H, Linz D, 
+        Heijman J, et al. QTc evaluation in patients with bundle branch 
+        block. Int J Cardiol Heart Vasc. 2020;30:100636.</string>
+    <string name="qtc_ivcd_link_bogossian">https://doi.org/10.1016/j.ijcha.2020.100636</string>
+    <string name="qtc_ivcd_reference_rautaharju">Rautaharju PM, Zhang ZM,
+        Prineas R, Heiss G. Assessment of prolonged QT and JT
+        intervals in ventricular conduction defects. American Journal of
+        Cardiology. 2004;93(8):1017-1021.</string>
+    <string name="qtc_ivcd_link_rautaharju">https://doi.org/10.1016/j.amjcard.2003.12.055</string>
+    <string name="qtc_ivcd_reference_yankelson">Yankelson L, Hochstadt A,
+        Sadeh B, et al. New formula for defining “normal” and “prolonged”
+        QT in patients with bundle branch block. Journal of Electrocardiology.
+        2018;51(3):481-486.</string>
+    <string name="qtc_ivcd_link_yankelson">https://doi.org/10.1016/j.jelectrocard.2017.12.039</string>
     <string name="qtm_new_reference">Bogossian H, et al.
         QTc evaluation in patients with bundle branch block.
         Int J Cardiol Heart Vasc. 2020;30:100636.</string>
@@ -1204,8 +1401,6 @@
         Amer J Cardio 2003;93:1017-1021.</string>
     <string name="jt_details_title">Uncorrected JT</string>
     <string name="jtc_details_title">Corrected JT</string>
-    <string name="qtm_details_title">Modified QT (QTm) in LBBB</string>
-    <string name="qtmc_details_title">Corrected Modified QT in LBBB (QTmc)</string>
     <string name="qtrrqrs_details_title">QT Corrected for Rate,\nQRS, and Sex (QTrr,qrs)</string>
     <string name="jt_details" tools:ignore="PluralsCandidate">JT = %d msec.\n\nUse: The JT interval corrects for QRS duration,
         but does not correct for heart rate.
@@ -1229,15 +1424,11 @@
     <string name="qrs_greater_than_12_label">QRS &gt; 0.12 sec</string>
     <string name="bun_greater_than_26_label">BUN &gt; 26 mg/dL</string>
     <string name="afb_baseline_label">AFB as baseline rhythm</string>
-    <string name="icd_mortality_risk_full_reference">Goldenberg I, Vyas AK, Hall WJ,
-        Moss AJ, Wang H, He H, Zareba W, McNitt S, Andrews ML, MADIT-II Investigators.
-        Risk stratification for primary implantation of a cardioverter-defibrillator
-        in patients with ischemic left ventricular dysfunction.
-        J Am Coll Cardiol [Internet] 2008 Jan [cited 2016 Sep 1];51(3):288-296.
-        Available from
-        http://content.onlinejacc.org/article.aspx?articleid=1187155</string>
-    <string name="icd_mortality_risk_short_reference">Goldenberg I et al.
-        JACC 2008;51:288</string>
+    <string name="icd_mortality_risk_full_reference">Goldenberg I, Vyas AK, Hall WJ, et al.
+        Risk Stratification for Primary Implantation of a Cardioverter-Defibrillator in
+        Patients With Ischemic Left Ventricular Dysfunction. Journal of the American College of
+        Cardiology. 2008;51(3):288-296.</string>
+    <string name="icd_mortality_risk_link">https://doi.org/10.1016/j.jacc.2007.08.058</string>
     <string name="vhr_message">In the Very High Risk group there is high (50%%) 2 year mortality
         in MADIT-II type patients regardless of therapy (conventional therapy %1$d%%,
         ICD %2$d%% mortality).</string>
@@ -1261,12 +1452,13 @@
     <string name="suspicious_scd_label">Suspicious SCD (fever, nocturnal, Brugada aggravating drugs) in first- or second-degree relative</string>
     <string name="unexplained_scd_label">Unexplained SCD &lt; 45 years in first- or second-degree relative with negative autopsy</string>
     <string name="pathogenic_mutation_label">Probable pathogenic mutation in Brugada susceptibility gene</string>
-    <string name="brugada_score_reference">Antzelevitch C, Yan GX, Ackerman MJ, Borggrefe M, Corrado D, Guo J, et al.
-        J-wave syndromes expert consensus conference report: Emerging concepts and gaps in knowledge.
-        J Arrhythmia. [Internet] 2016 Oct [cited 2017 Sep 28];32(5):315-339.
-        Available from: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5063270/</string>
-    <string name="brugada_score_key">VF = ventricular fibrillation.  VT = ventricular tachycardia.
-	    SCD = sudden cardiac death.</string>
+    <string name="brugada_score_reference">Antzelevitch C, Yan GX, Ackerman MJ,
+        et al. J-Wave syndromes expert consensus conference report: Emerging
+        concepts and gaps in knowledge. J Arrhythm. 2016;32(5):315-339.</string>
+    <string name="brugada_score_link">https://doi.org/10.1016/j.joa.2016.07.002</string>
+    <string name="brugada_score_key">VF = ventricular fibrillation.
+        \nVT = ventricular tachycardia.
+        \nSCD = sudden cardiac death.</string>
     <string name="large_er_label">ER ≥ 0.2 mV in ≥ 2 inferior and/or lateral ECG leads with horizontal/descending ST segment (\'IIa pattern\')</string>
     <string name="dynamic_j_point_label">Dynamic changes in J-point elevation (≥ 0.1 mV) in ≥ 2 inferior and/or lateral leads</string>
     <string name="j_point_elevation_label">≥ 0.1 mV J-point elevation in at least 2 inferior and/or lateral ECG leads</string>
@@ -1277,8 +1469,11 @@
     <string name="ambulatory_ecg_label">Ambulatory ECG Monitoring</string>
     <string name="ecg_label">12-lead ECG</string>
     <string name="short_coupled_pvcs_label">Short-coupled PVCs with R on ascending limb or peak of T wave</string>
-    <string name="ers_score_key">ER = Early repolarization.  PVCs = Premature ventricular complexes VF = ventricular fibrillation.  VT = ventricular tachycardia.
-	    SCD = sudden cardiac death.</string>
+    <string name="ers_score_key">ER = Early repolarization.
+        \nPVCs = Premature ventricular complexes
+        \nVF = ventricular fibrillation.
+        \nVT = ventricular tachycardia.
+	    \nSCD = sudden cardiac death.</string>
     <string name="absolute_exclusions_label">Absolute Exclusions</string>
     <string name="personal_hx_vt_ca_label">Personal history of sustained VT or CA due to VF with:</string>
     <string name="ejection_fraction_label">EF</string>
@@ -1309,17 +1504,20 @@
     <string name="malignant_disease_label">Malignant disease</string>
     <string name="dyspnea_label">Dyspnea/Tachypnea</string>
     <string name="cardiomegaly_label">Cardiomegaly on CXR</string>
-    <string name="tamponade_key">* in the absence of medications affecting heart rate,
-        hypothyroidism and uremia.
-        IVC = inferior vena cava, PE = pericardial effusion, SBP = systolic blood pressure.
-        Contraindications to pericardiocentesis include uncorrected coagulopathy,
-	INR &gt; 1.5, thrombocytopenia &lt; 50,000/mm\u00b3, small, posterior, and loculated
-	effusions, or effusions resolving under anti-inflammatory treatment.
-    </string>
-    <string name="tamponade_reference">Risti AD, Imazio M, Adler Y, et al. Triage strategy for
-        urgent management of cardiac tamponade: a position statement of the European Society of
-        Cardiology Working Group on Myocardial and Pericardial Diseases.
-        European Heart Journal. 2014;35(34):2279-2284. https://doi.org/10.1093/eurheartj/ehu217 </string>
+    <string name="tamponade_key">IVC = inferior vena cava,
+        \nPE = pericardial effusion,
+        \nSBP = systolic blood pressure.</string>
+    <string name="tamponade_reference">Ristić AD, Imazio M, Adler Y, et al.
+        Triage strategy for urgent management of cardiac tamponade: a position
+        statement of the European Society of Cardiology Working Group on
+        Myocardial and Pericardial Diseases. European Heart Journal.
+        2014;35(34):2279-2284.</string>
+    <string name="tamponade_link">https://doi.org/10.1093/eurheartj/ehu217</string>
+    <string name="tamponade_instructions">Use this scoring system to triage
+        a patient with pericardial tamponade.
+        \n\nContraindications to pericardiocentesis include uncorrected coagulopathy,
+        INR &gt; 1.5, thrombocytopenia &lt; 50,000/mm\u00b3, small, posterior, and loculated
+        effusions, or effusions resolving under anti-inflammatory treatment.</string>
     <string name="tuberculosis_label">Tuberculosis</string>
     <string name="recent_radiotherapy_label">Recent radiotherapy</string>
     <string name="recent_viral_infection_label">Recent viral infection</string>
@@ -1330,7 +1528,9 @@
     <string name="autoimmune_disease_label">Systemic autoimmune disease</string>
     <string name="orthopnea_label">Orthopnea (NO rales on lung auscultation)</string>
     <string name="hypotension_label">Hypotension (SBP &lt; 95 mmHg)</string>
-    <string name="sinus_tachycardia_label">Progressive sinus tachycardia*</string>
+    <string name="sinus_tachycardia_label">Progressive sinus tachycardia
+        (in the absence of medications affecting heart rate,
+        hypothyroidism and uremia)</string>
     <string name="oliguria_label">Oliguria</string>
     <string name="pulsus_paradoxus_label">Pulsus paradoxus &gt; 10 mmHg</string>
     <string name="friction_rub_label">Pericardial friction rub</string>
@@ -1366,11 +1566,10 @@
 </string>
     <string name="short_qrs_error">QRS duration must be at least 120 msec.</string>
     <string name="arvc_risk_title">ARVC Risk</string>
-    <string name="arvc_risk_full_reference">Cardrin-Tourigny J, Bosman LP, Nozza A, et al.
-        A new prediction model for ventricular arrhythmias in arrhythmogenic
-        right ventricular cardiomyopathy.
-        European Heart Journal. Published online April 20, 2022:ehac180. doi:10.1093/eurheartj/ehac180
-    </string>
+    <string name="arvc_risk_full_reference">Cadrin-Tourigny J, Bosman LP, Nozza A, et al. A new
+        prediction model for ventricular arrhythmias in arrhythmogenic right ventricular cardiomyopathy.
+        European Heart Journal. Published online April 20, 2022:ehac180.</string>
+    <string name="arvc_risk_link">https://doi.org/10.1093/eurheartj/ehac180</string>
     <string name="age_at_dx_label">Age at diagnosis of ARVC</string>
     <string name="cardiac_syncope_within_6_months_label">Specify if the patient experienced syncope suspected to be caused by cardiac
         arrhythmia in the 6 months prior to diagnosis.</string>
@@ -1397,10 +1596,17 @@
     ARVC patients at time of their diagnosis.</string>
     <string name="rvef_details">As measured by cardiac MRI.</string>
     <string name="long_qt_table_title">Long QT Syndromes (All)</string>
-    <string name="qt_prolongation_risk_full_reference">Tisdale James E., Jaynes Heather A., Kingery Joanna R., et al.
-        Development and Validation of a Risk Score to Predict QT Interval Prolongation in Hospitalized Patients.
-        Circulation: Cardiovascular Quality and Outcomes. 2013;6(4):479-487. doi:10.1161/CIRCOUTCOMES.113.000152</string>
-    <string name="qt_prolongation_risk_short_reference">Tisdale et al., CIRC CV Qual and Outcomes 2013 6:479</string>
+    <string name="lqts_table_reference">Adler A, Novelli V, Amin AS, et al. An
+        International, Multicentered, Evidence-Based Reappraisal of Genes
+        Reported to Cause Congenital Long QT Syndrome. Circulation.
+        2020;141(6):418-428.</string>
+    <string name="lqts_table_link">https://doi.org/10.1161/CIRCULATIONAHA.119.043132</string>
+    <string name="qt_prolongation_risk_full_reference">Tisdale JE, Jaynes HA, Kingery JR, et al. Development and Validation of a Risk
+        Score to Predict QT Interval Prolongation in Hospitalized Patients. Circulation:
+        Cardiovascular Quality and Outcomes. 2013;6(4):479-487.</string>
+    <string name="qt_prolongation_risk_link">https:/doi.org/10.1161/CIRCOUTCOMES.113.000152</string>
+    <string name="qt_prolongation_risk_instructions">This risk score predicts the occurence of QTc
+        interval prolongation during hospitalization.</string>
     <string name="qt_prolongation_risk_label">QT Prolongation Risk</string>
     <string name="age_factor_label">Age &#8805; 68</string>
     <string name="female_sex_factor_label">Female sex</string>
@@ -1432,7 +1638,7 @@
     <string name="brugada_score_probable_message">Probable/definite Brugada Syndrome</string>
     <string name="brugada_score_possible_message">Possible Brugada Syndrome</string>
     <string name="nondiagnostic_message">Non-diagnostic</string>
-    <string name="dose_table_dose_change">%s%% %s</string>
+    <string name="dose_table_dose_change">%1$s%% %2$s</string>
     <string name="qtc_formula_used">QTc formula used was %s </string>
     <string name="qtc_result">QTc = %s msec</string>
     <string name="icd_mortality_risk_title">ICD Mortality Risk</string>
@@ -1445,4 +1651,36 @@
     <string name="qt_prolongation_risk_title">QT Prolongation Risk</string>
     <string name="warfarin_dose_title">Warfarin Dose (%s mg tabs)</string>
     <string name="entrainment_high_chance_success">\ Site has high chance of ablation success, if ablating VT.</string>
+    <string name="non_black_label">Non-black</string>
+    <string name="black_label">Black</string>
+    <string name="gfr_result_label">GFR</string>
+    <string name="gfr_result_string">GFR = %d ml/min/1.73m\u00b2</string>
+    <string name="gfr_reference">Levey AS, Stevens LA, Schmid CH, et al.
+        A new equation to estimate glomerular filtration rate. Ann Intern Med.
+        2009;150(9):604-612.</string>
+    <string name="gfr_link">https://doi.org/10.7326/0003-4819-150-9-200905050-00006</string>
+    <string name="gfr_instructions">Use this calculator to estimate glomerular filtration
+        rate normalized for estimated body surface area.  If you want to estimate creatinine
+        clearance for determining drug dosing, use the Creatinine Clearance Calculator.
+        \n\nThis calculator uses the CKD-EPI equation.
+    </string>
+    <string name="notes_label">Notes</string>
+    <string name="error_message">Unexpected error!</string>
+    <string name="key_label">Key</string>
+    <string name="persistent_af_label">Persistent AF</string>
+    <string name="impaired_gfr_label">Impaired eGFR (&lt; 60 ml/min/1.73 m\u00b2)</string>
+    <string name="la_enlargement_label">LA diameter \u2265 43 mm</string>
+    <string name="ef_lt_50_label">EF &lt; 50 %</string>
+    <string name="apple_score_title">APPLE Score</string>
+    <string name="apple_reference_1">Kornej J, Hindricks G, Shoemaker MB, et al. The APPLE score:
+        a novel and simple score for the prediction of rhythm outcomes after catheter ablation
+        of atrial fibrillation. Clin Res Cardiol. 2015;104(10):871-876.</string>
+    <string name="apple_link_1">https://doi.org/10.1007/s00392-015-0856-x</string>
+    <string name="apple_reference_2">Kornej J, Hindricks G, Arya A, Sommer P, Husser D, Bollmann A.
+        The APPLE Score – A Novel Score for the Prediction of Rhythm Outcomes after Repeat Catheter
+        Ablation of Atrial Fibrillation. PLoS One. 2017;12(1):e0169933.</string>
+    <string name="apple_link_2">https://doi.org/10.1371/journal.pone.0169933</string>
+    <string name="apple_instructions">Use this score to predict the risk of recurrent atrial
+        fibrillation after initial or repeat catheter ablation.  You can use the
+        GFR Calculator to determine estimated GFR.</string>
 </resources>

@@ -29,113 +29,114 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class RiskScore extends DiagnosticScore {
-	private String resultMessage;
-	private final List<String> selectedRisks = new ArrayList<>();
+    private String resultMessage;
+    private final List<String> selectedRisks = new ArrayList<>();
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             finish();
             return true;
         }
-		return super.onOptionsItemSelected(item);
-	}
+        return super.onOptionsItemSelected(item);
+    }
 
-	@Override
-	protected void clearEntries() {
-		for (CheckBox aCheckBox : checkBox) aCheckBox.setChecked(false);
-	}
+    @Override
+    protected void clearEntries() {
+        for (CheckBox aCheckBox : checkBox) aCheckBox.setChecked(false);
+    }
 
-	protected CheckBox[] checkBox;
+    protected CheckBox[] checkBox;
 
-	@Override
-	@SuppressWarnings("deprecation")
-	protected void displayResult(String message, String title) {
-		// put message in class field so inner class can use
-		AlertDialog dialog = new AlertDialog.Builder(this).create();
-		dialog.setMessage(message);
-		dialog.setButton(DialogInterface.BUTTON_POSITIVE,
-				getString(R.string.reset_label),
-				(dialog13, which) -> clearEntries());
-		dialog.setButton(DialogInterface.BUTTON_NEUTRAL,
-				getString(R.string.dont_reset_label),
-				(dialog12, which) -> {
-				});
-		dialog.setButton(DialogInterface.BUTTON_NEGATIVE,
-				getString(R.string.copy_report_label),
-				(dialog1, which) -> {
-					// clipboard handled differently depending on Android
-					// version
-					String textToCopy = getFullRiskReport();
-					showToast();
-					int sdk = android.os.Build.VERSION.SDK_INT;
-					if (sdk < android.os.Build.VERSION_CODES.HONEYCOMB) {
-						android.text.ClipboardManager clipboard = (android.text.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-						if (clipboard != null) {
-							clipboard.setText(textToCopy);
-						}
-					} else {
-						android.content.ClipboardManager clipboard = (android.content.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-						android.content.ClipData clip = android.content.ClipData
-								.newPlainText("Copied Text", textToCopy);
-						if (clipboard != null) {
-							clipboard.setPrimaryClip(clip);
-						}
-					}
-				});
-		dialog.setTitle(title);
-		dialog.show();
-	}
+    @Override
+    @SuppressWarnings("deprecation")
+    protected void displayResult(String message, String title) {
+        // put message in class field so inner class can use
+        AlertDialog dialog = new AlertDialog.Builder(this).create();
+        dialog.setMessage(message);
+        dialog.setButton(DialogInterface.BUTTON_POSITIVE,
+                getString(R.string.reset_label),
+                (dialog13, which) -> clearEntries());
+        dialog.setButton(DialogInterface.BUTTON_NEUTRAL,
+                getString(R.string.dont_reset_label),
+                (dialog12, which) -> {
+                });
+        dialog.setButton(DialogInterface.BUTTON_NEGATIVE,
+                getString(R.string.copy_report_label),
+                (dialog1, which) -> {
+                    // clipboard handled differently depending on Android
+                    // version
+                    String textToCopy = getFullRiskReport();
+                    showToast();
+                    int sdk = android.os.Build.VERSION.SDK_INT;
+                    if (sdk < android.os.Build.VERSION_CODES.HONEYCOMB) {
+                        android.text.ClipboardManager clipboard = (android.text.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                        if (clipboard != null) {
+                            clipboard.setText(textToCopy);
+                        }
+                    } else {
+                        android.content.ClipboardManager clipboard = (android.content.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                        android.content.ClipData clip = android.content.ClipData
+                                .newPlainText("Copied Text", textToCopy);
+                        if (clipboard != null) {
+                            clipboard.setPrimaryClip(clip);
+                        }
+                    }
+                });
+        dialog.setTitle(title);
+        dialog.show();
+    }
 
-	private String getFullRiskReport() {
-		String report = "Risk score: ";
-		report += getRiskLabel() + "\nRisks: ";
-		report += getSelectedRisks() + "\nResult: ";
-		report += getResultMessage() + "\n"
-				+ getString(R.string.reference_label) + ": ";
-		report += getFullReference() + "\n";
-		return report;
-	}
+    private String getFullRiskReport() {
+        String report = "Risk score: ";
+        report += getRiskLabel() + "\nRisks: ";
+        report += getSelectedRisks() + "\nResult: ";
+        report += getResultMessage() + "\n"
+                + getString(R.string.reference_label) + ": ";
+        report += getFullReference() + "\n";
+        return report;
+    }
 
-	private void showToast() {
-		Toast.makeText(this, "Result copied to clipboard", Toast.LENGTH_SHORT)
-				.show();
-	}
+    private void showToast() {
+        Toast.makeText(this, "Result copied to clipboard", Toast.LENGTH_SHORT)
+                .show();
+    }
 
-	protected void setResultMessage(String message) {
-		resultMessage = message;
-	}
+    protected void setResultMessage(String message) {
+        resultMessage = message;
+    }
 
-	protected String getResultMessage() {
-		return resultMessage;
-	}
+    protected String getResultMessage() {
+        return resultMessage;
+    }
 
-	protected String resultWithShortReference() {
-		return getResultMessage() + "\n" + getString(R.string.reference_label)
-				+ ": " + getShortReference() + ".";
-	}
+    // No more short references,
+    // This just returns the result message, eventually should refactor this method away.
+    protected String resultWithShortReference() {
+        return getResultMessage();
+//        return getResultMessage() + "\n" + getString(R.string.reference_label)
+//                + ": " + getShortReference() + ".";
+    }
 
-	protected void clearSelectedRisks() {
-		selectedRisks.clear();
-	}
+    protected void clearSelectedRisks() {
+        selectedRisks.clear();
+    }
 
-	protected void addSelectedRisk(String risk) {
-		selectedRisks.add(risk);
-	}
+    protected void addSelectedRisk(String risk) {
+        selectedRisks.add(risk);
+    }
 
-	protected String getSelectedRisks() {
-		if (selectedRisks.isEmpty()) {
-			return getString(R.string.none_label);
-		} else {
-			return selectedRisks.toString();
-		}
-	}
+    protected String getSelectedRisks() {
+        if (selectedRisks.isEmpty()) {
+            return getString(R.string.none_label);
+        } else {
+            return selectedRisks.toString();
+        }
+    }
 
-	// each risk score needs these
-	abstract protected String getFullReference();
+    // each risk score needs these
+    abstract protected String getFullReference();
 
-	// this is the R.string.risk_label, not risk_title. No "score" attached
-	abstract protected String getRiskLabel();
-
-	abstract protected String getShortReference();
+    // this is the R.string.risk_label, not risk_title. No "score" attached
+    abstract protected String getRiskLabel();
 }

@@ -115,8 +115,7 @@ public class ErsScore extends RiskScore {
         if (ecgScore == 0) {
             message = "Score requires at least 1 ECG finding.";
             setResultMessage(message);
-        }
-        else {
+        } else {
             result = clinicalScore + ecgScore + ambulatoryEcgScore
                     + familyScore + geneticScore;
             message = getResultMessage(result);
@@ -125,15 +124,13 @@ public class ErsScore extends RiskScore {
     }
 
     private String getResultMessage(int result) {
-        String message = String.format(Locale.getDefault(),"Risk Score = %s\n",
+        String message = String.format(Locale.getDefault(), "Risk Score = %s\n",
                 UnitConverter.trimmedTrailingZeros(result / 10.0));
         if (result >= 50) {
             message += "Probable/definite Early Repolarization Syndrome";
-        }
-        else if (result >= 30) {
+        } else if (result >= 30) {
             message += "Possible Early Repolarization Syndrome";
-        }
-        else {
+        } else {
             message += "Non-diagnostic";
         }
         setResultMessage(message);
@@ -145,7 +142,8 @@ public class ErsScore extends RiskScore {
     @Override
     // Note ERS score reference is identical to Brugada reference, so below is OK
     protected String getFullReference() {
-        return getString(R.string.brugada_score_reference);
+        return convertReferenceToText(R.string.brugada_score_reference,
+                R.string.brugada_score_link);
     }
 
     @Override
@@ -154,10 +152,27 @@ public class ErsScore extends RiskScore {
     }
 
     @Override
-    protected String getShortReference() {
-        // no short reference given, since it is in layout
-        return null;
+    protected boolean hideReferenceMenuItem() {
+        return false;
     }
+
+    // ERS score has same reference as brugada score
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.brugada_score_reference,
+                R.string.brugada_score_link);
+    }
+
+    @Override
+    protected boolean hideKeyMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityKey() {
+        showKeyAlertDialog(R.string.ers_score_key);
+    }
+
 }
 
 

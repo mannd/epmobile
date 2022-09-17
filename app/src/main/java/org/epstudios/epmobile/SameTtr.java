@@ -23,21 +23,17 @@ import android.widget.CheckBox;
  * You should have received a copy of the GNU General Public License
  * along with epmobile.  If not, see <http://www.gnu.org/licenses/>.
  */
-public class SameTtr  extends RiskScore {
+public class SameTtr extends RiskScore {
 
     @Override
     protected String getFullReference() {
-        return getString(R.string.same_full_reference);
+        return convertReferenceToText(R.string.same_full_reference,
+                R.string.same_link);
     }
 
     @Override
     protected String getRiskLabel() {
         return getString(R.string.same_risk_label);
-    }
-
-    @Override
-    protected String getShortReference() {
-        return getString(R.string.same_short_reference);
     }
 
     @Override
@@ -84,6 +80,28 @@ public class SameTtr  extends RiskScore {
         checkBox[3] = findViewById(R.id.treatment);
         checkBox[4] = findViewById(R.id.smoking);
         checkBox[5] = findViewById(R.id.race);
+    }
 
+
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.same_full_reference,
+                R.string.same_link);
+    }
+
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityInstructions() {
+        showAlertDialog(R.string.same_tt2r2_title,
+                R.string.same_instructions);
     }
 }

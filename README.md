@@ -52,6 +52,11 @@ The ARVC risk calculator is based on a similar calculator
 [on the web](https://arvcrisk.com).  It is based on
 [this paper](https://academic.oup.com/eurheartj/advance-article/doi/10.1093/eurheartj/ehz103/5419784) and is used with the kind permission of the investigators.
 
+Main screen icons are from [SVG Repo](https://www.svgrepo.com) and are
+covered under a
+[CC0](https://creativecommons.org/share-your-work/public-domain/cc0/)
+license.
+
 ## Author
 David Mann
 

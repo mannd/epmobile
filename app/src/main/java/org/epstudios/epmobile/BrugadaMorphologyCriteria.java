@@ -35,215 +35,225 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class BrugadaMorphologyCriteria extends EpActivity implements
-		OnClickListener {
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+        OnClickListener {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.wctmorphologycriteria);
-	initToolbar();
-	
-		View calculateButton = findViewById(R.id.calculate_button);
-		calculateButton.setOnClickListener(this);
-		View clearButton = findViewById(R.id.clear_button);
-		clearButton.setOnClickListener(this);
+        initToolbar();
 
-		bbbSpinner = findViewById(R.id.bbb_spinner);
+        View calculateButton = findViewById(R.id.calculate_button);
+        calculateButton.setOnClickListener(this);
+        View clearButton = findViewById(R.id.clear_button);
+        clearButton.setOnClickListener(this);
 
-		setAdapters();
+        bbbSpinner = findViewById(R.id.bbb_spinner);
 
-		lbbbCheckBox = new CheckBox[4];
-		lbbbCheckBox[0] = findViewById(R.id.broad_r);
-		lbbbCheckBox[1] = findViewById(R.id.broad_rs);
-		lbbbCheckBox[2] = findViewById(R.id.notched_s);
-		lbbbCheckBox[3] = findViewById(R.id.lbbb_q_v6);
+        setAdapters();
 
-		rbbbCheckBox = new CheckBox[6];
-		rbbbCheckBox[0] = findViewById(R.id.monophasic_r_v1);
-		rbbbCheckBox[1] = findViewById(R.id.qr_v1);
-		rbbbCheckBox[2] = findViewById(R.id.rs_v1);
-		rbbbCheckBox[3] = findViewById(R.id.deep_s_v6);
-		rbbbCheckBox[4] = findViewById(R.id.rbbb_q_v6);
-		rbbbCheckBox[5] = findViewById(R.id.monophasic_r_v6);
+        lbbbCheckBox = new CheckBox[4];
+        lbbbCheckBox[0] = findViewById(R.id.broad_r);
+        lbbbCheckBox[1] = findViewById(R.id.broad_rs);
+        lbbbCheckBox[2] = findViewById(R.id.notched_s);
+        lbbbCheckBox[3] = findViewById(R.id.lbbb_q_v6);
 
-		clearEntries();
-	}
+        rbbbCheckBox = new CheckBox[6];
+        rbbbCheckBox[0] = findViewById(R.id.monophasic_r_v1);
+        rbbbCheckBox[1] = findViewById(R.id.qr_v1);
+        rbbbCheckBox[2] = findViewById(R.id.rs_v1);
+        rbbbCheckBox[3] = findViewById(R.id.deep_s_v6);
+        rbbbCheckBox[4] = findViewById(R.id.rbbb_q_v6);
+        rbbbCheckBox[5] = findViewById(R.id.monophasic_r_v6);
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		if (item.getItemId() == android.R.id.home) {
-			Intent parentActivityIntent = new Intent(this,
-					WctAlgorithmList.class);
-			parentActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
-					| Intent.FLAG_ACTIVITY_NEW_TASK);
-			startActivity(parentActivityIntent);
-			finish();
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
+        clearEntries();
+    }
 
-	private enum Bbb {
-		LBBB, RBBB
-	}
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            Intent parentActivityIntent = new Intent(this,
+                    WctAlgorithmList.class);
+            parentActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+                    | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(parentActivityIntent);
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
-	private Spinner bbbSpinner;
+    private enum Bbb {
+        LBBB, RBBB
+    }
 
-	private CheckBox[] lbbbCheckBox;
-	private CheckBox[] rbbbCheckBox;
+    private Spinner bbbSpinner;
 
-	private void setAdapters() {
-		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-				this, R.array.bbb_labels, android.R.layout.simple_spinner_item);
-		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		bbbSpinner.setAdapter(adapter);
-		OnItemSelectedListener itemListener = new OnItemSelectedListener() {
-			public void onItemSelected(AdapterView<?> parent, View v,
-									   int position, long id) {
-				updateBbbSelection();
-			}
+    private CheckBox[] lbbbCheckBox;
+    private CheckBox[] rbbbCheckBox;
 
-			public void onNothingSelected(AdapterView<?> parent) {
-				// do nothing
-			}
+    private void setAdapters() {
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this, R.array.bbb_labels, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        bbbSpinner.setAdapter(adapter);
+        OnItemSelectedListener itemListener = new OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parent, View v,
+                                       int position, long id) {
+                updateBbbSelection();
+            }
 
-		};
+            public void onNothingSelected(AdapterView<?> parent) {
+                // do nothing
+            }
 
-		bbbSpinner.setOnItemSelectedListener(itemListener);
+        };
 
-	}
+        bbbSpinner.setOnItemSelectedListener(itemListener);
 
-	@Override
-	public void onClick(View v) {
-		final int id = v.getId();
-		if (id == R.id.calculate_button) {
-			calculateResult();
-		}
-		else if (id == R.id.clear_button) {
-			clearEntries();
-		}
-	}
+    }
 
-	private void calculateResult() {
-		if (bothLeadsHaveEntries())
-			displayVtResult();
-		else
-			displaySvtResult();
-	}
+    @Override
+    public void onClick(View v) {
+        final int id = v.getId();
+        if (id == R.id.calculate_button) {
+            calculateResult();
+        } else if (id == R.id.clear_button) {
+            clearEntries();
+        }
+    }
 
-	private Boolean bothLeadsHaveEntries() {
-		Set<Integer> lbbbV1 = new HashSet<>();
-		Set<Integer> lbbbV6 = new HashSet<>();
-		Set<Integer> rbbbV1 = new HashSet<>();
-		Set<Integer> rbbbV6 = new HashSet<>();
-		lbbbV1.add(0);
-		lbbbV1.add(1);
-		lbbbV1.add(2);
-		lbbbV6.add(3);
-		rbbbV1.add(0);
-		rbbbV1.add(1);
-		rbbbV1.add(2);
-		rbbbV6.add(3);
-		rbbbV6.add(4);
-		rbbbV6.add(5);
-		boolean inV1 = false;
-		boolean inV6 = false;
-		for (int i = 0; i < lbbbCheckBox.length; i++) {
-			if (lbbbCheckBox[i].isChecked() && lbbbV1.contains(i))
-				inV1 = true;
-			if (lbbbCheckBox[i].isChecked() && lbbbV6.contains(i))
-				inV6 = true;
-		}
-		for (int i = 0; i < rbbbCheckBox.length; i++) {
-			if (rbbbCheckBox[i].isChecked() && rbbbV1.contains(i))
-				inV1 = true;
-			if (rbbbCheckBox[i].isChecked() && rbbbV6.contains(i))
-				inV6 = true;
-		}
-		return inV1 && inV6;
-	}
+    private void calculateResult() {
+        if (bothLeadsHaveEntries())
+            displayVtResult();
+        else
+            displaySvtResult();
+    }
 
-	private void updateBbbSelection() {
-		Bbb bbbSelection = getBbbSelection();
-		if (bbbSelection.equals(Bbb.LBBB)) {
-			hideRbbbEntries();
-			showLbbbEntries();
-		} else {
-			hideLbbbEntries();
-			showRbbbEntries();
-		}
-	}
+    private Boolean bothLeadsHaveEntries() {
+        Set<Integer> lbbbV1 = new HashSet<>();
+        Set<Integer> lbbbV6 = new HashSet<>();
+        Set<Integer> rbbbV1 = new HashSet<>();
+        Set<Integer> rbbbV6 = new HashSet<>();
+        lbbbV1.add(0);
+        lbbbV1.add(1);
+        lbbbV1.add(2);
+        lbbbV6.add(3);
+        rbbbV1.add(0);
+        rbbbV1.add(1);
+        rbbbV1.add(2);
+        rbbbV6.add(3);
+        rbbbV6.add(4);
+        rbbbV6.add(5);
+        boolean inV1 = false;
+        boolean inV6 = false;
+        for (int i = 0; i < lbbbCheckBox.length; i++) {
+            if (lbbbCheckBox[i].isChecked() && lbbbV1.contains(i))
+                inV1 = true;
+            if (lbbbCheckBox[i].isChecked() && lbbbV6.contains(i))
+                inV6 = true;
+        }
+        for (int i = 0; i < rbbbCheckBox.length; i++) {
+            if (rbbbCheckBox[i].isChecked() && rbbbV1.contains(i))
+                inV1 = true;
+            if (rbbbCheckBox[i].isChecked() && rbbbV6.contains(i))
+                inV6 = true;
+        }
+        return inV1 && inV6;
+    }
 
-	private void displayVtResult() {
-		AlertDialog dialog = new AlertDialog.Builder(this).create();
-		String sens = ".987";
-		String spec = ".965";
-		String message;
-		message = getString(R.string.vt_result);
-		message = message + " (Sens=" + sens + ", Spec=" + spec + ") ";
-		message = message + getString(R.string.brugada_reference);
-		dialog.setMessage(message);
-		dialog.setTitle(getString(R.string.wct_result_label));
-		dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Done",
-				(dialog12, which) -> finish());
-		dialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Back",
-				(dialog1, which) -> {
-				});
-		dialog.show();
-	}
+    private void updateBbbSelection() {
+        Bbb bbbSelection = getBbbSelection();
+        if (bbbSelection.equals(Bbb.LBBB)) {
+            hideRbbbEntries();
+            showLbbbEntries();
+        } else {
+            hideLbbbEntries();
+            showRbbbEntries();
+        }
+    }
 
-	private void displaySvtResult() {
-		AlertDialog dialog = new AlertDialog.Builder(this).create();
-		String message;
-		message = getString(R.string.svt_result);
-		message = message + " (Sens=.965, Spec=.967) ";
-		message = message + getString(R.string.brugada_reference);
-		dialog.setMessage(message);
-		dialog.setTitle(getString(R.string.wct_result_label));
-		dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Done",
-				(dialog12, which) -> finish());
-		dialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Back",
-				(dialog1, which) -> {
-				});
-		dialog.show();
-	}
+    private void displayVtResult() {
+        AlertDialog dialog = new AlertDialog.Builder(this).create();
+        String sens = ".987";
+        String spec = ".965";
+        String message;
+        message = getString(R.string.vt_result);
+        message = message + " (Sens=" + sens + ", Spec=" + spec + ") ";
+        message = message + getString(R.string.brugada_wct_reference);
+        dialog.setMessage(message);
+        dialog.setTitle(getString(R.string.wct_result_label));
+        dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Done",
+                (dialog12, which) -> finish());
+        dialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Back",
+                (dialog1, which) -> {
+                });
+        dialog.show();
+    }
 
-	private Bbb getBbbSelection() {
-		String result = bbbSpinner.getSelectedItem().toString();
-		if (result.startsWith("R"))
-			return Bbb.RBBB;
-		else
-			return Bbb.LBBB;
-	}
+    private void displaySvtResult() {
+        AlertDialog dialog = new AlertDialog.Builder(this).create();
+        String message;
+        message = getString(R.string.svt_result);
+        message = message + " (Sens=.965, Spec=.967) ";
+        message = message + getString(R.string.brugada_wct_reference);
+        dialog.setMessage(message);
+        dialog.setTitle(getString(R.string.wct_result_label));
+        dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Done",
+                (dialog12, which) -> finish());
+        dialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Back",
+                (dialog1, which) -> {
+                });
+        dialog.show();
+    }
 
-	private void hideLbbbEntries() {
-		hideEntries(lbbbCheckBox);
-	}
+    private Bbb getBbbSelection() {
+        String result = bbbSpinner.getSelectedItem().toString();
+        if (result.startsWith("R"))
+            return Bbb.RBBB;
+        else
+            return Bbb.LBBB;
+    }
 
-	private void showLbbbEntries() {
-		showEntries(lbbbCheckBox);
-	}
+    private void hideLbbbEntries() {
+        hideEntries(lbbbCheckBox);
+    }
 
-	private void hideRbbbEntries() {
-		hideEntries(rbbbCheckBox);
-	}
+    private void showLbbbEntries() {
+        showEntries(lbbbCheckBox);
+    }
 
-	private void showRbbbEntries() {
-		showEntries(rbbbCheckBox);
-	}
+    private void hideRbbbEntries() {
+        hideEntries(rbbbCheckBox);
+    }
 
-	private void hideEntries(CheckBox[] cb) {
-		clearEntries();
-		for (CheckBox aCb : cb) aCb.setVisibility(View.GONE);
-	}
+    private void showRbbbEntries() {
+        showEntries(rbbbCheckBox);
+    }
 
-	private void showEntries(CheckBox[] cb) {
-		clearEntries();
-		for (CheckBox aCb : cb) aCb.setVisibility(View.VISIBLE);
-	}
+    private void hideEntries(CheckBox[] cb) {
+        clearEntries();
+        for (CheckBox aCb : cb) aCb.setVisibility(View.GONE);
+    }
 
-	private void clearEntries() {
-		for (CheckBox aLbbbCheckBox : lbbbCheckBox) aLbbbCheckBox.setChecked(false);
-		for (CheckBox aRbbbCheckBox : rbbbCheckBox) aRbbbCheckBox.setChecked(false);
-	}
+    private void showEntries(CheckBox[] cb) {
+        clearEntries();
+        for (CheckBox aCb : cb) aCb.setVisibility(View.VISIBLE);
+    }
 
+    private void clearEntries() {
+        for (CheckBox aLbbbCheckBox : lbbbCheckBox) aLbbbCheckBox.setChecked(false);
+        for (CheckBox aRbbbCheckBox : rbbbCheckBox) aRbbbCheckBox.setChecked(false);
+    }
+
+
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.brugada_wct_reference,
+                R.string.brugada_wct_link);
+    }
 }

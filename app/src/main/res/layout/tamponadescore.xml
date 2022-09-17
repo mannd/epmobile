@@ -220,16 +220,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/swinging_heart_label" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/tamponade_key" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:autoLink="web"
-                android:text="@string/tamponade_reference" />
         </LinearLayout>
 
     </ScrollView>

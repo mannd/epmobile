@@ -1,4 +1,4 @@
-/*  EP Mobile -- Mobile tools for electrophysiologists
+package org.epstudios.epmobile;/*  EP Mobile -- Mobile tools for electrophysiologists
     Copyright (C) 2011 EP Studios, Inc.
     www.epstudiossoftware.com
 

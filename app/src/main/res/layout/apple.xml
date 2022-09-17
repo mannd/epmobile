@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar" />
+
+    <include layout="@layout/calculatebuttons" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_above="@id/calculateButtonsLayout"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/age_over_65_label" />
+
+            <CheckBox
+                android:id="@+id/persistentAF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/persistent_af_label" />
+
+            <CheckBox
+                android:id="@+id/impairedGfr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/impaired_gfr_label" />
+
+            <CheckBox
+                android:id="@+id/laEnlargement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/la_enlargement_label" />
+
+            <CheckBox
+                android:id="@+id/lowEF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ef_lt_50_label" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
