@@ -54,7 +54,14 @@ public class RiskScoreList extends EpActivity {
                 arvcRisk();
             else if (selection.equals(getString(R.string.qt_prolongation_risk_title)))
                 qtProlongationRisk();
+            else if (selection.equals(getString(R.string.apple_score_title)))
+                appleScore();
         });
+    }
+
+    private void appleScore() {
+        Intent i = new Intent(this, AppleScore.class);
+        startActivity(i);
     }
 
     private void qtProlongationRisk() {

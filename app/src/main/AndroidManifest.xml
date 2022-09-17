@@ -264,6 +264,8 @@
             android:label="@string/qt_prolongation_risk_title" />
         <activity android:name=".GfrCalculator"
             android:label="@string/gfr_calculator_title" />
+        <activity android:name=".AppleScore"
+            android:label="@string/apple_score_title" />
     </application>
 
 </manifest>

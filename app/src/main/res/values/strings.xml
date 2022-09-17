@@ -1664,9 +1664,23 @@
         clearance for determining drug dosing, use the Creatinine Clearance Calculator.
         \n\nThis calculator uses the CKD-EPI equation.
     </string>
-
-
     <string name="notes_label">Notes</string>
     <string name="error_message">Unexpected error!</string>
     <string name="key_label">Key</string>
+    <string name="persistent_af_label">Persistent AF</string>
+    <string name="impaired_gfr_label">Impaired eGFR (&lt; 60 ml/min/1.73 m\u00b2)</string>
+    <string name="la_enlargement_label">LA diameter \u2265 43 mm</string>
+    <string name="ef_lt_50_label">EF &lt; 50 %</string>
+    <string name="apple_score_title">APPLE Score</string>
+    <string name="apple_reference_1">Kornej J, Hindricks G, Shoemaker MB, et al. The APPLE score:
+        a novel and simple score for the prediction of rhythm outcomes after catheter ablation
+        of atrial fibrillation. Clin Res Cardiol. 2015;104(10):871-876.</string>
+    <string name="apple_link_1">https://doi.org/10.1007/s00392-015-0856-x</string>
+    <string name="apple_reference_2">Kornej J, Hindricks G, Arya A, Sommer P, Husser D, Bollmann A.
+        The APPLE Score – A Novel Score for the Prediction of Rhythm Outcomes after Repeat Catheter
+        Ablation of Atrial Fibrillation. PLoS One. 2017;12(1):e0169933.</string>
+    <string name="apple_link_2">https://doi.org/10.1371/journal.pone.0169933</string>
+    <string name="apple_instructions">Use this score to predict the risk of recurrent atrial
+        fibrillation after initial or repeat catheter ablation.  You can use the
+        GFR Calculator to determine estimated GFR.</string>
 </resources>
