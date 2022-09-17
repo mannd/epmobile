@@ -1654,10 +1654,18 @@
     <string name="non_black_label">Non-black</string>
     <string name="black_label">Black</string>
     <string name="gfr_result_label">GFR</string>
+    <string name="gfr_result_string">GFR = %d ml/min/1.73m\u00b2</string>
     <string name="gfr_reference">Levey AS, Stevens LA, Schmid CH, et al.
         A new equation to estimate glomerular filtration rate. Ann Intern Med.
         2009;150(9):604-612.</string>
     <string name="gfr_link">https://doi.org/10.7326/0003-4819-150-9-200905050-00006</string>
+    <string name="gfr_instructions">Use this calculator to estimate glomerular filtration
+        rate normalized for estimated body surface area.  If you want to estimate creatinine
+        clearance for determining drug dosing, use the Creatinine Clearance Calculator.
+        \n\nThis calculator uses the CKD-EPI equation.
+    </string>
+
+
     <string name="notes_label">Notes</string>
     <string name="error_message">Unexpected error!</string>
     <string name="key_label">Key</string>

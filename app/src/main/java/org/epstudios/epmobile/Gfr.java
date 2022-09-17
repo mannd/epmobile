@@ -44,4 +44,8 @@ public class Gfr {
         }
         return gfr;
     }
+
+    public static double convertMicroMolPerLiterToMgPerDL(double quantity) {
+        return  0.0113096584483149 * quantity;
+    }
 }
