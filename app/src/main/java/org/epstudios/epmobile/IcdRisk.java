@@ -61,8 +61,8 @@ public class IcdRisk extends RiskScore {
 
     @Override
     protected void displayResult(String message, String title) {
-        addSelectedRisk("N/A");
         String resultMessage = getString(R.string.icd_result_title) + "\n" + message;
+        setDisplayRisks(false);
         setResultMessage(resultMessage);
         super.displayResult(message, title);
     }

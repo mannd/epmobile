@@ -23,7 +23,7 @@ import android.view.MenuItem;
 import android.widget.CheckBox;
 import android.widget.RadioGroup;
 
-public class Arvc extends DiagnosticScore {
+public class Arvc extends RiskScore {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -199,6 +199,8 @@ public class Arvc extends DiagnosticScore {
             message = message + "Possible diagnosis of ARVC/D";
         else
             message = message + "Not diagnostic of ARVC/D";
+        setDisplayRisks(false);
+        setResultMessage(message);
         return message;
     }
 
@@ -232,6 +234,17 @@ public class Arvc extends DiagnosticScore {
         possibleFamilyHistoryCheckBox.setChecked(false);
         familyHistorySuddenDeathCheckBox.setChecked(false);
         secondDegreeRelativeCheckBox.setChecked(false);
+    }
+
+    @Override
+    protected String getFullReference() {
+        return convertReferenceToText(R.string.arvc_reference_2010,
+                R.string.arvc_link_2010);
+    }
+
+    @Override
+    protected String getRiskLabel() {
+        return getString(R.string.arvc_2010_criteria_title);
     }
 
     @Override

@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.view.MenuItem;
 import android.widget.CheckBox;
 
-public class ArvcOld extends DiagnosticScore {
+public class ArvcOld extends RiskScore {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
@@ -63,6 +63,8 @@ public class ArvcOld extends DiagnosticScore {
             message += "Diagnostic of ARVC/D";
         else
             message += "Not Diagnostic of ARVC/D";
+        setDisplayRisks(false);
+        setResultMessage(message);
         return message;
     }
 
@@ -108,6 +110,17 @@ public class ArvcOld extends DiagnosticScore {
         familialDiseaseCheckBox.setChecked(false);
         familyHxScdCheckBox.setChecked(false);
         familyHxCheckBox.setChecked(false);
+    }
+
+    @Override
+    protected String getFullReference() {
+        return convertReferenceToText(R.string.arvc_old_reference,
+                R.string.arvc_old_link);
+    }
+
+    @Override
+    protected String getRiskLabel() {
+        return getString(R.string.arvc_old_criteria_title);
     }
 
     // major

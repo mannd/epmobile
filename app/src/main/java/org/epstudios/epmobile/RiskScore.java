@@ -31,6 +31,11 @@ import java.util.List;
 public abstract class RiskScore extends DiagnosticScore {
     private String resultMessage;
     private final List<String> selectedRisks = new ArrayList<>();
+    private boolean displayRisks = true; // skip displaying list of risks if false
+
+    public void setDisplayRisks(boolean displayRisks) {
+        this.displayRisks = displayRisks;
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -88,11 +93,12 @@ public abstract class RiskScore extends DiagnosticScore {
     }
 
     private String getFullRiskReport() {
-        String report = "Risk score: ";
-        report += getRiskLabel() + "\nRisks: ";
-        report += getSelectedRisks() + "\nResult: ";
-        report += getResultMessage() + "\n"
-                + getString(R.string.reference_label) + ": ";
+        String report = "Risk score:\n" + getRiskLabel();
+        if (displayRisks) {
+            report +="\nRisks:\n" + getSelectedRisks();
+        }
+        report += "\nResult:\n" + getResultMessage() + "\n"
+                + getString(R.string.reference_label) + ":\n";
         report += getFullReference() + "\n";
         return report;
     }
