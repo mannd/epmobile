@@ -206,4 +206,16 @@ public class IcdRisk extends RiskScore {
         showReferenceAlertDialog(R.string.icd_risk_reference,
                 R.string.icd_risk_link);
     }
+
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected  void showActivityInstructions() {
+        showAlertDialog(R.string.icd_risk_title,
+                R.string.icd_risk_instructions);
+    }
+
 }

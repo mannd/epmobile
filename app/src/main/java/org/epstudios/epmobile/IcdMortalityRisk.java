@@ -130,4 +130,16 @@ public class IcdMortalityRisk extends RiskScore {
         showReferenceAlertDialog(R.string.icd_mortality_risk_full_reference,
                 R.string.icd_mortality_risk_link);
     }
+
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected  void showActivityInstructions() {
+        showAlertDialog(R.string.icd_mortality_risk_title,
+                R.string.icd_mortality_risk_instructions);
+    }
+
 }

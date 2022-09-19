@@ -98,5 +98,16 @@ public class AtriaBleed extends RiskScore {
                 R.string.atria_bleed_link);
     }
 
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected  void showActivityInstructions() {
+        showAlertDialog(R.string.atria_bleeding_score_title,
+                R.string.atria_bleed_instructions);
+    }
+
 
 }

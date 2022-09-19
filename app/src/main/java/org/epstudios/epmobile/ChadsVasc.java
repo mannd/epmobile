@@ -161,4 +161,15 @@ public class ChadsVasc extends RiskScore {
         showReferenceAlertDialog(references);
     }
 
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected  void showActivityInstructions() {
+        showAlertDialog(R.string.chadsvasc_title,
+                R.string.chads_chadsvasc_stroke_instructions);
+    }
+
 }

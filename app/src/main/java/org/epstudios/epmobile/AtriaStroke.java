@@ -127,10 +127,20 @@ public class AtriaStroke extends RiskScore {
         return false;
     }
 
-    // FIXME: DEBUG alert dialog not appearing here
     @Override
     protected void showActivityReference() {
         showReferenceAlertDialog(R.string.atria_stroke_full_reference,
                 R.string.atria_stroke_link);
+    }
+
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected  void showActivityInstructions() {
+        showAlertDialog(R.string.atria_stroke_score_title,
+                R.string.atria_stroke_instructions);
     }
 }

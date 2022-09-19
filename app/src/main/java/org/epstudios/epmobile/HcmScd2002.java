@@ -129,4 +129,15 @@ public class HcmScd2002 extends RiskScore {
         showKeyAlertDialog(R.string.hcm_scd_2002_key);
     }
 
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected  void showActivityInstructions() {
+        showAlertDialog(R.string.hcm_title,
+                R.string.hcm_title_instructions);
+    }
+
 }

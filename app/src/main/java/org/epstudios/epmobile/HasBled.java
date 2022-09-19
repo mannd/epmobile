@@ -114,4 +114,16 @@ public class HasBled extends RiskScore {
         showReferenceAlertDialog(R.string.hasbled_full_reference,
                 R.string.hasbled_link);
     }
+
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected  void showActivityInstructions() {
+        showAlertDialog(R.string.hasbled_title,
+                R.string.hasbled_instructions);
+    }
+
 }

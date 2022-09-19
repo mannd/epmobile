@@ -1685,4 +1685,16 @@
         GFR Calculator to determine estimated GFR.</string>
     <string name="qtc_ivcd_calculator_instructions">Use this calculator to estimate the QTc when there
         is an intraventricular conduction delay.</string>
+    <string name="atria_bleed_instructions">Use this score to predict the risk of bleeding occurring on wafarin for treatment of atrial fibrillation.</string>
+    <string name="atria_stroke_instructions">Use this score to predict the risk of thromboembolic events in patients with atrial fibrillation.</string>
+    <string name="chads_chadsvasc_stroke_instructions">Use this score to assess the risk of stroke in patients with atrial fibrillation.</string>
+    <string name="hasbled_instructions">Use this score  to estimate the 1-year risk for major bleeding
+        (intracranial, hospitalization, hemoglobin decrease &gt;2 g/L, and/or transfusion) in
+        patients with atrial fibrillation.</string>
+    <string name="hcm_title_instructions">Use this score to determine risk of sudden cardiac death
+        and consideration for ICD implant in patients with hypertrophic cardiomyopathy.</string>
+    <string name="hemorrhages_instructions">Use this score to determine the risk of bleeding in
+        patients on warfarin for atrial fibrillation.</string>
+    <string name="icd_risk_instructions">Use this risk score to determine the risk of in-hospital complications following ICD implantation.</string>
+    <string name="icd_mortality_risk_instructions">Use this score to determine the mortality with and without ICD implantation in MADIT-II type patients.</string>
 </resources>

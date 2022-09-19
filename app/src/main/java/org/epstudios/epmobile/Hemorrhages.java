@@ -121,4 +121,16 @@ public class Hemorrhages extends RiskScore {
         showReferenceAlertDialog(R.string.hemorrhages_full_reference,
                 R.string.hemorrhages_link);
     }
+
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected  void showActivityInstructions() {
+        showAlertDialog(R.string.hemorrhages_title,
+                R.string.hemorrhages_instructions);
+    }
+
 }
