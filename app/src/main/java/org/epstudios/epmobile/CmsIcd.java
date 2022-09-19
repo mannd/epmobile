@@ -6,7 +6,7 @@ import android.view.MenuItem;
 import android.widget.CheckBox;
 import android.widget.RadioGroup;
 
-public class CmsIcd extends DiagnosticScore {
+public class CmsIcd extends RiskScore {
     protected CheckBox[] checkBox;
 
     private static final int SUS_VT = 0;
@@ -116,6 +116,8 @@ public class CmsIcd extends DiagnosticScore {
     protected void calculateResult() {
         createViewModel();
         String message = viewModel.getMessage();
+        setDisplayRisks(false);
+        setResultMessage(message);
         displayResult(message, getString(R.string.icd_calculator_title));
     }
 
@@ -162,5 +164,16 @@ public class CmsIcd extends DiagnosticScore {
         }
         efRadioGroup.clearCheck();
         nyhaRadioGroup.clearCheck();
+    }
+
+    @Override
+    protected String getFullReference() {
+        return convertReferenceToText(R.string.cms_icd_reference,
+                R.string.cms_icd_link);
+    }
+
+    @Override
+    protected String getRiskLabel() {
+        return getString(R.string.icd_calculator_title);
     }
 }
