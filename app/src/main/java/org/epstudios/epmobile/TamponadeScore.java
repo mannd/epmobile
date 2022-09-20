@@ -36,17 +36,13 @@ public final class TamponadeScore extends RiskScore {
 
     @Override
     protected String getFullReference() {
-        return getString(R.string.tamponade_reference);
+        return convertReferenceToText(R.string.tamponade_reference,
+                R.string.tamponade_link);
     }
 
     @Override
     protected String getRiskLabel() {
         return getString(R.string.tamponade_title);
-    }
-
-    @Override
-    protected String getShortReference() {
-        return null;
     }
 
     @Override
@@ -61,7 +57,7 @@ public final class TamponadeScore extends RiskScore {
         int result = 0;
         for (int i = 0; i < points.size(); i++) {
             if (checkBox[i].isChecked()) {
-               result += points.get(i);
+                result += points.get(i);
             }
         }
         String message = getResultMessage(result);
@@ -70,12 +66,11 @@ public final class TamponadeScore extends RiskScore {
     }
 
     private String getResultMessage(int result) {
-        String message = String.format(Locale.getDefault(),"Risk Score = %s\n",
+        String message = String.format(Locale.getDefault(), "Risk Score = %s\n",
                 UnitConverter.trimmedTrailingZeros(result / 10.0));
         if (result >= 60) {
             message += getString(R.string.urgent_pericardiocentesis_message);
-        }
-        else {
+        } else {
             message += getString(R.string.postpone_pericardiocentesis_message);
         }
         setResultMessage(message);
@@ -123,6 +118,37 @@ public final class TamponadeScore extends RiskScore {
         checkBox[28] = findViewById(R.id.la_collapse);
         checkBox[29] = findViewById(R.id.respiratory_variations);
         checkBox[30] = findViewById(R.id.swinging_heart);
-
     }
+
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    protected void showActivityInstructions() {
+        showAlertDialog(R.string.tamponade_title,
+                R.string.tamponade_instructions);
+    }
+
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.tamponade_reference,
+                R.string.tamponade_link);
+    }
+
+    @Override
+    protected boolean hideKeyMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityKey() {
+        showKeyAlertDialog(R.string.tamponade_key);
+    }
+
 }

@@ -7,8 +7,8 @@ android {
         applicationId "org.epstudios.epmobile"
         minSdkVersion 14
         targetSdkVersion 33
-        versionCode 75
-        versionName "2.29.1"
+        versionCode 76
+        versionName "2.30.0"
 
     }
 
@@ -26,7 +26,7 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.webkit:webkit:1.4.0'
+    implementation 'androidx.webkit:webkit:1.5.0'
     implementation 'androidx.appcompat:appcompat:1.5.0'
     implementation('androidx.preference:preference:1.2.0') {
         exclude group: 'androidx.lifecycle', module:'lifecycle-viewmodel'

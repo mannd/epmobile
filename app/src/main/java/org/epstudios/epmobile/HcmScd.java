@@ -27,8 +27,7 @@ import android.widget.EditText;
 
 import java.text.DecimalFormat;
 
-public class HcmScd extends RiskScore
-{
+public class HcmScd extends RiskScore {
     private static final int NO_ERROR = 8999;
     private static final int NUMBER_EXCEPTION = 9000;
     private static final int AGE_OUT_OF_RANGE = 9001;
@@ -129,7 +128,13 @@ public class HcmScd extends RiskScore
 
     @Override
     protected String getFullReference() {
-        return getString(R.string.hcm_scd_2014_full_reference);
+
+        String reference1 = convertReferenceToText(R.string.hcm_scd_reference_1,
+                R.string.hcm_scd_link_1);
+        String reference2 = convertReferenceToText(R.string.hcm_scd_reference_2,
+                R.string.hcm_scd_link_2);
+        String fullReference = reference1 + "\n" + reference2;
+        return fullReference;
     }
 
     @Override
@@ -151,7 +156,7 @@ public class HcmScd extends RiskScore
         laSizeEditText.getText().clear();
     }
 
-    private String getResultMessage(double result,int errorCode) {
+    private String getResultMessage(double result, int errorCode) {
         String message = "";
         switch (errorCode) {
             case NUMBER_EXCEPTION:
@@ -182,11 +187,9 @@ public class HcmScd extends RiskScore
             String recommendations;
             if (result < 4) {
                 recommendations = getString(R.string.icd_not_indicated_message);
-            }
-            else if (result < 6) {
+            } else if (result < 6) {
                 recommendations = getString(R.string.icd_may_be_considered_message);
-            }
-            else {
+            } else {
                 recommendations = getString(R.string.icd_should_be_considered_message);
             }
             message = message + "\n" + recommendations;
@@ -197,4 +200,35 @@ public class HcmScd extends RiskScore
         return message;
     }
 
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        Reference[] references = new Reference[2];
+        references[0] = new Reference(this, R.string.hcm_scd_reference_1, R.string.hcm_scd_link_1);
+        references[1] = new Reference(this, R.string.hcm_scd_reference_2, R.string.hcm_scd_link_2);
+        showReferenceAlertDialog(references);
+    }
+
+    @Override
+    protected boolean hideKeyMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityKey() {
+        showKeyAlertDialog(R.string.hcm_scd_key);
+    }
+
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    protected void showActivityInstructions() {
+        showAlertDialog(R.string.hcm_scd_esc_score_title, R.string.hcm_scd_esc_score_instructions);
+    }
 }

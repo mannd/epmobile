@@ -1,0 +1,10 @@
+EP Mobile 2.30.1 Release Notes
+Changes since 2.29.1
+* All references reviewed, updated, and converted to DOI links when available
+* Further fixes for dark mode compatibility
+* Various bug fixes
+* GFR calculator, using CKD-EPI formula
+* APPLE score, to estimate risk of recurrent AF post-ablation
+* All risk score results can now be copied to clipboard
+* New home screen
+* Instructions and references are now menu items

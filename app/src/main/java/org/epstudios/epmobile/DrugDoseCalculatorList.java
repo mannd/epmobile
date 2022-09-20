@@ -25,74 +25,74 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 public class DrugDoseCalculatorList extends EpActivity {
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.selectionlist);
-	initToolbar();
-	ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-				this, R.array.drug_calculator_list,
-				android.R.layout.simple_list_item_1);
+        initToolbar();
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this, R.array.drug_calculator_list,
+                android.R.layout.simple_list_item_1);
         ListView lv = findViewById(R.id.list);
         lv.setAdapter(adapter);
 
         lv.setTextFilterEnabled(true);
 
-		lv.setOnItemClickListener((parent, view, position, id) -> {
-			String selection = ((TextView) view).getText().toString();
-			if (selection
-					.equals(getString(R.string.dabigatran_calculator_title)))
-				dabigatranCalculator();
-			else if (selection
-					.equals(getString(R.string.dofetilide_calculator_title)))
-				dofetilideCalculator();
-			else if (selection
-					.equals(getString(R.string.rivaroxaban_calculator_title)))
-				rivaroxabanCalculator();
-			else if (selection.equals(getString(R.string.warfarin_title)))
-				warfarinCalculator();
-			else if (selection
-					.equals(getString(R.string.sotalol_calculator_title)))
-				sotalolCalculator();
-			else if (selection
-					.equals(getString(R.string.apixaban_calculator_title)))
-				apixabanCalculator();
-else if (selection
-.equals(getString(R.string.edoxaban_calculator_title)))
-edoxabanCalculator();
+        lv.setOnItemClickListener((parent, view, position, id) -> {
+            String selection = ((TextView) view).getText().toString();
+            if (selection
+                    .equals(getString(R.string.dabigatran_calculator_title)))
+                dabigatranCalculator();
+            else if (selection
+                    .equals(getString(R.string.dofetilide_calculator_title)))
+                dofetilideCalculator();
+            else if (selection
+                    .equals(getString(R.string.rivaroxaban_calculator_title)))
+                rivaroxabanCalculator();
+            else if (selection.equals(getString(R.string.warfarin_title)))
+                warfarinCalculator();
+            else if (selection
+                    .equals(getString(R.string.sotalol_calculator_title)))
+                sotalolCalculator();
+            else if (selection
+                    .equals(getString(R.string.apixaban_calculator_title)))
+                apixabanCalculator();
+            else if (selection
+                    .equals(getString(R.string.edoxaban_calculator_title)))
+                edoxabanCalculator();
 
-		});
-	}
+        });
+    }
 
-	private void dabigatranCalculator() {
-		Intent i = new Intent(this, Dabigatran.class);
-		startActivity(i);
-	}
+    private void dabigatranCalculator() {
+        Intent i = new Intent(this, Dabigatran.class);
+        startActivity(i);
+    }
 
-	private void dofetilideCalculator() {
-		Intent i = new Intent(this, Dofetilide.class);
-		startActivity(i);
-	}
+    private void dofetilideCalculator() {
+        Intent i = new Intent(this, Dofetilide.class);
+        startActivity(i);
+    }
 
-	private void rivaroxabanCalculator() {
-		Intent i = new Intent(this, Rivaroxaban.class);
-		startActivity(i);
-	}
+    private void rivaroxabanCalculator() {
+        Intent i = new Intent(this, Rivaroxaban.class);
+        startActivity(i);
+    }
 
-	private void warfarinCalculator() {
-		Intent i = new Intent(this, Warfarin.class);
-		startActivity(i);
-	}
+    private void warfarinCalculator() {
+        Intent i = new Intent(this, Warfarin.class);
+        startActivity(i);
+    }
 
-	private void sotalolCalculator() {
-		Intent i = new Intent(this, Sotalol.class);
-		startActivity(i);
-	}
+    private void sotalolCalculator() {
+        Intent i = new Intent(this, Sotalol.class);
+        startActivity(i);
+    }
 
-	private void apixabanCalculator() {
-		Intent i = new Intent(this, Apixaban.class);
-		startActivity(i);
-	}
+    private void apixabanCalculator() {
+        Intent i = new Intent(this, Apixaban.class);
+        startActivity(i);
+    }
 
     private void edoxabanCalculator() {
         Intent i = new Intent(this, Edoxaban.class);

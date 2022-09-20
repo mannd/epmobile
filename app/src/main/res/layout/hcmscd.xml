@@ -110,16 +110,6 @@
                 android:text="@string/unexplained_syncope_label"
                 android:checked="false" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/hcm_scd_key" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:autoLink="web"
-                android:text="@string/hcm_scd_reference" />
         </LinearLayout>
 
     </ScrollView>

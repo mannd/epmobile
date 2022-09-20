@@ -28,20 +28,16 @@ import android.widget.RadioGroup;
 public class AtriaStroke extends RiskScore {
 
     private RadioGroup radioGroup;
-    
+
     @Override
     protected String getFullReference() {
-        return getString(R.string.atria_stroke_full_reference);
+        return convertReferenceToText(R.string.atria_stroke_full_reference,
+                R.string.atria_stroke_link);
     }
 
     @Override
     protected String getRiskLabel() {
         return getString(R.string.atria_stroke_risk_label);
-    }
-
-    @Override
-    protected String getShortReference() {
-        return getString(R.string.atria_stroke_short_reference);
     }
 
     @Override
@@ -71,16 +67,13 @@ public class AtriaStroke extends RiskScore {
         if (radioButtonId == R.id.age85) {
             result += (hasStrokeHx ? 9 : 6);
             addSelectedRisk(getString(R.string.atria_stroke_age_85));
-        }
-        else if (radioButtonId == R.id.age75) {
+        } else if (radioButtonId == R.id.age75) {
             result += (hasStrokeHx ? 7 : 5);
             addSelectedRisk(getString(R.string.atria_stroke_age_75));
-        }
-        else if (radioButtonId == R.id.age65) {
+        } else if (radioButtonId == R.id.age65) {
             result += (hasStrokeHx ? 7 : 3);
             addSelectedRisk(getString(R.string.atria_stroke_age_65));
-        }
-        else if (radioButtonId == R.id.agelessthan65) {
+        } else if (radioButtonId == R.id.agelessthan65) {
             result += hasStrokeHx ? 8 : 0;
             // Don't put in selectedRisks if risk is 0.
             if (hasStrokeHx) {
@@ -119,7 +112,6 @@ public class AtriaStroke extends RiskScore {
         checkBox[4] = findViewById(R.id.proteinuria);
         checkBox[5] = findViewById(R.id.renal_disease);
         checkBox[6] = findViewById(R.id.stroke);
-
         radioGroup = findViewById(R.id.age);
     }
 
@@ -127,5 +119,28 @@ public class AtriaStroke extends RiskScore {
     protected void clearEntries() {
         super.clearEntries();
         radioGroup.clearCheck();
+    }
+
+
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.atria_stroke_full_reference,
+                R.string.atria_stroke_link);
+    }
+
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected  void showActivityInstructions() {
+        showAlertDialog(R.string.atria_stroke_score_title,
+                R.string.atria_stroke_instructions);
     }
 }

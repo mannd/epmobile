@@ -38,17 +38,13 @@ public class IcdMortalityRisk extends RiskScore {
 
     @Override
     protected String getFullReference() {
-        return getString(R.string.icd_mortality_risk_full_reference);
+        return convertReferenceToText(R.string.icd_mortality_risk_full_reference,
+                R.string.icd_mortality_risk_link);
     }
 
     @Override
     protected String getRiskLabel() {
         return getString(R.string.icd_mortality_risk_title);
-    }
-
-    @Override
-    protected String getShortReference() {
-        return getString(R.string.icd_mortality_risk_short_reference);
     }
 
     @Override
@@ -72,8 +68,7 @@ public class IcdMortalityRisk extends RiskScore {
         String message;
         if (score >= VHR_SCORE) {
             message = getString(R.string.very_high_risk_label) + "\n" + getString(R.string.vhr_message, risk.conv, risk.icd);
-        }
-        else {
+        } else {
             message = getRiskLabel() + " score = " + score + "\n" + getString(R.string.not_vhr_message,
                     risk.conv, risk.icd);
         }
@@ -124,4 +119,27 @@ public class IcdMortalityRisk extends RiskScore {
         checkBox[4] = findViewById(R.id.qrs_greater_than_12);
         checkBox[5] = findViewById(R.id.afb_baseline);
     }
+
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.icd_mortality_risk_full_reference,
+                R.string.icd_mortality_risk_link);
+    }
+
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected  void showActivityInstructions() {
+        showAlertDialog(R.string.icd_mortality_risk_title,
+                R.string.icd_mortality_risk_instructions);
+    }
+
 }

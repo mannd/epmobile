@@ -2,5 +2,5 @@ EP Mobile 2.29.0 Release Notes
 Changes since 2.28.0
 * Update QTm and QTmc to 2020 update of Bogossian formula
 * QTc formula can now be selected in QTc with IVCD module
-* Minor formating changes in QTc calculators
+* Minor formatting changes in QTc calculators
 * Text in QTc IVCD results reflects recommended QTc formulas to be used with each IVCD correction formula

@@ -39,14 +39,8 @@
             style="?android:attr/buttonBarButtonStyle"
             android:text="@string/clear_keep_tcl_label" />
 
-        <Button
-            android:id="@+id/instructions_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            style="?android:attr/buttonBarButtonStyle"
-            android:text="@string/help_label" />
     </LinearLayout>
+    
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

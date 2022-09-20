@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
+        android:id="@+id/instructions"
+        android:title="@string/instructions_label" />
+    <item
+        android:id="@+id/reference"
+        android:title="@string/reference_label" />
+    <item
+        android:id="@+id/key"
+        android:title="@string/key_label" />
+    <item
         android:id="@+id/settings"
         android:title="@string/settings_label" />
     <item

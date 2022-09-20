@@ -96,7 +96,7 @@ public class CmsIcdViewModel {
         }
         StringBuilder sb = new StringBuilder();
         if (indication != null) {
-           sb.append(indication);
+            sb.append(indication);
         }
         if (approval != null) {
             sb.append(CR).append(approval);

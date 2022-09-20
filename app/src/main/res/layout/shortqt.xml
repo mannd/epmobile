@@ -5,42 +5,36 @@
     android:orientation="vertical">
 
     <include layout="@layout/toolbar" />
+    <include layout="@layout/calculatebuttons" />
 
-    <LinearLayout
-        android:id="@+id/calculateButtonsLayout"
-        style="?android:attr/buttonBarStyle"
-        android:divider="?android:dividerVertical"
-        android:orientation="horizontal"
-        android:showDividers="middle"
-        android:layout_alignParentBottom="true"
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+<!--    <LinearLayout-->
+<!--        android:id="@+id/calculateButtonsLayout"-->
+<!--        style="?android:attr/buttonBarStyle"-->
+<!--        android:divider="?android:dividerVertical"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:showDividers="middle"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:gravity="center"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
 
-        <Button
-            android:id="@+id/calculate_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            style="?android:attr/buttonBarButtonStyle"
-            android:text="@string/calculate_label" />
+<!--        <Button-->
+<!--            android:id="@+id/calculate_button"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            style="?android:attr/buttonBarButtonStyle"-->
+<!--            android:text="@string/calculate_label" />-->
 
-        <Button
-            android:id="@+id/clear_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            style="?android:attr/buttonBarButtonStyle"
-            android:text="@string/clear_label" />
+<!--        <Button-->
+<!--            android:id="@+id/clear_button"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            style="?android:attr/buttonBarButtonStyle"-->
+<!--            android:text="@string/clear_label" />-->
 
-        <Button
-            android:id="@+id/instructions_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            style="?android:attr/buttonBarButtonStyle"
-            android:text="@string/instructions_label" />
-    </LinearLayout>
+<!--    </LinearLayout>-->
 
     <ScrollView
         android:layout_width="match_parent"
@@ -160,11 +154,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/mutation_label" />
 
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/sqts_reference" />
         </LinearLayout>
 
     </ScrollView>

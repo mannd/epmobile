@@ -44,7 +44,9 @@ public class AtriaBleed extends RiskScore {
 
     @Override
     protected String getFullReference() {
-        return getString(R.string.atria_bleed_full_reference);
+        String reference = convertReferenceToText(R.string.atria_bleed_full_reference,
+                R.string.atria_bleed_link);
+        return reference;
     }
 
     @Override
@@ -53,15 +55,10 @@ public class AtriaBleed extends RiskScore {
     }
 
     @Override
-    protected String getShortReference() {
-        return getString(R.string.atria_bleed_short_reference);
-    }
-
-    @Override
     protected void calculateResult() {
         int result = 0;
         clearSelectedRisks();
-         for (int i = 0; i < checkBox.length; i++) {
+        for (int i = 0; i < checkBox.length; i++) {
             if (checkBox[i].isChecked()) {
                 addSelectedRisk(checkBox[i].getText().toString());
                 if (i == 0 || i == 1)
@@ -90,7 +87,27 @@ public class AtriaBleed extends RiskScore {
     }
 
 
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
 
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.atria_bleed_full_reference,
+                R.string.atria_bleed_link);
+    }
+
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected  void showActivityInstructions() {
+        showAlertDialog(R.string.atria_bleeding_score_title,
+                R.string.atria_bleed_instructions);
+    }
 
 
 }

@@ -36,8 +36,6 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 
-import org.epstudios.epmobile.QtcCalculator.QtcFormula;
-
 @SuppressWarnings("SpellCheckingInspection")
 public class QtcIvcd extends EpActivity implements View.OnClickListener {
     private enum IntervalRate {
@@ -63,8 +61,6 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
     private String qtcFormula;
 
     private IntervalRate defaultIntervalRateSelection = IntervalRate.INTERVAL;
-
-    private AdapterView.OnItemSelectedListener itemListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,8 +107,7 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
         final int id = v.getId();
         if (id == R.id.calculate_button) {
             calculateQtc();
-        }
-        else if (id == R.id.clear_button) {
+        } else if (id == R.id.clear_button) {
             clearEntries();
         }
     }
@@ -167,7 +162,8 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
                 break;
         }
         qtcFormulaSpinner.setSelection(formula);
-        itemListener = new AdapterView.OnItemSelectedListener() {
+        // do nothing
+        AdapterView.OnItemSelectedListener itemListener = new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View v,
                                        int position, long id) {
@@ -232,7 +228,8 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
             return IntervalRate.RATE;
     }
 
-    private static class ShortQrsException extends Exception {}
+    private static class ShortQrsException extends Exception {
+    }
 
     private void calculateQtc() {
         CharSequence rateIntervalText = rrEditText.getText();
@@ -249,8 +246,7 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
             if (intervalRateSelection.equals(IntervalRate.RATE)) {
                 interval = (int) Math.round(60000.0 / rateInterval);
                 rate = rateInterval;
-            }
-            else {
+            } else {
                 interval = rateInterval;
                 rate = Math.round(60000.0 / rateInterval);
             }
@@ -259,8 +255,7 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
             //noinspection ConditionCoveredByFurtherCondition
             if (rateInterval <= 0 || qt <= 0 || qrs <= 0 || qrs >= qt) {
                 throw new NumberFormatException();
-            }
-            else if (qrs < 120) {
+            } else if (qrs < 120) {
                 throw new ShortQrsException();
             }
             QtcCalculator.QtcFormula formula = getQtcFormula(qtcFormula);
@@ -315,12 +310,51 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
         qtcFormula = prefs.getString("qtc_formula", "BAZETT");
         String intervalRatePreference = prefs.getString("interval_rate",
                 "INTERVAL");
-        if (intervalRatePreference != null){
-            if (intervalRatePreference.equals("INTERVAL"))
-                defaultIntervalRateSelection = IntervalRate.INTERVAL;
-            else
-                defaultIntervalRateSelection = IntervalRate.RATE;
-        }
+        if (intervalRatePreference.equals("INTERVAL"))
+            defaultIntervalRateSelection = IntervalRate.INTERVAL;
+        else
+            defaultIntervalRateSelection = IntervalRate.RATE;
+    }
+
+    // Note this is duplicate code used in QTcIVCDResults also.
+    // No easy way to DRY this that I can think of.
+    // WARNING: Any changes need to be duplicated in QTcIVCDResults.
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        Reference referenceBogossian = new Reference(this,
+                R.string.qtc_ivcd_reference_bogossian,
+                R.string.qtc_ivcd_link_bogossian);
+        Reference referenceRautaharju = new Reference(this,
+                R.string.qtc_ivcd_reference_rautaharju,
+                R.string.qtc_ivcd_link_rautaharju);
+        Reference referenceYankelson = new Reference(this,
+                R.string.qtc_ivcd_reference_yankelson,
+                R.string.qtc_ivcd_link_yankelson);
+        Reference referenceQtcLimits = new Reference(this,
+                R.string.qtc_limits_reference,
+                R.string.qtc_limits_link);
+        Reference[] references = new Reference[4];
+        references[0] = referenceBogossian;
+        references[1] = referenceRautaharju;
+        references[2] = referenceYankelson;
+        references[3] = referenceQtcLimits;
+        showReferenceAlertDialog(references);
+    }
+
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityInstructions() {
+        showAlertDialog(R.string.qtc_ivcd_calculator_title,
+                R.string.qtc_ivcd_calculator_instructions);
     }
 
 }

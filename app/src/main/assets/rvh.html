@@ -3,14 +3,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-09-02 Wed 17:32 -->
+<!-- 2022-09-17 Sat 13:05 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="David Mann" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -31,8 +31,9 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -40,22 +41,22 @@
   }
   pre.src {
     position: relative;
-    overflow: visible;
-    padding-top: 1.2em;
+    overflow: auto;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
-  pre.src:hover:before { display: inline;}
+  pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -191,58 +192,11 @@
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { width: 90%; }
-  /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="./org.css"/>
-<script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2020 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
-<!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
-</script>
 </head>
 <body>
-<div id="content">
+<div id="content" class="content">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -398,17 +352,16 @@ for the JavaScript code in this tag.
 </table>
 <p>
 Amplitudes are given in millimeters, where 1 mm=0.1 mV.
+Adapted from Table 2 of Hancock et al.
 </p>
 
-<div id="outline-container-orgeba9337" class="outline-2">
-<h2 id="orgeba9337">References</h2>
-<div class="outline-text-2" id="text-orgeba9337">
+<div id="outline-container-orge5354af" class="outline-2">
+<h2 id="orge5354af">References</h2>
+<div class="outline-text-2" id="text-orge5354af">
 <ul class="org-ul">
-<li>Table from: Hancock EW, Deal BJ, Mirvis DM, et al. AHA/ACC/HRS recommendations for the standardization and interpretation of the electrocardiogram.  Part V: Electrocardiogram changes associated with cardiac chamber hypertrophy.  J Am Coll Cardiol 2009;53:992. <a href="http://content.onlinejacc.org/article.aspx?articleid=1139534">http://content.onlinejacc.org/article.aspx?articleid=1139534</a></li>
-<li>Myers GB, Klein HA, Stofer BE. Electrocardiographic diagnosis of right ventricular hypertrophy.  Am Heart J 1948;35:1.</li>
-<li>Sokolow M, Lyon TP. The ventricular complex in left ventricular hypertrophy as obtained by unipolar and limb leads.  Am Heart J 1949;37:161.</li>
-<li>Lewis T. Observations upon ventricular hypertrophy with special reference to preponderance of one or the other chamber.  Heart 1914;5:367.</li>
-<li>Butler PM, Leggett SI, Howe CM.  Identification of electrocardiographic criteria for diagnosis of right ventricular hypertrophy due to mitral stenosis.  Am J Cardiol 1986;57:639.</li>
+<li>Hancock EW, Deal BJ, Mirvis DM, Okin P, Kligfield P, Gettes LS. AHA/ACCF/HRS Recommendations for the Standardization and Interpretation of the Electrocardiogram. Journal of the American College of Cardiology. 2009;53(11):992-1002. <a href="https://doi.org/10.1016/j.jacc.2008.12.015">https://doi.org/10.1016/j.jacc.2008.12.015</a></li>
+<li>Butler PM, Leggett SI, Howe CM, Freye CJ, Hindman NB, Wagner GS. Identification of electrocardiographic criteria for diagnosis of right ventricular hypertrophy due to mitral stenosis. Am J Cardiol. 1986;57(8):639-643. <a href="https://doi.org/10.1016/0002-9149(86)90850-7">https://doi.org/10.1016/0002-9149(86)90850-7</a></li>
+<li>Myers GB, Klein HA, Stofer BE. The electrocardiographic diagnosis of right ventricular hypertrophy. Am Heart J. 1948;35(1):1-40. <a href="https://doi.org/10.1016/0002-8703(48)90182-3">https://doi.org/10.1016/0002-8703(48)90182-3</a></li>
 </ul>
 </div>
 </div>

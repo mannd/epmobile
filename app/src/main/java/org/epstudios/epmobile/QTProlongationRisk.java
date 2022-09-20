@@ -26,7 +26,8 @@ import android.widget.CheckBox;
 public class QTProlongationRisk extends RiskScore {
     @Override
     protected String getFullReference() {
-        return getString(R.string.qt_prolongation_risk_full_reference);
+        return convertReferenceToText(R.string.qt_prolongation_risk_full_reference,
+                R.string.qt_prolongation_risk_link);
     }
 
     @Override
@@ -35,15 +36,10 @@ public class QTProlongationRisk extends RiskScore {
     }
 
     @Override
-    protected String getShortReference() {
-        return getString(R.string.qt_prolongation_risk_short_reference);
-    }
-
-    @Override
     protected void calculateResult() {
         int result = 0;
         clearSelectedRisks();
-        int[] points = {1,1,1,2,2,2,3,3,3,6};
+        int[] points = {1, 1, 1, 2, 2, 2, 3, 3, 3, 6};
         for (int n = 0; n < 10; n++) {
             if (checkBox[n].isChecked()) {
                 addSelectedRisk(checkBox[n].getText().toString());
@@ -64,11 +60,9 @@ public class QTProlongationRisk extends RiskScore {
         String resultTrailer = " " + getString(R.string.qt_prolongation_result_trailer);
         if (result < 7) {
             message += getString(R.string.qt_prolongation_low_risk) + resultTrailer;
-        }
-        else if (result < 11) {
+        } else if (result < 11) {
             message += getString(R.string.qt_prolongation_mod_risk) + resultTrailer;
-        }
-        else {  // result >= 11
+        } else {  // result >= 11
             message += getString(R.string.qt_prolongation_high_risk) + resultTrailer;
         }
         setResultMessage(message);
@@ -94,5 +88,27 @@ public class QTProlongationRisk extends RiskScore {
         checkBox[7] = findViewById(R.id.heart_failure_factor);
         checkBox[8] = findViewById(R.id.one_qtc_drug_factor);
         checkBox[9] = findViewById(R.id.two_qtc_drugs_factor);
+    }
+
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.qt_prolongation_risk_full_reference,
+                R.string.qt_prolongation_risk_link);
+    }
+
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityInstructions() {
+        showAlertDialog(R.string.qt_prolongation_risk_title,
+                R.string.qt_prolongation_risk_instructions);
     }
 }

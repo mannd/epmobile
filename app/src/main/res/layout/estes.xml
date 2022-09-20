@@ -63,15 +63,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/estes_intrinsicoid_label" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/estes_key" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/estes_short_reference" />
         </LinearLayout>
 
     </ScrollView>

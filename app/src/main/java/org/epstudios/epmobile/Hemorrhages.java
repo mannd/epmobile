@@ -22,96 +22,115 @@ import android.widget.CheckBox;
 
 @SuppressWarnings("SpellCheckingInspection")
 public class Hemorrhages extends RiskScore {
-	final static private int REBLEED = 5; // this is the only risk worth 2
-											// points
+    final static private int REBLEED = 5; // this is the only risk worth 2
+    // points
 
-	@Override
-	protected void setContentView() {
-		setContentView(R.layout.hemorrhages);
-	}
+    @Override
+    protected void setContentView() {
+        setContentView(R.layout.hemorrhages);
+    }
 
-	@Override
-	protected void init() {
-		checkBox = new CheckBox[11];
+    @Override
+    protected void init() {
+        checkBox = new CheckBox[11];
 
-		checkBox[0] = findViewById(R.id.hepatic_or_renal_disease);
-		checkBox[1] = findViewById(R.id.etoh);
-		checkBox[2] = findViewById(R.id.malignancy);
-		checkBox[3] = findViewById(R.id.older);
-		checkBox[4] = findViewById(R.id.platelet);
-		checkBox[REBLEED] = findViewById(R.id.rebleeding);
-		checkBox[6] = findViewById(R.id.htn_uncontrolled);
-		checkBox[7] = findViewById(R.id.anemia);
-		checkBox[8] = findViewById(R.id.genetic_factors);
-		checkBox[9] = findViewById(R.id.fall_risk);
-		checkBox[10] = findViewById(R.id.stroke);
-	}
+        checkBox[0] = findViewById(R.id.hepatic_or_renal_disease);
+        checkBox[1] = findViewById(R.id.etoh);
+        checkBox[2] = findViewById(R.id.malignancy);
+        checkBox[3] = findViewById(R.id.older);
+        checkBox[4] = findViewById(R.id.platelet);
+        checkBox[REBLEED] = findViewById(R.id.rebleeding);
+        checkBox[6] = findViewById(R.id.htn_uncontrolled);
+        checkBox[7] = findViewById(R.id.anemia);
+        checkBox[8] = findViewById(R.id.genetic_factors);
+        checkBox[9] = findViewById(R.id.fall_risk);
+        checkBox[10] = findViewById(R.id.stroke);
+    }
 
-	@Override
-	protected void calculateResult() {
-		clearSelectedRisks();
-		int result = 0;
-		for (int i = 0; i < checkBox.length; i++) {
-			if (checkBox[i].isChecked()) {
-				addSelectedRisk(checkBox[i].getText().toString());
-				if (i == REBLEED)
-					result += 2;
-				else
-					result++;
-			}
-		}
-		displayResult(getResultMessage(result),
-				getString(R.string.hemorrhages_title));
-	}
+    @Override
+    protected void calculateResult() {
+        clearSelectedRisks();
+        int result = 0;
+        for (int i = 0; i < checkBox.length; i++) {
+            if (checkBox[i].isChecked()) {
+                addSelectedRisk(checkBox[i].getText().toString());
+                if (i == REBLEED)
+                    result += 2;
+                else
+                    result++;
+            }
+        }
+        displayResult(getResultMessage(result),
+                getString(R.string.hemorrhages_title));
+    }
 
-	private String getResultMessage(int result) {
-		String message;
-		if (result < 2)
-			message = getString(R.string.low_risk_hemorrhages);
-		else if (result < 4)
-			message = getString(R.string.intermediate_risk_hemorrhages);
-		else
-			// result >= 4
-			message = getString(R.string.high_risk_hemorrhages);
-		String risk = "";
-		switch (result) {
-		case 0:
-			risk = "1.9";
-			break;
-		case 1:
-			risk = "2.5";
-			break;
-		case 2:
-			risk = "5.3";
-			break;
-		case 3:
-			risk = "8.4";
-			break;
-		case 4:
-			risk = "10.4";
-			break;
-		}
-		if (result >= 5)
-			risk = "12.3";
-		risk = "Bleeding risk is " + risk + " bleeds per 100 patient-years.";
-		message = getRiskLabel() + " score = " + result + "\n" + message + "\n"
-				+ risk;
-		setResultMessage(message);
-		return resultWithShortReference();
-	}
+    private String getResultMessage(int result) {
+        String message;
+        if (result < 2)
+            message = getString(R.string.low_risk_hemorrhages);
+        else if (result < 4)
+            message = getString(R.string.intermediate_risk_hemorrhages);
+        else
+            // result >= 4
+            message = getString(R.string.high_risk_hemorrhages);
+        String risk = "";
+        switch (result) {
+            case 0:
+                risk = "1.9";
+                break;
+            case 1:
+                risk = "2.5";
+                break;
+            case 2:
+                risk = "5.3";
+                break;
+            case 3:
+                risk = "8.4";
+                break;
+            case 4:
+                risk = "10.4";
+                break;
+        }
+        if (result >= 5)
+            risk = "12.3";
+        risk = "Bleeding risk is " + risk + " bleeds per 100 patient-years.";
+        message = getRiskLabel() + " score = " + result + "\n" + message + "\n"
+                + risk;
+        setResultMessage(message);
+        return resultWithShortReference();
+    }
 
-	@Override
-	protected String getFullReference() {
-		return getString(R.string.hemorrhages_full_reference);
-	}
+    @Override
+    protected String getFullReference() {
+        return convertReferenceToText(R.string.hemorrhages_full_reference,
+                R.string.hemorrhages_link);
+    }
 
-	@Override
-	protected String getRiskLabel() {
-		return getString(R.string.hemorrhages_label);
-	}
+    @Override
+    protected String getRiskLabel() {
+        return getString(R.string.hemorrhages_label);
+    }
 
-	@Override
-	protected String getShortReference() {
-		return getString(R.string.hemorrhages_reference);
-	}
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        showReferenceAlertDialog(R.string.hemorrhages_full_reference,
+                R.string.hemorrhages_link);
+    }
+
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected  void showActivityInstructions() {
+        showAlertDialog(R.string.hemorrhages_title,
+                R.string.hemorrhages_instructions);
+    }
+
 }
