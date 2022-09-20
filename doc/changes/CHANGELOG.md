@@ -5,6 +5,19 @@ See [keepachangelog.com](https://keepachangelog.com/en/1.0.0/) for information o
 
 This project roughly utilizes [Semantic Versioning](https://semver.org/spec/v2.0.0.html).  In some versions the PATCH of MAJOR.MINOR.PATCH is omitted.  Note also that unreleased versions are omitted.
 
+## [2.30.0] - 2022-08-18
+### Fixed
+- All references reviewed, updated, and converted to DOI links when available
+- Further fixes for dark mode compatibility
+- Various bug fixes
+### Added
+- GFR calculator, using CKD-EPI formula
+- APPLE score, to estimate risk of recurrent AF post-ablation
+- All risk score results can now be copied to clipboard
+### Changes
+- New home screen
+- Instructions and references are now menu items
+
 ## [2.29.1] - 2022-08-30
 ### Fixed
 - Fix bottom system toolbar not being dark in dark mode on Android 10
