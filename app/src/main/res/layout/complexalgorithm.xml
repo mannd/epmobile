@@ -80,12 +80,4 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/instructions_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        style="?android:attr/buttonBarButtonStyle"
-        android:text="@string/instructions_label" />
-
 </RelativeLayout>
