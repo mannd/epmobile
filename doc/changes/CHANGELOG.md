@@ -5,6 +5,10 @@ See [keepachangelog.com](https://keepachangelog.com/en/1.0.0/) for information o
 
 This project roughly utilizes [Semantic Versioning](https://semver.org/spec/v2.0.0.html).  In some versions the PATCH of MAJOR.MINOR.PATCH is omitted.  Note also that unreleased versions are omitted.
 
+## [2.30.1] - 2022-10-13
+### Fixed
+- Removed no longer needed Instruction button in Atrial Tach Locaiton module
+
 ## [2.30.0] - 2022-08-18
 ### Fixed
 - All references reviewed, updated, and converted to DOI links when available
