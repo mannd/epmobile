@@ -1688,7 +1688,7 @@
     <string name="atria_bleed_instructions">Use this score to predict the risk of bleeding occurring on wafarin for treatment of atrial fibrillation.</string>
     <string name="atria_stroke_instructions">Use this score to predict the risk of thromboembolic events in patients with atrial fibrillation.</string>
     <string name="chads_chadsvasc_stroke_instructions">Use this score to assess the risk of stroke in patients with atrial fibrillation.</string>
-    <string name="hasbled_instructions">Use this score  to estimate the 1-year risk for major bleeding
+    <string name="hasbled_instructions">Use this score to estimate the 1-year risk for major bleeding
         (intracranial, hospitalization, hemoglobin decrease &gt;2 g/L, and/or transfusion) in
         patients with atrial fibrillation.</string>
     <string name="hcm_title_instructions">Use this score to determine risk of sudden cardiac death
