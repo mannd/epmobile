@@ -31,11 +31,7 @@ public class AppleScore extends RiskScore {
         for (int i = 0; i < checkBox.length; i++) {
             if (checkBox[i].isChecked()) {
                 addSelectedRisk(checkBox[i].getText().toString());
-                // TODO: FIX this
-                if (i == 4) // stroke = 2 points
-                    result = result + 2;
-                else
-                    result++;
+                result++;
             }
         }
         displayResult(getResultMessage(result), getString(R.string.apple_score_title));
