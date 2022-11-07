@@ -684,7 +684,7 @@
         Management of Patients with Inherited Primary Arrhythmia Syndromes:
         Document endorsed by HRS, EHRA, and APHRS in May 2013 and by ACCF, AHA,
         PACES, and AEPC in June 2013. Heart Rhythm. 2013;10(12):1932-1963.</string>
-    <string name="brugada_diagnosis_link">https://doi.org/10.1016/j.hrthm.2013.05.01 </string>
+    <string name="brugada_diagnosis_link">https://doi.org/10.1016/j.hrthm.2013.05.014</string>
     <string name="calculator_list_title">Calculators</string>
     <string name="calculator_title">Calculators</string>
     <string name="diagnosis_list_title">Diagnosis</string>
@@ -787,7 +787,7 @@
         current perspectives. J Cardiovasc Electrophysiol.
         2005;16 Suppl 1:S52-58.</string>
     <string name="outflow_vt_link_2">https://doi.org/10.1111/j.1540-8167.2005.50163.x</string>
-    <string name="mitral_annular_vt_instructions" formatted="false"> Use this module to predict the
+    <string name="mitral_annular_vt_instructions" formatted="false">Use this module to predict the
 		location of idiopathic mitral annular ventricular tachycardia or premature
         ventricular complexes based on the ECG.  Note that this module does not deal with
 		mitral isthmus VT in the setting of inferior infarction (see Wilber DJ,
@@ -880,7 +880,7 @@
     <string name="negative_in_all_inf_leads_step">Negative P in All Inferior Leads?</string>
     <string name="sinus_rhythm_p_wave_step">Sinus Rhythm P Wave Morphology?</string>
     <string name="plus_minus_label">Pos/Neg</string>
-    <string name="at_localization_reference"> Kistler PM, Roberts-Thomson Kurt
+    <string name="at_localization_reference">Kistler PM, Roberts-Thomson Kurt
         C., Haqqani HM, et al. P-Wave Morphology in Focal Atrial Tachycardia.
         Journal of the American College of Cardiology. 2006;48(5):1010-1017.</string>
     <string name="at_localization_link">https://doi.org/10.1016/j.jacc.2006.03.058</string>
