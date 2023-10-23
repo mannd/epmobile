@@ -1698,4 +1698,17 @@
         patients on warfarin for atrial fibrillation.</string>
     <string name="icd_risk_instructions">Use this risk score to determine the risk of in-hospital complications following ICD implantation.</string>
     <string name="icd_mortality_risk_instructions">Use this score to determine the mortality with and without ICD implantation in MADIT-II type patients.</string>
+    <string name="frailty_reference_1">Steverink N, Slaets, Schuurmans H, Lis  van. Measuring frailty. The Gerontologist. 2001;41:236-237.</string>
+    <string name="frailty_reference_2">Schuurmans H, Steverink N, Lindenberg S, Frieswijk N, Slaets JPJ. Old or Frail: What Tells Us More?
+        The Journals of Gerontology Series A: Biological Sciences and Medical Sciences. 2004;59(9):M962-M965.</string>
+    <string name="frailty_link_2">https://doi.org/10.1093/gerona/59.9.M962</string>
+    <string name="frailty_reference_3">Drubbel I, Bleijenberg N, Kranenburg G, et al. Identifying frailty: do the Frailty Index and Groningen Frailty Indicator
+        cover different clinical perspectives? a cross-sectional study. BMC Fam Pract. 2013;14:64.</string>
+    <string name="frailty_link_3">https://doi.org/10.1186/1471-2296-14-64</string>
+    <string name="frailty_title">Groningen Frailty Indicator</string>
+    <string name="frailty_instructions">The Groningen Frailty Indicator (GFI) is a validated,
+        15-item questionnaire with a score range from zero to fifteen that assesses the
+        physical, cognitive, social, and psychological domains.
+        A GFI score of four or greater is considered the cut-off point for frailty.</string>
+    <string name="no_link_available">No link available.</string>
 </resources>
