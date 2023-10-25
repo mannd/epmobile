@@ -56,7 +56,6 @@ public class ShortQt extends RiskScore implements OnClickListener {
         int score = 0;
         // ECG criteria
         // one of the short QT intervals must be selected to get other points
-        // TODO: addselected radio button to comple copied risks.
         int selectedQTcId = qtcRadioGroup.getCheckedRadioButtonId();
         if (selectedQTcId == -1
                 && !shortJtCheckBox.isChecked()) {

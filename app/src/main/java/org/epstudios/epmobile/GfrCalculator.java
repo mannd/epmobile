@@ -100,7 +100,6 @@ public class GfrCalculator extends EpActivity implements View.OnClickListener {
                 calculatedResultTextView.setTextColor(Color.RED);
                 return;
             }
-            // TODO: screen out min and max age
             double cr = Double.parseDouble(crText.toString());
             if (getCreatinineUnitSelection() == CreatinineUnit.MMOL) {
                 cr = Gfr.convertMicroMolPerLiterToMgPerDL(cr);
