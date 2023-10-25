@@ -1,5 +1,16 @@
 package org.epstudios.epmobile;
 
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import kotlin.Function;
+
 /**
  * Copyright (C) 2023 EP Studios, Inc.
  * www.epstudiossoftware.com
@@ -22,10 +33,77 @@ package org.epstudios.epmobile;
  * along with epmobile.  If not, see <http://www.gnu.org/licenses/>.
  */
 public class Frailty extends RiskScore {
+    interface FrailtyRule {
+        int operation(int a);
+    }
+
+    private final FrailtyRule independentDependentRule = (a) -> a == 0 ? 0 : 1;
+    private final FrailtyRule noYesRule = (a) -> a == 0 ? 0 : 1;
+    private final FrailtyRule fitnessRule = (a) -> a < 7 ? 1 : 0;
+    private final FrailtyRule sometimesNoYesRule = (a) -> a == 2 ? 1 : 0;
+    private final FrailtyRule sometimesYesNoRule = (a) -> a == 0 ? 0 : 1;
+
+    private class FrailtyRisk {
+        FrailtyRule rule;
+        Spinner spinner;
+
+        FrailtyRisk(FrailtyRule rule, Spinner spinner) {
+            this.rule = rule;
+            this.spinner = spinner;
+        }
+
+        int result() {
+            int value = spinner.getSelectedItemPosition();
+            return rule.operation(value);
+        }
+    }
+
+    private List<FrailtyRisk> risks = new ArrayList<>();
+
+    private void initSpinners() {
+        ArrayAdapter<CharSequence> independentAdapter = ArrayAdapter
+                .createFromResource(this, R.array.independent_dependent_labels,
+                        android.R.layout.simple_spinner_item);
+        independentAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<CharSequence> noYesAdapter = ArrayAdapter
+                .createFromResource(this, R.array.no_yes_labels,
+                        android.R.layout.simple_spinner_item);
+        noYesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<CharSequence> fitnessAdapter = ArrayAdapter
+                .createFromResource(this, R.array.fitness_labels,
+                        android.R.layout.simple_spinner_item);
+        fitnessAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<CharSequence> noSometimesYesAdapter = ArrayAdapter
+                .createFromResource(this, R.array.no_sometimes_yes_labels,
+                        android.R.layout.simple_spinner_item);
+        noSometimesYesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        for (FrailtyRisk risk: risks) {
+            if (risk.rule == independentDependentRule) {
+                risk.spinner.setAdapter(independentAdapter);
+            }
+            else if (risk.rule == noYesRule) {
+                risk.spinner.setAdapter(noYesAdapter);
+            }
+            else if (risk.rule == fitnessRule) {
+                risk.spinner.setAdapter(fitnessAdapter);
+            }
+            else {
+                risk.spinner.setAdapter(noSometimesYesAdapter);
+            }
+        }
+    }
 
     @Override
     protected void calculateResult() {
+        Log.d("EPS", "Risk = " + calculateRisk());
+    }
 
+    public int calculateRisk() {
+        int riskScore = 0;
+        for (FrailtyRisk risk: risks) {
+            riskScore += risk.result();
+        }
+        return riskScore;
     }
 
     @Override
@@ -35,7 +113,39 @@ public class Frailty extends RiskScore {
 
     @Override
     protected void init() {
+        FrailtyRisk shoppingRisk = new FrailtyRisk(independentDependentRule, findViewById(R.id.shopping_spinner));
+        FrailtyRisk walkingRisk = new FrailtyRisk(independentDependentRule, findViewById(R.id.walking_spinner));
+        FrailtyRisk dressingRisk = new FrailtyRisk(independentDependentRule, findViewById(R.id.dressing_spinner));
+        FrailtyRisk toiletRisk = new FrailtyRisk(independentDependentRule, findViewById(R.id.toilet_spinner));
+        FrailtyRisk fitnessRisk = new FrailtyRisk(fitnessRule, findViewById(R.id.fitness_spinner));
+        FrailtyRisk visionRisk = new FrailtyRisk(noYesRule, findViewById(R.id.vision_spinner));
+        FrailtyRisk hearingRisk = new FrailtyRisk(noYesRule, findViewById(R.id.hearing_spinner));
+        FrailtyRisk nourishmentRisk = new FrailtyRisk(noYesRule, findViewById(R.id.nourishment_spinner));
+        FrailtyRisk medicationRisk = new FrailtyRisk(noYesRule, findViewById(R.id.medication_spinner));
+        FrailtyRisk cognitionRisk = new FrailtyRisk(sometimesNoYesRule, findViewById(R.id.cognition_spinner));
+        FrailtyRisk emptinessRisk = new FrailtyRisk(sometimesYesNoRule, findViewById(R.id.emptiness_spinner));
+        FrailtyRisk missPeopleRisk = new FrailtyRisk(sometimesYesNoRule, findViewById(R.id.miss_people_spinner));
+        FrailtyRisk abandonedRisk = new FrailtyRisk(sometimesYesNoRule, findViewById(R.id.abandoned_spinner));
+        FrailtyRisk sadRisk = new FrailtyRisk(sometimesYesNoRule, findViewById(R.id.sad_spinner));
+        FrailtyRisk nervousRisk = new FrailtyRisk(sometimesYesNoRule, findViewById(R.id.nervous_spinner));
 
+        risks.add(shoppingRisk);
+        risks.add(walkingRisk);
+        risks.add(dressingRisk);
+        risks.add(toiletRisk);
+        risks.add(fitnessRisk);
+        risks.add(visionRisk);
+        risks.add(hearingRisk);
+        risks.add(nourishmentRisk);
+        risks.add(medicationRisk);
+        risks.add(cognitionRisk);
+        risks.add(emptinessRisk);
+        risks.add(missPeopleRisk);
+        risks.add(abandonedRisk);
+        risks.add(sadRisk);
+        risks.add(nervousRisk);
+
+        initSpinners();
     }
 
     @Override
