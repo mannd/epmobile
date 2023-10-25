@@ -37,11 +37,33 @@ public class Frailty extends RiskScore {
         int operation(int a);
     }
 
-    private final FrailtyRule independentDependentRule = (a) -> a == 0 ? 0 : 1;
-    private final FrailtyRule noYesRule = (a) -> a == 0 ? 0 : 1;
-    private final FrailtyRule fitnessRule = (a) -> a < 7 ? 1 : 0;
-    private final FrailtyRule sometimesNoYesRule = (a) -> a == 2 ? 1 : 0;
-    private final FrailtyRule sometimesYesNoRule = (a) -> a == 0 ? 0 : 1;
+    private final static FrailtyRule independentDependentRule = (a) -> a == 0 ? 0 : 1;
+    private final static FrailtyRule noYesRule = (a) -> a == 0 ? 0 : 1;
+    private final static FrailtyRule fitnessRule = (a) -> a < 7 ? 1 : 0;
+    private final static FrailtyRule sometimesNoYesRule = (a) -> a == 2 ? 1 : 0;
+    private final static FrailtyRule sometimesYesNoRule = (a) -> a == 0 ? 0 : 1;
+
+    // Below just for testing
+    public static FrailtyRule getFitnessRule() {
+        return fitnessRule;
+    }
+
+    public static FrailtyRule getSometimesNoYesRule() {
+        return sometimesNoYesRule;
+    }
+
+    public static FrailtyRule getSometimesYesNoRule() {
+        return sometimesYesNoRule;
+    }
+
+    public static FrailtyRule getIndependentDependentRule() {
+        return independentDependentRule;
+    }
+
+
+    public static FrailtyRule getNoYesRule() {
+        return noYesRule;
+    }
 
     private class FrailtyRisk {
         FrailtyRule rule;
@@ -98,6 +120,19 @@ public class Frailty extends RiskScore {
     @Override
     protected void calculateResult() {
         Log.d("EPS", "Risk = " + calculateRisk());
+        displayResult(getResultMessage(calculateRisk()),
+                getString(R.string.frailty_title));
+        // TODO: get risks to be copied
+    }
+
+    private String getResultMessage(int riskScore) {
+        String message = "Score = " + riskScore + ".\n";
+        if (riskScore >= 4) {
+            message += "Score indicates frailty.";
+        } else {
+            message += "Score doesn't indicate frailty.";
+        }
+        return message;
     }
 
     public int calculateRisk() {
@@ -152,7 +187,13 @@ public class Frailty extends RiskScore {
 
     @Override
     protected void clearEntries() {
-
+        for (FrailtyRisk risk: risks) {
+            if (risk.rule == fitnessRule) {
+                risk.spinner.setSelection(10);
+            } else {
+                risk.spinner.setSelection(0);
+            }
+        }
     }
 
     protected void showActivityInstructions() {
@@ -182,6 +223,21 @@ public class Frailty extends RiskScore {
 
     @Override
     protected String getRiskLabel() {
-        return null;
+        return getString(R.string.frailty_title);
+    }
+
+    @Override
+    protected boolean hideInstructionsMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected boolean hideKeyMenuItem() {
+        return true;
     }
 }
