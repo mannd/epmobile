@@ -86,11 +86,13 @@ public class Frailty extends RiskScore {
             }
             else if (risk.rule == fitnessRule) {
                 risk.spinner.setAdapter(fitnessAdapter);
+                risk.spinner.setSelection(10);
             }
             else {
                 risk.spinner.setAdapter(noSometimesYesAdapter);
             }
         }
+        // init fitness to 10, which gives a result of 0, like all the other default values.
     }
 
     @Override
