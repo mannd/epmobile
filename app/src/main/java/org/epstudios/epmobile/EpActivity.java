@@ -167,6 +167,7 @@ public abstract class EpActivity extends AppCompatActivity {
         }
     }
 
+    // TODO: References without links not showing up?
     final protected void showReferenceAlertDialog(Reference[] references) {
         Spanned html = convertReferencesToHtml(references);
         if (html != null) {

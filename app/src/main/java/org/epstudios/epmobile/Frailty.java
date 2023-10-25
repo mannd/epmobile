@@ -65,13 +65,19 @@ public class Frailty extends RiskScore {
         return noYesRule;
     }
 
-    private class FrailtyRisk {
+    private final class FrailtyRisk {
         FrailtyRule rule;
         Spinner spinner;
+        String abnormalRiskDescription;
 
-        FrailtyRisk(FrailtyRule rule, Spinner spinner) {
+        FrailtyRisk(FrailtyRule rule, Spinner spinner, String abnormalRiskDescription) {
             this.rule = rule;
             this.spinner = spinner;
+            this.abnormalRiskDescription = abnormalRiskDescription;
+        }
+
+        FrailtyRisk(FrailtyRule rule, Spinner spinner) {
+            this(rule, spinner, "");
         }
 
         int result() {
@@ -119,10 +125,9 @@ public class Frailty extends RiskScore {
 
     @Override
     protected void calculateResult() {
-        Log.d("EPS", "Risk = " + calculateRisk());
+        clearSelectedRisks();
         displayResult(getResultMessage(calculateRisk()),
                 getString(R.string.frailty_title));
-        // TODO: get risks to be copied
     }
 
     private String getResultMessage(int riskScore) {
@@ -132,12 +137,16 @@ public class Frailty extends RiskScore {
         } else {
             message += "Score doesn't indicate frailty.";
         }
+        setResultMessage(message);
         return message;
     }
 
     public int calculateRisk() {
         int riskScore = 0;
         for (FrailtyRisk risk: risks) {
+            if (risk.result() > 0) {
+                addSelectedRisk(risk.abnormalRiskDescription);
+            }
             riskScore += risk.result();
         }
         return riskScore;
@@ -150,21 +159,36 @@ public class Frailty extends RiskScore {
 
     @Override
     protected void init() {
-        FrailtyRisk shoppingRisk = new FrailtyRisk(independentDependentRule, findViewById(R.id.shopping_spinner));
-        FrailtyRisk walkingRisk = new FrailtyRisk(independentDependentRule, findViewById(R.id.walking_spinner));
-        FrailtyRisk dressingRisk = new FrailtyRisk(independentDependentRule, findViewById(R.id.dressing_spinner));
-        FrailtyRisk toiletRisk = new FrailtyRisk(independentDependentRule, findViewById(R.id.toilet_spinner));
-        FrailtyRisk fitnessRisk = new FrailtyRisk(fitnessRule, findViewById(R.id.fitness_spinner));
-        FrailtyRisk visionRisk = new FrailtyRisk(noYesRule, findViewById(R.id.vision_spinner));
-        FrailtyRisk hearingRisk = new FrailtyRisk(noYesRule, findViewById(R.id.hearing_spinner));
-        FrailtyRisk nourishmentRisk = new FrailtyRisk(noYesRule, findViewById(R.id.nourishment_spinner));
-        FrailtyRisk medicationRisk = new FrailtyRisk(noYesRule, findViewById(R.id.medication_spinner));
-        FrailtyRisk cognitionRisk = new FrailtyRisk(sometimesNoYesRule, findViewById(R.id.cognition_spinner));
-        FrailtyRisk emptinessRisk = new FrailtyRisk(sometimesYesNoRule, findViewById(R.id.emptiness_spinner));
-        FrailtyRisk missPeopleRisk = new FrailtyRisk(sometimesYesNoRule, findViewById(R.id.miss_people_spinner));
-        FrailtyRisk abandonedRisk = new FrailtyRisk(sometimesYesNoRule, findViewById(R.id.abandoned_spinner));
-        FrailtyRisk sadRisk = new FrailtyRisk(sometimesYesNoRule, findViewById(R.id.sad_spinner));
-        FrailtyRisk nervousRisk = new FrailtyRisk(sometimesYesNoRule, findViewById(R.id.nervous_spinner));
+        FrailtyRisk shoppingRisk = new FrailtyRisk(independentDependentRule,
+                findViewById(R.id.shopping_spinner), getMobilityRiskDescription("shop"));
+        FrailtyRisk walkingRisk = new FrailtyRisk(independentDependentRule,
+                findViewById(R.id.walking_spinner), getMobilityRiskDescription("walk"));
+        FrailtyRisk dressingRisk = new FrailtyRisk(independentDependentRule,
+                findViewById(R.id.dressing_spinner), getMobilityRiskDescription("dress"));
+        FrailtyRisk toiletRisk = new FrailtyRisk(independentDependentRule,
+                findViewById(R.id.toilet_spinner), getMobilityRiskDescription("go to the toilet"));
+        FrailtyRisk fitnessRisk = new FrailtyRisk(fitnessRule,
+                findViewById(R.id.fitness_spinner), "poor fitness");
+        FrailtyRisk visionRisk = new FrailtyRisk(noYesRule,
+                findViewById(R.id.vision_spinner), "poor vision");
+        FrailtyRisk hearingRisk = new FrailtyRisk(noYesRule,
+                findViewById(R.id.hearing_spinner), "poor hearing");
+        FrailtyRisk nourishmentRisk = new FrailtyRisk(noYesRule,
+                findViewById(R.id.nourishment_spinner), "poor nutrition");
+        FrailtyRisk medicationRisk = new FrailtyRisk(noYesRule,
+                findViewById(R.id.medication_spinner), "on multiple medications");
+        FrailtyRisk cognitionRisk = new FrailtyRisk(sometimesNoYesRule,
+                findViewById(R.id.cognition_spinner), "poor memory or dementia");
+        FrailtyRisk emptinessRisk = new FrailtyRisk(sometimesYesNoRule,
+                findViewById(R.id.emptiness_spinner), "feels empty");
+        FrailtyRisk missPeopleRisk = new FrailtyRisk(sometimesYesNoRule,
+                findViewById(R.id.miss_people_spinner), "Is lonely");
+        FrailtyRisk abandonedRisk = new FrailtyRisk(sometimesYesNoRule,
+                findViewById(R.id.abandoned_spinner), "feels abandoned");
+        FrailtyRisk sadRisk = new FrailtyRisk(sometimesYesNoRule,
+                findViewById(R.id.sad_spinner), "feels sad");
+        FrailtyRisk nervousRisk = new FrailtyRisk(sometimesYesNoRule,
+                findViewById(R.id.nervous_spinner), "feels nervous");
 
         risks.add(shoppingRisk);
         risks.add(walkingRisk);
@@ -183,6 +207,10 @@ public class Frailty extends RiskScore {
         risks.add(nervousRisk);
 
         initSpinners();
+    }
+
+    private String getMobilityRiskDescription(String s) {
+        return "not able to " + s + " independently";
     }
 
     @Override
