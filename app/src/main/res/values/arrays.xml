@@ -126,6 +126,7 @@
         <item>@string/atria_stroke_score_title</item>
         <item>@string/chads_title</item>
         <item>@string/chadsvasc_title</item>
+        <item>@string/frailty_title</item>
         <item>@string/hasbled_title</item>
         <item>@string/hcm_title</item>
         <item>@string/hcm_scd_esc_score_title</item>
@@ -194,6 +195,31 @@
         <item>@string/syncope_oesil_score_title</item>
         <item>@string/syncope_sf_rule_title</item>
     </array>
+    <array name="independent_dependent_labels">
+        <item>Independent</item>
+        <item>Dependent</item>
+    </array>
+    <array name="no_yes_labels">
+        <item>@string/no</item>
+        <item>@string/yes</item>
+    </array>
+    <array name="fitness_labels">
+        <item>"0"</item>
+        <item>"1"</item>
+        <item>"2"</item>
+        <item>"3"</item>
+        <item>"4"</item>
+        <item>"5"</item>
+        <item>"6"</item>
+        <item>"7"</item>
+        <item>"8"</item>
+        <item>"9"</item>
+        <item>"10"</item>
+    </array>
+    <array name="no_sometimes_yes_labels">
+        <item>@string/no</item>
+        <item>@string/sometimes</item>
+        <item>@string/yes</item>
+    </array>
 
-    <string name="gfr_calculator_title">GFR Calculator</string>
 </resources>
