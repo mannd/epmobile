@@ -1698,4 +1698,43 @@
         patients on warfarin for atrial fibrillation.</string>
     <string name="icd_risk_instructions">Use this risk score to determine the risk of in-hospital complications following ICD implantation.</string>
     <string name="icd_mortality_risk_instructions">Use this score to determine the mortality with and without ICD implantation in MADIT-II type patients.</string>
+    <string name="frailty_reference_1">Steverink N, Slaets, Schuurmans H, Lis  van. Measuring frailty. The Gerontologist. 2001;41:236-237.</string>
+    <string name="frailty_reference_2">Schuurmans H, Steverink N, Lindenberg S, Frieswijk N, Slaets JPJ. Old or Frail: What Tells Us More?
+        The Journals of Gerontology Series A: Biological Sciences and Medical Sciences. 2004;59(9):M962-M965.</string>
+    <string name="frailty_link_2">https://doi.org/10.1093/gerona/59.9.M962</string>
+    <string name="frailty_reference_3">Drubbel I, Bleijenberg N, Kranenburg G, et al. Identifying frailty: do the Frailty Index and Groningen Frailty Indicator
+        cover different clinical perspectives? a cross-sectional study. BMC Fam Pract. 2013;14:64.</string>
+    <string name="frailty_link_3">https://doi.org/10.1186/1471-2296-14-64</string>
+    <string name="frailty_title">Groningen Frailty Indicator</string>
+    <string name="frailty_instructions">The Groningen Frailty Indicator (GFI) is a validated,
+        15-item questionnaire with a score range from zero to fifteen that assesses the
+        physical, cognitive, social, and psychological domains.
+        A GFI score of four or greater is considered the cut-off point for frailty.</string>
+    <string name="no_link_available">No link available.</string>
+    <string name="mobility_heading">Mobility</string>
+    <string name="mobility_question">Is the patient able to carry out these tasks single handed without any help? (The use of help resources such as walking stick, walking frame, wheelchair, is considered independent)</string>
+    <string name="shopping_question">1. Shopping</string>
+    <string name="walking_question">2. Walking around outside (around the house or to the neighbours)</string>
+    <string name="dressing_question">3. Dressing and undressing</string>
+    <string name="toilet_question">4. Going to the toilet</string>
+    <string name="fitness_header">Physical fitness</string>
+    <string name="fitness_question">5. What mark does the patient give himself/herself for physical fitness? (Scale 0 to 10)</string>
+    <string name="vision_header">Vision</string>
+    <string name="vision_question">6. Does the patient experience problems in daily life due to poor vision?</string>
+    <string name="hearing_header">Hearing</string>
+    <string name="hearing_question">7. Does the patient experience problems in daily life due to being hard of hearing?)</string>
+    <string name="nourishment_header">Nourishment</string>
+    <string name="nourishment_question">8. During the last 6 months has the patient lost a lot of weight unwillingly? (3 kg in 1 month or 6 kg in 2 months)</string>
+    <string name="morbidity_header">Morbidity</string>
+    <string name="morbidity_question">9. Does the patient take 4 or more different types of medicine?</string>
+    <string name="cognition_header">Cognition (Perception)</string>
+    <string name="cognition_question">10. Does the patient have any complaints about his/her memory or is the patient known to have a dementia syndrome?</string>
+    <string name="nervous_question">15. Has the patient recently felt nervous or anxious?</string>
+    <string name="sad_question">14. Has the patient recently felt downhearted or sad?</string>
+    <string name="abandoned_question">13. Does the patient sometimes feel abandoned?b</string>
+    <string name="miss_people_question">12. Does the patient sometimes miss people around him/her?</string>
+    <string name="emptiness_question">11. Does the patient sometimes experience emptiness around him/her?</string>
+    <string name="psychosocial_header">Psychosocial</string>
+    <string name="gfr_calculator_title">GFR Calculator</string>
+    <string name="sometimes">Sometimes</string>
 </resources>

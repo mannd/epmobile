@@ -1,0 +1,3 @@
+EP Mobile 2.31.0 Release Notes
+Changes since 2.30.3
+* Add Groningen Frailty Indicator

@@ -76,3 +76,6 @@
 22. Cadrin-Tourigny J, Bosman LP, Nozza A, et al. Retracted and Republished: A new prediction model for ventricular arrhythmias in arrhythmogenic right ventricular cardiomyopathy. European Heart Journal. 2019;40(23):1850-1858. doi:10.1093/eurheartj/ehz103
 23. Cadrin-Tourigny J, Bosman LP, Wang W, et al. Sudden Cardiac Death Prediction in Arrhythmogenic Right Ventricular Cardiomyopathy: A Multinational Collaboration. Circ: Arrhythmia and Electrophysiology. 2021;14(1):e008509. doi:10.1161/CIRCEP.120.008509
 24. Cadrin-Tourigny J, Bosman LP, Nozza A, et al. A new prediction model for ventricular arrhythmias in arrhythmogenic right ventricular cardiomyopathy. European Heart Journal. Published online April 20, 2022:ehac180. doi:10.1093/eurheartj/ehac180
+25. Steverink N, Slaets, Schuurmans H, Lis  van. Measuring frailty. The Gerontologist. 2001;41:236-237.
+26. Schuurmans H, Steverink N, Lindenberg S, Frieswijk N, Slaets JPJ. Old or Frail: What Tells Us More? The Journals of Gerontology Series A: Biological Sciences and Medical Sciences. 2004;59(9):M962-M965. doi:10.1093/gerona/59.9.M962
+27. Drubbel I, Bleijenberg N, Kranenburg G, et al. Identifying frailty: do the Frailty Index and Groningen Frailty Indicator cover different clinical perspectives? a cross-sectional study. BMC Fam Pract. 2013;14:64. doi:10.1186/1471-2296-14-64
