@@ -243,7 +243,7 @@ public class V2TransitionRatioVt extends LocationAlgorithm implements OnClickLis
     @Override
     protected void showActivityInstructions() {
         showAlertDialog(R.string.v2_transition_ratio_vt_title,
-                R.string.v2_transtion_ratio_vt_instructions);
+                R.string.v2_transition_ratio_vt_instructions);
     }
 
 }

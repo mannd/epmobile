@@ -18,12 +18,20 @@
         android:layout_marginTop="@dimen/activity_vertical_margin">
 
         <TableRow>
+            <TextView
+                android:text="@string/vt_label"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+        </TableRow>
 
-            <Spinner android:id="@+id/interval_rate_spinner" />
+        <TableRow>
+
+            <TextView
+                android:text="@string/r_wave_amplitude_label"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <EditText
-                android:id="@+id/rrEditText"
-                android:hint="@string/rr_hint"
+                android:id="@+id/rWaveVtEditText"
+                android:hint="@string/r_wave_amplitude_label"
                 android:inputType="number"
                 android:text=""
                 android:importantForAutofill="no" />
@@ -32,12 +40,31 @@
         <TableRow>
 
             <TextView
-                android:text="@string/qt_label"
+                android:text="@string/s_wave_amplitude_label"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <EditText
-                android:id="@+id/qtEditText"
-                android:hint="@string/qt_hint"
+                android:id="@+id/sWaveVtEditText"
+                android:hint="@string/s_wave_amplitude_label"
+                android:inputType="number"
+                android:text=""
+                android:importantForAutofill="no" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="@string/sr_label"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:text="@string/r_wave_amplitude_label"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <EditText
+                android:id="@+id/rWaveSrEditText"
+                android:hint="@string/r_wave_amplitude_label"
                 android:inputType="number"
                 android:text=""
                 android:importantForAutofill="no" />
@@ -46,13 +73,15 @@
         <TableRow>
 
             <TextView
-                android:text="@string/qtc_formula_label"
+                android:text="@string/s_wave_amplitude_label"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
-            <Spinner
-                android:id="@+id/qtc_formula_spinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/sWaveSrEditText"
+                android:hint="@string/s_wave_amplitude_label"
+                android:inputType="number"
+                android:text=""
+                android:importantForAutofill="no" />
         </TableRow>
 
         <LinearLayout
@@ -61,24 +90,18 @@
             android:layout_marginTop="@dimen/activity_vertical_margin">
 
             <TextView
-                android:id="@+id/calculated_qtc"
+                android:id="@+id/calculated_v2_transition_ratio"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:text="@string/qtc_result_label"
+                android:text="@string/v2_transition_ratio_result_label"
                 android:textAppearance="?android:attr/textAppearanceMedium"/>
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/qtc_formula"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:layout_weight="1"
-            android:textAppearance="?android:attr/textAppearanceMedium"/>
 
     </TableLayout>
+
 
 </RelativeLayout>

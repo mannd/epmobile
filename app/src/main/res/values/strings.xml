@@ -1740,7 +1740,7 @@
     <string name="psychosocial_header">Psychosocial</string>
     <string name="gfr_calculator_title">GFR Calculator</string>
     <string name="sometimes">Sometimes</string>
-    <string name="v2_transtion_ratio_vt_instructions">This algorithm is used to
+    <string name="v2_transition_ratio_vt_instructions">This algorithm is used to
         determine the origin of outflow tract ventricular tachycardia or
         premature ventricular complexes when the QRS transition of the
         ventricular complexes is in lead V3.  These complexes can arise from
@@ -1776,4 +1776,14 @@
         \n(sensitivity 95%, specificity 100%)</string>
     <string name="v2_transition_ratio_vt_is_lvot">Transition ratio is ≥ 0.6\nLVOT origin is likely.
         \n(sensitivity 95%, specificity 100%)</string>
+    <string name="r_wave_amplitude_label">R wave in V2</string>
+    <string name="s_wave_amplitude_label">"S wave in V2"</string>
+    <string name="vt_label">VT or PVC complex</string>
+    <string name="sr_label">Sinus rhythm complex</string>
+    <string name="v2_transition_ratio_result_label">V2 transition ratio result</string>
+    <string name="v2_transition_calculated_result">V2 transition ratio = %s</string>
+    <string name="v2_calculator_instructions">Measure the R wave and S wave in lead V2 of a sinus
+        rhythm complex and a ventricular tachycardia or premature ventricular complex.  Units of
+        measurement do not matter as this calculation is based on ratios.  Use positive integers for both
+        the height of the R waves and the depth of the S waves.</string>
 </resources>
