@@ -269,6 +269,8 @@
             android:label="@string/frailty_title" />
         <activity android:name=".V2TransitionRatioVt"
             android:label="@string/v2_transition_ratio_vt_title" />
+        <activity android:name=".V2Calculator"
+            android:label="@string/v2_calculator_title" />
     </application>
 
 </manifest>

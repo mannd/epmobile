@@ -26,18 +26,11 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.SpannableString;
-import android.text.method.LinkMovementMethod;
-import android.text.util.Linkify;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
-
-import java.sql.Ref;
-
-import androidx.annotation.StringRes;
 
 public class V2TransitionRatioVt extends LocationAlgorithm implements OnClickListener {
     private Button yesButton;
@@ -47,20 +40,13 @@ public class V2TransitionRatioVt extends LocationAlgorithm implements OnClickLis
     protected TextView stepTextView;
 
     private boolean isRvot = false;
+    private boolean isCertainlyRvot = false;
     private boolean isLvot = false;
     private boolean isIndeterminate = false;
-    private boolean isSupraValvular = false;
-    private boolean isRvFreeWall = false;
-    private boolean isAnterior = false;
-    private boolean isCaudal = false;
 
-    private final int lateTransitionStep = 1;
-    private final int freeWallStep = 2;
-    private final int anteriorLocationStep = 3;
-    private final int caudalLocationStep = 4;
-    private final int v3TransitionStep = 6;
-    private final int indeterminateLocationStep = 7;
-    private final int supraValvularStep = 9;
+    private final int V3TransitionStep = 1;
+    private final int lateTransitionStep = 2;
+    private final int manualMeasureStep = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,9 +64,10 @@ public class V2TransitionRatioVt extends LocationAlgorithm implements OnClickLis
         // since v2.30.0.
         morphologyButton = findViewById(R.id.morphology_button);
         morphologyButton.setVisibility(View.GONE);
+        morphologyButton.setOnClickListener(this);
+        morphologyButton.setText(R.string.v2_calculator_title);
         stepTextView = findViewById(R.id.stepTextView);
         step1();
-
     }
 
     @Override
@@ -104,7 +91,14 @@ public class V2TransitionRatioVt extends LocationAlgorithm implements OnClickLis
             getNoResult();
         } else if (id == R.id.back_button) {
             getBackResult();
+        } else if (id == R.id.morphology_button) {
+            displayV2Calculator();
         }
+    }
+
+    private void displayV2Calculator() {
+        Intent i = new Intent(this, V2Calculator.class);
+        startActivity(i);
     }
 
     private void getBackResult() {
@@ -115,37 +109,17 @@ public class V2TransitionRatioVt extends LocationAlgorithm implements OnClickLis
     private void getNoResult() {
         adjustStepsForward();
         switch (step) {
-            case lateTransitionStep:
-                step = v3TransitionStep;
-                break;
-            case freeWallStep:
-                isRvFreeWall = false;
-                step = anteriorLocationStep;
-                break;
-            case anteriorLocationStep:
-                isAnterior = false;
-                step = caudalLocationStep;
-                break;
-            case caudalLocationStep:
-                isCaudal = false;
-                showResult();
-                break;
-            case v3TransitionStep:
-                isLvot = true;
-                isRvot = false;
-                isIndeterminate = false;
-                step = supraValvularStep;
-                break;
-            case indeterminateLocationStep:
-                isLvot = true;
-                isRvot = false;
+            case V3TransitionStep:
                 isIndeterminate = true;
-                step = supraValvularStep;
-                break;
-
-            case supraValvularStep:
-                isSupraValvular = false;
                 showResult();
+                break;
+            case lateTransitionStep:
+                step = manualMeasureStep;
+                break;
+            case manualMeasureStep:
+                isLvot = true;
+                showResult();
+                break;
         }
         gotoStep();
     }
@@ -153,36 +127,20 @@ public class V2TransitionRatioVt extends LocationAlgorithm implements OnClickLis
     protected void getYesResult() {
         adjustStepsForward();
         switch (step) {
-            case lateTransitionStep:
-                isRvot = true;
+            case V3TransitionStep:
+                isRvot = false;
+                isCertainlyRvot = false;
                 isIndeterminate = false;
                 isLvot = false;
-                step = freeWallStep;
+                step = lateTransitionStep;
                 break;
-            case freeWallStep:
-                isRvFreeWall = true;
-                step = anteriorLocationStep;
-                break;
-            case anteriorLocationStep:
-                isAnterior = true;
-                step = caudalLocationStep;
-                break;
-            case caudalLocationStep:
-                isCaudal = true;
+            case lateTransitionStep:
+                isRvot = true;
+                isCertainlyRvot = true;
                 showResult();
                 break;
-            case v3TransitionStep:
-                step = indeterminateLocationStep;
-                break;
-            case indeterminateLocationStep:
+            case manualMeasureStep:
                 isRvot = true;
-                isLvot = false;
-                isIndeterminate = true;
-                isRvFreeWall = false;
-                step = anteriorLocationStep;
-                break;
-            case supraValvularStep:
-                isSupraValvular = true;
                 showResult();
                 break;
         }
@@ -196,44 +154,33 @@ public class V2TransitionRatioVt extends LocationAlgorithm implements OnClickLis
 
     protected void step1() {
         stepTextView
-                .setText(getString(R.string.outflow_vt_late_transition_step));
+                .setText(getString(R.string.v2_transition_ratio_v3_transition_step));
         backButton.setEnabled(false);
     }
 
     protected void gotoStep() {
-        if (step != indeterminateLocationStep)
+        if (step == manualMeasureStep) {
+            morphologyButton.setVisibility(View.VISIBLE);
+            yesButton.setText(R.string.less_than_06);
+            noButton.setText(R.string.more_than_06);
+        }
+        else {
+            morphologyButton.setVisibility(View.GONE);
             resetButtons();
+        }
         switch (step) {
-            case lateTransitionStep:
+            case V3TransitionStep:
                 step1();
                 break;
-            case freeWallStep:
-                stepTextView.setText(getString(R.string.outflow_vt_free_wall_step));
+            case lateTransitionStep:
+                stepTextView.setText(getString(R.string.v2_transition_ratio_vt_late_transition_step));
                 break;
-            case anteriorLocationStep:
+            case manualMeasureStep:
                 stepTextView
-                        .setText(getString(R.string.outflow_vt_anterior_location_step));
-                break;
-            case caudalLocationStep:
-                stepTextView
-                        .setText(getString(R.string.outflow_vt_caudal_location_step));
-                break;
-            case v3TransitionStep:
-                stepTextView
-                        .setText(getString(R.string.outflow_vt_v3_transition_step));
-                break;
-            case indeterminateLocationStep:
-                stepTextView
-                        .setText(getString(R.string.outflow_vt_indeterminate_location_step));
-                yesButton.setText(getString(R.string.rv_label));
-                noButton.setText(getString(R.string.lv_label));
-                break;
-            case supraValvularStep:
-                stepTextView
-                        .setText(getString(R.string.outflow_vt_supravalvular_step));
+                        .setText(getString(R.string.v2_transition_ratio_vt_manual_measure_step));
                 break;
         }
-        if (step != lateTransitionStep)
+        if (step != V3TransitionStep)
             backButton.setEnabled(true);
     }
 
@@ -260,19 +207,15 @@ public class V2TransitionRatioVt extends LocationAlgorithm implements OnClickLis
     protected String getMessage() {
         String message = "";
         if (isIndeterminate) {
-            message += "Note: Location (RV vs LV) is indeterminate. "
-                    + "Results reflect one possible localization.\n";
+            message += getString(R.string.v2_transtion_ratio_vt_indeterminate_location);
         }
-        if (isRvot) {
-            message += getString(R.string.rvot_label);
-            message += isRvFreeWall ? "\nFree wall" : "\nSeptal";
-            message += isAnterior ? "\nAnterior" : "\nPosterior";
-            message += isCaudal ? "\nCaudal (> 2 cm from pulmonic valve)"
-                    : "\nCranial (< 2 cm from pulmonic valve)";
+        else if (isCertainlyRvot) {
+            message += getString(R.string.v2_transition_ratio_vt_is_certainly_rvot);
+        }
+        else if (isRvot) {
+            message += getString(R.string.v2_transition_ratio_vt_is_rvot);
         } else if (isLvot) {
-            message += getString(R.string.lvot_label);
-            message += isSupraValvular ? getString(R.string.cusp_vt_label)
-                    : getString(R.string.mitral_annular_vt_label);
+            message += getString(R.string.v2_transition_ratio_vt_is_lvot);
         } else {
             message = getString(R.string.indeterminate_location);
         }
