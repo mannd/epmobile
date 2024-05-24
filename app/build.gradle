@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "org.epstudios.epmobile"
@@ -21,8 +21,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    buildToolsVersion '33.0.0'
     namespace 'org.epstudios.epmobile'
+    buildFeatures {
+        buildConfig true
+    }
 }
 
 dependencies {
