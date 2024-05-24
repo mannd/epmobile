@@ -96,7 +96,7 @@
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
                 android:text="@string/v2_transition_ratio_result_label"
-                android:textAppearance="?android:attr/textAppearanceMedium"/>
+                android:textAppearance="?android:attr/textAppearanceLarge"/>
 
         </LinearLayout>
 
