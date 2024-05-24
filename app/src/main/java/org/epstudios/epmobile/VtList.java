@@ -29,6 +29,9 @@ public class VtList extends EpActivity {
             else if (selection
                     .equals(getString(R.string.mitral_annular_vt_title)))
                 mitralAnnularVt();
+            else if (selection
+                    .equals(getString(R.string.v2_transition_ratio_vt_title)))
+                v2TransitionRatioVt();
         });
     }
 
@@ -47,4 +50,8 @@ public class VtList extends EpActivity {
         startActivity(i);
     }
 
+    protected void v2TransitionRatioVt() {
+        Intent i = new Intent(this, V2TransitionRatioVt.class);
+        startActivity(i);
+    }
 }

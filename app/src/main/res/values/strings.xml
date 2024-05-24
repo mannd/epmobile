@@ -753,7 +753,9 @@
     <string name="outflow_vt_caudal_location_step">Positive or isoelectric QRS in aVL?</string>
     <string name="outflow_vt_v3_transition_step">QRS transition in V3?</string>
     <string name="outflow_vt_indeterminate_location_step">VT location may be right or left sided.  Select
-        RV to find predicted RV location, LV to find predicted LV location.</string>
+        RV to find predicted RV location, LV to find predicted LV location.
+        Or use the V2 Transition Ratio module to determine if location is RV or LV.
+    </string>
     <string name="outflow_vt_supravalvular_step">Absent S in V5 or V6?</string>
     <string name="outflow_vt_location_label">Ventricular Tachycardia Location</string>
     <string name="rv_label">RV</string>
@@ -772,8 +774,9 @@
         vertical axis and a left bundle branch block pattern in the precordial leads.
         The earlier the precordial transition lead, the more likely the VT is
         from the LVOT.  If the precordial transition is in lead V3
-        it is not possible to use an algorithm to determine from which
-        ventricle the VT arises.</string>
+        it is not possible to use this algorithm to determine from which
+        ventricle the VT arises using this algorithm.  Instead use the V2 Transition
+        Ratio module</string>
     <string name="outflow_vt_reference_0">Tanner H, Hindricks G, Schirdewahn P,
         et al. Outflow tract tachycardia with R/S transition in lead V3.
         Journal of the American College of Cardiology. 2005;45(3):418-423.</string>
@@ -1737,4 +1740,26 @@
     <string name="psychosocial_header">Psychosocial</string>
     <string name="gfr_calculator_title">GFR Calculator</string>
     <string name="sometimes">Sometimes</string>
+    <string name="v2_transtion_ratio_vt_instructions">This algorithm is used to
+        determine the origin of outflow tract ventricular tachycardia or
+        premature ventricular complexes when the QRS transition of the
+        ventricular complexes is in lead V3.  These complexes can arise from
+        either the right or left ventricular outflow tract (RVOT or LVOT).
+        \n\nThis algorithm requires measuring the percentage R wave in sinus rhythm
+        and the percentage R wave in VT.  You can then calculate the
+        V2 transition ratio yourself or have the app calculate it.
+        \n\nTo calculate the V2 transition ratio manually, measure the R wave in lead
+        V2 in a sinus beat, and divide by the total amplitude of the complex in
+        sinus rhythm, i.e. (R/R+S), which is the percentage R wave in sinus rhythm.
+        Do the same calculation with a ventricular complex, i.e. (R/R+S),
+        which is the percentage R wave in VT.  Then divide the percentage R wave in
+        VT by the percentage R wave in sinus rhythm to get the V2 transition ratio.
+    </string>
+    <string name="v2_transition_ratio_vt_reference_0">Betensky BP, Park RE,
+        Marchlinski FE, et al. The V(2) transition ratio: a new electrocardiographic
+        criterion for distinguishing left from right ventricular outflow tract
+        tachycardia origin. J Am Coll Cardiol. 2011;57(22):2255-2262.
+    </string>
+    <string name="v2_transition_ratio_vt_link_0">https://doi.org/10.1016/j.jacc.2011.01.035
+    </string>
 </resources>

@@ -267,6 +267,8 @@
             android:label="@string/apple_score_title" />
         <activity android:name=".Frailty"
             android:label="@string/frailty_title" />
+        <activity android:name=".V2TransitionRatioVt"
+            android:label="@string/v2_transition_ratio_vt_title" />
     </application>
 
 </manifest>
