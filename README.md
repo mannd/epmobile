@@ -23,7 +23,7 @@ EP Mobile is free, open source, and licensed under the
 [GNU GPL v3 license.](http://www.gnu.org/licenses/gpl.html)
 
 ## License
-Copyright © 2011-2023 [EP Studios, Inc.](http://www.epstudiossoftware.com)
+Copyright © 2011-2024 [EP Studios, Inc.](http://www.epstudiossoftware.com)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
