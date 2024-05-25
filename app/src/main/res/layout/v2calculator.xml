@@ -32,7 +32,7 @@
             <EditText
                 android:id="@+id/rWaveVtEditText"
                 android:hint="@string/r_wave_amplitude_label"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:text=""
                 android:importantForAutofill="no" />
         </TableRow>
@@ -46,7 +46,7 @@
             <EditText
                 android:id="@+id/sWaveVtEditText"
                 android:hint="@string/s_wave_amplitude_label"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:text=""
                 android:importantForAutofill="no" />
         </TableRow>
@@ -65,7 +65,7 @@
             <EditText
                 android:id="@+id/rWaveSrEditText"
                 android:hint="@string/r_wave_amplitude_label"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:text=""
                 android:importantForAutofill="no" />
         </TableRow>
@@ -79,7 +79,7 @@
             <EditText
                 android:id="@+id/sWaveSrEditText"
                 android:hint="@string/s_wave_amplitude_label"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:text=""
                 android:importantForAutofill="no" />
         </TableRow>
@@ -99,7 +99,6 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"/>
 
         </LinearLayout>
-
 
     </TableLayout>
 

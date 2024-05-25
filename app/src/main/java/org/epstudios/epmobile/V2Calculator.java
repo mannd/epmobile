@@ -90,10 +90,10 @@ public class V2Calculator extends EpActivity implements View.OnClickListener {
         resultText.setText(null);
         resultText.setTextColor(getResources().getColor(R.color.green));
         try {
-            int rVt = abs(Integer.parseInt(rVtText.toString()));
-            int sVt = abs(Integer.parseInt(sVtText.toString()));
-            int rSr = abs(Integer.parseInt(rSrText.toString()));
-            int sSr = abs(Integer.parseInt(sSrText.toString()));
+            double rVt = abs(Double.parseDouble(rVtText.toString()));
+            double sVt = abs(Double.parseDouble(sVtText.toString()));
+            double rSr = abs(Double.parseDouble(rSrText.toString()));
+            double sSr = abs(Double.parseDouble(sSrText.toString()));
             double rsVt = rVt + sVt;
             double rsSr = rSr + sSr;
             if (rsVt == 0 || rsSr == 0) {
@@ -102,7 +102,7 @@ public class V2Calculator extends EpActivity implements View.OnClickListener {
             double ratioVt = rVt / rsVt;
             double ratioSr = rSr / rsSr;
             double v2Ratio = ratioVt / ratioSr;
-            DecimalFormat df = new DecimalFormat("#.#");
+            DecimalFormat df = new DecimalFormat("#.##");
             String message = "";
             message += String.format(getString(R.string.v2_transition_calculated_result), df.format(v2Ratio));
             message += "\n";
