@@ -5,6 +5,10 @@ See [keepachangelog.com](https://keepachangelog.com/en/1.0.0/) for information o
 
 This project roughly utilizes [Semantic Versioning](https://semver.org/spec/v2.0.0.html).  In some versions the PATCH of MAJOR.MINOR.PATCH is omitted.  Note also that unreleased versions are omitted.
 
+## [2.32.0] - 2024-05-25
+### Added
+- V2 Transition Ratio
+
 ## [2.31.0] - 2023-10-25
 ### Added
 - Groningen Frailty Indicator

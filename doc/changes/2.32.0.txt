@@ -1,0 +1,3 @@
+EP Mobile 2.32.0 Release Notes
+Changes since 2.31.0
+* Add V2 transition ratio module
