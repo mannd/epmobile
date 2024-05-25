@@ -1745,8 +1745,8 @@
         premature ventricular complexes when the QRS transition of the
         ventricular complexes is in lead V3.  These complexes can arise from
         either the right or left ventricular outflow tract (RVOT or LVOT).
-        \n\nThis algorithm requires measuring the percentage R wave in sinus rhythm
-        and the percentage R wave in VT.  You can then calculate the
+        \n\nThis algorithm requires measuring the R and S waves in sinus rhythm
+        and in VT.  You can then calculate the
         V2 transition ratio yourself or have the app calculate it.
         \n\nTo calculate the V2 transition ratio manually, measure the R wave in lead
         V2 in a sinus beat, and divide by the total amplitude of the complex in
@@ -1754,6 +1754,7 @@
         Do the same calculation with a ventricular complex, i.e. (R/R+S),
         which is the percentage R wave in VT.  Then divide the percentage R wave in
         VT by the percentage R wave in sinus rhythm to get the V2 transition ratio.
+        \n\nNote that the app EP Calipers is useful to make these measurements.
     </string>
     <string name="v2_transition_ratio_vt_reference_0">Betensky BP, Park RE,
         Marchlinski FE, et al. The V(2) transition ratio: a new electrocardiographic
@@ -1784,6 +1785,6 @@
     <string name="v2_transition_calculated_result">V2 transition ratio = %s</string>
     <string name="v2_calculator_instructions">Measure the R wave and S wave in lead V2 of a sinus
         rhythm complex and a ventricular tachycardia or premature ventricular complex.  Units of
-        measurement do not matter as this calculation is based on ratios.  Use positive integers for both
-        the height of the R waves and the depth of the S waves.</string>
+        measurement do not matter as this calculation is based on ratios.\n\nNote that the app EP
+        Calipers is useful for making these measurements.</string>
 </resources>
