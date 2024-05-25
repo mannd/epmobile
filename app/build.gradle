@@ -1,14 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "org.epstudios.epmobile"
         minSdkVersion 14
         targetSdkVersion 33
         versionCode 80
-        versionName "2.31.0"
+        versionName "2.32.0"
     }
 
     buildTypes {
@@ -21,8 +21,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    buildToolsVersion '33.0.0'
     namespace 'org.epstudios.epmobile'
+    buildFeatures {
+        buildConfig true
+    }
 }
 
 dependencies {

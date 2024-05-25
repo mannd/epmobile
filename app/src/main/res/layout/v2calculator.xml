@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar" />
+    <include layout="@layout/calculatebuttons" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:stretchColumns="*"
+        android:padding="10dp"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin">
+
+        <TableRow>
+            <TextView
+                android:text="@string/vt_label"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="@string/r_wave_amplitude_label"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <EditText
+                android:id="@+id/rWaveVtEditText"
+                android:hint="@string/r_wave_amplitude_label"
+                android:inputType="numberDecimal"
+                android:text=""
+                android:importantForAutofill="no" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="@string/s_wave_amplitude_label"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <EditText
+                android:id="@+id/sWaveVtEditText"
+                android:hint="@string/s_wave_amplitude_label"
+                android:inputType="numberDecimal"
+                android:text=""
+                android:importantForAutofill="no" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="@string/sr_label"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:text="@string/r_wave_amplitude_label"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <EditText
+                android:id="@+id/rWaveSrEditText"
+                android:hint="@string/r_wave_amplitude_label"
+                android:inputType="numberDecimal"
+                android:text=""
+                android:importantForAutofill="no" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="@string/s_wave_amplitude_label"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <EditText
+                android:id="@+id/sWaveSrEditText"
+                android:hint="@string/s_wave_amplitude_label"
+                android:inputType="numberDecimal"
+                android:text=""
+                android:importantForAutofill="no" />
+        </TableRow>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin">
+
+            <TextView
+                android:id="@+id/calculated_v2_transition_ratio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="@string/v2_transition_ratio_result_label"
+                android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+        </LinearLayout>
+
+    </TableLayout>
+
+
+</RelativeLayout>
