@@ -1,0 +1,3 @@
+EP Mobile 2.32.1 Release Notes
+Changes since 2.32.1
+* Fix divide by zero error in V2 Transition Calculator
