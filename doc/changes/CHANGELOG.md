@@ -6,6 +6,10 @@ See [keepachangelog.com](https://keepachangelog.com/en/1.0.0/) for information o
 This project roughly utilizes [Semantic Versioning](https://semver.org/spec/v2.0.0.html).  In some versions the PATCH of MAJOR.MINOR.PATCH is omitted.  Note also that unreleased versions are omitted.
 
 ## [2.32.0] - 2024-05-25
+### Fixed
+- Divide by zero error in V2 Transtion Calculator
+
+## [2.32.0] - 2024-05-25
 ### Added
 - V2 Transition Ratio
 
