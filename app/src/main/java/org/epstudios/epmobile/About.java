@@ -23,7 +23,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 public class About extends Activity {
-    private final static String VERSION = "2.32.1";
+    private final static String VERSION = "2.33.0";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
