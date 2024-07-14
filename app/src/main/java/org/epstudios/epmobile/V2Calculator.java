@@ -101,6 +101,9 @@ public class V2Calculator extends EpActivity implements View.OnClickListener {
             }
             double ratioVt = rVt / rsVt;
             double ratioSr = rSr / rsSr;
+            if (ratioSr == 0) {
+                throw new NumberFormatException();
+            }
             double v2Ratio = ratioVt / ratioSr;
             DecimalFormat df = new DecimalFormat("#.##");
             String message = "";
