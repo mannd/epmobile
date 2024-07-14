@@ -1,0 +1,3 @@
+EP Mobile 2.33.0 Release Notes
+Changes since 2.32.1
+* Target SDK version changed to Android 34, as required by Google
