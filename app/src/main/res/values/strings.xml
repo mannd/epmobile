@@ -1787,4 +1787,5 @@
         rhythm complex and a ventricular tachycardia or premature ventricular complex.  Units of
         measurement do not matter as this calculation is based on ratios.\n\nNote that the app EP
         Calipers is useful for making these measurements.</string>
+    <string name="hcm_list_title">HCM SCD Risk Scores</string>
 </resources>

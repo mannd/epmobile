@@ -128,8 +128,7 @@
         <item>@string/chadsvasc_title</item>
         <item>@string/frailty_title</item>
         <item>@string/hasbled_title</item>
-        <item>@string/hcm_title</item>
-        <item>@string/hcm_scd_esc_score_title</item>
+        <item>@string/hcm_list_title</item>
         <item>@string/hemorrhages_title</item>
         <item>@string/icd_risk_title</item>
         <item>@string/icd_mortality_risk_title</item>
@@ -196,6 +195,12 @@
         <item>@string/syncope_oesil_score_title</item>
         <item>@string/syncope_sf_rule_title</item>
     </array>
+    <array name="hcm_scd_risk_scores">
+        <item>@string/hcm_title</item>
+        <item>@string/hcm_scd_esc_score_title</item>
+        <item>@string/hcm_scd_2022_title</item>
+        <item>@string/hcm_scd_2024_title</item>
+    </array>
     <array name="independent_dependent_labels">
         <item>Independent</item>
         <item>Dependent</item>
@@ -224,4 +229,6 @@
     </array>
 
     <string name="v2_transition_ratio_vt_title">V2 Transition Ratio</string>
+    <string name="hcm_scd_2022_title">HCM SCD 2022 (ESC)</string>
+    <string name="hcm_scd_2024_title">HCM SCD 2024 (AHA/ACC)</string>
 </resources>

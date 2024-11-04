@@ -271,6 +271,8 @@
             android:label="@string/v2_transition_ratio_vt_title" />
         <activity android:name=".V2Calculator"
             android:label="@string/v2_calculator_title" />
+        <activity android:name=".HcmScdList"
+            android:label="@string/hcm_list_title" />
     </application>
 
 </manifest>

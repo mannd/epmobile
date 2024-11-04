@@ -40,6 +40,8 @@ public class RiskScoreList extends EpActivity {
                 icdRiskScore();
             else if (selection.equals(getString(R.string.hcm_scd_esc_score_title)))
                 hcmScdRisk();
+            else if (selection.equals(getString(R.string.hcm_list_title)))
+                hcmScdList();
             else if (selection.equals(getString(R.string.same_tt2r2_title)))
                 sameTt2r2Score();
             else if (selection.equals(getString(R.string.atria_bleeding_score_title)))
@@ -137,6 +139,10 @@ public class RiskScoreList extends EpActivity {
 
     private void arvcRisk() {
         startActivity(new Intent(this, ArvcRisk.class));
+    }
+
+    private void hcmScdList() {
+        startActivity(new Intent(this, HcmScdList.class));
     }
 
 }
