@@ -27,7 +27,7 @@ import android.widget.EditText;
 
 import java.text.DecimalFormat;
 
-public class HcmScd extends RiskScore {
+public class HcmRiskScd extends RiskScore {
     private static final int NO_ERROR = 8999;
     private static final int NUMBER_EXCEPTION = 9000;
     private static final int AGE_OUT_OF_RANGE = 9001;

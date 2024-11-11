@@ -234,7 +234,7 @@
         <activity android:name=".CreatinineClearanceCalculator"
             android:label="@string/creatinine_clearance_calculator_title">
          </activity>
-        <activity android:name=".HcmScd"
+        <activity android:name=".HcmRiskScd"
             android:label="@string/hcm_scd_esc_score_title">
         </activity>
         <activity android:name=".AtriaBleed"
@@ -272,7 +272,9 @@
         <activity android:name=".V2Calculator"
             android:label="@string/v2_calculator_title" />
         <activity android:name=".HcmScdList"
-            android:label="@string/hcm_list_title" />
+            android:label="@string/hcm_scd_list_title" />
+        <activity android:name=".HcmScd2022"
+            android:label="@string/hcm_scd_2022_title" />
     </application>
 
 </manifest>

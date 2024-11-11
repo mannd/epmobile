@@ -1787,5 +1787,10 @@
         rhythm complex and a ventricular tachycardia or premature ventricular complex.  Units of
         measurement do not matter as this calculation is based on ratios.\n\nNote that the app EP
         Calipers is useful for making these measurements.</string>
-    <string name="hcm_list_title">HCM SCD Risk Scores</string>
+    <string name="hcm_scd_list_title">HCM SCD Risk Scores</string>
+    <string name="apical_aneurysm_label">Apical aneurysm</string>
+    <string name="low_lvef_label">Low LVEF (&#8804; 50%)</string>
+    <string name="extensive_lge_label">Extensive LGE</string>
+    <string name="abnormal_bp_response_label">Abnormal BP response</string>
+    <string name="sarcomeric_mutation_label">Sarcomeric mutation</string>
 </resources>

@@ -51,6 +51,9 @@ public class HcmScdList extends EpActivity {
                     .equals(getString(R.string.hcm_scd_esc_score_title))) {
                hcmScd2014();
             }
+            else if (selection.equals(getString(R.string.hcm_scd_2022_title))) {
+                hcmScd2022();
+            }
         });
     }
 
@@ -60,7 +63,12 @@ public class HcmScdList extends EpActivity {
     }
 
     private void hcmScd2014() {
-        Intent i = new Intent(this, HcmScd.class);
+        Intent i = new Intent(this, HcmRiskScd.class);
+        startActivity(i);
+    }
+
+    private void hcmScd2022() {
+        Intent i = new Intent(this, HcmScd2022.class);
         startActivity(i);
     }
 }
