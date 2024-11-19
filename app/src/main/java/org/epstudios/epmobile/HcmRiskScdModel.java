@@ -23,6 +23,58 @@ import android.content.Context;
  * You should have received a copy of the GNU General Public License
  * along with epmobile.  If not, see <http://www.gnu.org/licenses/>.
  */
+
+class AgeOutOfRangeException extends Exception {
+    private int age;
+    public AgeOutOfRangeException(int age) {
+        this.age = age;
+    }
+
+    public int getAge() {
+        return age;
+    }
+}
+
+class LvWallThicknessOutOfRangeException extends Exception {
+    private int lvWallThickness;
+    public LvWallThicknessOutOfRangeException(int lvWallThickness) {
+        this.lvWallThickness = lvWallThickness;
+    }
+
+    public int getLvWallThickness() {
+        return lvWallThickness;
+    }
+}
+
+class LvotGradientOutOfRangeException extends Exception {
+    private int lvotGradient;
+    public LvotGradientOutOfRangeException(int lvotGradient) {
+        this.lvotGradient = lvotGradient;
+    }
+
+    public int getLvotGradient() {
+        return lvotGradient;
+    }
+}
+
+class ParsingException extends Exception {
+    public ParsingException(String message) {
+        super(message);
+    }
+    public ParsingException() {}
+}
+
+class LaSizeOutOfRangeException extends Exception {
+    private int laSize;
+    public LaSizeOutOfRangeException(int laSize) {
+        this.laSize = laSize;
+    }
+
+    public int getLaSize() {
+        return laSize;
+    }
+}
+
 public class HcmRiskScdModel {
     HcmRiskScdModel(Context context, String ageString, String maxLvWallThicknessString, String maxLvotGradientString,
                     String laSizeString, boolean hasFamilyHxScd, boolean hasNsvt, boolean hasSyncope) {
@@ -45,32 +97,44 @@ public class HcmRiskScdModel {
     private boolean hasNsvt;
     private boolean hasSyncope;
 
-    double calculateResult() throws IllegalArgumentException {
+    double calculateResult() throws AgeOutOfRangeException,
+            LvWallThicknessOutOfRangeException,
+            LvotGradientOutOfRangeException,
+            LaSizeOutOfRangeException,
+            ParsingException {
+        try {
             int age = Integer.parseInt(ageString);
             int maxLvWallThickness = Integer.parseInt(maxLvWallThicknessString);
             int maxLvotGradient = Integer.parseInt(maxLvotGradientString);
-            int laDiameter = Integer.parseInt(laSizeString);
+            int laSize = Integer.parseInt(laSizeString);
             if (age > 115 || age < 16) {
-                throw new IllegalArgumentException(context.getString((R.string.invalid_age_message)));
+                throw new AgeOutOfRangeException(age);
             }
             if (maxLvWallThickness < 10 || maxLvWallThickness > 35) {
-                throw new IllegalArgumentException(context.getString(R.string.invalid_thickness_message));
+                throw new LvWallThicknessOutOfRangeException(maxLvWallThickness);
             }
             if (maxLvotGradient < 2 || maxLvotGradient > 154) {
-                throw new IllegalArgumentException(context.getString(R.string.invalid_gradient_message));
+                throw new LvotGradientOutOfRangeException(maxLvotGradient);
             }
-            if (laDiameter < 28 || laDiameter > 67) {
-                throw new IllegalArgumentException(context.getString(R.string.invalid_diameter_message));
+            if (laSize < 28 || laSize > 67) {
+                throw new LaSizeOutOfRangeException(laSize);
             }
-            final double coefficient = 0.998;
-            double prognosticIndex = 0.15939858 * maxLvWallThickness
-                    - 0.00294271 * maxLvWallThickness * maxLvWallThickness
-                    + 0.0259082 * laDiameter
-                    + 0.00446131 * maxLvotGradient
-                    + (hasFamilyHxScd ? 0.4583082 : 0.0)
-                    + (hasNsvt ? 0.82639195 : 0.0)
-                    + (hasSyncope ? 0.71650361 : 0.0)
-                    - 0.01799934 * age;
-            return 1 - Math.pow(coefficient, Math.exp(prognosticIndex));
+            return internalCalculateResult(maxLvWallThickness, laSize, maxLvotGradient, age);
+        } catch (NumberFormatException e) {
+            throw new ParsingException();
+        }
+    }
+
+    private double internalCalculateResult(int maxLvWallThickness, int laDiameter, int maxLvotGradient, int age) {
+        final double coefficient = 0.998;
+        double prognosticIndex = 0.15939858 * maxLvWallThickness
+                - 0.00294271 * maxLvWallThickness * maxLvWallThickness
+                + 0.0259082 * laDiameter
+                + 0.00446131 * maxLvotGradient
+                + (hasFamilyHxScd ? 0.4583082 : 0.0)
+                + (hasNsvt ? 0.82639195 : 0.0)
+                + (hasSyncope ? 0.71650361 : 0.0)
+                - 0.01799934 * age;
+        return 1 - Math.pow(coefficient, Math.exp(prognosticIndex));
     }
 }
