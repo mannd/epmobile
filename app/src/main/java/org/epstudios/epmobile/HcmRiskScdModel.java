@@ -76,9 +76,8 @@ class LaSizeOutOfRangeException extends Exception {
 }
 
 public class HcmRiskScdModel {
-    HcmRiskScdModel(Context context, String ageString, String maxLvWallThicknessString, String maxLvotGradientString,
+    HcmRiskScdModel(String ageString, String maxLvWallThicknessString, String maxLvotGradientString,
                     String laSizeString, boolean hasFamilyHxScd, boolean hasNsvt, boolean hasSyncope) {
-        this.context = context;
         this.ageString = ageString;
         this.maxLvWallThicknessString = maxLvWallThicknessString;
         this.maxLvotGradientString = maxLvotGradientString;
@@ -88,7 +87,8 @@ public class HcmRiskScdModel {
         this.hasSyncope = hasSyncope;
     }
 
-    Context context;
+    HcmRiskScdModel() {}
+
     private String ageString;
     private String maxLvWallThicknessString;
     private String maxLvotGradientString;
