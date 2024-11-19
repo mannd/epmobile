@@ -26,7 +26,28 @@ import android.widget.CheckBox;
 public class HcmScd2022 extends HcmRiskScd {
     @Override
     protected String getFullReference() {
-        return "";
+        String reference2 = convertReferenceToText(R.string.hcm_scd_reference_2,
+                R.string.hcm_scd_link_2);
+        String reference3 = convertReferenceToText(R.string.hcm_scd_reference_3,
+                R.string.hcm_scd_link_3);
+        String reference4 = convertReferenceToText(R.string.hcm_scd_reference_4,
+                R.string.hcm_scd_link_4);
+        String fullReference = reference2 + "\n" + reference3 + "\n" + reference4;
+        return fullReference;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        Reference[] references = new Reference[3];
+        references[0] = new Reference(this, R.string.hcm_scd_reference_2, R.string.hcm_scd_link_2);
+        references[1] = new Reference(this, R.string.hcm_scd_reference_3, R.string.hcm_scd_link_3);
+        references[2] = new Reference(this, R.string.hcm_scd_reference_4, R.string.hcm_scd_link_4);
+        showReferenceAlertDialog(references);
+    }
+
+    @Override
+    protected void showActivityInstructions() {
+        showAlertDialog(R.string.hcm_scd_2022_title, R.string.hcm_scd_2022_instructions);
     }
 
     @Override
@@ -41,7 +62,6 @@ public class HcmScd2022 extends HcmRiskScd {
 
     @Override
     protected void setContentView() {
-        // TODO: temp
         setContentView(R.layout.hcmscd2022);
     }
 

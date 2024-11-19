@@ -1793,4 +1793,9 @@
     <string name="extensive_lge_label">Extensive LGE</string>
     <string name="abnormal_bp_response_label">Abnormal BP response</string>
     <string name="sarcomeric_mutation_label">Sarcomeric mutation</string>
+    <string name="hcm_scd_reference_3">Zeppenfeld K, Tfelt-Hansen J, de Riva M, et al. 2022 ESC Guidelines for the management of patients with ventricular arrhythmias and the prevention of sudden cardiac death. Eur Heart J. 2022;43(40):3997-4126.</string>
+    <string name="hcm_scd_link_3">https://doi.org/10.1093/eurheartj/ehac262</string>
+    <string name="hcm_scd_reference_4">Monda E, Limongelli G. Integrated Sudden Cardiac Death Risk Prediction Model For Patients With Hypertrophic Cardiomyopathy. Circulation. 2023;147(4):281-283.</string>
+    <string name="hcm_scd_link_4">https://doi.org/10.1161/CIRCULATIONAHA.122.063019\n</string>
+    <string name="hcm_scd_2022_instructions"><![CDATA[Do not use this risk calculator for pediatric patients (<16), elite competitive athletes, HCM associated with metabolic syndromes, or patients with aborted SCD or sustained ventricular arrhythmias.\\n\\nThis calculator uses the HCM Risk-SCD score to calculate the 5 year risk of sudden cardia death.  It takes into account additional risk factors not included in the original HCM Risk-SCD score to make recommendations for ICD implantation.  Given this, the 5 year risk calculated by the HCM Risk-SCD score may underestimate the actual risk of SCD.]]></string>
 </resources>
