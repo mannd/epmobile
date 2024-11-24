@@ -57,8 +57,57 @@ public class HcmScd2022 extends HcmRiskScd {
 
     @Override
     protected void calculateResult() {
+        String ageString = ageEditText.getText().toString();
+        String maxLvWallThicknessString = maxLvWallThicknessEditText.getText().toString();
+        String maxLvotGradientString = maxLvotGradientEditText.getText().toString();
+        String laDiameterString = laSizeEditText.getText().toString();
+        boolean hasFamilyHxScd = checkBox[0].isChecked();
+        boolean hasNsvt = checkBox[1].isChecked();
+        boolean hasSyncope = checkBox[2].isChecked();
+        try {
+            HcmRiskScdModel model = new HcmRiskScdModel(
+                    ageString,
+                    maxLvWallThicknessString,
+                    maxLvotGradientString,
+                    laDiameterString,
+                    hasFamilyHxScd,
+                    hasNsvt,
+                    hasSyncope
+            );
+            double result = model.calculateResult();
+            displayResult(getResultMessage(result, NO_ERROR),
+                    getString(R.string.hcm_scd_2022_title));
+            addSelectedRisk("Age = " + ageString + " yrs");
+            addSelectedRisk("LV wall thickness = " + maxLvWallThicknessString + " mm");
+            addSelectedRisk("LA diameter = " + laDiameterString + " mm");
+            addSelectedRisk(("LVOT gradient = " + maxLvotGradientString + " mmHg"));
+            if (hasFamilyHxScd) {
+                addSelectedRisk(getString(R.string.scd_in_family_label));
+            }
+            if (hasNsvt) {
+                addSelectedRisk(getString(R.string.nonsustained_vt_label));
+            }
+            if (hasSyncope) {
+                addSelectedRisk(getString(R.string.unexplained_syncope_label));
+            }
+        } catch (AgeOutOfRangeException e) {
+            displayResult(getResultMessage(0.0, AGE_OUT_OF_RANGE), getString(R.string.error_dialog_title));
+        } catch (LvWallThicknessOutOfRangeException e) {
+            displayResult(getResultMessage(0.0, THICKNESS_OUT_OF_RANGE), getString(R.string.error_dialog_title));
+        } catch (LvotGradientOutOfRangeException e) {
+            displayResult(getResultMessage(0.0, GRADIENT_OUT_OF_RANGE), getString(R.string.error_dialog_title));
+        } catch (LaSizeOutOfRangeException e) {
+            displayResult(getResultMessage(0.0, SIZE_OUT_OF_RANGE), getString(R.string.error_dialog_title));
+        } catch (ParsingException e) {
+            displayResult(getResultMessage(0.0, NUMBER_EXCEPTION), getString(R.string.error_dialog_title));
+        }
 
     }
+
+    private String getResultMessage(double result, int errorCode )  {
+        return "TEST" + result;
+    }
+
 
     @Override
     protected void setContentView() {

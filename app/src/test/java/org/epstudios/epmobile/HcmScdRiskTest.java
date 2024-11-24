@@ -27,7 +27,7 @@ public class HcmScdRiskTest {
     public void testHcmScdRisk() throws ParsingException {
         HcmRiskScdModel model = new HcmRiskScdModel();
         try {
-            double dummy = model.calculateResult();
+            model.calculateResult();
         } catch (AgeOutOfRangeException e) {
             throw new RuntimeException(e);
         } catch (LvWallThicknessOutOfRangeException e) {
@@ -40,10 +40,10 @@ public class HcmScdRiskTest {
     }
 
     @Test(expected = AgeOutOfRangeException.class)
-    public void testAgeException() throws AgeOutOfRangeException {
+    public void testThrowsAgeOutOfRangeException() throws AgeOutOfRangeException {
         HcmRiskScdModel model = new HcmRiskScdModel("2", "30", "30", "39", false, false, false);
         try {
-            double dummy = model.calculateResult();
+            model.calculateResult();
         } catch (LvWallThicknessOutOfRangeException e) {
             throw new RuntimeException(e);
         } catch (LvotGradientOutOfRangeException e) {
@@ -53,5 +53,26 @@ public class HcmScdRiskTest {
         } catch (ParsingException e) {
             throw new RuntimeException();
         }
+    }
+
+    @Test
+    public void testCalculateResult() {
+        HcmRiskScdModel model = new HcmRiskScdModel("30", "30", "30", "30", false, false, false);
+        HcmRiskScdModel model1 = new HcmRiskScdModel("30", "30", "30", "30", true, false, false);
+        HcmRiskScdModel model2 = new HcmRiskScdModel("30", "30", "30", "30", true, true, false);
+        HcmRiskScdModel model3 = new HcmRiskScdModel("30", "30", "30", "30", true, true, true);
+        HcmRiskScdModel model4 = new HcmRiskScdModel("30", "30", "60", "30", true, true, true);
+        try {
+            double result = model.calculateResult();
+            assertEquals(0.024, result, 0.001);
+            double result1 = model1.calculateResult();
+            assertEquals(0.039, result1, 0.001);
+            double result2 = model2.calculateResult();
+            assertEquals(0.085, result2, 0.001);
+            double result3 = model3.calculateResult();
+            assertEquals(0.166, result3, 0.001);
+            double result4 = model4.calculateResult();
+            assertEquals(0.187, result4, 0.001);
+        } catch (Exception e) { }
     }
 }

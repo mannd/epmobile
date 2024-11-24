@@ -119,13 +119,21 @@ public class HcmRiskScdModel {
             if (laSize < 28 || laSize > 67) {
                 throw new LaSizeOutOfRangeException(laSize);
             }
-            return internalCalculateResult(maxLvWallThickness, laSize, maxLvotGradient, age);
+            return internalCalculateResult(
+                    maxLvWallThickness,
+                    laSize,
+                    maxLvotGradient,
+                    age);
         } catch (NumberFormatException e) {
             throw new ParsingException();
         }
     }
 
-    private double internalCalculateResult(int maxLvWallThickness, int laDiameter, int maxLvotGradient, int age) {
+    private double internalCalculateResult(
+            int maxLvWallThickness,
+            int laDiameter,
+            int maxLvotGradient,
+            int age) {
         final double coefficient = 0.998;
         double prognosticIndex = 0.15939858 * maxLvWallThickness
                 - 0.00294271 * maxLvWallThickness * maxLvWallThickness
@@ -135,6 +143,7 @@ public class HcmRiskScdModel {
                 + (hasNsvt ? 0.82639195 : 0.0)
                 + (hasSyncope ? 0.71650361 : 0.0)
                 - 0.01799934 * age;
-        return 1 - Math.pow(coefficient, Math.exp(prognosticIndex));
+        double scdProb = 1 - Math.pow(coefficient, Math.exp(prognosticIndex));
+        return scdProb;
     }
 }
