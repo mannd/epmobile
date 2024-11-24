@@ -2,6 +2,8 @@ package org.epstudios.epmobile;
 
 import android.widget.CheckBox;
 
+import java.text.DecimalFormat;
+
 /**
  * Copyright (C) 2024 EP Studios, Inc.
  * www.epstudiossoftware.com
@@ -24,6 +26,13 @@ import android.widget.CheckBox;
  * along with epmobile.  If not, see <http://www.gnu.org/licenses/>.
  */
 public class HcmScd2022 extends HcmRiskScd {
+    private enum Recommendation {
+        class1,
+        class2a,
+        class2b,
+        class3
+    }
+
     @Override
     protected String getFullReference() {
         String reference2 = convertReferenceToText(R.string.hcm_scd_reference_2,
@@ -64,6 +73,11 @@ public class HcmScd2022 extends HcmRiskScd {
         boolean hasFamilyHxScd = checkBox[0].isChecked();
         boolean hasNsvt = checkBox[1].isChecked();
         boolean hasSyncope = checkBox[2].isChecked();
+        boolean apicalAneurysm = checkBox[3].isChecked();
+        boolean lowLvef = checkBox[4].isChecked();
+        boolean extensiveLge = checkBox[5].isChecked();
+        boolean abnormalBP = checkBox[6].isChecked();
+        boolean sarcomericMutation = checkBox[7].isChecked();
         try {
             HcmRiskScdModel model = new HcmRiskScdModel(
                     ageString,
@@ -75,8 +89,13 @@ public class HcmScd2022 extends HcmRiskScd {
                     hasSyncope
             );
             double result = model.calculateResult();
-            displayResult(getResultMessage(result, NO_ERROR),
-                    getString(R.string.hcm_scd_2022_title));
+            displayResult(getResultMessage(result,
+                            apicalAneurysm,
+                            lowLvef,
+                            extensiveLge,
+                            abnormalBP,
+                            sarcomericMutation,
+                            NO_ERROR), getString(R.string.hcm_scd_2022_title));
             addSelectedRisk("Age = " + ageString + " yrs");
             addSelectedRisk("LV wall thickness = " + maxLvWallThicknessString + " mm");
             addSelectedRisk("LA diameter = " + laDiameterString + " mm");
@@ -89,6 +108,21 @@ public class HcmScd2022 extends HcmRiskScd {
             }
             if (hasSyncope) {
                 addSelectedRisk(getString(R.string.unexplained_syncope_label));
+            }
+            if (apicalAneurysm) {
+                addSelectedRisk(getString(R.string.apical_aneurysm_label));
+            }
+            if (lowLvef) {
+                addSelectedRisk(getString(R.string.low_lvef_label));
+            }
+            if (extensiveLge) {
+                addSelectedRisk(getString(R.string.extensive_lge_label));
+            }
+            if (abnormalBP) {
+                addSelectedRisk(getString(R.string.abnormal_bp_response_label));
+            }
+            if (sarcomericMutation) {
+                addSelectedRisk(getString(R.string.sarcomeric_mutation_label));
             }
         } catch (AgeOutOfRangeException e) {
             displayResult(getResultMessage(0.0, AGE_OUT_OF_RANGE), getString(R.string.error_dialog_title));
@@ -104,10 +138,81 @@ public class HcmScd2022 extends HcmRiskScd {
 
     }
 
-    private String getResultMessage(double result, int errorCode )  {
-        return "TEST" + result;
+    private String getResultMessage(double result, int errorCode) {
+        String message = "";
+        switch (errorCode) {
+            case NUMBER_EXCEPTION:
+                message = getString(R.string.invalid_entries_message);
+                break;
+            case AGE_OUT_OF_RANGE:
+                message = getString(R.string.invalid_age_message);
+                break;
+            case THICKNESS_OUT_OF_RANGE:
+                message = getString(R.string.invalid_thickness_message);
+                break;
+            case GRADIENT_OUT_OF_RANGE:
+                message = getString(R.string.invalid_gradient_message);
+                break;
+            case SIZE_OUT_OF_RANGE:
+                message = getString(R.string.invalid_diameter_message);
+                break;
+            case NO_ERROR:      // drop through
+            default:
+                break;
+        }
+        return message;
     }
 
+    private String getResultMessage(
+            double result,
+            boolean apicalAneurysm,
+            boolean lowLvef,
+            boolean extensiveLge,
+            boolean abnormalBP,
+            boolean sarcomericMutation,
+            int errorCode ) {
+        if (errorCode != NO_ERROR) {
+            return getResultMessage(result, errorCode);
+        } else {
+            Recommendation recommendation = Recommendation.class3;
+            if (result >= 0.06) {
+                recommendation = Recommendation.class2a;
+            }
+            if (result >= 0.04 && result < 0.06) {
+                if (apicalAneurysm || lowLvef || extensiveLge || abnormalBP || sarcomericMutation) {
+                    recommendation = Recommendation.class2a;
+                } else {
+                    recommendation = Recommendation.class2b;
+                }
+            }
+            if (result < 0.04) {
+                if (apicalAneurysm || lowLvef || extensiveLge) {
+                    recommendation = Recommendation.class2b;
+                } else {
+                    recommendation = Recommendation.class3;
+                }
+            }
+            result *= 100.0;
+            DecimalFormat formatter = new DecimalFormat("##.##");
+            String formattedResult = formatter.format(result);
+            String message = "5 year SCD risk = " + formattedResult + "%";
+            switch (recommendation) {
+                case class3:
+                    message += "\nICD generally not indicated. (Class 3)";
+                    break;
+                case class2b:
+                    message += "\nICD may be considered. (Class 2b)";
+                    break;
+                case class2a:
+                    message += "\nICD should be considered. (Class 2a)";
+                    break;
+                case class1:
+                    message += "\nICD is indicated. (Class 1)";
+                    break;
+            }
+            return message;
+        }
+    }
 
     @Override
     protected void setContentView() {
@@ -116,6 +221,20 @@ public class HcmScd2022 extends HcmRiskScd {
 
     @Override
     protected void init() {
-        super.init();
+        checkBox = new CheckBox[8];
+
+        checkBox[0] = findViewById(R.id.family_hx_scd);
+        checkBox[1] = findViewById(R.id.nsvt);
+        checkBox[2] = findViewById(R.id.unexplained_syncope);
+        checkBox[3] = findViewById(R.id.apical_aneurysm);
+        checkBox[4] = findViewById(R.id.low_lvef);
+        checkBox[5] = findViewById(R.id.extensive_lge);
+        checkBox[6] = findViewById(R.id.abnormal_bp_response);
+        checkBox[7] = findViewById(R.id.sarcomeric_mutation);
+
+        ageEditText = findViewById(R.id.age);
+        maxLvWallThicknessEditText = findViewById(R.id.max_lv_wall_thickness);
+        maxLvotGradientEditText = findViewById(R.id.max_lvot_gradient);
+        laSizeEditText = findViewById(R.id.la_size);
     }
 }
