@@ -237,4 +237,10 @@ public class HcmScd2022 extends HcmRiskScd {
         maxLvotGradientEditText = findViewById(R.id.max_lvot_gradient);
         laSizeEditText = findViewById(R.id.la_size);
     }
+
+    @Override
+    protected void showActivityKey() {
+        String key = getString(R.string.hcm_scd_key) + getString(R.string.hcm_scd_2022_key);
+        showAlertDialog(getString(R.string.hcm_scd_2022_title), key);
+    }
 }

@@ -1238,7 +1238,13 @@
         relatives under 40 years old or in a first degree relative with confirmed HCM at
         any age.\nNSVT
         = nonsustained ventricular tachycardia: 3 consecutive ventricular beats
-        at a rate of 120 bpm or more and &lt;30 sec duration on Holter monitoring (minimum 24 hrs) at or prior to evaluation.</string>
+        at a rate of 120 bpm or more and &lt;30 sec duration on Holter monitoring
+        (minimum 24 hrs) at or prior to evaluation.</string>
+    <string name="hcm_scd_2022_key">\nLVEF = left ventricular ejection fraction
+        \nExtensive LGE = late gadolinium enhancement, defined as \u2265 15%
+        of left ventricular mass\nAbnormal BP response = failure to increase
+        systolic pressure by at least 20 mmHg from rest to peak exercise,
+        or a fall of >20 mmHg from peak pressure.</string>
     <string name="hcm_scd_reference_1">2014 ESC Guidelines on diagnosis and
         management of hypertrophic cardiomyopathy: The Task Force for the
         Diagnosis and Management of Hypertrophic Cardiomyopathy of the European
