@@ -89,13 +89,6 @@ public class HcmScd2022 extends HcmRiskScd {
                     hasSyncope
             );
             double result = model.calculateResult();
-            displayResult(getResultMessage(result,
-                            apicalAneurysm,
-                            lowLvef,
-                            extensiveLge,
-                            abnormalBP,
-                            sarcomericMutation,
-                            NO_ERROR), getString(R.string.hcm_scd_2022_title));
             addSelectedRisk("Age = " + ageString + " yrs");
             addSelectedRisk("LV wall thickness = " + maxLvWallThicknessString + " mm");
             addSelectedRisk("LA diameter = " + laDiameterString + " mm");
@@ -124,6 +117,14 @@ public class HcmScd2022 extends HcmRiskScd {
             if (sarcomericMutation) {
                 addSelectedRisk(getString(R.string.sarcomeric_mutation_label));
             }
+            // TODO: Double check this: don't we have to displayResult AFTER adding selected risks?
+            displayResult(getResultMessage(result,
+                    apicalAneurysm,
+                    lowLvef,
+                    extensiveLge,
+                    abnormalBP,
+                    sarcomericMutation,
+                    NO_ERROR), getString(R.string.hcm_scd_2022_title));
         } catch (AgeOutOfRangeException e) {
             displayResult(getResultMessage(0.0, AGE_OUT_OF_RANGE), getString(R.string.error_dialog_title));
         } catch (LvWallThicknessOutOfRangeException e) {

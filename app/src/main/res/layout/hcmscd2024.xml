@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar" />
+    <include layout="@layout/calculatebuttons" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_above="@id/calculateButtonsLayout"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:text="@string/major" />
+
+            <CheckBox
+                android:id="@+id/family_hx_scd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/scd_in_family_label"
+                android:checked="false" />
+
+            <CheckBox
+                android:id="@+id/massive_lvh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/massive_lvh_label"
+                android:checked="false" />
+
+            <CheckBox
+                android:id="@+id/unexplained_syncope"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/unexplained_syncope_label"
+                android:checked="false" />
+
+            <CheckBox
+                android:id="@+id/apical_aneurysm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/apical_aneurysm_label"
+                android:checked="false" />
+
+            <CheckBox
+                android:id="@+id/low_lvef"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/low_lvef_label"
+                android:checked="false" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:text="@string/minor" />
+
+            <CheckBox
+                android:id="@+id/nsvt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nonsustained_vt_label"
+                android:checked="false" />
+
+            <CheckBox
+                android:id="@+id/extensive_lge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/extensive_lge_label"
+                android:checked="false" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

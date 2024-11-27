@@ -54,7 +54,15 @@ public class HcmScdList extends EpActivity {
             else if (selection.equals(getString(R.string.hcm_scd_2022_title))) {
                 hcmScd2022();
             }
+            else if (selection.equals(getString(R.string.hcm_scd_2024_title))) {
+                hcmScd2024();
+            }
         });
+    }
+
+    private void hcmScd2024() {
+        Intent i = new Intent(this, HcmScd2024.class);
+        startActivity(i);
     }
 
     private void hcmScd2002() {

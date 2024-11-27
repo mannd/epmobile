@@ -275,6 +275,8 @@
             android:label="@string/hcm_scd_list_title" />
         <activity android:name=".HcmScd2022"
             android:label="@string/hcm_scd_2022_title" />
+        <activity android:name=".HcmScd2024"
+            android:label="@string/hcm_scd_2024_title" />
     </application>
 
 </manifest>
