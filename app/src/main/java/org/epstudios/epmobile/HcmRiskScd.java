@@ -62,6 +62,7 @@ public class HcmRiskScd extends RiskScore {
             double result = model.calculateResult();
             displayResult(getResultMessage(result, NO_ERROR),
                     getString(R.string.hcm_scd_esc_score_title));
+            clearSelectedRisks();
             addSelectedRisk("Age = " + ageString + " yrs");
             addSelectedRisk("LV wall thickness = " + maxLvWallThicknessString + " mm");
             addSelectedRisk("LA diameter = " + laDiameterString + " mm");

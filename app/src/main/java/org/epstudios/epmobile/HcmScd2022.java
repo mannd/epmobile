@@ -89,6 +89,7 @@ public class HcmScd2022 extends HcmRiskScd {
                     hasSyncope
             );
             double result = model.calculateResult();
+            clearSelectedRisks();
             addSelectedRisk("Age = " + ageString + " yrs");
             addSelectedRisk("LV wall thickness = " + maxLvWallThicknessString + " mm");
             addSelectedRisk("LA diameter = " + laDiameterString + " mm");
@@ -161,6 +162,8 @@ public class HcmScd2022 extends HcmRiskScd {
             default:
                 break;
         }
+        // TODO: setResultMessage(message); is repeated everywhere
+        // We need a better mechanism for this embedded in RisScore!
         return message;
     }
 

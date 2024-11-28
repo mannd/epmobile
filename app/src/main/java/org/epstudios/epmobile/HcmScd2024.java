@@ -61,10 +61,9 @@ public class HcmScd2024 extends RiskScore {
         showAlertDialog(R.string.hcm_scd_2024_title, R.string.hcm_scd_2024_instructions);
     }
 
-
     @Override
     protected String getRiskLabel() {
-        return getString(R.string.hcm_scd_2022_title);
+        return getString(R.string.hcm_scd_2024_title);
     }
 
     @Override
@@ -81,13 +80,46 @@ public class HcmScd2024 extends RiskScore {
             case class3:
                 message = "ICD is not recommended (Class 3)";
                 break;
+            case class1:
             default:
                 message = "ERROR";
                 break;
         }
+        addRisks();
         displayResult(message, getString(R.string.hcm_scd_2024_title));
     }
 
+    private void addRisks() {
+        boolean familyHxScd = checkBox[0].isChecked();
+        boolean massiveLvh = checkBox[1].isChecked();
+        boolean hasSyncope = checkBox[2].isChecked();
+        boolean apicalAneurysm = checkBox[3].isChecked();
+        boolean lowLvef = checkBox[4].isChecked();
+        boolean hxNSVT = checkBox[5].isChecked();
+        boolean extensiveLge = checkBox[6].isChecked();
+        clearSelectedRisks();
+        if (familyHxScd) {
+            addSelectedRisk("Family history of SCD");
+        }
+        if (massiveLvh) {
+            addSelectedRisk("Massive LVH");
+        }
+        if (hasSyncope) {
+            addSelectedRisk("Unexplained syncope");
+        }
+        if (apicalAneurysm) {
+            addSelectedRisk("Apical aneurysm");
+        }
+        if (lowLvef) {
+            addSelectedRisk("Low LVEF");
+        }
+        if (hxNSVT) {
+            addSelectedRisk("NSVT");
+        }
+        if (extensiveLge) {
+            addSelectedRisk("Extensive LGE");
+        }
+    }
 
     private Recommendation calculateRecommendation() {
         Recommendation recommendation = Recommendation.class3;
