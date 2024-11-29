@@ -40,31 +40,31 @@ public class ErsScore extends RiskScore {
 
     @Override
     protected void init() {
-        checkBox = new CheckBox[12];
+        checkBoxes = new CheckBox[12];
 
         // Clinical history
-        checkBox[0] = findViewById(R.id.unexplained_arrest);
-        checkBox[1] = findViewById(R.id.arrhythmic_syncope);
-        checkBox[2] = findViewById(R.id.unclear_syncope);
+        checkBoxes[0] = findViewById(R.id.unexplained_arrest);
+        checkBoxes[1] = findViewById(R.id.arrhythmic_syncope);
+        checkBoxes[2] = findViewById(R.id.unclear_syncope);
         // ECG
-        checkBox[3] = findViewById(R.id.large_er);
-        checkBox[4] = findViewById(R.id.dynamic_j_point);
-        checkBox[5] = findViewById(R.id.j_point_elevation);
+        checkBoxes[3] = findViewById(R.id.large_er);
+        checkBoxes[4] = findViewById(R.id.dynamic_j_point);
+        checkBoxes[5] = findViewById(R.id.j_point_elevation);
         // Ambulatory ECG
-        checkBox[6] = findViewById(R.id.short_coupled_pvcs);
+        checkBoxes[6] = findViewById(R.id.short_coupled_pvcs);
         // Family history
-        checkBox[7] = findViewById(R.id.relative_definite_ers);
-        checkBox[8] = findViewById(R.id.relative_ers_ecg);
-        checkBox[9] = findViewById(R.id.one_relative_ers_ecg);
-        checkBox[10] = findViewById(R.id.unexplained_scd);
+        checkBoxes[7] = findViewById(R.id.relative_definite_ers);
+        checkBoxes[8] = findViewById(R.id.relative_ers_ecg);
+        checkBoxes[9] = findViewById(R.id.one_relative_ers_ecg);
+        checkBoxes[10] = findViewById(R.id.unexplained_scd);
         // Genetic testing
-        checkBox[11] = findViewById(R.id.ers_pathogenic_mutation);
+        checkBoxes[11] = findViewById(R.id.ers_pathogenic_mutation);
     }
 
     @Override
     protected void calculateResult() {
         clearSelectedRisks();
-        for (CheckBox selection : checkBox) {
+        for (CheckBox selection : checkBoxes) {
             if (selection.isChecked()) {
                 addSelectedRisk(selection.getText().toString());
             }
@@ -79,35 +79,35 @@ public class ErsScore extends RiskScore {
         int clinicalIndexEnd = 2;
         int clinicalIndexBegin = 0;
         for (int i = clinicalIndexBegin; i <= clinicalIndexEnd; ++i) {
-            if (checkBox[i].isChecked() && points.get(i) > clinicalScore) {
+            if (checkBoxes[i].isChecked() && points.get(i) > clinicalScore) {
                 clinicalScore = points.get(i);
             }
         }
         int ecgIndexEnd = 5;
         int ecgIndexBegin = 3;
         for (int i = ecgIndexBegin; i <= ecgIndexEnd; ++i) {
-            if (checkBox[i].isChecked() && points.get(i) > ecgScore) {
+            if (checkBoxes[i].isChecked() && points.get(i) > ecgScore) {
                 ecgScore = points.get(i);
             }
         }
         int ambulatoryEcgIndexEnd = 6;
         int ambulatoryEcgIndexBegin = 6;
         for (int i = ambulatoryEcgIndexBegin; i <= ambulatoryEcgIndexEnd; ++i) {
-            if (checkBox[i].isChecked() && points.get(i) > clinicalScore) {
+            if (checkBoxes[i].isChecked() && points.get(i) > clinicalScore) {
                 ambulatoryEcgScore = points.get(i);
             }
         }
         int familyIndexEnd = 10;
         int familyIndexBegin = 7;
         for (int i = familyIndexBegin; i <= familyIndexEnd; ++i) {
-            if (checkBox[i].isChecked() && points.get(i) > familyScore) {
+            if (checkBoxes[i].isChecked() && points.get(i) > familyScore) {
                 familyScore = points.get(i);
             }
         }
         int geneticIndexEnd = 11;
         int geneticIndexBegin = 11;
         for (int i = geneticIndexBegin; i <= geneticIndexEnd; ++i) {
-            if (checkBox[i].isChecked() && points.get(i) > geneticScore) {
+            if (checkBoxes[i].isChecked() && points.get(i) > geneticScore) {
                 geneticScore = points.get(i);
             }
         }

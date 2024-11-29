@@ -30,22 +30,22 @@ public class HcmScd2002 extends RiskScore {
 
     @Override
     protected void init() {
-        checkBox = new CheckBox[11];
+        checkBoxes = new CheckBox[11];
 
         // super bad
-        checkBox[0] = findViewById(R.id.cardiac_arrest);
-        checkBox[1] = findViewById(R.id.spontaneous_vt);
+        checkBoxes[0] = findViewById(R.id.cardiac_arrest);
+        checkBoxes[1] = findViewById(R.id.spontaneous_vt);
         // major risks
-        checkBox[2] = findViewById(R.id.family_hx_sd);
-        checkBox[3] = findViewById(R.id.unexplained_syncope);
-        checkBox[4] = findViewById(R.id.lv_thickness);
-        checkBox[5] = findViewById(R.id.abnormal_exercise_bp);
-        checkBox[6] = findViewById(R.id.nonsustained_vt);
+        checkBoxes[2] = findViewById(R.id.family_hx_sd);
+        checkBoxes[3] = findViewById(R.id.unexplained_syncope);
+        checkBoxes[4] = findViewById(R.id.lv_thickness);
+        checkBoxes[5] = findViewById(R.id.abnormal_exercise_bp);
+        checkBoxes[6] = findViewById(R.id.nonsustained_vt);
         // minor risks
-        checkBox[7] = findViewById(R.id.afb);
-        checkBox[8] = findViewById(R.id.myocardial_ischemia);
-        checkBox[9] = findViewById(R.id.lv_outflow_obstruction);
-        checkBox[10] = findViewById(R.id.high_risk_mutation);
+        checkBoxes[7] = findViewById(R.id.afb);
+        checkBoxes[8] = findViewById(R.id.myocardial_ischemia);
+        checkBoxes[9] = findViewById(R.id.lv_outflow_obstruction);
+        checkBoxes[10] = findViewById(R.id.high_risk_mutation);
     }
 
     final int HIGHEST_RISK_SCORE = 100; // can't happen by calculation
@@ -58,19 +58,19 @@ public class HcmScd2002 extends RiskScore {
         int result = 0;
         minor_risks = 0;
         clearSelectedRisks();
-        if (checkBox[0].isChecked() || checkBox[1].isChecked()) {
+        if (checkBoxes[0].isChecked() || checkBoxes[1].isChecked()) {
             addSelectedRisk(getString(R.string.hcm_combined_sus_va_risk_label));
             result = HIGHEST_RISK_SCORE; // CA or spont VT
         } else {
             for (int i = firstMajorRisk; i < firstMinorRisk; ++i) {
-                if (checkBox[i].isChecked()) {
-                    addSelectedRisk(checkBox[i].getText().toString());
+                if (checkBoxes[i].isChecked()) {
+                    addSelectedRisk(checkBoxes[i].getText().toString());
                     result++;
                 }
             }
-            for (int i = firstMinorRisk; i < checkBox.length; ++i) {
-                if (checkBox[i].isChecked()) {
-                    addSelectedRisk(checkBox[i].getText().toString());
+            for (int i = firstMinorRisk; i < checkBoxes.length; ++i) {
+                if (checkBoxes[i].isChecked()) {
+                    addSelectedRisk(checkBoxes[i].getText().toString());
                     minor_risks++;
                 }
             }

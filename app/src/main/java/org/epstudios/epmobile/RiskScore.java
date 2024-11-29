@@ -33,6 +33,7 @@ public abstract class RiskScore extends DiagnosticScore {
     private final List<String> selectedRisks = new ArrayList<>();
     private boolean displayRisks = true; // skip displaying list of risks if false
 
+    protected CheckBox[] checkBoxes;
     public void setDisplayRisks(boolean displayRisks) {
         this.displayRisks = displayRisks;
     }
@@ -48,15 +49,17 @@ public abstract class RiskScore extends DiagnosticScore {
 
     @Override
     protected void clearEntries() {
-        for (CheckBox aCheckBox : checkBox) aCheckBox.setChecked(false);
+        for (CheckBox aCheckBox : checkBoxes) aCheckBox.setChecked(false);
     }
-
-    protected CheckBox[] checkBox;
 
     @Override
     @SuppressWarnings("deprecation")
     protected void displayResult(String message, String title) {
-        // put message in class field so inner class can use
+        // NB: This ensures that the clipboard gets the result message,
+        // however, the callers are already doing this individually, which
+        // is unnecessary.  But setting the resultMessage twice does no harm
+        // and it is not worth rewriting this in every module.
+        setResultMessage(message);
         AlertDialog dialog = new AlertDialog.Builder(this).create();
         dialog.setMessage(message);
         dialog.setButton(DialogInterface.BUTTON_POSITIVE,
@@ -116,12 +119,10 @@ public abstract class RiskScore extends DiagnosticScore {
         return resultMessage;
     }
 
-    // No more short references,
+    // NB: No more short references,
     // This just returns the result message, eventually should refactor this method away.
     protected String resultWithShortReference() {
         return getResultMessage();
-//        return getResultMessage() + "\n" + getString(R.string.reference_label)
-//                + ": " + getShortReference() + ".";
     }
 
     protected void clearSelectedRisks() {
@@ -130,6 +131,18 @@ public abstract class RiskScore extends DiagnosticScore {
 
     protected void addSelectedRisk(String risk) {
         selectedRisks.add(risk);
+    }
+
+    protected void addSelectedRisks() {
+        addSelectedRisks(checkBoxes);
+    }
+
+    protected void addSelectedRisks(CheckBox[] checkBoxes) {
+        for (int i = 0; i < checkBoxes.length; i++) {
+            if (checkBoxes[i].isChecked()) {
+                addSelectedRisk(checkBoxes[i].getText().toString());
+            }
+        }
     }
 
     protected String getSelectedRisks() {

@@ -53,14 +53,14 @@ public class AtriaStroke extends RiskScore {
         // calculate
         int result = 0;
         clearSelectedRisks();
-        for (CheckBox aCheckBox : checkBox) {
+        for (CheckBox aCheckBox : checkBoxes) {
             if (aCheckBox.isChecked()) {
                 addSelectedRisk(aCheckBox.getText().toString());
                 result++;
             }
         }
         // checkBox[6] = prior stroke hx
-        boolean hasStrokeHx = checkBox[6].isChecked();
+        boolean hasStrokeHx = checkBoxes[6].isChecked();
         if (hasStrokeHx) {
             result--;
         }
@@ -103,15 +103,15 @@ public class AtriaStroke extends RiskScore {
 
     @Override
     protected void init() {
-        checkBox = new CheckBox[7];
+        checkBoxes = new CheckBox[7];
 
-        checkBox[0] = findViewById(R.id.sex);
-        checkBox[1] = findViewById(R.id.diabetes);
-        checkBox[2] = findViewById(R.id.chf);
-        checkBox[3] = findViewById(R.id.htn);
-        checkBox[4] = findViewById(R.id.proteinuria);
-        checkBox[5] = findViewById(R.id.renal_disease);
-        checkBox[6] = findViewById(R.id.stroke);
+        checkBoxes[0] = findViewById(R.id.sex);
+        checkBoxes[1] = findViewById(R.id.diabetes);
+        checkBoxes[2] = findViewById(R.id.chf);
+        checkBoxes[3] = findViewById(R.id.htn);
+        checkBoxes[4] = findViewById(R.id.proteinuria);
+        checkBoxes[5] = findViewById(R.id.renal_disease);
+        checkBoxes[6] = findViewById(R.id.stroke);
         radioGroup = findViewById(R.id.age);
     }
 

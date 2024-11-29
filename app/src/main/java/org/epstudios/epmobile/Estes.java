@@ -24,8 +24,8 @@ public class Estes extends RiskScore {
     protected void calculateResult() {
         final int STRAIN_WITH_DIG = 2;
         final int STRAIN_WITHOUT_DIG = 1;
-        if (checkBox[STRAIN_WITHOUT_DIG].isChecked()
-                && checkBox[STRAIN_WITH_DIG].isChecked()) {
+        if (checkBoxes[STRAIN_WITHOUT_DIG].isChecked()
+                && checkBoxes[STRAIN_WITH_DIG].isChecked()) {
             AlertDialog dialog = new AlertDialog.Builder(this).create();
             dialog.setMessage(getString(R.string.estes_contradiction_message));
             dialog.setTitle(getString(R.string.error_dialog_title));
@@ -34,9 +34,9 @@ public class Estes extends RiskScore {
         }
         int result = 0;
         clearSelectedRisks();
-        for (int i = 0; i < checkBox.length; i++) {
-            if (checkBox[i].isChecked()) {
-                addSelectedRisk(checkBox[i].getText().toString());
+        for (int i = 0; i < checkBoxes.length; i++) {
+            if (checkBoxes[i].isChecked()) {
+                addSelectedRisk(checkBoxes[i].getText().toString());
                 final int INTRINSICOID = 6;
                 final int QRS_DURATION = 5;
                 final int LAD = 4;
@@ -84,15 +84,15 @@ public class Estes extends RiskScore {
 
     @Override
     protected void init() {
-        checkBox = new CheckBox[7];
+        checkBoxes = new CheckBox[7];
 
-        checkBox[0] = findViewById(R.id.voltage);
-        checkBox[1] = findViewById(R.id.strain_without_dig);
-        checkBox[2] = findViewById(R.id.strain_with_dig);
-        checkBox[3] = findViewById(R.id.lae);
-        checkBox[4] = findViewById(R.id.lad);
-        checkBox[5] = findViewById(R.id.qrs_duration);
-        checkBox[6] = findViewById(R.id.intrinsicoid);
+        checkBoxes[0] = findViewById(R.id.voltage);
+        checkBoxes[1] = findViewById(R.id.strain_without_dig);
+        checkBoxes[2] = findViewById(R.id.strain_with_dig);
+        checkBoxes[3] = findViewById(R.id.lae);
+        checkBoxes[4] = findViewById(R.id.lad);
+        checkBoxes[5] = findViewById(R.id.qrs_duration);
+        checkBoxes[6] = findViewById(R.id.intrinsicoid);
 
     }
 
