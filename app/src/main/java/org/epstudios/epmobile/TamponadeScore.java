@@ -48,7 +48,7 @@ public final class TamponadeScore extends RiskScore {
     @Override
     protected void calculateResult() {
         clearSelectedRisks();
-        for (CheckBox selection : checkBox) {
+        for (CheckBox selection : checkBoxes) {
             if (selection.isChecked()) {
                 addSelectedRisk(selection.getText().toString());
             }
@@ -56,7 +56,7 @@ public final class TamponadeScore extends RiskScore {
 
         int result = 0;
         for (int i = 0; i < points.size(); i++) {
-            if (checkBox[i].isChecked()) {
+            if (checkBoxes[i].isChecked()) {
                 result += points.get(i);
             }
         }
@@ -86,38 +86,38 @@ public final class TamponadeScore extends RiskScore {
 
     @Override
     protected void init() {
-        checkBox = new CheckBox[31];
-        checkBox[0] = findViewById(R.id.malignant_disease);
-        checkBox[1] = findViewById(R.id.tuberculosis);
-        checkBox[2] = findViewById(R.id.recent_radiotherapy);
-        checkBox[3] = findViewById(R.id.recent_viral_infection);
-        checkBox[4] = findViewById(R.id.recurrent_pe);
-        checkBox[5] = findViewById(R.id.chronic_renal_failure);
-        checkBox[6] = findViewById(R.id.immunodeficiency);
-        checkBox[7] = findViewById(R.id.hypo_hyperthyroidism);
-        checkBox[8] = findViewById(R.id.autoimmune_disease);
-        checkBox[9] = findViewById(R.id.dyspnea);
-        checkBox[10] = findViewById(R.id.orthopnea);
-        checkBox[11] = findViewById(R.id.hypotension);
-        checkBox[12] = findViewById(R.id.sinus_tachycardia);
-        checkBox[13] = findViewById(R.id.oliguria);
-        checkBox[14] = findViewById(R.id.pulsus_paradoxus);
-        checkBox[15] = findViewById(R.id.chest_pain);
-        checkBox[16] = findViewById(R.id.friction_rub);
-        checkBox[17] = findViewById(R.id.symptom_worsening);
-        checkBox[18] = findViewById(R.id.slow_evolution);
-        checkBox[19] = findViewById(R.id.cardiomegaly);
-        checkBox[20] = findViewById(R.id.electrical_alternans);
-        checkBox[21] = findViewById(R.id.microvoltage);
-        checkBox[22] = findViewById(R.id.circumferential_pe);
-        checkBox[23] = findViewById(R.id.moderate_pe);
-        checkBox[24] = findViewById(R.id.small_pe);
-        checkBox[25] = findViewById(R.id.ra_collapse);
-        checkBox[26] = findViewById(R.id.large_ivc);
-        checkBox[27] = findViewById(R.id.rv_collapse);
-        checkBox[28] = findViewById(R.id.la_collapse);
-        checkBox[29] = findViewById(R.id.respiratory_variations);
-        checkBox[30] = findViewById(R.id.swinging_heart);
+        checkBoxes = new CheckBox[31];
+        checkBoxes[0] = findViewById(R.id.malignant_disease);
+        checkBoxes[1] = findViewById(R.id.tuberculosis);
+        checkBoxes[2] = findViewById(R.id.recent_radiotherapy);
+        checkBoxes[3] = findViewById(R.id.recent_viral_infection);
+        checkBoxes[4] = findViewById(R.id.recurrent_pe);
+        checkBoxes[5] = findViewById(R.id.chronic_renal_failure);
+        checkBoxes[6] = findViewById(R.id.immunodeficiency);
+        checkBoxes[7] = findViewById(R.id.hypo_hyperthyroidism);
+        checkBoxes[8] = findViewById(R.id.autoimmune_disease);
+        checkBoxes[9] = findViewById(R.id.dyspnea);
+        checkBoxes[10] = findViewById(R.id.orthopnea);
+        checkBoxes[11] = findViewById(R.id.hypotension);
+        checkBoxes[12] = findViewById(R.id.sinus_tachycardia);
+        checkBoxes[13] = findViewById(R.id.oliguria);
+        checkBoxes[14] = findViewById(R.id.pulsus_paradoxus);
+        checkBoxes[15] = findViewById(R.id.chest_pain);
+        checkBoxes[16] = findViewById(R.id.friction_rub);
+        checkBoxes[17] = findViewById(R.id.symptom_worsening);
+        checkBoxes[18] = findViewById(R.id.slow_evolution);
+        checkBoxes[19] = findViewById(R.id.cardiomegaly);
+        checkBoxes[20] = findViewById(R.id.electrical_alternans);
+        checkBoxes[21] = findViewById(R.id.microvoltage);
+        checkBoxes[22] = findViewById(R.id.circumferential_pe);
+        checkBoxes[23] = findViewById(R.id.moderate_pe);
+        checkBoxes[24] = findViewById(R.id.small_pe);
+        checkBoxes[25] = findViewById(R.id.ra_collapse);
+        checkBoxes[26] = findViewById(R.id.large_ivc);
+        checkBoxes[27] = findViewById(R.id.rv_collapse);
+        checkBoxes[28] = findViewById(R.id.la_collapse);
+        checkBoxes[29] = findViewById(R.id.respiratory_variations);
+        checkBoxes[30] = findViewById(R.id.swinging_heart);
     }
 
     @Override

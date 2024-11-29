@@ -46,9 +46,9 @@ public class HcmRiskScd extends RiskScore {
         String maxLvWallThicknessString = maxLvWallThicknessEditText.getText().toString();
         String maxLvotGradientString = maxLvotGradientEditText.getText().toString();
         String laDiameterString = laSizeEditText.getText().toString();
-        boolean hasFamilyHxScd = checkBox[0].isChecked();
-        boolean hasNsvt = checkBox[1].isChecked();
-        boolean hasSyncope = checkBox[2].isChecked();
+        boolean hasFamilyHxScd = checkBoxes[0].isChecked();
+        boolean hasNsvt = checkBoxes[1].isChecked();
+        boolean hasSyncope = checkBoxes[2].isChecked();
         try {
             HcmRiskScdModel model = new HcmRiskScdModel(
                     ageString,
@@ -67,15 +67,7 @@ public class HcmRiskScd extends RiskScore {
             addSelectedRisk("LV wall thickness = " + maxLvWallThicknessString + " mm");
             addSelectedRisk("LA diameter = " + laDiameterString + " mm");
             addSelectedRisk(("LVOT gradient = " + maxLvotGradientString + " mmHg"));
-            if (hasFamilyHxScd) {
-                addSelectedRisk(getString(R.string.scd_in_family_label));
-            }
-            if (hasNsvt) {
-                addSelectedRisk(getString(R.string.nonsustained_vt_label));
-            }
-            if (hasSyncope) {
-                addSelectedRisk(getString(R.string.unexplained_syncope_label));
-            }
+            addSelectedRisks();
         } catch (AgeOutOfRangeException e) {
             displayResult(getResultMessage(0.0, AGE_OUT_OF_RANGE), getString(R.string.error_dialog_title));
         } catch (LvWallThicknessOutOfRangeException e) {
@@ -96,11 +88,11 @@ public class HcmRiskScd extends RiskScore {
 
     @Override
     protected void init() {
-        checkBox = new CheckBox[3];
+        checkBoxes = new CheckBox[3];
 
-        checkBox[0] = findViewById(R.id.family_hx_scd);
-        checkBox[1] = findViewById(R.id.nsvt);
-        checkBox[2] = findViewById(R.id.unexplained_syncope);
+        checkBoxes[0] = findViewById(R.id.family_hx_scd);
+        checkBoxes[1] = findViewById(R.id.nsvt);
+        checkBoxes[2] = findViewById(R.id.unexplained_syncope);
 
         ageEditText = findViewById(R.id.age);
         maxLvWallThicknessEditText = findViewById(R.id.max_lv_wall_thickness);
@@ -115,8 +107,7 @@ public class HcmRiskScd extends RiskScore {
                 R.string.hcm_scd_link_1);
         String reference2 = convertReferenceToText(R.string.hcm_scd_reference_2,
                 R.string.hcm_scd_link_2);
-        String fullReference = reference1 + "\n" + reference2;
-        return fullReference;
+        return reference1 + "\n" + reference2;
     }
 
     @Override

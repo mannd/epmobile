@@ -28,9 +28,9 @@ public class AppleScore extends RiskScore {
     protected void calculateResult() {
         int result = 0;
         clearSelectedRisks();
-        for (int i = 0; i < checkBox.length; i++) {
-            if (checkBox[i].isChecked()) {
-                addSelectedRisk(checkBox[i].getText().toString());
+        for (int i = 0; i < checkBoxes.length; i++) {
+            if (checkBoxes[i].isChecked()) {
+                addSelectedRisk(checkBoxes[i].getText().toString());
                 result++;
             }
         }
@@ -83,13 +83,13 @@ public class AppleScore extends RiskScore {
 
     @Override
     protected void init() {
-        checkBox = new CheckBox[5];
+        checkBoxes = new CheckBox[5];
 
-        checkBox[0] = findViewById(R.id.age);
-        checkBox[1] = findViewById(R.id.persistentAF);
-        checkBox[2] = findViewById(R.id.impairedGfr);
-        checkBox[3] = findViewById(R.id.laEnlargement);
-        checkBox[4] = findViewById(R.id.lowEF);
+        checkBoxes[0] = findViewById(R.id.age);
+        checkBoxes[1] = findViewById(R.id.persistentAF);
+        checkBoxes[2] = findViewById(R.id.impairedGfr);
+        checkBoxes[3] = findViewById(R.id.laEnlargement);
+        checkBoxes[4] = findViewById(R.id.lowEF);
     }
 
     @Override

@@ -41,13 +41,13 @@ public class QTProlongationRisk extends RiskScore {
         clearSelectedRisks();
         int[] points = {1, 1, 1, 2, 2, 2, 3, 3, 3, 6};
         for (int n = 0; n < 10; n++) {
-            if (checkBox[n].isChecked()) {
-                addSelectedRisk(checkBox[n].getText().toString());
+            if (checkBoxes[n].isChecked()) {
+                addSelectedRisk(checkBoxes[n].getText().toString());
                 result += points[n];
             }
         }
         // Handle case where both one and two QTc prolonging drugs are checked.
-        if (checkBox[8].isChecked() && checkBox[9].isChecked()) {
+        if (checkBoxes[8].isChecked() && checkBoxes[9].isChecked()) {
             result -= 3;
         }
         displayResult(getResultMessage(result),
@@ -76,18 +76,18 @@ public class QTProlongationRisk extends RiskScore {
 
     @Override
     protected void init() {
-        checkBox = new CheckBox[10];
+        checkBoxes = new CheckBox[10];
 
-        checkBox[0] = findViewById(R.id.age_factor);
-        checkBox[1] = findViewById(R.id.female_sex_factor);
-        checkBox[2] = findViewById(R.id.loop_diuretic_factor);
-        checkBox[3] = findViewById(R.id.serum_k_factor);
-        checkBox[4] = findViewById(R.id.admission_qtc_factor);
-        checkBox[5] = findViewById(R.id.acute_mi_factor);
-        checkBox[6] = findViewById(R.id.sepsis_factor);
-        checkBox[7] = findViewById(R.id.heart_failure_factor);
-        checkBox[8] = findViewById(R.id.one_qtc_drug_factor);
-        checkBox[9] = findViewById(R.id.two_qtc_drugs_factor);
+        checkBoxes[0] = findViewById(R.id.age_factor);
+        checkBoxes[1] = findViewById(R.id.female_sex_factor);
+        checkBoxes[2] = findViewById(R.id.loop_diuretic_factor);
+        checkBoxes[3] = findViewById(R.id.serum_k_factor);
+        checkBoxes[4] = findViewById(R.id.admission_qtc_factor);
+        checkBoxes[5] = findViewById(R.id.acute_mi_factor);
+        checkBoxes[6] = findViewById(R.id.sepsis_factor);
+        checkBoxes[7] = findViewById(R.id.heart_failure_factor);
+        checkBoxes[8] = findViewById(R.id.one_qtc_drug_factor);
+        checkBoxes[9] = findViewById(R.id.two_qtc_drugs_factor);
     }
 
     @Override

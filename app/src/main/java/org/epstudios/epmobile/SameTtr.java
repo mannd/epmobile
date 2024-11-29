@@ -40,9 +40,9 @@ public class SameTtr extends RiskScore {
     protected void calculateResult() {
         int result = 0;
         clearSelectedRisks();
-        for (int i = 0; i < checkBox.length; i++) {
-            if (checkBox[i].isChecked()) {
-                addSelectedRisk(checkBox[i].getText().toString());
+        for (int i = 0; i < checkBoxes.length; i++) {
+            if (checkBoxes[i].isChecked()) {
+                addSelectedRisk(checkBoxes[i].getText().toString());
                 if (i == 4 || i == 5)
                     result = result + 2;
                 else
@@ -72,14 +72,14 @@ public class SameTtr extends RiskScore {
 
     @Override
     protected void init() {
-        checkBox = new CheckBox[6];
+        checkBoxes = new CheckBox[6];
 
-        checkBox[0] = findViewById(R.id.sex);
-        checkBox[1] = findViewById(R.id.age);
-        checkBox[2] = findViewById(R.id.medhx);
-        checkBox[3] = findViewById(R.id.treatment);
-        checkBox[4] = findViewById(R.id.smoking);
-        checkBox[5] = findViewById(R.id.race);
+        checkBoxes[0] = findViewById(R.id.sex);
+        checkBoxes[1] = findViewById(R.id.age);
+        checkBoxes[2] = findViewById(R.id.medhx);
+        checkBoxes[3] = findViewById(R.id.treatment);
+        checkBoxes[4] = findViewById(R.id.smoking);
+        checkBoxes[5] = findViewById(R.id.race);
     }
 
 

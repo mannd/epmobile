@@ -42,22 +42,22 @@ public class Chads extends RiskScore {
 
     @Override
     protected void init() {
-        checkBox = new CheckBox[5];
+        checkBoxes = new CheckBox[5];
 
-        checkBox[0] = findViewById(R.id.chf);
-        checkBox[1] = findViewById(R.id.hypertension);
-        checkBox[2] = findViewById(R.id.age75);
-        checkBox[3] = findViewById(R.id.diabetes);
-        checkBox[4] = findViewById(R.id.stroke);
+        checkBoxes[0] = findViewById(R.id.chf);
+        checkBoxes[1] = findViewById(R.id.hypertension);
+        checkBoxes[2] = findViewById(R.id.age75);
+        checkBoxes[3] = findViewById(R.id.diabetes);
+        checkBoxes[4] = findViewById(R.id.stroke);
     }
 
     @Override
     protected void calculateResult() {
         int result = 0;
         clearSelectedRisks();
-        for (int i = 0; i < checkBox.length; i++) {
-            if (checkBox[i].isChecked()) {
-                addSelectedRisk(checkBox[i].getText().toString());
+        for (int i = 0; i < checkBoxes.length; i++) {
+            if (checkBoxes[i].isChecked()) {
+                addSelectedRisk(checkBoxes[i].getText().toString());
                 if (i == 4) // stroke = 2 points
                     result = result + 2;
                 else

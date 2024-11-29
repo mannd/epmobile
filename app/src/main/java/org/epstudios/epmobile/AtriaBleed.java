@@ -32,21 +32,20 @@ public class AtriaBleed extends RiskScore {
 
     @Override
     protected void init() {
-        checkBox = new CheckBox[5];
+        checkBoxes = new CheckBox[5];
 
-        checkBox[0] = findViewById(R.id.anemia);
-        checkBox[1] = findViewById(R.id.renal_disease);
-        checkBox[2] = findViewById(R.id.age75);
-        checkBox[3] = findViewById(R.id.prior_hemorrhage);
-        checkBox[4] = findViewById(R.id.htn);
+        checkBoxes[0] = findViewById(R.id.anemia);
+        checkBoxes[1] = findViewById(R.id.renal_disease);
+        checkBoxes[2] = findViewById(R.id.age75);
+        checkBoxes[3] = findViewById(R.id.prior_hemorrhage);
+        checkBoxes[4] = findViewById(R.id.htn);
     }
 
 
     @Override
     protected String getFullReference() {
-        String reference = convertReferenceToText(R.string.atria_bleed_full_reference,
+        return convertReferenceToText(R.string.atria_bleed_full_reference,
                 R.string.atria_bleed_link);
-        return reference;
     }
 
     @Override
@@ -58,9 +57,9 @@ public class AtriaBleed extends RiskScore {
     protected void calculateResult() {
         int result = 0;
         clearSelectedRisks();
-        for (int i = 0; i < checkBox.length; i++) {
-            if (checkBox[i].isChecked()) {
-                addSelectedRisk(checkBox[i].getText().toString());
+        for (int i = 0; i < checkBoxes.length; i++) {
+            if (checkBoxes[i].isChecked()) {
+                addSelectedRisk(checkBoxes[i].getText().toString());
                 if (i == 0 || i == 1)
                     result = result + 3;
                 else if (i == 2)

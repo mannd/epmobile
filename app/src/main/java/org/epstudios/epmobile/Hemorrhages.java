@@ -32,28 +32,28 @@ public class Hemorrhages extends RiskScore {
 
     @Override
     protected void init() {
-        checkBox = new CheckBox[11];
+        checkBoxes = new CheckBox[11];
 
-        checkBox[0] = findViewById(R.id.hepatic_or_renal_disease);
-        checkBox[1] = findViewById(R.id.etoh);
-        checkBox[2] = findViewById(R.id.malignancy);
-        checkBox[3] = findViewById(R.id.older);
-        checkBox[4] = findViewById(R.id.platelet);
-        checkBox[REBLEED] = findViewById(R.id.rebleeding);
-        checkBox[6] = findViewById(R.id.htn_uncontrolled);
-        checkBox[7] = findViewById(R.id.anemia);
-        checkBox[8] = findViewById(R.id.genetic_factors);
-        checkBox[9] = findViewById(R.id.fall_risk);
-        checkBox[10] = findViewById(R.id.stroke);
+        checkBoxes[0] = findViewById(R.id.hepatic_or_renal_disease);
+        checkBoxes[1] = findViewById(R.id.etoh);
+        checkBoxes[2] = findViewById(R.id.malignancy);
+        checkBoxes[3] = findViewById(R.id.older);
+        checkBoxes[4] = findViewById(R.id.platelet);
+        checkBoxes[REBLEED] = findViewById(R.id.rebleeding);
+        checkBoxes[6] = findViewById(R.id.htn_uncontrolled);
+        checkBoxes[7] = findViewById(R.id.anemia);
+        checkBoxes[8] = findViewById(R.id.genetic_factors);
+        checkBoxes[9] = findViewById(R.id.fall_risk);
+        checkBoxes[10] = findViewById(R.id.stroke);
     }
 
     @Override
     protected void calculateResult() {
         clearSelectedRisks();
         int result = 0;
-        for (int i = 0; i < checkBox.length; i++) {
-            if (checkBox[i].isChecked()) {
-                addSelectedRisk(checkBox[i].getText().toString());
+        for (int i = 0; i < checkBoxes.length; i++) {
+            if (checkBoxes[i].isChecked()) {
+                addSelectedRisk(checkBoxes[i].getText().toString());
                 if (i == REBLEED)
                     result += 2;
                 else

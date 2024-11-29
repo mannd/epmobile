@@ -40,30 +40,30 @@ public class BrugadaScore extends RiskScore {
 
     @Override
     protected void init() {
-        checkBox = new CheckBox[12];
+        checkBoxes = new CheckBox[12];
 
         // ECG
-        checkBox[0] = findViewById(R.id.spontaneous_type_1_ecg);
-        checkBox[1] = findViewById(R.id.fever_type_1_ecg);
-        checkBox[2] = findViewById(R.id.type_2_3_ecg);
+        checkBoxes[0] = findViewById(R.id.spontaneous_type_1_ecg);
+        checkBoxes[1] = findViewById(R.id.fever_type_1_ecg);
+        checkBoxes[2] = findViewById(R.id.type_2_3_ecg);
         // Clinical history
-        checkBox[3] = findViewById(R.id.unexplained_arrest);
-        checkBox[4] = findViewById(R.id.agonal_respirations);
-        checkBox[5] = findViewById(R.id.arrhythmic_syncope);
-        checkBox[6] = findViewById(R.id.unclear_syncope);
-        checkBox[7] = findViewById(R.id.afl_afb);
+        checkBoxes[3] = findViewById(R.id.unexplained_arrest);
+        checkBoxes[4] = findViewById(R.id.agonal_respirations);
+        checkBoxes[5] = findViewById(R.id.arrhythmic_syncope);
+        checkBoxes[6] = findViewById(R.id.unclear_syncope);
+        checkBoxes[7] = findViewById(R.id.afl_afb);
         // Family history
-        checkBox[8] = findViewById(R.id.relative_definite_brugada);
-        checkBox[9] = findViewById(R.id.suspicious_scd);
-        checkBox[10] = findViewById(R.id.unexplained_scd);
+        checkBoxes[8] = findViewById(R.id.relative_definite_brugada);
+        checkBoxes[9] = findViewById(R.id.suspicious_scd);
+        checkBoxes[10] = findViewById(R.id.unexplained_scd);
         // Genetic testing
-        checkBox[11] = findViewById(R.id.pathogenic_mutation);
+        checkBoxes[11] = findViewById(R.id.pathogenic_mutation);
     }
 
     @Override
     protected void calculateResult() {
         clearSelectedRisks();
-        for (CheckBox selection : checkBox) {
+        for (CheckBox selection : checkBoxes) {
             if (selection.isChecked()) {
                 addSelectedRisk(selection.getText().toString());
             }
@@ -77,28 +77,28 @@ public class BrugadaScore extends RiskScore {
         int ecgIndexEnd = 2;
         int ecgIndexBegin = 0;
         for (int i = ecgIndexBegin; i <= ecgIndexEnd; ++i) {
-            if (checkBox[i].isChecked() && points.get(i) > ecgScore) {
+            if (checkBoxes[i].isChecked() && points.get(i) > ecgScore) {
                 ecgScore = points.get(i);
             }
         }
         int clinicalIndexEnd = 7;
         int clinicalIndexBegin = 3;
         for (int i = clinicalIndexBegin; i <= clinicalIndexEnd; ++i) {
-            if (checkBox[i].isChecked() && points.get(i) > clinicalScore) {
+            if (checkBoxes[i].isChecked() && points.get(i) > clinicalScore) {
                 clinicalScore = points.get(i);
             }
         }
         int familyIndexEnd = 10;
         int familyIndexBegin = 8;
         for (int i = familyIndexBegin; i <= familyIndexEnd; ++i) {
-            if (checkBox[i].isChecked() && points.get(i) > familyScore) {
+            if (checkBoxes[i].isChecked() && points.get(i) > familyScore) {
                 familyScore = points.get(i);
             }
         }
         int geneticIndexEnd = 11;
         int geneticIndexBegin = 11;
         for (int i = geneticIndexBegin; i <= geneticIndexEnd; ++i) {
-            if (checkBox[i].isChecked() && points.get(i) > geneticScore) {
+            if (checkBoxes[i].isChecked() && points.get(i) > geneticScore) {
                 geneticScore = points.get(i);
             }
         }

@@ -41,8 +41,7 @@ public class HcmScd2022 extends HcmRiskScd {
                 R.string.hcm_scd_link_3);
         String reference4 = convertReferenceToText(R.string.hcm_scd_reference_4,
                 R.string.hcm_scd_link_4);
-        String fullReference = reference2 + "\n" + reference3 + "\n" + reference4;
-        return fullReference;
+        return reference2 + "\n" + reference3 + "\n" + reference4;
     }
 
     @Override
@@ -70,14 +69,14 @@ public class HcmScd2022 extends HcmRiskScd {
         String maxLvWallThicknessString = maxLvWallThicknessEditText.getText().toString();
         String maxLvotGradientString = maxLvotGradientEditText.getText().toString();
         String laDiameterString = laSizeEditText.getText().toString();
-        boolean hasFamilyHxScd = checkBox[0].isChecked();
-        boolean hasNsvt = checkBox[1].isChecked();
-        boolean hasSyncope = checkBox[2].isChecked();
-        boolean apicalAneurysm = checkBox[3].isChecked();
-        boolean lowLvef = checkBox[4].isChecked();
-        boolean extensiveLge = checkBox[5].isChecked();
-        boolean abnormalBP = checkBox[6].isChecked();
-        boolean sarcomericMutation = checkBox[7].isChecked();
+        boolean hasFamilyHxScd = checkBoxes[0].isChecked();
+        boolean hasNsvt = checkBoxes[1].isChecked();
+        boolean hasSyncope = checkBoxes[2].isChecked();
+        boolean apicalAneurysm = checkBoxes[3].isChecked();
+        boolean lowLvef = checkBoxes[4].isChecked();
+        boolean extensiveLge = checkBoxes[5].isChecked();
+        boolean abnormalBP = checkBoxes[6].isChecked();
+        boolean sarcomericMutation = checkBoxes[7].isChecked();
         try {
             HcmRiskScdModel model = new HcmRiskScdModel(
                     ageString,
@@ -94,31 +93,7 @@ public class HcmScd2022 extends HcmRiskScd {
             addSelectedRisk("LV wall thickness = " + maxLvWallThicknessString + " mm");
             addSelectedRisk("LA diameter = " + laDiameterString + " mm");
             addSelectedRisk(("LVOT gradient = " + maxLvotGradientString + " mmHg"));
-            if (hasFamilyHxScd) {
-                addSelectedRisk(getString(R.string.scd_in_family_label));
-            }
-            if (hasNsvt) {
-                addSelectedRisk(getString(R.string.nonsustained_vt_label));
-            }
-            if (hasSyncope) {
-                addSelectedRisk(getString(R.string.unexplained_syncope_label));
-            }
-            if (apicalAneurysm) {
-                addSelectedRisk(getString(R.string.apical_aneurysm_label));
-            }
-            if (lowLvef) {
-                addSelectedRisk(getString(R.string.low_lvef_label));
-            }
-            if (extensiveLge) {
-                addSelectedRisk(getString(R.string.extensive_lge_label));
-            }
-            if (abnormalBP) {
-                addSelectedRisk(getString(R.string.abnormal_bp_response_label));
-            }
-            if (sarcomericMutation) {
-                addSelectedRisk(getString(R.string.sarcomeric_mutation_label));
-            }
-            // TODO: Double check this: don't we have to displayResult AFTER adding selected risks?
+            addSelectedRisks();
             displayResult(getResultMessage(result,
                     apicalAneurysm,
                     lowLvef,
@@ -127,20 +102,20 @@ public class HcmScd2022 extends HcmRiskScd {
                     sarcomericMutation,
                     NO_ERROR), getString(R.string.hcm_scd_2022_title));
         } catch (AgeOutOfRangeException e) {
-            displayResult(getResultMessage(0.0, AGE_OUT_OF_RANGE), getString(R.string.error_dialog_title));
+            displayResult(getResultMessage(AGE_OUT_OF_RANGE), getString(R.string.error_dialog_title));
         } catch (LvWallThicknessOutOfRangeException e) {
-            displayResult(getResultMessage(0.0, THICKNESS_OUT_OF_RANGE), getString(R.string.error_dialog_title));
+            displayResult(getResultMessage(THICKNESS_OUT_OF_RANGE), getString(R.string.error_dialog_title));
         } catch (LvotGradientOutOfRangeException e) {
-            displayResult(getResultMessage(0.0, GRADIENT_OUT_OF_RANGE), getString(R.string.error_dialog_title));
+            displayResult(getResultMessage(GRADIENT_OUT_OF_RANGE), getString(R.string.error_dialog_title));
         } catch (LaSizeOutOfRangeException e) {
-            displayResult(getResultMessage(0.0, SIZE_OUT_OF_RANGE), getString(R.string.error_dialog_title));
+            displayResult(getResultMessage(SIZE_OUT_OF_RANGE), getString(R.string.error_dialog_title));
         } catch (ParsingException e) {
-            displayResult(getResultMessage(0.0, NUMBER_EXCEPTION), getString(R.string.error_dialog_title));
+            displayResult(getResultMessage(NUMBER_EXCEPTION), getString(R.string.error_dialog_title));
         }
 
     }
 
-    private String getResultMessage(double result, int errorCode) {
+    private String getResultMessage(int errorCode) {
         String message = "";
         switch (errorCode) {
             case NUMBER_EXCEPTION:
@@ -176,7 +151,7 @@ public class HcmScd2022 extends HcmRiskScd {
             boolean sarcomericMutation,
             int errorCode ) {
         if (errorCode != NO_ERROR) {
-            return getResultMessage(result, errorCode);
+            return getResultMessage(errorCode);
         } else {
             Recommendation recommendation = Recommendation.class3;
             if (result >= 0.06) {
@@ -225,16 +200,16 @@ public class HcmScd2022 extends HcmRiskScd {
 
     @Override
     protected void init() {
-        checkBox = new CheckBox[8];
+        checkBoxes = new CheckBox[8];
 
-        checkBox[0] = findViewById(R.id.family_hx_scd);
-        checkBox[1] = findViewById(R.id.nsvt);
-        checkBox[2] = findViewById(R.id.unexplained_syncope);
-        checkBox[3] = findViewById(R.id.apical_aneurysm);
-        checkBox[4] = findViewById(R.id.low_lvef);
-        checkBox[5] = findViewById(R.id.extensive_lge);
-        checkBox[6] = findViewById(R.id.abnormal_bp_response);
-        checkBox[7] = findViewById(R.id.sarcomeric_mutation);
+        checkBoxes[0] = findViewById(R.id.family_hx_scd);
+        checkBoxes[1] = findViewById(R.id.nsvt);
+        checkBoxes[2] = findViewById(R.id.unexplained_syncope);
+        checkBoxes[3] = findViewById(R.id.apical_aneurysm);
+        checkBoxes[4] = findViewById(R.id.low_lvef);
+        checkBoxes[5] = findViewById(R.id.extensive_lge);
+        checkBoxes[6] = findViewById(R.id.abnormal_bp_response);
+        checkBoxes[7] = findViewById(R.id.sarcomeric_mutation);
 
         ageEditText = findViewById(R.id.age);
         maxLvWallThicknessEditText = findViewById(R.id.max_lv_wall_thickness);

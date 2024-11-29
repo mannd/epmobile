@@ -28,24 +28,24 @@ public class HasBled extends RiskScore {
 
     @Override
     protected void init() {
-        checkBox = new CheckBox[9];
+        checkBoxes = new CheckBox[9];
 
-        checkBox[0] = findViewById(R.id.hypertension);
-        checkBox[1] = findViewById(R.id.abnormal_renal_function);
-        checkBox[2] = findViewById(R.id.abnormal_liver_function);
-        checkBox[3] = findViewById(R.id.stroke);
-        checkBox[4] = findViewById(R.id.bleeding);
-        checkBox[5] = findViewById(R.id.labile_inr);
-        checkBox[6] = findViewById(R.id.age65);
-        checkBox[7] = findViewById(R.id.drug);
-        checkBox[8] = findViewById(R.id.etoh);
+        checkBoxes[0] = findViewById(R.id.hypertension);
+        checkBoxes[1] = findViewById(R.id.abnormal_renal_function);
+        checkBoxes[2] = findViewById(R.id.abnormal_liver_function);
+        checkBoxes[3] = findViewById(R.id.stroke);
+        checkBoxes[4] = findViewById(R.id.bleeding);
+        checkBoxes[5] = findViewById(R.id.labile_inr);
+        checkBoxes[6] = findViewById(R.id.age65);
+        checkBoxes[7] = findViewById(R.id.drug);
+        checkBoxes[8] = findViewById(R.id.etoh);
     }
 
     @Override
     protected void calculateResult() {
         int result = 0;
         clearSelectedRisks();
-        for (CheckBox aCheckBox : checkBox) {
+        for (CheckBox aCheckBox : checkBoxes) {
             if (aCheckBox.isChecked()) {
                 addSelectedRisk(aCheckBox.getText().toString());
                 result++;
