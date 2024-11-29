@@ -1829,7 +1829,12 @@
         SCD or sustained ventricular arrhythmias.\\n\\nThis calculator is based on the 2024 Guidelines for
         the Management of HCM by the AHA/ACC.  The guidelines are virtually identical to the 2020 guidelines,
         with the exception that the original risk factor of LV apical aneurysm, independent of size,
-        was changed to LV apical aneurysm with transmural scar or LGE.]]></string>
+        was changed to LV apical aneurysm with transmural scar or LGE.
+        \n\nNOTE: Many online calculators combine this score with the HCM SCD-Risk score, with
+        the remark that the calculated risk may be underestimated when risk factors not present
+        in the original HCM SCD-Risk score are present.  However the HCM SCD 2024 risk score
+        does not actually use the HCM SCD-Risk score to determine the ICD indication recommendation.]]>
+    </string>
     <string name="hcm_scd_2024_key">Family Hx of SCD = Sudden death judged definitively or likely
         attributable to HCM in ≥1 first-degree or close relatives who are ≤50 years of age
         \nMassive LVH = ≥ 30 mm in any LV segment\nUnexplained syncope = ≥1 recent episodes of syncope

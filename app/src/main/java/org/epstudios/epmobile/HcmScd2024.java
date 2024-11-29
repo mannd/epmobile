@@ -98,27 +98,6 @@ public class HcmScd2024 extends RiskScore {
         boolean extensiveLge = checkBoxes[6].isChecked();
         clearSelectedRisks();
         addSelectedRisks();
-//        if (familyHxScd) {
-//            addSelectedRisk("Family history of SCD");
-//        }
-//        if (massiveLvh) {
-//            addSelectedRisk("Massive LVH");
-//        }
-//        if (hasSyncope) {
-//            addSelectedRisk("Unexplained syncope");
-//        }
-//        if (apicalAneurysm) {
-//            addSelectedRisk("Apical aneurysm");
-//        }
-//        if (lowLvef) {
-//            addSelectedRisk("Low LVEF");
-//        }
-//        if (hxNSVT) {
-//            addSelectedRisk("NSVT");
-//        }
-//        if (extensiveLge) {
-//            addSelectedRisk("Extensive LGE");
-//        }
     }
 
     private Recommendation calculateRecommendation() {
