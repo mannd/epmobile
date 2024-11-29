@@ -51,9 +51,9 @@ public class IcdMortalityRisk extends RiskScore {
     protected void calculateResult() {
         int result = 0;
         clearSelectedRisks();
-        for (int i = 0; i < checkBox.length; i++) {
-            if (checkBox[i].isChecked()) {
-                addSelectedRisk(checkBox[i].getText().toString());
+        for (int i = 0; i < checkBoxes.length; i++) {
+            if (checkBoxes[i].isChecked()) {
+                addSelectedRisk(checkBoxes[i].getText().toString());
                 if (i == 0) // Very High Risk group
                     result = result + VHR_SCORE;
                 else
@@ -110,14 +110,14 @@ public class IcdMortalityRisk extends RiskScore {
 
     @Override
     protected void init() {
-        checkBox = new CheckBox[6];
+        checkBoxes = new CheckBox[6];
 
-        checkBox[0] = findViewById(R.id.very_high_risk);
-        checkBox[1] = findViewById(R.id.nyha_greater_than_2);
-        checkBox[2] = findViewById(R.id.age70);
-        checkBox[3] = findViewById(R.id.bun_greater_than_26);
-        checkBox[4] = findViewById(R.id.qrs_greater_than_12);
-        checkBox[5] = findViewById(R.id.afb_baseline);
+        checkBoxes[0] = findViewById(R.id.very_high_risk);
+        checkBoxes[1] = findViewById(R.id.nyha_greater_than_2);
+        checkBoxes[2] = findViewById(R.id.age70);
+        checkBoxes[3] = findViewById(R.id.bun_greater_than_26);
+        checkBoxes[4] = findViewById(R.id.qrs_greater_than_12);
+        checkBoxes[5] = findViewById(R.id.afb_baseline);
     }
 
     @Override

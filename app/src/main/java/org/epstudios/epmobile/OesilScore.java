@@ -17,7 +17,7 @@ public class OesilScore extends SyncopeRiskScore {
     protected void calculateResult() {
         int result = 0;
         clearSelectedRisks();
-        for (CheckBox aCheckBox : checkBox) {
+        for (CheckBox aCheckBox : checkBoxes) {
             if (aCheckBox.isChecked()) {
                 addSelectedRisk(aCheckBox.getText().toString());
                 result++;
@@ -39,22 +39,22 @@ public class OesilScore extends SyncopeRiskScore {
 
     @Override
     protected void init() {
-        checkBox = new CheckBox[6];
+        checkBoxes = new CheckBox[6];
 
-        checkBox[0] = findViewById(R.id.risk_one);
-        checkBox[1] = findViewById(R.id.risk_two);
-        checkBox[2] = findViewById(R.id.risk_three);
-        checkBox[3] = findViewById(R.id.risk_four);
-        checkBox[4] = findViewById(R.id.risk_five);
-        checkBox[5] = findViewById(R.id.risk_six);
+        checkBoxes[0] = findViewById(R.id.risk_one);
+        checkBoxes[1] = findViewById(R.id.risk_two);
+        checkBoxes[2] = findViewById(R.id.risk_three);
+        checkBoxes[3] = findViewById(R.id.risk_four);
+        checkBoxes[4] = findViewById(R.id.risk_five);
+        checkBoxes[5] = findViewById(R.id.risk_six);
 
-        checkBox[4].setVisibility(View.GONE);
-        checkBox[5].setVisibility(View.GONE);
+        checkBoxes[4].setVisibility(View.GONE);
+        checkBoxes[5].setVisibility(View.GONE);
 
-        checkBox[0].setText(getString(R.string.abnormal_ecg_label));
-        checkBox[1].setText(getString(R.string.history_cv_disease_label));
-        checkBox[2].setText(getString(R.string.lack_of_prodrome_label));
-        checkBox[3].setText(getString(R.string.age_over_65_label));
+        checkBoxes[0].setText(getString(R.string.abnormal_ecg_label));
+        checkBoxes[1].setText(getString(R.string.history_cv_disease_label));
+        checkBoxes[2].setText(getString(R.string.lack_of_prodrome_label));
+        checkBoxes[3].setText(getString(R.string.age_over_65_label));
     }
 
     @Override

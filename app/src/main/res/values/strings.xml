@@ -1238,7 +1238,13 @@
         relatives under 40 years old or in a first degree relative with confirmed HCM at
         any age.\nNSVT
         = nonsustained ventricular tachycardia: 3 consecutive ventricular beats
-        at a rate of 120 bpm or more and &lt;30 sec duration on Holter monitoring (minimum 24 hrs) at or prior to evaluation.</string>
+        at a rate of 120 bpm or more and &lt;30 sec duration on Holter monitoring
+        (minimum 24 hrs) at or prior to evaluation.</string>
+    <string name="hcm_scd_2022_key">\nLVEF = left ventricular ejection fraction
+        \nExtensive LGE = late gadolinium enhancement, defined as \u2265 15%
+        of left ventricular mass\nAbnormal BP response = failure to increase
+        systolic pressure by at least 20 mmHg from rest to peak exercise,
+        or a fall of >20 mmHg from peak pressure.</string>
     <string name="hcm_scd_reference_1">2014 ESC Guidelines on diagnosis and
         management of hypertrophic cardiomyopathy: The Task Force for the
         Diagnosis and Management of Hypertrophic Cardiomyopathy of the European
@@ -1773,10 +1779,10 @@
     <string name="v2_calculator_title">V2 Transition Calculator</string>
     <string name="less_than_06">&lt; 0.6</string>
     <string name="more_than_06">≥ 0.6</string>
-    <string name="v2_transition_ratio_vt_is_rvot">Transition ratio is &lt; 0.6\nRVOT origin is likely.
+    <string name="v2_transition_ratio_vt_is_rvot" formatted="false">Transition ratio is &lt; 0.6\nRVOT origin is likely.
         \n(sensitivity 95%, specificity 100%)</string>
-    <string name="v2_transition_ratio_vt_is_lvot">Transition ratio is ≥ 0.6\nLVOT origin is likely.
-        \n(sensitivity 95%, specificity 100%)</string>
+    <string name="v2_transition_ratio_vt_is_lvot" formatted="false">Transition ratio is ≥ 0.6\nLVOT origin is likely.
+        \n(sensitivity 95%, specificity 100%)</string>%
     <string name="r_wave_amplitude_label">R wave in V2</string>
     <string name="s_wave_amplitude_label">"S wave in V2"</string>
     <string name="vt_label">VT or PVC complex</string>
@@ -1787,4 +1793,51 @@
         rhythm complex and a ventricular tachycardia or premature ventricular complex.  Units of
         measurement do not matter as this calculation is based on ratios.\n\nNote that the app EP
         Calipers is useful for making these measurements.</string>
+    <string name="hcm_scd_list_title">HCM SCD Risk Scores</string>
+    <string name="apical_aneurysm_label">Apical aneurysm</string>
+    <string name="low_lvef_label">Low LVEF (&#8804; 50%)</string>
+    <string name="extensive_lge_label">Extensive LGE</string>
+    <string name="abnormal_bp_response_label">Abnormal BP response</string>
+    <string name="sarcomeric_mutation_label">Sarcomeric mutation</string>
+    <string name="hcm_scd_reference_3">Zeppenfeld K, Tfelt-Hansen J, de Riva M, et al. 2022 ESC Guidelines for the management of patients with ventricular arrhythmias and the prevention of sudden cardiac death. Eur Heart J. 2022;43(40):3997-4126.</string>
+    <string name="hcm_scd_link_3">https://doi.org/10.1093/eurheartj/ehac262</string>
+    <string name="hcm_scd_reference_4">Monda E, Limongelli G. Integrated Sudden Cardiac Death Risk Prediction Model For Patients With Hypertrophic Cardiomyopathy. Circulation. 2023;147(4):281-283.</string>
+    <string name="hcm_scd_link_4">https://doi.org/10.1161/CIRCULATIONAHA.122.063019\n</string>
+    <string name="hcm_scd_reference_5">Ommen SR, Ho CY, Asif IM, et al.
+        2024 AHA/ACC/AMSSM/HRS/PACES/SCMR Guideline for the Management of Hypertrophic Cardiomyopathy:
+        A Report of the American Heart Association/American College of Cardiology Joint Committee on
+        Clinical Practice Guidelines. Circulation. 2024;149(23):e1239-e1311.</string>
+    <string name="hcm_scd_link_5">https://doi.org/10.1161/CIR.0000000000001250</string>
+    <string name="hcm_scd_reference_6">Writing Committee Members, Ommen SR, Mital S, et al.
+        2020 AHA/ACC Guideline for the Diagnosis and Treatment of Patients With Hypertrophic Cardiomyopathy.
+        Circulation. 2020;142(25):e558-e631.</string>
+    <string name="hcm_scd_link_6">https://doi.org/10.1161/CIR.0000000000000937</string>
+    <string name="hcm_scd_reference_7">Lee HJ, Kim HK, Lee SC, et al. Performance of 2020 AHA/ACC
+        HCM Guidelines and Incremental Value of Myocardial Strain for Predicting SCD. JACC Asia.
+        2023;4(1):10-22.</string>
+    <string name="hcm_scd_link_7">https://doi.org/10.1016/j.jacasi.2023.09.002</string>
+    <string name="hcm_scd_2022_instructions"><![CDATA[Do not use this risk calculator for pediatric patients
+        (<16), elite competitive athletes, HCM associated with metabolic syndromes, or patients with
+        aborted SCD or sustained ventricular arrhythmias.\\n\\nThis calculator uses the HCM Risk-SCD score
+        to calculate the 5 year risk of sudden cardiac death.  It takes into account additional risk factors
+        not included in the original HCM Risk-SCD score to make recommendations for ICD implantation.
+        Given this, the 5 year risk calculated by the HCM Risk-SCD score may underestimate the actual
+        risk of SCD.]]></string>
+    <string name="massive_lvh_label">Massive LVH</string>
+    <string name="hcm_scd_2024_instructions"><![CDATA[Do not use this risk calculator for pediatric patients
+        (<16), elite competitive athletes, HCM associated with metabolic syndromes, or patients with aborted
+        SCD or sustained ventricular arrhythmias.\\n\\nThis calculator is based on the 2024 Guidelines for
+        the Management of HCM by the AHA/ACC.  The guidelines are virtually identical to the 2020 guidelines,
+        with the exception that the original risk factor of LV apical aneurysm, independent of size,
+        was changed to LV apical aneurysm with transmural scar or LGE.]]></string>
+    <string name="hcm_scd_2024_key">Family Hx of SCD = Sudden death judged definitively or likely
+        attributable to HCM in ≥1 first-degree or close relatives who are ≤50 years of age
+        \nMassive LVH = ≥ 30 mm in any LV segment\nUnexplained syncope = ≥1 recent episodes of syncope
+        suspected by clinical history to be arrhythmic (ie, unlikely to be of neurocardiogenic
+        [vasovagal] etiology, or related to LV outflow tract obstruction\nApical aneurysm = with
+        transmural scar or late gadolinium enhancement\nExtensive LGE = late gadolinium enhancement on
+        cardiac magnetic resonance scan of ≥15% of LV mass"
+    </string>
+    <string name="hcm_scd_label">HCM Risk-SCD</string>
+    <string name="other_factors_label">Other factors</string>
 </resources>

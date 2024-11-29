@@ -16,9 +16,9 @@ public class EgsysScore extends SyncopeRiskScore {
     protected void calculateResult() {
         int result = 0;
         clearSelectedRisks();
-        for (int i = 0; i < checkBox.length; i++) {
-            if (checkBox[i].isChecked()) {
-                addSelectedRisk(checkBox[i].getText().toString());
+        for (int i = 0; i < checkBoxes.length; i++) {
+            if (checkBoxes[i].isChecked()) {
+                addSelectedRisk(checkBoxes[i].getText().toString());
                 result += points[i];
             }
         }
@@ -52,22 +52,22 @@ public class EgsysScore extends SyncopeRiskScore {
 
     @Override
     protected void init() {
-        checkBox = new CheckBox[6];
+        checkBoxes = new CheckBox[6];
 
-        checkBox[0] = findViewById(R.id.risk_one);
-        checkBox[1] = findViewById(R.id.risk_two);
-        checkBox[2] = findViewById(R.id.risk_three);
-        checkBox[3] = findViewById(R.id.risk_four);
-        checkBox[4] = findViewById(R.id.risk_five);
-        checkBox[5] = findViewById(R.id.risk_six);
+        checkBoxes[0] = findViewById(R.id.risk_one);
+        checkBoxes[1] = findViewById(R.id.risk_two);
+        checkBoxes[2] = findViewById(R.id.risk_three);
+        checkBoxes[3] = findViewById(R.id.risk_four);
+        checkBoxes[4] = findViewById(R.id.risk_five);
+        checkBoxes[5] = findViewById(R.id.risk_six);
 
-        checkBox[0].setText(getString(R.string.palps_before_syncope_label));
-        checkBox[1]
+        checkBoxes[0].setText(getString(R.string.palps_before_syncope_label));
+        checkBoxes[1]
                 .setText(getString(R.string.abnormal_ecg_or_heart_disease_label));
-        checkBox[2].setText(getString(R.string.syncope_during_effort_label));
-        checkBox[3].setText(getString(R.string.syncope_while_supine_label));
-        checkBox[4].setText(getString(R.string.autonomic_prodrome_label));
-        checkBox[5].setText(getString(R.string.predisposing_factors_label));
+        checkBoxes[2].setText(getString(R.string.syncope_during_effort_label));
+        checkBoxes[3].setText(getString(R.string.syncope_while_supine_label));
+        checkBoxes[4].setText(getString(R.string.autonomic_prodrome_label));
+        checkBoxes[5].setText(getString(R.string.predisposing_factors_label));
     }
 
     @Override

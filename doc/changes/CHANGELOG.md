@@ -5,6 +5,15 @@ See [keepachangelog.com](https://keepachangelog.com/en/1.0.0/) for information o
 
 This project roughly utilizes [Semantic Versioning](https://semver.org/spec/v2.0.0.html).  In some versions the PATCH of MAJOR.MINOR.PATCH is omitted.  Note also that unreleased versions are omitted.
 
+## [2.34.0] - 2024-11-29
+### Added
+- HCM Risk Scores group to Risk Scores
+- HCM SCD 2022 risk score
+- HCM SCD 2024 risk score
+### Changes
+- Rename HCM SCD 2014 to HCM SCD Risk 2014
+- Update instructions for HCM SCD Risk 2014 risk score
+
 ## [2.33.0] - 2024-07-14
 ### Changes
 - Target SDK version changed to Android 34, as required by Google

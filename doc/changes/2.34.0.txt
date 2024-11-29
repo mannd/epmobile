@@ -1,0 +1,7 @@
+EP Mobile 2.34.0 Release Notes
+Changes since 2.33.0
+* Add HCM Risk Scores group to Risk Scores
+* Add HCM SCD 2022 risk score
+* Add HCM SCD 2024 risk score
+* Rename HCM SCD Risk 2014 score
+* Update instructions for HCM SCD Risk score
