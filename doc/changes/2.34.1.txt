@@ -1,0 +1,3 @@
+EP Mobile 2.34.1 Release Notes
+Changes since 2.34.0
+* Fixed off center main screen when using large display size [issue #42]

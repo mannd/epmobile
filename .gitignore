@@ -12,6 +12,7 @@
 bin/
 gen/
 doc/notes.html
+app/release
 
 # local configuration file (sdk path, etc)
 local.properties
