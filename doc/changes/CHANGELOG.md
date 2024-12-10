@@ -5,6 +5,10 @@ See [keepachangelog.com](https://keepachangelog.com/en/1.0.0/) for information o
 
 This project roughly utilizes [Semantic Versioning](https://semver.org/spec/v2.0.0.html).  In some versions the PATCH of MAJOR.MINOR.PATCH is omitted.  Note also that unreleased versions are omitted.
 
+## [2.34.1] - 2024=12-10
+### Fixed
+- Off center main screen when using large display size [issue #42]
+
 ## [2.34.0] - 2024-11-29
 ### Added
 - HCM Risk Scores group to Risk Scores
