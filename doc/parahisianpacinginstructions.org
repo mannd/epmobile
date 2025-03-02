@@ -1,4 +1,5 @@
-#+TITLE:     Para-Hisian Pacing
+# Para-hisian Pacing
+#+TITLE:     
 #+AUTHOR:    David Mann
 #+EMAIL:     mannd@epstudiossoftware.com
 #+DATE:      [2014-10-20 Mon]
