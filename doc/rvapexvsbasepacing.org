@@ -1,4 +1,5 @@
-#+TITLE:     RV Apex vs Base Pacing
+# RA Apex vs Base Pacing -- leave title blank below
+#+TITLE:     
 #+AUTHOR:    David Mann
 #+EMAIL:     mannd@epstudiossoftware.com
 #+DATE:      [2014-10-20 Mon]
