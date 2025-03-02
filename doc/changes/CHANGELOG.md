@@ -5,7 +5,11 @@ See [keepachangelog.com](https://keepachangelog.com/en/1.0.0/) for information o
 
 This project roughly utilizes [Semantic Versioning](https://semver.org/spec/v2.0.0.html).  In some versions the PATCH of MAJOR.MINOR.PATCH is omitted.  Note also that unreleased versions are omitted.
 
-## [2.34.1] - 2024=12-10
+## [2.34.2] - 2025-03-01
+### Fixed
+- HTML pages not appearing correctly in dard mode
+
+## [2.34.1] - 2024-12-10
 ### Fixed
 - Off center main screen when using large display size [issue #42]
 
