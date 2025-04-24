@@ -30,11 +30,8 @@ class EpMobile : EpActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.mainscreen)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.my_root_view)) { view, windowInsets ->
-            val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
-            view.updatePadding(top = insets.top, bottom = insets.bottom)
-            WindowInsetsCompat.CONSUMED
-        }
+        super.setupInsets(R.id.my_root_view)
+
         val calculatorButton = findViewById<Button>(R.id.calculators_button)
         val diagnosisButton = findViewById<Button>(R.id.diagnosis_button)
         val referenceButton = findViewById<Button>(R.id.reference_button)

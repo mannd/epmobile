@@ -16,12 +16,8 @@ class CalculatorList : EpActivity() {
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.selectionlist)
+        super.setupInsets(R.id.my_root_view)
         initToolbar()
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.my_root_view)) { view, windowInsets ->
-            val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
-            view.updatePadding(top = insets.top, bottom = insets.bottom)
-            WindowInsetsCompat.CONSUMED
-        }
         val adapter = ArrayAdapter.createFromResource(
             this, R.array.calculator_list, android.R.layout.simple_list_item_1
         )

@@ -102,6 +102,14 @@ abstract class EpActivity : AppCompatActivity() {
         windowInsetsController.isAppearanceLightNavigationBars = false
     }
 
+    fun setupInsets(topView: Int) {
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(topView)) { view, windowInsets ->
+            val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
+            view.updatePadding(top = insets.top, bottom = insets.bottom)
+            WindowInsetsCompat.CONSUMED
+        }
+    }
+
     protected fun initToolbar() {
         val toolbar = findViewById<Toolbar?>(R.id.toolbar)
         setSupportActionBar(toolbar)
