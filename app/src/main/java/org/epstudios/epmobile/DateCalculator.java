@@ -29,6 +29,7 @@ public class DateCalculator extends EpActivity implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.daycalculator);
+        setupInsets(R.id.my_root_view);
         initToolbar();
 
         View calculateDateButton = findViewById(R.id.calculate_button);
