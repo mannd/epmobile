@@ -19,7 +19,6 @@ package org.epstudios.epmobile
 
 import android.app.AlertDialog
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.text.Html
 import android.text.Spanned
@@ -27,15 +26,14 @@ import android.text.method.LinkMovementMethod
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.view.WindowInsetsController
 import android.widget.TextView
+import androidx.activity.enableEdgeToEdge
+import androidx.annotation.IdRes
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
-import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.WindowInsetsControllerCompat
 import androidx.core.view.updatePadding
 
 //adds option menu functions
@@ -94,18 +92,19 @@ abstract class EpActivity : AppCompatActivity() {
         return false
     }
 
-    override fun onCreate(saveInstanceState: Bundle?) {
-        super.onCreate(saveInstanceState)
-        WindowCompat.setDecorFitsSystemWindows(window, false)
-        val windowInsetsController = WindowInsetsControllerCompat(window, window.decorView)
-        windowInsetsController.isAppearanceLightStatusBars = false
-        windowInsetsController.isAppearanceLightNavigationBars = false
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        //WindowCompat.setDecorFitsSystemWindows(window, false)
+//        val windowInsetsController = WindowInsetsControllerCompat(window, window.decorView)
+//        windowInsetsController.isAppearanceLightStatusBars = false
+//        windowInsetsController.isAppearanceLightNavigationBars = false
     }
 
-    fun setupInsets(topView: Int) {
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(topView)) { view, windowInsets ->
+    protected fun setupInsets(@IdRes viewId: Int) {
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(viewId)) { view, windowInsets ->
             val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
-            view.updatePadding(top = insets.top, bottom = insets.bottom)
+            view.updatePadding(bottom = insets.bottom, top = insets.top)
             WindowInsetsCompat.CONSUMED
         }
     }

@@ -16,7 +16,7 @@ class CalculatorList : EpActivity() {
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.selectionlist)
-        super.setupInsets(R.id.my_root_view)
+        setupInsets(R.id.my_root_view)
         initToolbar()
         val adapter = ArrayAdapter.createFromResource(
             this, R.array.calculator_list, android.R.layout.simple_list_item_1
