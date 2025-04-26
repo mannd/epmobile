@@ -19,10 +19,13 @@ package org.epstudios.epmobile
 
 import android.app.AlertDialog
 import android.content.Intent
+import android.content.pm.PackageInfo
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.text.Html
 import android.text.Spanned
 import android.text.method.LinkMovementMethod
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -35,8 +38,11 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
-//adds option menu functions
+/**
+ * Abstract class that adds options menu support.
+ */
 abstract class EpActivity : BasicEpActivity() {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         super.onCreateOptionsMenu(menu)
@@ -71,7 +77,7 @@ abstract class EpActivity : BasicEpActivity() {
             startActivity(Intent(this, Prefs::class.java))
             return true
         } else if (itemId == R.id.about) {
-            startActivity(Intent(this, About::class.java))
+            showAboutDialog()
             return true
         } else if (itemId == android.R.id.home) {
             finish()
@@ -90,6 +96,31 @@ abstract class EpActivity : BasicEpActivity() {
             }
         }
         return false
+    }
+
+    private fun showAboutDialog() {
+        var version: String? = ""
+        try {
+            val pInfo: PackageInfo = getPackageManager().getPackageInfo(getPackageName(), 0)
+            version = pInfo.versionName
+        } catch (e: PackageManager.NameNotFoundException) {
+            Log.e("EpActivity", "Error getting version name")
+            version = "Error getting version name"
+        }
+        val message = getString(R.string.about_text, version)
+        val aboutDialogView = layoutInflater.inflate(R.layout.about, null)
+        val aboutTextView = aboutDialogView.findViewById<TextView>(R.id.about_text_message)
+        aboutTextView.setText(message)
+        aboutTextView.movementMethod = LinkMovementMethod.getInstance()
+        MaterialAlertDialogBuilder(this)
+            .setTitle(getString(R.string.about_title))
+            .setView(aboutDialogView)
+//            .setMessage(getString(R.string.about_text) + "\n" + version)
+
+            .setPositiveButton("OK") { dialog, which ->
+                // closes dialog
+            }
+            .show()
     }
 
     // Override in inherited activities to show these menu items.

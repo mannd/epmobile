@@ -62,6 +62,7 @@ public class OutflowVt extends LocationAlgorithm implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.simplealgorithm);
+        setupInsets(R.id.simplealgorithm_root_view);
         initToolbar();
 
         yesButton = findViewById(R.id.yes_button);

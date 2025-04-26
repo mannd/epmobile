@@ -9,4 +9,10 @@
         <item name="windowActionBar">false</item>
     </style>
 
+    <style name="AboutDialogTheme" parent="Theme.Material3.DayNight.Dialog">
+        <!-- Customize your dialog's appearance here -->
+<!--        <item name="android:windowMinWidthMajor">@dimen/dialog_min_width_major</item>-->
+<!--        <item name="android:windowMinWidthMinor">@dimen/dialog_min_width_minor</item>-->
+    </style>
+
 </resources>

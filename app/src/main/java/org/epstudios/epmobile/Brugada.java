@@ -33,6 +33,7 @@ public class Brugada extends EpActivity implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.simplealgorithm);
+        setupInsets(R.id.simplealgorithm_root_view);
         initToolbar();
 
         Button yesButton = findViewById(R.id.yes_button);

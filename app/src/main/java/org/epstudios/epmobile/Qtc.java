@@ -66,6 +66,7 @@ public class Qtc extends EpActivity implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.qtc);
+        setupInsets(R.id.qtc_root_view);
         initToolbar();
 
         View calculateQtcButton = findViewById(R.id.calculate_button);

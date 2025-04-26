@@ -37,6 +37,7 @@ public class AtrialTachLocalization extends LocationAlgorithm implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.complexalgorithm);
+        setupInsets(R.id.complexalgorithm_root_view);
         initToolbar();
 
         yesButton = findViewById(R.id.yes_button);
