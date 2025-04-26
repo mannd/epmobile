@@ -37,7 +37,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
 
 //adds option menu functions
-abstract class EpActivity : AppCompatActivity() {
+abstract class EpActivity : BasicEpActivity() {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         super.onCreateOptionsMenu(menu)
 
@@ -90,27 +90,6 @@ abstract class EpActivity : AppCompatActivity() {
             }
         }
         return false
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-    }
-
-    protected fun setupInsets(@IdRes viewId: Int) {
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(viewId)) { view, windowInsets ->
-            val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
-            view.updatePadding(bottom = insets.bottom, top = insets.top)
-            WindowInsetsCompat.CONSUMED
-        }
-    }
-
-    protected fun initToolbar() {
-        val toolbar = findViewById<Toolbar?>(R.id.toolbar)
-        setSupportActionBar(toolbar)
-        if (getSupportActionBar() != null) {
-            getSupportActionBar()!!.setDisplayHomeAsUpEnabled(true)
-        }
     }
 
     // Override in inherited activities to show these menu items.
