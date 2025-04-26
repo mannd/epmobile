@@ -8,15 +8,12 @@ import android.widget.AdapterView.OnItemClickListener
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.TextView
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.updatePadding
 
 class CalculatorList : EpActivity() {
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.selectionlist)
-        setupInsets(R.id.my_root_view)
+        setupInsets(R.id.selection_list_root_view)
         initToolbar()
         val adapter = ArrayAdapter.createFromResource(
             this, R.array.calculator_list, android.R.layout.simple_list_item_1

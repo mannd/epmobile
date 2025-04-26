@@ -123,6 +123,11 @@ public class LongQt extends RiskScore implements OnClickListener {
     }
 
     @Override
+    protected void setupInsets() {
+        setupInsets(R.id.long_qt_root_view);
+    }
+
+    @Override
     protected void init() {
 
         qtcRadioGroup = findViewById(R.id.qtc_radio_group);

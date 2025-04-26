@@ -83,6 +83,11 @@ public final class TamponadeScore extends RiskScore {
         setContentView(R.layout.tamponadescore);
     }
 
+    @Override
+    protected void setupInsets() {
+        setupInsets(R.id.tamponadescore_root_view);
+    }
+
 
     @Override
     protected void init() {

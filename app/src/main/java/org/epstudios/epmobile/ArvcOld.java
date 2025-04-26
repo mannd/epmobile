@@ -71,7 +71,11 @@ public class ArvcOld extends RiskScore {
     @Override
     protected void setContentView() {
         setContentView(R.layout.arvcold);
+    }
 
+    @Override
+    protected void setupInsets() {
+        setupInsets(R.id.arvc_old_root_view);
     }
 
     @Override

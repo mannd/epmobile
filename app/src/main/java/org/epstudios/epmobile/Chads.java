@@ -27,6 +27,11 @@ public class Chads extends RiskScore {
     }
 
     @Override
+    protected void setupInsets() {
+        setupInsets(R.id.chads_root_view);
+    }
+
+    @Override
     protected String getRiskLabel() {
         return getString(R.string.chads_label);
     }

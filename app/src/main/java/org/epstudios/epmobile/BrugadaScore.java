@@ -38,6 +38,11 @@ public class BrugadaScore extends RiskScore {
         setContentView(R.layout.brugadascore);
     }
 
+   @Override
+   protected void setupInsets() {
+        setupInsets(R.id.brugada_score_root_view);
+   }
+
     @Override
     protected void init() {
         checkBoxes = new CheckBox[12];

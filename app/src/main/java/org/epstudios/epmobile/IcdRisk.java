@@ -38,6 +38,11 @@ public class IcdRisk extends RiskScore {
     }
 
     @Override
+    protected void setupInsets() {
+        setupInsets(R.id.icd_risk_root_view);
+    }
+
+    @Override
     protected void calculateResult() {
         String message;
         int score;

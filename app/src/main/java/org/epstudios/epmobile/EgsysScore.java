@@ -13,6 +13,11 @@ public class EgsysScore extends SyncopeRiskScore {
     }
 
     @Override
+    protected void setupInsets() {
+        setupInsets(R.id.simple_risk_root_view);
+    }
+
+    @Override
     protected void calculateResult() {
         int result = 0;
         clearSelectedRisks();

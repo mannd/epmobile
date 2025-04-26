@@ -121,6 +121,11 @@ public class HcmScd2024 extends RiskScore {
     }
 
     @Override
+    protected void setupInsets() {
+        setupInsets(R.id.hcmscd2024_root_view);
+    }
+
+    @Override
     protected void init() {
         checkBoxes = new CheckBox[7];
         checkBoxes[0] = findViewById(R.id.family_hx_scd);

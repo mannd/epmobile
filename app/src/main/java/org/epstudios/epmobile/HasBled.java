@@ -27,6 +27,11 @@ public class HasBled extends RiskScore {
     }
 
     @Override
+    protected void setupInsets() {
+        setupInsets(R.id.hasbled_root_view);
+    }
+
+    @Override
     protected void init() {
         checkBoxes = new CheckBox[9];
 

@@ -112,6 +112,11 @@ public class Arvc extends RiskScore {
     }
 
     @Override
+    protected void setupInsets() {
+        setupInsets(R.id.arvc_diagnosis_root_view);
+    }
+
+    @Override
     protected void init() {
         regionalEchoAbnormalityCheckBox = findViewById(R.id.regional_echo_abnormality);
         echoMajorRadioGroup = findViewById(R.id.echo_major_radio_group);

@@ -54,6 +54,11 @@ public class CmsIcd extends RiskScore {
     }
 
     @Override
+    protected void setupInsets() {
+        setupInsets(R.id.cms_icd_root_view);
+    }
+
+    @Override
     protected void init() {
         checkBox = new CheckBox[15];
         // secondary prevention

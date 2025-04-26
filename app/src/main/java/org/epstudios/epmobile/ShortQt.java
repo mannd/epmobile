@@ -128,6 +128,11 @@ public class ShortQt extends RiskScore implements OnClickListener {
     }
 
     @Override
+    protected void setupInsets() {
+        setupInsets(R.id.short_qt_root_view);
+    }
+
+    @Override
     protected void init() {
         qtcRadioGroup = findViewById(R.id.qtc_radio_group);
         shortJtCheckBox = findViewById(R.id.short_jt);

@@ -95,10 +95,6 @@ abstract class EpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        //WindowCompat.setDecorFitsSystemWindows(window, false)
-//        val windowInsetsController = WindowInsetsControllerCompat(window, window.decorView)
-//        windowInsetsController.isAppearanceLightStatusBars = false
-//        windowInsetsController.isAppearanceLightNavigationBars = false
     }
 
     protected fun setupInsets(@IdRes viewId: Int) {

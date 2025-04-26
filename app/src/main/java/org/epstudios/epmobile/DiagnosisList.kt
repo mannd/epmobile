@@ -13,7 +13,7 @@ class DiagnosisList : EpActivity() {
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.selectionlist)
-        setupInsets(R.id.my_root_view)
+        setupInsets(R.id.selection_list_root_view)
         initToolbar()
         val adapter = ArrayAdapter.createFromResource(
             this, R.array.diagnosis_list,

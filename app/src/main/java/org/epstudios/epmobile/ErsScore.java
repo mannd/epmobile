@@ -39,6 +39,11 @@ public class ErsScore extends RiskScore {
     }
 
     @Override
+    protected void setupInsets() {
+        setupInsets(R.id.ers_root_view);
+    }
+
+    @Override
     protected void init() {
         checkBoxes = new CheckBox[12];
 

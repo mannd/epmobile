@@ -61,11 +61,13 @@ public class LinkView extends EpActivity implements View.OnClickListener {
         if (url == null) {
             return;
         }
-
-        if (showButton)
+        if (showButton) {
             setContentView(R.layout.weblayout);
-        else
+            setupInsets(R.id.web_layout_root_view);
+        } else {
             setContentView(R.layout.weblayout_no_button);
+            setupInsets(R.id.web_layout_no_button_root_view);
+        }
         webView = findViewById(R.id.web_view);
         webView.setWebViewClient(new CustomWebViewClient());
 

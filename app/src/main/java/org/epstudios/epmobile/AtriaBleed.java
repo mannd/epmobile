@@ -29,6 +29,10 @@ public class AtriaBleed extends RiskScore {
     protected void setContentView() {
         setContentView((R.layout.atriableed));
     }
+    @Override
+    protected void setupInsets() {
+        setupInsets(R.id.atriableed_root_view);
+    }
 
     @Override
     protected void init() {

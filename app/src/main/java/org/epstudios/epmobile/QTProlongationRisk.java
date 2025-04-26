@@ -75,6 +75,11 @@ public class QTProlongationRisk extends RiskScore {
     }
 
     @Override
+    protected void setupInsets() {
+        setupInsets(R.id.qt_prolongation_root_view);
+    }
+
+    @Override
     protected void init() {
         checkBoxes = new CheckBox[10];
 

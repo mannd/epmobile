@@ -58,6 +58,11 @@ public class Orbit extends RiskScore {
     }
 
     @Override
+    protected void setupInsets() {
+        setupInsets(R.id.orbit_root_view);
+    }
+
+    @Override
     protected void init() {
         checkBoxes = new CheckBox[5];
 

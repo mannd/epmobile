@@ -164,6 +164,11 @@ public class ArvcRisk extends RiskScore {
     }
 
     @Override
+    protected void setupInsets() {
+        setupInsets(R.id.arvcrisk_root_view);
+    }
+
+    @Override
     protected void clearEntries() {
         ageText.setText("");
         sexRadioGroup.clearCheck();

@@ -71,6 +71,11 @@ public class SameTtr extends RiskScore {
     }
 
     @Override
+    protected void setupInsets() {
+        setupInsets(R.id.same_root_view);
+    }
+
+    @Override
     protected void init() {
         checkBoxes = new CheckBox[6];
 

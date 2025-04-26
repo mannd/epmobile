@@ -102,6 +102,11 @@ public class AtriaStroke extends RiskScore {
     }
 
     @Override
+    protected void setupInsets() {
+        setupInsets(R.id.atria_stroke_risk_view);
+    }
+
+    @Override
     protected void init() {
         checkBoxes = new CheckBox[7];
 

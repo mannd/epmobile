@@ -29,7 +29,7 @@ public class LongQtList extends EpActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.selectionlist);
-        setupInsets(R.id.my_root_view);
+        setupInsets(R.id.selection_list_root_view);
         initToolbar();
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this, R.array.lqts_list, android.R.layout.simple_list_item_1);

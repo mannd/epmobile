@@ -79,7 +79,11 @@ public class Estes extends RiskScore {
     @Override
     protected void setContentView() {
         setContentView(R.layout.estes);
+    }
 
+    @Override
+    protected void setupInsets() {
+        setupInsets(R.id.estes_root_view);
     }
 
     @Override

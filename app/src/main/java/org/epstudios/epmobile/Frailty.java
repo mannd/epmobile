@@ -158,6 +158,12 @@ public class Frailty extends RiskScore {
     }
 
     @Override
+    protected void setupInsets() {
+        setupInsets(R.id.frailty_root_view);
+    }
+
+
+    @Override
     protected void init() {
         FrailtyRisk shoppingRisk = new FrailtyRisk(independentDependentRule,
                 findViewById(R.id.shopping_spinner), getMobilityRiskDescription("shop"));
