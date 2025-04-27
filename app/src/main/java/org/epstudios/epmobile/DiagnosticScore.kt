@@ -17,8 +17,6 @@
  */
 package org.epstudios.epmobile
 
-import android.app.AlertDialog
-import android.content.DialogInterface
 import android.os.Bundle
 import android.view.View
 
@@ -56,21 +54,22 @@ abstract class DiagnosticScore : EpActivity(), View.OnClickListener {
 
     protected abstract fun init()
 
-    protected open fun displayResult(message: String?, title: String?) {
-        // put message in class field so inner class can use
-        val dialog = AlertDialog.Builder(this).create()
-        dialog.setMessage(message)
-        dialog.setButton(
-            DialogInterface.BUTTON_POSITIVE,
-            getString(R.string.reset_label),
-            DialogInterface.OnClickListener { dialog12: DialogInterface?, which: Int -> clearEntries() })
-        dialog.setButton(
-            DialogInterface.BUTTON_NEUTRAL,
-            getString(R.string.dont_reset_label),
-            DialogInterface.OnClickListener { dialog1: DialogInterface?, which: Int -> })
-        dialog.setTitle(title)
-        dialog.show()
-    }
+    protected abstract fun displayResult(message: String?, title: String?)
+//    protected open fun displayResult(message: String?, title: String?) {
+//        // put message in class field so inner class can use
+//        val dialog = AlertDialog.Builder(this).create()
+//        dialog.setMessage(message)
+//        dialog.setButton(
+//            DialogInterface.BUTTON_POSITIVE,
+//            getString(R.string.reset_label),
+//            DialogInterface.OnClickListener { dialog12: DialogInterface?, which: Int -> clearEntries() })
+//        dialog.setButton(
+//            DialogInterface.BUTTON_NEUTRAL,
+//            getString(R.string.dont_reset_label),
+//            DialogInterface.OnClickListener { dialog1: DialogInterface?, which: Int -> })
+//        dialog.setTitle(title)
+//        dialog.show()
+//    }
 
     protected abstract fun clearEntries()
 }

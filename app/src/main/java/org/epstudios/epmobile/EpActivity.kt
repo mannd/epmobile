@@ -34,7 +34,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 /**
  * Abstract class that adds options menu support.
  */
-abstract class EpActivity : BasicEpActivity() {
+open class EpActivity : BasicEpActivity() {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         super.onCreateOptionsMenu(menu)
 
@@ -252,6 +252,7 @@ abstract class EpActivity : BasicEpActivity() {
             return html
         }
 
+        @JvmStatic
         fun convertReferencesToHtmlString(references: Array<Reference>?): String? {
             var htmlString = ""
             if (references != null) {

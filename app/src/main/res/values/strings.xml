@@ -1838,4 +1838,9 @@
     </string>
     <string name="hcm_scd_label">HCM Risk-SCD</string>
     <string name="other_factors_label">Other factors</string>
+    <string name="bmi_calculator_title">BMI Calculator</string>"
+    <string name="bmi_calculator_reference">Nuttall FQ. Body Mass Index.
+        Nutr Today. 2015;50(3):117-128.</string>
+    <string name="bmi_calculator_link">https:/doi.org/10.1097/NT.0000000000000092</string>
+    <string name="bmi_calculator_instructions">TODO: BMI instructions</string>
 </resources>

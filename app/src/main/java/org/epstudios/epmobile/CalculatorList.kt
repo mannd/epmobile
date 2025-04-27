@@ -42,7 +42,13 @@ class CalculatorList : EpActivity() {
             else if (selection == getString(R.string.creatinine_clearance_calculator_title)) creatinineClearanceCalculator()
             else if (selection == getString(R.string.qtc_ivcd_calculator_title)) qtcIvcdCalculator()
             else if (selection == getString(R.string.gfr_calculator_title)) gfrCalculator()
+            else if (selection == getString(R.string.bmi_calculator_title)) bmiCalculator()
         })
+    }
+
+    private fun bmiCalculator() {
+        val i = Intent(this, BmiCalculator::class.java)
+        startActivity(i)
     }
 
     private fun qtcCalculator() {
