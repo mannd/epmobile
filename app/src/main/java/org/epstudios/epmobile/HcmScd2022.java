@@ -199,6 +199,11 @@ public class HcmScd2022 extends HcmRiskScd {
     }
 
     @Override
+    protected void setupInsets() {
+        setupInsets(R.id.hcm_scd_2022_root_view);
+    }
+
+    @Override
     protected void init() {
         checkBoxes = new CheckBox[8];
 

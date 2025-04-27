@@ -7,6 +7,7 @@ public class NormalEpValues extends EpActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.normalepvalues);
+        setupInsets(R.id.normal_ep_values_root_view);
         initToolbar();
     }
 
