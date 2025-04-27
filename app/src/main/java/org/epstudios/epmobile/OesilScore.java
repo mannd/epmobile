@@ -37,7 +37,7 @@ public class OesilScore extends SyncopeRiskScore {
 
         message = getRiskLabel() + " score = " + result + "\n"
                 + "1-year total mortality = " + risk[result] + "%";
-        setResultMessage(message);
+        resultMessage = message;
         return resultWithShortReference();
 
     }

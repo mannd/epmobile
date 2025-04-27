@@ -73,7 +73,7 @@ public final class TamponadeScore extends RiskScore {
         } else {
             message += getString(R.string.postpone_pericardiocentesis_message);
         }
-        setResultMessage(message);
+        resultMessage = message;
         // no short reference added here
         return message;
     }

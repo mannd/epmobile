@@ -36,7 +36,7 @@ public class SyncopeSfRule extends SyncopeRiskScore {
             message = getString(R.string.high_sf_rule_risk_message);
         message = getRiskLabel() + " score "
                 + (result > 0 ? "\u2265 1" : "= 0") + "\n" + message;
-        setResultMessage(message);
+        resultMessage = message;
         return resultWithShortReference();
     }
 

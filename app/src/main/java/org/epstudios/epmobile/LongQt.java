@@ -1,9 +1,7 @@
 package org.epstudios.epmobile;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -156,7 +154,7 @@ public class LongQt extends RiskScore implements OnClickListener {
         else
             message += "Low probability of ";
         message += "Long QT Syndrome";
-        setResultMessage(message);
+        resultMessage = message;
         super.displayResult(message, getString(R.string.long_qt_syndrome_diagnosis_title));
     }
 

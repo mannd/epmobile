@@ -68,7 +68,7 @@ public class IcdRisk extends RiskScore {
     protected void displayResult(String message, String title) {
         String resultMessage = getString(R.string.icd_result_title) + "\n" + message;
         setDisplayRisks(false);
-        setResultMessage(resultMessage);
+        resultMessage = resultMessage;
         super.displayResult(message, title);
     }
 

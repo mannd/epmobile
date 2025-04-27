@@ -1,15 +1,10 @@
 package org.epstudios.epmobile;
 
-import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import kotlin.Function;
 
 /**
  * Copyright (C) 2023 EP Studios, Inc.
@@ -137,7 +132,7 @@ public class Frailty extends RiskScore {
         } else {
             message += "Score doesn't indicate frailty.";
         }
-        setResultMessage(message);
+        resultMessage = message;
         return message;
     }
 

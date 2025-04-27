@@ -92,7 +92,7 @@ public class AtriaStroke extends RiskScore {
         else
             message = getString(R.string.high_atria_stroke_message);
         message = getRiskLabel() + " score = " + result + "\n" + message;
-        setResultMessage(message);
+        resultMessage = message;
         return resultWithShortReference();
     }
 

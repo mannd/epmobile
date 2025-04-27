@@ -85,7 +85,7 @@ public class AtriaBleed extends RiskScore {
         else
             message = getString(R.string.high_atria_bleed_message);
         message = getRiskLabel() + " score = " + result + "\n" + message;
-        setResultMessage(message);
+        resultMessage = message;
         return resultWithShortReference();
     }
 

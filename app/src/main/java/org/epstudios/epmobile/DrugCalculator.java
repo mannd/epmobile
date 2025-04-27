@@ -3,9 +3,6 @@ package org.epstudios.epmobile;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
-
-import androidx.preference.PreferenceManager;
-
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -17,6 +14,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.text.DecimalFormat;
+
+import androidx.preference.PreferenceManager;
 
 @SuppressWarnings("SpellCheckingInspection")
 public abstract class DrugCalculator extends EpActivity implements

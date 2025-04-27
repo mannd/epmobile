@@ -36,7 +36,7 @@ public class MartinAlgorithm extends SyncopeRiskScore {
         message = getRiskLabel() + " score = " + result + "\n"
                 + getString(R.string.syncope_martin_result_label) + " = "
                 + risk[result] + "%";
-        setResultMessage(message);
+        resultMessage = message;
         return resultWithShortReference();
 
     }

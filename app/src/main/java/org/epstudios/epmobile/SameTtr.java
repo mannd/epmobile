@@ -60,7 +60,7 @@ public class SameTtr extends RiskScore {
         else
             message = getString(R.string.high_same_risk_message);
         message = getRiskLabel() + " score = " + result + "\n" + message;
-        setResultMessage(message);
+        resultMessage = message;
         return resultWithShortReference();
     }
 

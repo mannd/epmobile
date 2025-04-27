@@ -50,7 +50,7 @@ public class EgsysScore extends SyncopeRiskScore {
         message = getRiskLabel() + " score = " + result + "\n"
                 + "2-year total mortality = " + mortalityRisk
                 + "%\nCardiac syncope probability = " + syncopeRisk + "%";
-        setResultMessage(message);
+        resultMessage = message;
         return resultWithShortReference();
 
     }

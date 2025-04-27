@@ -122,7 +122,7 @@ public class CmsIcd extends RiskScore {
         createViewModel();
         String message = viewModel.getMessage();
         setDisplayRisks(false);
-        setResultMessage(message);
+        resultMessage = message;
         displayResult(message, getString(R.string.icd_calculator_title));
     }
 

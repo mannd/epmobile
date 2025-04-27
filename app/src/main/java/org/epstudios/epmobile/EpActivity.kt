@@ -17,11 +17,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 package org.epstudios.epmobile
 
-import android.app.AlertDialog
 import android.content.Intent
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
-import android.os.Bundle
 import android.text.Html
 import android.text.Spanned
 import android.text.method.LinkMovementMethod
@@ -30,14 +28,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
-import androidx.annotation.IdRes
 import androidx.annotation.StringRes
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.updatePadding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 /**
@@ -52,21 +43,15 @@ abstract class EpActivity : BasicEpActivity() {
 
         if (hideInstructionsMenuItem()) {
             val notesItem = menu.findItem(R.id.instructions)
-            if (notesItem != null) {
-                notesItem.setVisible(false)
-            }
+            notesItem?.isVisible = false
         }
         if (hideReferenceMenuItem()) {
             val referenceItem = menu.findItem(R.id.reference)
-            if (referenceItem != null) {
-                referenceItem.setVisible(false)
-            }
+            referenceItem?.isVisible = false
         }
         if (hideKeyMenuItem()) {
             val keyItem = menu.findItem(R.id.key)
-            if (keyItem != null) {
-                keyItem.setVisible(false)
-            }
+            keyItem?.isVisible = false
         }
         return true
     }
@@ -151,7 +136,7 @@ abstract class EpActivity : BasicEpActivity() {
     }
 
     protected fun showAlertDialog(@StringRes titleId: Int, @StringRes messageId: Int) {
-        val builder = AlertDialog.Builder(this)
+        val builder = MaterialAlertDialogBuilder(this)
         builder.setTitle(titleId)
         builder.setMessage(messageId)
         builder.setPositiveButton(getString(R.string.ok_button_label), null)
@@ -160,7 +145,7 @@ abstract class EpActivity : BasicEpActivity() {
     }
 
     protected fun showAlertDialog(title: String?, message: Spanned?) {
-        val builder = AlertDialog.Builder(this)
+        val builder = MaterialAlertDialogBuilder(this)
         builder.setTitle(title)
         builder.setMessage(message)
         builder.setPositiveButton(getString(R.string.ok_button_label), null)
@@ -172,7 +157,7 @@ abstract class EpActivity : BasicEpActivity() {
     }
 
     protected fun showAlertDialog(title: String?, message: String?) {
-        val builder = AlertDialog.Builder(this)
+        val builder = MaterialAlertDialogBuilder(this)
         builder.setTitle(title)
         builder.setMessage(message)
         builder.setPositiveButton(getString(R.string.ok_button_label), null)
@@ -195,7 +180,7 @@ abstract class EpActivity : BasicEpActivity() {
         }
     }
 
-    protected fun showReferenceAlertDialog(references: Array<Reference>) {
+    protected fun showReferenceAlertDialog(references: Array<Reference>?) {
         val html = convertReferencesToHtml(references)
         if (html != null) {
             showAlertDialog(getString(R.string.references_label), html)
@@ -241,7 +226,7 @@ abstract class EpActivity : BasicEpActivity() {
     }
 
     // Handle multiple references.
-    fun convertReferencesToHtml(references: Array<Reference>): Spanned? {
+    fun convertReferencesToHtml(references: Array<Reference>?): Spanned? {
         val htmlString: String? = convertReferencesToHtmlString(references)
         if (htmlString == null) {
             return null
@@ -267,18 +252,20 @@ abstract class EpActivity : BasicEpActivity() {
             return html
         }
 
-        fun convertReferencesToHtmlString(references: Array<Reference>): String? {
+        fun convertReferencesToHtmlString(references: Array<Reference>?): String? {
             var htmlString = ""
-            for (reference in references) {
-                // Only forbidden combo is reference == null.  Can have a null
-                // link if the paper is old.
-                if (reference.getText() != null) {
-                    htmlString += convertReferenceToHtmlString(
-                        reference.getText(),
-                        reference.getLink()
-                    )
-                } else {
-                    return null
+            if (references != null) {
+                for (reference in references) {
+                    // Only forbidden combo is reference == null.  Can have a null
+                    // link if the paper is old.
+                    if (reference.getText() != null) {
+                        htmlString += convertReferenceToHtmlString(
+                            reference.getText(),
+                            reference.getLink()
+                        )
+                    } else {
+                        return null
+                    }
                 }
             }
             return htmlString

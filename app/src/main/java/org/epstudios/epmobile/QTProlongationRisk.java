@@ -65,7 +65,7 @@ public class QTProlongationRisk extends RiskScore {
         } else {  // result >= 11
             message += getString(R.string.qt_prolongation_high_risk) + resultTrailer;
         }
-        setResultMessage(message);
+        resultMessage = message;
         return resultWithShortReference();
     }
 

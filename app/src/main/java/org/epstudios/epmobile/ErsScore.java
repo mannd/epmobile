@@ -119,7 +119,7 @@ public class ErsScore extends RiskScore {
         String message;
         if (ecgScore == 0) {
             message = "Score requires at least 1 ECG finding.";
-            setResultMessage(message);
+            resultMessage = message;
         } else {
             result = clinicalScore + ecgScore + ambulatoryEcgScore
                     + familyScore + geneticScore;
@@ -138,7 +138,7 @@ public class ErsScore extends RiskScore {
         } else {
             message += "Non-diagnostic";
         }
-        setResultMessage(message);
+        resultMessage = message;
         // no short reference added here
         return message;
 

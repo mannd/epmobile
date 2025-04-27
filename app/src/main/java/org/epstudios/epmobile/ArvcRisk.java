@@ -154,7 +154,7 @@ public class ArvcRisk extends RiskScore {
     protected void displayResult(String message, String title) {
         String resultMessage = "Risk of sustained ventricular arrhythmias:\n" + message;
         setDisplayRisks(false);
-        setResultMessage(resultMessage);
+        resultMessage = resultMessage;
         super.displayResult(message, title);
     }
 

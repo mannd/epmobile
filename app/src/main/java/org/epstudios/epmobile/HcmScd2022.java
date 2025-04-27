@@ -93,7 +93,7 @@ public class HcmScd2022 extends HcmRiskScd {
             addSelectedRisk("LV wall thickness = " + maxLvWallThicknessString + " mm");
             addSelectedRisk("LA diameter = " + laDiameterString + " mm");
             addSelectedRisk(("LVOT gradient = " + maxLvotGradientString + " mmHg"));
-            addSelectedRisks();
+            addSelectedRisks(checkBoxes);
             displayResult(getResultMessage(result,
                     apicalAneurysm,
                     lowLvef,

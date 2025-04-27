@@ -97,7 +97,7 @@ public class HcmScd2002 extends RiskScore {
             else if (result == 0)
                 message += getString(R.string.hcm_low_risk_text);
         }
-        setResultMessage(message);
+        resultMessage = message;
         // no short reference added here
         return message;
     }

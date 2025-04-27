@@ -205,7 +205,7 @@ public class Arvc extends RiskScore {
         else
             message = message + "Not diagnostic of ARVC/D";
         setDisplayRisks(false);
-        setResultMessage(message);
+        resultMessage = message;
         return message;
     }
 

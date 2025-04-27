@@ -110,7 +110,7 @@ public class BrugadaScore extends RiskScore {
         String message;
         if (ecgScore == 0) {
             message = "Score requires at least 1 ECG finding.";
-            setResultMessage(message);
+            resultMessage = message;
         } else {
             result = ecgScore + clinicalScore + familyScore + geneticScore;
             message = getResultMessage(result);
@@ -128,7 +128,7 @@ public class BrugadaScore extends RiskScore {
         } else {
             message += getString(R.string.nondiagnostic_message);
         }
-        setResultMessage(message);
+        resultMessage = message;
         // no short reference added here
         return message;
 

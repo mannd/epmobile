@@ -21,7 +21,6 @@ import android.app.AlertDialog
 import android.content.DialogInterface
 import android.os.Bundle
 import android.view.View
-import androidx.annotation.IdRes
 
 abstract class DiagnosticScore : EpActivity(), View.OnClickListener {
     protected override fun onCreate(savedInstanceState: Bundle?) {

@@ -20,10 +20,9 @@ package org.epstudios.epmobile;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.preference.PreferenceManager;
-
-import android.widget.TextView;
 
 public class DoseTable extends EpActivity {
     @Override
