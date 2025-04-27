@@ -52,6 +52,7 @@ public class QtcIvcdResults extends EpActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.selectionlist);
+        setupInsets(R.id.selection_list_root_view);
         initToolbar();
 
         qt = getIntent().getIntExtra("QT", 0);

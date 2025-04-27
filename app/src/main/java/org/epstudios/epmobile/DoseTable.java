@@ -30,6 +30,7 @@ public class DoseTable extends EpActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dosetable);
+        setupInsets(R.id.dosetable_root_view);
         initToolbar();
 
         SharedPreferences prefs = PreferenceManager

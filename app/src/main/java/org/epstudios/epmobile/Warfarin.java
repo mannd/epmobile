@@ -37,6 +37,7 @@ public class Warfarin extends EpActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.warfarin);
+        setupInsets(R.id.warfarin_root_view);
         initToolbar();
 
         View calculateDoseButton = findViewById(R.id.calculate_button);
