@@ -15,6 +15,7 @@ final public class BrugadaEcg extends EpActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.brugadaecg);
+        setupInsets(R.id.brugadaecg_root_view);
         initToolbar();
     }
 

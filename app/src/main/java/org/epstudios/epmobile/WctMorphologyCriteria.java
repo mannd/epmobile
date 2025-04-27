@@ -27,6 +27,7 @@ public class WctMorphologyCriteria extends EpActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.wellensmorphology);
+        setupInsets(R.id.wellens_morphology_root_view);
         initToolbar();
     }
 

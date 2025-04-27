@@ -40,6 +40,7 @@ public class BrugadaMorphologyCriteria extends EpActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.wctmorphologycriteria);
+        setupInsets(R.id.wct_morphology_criteria_root_view);
         initToolbar();
 
         View calculateButton = findViewById(R.id.calculate_button);

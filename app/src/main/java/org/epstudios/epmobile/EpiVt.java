@@ -9,6 +9,7 @@ public class EpiVt extends EpActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.epivt);
+        setupInsets(R.id.epivt_root_view);
         initToolbar();
     }
 
