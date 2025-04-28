@@ -22,16 +22,11 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.SpannableString;
-import android.text.method.LinkMovementMethod;
-import android.text.util.Linkify;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
-
-import java.sql.Ref;
 
 @SuppressWarnings("SpellCheckingInspection")
 public class MitralAnnularVt extends LocationAlgorithm implements
@@ -55,6 +50,7 @@ public class MitralAnnularVt extends LocationAlgorithm implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.simplealgorithm);
+        setupInsets(R.id.simplealgorithm_root_view);
         initToolbar();
 
         Button yesButton = findViewById(R.id.yes_button);

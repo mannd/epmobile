@@ -70,7 +70,7 @@ public class Estes extends RiskScore {
             message += getString(R.string.estes_probable_lvh_message);
         else
             message += getString(R.string.estes_definite_lvh_message);
-        setResultMessage(message);
+        resultMessage = message;
         // short reference not added here, is on the layout
         return message;
 
@@ -79,7 +79,11 @@ public class Estes extends RiskScore {
     @Override
     protected void setContentView() {
         setContentView(R.layout.estes);
+    }
 
+    @Override
+    protected void setupInsets() {
+        setupInsets(R.id.estes_root_view);
     }
 
     @Override

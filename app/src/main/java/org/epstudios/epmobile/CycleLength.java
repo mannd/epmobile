@@ -36,6 +36,7 @@ public class CycleLength extends EpActivity implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cyclelength);
+        setupInsets(R.id.cycleLength_root_view);
         initToolbar();
 
         View calculateResultButton = findViewById(R.id.calculate_button);

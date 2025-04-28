@@ -1,12 +1,8 @@
 package org.epstudios.epmobile;
 
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.text.SpannableString;
-import android.text.method.LinkMovementMethod;
-import android.text.util.Linkify;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -28,6 +24,7 @@ public class Entrainment extends EpActivity implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.entrainment);
+        setupInsets(R.id.entrainment_root_view);
         initToolbar();
         tclEditText = findViewById(R.id.tclEditText);
         ppiEditText = findViewById(R.id.ppiEditText);

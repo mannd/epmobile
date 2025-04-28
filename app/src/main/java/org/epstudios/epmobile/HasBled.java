@@ -27,6 +27,11 @@ public class HasBled extends RiskScore {
     }
 
     @Override
+    protected void setupInsets() {
+        setupInsets(R.id.hasbled_root_view);
+    }
+
+    @Override
     protected void init() {
         checkBoxes = new CheckBox[9];
 
@@ -89,7 +94,7 @@ public class HasBled extends RiskScore {
         risk = "Bleeding risk is " + risk + " bleeds per 100 patient-years.";
         message = getRiskLabel() + " score = " + result + "\n" + message + "\n"
                 + risk;
-        setResultMessage(message);
+        resultMessage = message;
         return resultWithShortReference();
     }
 

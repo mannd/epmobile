@@ -39,6 +39,11 @@ public class ErsScore extends RiskScore {
     }
 
     @Override
+    protected void setupInsets() {
+        setupInsets(R.id.ers_root_view);
+    }
+
+    @Override
     protected void init() {
         checkBoxes = new CheckBox[12];
 
@@ -114,7 +119,7 @@ public class ErsScore extends RiskScore {
         String message;
         if (ecgScore == 0) {
             message = "Score requires at least 1 ECG finding.";
-            setResultMessage(message);
+            resultMessage = message;
         } else {
             result = clinicalScore + ecgScore + ambulatoryEcgScore
                     + familyScore + geneticScore;
@@ -133,7 +138,7 @@ public class ErsScore extends RiskScore {
         } else {
             message += "Non-diagnostic";
         }
-        setResultMessage(message);
+        resultMessage = message;
         // no short reference added here
         return message;
 

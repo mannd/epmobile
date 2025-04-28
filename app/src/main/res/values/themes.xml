@@ -4,9 +4,15 @@
     <style name="AppTheme" parent="AppTheme.Base">
     </style>
 
-    <style name="AppTheme.Base" parent="Theme.AppCompat.DayNight.NoActionBar">
+    <style name="AppTheme.Base" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="android:windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
+    </style>
+
+    <style name="AboutDialogTheme" parent="Theme.Material3.DayNight.Dialog">
+        <!-- Customize your dialog's appearance here -->
+<!--        <item name="android:windowMinWidthMajor">@dimen/dialog_min_width_major</item>-->
+<!--        <item name="android:windowMinWidthMinor">@dimen/dialog_min_width_minor</item>-->
     </style>
 
 </resources>

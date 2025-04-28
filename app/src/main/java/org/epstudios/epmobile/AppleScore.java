@@ -21,7 +21,7 @@ import android.widget.CheckBox;
  * GNU General Public License for more details.
  * <p>
  * You should have received a copy of the GNU General Public License
- * along with epmobile.  If not, see <http://www.gnu.org/licenses/>.
+ * along with epmobile.  If not, see <<a href="http://www.gnu.org/licenses/">...</a>>.
  */
 public class AppleScore extends RiskScore {
     @Override
@@ -72,13 +72,18 @@ public class AppleScore extends RiskScore {
                     + recurrenceRate + "%.\nRisk of AF recurrence following repeat catheter ablation = "
                     + repeatRecurrenceRate + "%.";
         }
-        setResultMessage(message);
+        resultMessage = message;
         return message;
     }
 
     @Override
     protected void setContentView() {
         setContentView(R.layout.apple);
+    }
+
+    @Override
+    protected void setupInsets() {
+        setupInsets(R.id.apple_root_view);
     }
 
     @Override

@@ -9,6 +9,7 @@ public class LongQtEcg extends EpActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.longqtecg);
+        setupInsets(R.id.longqtecg_root_view);
         initToolbar();
     }
 

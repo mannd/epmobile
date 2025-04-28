@@ -54,6 +54,11 @@ public class CmsIcd extends RiskScore {
     }
 
     @Override
+    protected void setupInsets() {
+        setupInsets(R.id.cms_icd_root_view);
+    }
+
+    @Override
     protected void init() {
         checkBox = new CheckBox[15];
         // secondary prevention
@@ -117,7 +122,7 @@ public class CmsIcd extends RiskScore {
         createViewModel();
         String message = viewModel.getMessage();
         setDisplayRisks(false);
-        setResultMessage(message);
+        resultMessage = message;
         displayResult(message, getString(R.string.icd_calculator_title));
     }
 

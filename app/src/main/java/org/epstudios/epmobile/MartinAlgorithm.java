@@ -12,6 +12,11 @@ public class MartinAlgorithm extends SyncopeRiskScore {
     }
 
     @Override
+    protected void setupInsets() {
+        setupInsets(R.id.simple_risk_root_view);
+    }
+
+    @Override
     protected void calculateResult() {
         int result = 0;
         clearSelectedRisks();
@@ -31,7 +36,7 @@ public class MartinAlgorithm extends SyncopeRiskScore {
         message = getRiskLabel() + " score = " + result + "\n"
                 + getString(R.string.syncope_martin_result_label) + " = "
                 + risk[result] + "%";
-        setResultMessage(message);
+        resultMessage = message;
         return resultWithShortReference();
 
     }

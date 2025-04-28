@@ -64,14 +64,18 @@ public class ArvcOld extends RiskScore {
         else
             message += "Not Diagnostic of ARVC/D";
         setDisplayRisks(false);
-        setResultMessage(message);
+        resultMessage = message;
         return message;
     }
 
     @Override
     protected void setContentView() {
         setContentView(R.layout.arvcold);
+    }
 
+    @Override
+    protected void setupInsets() {
+        setupInsets(R.id.arvc_old_root_view);
     }
 
     @Override

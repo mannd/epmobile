@@ -36,3 +36,6 @@ lint.xml
 .idea
 .gradle
 build/
+
+# Kotlin
+.kotlin

@@ -65,13 +65,18 @@ public class QTProlongationRisk extends RiskScore {
         } else {  // result >= 11
             message += getString(R.string.qt_prolongation_high_risk) + resultTrailer;
         }
-        setResultMessage(message);
+        resultMessage = message;
         return resultWithShortReference();
     }
 
     @Override
     protected void setContentView() {
         setContentView(R.layout.qtprolongation);
+    }
+
+    @Override
+    protected void setupInsets() {
+        setupInsets(R.id.qt_prolongation_root_view);
     }
 
     @Override

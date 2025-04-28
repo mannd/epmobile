@@ -2,8 +2,6 @@ package org.epstudios.epmobile;
 
 import android.content.Context;
 
-import androidx.annotation.StringRes;
-
 /**
  * Copyright (C) 2022 EP Studios, Inc.
  * www.epstudiossoftware.com

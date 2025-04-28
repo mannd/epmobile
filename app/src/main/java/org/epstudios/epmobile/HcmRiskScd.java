@@ -67,7 +67,7 @@ public class HcmRiskScd extends RiskScore {
             addSelectedRisk("LV wall thickness = " + maxLvWallThicknessString + " mm");
             addSelectedRisk("LA diameter = " + laDiameterString + " mm");
             addSelectedRisk(("LVOT gradient = " + maxLvotGradientString + " mmHg"));
-            addSelectedRisks();
+            addSelectedRisks(checkBoxes);
         } catch (AgeOutOfRangeException e) {
             displayResult(getResultMessage(0.0, AGE_OUT_OF_RANGE), getString(R.string.error_dialog_title));
         } catch (LvWallThicknessOutOfRangeException e) {
@@ -84,6 +84,11 @@ public class HcmRiskScd extends RiskScore {
     @Override
     protected void setContentView() {
         setContentView(R.layout.hcmscd);
+    }
+
+    @Override
+    protected void setupInsets() {
+        setupInsets(R.id.hcmscd_root_view);
     }
 
     @Override
@@ -164,7 +169,7 @@ public class HcmRiskScd extends RiskScore {
         }
         // no short reference added here
         // this is needed for clipboard copying of result
-        setResultMessage(message);
+        resultMessage = message;
         return message;
     }
 

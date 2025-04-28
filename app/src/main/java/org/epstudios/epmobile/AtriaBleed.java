@@ -29,6 +29,10 @@ public class AtriaBleed extends RiskScore {
     protected void setContentView() {
         setContentView((R.layout.atriableed));
     }
+    @Override
+    protected void setupInsets() {
+        setupInsets(R.id.atriableed_root_view);
+    }
 
     @Override
     protected void init() {
@@ -81,7 +85,7 @@ public class AtriaBleed extends RiskScore {
         else
             message = getString(R.string.high_atria_bleed_message);
         message = getRiskLabel() + " score = " + result + "\n" + message;
-        setResultMessage(message);
+        resultMessage = message;
         return resultWithShortReference();
     }
 

@@ -58,6 +58,11 @@ public class Orbit extends RiskScore {
     }
 
     @Override
+    protected void setupInsets() {
+        setupInsets(R.id.orbit_root_view);
+    }
+
+    @Override
     protected void init() {
         checkBoxes = new CheckBox[5];
 
@@ -99,7 +104,7 @@ public class Orbit extends RiskScore {
         risk = "Bleeding risk is " + risk + " bleeds per 100 patient-years.";
         message = getRiskLabel() + " score = " + result + "\n" + message + "\n"
                 + risk;
-        setResultMessage(message);
+        resultMessage = message;
         return resultWithShortReference();
     }
 

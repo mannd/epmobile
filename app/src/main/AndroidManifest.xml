@@ -22,14 +22,9 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".About"
-            android:label="@string/about_title"
-            android:theme="@android:style/Theme.Dialog"/>
         <activity
             android:name=".Qtc"
             android:windowSoftInputMode="adjustResize"
@@ -277,6 +272,8 @@
             android:label="@string/hcm_scd_2022_title" />
         <activity android:name=".HcmScd2024"
             android:label="@string/hcm_scd_2024_title" />
+        <activity android:name=".BmiCalculator"
+            android:label="@string/bmi_calculator_title" />
     </application>
 
 </manifest>

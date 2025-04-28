@@ -27,6 +27,7 @@ public class LongQtSubtypes extends EpActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lqtsubtypes);
+        setupInsets(R.id.lqtsubtypes_root_view);
         initToolbar();
     }
 
