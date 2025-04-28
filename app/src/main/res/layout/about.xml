@@ -10,6 +10,7 @@
         android:textAppearance="@android:style/TextAppearance.Small"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="10dp"
         android:autoLink="web|email"
         android:linksClickable="true"
         android:layout_marginTop="8dp"
