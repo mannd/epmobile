@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">EP Mobile</string>
     <string name="about_text">
-		Copyright \u00a9 2011-2025 EP Studios, Inc. All right reserved.
+		Copyright \u00a9 2011-2025 EP Studios, Inc.\nAll rights reserved.
         \n\nVersion: %s
 		\n\nepstudiossoftware.com
 		\ngithub.com/mannd/epmobile
@@ -1845,7 +1845,7 @@
     <string name="bmi_calculator_instructions">This Body Mass Index calculator is intended for
     adult men and women, age 20 and older.  Enter the weight and height in
     the chosen units and tap Calculate to get the result.</string>
-    <string name="bmi_result">%1$s kg/m\u00b2</string>
+    <string name="bmi_result">BMI = %1$s kg/m\u00b2</string>
     <string name="underweight_severe_label">Underweight (Severe)</string>"
     <string name="underweight_moderate_label">Underweight (Moderate)</string>
     <string name="underweight_mild_label">Underweight (Mild)</string>
