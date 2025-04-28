@@ -1766,7 +1766,7 @@
     <string name="v2_transtion_ratio_vt_indeterminate_location">This algorithm requires that the R wave transition be in lead V3.  Use the Outflow Tract VT module instead.</string>
     <string name="v2_transition_ratio_vt_late_transition_step">Is the PVC/VT R/S transition later than
         the R/S transition in sinus rhythm?</string>
-    <string name="v2_transition_ratio_vt_is_certainly_rvot">The PVC/VT origin is the RVOT (100% specificity).</string>
+    <string name="v2_transition_ratio_vt_is_certainly_rvot">The PVC/VT origin is the RVOT (100%% specificity).</string>
     <string name="v2_transition_ratio_vt_manual_measure_step">What is the V2 transition ratio?
         \n(Tap the V2 TRANSITION CALCULATOR button if you need to manually calculate the ratio)</string>
     <string name="v2_calculator_title">V2 Transition Calculator</string>
