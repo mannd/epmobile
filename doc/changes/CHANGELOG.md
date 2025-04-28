@@ -5,9 +5,17 @@ See [keepachangelog.com](https://keepachangelog.com/en/1.0.0/) for information o
 
 This project roughly utilizes [Semantic Versioning](https://semver.org/spec/v2.0.0.html).  In some versions the PATCH of MAJOR.MINOR.PATCH is omitted.  Note also that unreleased versions are omitted.
 
+## [2.35.0] - 2025-04-28
+### Added
+- BMI calculator
+### Changes
+- Target SDK Android 35
+- Edge to edge UI
+- Material design dialog boxes
+
 ## [2.34.2] - 2025-03-01
 ### Fixed
-- HTML pages not appearing correctly in dard mode
+- HTML pages not appearing correctly in dark mode
 
 ## [2.34.1] - 2024-12-10
 ### Fixed

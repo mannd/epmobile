@@ -1,0 +1,6 @@
+EP Mobile 2.35.0 Release Notes
+Changes since 2.34.2
+* Target SDK 35
+* Edge to edge UI
+* Material design dialogs
+* Added BMI calculator
