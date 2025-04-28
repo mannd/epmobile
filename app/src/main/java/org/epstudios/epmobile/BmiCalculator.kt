@@ -203,65 +203,15 @@ class BmiCalculator : EpActivity() {
             calculatedResult?.setText(getString(R.string.bmi_result, result.toString()))
             val message = getMessage(result)
             messageTextView?.setText(message)
-            if (BMI.isNormalBmi(result)) {
-                calculatedResult?.setTextColor(Color.BLACK)
-            } else {
+            if (!BMI.isNormalBmi(result)) {
                 calculatedResult?.setTextColor(Color.RED)
             }
-
-//            var ibw = idealBodyWeight(height, isMale)
-//            var abw = adjustedBodyWeight(ibw, weight)
-//            val overweight = isOverweight(ibw, weight)
-//            val underheight = isUnderHeight(height)
-//            val underweight = isUnderWeight(weight, ibw)
-//            var weightUnitAbbreviation: String? = getString(R.string.kg_abbreviation)
-//            if (unitsInLbs) {
-//                ibw = UnitConverter.kgsToLbs(ibw)
-//                abw = UnitConverter.kgsToLbs(abw)
-//                weightUnitAbbreviation = getString(R.string.pound_abbreviation)
-//            }
-//            val formattedIbw = DecimalFormat("#.#").format(ibw)
-//            val formattedAbw = DecimalFormat("#.#").format(abw)
-//            ibwResultTextView!!.setText(formattedIbw)
-//            abwResultTextView!!.setText(formattedAbw)
-//            if (underheight) messageTextView!!
-//                .setText(getString(R.string.underheight_message))
-//            else if (overweight) {
-//                messageTextView!!.setText(
-//                    getString(
-//                        R.string.overweight_message,
-//                        formatWeight(formattedAbw, weightUnitAbbreviation)
-//                    )
-//                )
-//            } else if (underweight) messageTextView!!
-//                .setText(
-//                    getString(
-//                        R.string.underweight_message,
-//                        formatWeight(
-//                            DecimalFormat("#.#")
-//                                .format(originalWeight),
-//                            weightUnitAbbreviation
-//                        )
-//                    )
-//                )
-//            else  // normal weight
-//                messageTextView!!
-//                    .setText(
-//                        getString(
-//                            R.string.normalweight_message,
-//                            formatWeight(
-//                                formattedIbw,
-//                                weightUnitAbbreviation
-//                            )
-//                        )
-//                    )
         } catch (e: NumberFormatException) {
             calculatedResult!!.setText(getString(R.string.invalid_warning))
             calculatedResult!!.setTextColor(Color.RED)
             messageTextView!!.setText(null)
         }
     }
-
 
     fun getMessage(bmi: Double): String {
         val classification = getClassification(bmi)
@@ -279,32 +229,6 @@ class BmiCalculator : EpActivity() {
 
     private fun formatWeight(weight: String?, units: String?): String {
         return weight + " " + units + ")."
-    }
-
-    fun idealBodyWeight(height: Double, isMale: Boolean): Double {
-        var weight = if (height > 60.0) (height - 60.0) * 2.3 else 0.0
-        if (isMale) weight += 50.0
-        else weight += 45.5
-        return weight
-    }
-
-    fun adjustedBodyWeight(ibw: Double, actualWeight: Double): Double {
-        // for now, literature seems to support 0.4 as best correction factor
-        var abw = ibw + 0.4 * (actualWeight - ibw)
-        abw = if (actualWeight > ibw) abw else actualWeight
-        return abw
-    }
-
-    fun isOverweight(ibw: Double, actualWeight: Double): Boolean {
-        return actualWeight > ibw + .3 * ibw
-    }
-
-    fun isUnderHeight(height: Double): Boolean {
-        return height <= 60.0
-    }
-
-    fun isUnderWeight(weight: Double, ibw: Double): Boolean {
-        return weight < ibw
     }
 
     private fun clearEntries() {
@@ -332,10 +256,16 @@ class BmiCalculator : EpActivity() {
             "default_height_unit",
             "CM"
         )!!
-        if (weightUnitPreference == "KG") defaultWeightUnitSelection = WeightUnit.KG
-        else defaultWeightUnitSelection = WeightUnit.LB
-        if (heightUnitPreference == "CM") defaultHeightUnitSelection = HeightUnit.CM
-        else defaultHeightUnitSelection = HeightUnit.IN
+        if (weightUnitPreference == "KG") {
+            defaultWeightUnitSelection = WeightUnit.KG
+        } else {
+            defaultWeightUnitSelection = WeightUnit.LB
+        }
+        if (heightUnitPreference == "CM") {
+            defaultHeightUnitSelection = HeightUnit.CM
+        } else {
+            defaultHeightUnitSelection = HeightUnit.IN
+        }
     }
 
     override fun hideInstructionsMenuItem(): Boolean {
@@ -359,5 +289,4 @@ class BmiCalculator : EpActivity() {
             R.string.bmi_calculator_link
         )
     }
-
 }
