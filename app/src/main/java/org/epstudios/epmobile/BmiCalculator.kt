@@ -1,6 +1,7 @@
 package org.epstudios.epmobile
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
@@ -10,6 +11,8 @@ import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.preference.PreferenceManager
+import org.epstudios.epmobile.BMI.Classification
+import org.epstudios.epmobile.BMI.Companion.getClassification
 
 /**
 Copyright (C) 2025 EP Studios, Inc.
@@ -40,6 +43,7 @@ class BmiCalculator : EpActivity() {
     private var weightSpinner: Spinner? = null
     private var heightSpinner: Spinner? = null
     private var messageTextView: TextView? = null
+    private var calculatedResult: TextView? = null
 
     private enum class WeightUnit {
         KG, LB
@@ -57,7 +61,7 @@ class BmiCalculator : EpActivity() {
     private var defaultWeightUnitSelection = WeightUnit.KG
     private var defaultHeightUnitSelection = HeightUnit.CM
 
-    protected override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.bmi)
         setupInsets(R.id.bmi_root_view)
@@ -77,6 +81,7 @@ class BmiCalculator : EpActivity() {
         weightSpinner = findViewById<Spinner?>(R.id.weight_spinner)
         heightSpinner = findViewById<Spinner?>(R.id.height_spinner)
         messageTextView = findViewById<TextView?>(R.id.messageTextView)
+        calculatedResult = findViewById<TextView?>(R.id.calculated_result)
 
         getPrefs()
         setAdapters()
@@ -96,15 +101,6 @@ class BmiCalculator : EpActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-
-//    fun onClick(v: View) {
-//        val id = v.getId()
-//        if (id == R.id.calculate_button) {
-//            calculate()
-//        } else if (id == R.id.clear_button) {
-//            clearEntries()
-//        }
-//    }
 
     private fun setAdapters() {
         val adapter = ArrayAdapter.createFromResource(
@@ -191,19 +187,28 @@ class BmiCalculator : EpActivity() {
         messageTextView!!.setText(null)
         // make sure message white with 2 calculations in row, 1st invalid
         resetResultTextColor()
-//        val isMale = sexRadioGroup!!.getCheckedRadioButtonId() == R.id.male
-//        val weightText: CharSequence = weightEditText!!.getText()
-//        val heightText: CharSequence = heightEditText!!.getText()
-//        try {
-//            var unitsInLbs = false
-//            var weight = weightText.toString().toDouble()
-//            val originalWeight = weight
-//            if (getWeightUnitSelection() == WeightUnit.LB) {
-//                weight = UnitConverter.lbsToKgs(weight)
-//                unitsInLbs = true
-//            }
-//            var height = heightText.toString().toDouble()
-//            if (getHeightUnitSelection() == HeightUnit.CM) height = UnitConverter.cmsToIns(height)
+        val weightText: CharSequence = weightEditText!!.getText()
+        val heightText: CharSequence = heightEditText!!.getText()
+        try {
+            var unitsInLbs = false
+            var weight = weightText.toString().toDouble()
+            if (getWeightUnitSelection() == WeightUnit.LB) {
+                weight = UnitConverter.lbsToKgs(weight)
+            }
+            var height = heightText.toString().toDouble()
+            if (getHeightUnitSelection() == HeightUnit.IN) {
+                height = UnitConverter.insToCms(height)
+            }
+            val result = BMI.calculateCmRounded(weight, height)
+            calculatedResult?.setText(getString(R.string.bmi_result, result.toString()))
+            val message = getMessage(result)
+            messageTextView?.setText(message)
+            if (BMI.isNormalBmi(result)) {
+                calculatedResult?.setTextColor(Color.BLACK)
+            } else {
+                calculatedResult?.setTextColor(Color.RED)
+            }
+
 //            var ibw = idealBodyWeight(height, isMale)
 //            var abw = adjustedBodyWeight(ibw, weight)
 //            val overweight = isOverweight(ibw, weight)
@@ -250,12 +255,26 @@ class BmiCalculator : EpActivity() {
 //                            )
 //                        )
 //                    )
-//        } catch (e: NumberFormatException) {
-//            ibwResultTextView!!.setText(getString(R.string.invalid_warning))
-//            ibwResultTextView!!.setTextColor(Color.RED)
-//            abwResultTextView!!.setText(getString(R.string.invalid_warning))
-//            abwResultTextView!!.setTextColor(Color.RED)
-//        }
+        } catch (e: NumberFormatException) {
+            calculatedResult!!.setText(getString(R.string.invalid_warning))
+            calculatedResult!!.setTextColor(Color.RED)
+            messageTextView!!.setText(null)
+        }
+    }
+
+
+    fun getMessage(bmi: Double): String {
+        val classification = getClassification(bmi)
+        when (classification) {
+            Classification.UNDERWEIGHT_SEVERE -> return getString(R.string.underweight_severe_label)
+            Classification.UNDERWEIGHT_MODERATE -> return getString(R.string.underweight_moderate_label)
+            Classification.UNDERWEIGHT_MILD -> return getString(R.string.underweight_mild_label)
+            Classification.NORMAL -> return getString(R.string.normal_label)
+            Classification.OVERWEIGHT_PREOBESE -> return getString(R.string.overweight_preobese_label)
+            Classification.OVERWEIGHT_CLASS_1 -> return getString(R.string.overweight_class_1_label)
+            Classification.OVERWEIGHT_CLASS_2 -> return getString(R.string.overweight_class_2_label)
+            Classification.OVERWEIGHT_CLASS_3 -> return getString(R.string.overweight_class_3_label)
+        }
     }
 
     private fun formatWeight(weight: String?, units: String?): String {
@@ -291,20 +310,16 @@ class BmiCalculator : EpActivity() {
     private fun clearEntries() {
         weightEditText!!.setText(null)
         heightEditText!!.setText(null)
-        resetResultTextColor()
         messageTextView!!.setText(null)
+        calculatedResult!!.setText(null)
         weightEditText!!.requestFocus()
+        resetResultTextColor()
     }
 
     private fun resetResultTextColor() {
-//        ibwResultTextView!!.setTextAppearance(
-//            this,
-//            android.R.style.TextAppearance_Medium
-//        )
-//        abwResultTextView!!.setTextAppearance(
-//            this,
-//            android.R.style.TextAppearance_Medium
-//        )
+        calculatedResult!!.setTextAppearance(
+            android.R.style.TextAppearance_Medium
+        )
     }
 
     private fun getPrefs() {

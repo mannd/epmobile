@@ -25,66 +25,97 @@ along with epmobile.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 class BMI {
-    /**
-     * Calculates BMI using metric units.  No rounding.
-     * @param weight Weight in kilograms
-     * @param height Height in meters
-     */
-    fun calculate(weight: Double, height: Double): Double {
-        return weight / (height * height)
+    enum class Classification {
+        UNDERWEIGHT_SEVERE,
+        UNDERWEIGHT_MODERATE,
+        UNDERWEIGHT_MILD,
+        NORMAL,
+        OVERWEIGHT_PREOBESE,
+        OVERWEIGHT_CLASS_1,
+        OVERWEIGHT_CLASS_2,
+        OVERWEIGHT_CLASS_3
     }
 
-    /**
-     * Calculates BMI using metric units, using centimeters.
-     * No rounding.
-     * @param weight Weight in kilograms
-     * @param height Height in centimeters
-     */
-    fun calculateCm(weight: Double, height: Double): Double {
-        val heightInMeters = height / 100
-        return calculate(weight, heightInMeters)
-    }
+    companion object {
+        /**
+         * Calculates BMI using metric units.  No rounding.
+         * @param weight Weight in kilograms
+         * @param height Height in meters
+         */
+        fun calculate(weight: Double, height: Double): Double {
+            return weight / (height * height)
+        }
 
-    /**
-     * Calculates BMI using US units.  No rounding.
-     * @param weight Weight in pounds
-     * @param height Height in inches
-     */
-    fun calculateUSUnits(weight: Double, height: Double): Double {
-        return weight / (height * height) * 703
-    }
+        /**
+         * Calculates BMI using metric units, using centimeters.
+         * No rounding.
+         * @param weight Weight in kilograms
+         * @param height Height in centimeters
+         */
+        fun calculateCm(weight: Double, height: Double): Double {
+            val heightInMeters = height / 100
+            return calculate(weight, heightInMeters)
+        }
 
-    /**
-     * Calculates BMI using metric units.  Rounded to nearest tenth.
-     * @param weight Weight in kilograms
-     * @param height Height in meters
-     */
-    fun calculateRounded(weight: Double, height: Double): Double {
-        return roundToNearestTenth(calculate(weight, height))
-    }
+        /**
+         * Calculates BMI using US units.  No rounding.
+         * @param weight Weight in pounds
+         * @param height Height in inches
+         */
+        fun calculateUSUnits(weight: Double, height: Double): Double {
+            return weight / (height * height) * 703
+        }
 
-    /**
-     * Calculates BMI using metric units, using centimeters.
-     * Rounded to nearest tenth.
-     * @param weight Weight in kilograms
-     * @param height Height in centimeters
-     */
-    fun calculateCmRounded(weight: Double, height: Double): Double {
-        return roundToNearestTenth(calculateCm(weight, height))
-    }
+        /**
+         * Calculates BMI using metric units.  Rounded to nearest tenth.
+         * @param weight Weight in kilograms
+         * @param height Height in meters
+         */
+        fun calculateRounded(weight: Double, height: Double): Double {
+            return roundToNearestTenth(calculate(weight, height))
+        }
 
-    /**
-     * Calculates BMI using US units.  Rounded to nearest tenth.
-     * @param weight Weight in pounds
-     * @param height Height in inches
-     */
-    fun calculateUSUnitsRounded(weight: Double, height: Double): Double {
-        return roundToNearestTenth(calculateUSUnits(weight, height))
-    }
+        /**
+         * Calculates BMI using metric units, using centimeters.
+         * Rounded to nearest tenth.
+         * @param weight Weight in kilograms
+         * @param height Height in centimeters
+         */
+        fun calculateCmRounded(weight: Double, height: Double): Double {
+            return roundToNearestTenth(calculateCm(weight, height))
+        }
 
-    private fun roundToNearestTenth(value: Double): Double {
-        val shifted = value * 10
-        val roundedShifted = round(shifted)
-        return roundedShifted / 10
+        /**
+         * Calculates BMI using US units.  Rounded to nearest tenth.
+         * @param weight Weight in pounds
+         * @param height Height in inches
+         */
+        fun calculateUSUnitsRounded(weight: Double, height: Double): Double {
+            return roundToNearestTenth(calculateUSUnits(weight, height))
+        }
+
+        fun getClassification(bmi: Double): Classification {
+            when {
+                bmi < 16.0 -> return Classification.UNDERWEIGHT_SEVERE
+                bmi < 17.0 -> return Classification.UNDERWEIGHT_MODERATE
+                bmi < 18.5 -> return Classification.UNDERWEIGHT_MILD
+                bmi < 25.0 -> return Classification.NORMAL
+                bmi < 30.0 -> return Classification.OVERWEIGHT_PREOBESE
+                bmi < 35.0 -> return Classification.OVERWEIGHT_CLASS_1
+                bmi < 40.0 -> return Classification.OVERWEIGHT_CLASS_2
+                else -> return Classification.OVERWEIGHT_CLASS_3
+            }
+        }
+
+        fun isNormalBmi(bmi: Double): Boolean {
+            return bmi >= 18.5 && bmi <= 24.9
+        }
+
+
+        private fun roundToNearestTenth(value: Double): Double {
+            val shifted = value * 10
+            val roundedShifted = round(shifted)
+            return roundedShifted / 10
+        }
     }
 }

@@ -36,6 +36,11 @@ public class UnitConverter {
         return distance * conversionFactor;
     }
 
+    public static double insToCms(double distance) {
+        final double conversionFactor = 2.54;
+        return distance * conversionFactor;
+    }
+
     public static String trimmedTrailingZeros(double value) {
         return new DecimalFormat("#.#").format(value);
     }

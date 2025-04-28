@@ -1842,5 +1842,16 @@
     <string name="bmi_calculator_reference">Nuttall FQ. Body Mass Index.
         Nutr Today. 2015;50(3):117-128.</string>
     <string name="bmi_calculator_link">https:/doi.org/10.1097/NT.0000000000000092</string>
-    <string name="bmi_calculator_instructions">TODO: BMI instructions</string>
+    <string name="bmi_calculator_instructions">This Body Mass Index calculator is intended for
+    adult men and women, age 20 and older.  Enter the weight and height in
+    the chosen units and tap Calculate to get the result.</string>
+    <string name="bmi_result">%1$s kg/m\u00b2</string>
+    <string name="underweight_severe_label">Underweight (Severe)</string>"
+    <string name="underweight_moderate_label">Underweight (Moderate)</string>
+    <string name="underweight_mild_label">Underweight (Mild)</string>
+    <string name="normal_label">Normal</string>
+    <string name="overweight_preobese_label">Overweight (Pre-obese)</string>
+    <string name="overweight_class_1_label">Overweight (Class 1)</string>
+    <string name="overweight_class_2_label">Overweight (Class 2)</string>
+    <string name="overweight_class_3_label">Overweight (Class 3)</string>
 </resources>
