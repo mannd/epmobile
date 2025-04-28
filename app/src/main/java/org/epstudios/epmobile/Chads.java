@@ -27,6 +27,11 @@ public class Chads extends RiskScore {
     }
 
     @Override
+    protected void setupInsets() {
+        setupInsets(R.id.chads_root_view);
+    }
+
+    @Override
     protected String getRiskLabel() {
         return getString(R.string.chads_label);
     }
@@ -112,7 +117,7 @@ public class Chads extends RiskScore {
         neuroRisk = "Annual stroke/TIA/peripheral emboli risk is " + neuroRisk + "%";
         message = getRiskLabel() + " score = " + result + "\n" + message + "\n"
                 + risk + "\n" + neuroRisk;
-        setResultMessage(message);
+        resultMessage = message;
         return resultWithShortReference();
     }
 

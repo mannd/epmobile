@@ -38,6 +38,11 @@ public class IcdRisk extends RiskScore {
     }
 
     @Override
+    protected void setupInsets() {
+        setupInsets(R.id.icd_risk_root_view);
+    }
+
+    @Override
     protected void calculateResult() {
         String message;
         int score;
@@ -63,7 +68,7 @@ public class IcdRisk extends RiskScore {
     protected void displayResult(String message, String title) {
         String resultMessage = getString(R.string.icd_result_title) + "\n" + message;
         setDisplayRisks(false);
-        setResultMessage(resultMessage);
+        resultMessage = resultMessage;
         super.displayResult(message, title);
     }
 

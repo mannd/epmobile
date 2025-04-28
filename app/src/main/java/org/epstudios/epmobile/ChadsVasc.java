@@ -29,6 +29,11 @@ public class ChadsVasc extends RiskScore {
     }
 
     @Override
+    protected void setupInsets() {
+        setupInsets(R.id.chadsvasc_root_view);
+    }
+
+    @Override
     protected void init() {
         checkBoxes = new CheckBox[8];
 
@@ -128,7 +133,7 @@ public class ChadsVasc extends RiskScore {
         neuroRisk = "Annual stroke/TIA/peripheral emboli risk is " + neuroRisk + "%";
         message = getRiskLabel() + " score = " + result + "\n" + message + "\n"
                 + risk + "\n" + neuroRisk;
-        setResultMessage(message);
+        resultMessage = message;
         return resultWithShortReference();
     }
 

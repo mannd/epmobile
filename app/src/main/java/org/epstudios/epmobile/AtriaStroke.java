@@ -92,13 +92,18 @@ public class AtriaStroke extends RiskScore {
         else
             message = getString(R.string.high_atria_stroke_message);
         message = getRiskLabel() + " score = " + result + "\n" + message;
-        setResultMessage(message);
+        resultMessage = message;
         return resultWithShortReference();
     }
 
     @Override
     protected void setContentView() {
         setContentView(R.layout.atriastroke);
+    }
+
+    @Override
+    protected void setupInsets() {
+        setupInsets(R.id.atria_stroke_risk_view);
     }
 
     @Override

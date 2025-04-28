@@ -57,6 +57,7 @@ public class LongQtTable extends EpActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.longqttable);
+        setupInsets(R.id.longqtable_root_view);
         initToolbar();
         tableLayout = findViewById(R.id.lqt_table);
         layoutInflater = LayoutInflater.from(this);
@@ -99,16 +100,7 @@ public class LongQtTable extends EpActivity {
         }
     }
 
-    private static class RowData {
-        final String subtype;
-        final String channel;
-        final String details;
-
-        RowData(String subtype, String channel, String details) {
-            this.subtype = subtype;
-            this.channel = channel;
-            this.details = details;
-        }
+    private record RowData(String subtype, String channel, String details) {
     }
 
     private RowData[] initData() {

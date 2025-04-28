@@ -1,6 +1,5 @@
 package org.epstudios.epmobile;
 
-import android.app.AlertDialog;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -52,6 +51,7 @@ public class QtcIvcdResults extends EpActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.selectionlist);
+        setupInsets(R.id.selection_list_root_view);
         initToolbar();
 
         qt = getIntent().getIntExtra("QT", 0);

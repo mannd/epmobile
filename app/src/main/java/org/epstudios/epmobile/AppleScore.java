@@ -72,13 +72,18 @@ public class AppleScore extends RiskScore {
                     + recurrenceRate + "%.\nRisk of AF recurrence following repeat catheter ablation = "
                     + repeatRecurrenceRate + "%.";
         }
-        setResultMessage(message);
+        resultMessage = message;
         return message;
     }
 
     @Override
     protected void setContentView() {
         setContentView(R.layout.apple);
+    }
+
+    @Override
+    protected void setupInsets() {
+        setupInsets(R.id.apple_root_view);
     }
 
     @Override

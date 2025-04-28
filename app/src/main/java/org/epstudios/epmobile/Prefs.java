@@ -19,27 +19,19 @@
 package org.epstudios.epmobile;
 
 import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.view.MenuItem;
 
-public class Prefs extends AppCompatActivity {
+public class Prefs extends BasicEpActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.prefs);
+        setupInsets(R.id.prefs_root_view);
+        initToolbar();
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.content_frame, new MyPreferenceFragment()).commit();
-
     }
 
     @Override
@@ -51,5 +43,4 @@ public class Prefs extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
 }

@@ -19,8 +19,6 @@
 package org.epstudios.epmobile;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.CheckBox;
@@ -128,6 +126,11 @@ public class ShortQt extends RiskScore implements OnClickListener {
     }
 
     @Override
+    protected void setupInsets() {
+        setupInsets(R.id.short_qt_root_view);
+    }
+
+    @Override
     protected void init() {
         qtcRadioGroup = findViewById(R.id.qtc_radio_group);
         shortJtCheckBox = findViewById(R.id.short_jt);
@@ -152,7 +155,7 @@ public class ShortQt extends RiskScore implements OnClickListener {
         else
             message += "Low probability";
         message += " of Short QT Syndrome";
-        setResultMessage(message);
+        resultMessage = message;
         super.displayResult(message, getString(R.string.short_qt_title));
     }
 

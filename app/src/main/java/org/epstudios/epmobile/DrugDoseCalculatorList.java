@@ -29,6 +29,7 @@ public class DrugDoseCalculatorList extends EpActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.selectionlist);
+        setupInsets(R.id.selection_list_root_view);
         initToolbar();
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this, R.array.drug_calculator_list,

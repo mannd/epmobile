@@ -93,7 +93,7 @@ public class HcmScd2022 extends HcmRiskScd {
             addSelectedRisk("LV wall thickness = " + maxLvWallThicknessString + " mm");
             addSelectedRisk("LA diameter = " + laDiameterString + " mm");
             addSelectedRisk(("LVOT gradient = " + maxLvotGradientString + " mmHg"));
-            addSelectedRisks();
+            addSelectedRisks(checkBoxes);
             displayResult(getResultMessage(result,
                     apicalAneurysm,
                     lowLvef,
@@ -196,6 +196,11 @@ public class HcmScd2022 extends HcmRiskScd {
     @Override
     protected void setContentView() {
         setContentView(R.layout.hcmscd2022);
+    }
+
+    @Override
+    protected void setupInsets() {
+        setupInsets(R.id.hcm_scd_2022_root_view);
     }
 
     @Override

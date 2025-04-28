@@ -37,6 +37,11 @@ public class IcdMortalityRisk extends RiskScore {
     }
 
     @Override
+    protected void setupInsets() {
+        setupInsets(R.id.icd_mortality_risk_root_view);
+    }
+
+    @Override
     protected String getFullReference() {
         return convertReferenceToText(R.string.icd_mortality_risk_full_reference,
                 R.string.icd_mortality_risk_link);
@@ -73,7 +78,7 @@ public class IcdMortalityRisk extends RiskScore {
                     risk.conv, risk.icd);
         }
         message += "\n" + getString(R.string.icd_mortality_warning_message);
-        setResultMessage(message);
+        resultMessage = message;
         return resultWithShortReference();
 
     }
