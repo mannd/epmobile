@@ -180,7 +180,6 @@ public class BrugadaMorphologyCriteria extends EpActivity implements
         String message;
         message = getString(R.string.vt_result);
         message = message + " (Sens=" + sens + ", Spec=" + spec + ") ";
-        message = message + getString(R.string.brugada_wct_reference);
         dialog.setMessage(message);
         dialog.setTitle(getString(R.string.wct_result_label));
         dialog.setPositiveButton("Done",
@@ -196,7 +195,6 @@ public class BrugadaMorphologyCriteria extends EpActivity implements
         String message;
         message = getString(R.string.svt_result);
         message = message + " (Sens=.965, Spec=.967) ";
-        message = message + getString(R.string.brugada_wct_reference);
         dialog.setMessage(message);
         dialog.setTitle(getString(R.string.wct_result_label));
         dialog.setPositiveButton("Done",
