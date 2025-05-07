@@ -1,0 +1,5 @@
+EP Mobile 2.35.1 Release Notes
+Changes since 2.35.0
+* Convert dialogs to material design
+* Improve visibility of cycle length result in dark mode
+* Remove some redundant references in dialog boxes
