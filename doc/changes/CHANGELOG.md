@@ -5,6 +5,12 @@ See [keepachangelog.com](https://keepachangelog.com/en/1.0.0/) for information o
 
 This project roughly utilizes [Semantic Versioning](https://semver.org/spec/v2.0.0.html).  In some versions the PATCH of MAJOR.MINOR.PATCH is omitted.  Note also that unreleased versions are omitted.
 
+## [2.35.1] - 2025-05-07
+### Fixed
+- Changed remaining AlertDialogs to material design
+- Improve visibility of cycle length result in dark mode
+* Remove some redundant references in dialog boxes
+
 ## [2.35.0] - 2025-04-28
 ### Added
 - BMI calculator

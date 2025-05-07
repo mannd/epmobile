@@ -1,8 +1,9 @@
 package org.epstudios.epmobile;
 
-import android.app.AlertDialog;
 import android.widget.CheckBox;
 import android.widget.RadioGroup;
+
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 /**
  * Copyright (C) 2015 EP Studios, Inc.
@@ -44,9 +45,14 @@ public class AtriaStroke extends RiskScore {
     protected void calculateResult() {
         int radioButtonId = radioGroup.getCheckedRadioButtonId();
         if (radioButtonId == -1) {
-            AlertDialog dialog = new AlertDialog.Builder(this).create();
+            MaterialAlertDialogBuilder dialog = new MaterialAlertDialogBuilder(this);
             dialog.setMessage(getString(R.string.no_age_checked_message));
             dialog.setTitle(getString(R.string.error_dialog_title));
+            dialog.setPositiveButton(
+                    getString(R.string.ok_button_label),
+                    (dialog1, which) -> {
+                    }
+            );
             dialog.show();
             return;
         }

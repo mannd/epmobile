@@ -18,8 +18,6 @@
 
 package org.epstudios.epmobile;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -30,6 +28,8 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.Spinner;
+
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -174,34 +174,32 @@ public class BrugadaMorphologyCriteria extends EpActivity implements
     }
 
     private void displayVtResult() {
-        AlertDialog dialog = new AlertDialog.Builder(this).create();
+        MaterialAlertDialogBuilder dialog = new MaterialAlertDialogBuilder(this);
         String sens = ".987";
         String spec = ".965";
         String message;
         message = getString(R.string.vt_result);
         message = message + " (Sens=" + sens + ", Spec=" + spec + ") ";
-        message = message + getString(R.string.brugada_wct_reference);
         dialog.setMessage(message);
         dialog.setTitle(getString(R.string.wct_result_label));
-        dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Done",
+        dialog.setPositiveButton("Done",
                 (dialog12, which) -> finish());
-        dialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Back",
+        dialog.setNegativeButton("Back",
                 (dialog1, which) -> {
                 });
         dialog.show();
     }
 
     private void displaySvtResult() {
-        AlertDialog dialog = new AlertDialog.Builder(this).create();
+        MaterialAlertDialogBuilder dialog = new MaterialAlertDialogBuilder(this);
         String message;
         message = getString(R.string.svt_result);
         message = message + " (Sens=.965, Spec=.967) ";
-        message = message + getString(R.string.brugada_wct_reference);
         dialog.setMessage(message);
         dialog.setTitle(getString(R.string.wct_result_label));
-        dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Done",
+        dialog.setPositiveButton("Done",
                 (dialog12, which) -> finish());
-        dialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Back",
+        dialog.setNegativeButton("Back",
                 (dialog1, which) -> {
                 });
         dialog.show();

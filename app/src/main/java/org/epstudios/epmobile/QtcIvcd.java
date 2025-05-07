@@ -22,7 +22,6 @@
 
 package org.epstudios.epmobile;
 
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -35,6 +34,8 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 @SuppressWarnings("SpellCheckingInspection")
 public class QtcIvcd extends EpActivity implements View.OnClickListener {
@@ -292,9 +293,10 @@ public class QtcIvcd extends EpActivity implements View.OnClickListener {
     }
 
     private void showError(String message) {
-        AlertDialog alert = new AlertDialog.Builder(this).create();
+        MaterialAlertDialogBuilder alert = new MaterialAlertDialogBuilder(this);
         alert.setTitle(getString(R.string.error_dialog_title));
         alert.setMessage(message);
+        alert.setPositiveButton(getString(R.string.ok_button_label), null);
         alert.show();
     }
 

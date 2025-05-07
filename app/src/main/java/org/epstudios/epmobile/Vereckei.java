@@ -1,7 +1,5 @@
 package org.epstudios.epmobile;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -9,6 +7,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class Vereckei extends EpActivity implements OnClickListener {
     private Button backButton;
@@ -117,31 +117,30 @@ public class Vereckei extends EpActivity implements OnClickListener {
     }
 
     private void displayVtResult() {
-        AlertDialog dialog = new AlertDialog.Builder(this).create();
+        MaterialAlertDialogBuilder dialog = new MaterialAlertDialogBuilder(this);
         String message;
         message = getString(R.string.vt_result);
         message = message + "\n" + getString(R.string.vereckei_reference);
         dialog.setMessage(message);
         dialog.setTitle(getString(R.string.wct_result_label));
-        dialog.setCanceledOnTouchOutside(false);
         dialog.setCancelable(false);
-        dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Done",
+        dialog.setPositiveButton("Done",
                 (dialog12, which) -> finish());
-        dialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Back",
+        dialog.setNegativeButton("Back",
                 (dialog1, which) -> {
                 });
         dialog.show();
     }
 
     private void displaySvtResult() {
-        AlertDialog dialog = new AlertDialog.Builder(this).create();
+        MaterialAlertDialogBuilder dialog = new MaterialAlertDialogBuilder(this);
         String message;
         message = getString(R.string.svt_result);
         dialog.setMessage(message);
         dialog.setTitle(getString(R.string.wct_result_label));
-        dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Done",
+        dialog.setPositiveButton("Done",
                 (dialog12, which) -> finish());
-        dialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Back",
+        dialog.setNegativeButton("Back",
                 (dialog1, which) -> {
                 });
         dialog.show();

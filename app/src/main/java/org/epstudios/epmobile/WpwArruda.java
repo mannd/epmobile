@@ -18,8 +18,6 @@
 
 package org.epstudios.epmobile;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -27,6 +25,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 // Supports both Arruda and modified Arruda algorithms
 @SuppressWarnings("SpellCheckingInspection")
@@ -260,26 +260,25 @@ public class WpwArruda extends LocationAlgorithm implements OnClickListener {
     }
 
     protected void showResult() {
-        AlertDialog dialog = new AlertDialog.Builder(this).create();
+        MaterialAlertDialogBuilder dialog = new MaterialAlertDialogBuilder(this);
         message = "";
         location1 = ""; // need to reset locations or they will be "remembered"
         // by map
         location2 = "";
         setMessageAndLocation();
         dialog.setMessage(message);
-        dialog.setCanceledOnTouchOutside(false);
         dialog.setCancelable(false);
         dialog.setTitle(getString(R.string.pathway_location_label));
-        dialog.setButton(DialogInterface.BUTTON_POSITIVE,
+        dialog.setPositiveButton(
                 getString(R.string.done_label),
                 (dialog13, which) -> finish());
-        dialog.setButton(DialogInterface.BUTTON_NEGATIVE,
+        dialog.setNegativeButton(
                 getString(R.string.reset_label),
                 (dialog12, which) -> {
                     resetSteps();
                     gotoStep();
                 });
-        dialog.setButton(DialogInterface.BUTTON_NEUTRAL,
+        dialog.setNeutralButton(
                 getString(R.string.show_map_label),
                 (dialog1, which) -> {
                     showMap();
