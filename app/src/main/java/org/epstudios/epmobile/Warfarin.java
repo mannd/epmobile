@@ -18,8 +18,6 @@
 
 package org.epstudios.epmobile;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -30,6 +28,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class Warfarin extends EpActivity implements
         OnClickListener {
@@ -296,19 +296,20 @@ public class Warfarin extends EpActivity implements
     }
 
     private void displayResult(String message, Boolean showDoses) {
-        AlertDialog dialog = new AlertDialog.Builder(this).create();
+        MaterialAlertDialogBuilder dialog = new MaterialAlertDialogBuilder(this);
 
         dialog.setMessage(message);
         dialog.setTitle(getString(R.string.warfarin_result_title));
-        dialog.setButton(DialogInterface.BUTTON_POSITIVE,
+        dialog.setCancelable(false);
+        dialog.setPositiveButton(
                 getString(R.string.reset_label),
                 (dialog13, which) -> clearEntries());
-        dialog.setButton(DialogInterface.BUTTON_NEUTRAL,
+        dialog.setNeutralButton(
                 getString(R.string.dont_reset_label),
                 (dialog12, which) -> {
                 });
         if (showDoses) {
-            dialog.setButton(DialogInterface.BUTTON_NEGATIVE,
+            dialog.setNegativeButton(
                     getString(R.string.dosing_label),
                     (dialog1, which) -> displayDoses());
         }

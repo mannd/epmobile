@@ -1,6 +1,5 @@
 package org.epstudios.epmobile;
 
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.view.MenuItem;
 import android.view.View;
@@ -143,7 +142,6 @@ public class LongQt extends RiskScore implements OnClickListener {
     }
 
     private void displayResult(int score) {
-        AlertDialog dialog = new AlertDialog.Builder(this).create();
         double displayScore = score / 10.0;
         Format formatter = new DecimalFormat("0.#");
         String message = "Score = " + formatter.format(displayScore) + "\n";

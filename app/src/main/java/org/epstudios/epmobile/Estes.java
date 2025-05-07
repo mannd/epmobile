@@ -1,9 +1,10 @@
 package org.epstudios.epmobile;
 
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.view.MenuItem;
 import android.widget.CheckBox;
+
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class Estes extends RiskScore {
 
@@ -26,9 +27,15 @@ public class Estes extends RiskScore {
         final int STRAIN_WITHOUT_DIG = 1;
         if (checkBoxes[STRAIN_WITHOUT_DIG].isChecked()
                 && checkBoxes[STRAIN_WITH_DIG].isChecked()) {
-            AlertDialog dialog = new AlertDialog.Builder(this).create();
+            MaterialAlertDialogBuilder dialog = new MaterialAlertDialogBuilder(this);
             dialog.setMessage(getString(R.string.estes_contradiction_message));
             dialog.setTitle(getString(R.string.error_dialog_title));
+            dialog.setPositiveButton(getString(R.string.ok_button_label),
+                    (dialog12, which) -> {
+                        // In this case we clear the entries and have the
+                        // user start over, since the entries conflict.
+                        clearEntries();
+                    });
             dialog.show();
             return;
         }

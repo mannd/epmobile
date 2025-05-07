@@ -18,7 +18,6 @@
 
 package org.epstudios.epmobile;
 
-import android.app.AlertDialog;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.CheckBox;
@@ -146,7 +145,6 @@ public class ShortQt extends RiskScore implements OnClickListener {
     }
 
     private void displayResult(int score) {
-        AlertDialog dialog = new AlertDialog.Builder(this).create();
         String message = "Score = " + score + "\n";
         if (score >= 4)
             message += "High probability";

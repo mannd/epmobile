@@ -94,6 +94,7 @@ class BMI {
             return roundToNearestTenth(calculateUSUnits(weight, height))
         }
 
+        // This assumes bmi is already rounded to nearest tenth.
         fun getClassification(bmi: Double): Classification {
             when {
                 bmi < 16.0 -> return Classification.UNDERWEIGHT_SEVERE

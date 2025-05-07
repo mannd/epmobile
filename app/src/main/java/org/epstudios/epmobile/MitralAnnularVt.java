@@ -18,8 +18,6 @@
 
 package org.epstudios.epmobile;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -27,6 +25,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 @SuppressWarnings("SpellCheckingInspection")
 public class MitralAnnularVt extends LocationAlgorithm implements
@@ -171,23 +171,22 @@ public class MitralAnnularVt extends LocationAlgorithm implements
     }
 
     protected void showResult() {
-        AlertDialog dialog = new AlertDialog.Builder(this).create();
+        MaterialAlertDialogBuilder dialog = new MaterialAlertDialogBuilder(this);
         String message = getMessage();
         dialog.setMessage(message);
-        dialog.setCanceledOnTouchOutside(false);
+        //dialog.setCanceledOnTouchOutside(false);
         dialog.setCancelable(false);
         dialog.setTitle(getString(R.string.outflow_vt_location_label));
-        dialog.setButton(DialogInterface.BUTTON_POSITIVE,
+        dialog.setPositiveButton(
                 getString(R.string.done_label),
                 (dialog12, which) -> finish());
-        dialog.setButton(DialogInterface.BUTTON_NEGATIVE,
+        dialog.setNegativeButton(
                 getString(R.string.reset_label),
                 (dialog1, which) -> {
                     resetSteps();
                     resetResult();
                     gotoStep();
                 });
-
         dialog.show();
     }
 
