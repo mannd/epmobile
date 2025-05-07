@@ -160,7 +160,6 @@ public class Brugada extends EpActivity implements OnClickListener {
         message = message + " (Sens=" + sens + ", Spec=" + spec + ") ";
         dialog.setMessage(message);
         dialog.setTitle(getString(R.string.wct_result_label));
-        //dialog.setCanceledOnTouchOutside(false);
         dialog.setCancelable(false);
         dialog.setPositiveButton("Done",
                 (dialog12, which) -> finish());
@@ -175,7 +174,6 @@ public class Brugada extends EpActivity implements OnClickListener {
         String message;
         message = getString(R.string.svt_result);
         message = message + " (Sens=.965, Spec=.967) ";
-        message = message + getString(R.string.brugada_wct_reference);
         dialog.setMessage(message);
         dialog.setTitle(getString(R.string.wct_result_label));
         dialog.setPositiveButton("Done",
