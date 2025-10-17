@@ -274,6 +274,8 @@
             android:label="@string/hcm_scd_2024_title" />
         <activity android:name=".BmiCalculator"
             android:label="@string/bmi_calculator_title" />
+        <activity android:name=".Painesd"
+            android:label="@string/painesd_risk_title" />
     </application>
 
 </manifest>

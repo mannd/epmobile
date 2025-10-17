@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/painesd_root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar" />
+    <include layout="@layout/calculatebuttons" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_above="@id/calculateButtonsLayout"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            <CheckBox
+                android:id="@+id/copd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/copd_label" />
+
+            <CheckBox
+                android:id="@+id/age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/age60_label" />
+
+            <CheckBox
+                android:id="@+id/ischemic_cm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ischemic_cm_label" />
+
+            <CheckBox
+                android:id="@+id/low_nyha_class"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/low_nyha_class_label" />
+
+            <CheckBox
+                android:id="@+id/low_ef"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/low_ef_label" />
+
+            <CheckBox
+                android:id="@+id/storm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/storm_label" />
+
+            <CheckBox
+                android:id="@+id/diabetes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/diabetes_label" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
