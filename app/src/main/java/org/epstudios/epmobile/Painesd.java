@@ -1,5 +1,7 @@
 package org.epstudios.epmobile;
 
+import android.widget.CheckBox;
+
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -60,7 +62,46 @@ public class Painesd extends RiskScore {
 
     @Override
     protected void calculateResult() {
+        int result = 0;
+        clearSelectedRisks();
+        // NB: This is about the most inefficient way to code this.
+        // Ideally the whole risk score system could be rewritten to
+        // simplify the code and simplify adding risk scores, but for
+        // now this will have to do.
+        for (int i = 0; i < checkBoxes.length; i++) {
+            if (checkBoxes[i].isChecked()) {
+                addSelectedRisk(checkBoxes[i].getText().toString());
+            }
+        }
+        if (checkBoxes[0].isChecked()) { // COPD
+            result += 5;
+        }
+        if (checkBoxes[1].isChecked()) { // Age
+            result += 3;
+        }
+        if (checkBoxes[2].isChecked()) { // Ischemic CM
+            result += 6;
+        }
+        if (checkBoxes[3].isChecked()) { // Low NYHA Class
+            result += 6;
+        }
+        if (checkBoxes[4].isChecked()) { // Low EF
+            result += 3;
+        }
+        if (checkBoxes[5].isChecked()) { // Storm
+            result += 5;
+        }
+        if (checkBoxes[6].isChecked()) { // Diabetes
+            result += 3;
+        }
+        displayResult(getResultMessage(result), getString(R.string.painesd_risk_title));
+    }
 
+
+    private String getResultMessage(int result) {
+        String message;
+        message = "result = " + result;
+        return message;
     }
 
     @Override
@@ -81,6 +122,14 @@ public class Painesd extends RiskScore {
 
     @Override
     protected void init() {
+        checkBoxes = new CheckBox[7];
 
+        checkBoxes[0] = findViewById(R.id.copd);
+        checkBoxes[1] = findViewById(R.id.age);
+        checkBoxes[2] = findViewById(R.id.ischemic_cm);
+        checkBoxes[3] = findViewById(R.id.low_nyha_class);
+        checkBoxes[4] = findViewById(R.id.low_ef);
+        checkBoxes[5] = findViewById(R.id.storm);
+        checkBoxes[6] = findViewById(R.id.diabetes);
     }
 }
