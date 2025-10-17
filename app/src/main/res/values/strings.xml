@@ -1841,7 +1841,7 @@
     <string name="bmi_calculator_title">BMI Calculator</string>"
     <string name="bmi_calculator_reference">Nuttall FQ. Body Mass Index.
         Nutr Today. 2015;50(3):117-128.</string>
-    <string name="bmi_calculator_link">https:/doi.org/10.1097/NT.0000000000000092</string>
+    <string name="bmi_calculator_link">https://doi.org/10.1097/NT.0000000000000092</string>
     <string name="bmi_calculator_instructions">This Body Mass Index calculator is intended for
     adult men and women, age 20 and older.  Enter the weight and height in
     the chosen units and tap Calculate to get the result.</string>
@@ -1854,4 +1854,30 @@
     <string name="overweight_class_1_label">Overweight (Class 1)</string>
     <string name="overweight_class_2_label">Overweight (Class 2)</string>
     <string name="overweight_class_3_label">Overweight (Class 3)</string>
+    <string name="painesd_risk_title">PAINESD VT Ablation Risk</string>
+    <string name="painesd_reference">Muser D, Castro SA, Liang JJ, Santangeli P. Identifying Risk and Management of Acute Haemodynamic Decompensation During Catheter Ablation of Ventricular Tachycardia. Arrhythm Electrophysiol Rev. 2018;7(4):282-287.</string>
+    <string name="painesd_link">https://doi.org/10.15420/aer.2018.36.3</string>
+    <string name="painesd_label">PAINESD score</string>
+    <string name="painesd_instructions">The PAINESD score estimates the risk of periprocedural
+        acute hemodynamic decompensation (AHD) in patients undergoing catheter ablation of ventricular tachycardia.
+        AHD is defined as an event with a blood pressure &lt; 90 despite
+        vasopressors that requires a mechanical assist device.\n\nAHD
+        occurs in approximately 11% of patients.
+        Patients requiring an LV assist device had a 58.3% 30 day
+        mortality compared to 3.5% in those not requiring mechanical
+        hemodynamic support.\n\nThe score can classify subjects into
+        low, medium, or high risk of developing AHD.
+    </string>
+    <string name="copd_label">Pulmonary disease (COPD)</string>
+    <string name="age60_label"><![CDATA[Age > 60 years old]]></string>
+    <string name="ischemic_cm_label">Ischemic cardiomyopathy</string>
+    <string name="low_ef_label"><![CDATA[EF (LVEF) < 25%]]></string>
+    <string name="low_nyha_class_label">NYHA class III or IV</string>
+    <string name="storm_label">Storm - presentation with VT storm</string>
+    <string name="ahd_risk_message">Risk of periprocedure acute hemodynamic decompensation = %s</string>
+    <string name="ahd_low_risk">1%</string>
+    <string name="ahd_moderate_risk">6%</string>
+    <string name="ahd_high_risk">24%</string>
+    <string name="ahd_risk_level">"Risk level is %s"</string>
+    <string name="painesd_score_result_title">PAINESD Score = %d</string>
 </resources>
