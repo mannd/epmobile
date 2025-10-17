@@ -99,8 +99,22 @@ public class Painesd extends RiskScore {
 
 
     private String getResultMessage(int result) {
-        String message;
-        message = "result = " + result;
+        String message = getString(R.string.painesd_score_result_title, result) + "\n\n";
+        String arg;
+        String riskLevel;
+        if (result < 9) {
+            arg = getString(R.string.ahd_low_risk);
+            riskLevel = "low";
+        } else if (result < 15) {
+            arg = getString(R.string.ahd_moderate_risk);
+            riskLevel = "moderate";
+        } else {
+            arg = getString(R.string.ahd_high_risk);
+            riskLevel = "high";
+        }
+        message += getString(R.string.ahd_risk_message, arg);
+        message += "\n\n";
+        message += getString(R.string.ahd_risk_level, riskLevel);
         return message;
     }
 

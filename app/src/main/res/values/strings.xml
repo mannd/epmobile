@@ -1874,4 +1874,10 @@
     <string name="low_ef_label"><![CDATA[EF (LVEF) < 25%]]></string>
     <string name="low_nyha_class_label">NYHA class III or IV</string>
     <string name="storm_label">Storm - presentation with VT storm</string>
+    <string name="ahd_risk_message">Risk of periprocedure acute hemodynamic decompensation = %s</string>
+    <string name="ahd_low_risk">1%</string>
+    <string name="ahd_moderate_risk">6%</string>
+    <string name="ahd_high_risk">24%</string>
+    <string name="ahd_risk_level">"Risk level is %s"</string>
+    <string name="painesd_score_result_title">PAINESD Score = %d</string>
 </resources>
