@@ -1,0 +1,3 @@
+EP Mobile 2.36.0 Release Notes
+Changes since 2.35.1
+* Added PAINESD VT catheter ablation risk score
