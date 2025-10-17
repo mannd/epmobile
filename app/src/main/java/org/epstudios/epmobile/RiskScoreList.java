@@ -61,7 +61,14 @@ public class RiskScoreList extends EpActivity {
                 appleScore();
             else if (selection.equals(getString(R.string.frailty_title)))
                 frailty();
+            else if (selection.equals(getString(R.string.painesd_risk_title)))
+                painesd();
         });
+    }
+
+    private void painesd() {
+        Intent i = new Intent(this, Painesd.class);
+        startActivity(i);
     }
 
     private void frailty() {

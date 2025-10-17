@@ -134,6 +134,7 @@
         <item>@string/icd_risk_title</item>
         <item>@string/icd_mortality_risk_title</item>
         <item>@string/orbit_risk_title</item>
+        <item>@string/painesd_risk_title</item>
         <item>@string/qt_prolongation_risk_title</item>
         <item>@string/same_tt2r2_title</item>
         <item>@string/syncope_list_title</item>
