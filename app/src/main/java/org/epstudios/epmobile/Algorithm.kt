@@ -1,11 +1,14 @@
 package org.epstudios.epmobile
 
+import androidx.annotation.RawRes
+
 /**
  * Basis of algorithms, such as WPW or WCT algorithms in the app.
  */
 interface Algorithm {
     val name: String
-    val rootNode: DecisionNode
+    @get:RawRes
+    val rootNodeResId: Int
     val resultTitle: String
     val hasMap: Boolean
     fun getReferences(): List<Reference>

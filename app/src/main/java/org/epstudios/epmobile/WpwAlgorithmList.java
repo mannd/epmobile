@@ -86,13 +86,13 @@ public class WpwAlgorithmList extends EpActivity {
     }
 
     private void easyWpwAlgorithm() {
-//        Intent i = new Intent(this, EasyWpwAlgorithm.class);
-//        startActivity(i);
+        Intent i = new Intent(this, AlgorithmActivity.class);
+        i.putExtra(AlgorithmActivity.ALGORITHM_NAME_KEY, "EasyWpw");
+        startActivity(i);
     }
 
     private void smartWpwAlgorithm() {
-//        Intent i = new Intent(this, SmartWpwAlgorithm.class);
-//        startActivity(i);
+        // Will be implemented later
     }
 
 }
