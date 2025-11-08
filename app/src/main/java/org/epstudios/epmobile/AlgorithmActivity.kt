@@ -11,6 +11,7 @@ class AlgorithmActivity : EpActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_algorithm)
+        setupInsets(R.id.algorithm_activity_root_view)
 
         val algorithmName = intent.getStringExtra(ALGORITHM_NAME_KEY)
 
