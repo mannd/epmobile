@@ -53,6 +53,10 @@ public class WpwAlgorithmList extends EpActivity {
                 avAnnulusMap();
             else if (selection.equals(getString(R.string.davila_title)))
                 davilaAlgorithm();
+            else if (selection.equals(getString(R.string.easy_wpw_title)))
+                easyWpwAlgorithm();
+            else if (selection.equals(getString(R.string.smart_wpw_title)))
+                smartWpwAlgorithm();
         });
     }
 
@@ -79,6 +83,16 @@ public class WpwAlgorithmList extends EpActivity {
     private void davilaAlgorithm() {
         Intent i = new Intent(this, DavilaAlgorithm.class);
         startActivity(i);
+    }
+
+    private void easyWpwAlgorithm() {
+//        Intent i = new Intent(this, EasyWpwAlgorithm.class);
+//        startActivity(i);
+    }
+
+    private void smartWpwAlgorithm() {
+//        Intent i = new Intent(this, SmartWpwAlgorithm.class);
+//        startActivity(i);
     }
 
 }

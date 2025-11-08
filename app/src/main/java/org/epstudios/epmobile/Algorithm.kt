@@ -1,0 +1,14 @@
+package org.epstudios.epmobile
+
+/**
+ * Basis of algorithms, such as WPW or WCT algorithms in the app.
+ */
+interface Algorithm {
+    val name: String
+    val rootNode: DecisionNode
+    val resultTitle: String
+    val hasMap: Boolean
+    fun getReferences(): List<Reference>
+    fun getInstructions(): String?
+    fun getKey(): String?
+}

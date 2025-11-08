@@ -1880,4 +1880,6 @@
     <string name="ahd_high_risk">24%</string>
     <string name="ahd_risk_level">"Risk level is %s"</string>
     <string name="painesd_score_result_title">PAINESD Score = %d</string>
+    <string name="easy_wpw_title">EASY-WPW</string>
+    <string name="smart_wpw_title">SMART-WPW</string>
 </resources>
