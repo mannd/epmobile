@@ -1,5 +1,7 @@
 package org.epstudios.epmobile
 
+import android.content.Context
+
 /**
 Copyright (C) 2025 EP Studios, Inc.
 www.epstudiossoftware.com
@@ -31,17 +33,17 @@ class EasyWpw: Algorithm {
     override val hasMap: Boolean
         get() = false
 
-    override fun getReferences(): List<Reference> {
+    override fun getReferences(context: Context): List<Reference> {
         val references = ArrayList<Reference>()
-        references.add(Reference("Easy Wpw", "https://www.epstudiossoftware.com"))
+        references.add(Reference(context.getString(R.string.easy_wpw_reference),  "https://doi.org/10.1093/europace/euac216"))
         return references
     }
 
-    override fun getInstructions(): String? {
+    override fun getInstructions(context: Context): String? {
         return "Easy Wpw instructions placeholder"
     }
 
-    override fun getKey(): String? {
+    override fun getKey(context: Context): String? {
         return null
     }
 }

@@ -1884,4 +1884,5 @@
     <string name="smart_wpw_title">SMART-WPW</string>
     <string name="algorithm_activity_title">Algorithm</string>
     <string name="information_activity_title">Information Activity</string>
+    <string name="easy_wpw_reference">El Hamriti M, Braun M, Molatta S, et al. EASY-WPW: a novel ECG-algorithm for easy and reliable localization of manifest accessory pathways in children and adults. Europace. 2023;25(2):600-609.</string>
 </resources>

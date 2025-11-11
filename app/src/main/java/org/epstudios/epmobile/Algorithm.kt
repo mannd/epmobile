@@ -1,5 +1,6 @@
 package org.epstudios.epmobile
 
+import android.content.Context
 import androidx.annotation.RawRes
 
 /**
@@ -11,7 +12,7 @@ interface Algorithm {
     val rootNodeResId: Int
     val resultTitle: String
     val hasMap: Boolean
-    fun getReferences(): List<Reference>
-    fun getInstructions(): String?
-    fun getKey(): String?
+    fun getReferences(context: Context): List<Reference>
+    fun getInstructions(context: Context): String?
+    fun getKey(context: Context): String?
 }

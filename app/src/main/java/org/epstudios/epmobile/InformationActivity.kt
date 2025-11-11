@@ -1,5 +1,6 @@
 package org.epstudios.epmobile
 
+import android.content.Context
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
@@ -20,8 +21,13 @@ class InformationActivity : EpActivity() {
     private lateinit var algorithm: Algorithm
     private lateinit var infoType: InfoType
 
+    private lateinit var context: EpActivity
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        context = this
 
         val algorithmName = intent.getStringExtra(ALGORITHM_NAME_KEY)
         infoType = InfoType.valueOf(intent.getStringExtra(INFO_TYPE_KEY) ?: InfoType.INSTRUCTIONS.name)
@@ -41,7 +47,7 @@ class InformationActivity : EpActivity() {
         initToolbar()
 
         setContent {
-            InformationScreen(algorithm = algorithm, infoType = infoType) { finish() }
+            InformationScreen(context = context, algorithm = algorithm, infoType = infoType) { finish() }
         }
     }
 
@@ -58,7 +64,7 @@ class InformationActivity : EpActivity() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun InformationScreen(algorithm: Algorithm, infoType: InformationActivity.InfoType, onBack: () -> Unit) {
+fun InformationScreen(context: Context, algorithm: Algorithm, infoType: InformationActivity.InfoType, onBack: () -> Unit) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -74,20 +80,20 @@ fun InformationScreen(algorithm: Algorithm, infoType: InformationActivity.InfoTy
         Column(modifier = Modifier.padding(it)) {
             when (infoType) {
                 InformationActivity.InfoType.INSTRUCTIONS -> {
-                    val instructions = algorithm.getInstructions()
+                    val instructions = algorithm.getInstructions(context = context)
                     if (instructions != null) {
                         Text(text = instructions)
                     }
                 }
                 InformationActivity.InfoType.REFERENCE -> {
-                    val references = algorithm.getReferences()
+                    val references = algorithm.getReferences(context = context)
                     // You can format and display the references here
                     references.forEach { reference ->
                         Text(text = reference.text)
                     }
                 }
                 InformationActivity.InfoType.KEY -> {
-                    val key = algorithm.getKey()
+                    val key = algorithm.getKey(context = context)
                     if (key != null) {
                         Text(text = key)
                     }
