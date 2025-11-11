@@ -16,6 +16,7 @@ class AlgorithmActivity : EpActivity() {
 
         algorithm = when (algorithmName) {
             "EasyWpw" -> EasyWpw()
+            "SmartWpw" -> SmartWpw()
             // Future algorithms can be added here
             else -> throw IllegalArgumentException("Unknown algorithm: $algorithmName")
         }

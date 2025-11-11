@@ -92,7 +92,9 @@ public class WpwAlgorithmList extends EpActivity {
     }
 
     private void smartWpwAlgorithm() {
-        // Will be implemented later
+        Intent i = new Intent(this, AlgorithmActivity.class);
+        i.putExtra(AlgorithmActivity.ALGORITHM_NAME_KEY, "SmartWpw");
+        startActivity(i);
     }
 
 }

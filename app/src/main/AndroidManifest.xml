@@ -279,9 +279,6 @@
         <activity
             android:name=".AlgorithmActivity"
             android:label="@string/algorithm_activity_title" />
-        <activity
-            android:name=".InformationActivity"
-            android:label="@string/information_activity_title" />
     </application>
 
 </manifest>
