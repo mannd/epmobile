@@ -42,6 +42,6 @@ class EasyWpw: Algorithm {
     }
 
     override fun getKey(): String? {
-        return "Easy Wpw key placeholder"
+        return null
     }
 }

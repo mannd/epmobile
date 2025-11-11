@@ -4,18 +4,16 @@ import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.style.TextAlign
 
 class InformationActivity : EpActivity() {
 
@@ -29,7 +27,8 @@ class InformationActivity : EpActivity() {
         infoType = InfoType.valueOf(intent.getStringExtra(INFO_TYPE_KEY) ?: InfoType.INSTRUCTIONS.name)
 
         algorithm = when (algorithmName) {
-            "EasyWpw" -> EasyWpw()
+            "EASY-WPW" -> EasyWpw()
+            //"SMART-WPW" -> SmartWpw()
             // Future algorithms can be added here
             else -> throw IllegalArgumentException("Unknown algorithm: $algorithmName")
         }

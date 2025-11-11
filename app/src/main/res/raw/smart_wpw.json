@@ -6,7 +6,7 @@
           "branches" : [
             {
               "id" : "34475BA8-452B-4EA9-A501-2062A2C859FB",
-              "label" : "0 leads",
+              "label" : "None",
               "result" : "Anterior (11-12 o'clock tricuspid annulus)"
             },
             {
@@ -30,14 +30,14 @@
           ],
           "id" : "2718B082-D6E6-4511-8F35-07CCC52E9F96",
           "label" : "Negative",
-          "note" : "Free wall",
+          "note" : "Tricuspid annulus free wall",
           "question" : "Negative in II, III, aVF?"
         },
         {
           "branches" : [
             {
               "id" : "7C96138A-DB2C-4366-820E-CCB8AF3D7D87",
-              "label" : "0 leads negative",
+              "label" : "None",
               "question" : "New question",
               "result" : "Anteroseptal (1-2 o'clock tricuspid annulus)"
             },
@@ -62,19 +62,20 @@
           ],
           "id" : "D825CD43-CC03-4F92-92A9-3D27C63ADFAC",
           "label" : "Positive",
-          "question" : "Negative in II, III, aVF"
+          "note" : "Tricuspid annulus septal",
+          "question" : "Negative in II, III, aVF?"
         }
       ],
       "id" : "952F70EA-3D6E-4FEC-B7A3-6807523F8E81",
       "label" : "Negative",
-      "note" : "Right-sided pathway",
+      "note" : "Tricuspid annulus",
       "question" : "Lead V3 polarity?"
     },
     {
       "branches" : [
         {
           "id" : "8FFEA55D-D68D-4835-A2D0-01FF1B1E6A8E",
-          "label" : "0 leads",
+          "label" : "None",
           "question" : "New question",
           "result" : "Lateral (1-3 o'clock mitral annulus)"
         },
@@ -99,12 +100,11 @@
       ],
       "id" : "F6B07698-A893-400D-B69E-5BD4F7C8CE17",
       "label" : "Positive",
-      "note" : "Left-sided pathway",
-      "question" : "Negative in lead II, III, aVF"
+      "note" : "Mitral annulus",
+      "question" : "Negative in lead II, III, aVF?"
     }
   ],
   "id" : "node-root",
   "label" : "Root",
-  "note" : "Determines left vs right sided",
   "question" : "Lead V1 polarity?"
 }
