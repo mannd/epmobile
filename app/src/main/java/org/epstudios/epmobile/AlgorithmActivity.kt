@@ -26,7 +26,7 @@ class AlgorithmActivity : EpActivity() {
 
         val composeView = findViewById<ComposeView>(R.id.compose_view)
         composeView.setContent {
-            AlgorithmView(model = algorithm)
+                AlgorithmView(model = algorithm)
         }
     }
 

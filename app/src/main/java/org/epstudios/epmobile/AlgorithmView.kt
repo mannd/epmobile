@@ -43,6 +43,7 @@ fun AlgorithmView(model: Algorithm) {
         if (currentNode.question != null) {
             Text(
                 text = currentNode.question!!,
+                color = MaterialTheme.colorScheme.primary,
                 style = MaterialTheme.typography.headlineMedium,
                 textAlign = TextAlign.Center,
                 modifier = Modifier.padding(16.dp)
@@ -51,8 +52,8 @@ fun AlgorithmView(model: Algorithm) {
         if (currentNode.note != null) {
             Text(
                 text = currentNode.note!!,
+                color = MaterialTheme.colorScheme.secondary,
                 style = MaterialTheme.typography.headlineSmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
                 textAlign = TextAlign.Center,
                 modifier = Modifier.padding(bottom = 16.dp)
             )
