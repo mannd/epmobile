@@ -183,7 +183,8 @@ open class EpActivity : BasicEpActivity() {
     protected fun showReferenceAlertDialog(references: Array<Reference>?) {
         val html = convertReferencesToHtml(references)
         if (html != null) {
-            showAlertDialog(getString(R.string.references_label), html)
+            val dialogTitle: String = if ((references?.size ?: 0) > 1) getString(R.string.references_label) else getString(R.string.reference_label)
+            showAlertDialog(dialogTitle, html)
         } else {
             showAlertDialog(
                 getString(R.string.error_dialog_title),
