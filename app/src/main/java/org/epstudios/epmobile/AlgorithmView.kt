@@ -1,5 +1,6 @@
 package org.epstudios.epmobile
 
+import android.content.Intent
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -29,6 +30,7 @@ fun AlgorithmView(model: Algorithm) {
     val nodeStack = remember { mutableStateListOf<DecisionNode>() }
     var showResult by remember { mutableStateOf(false) }
     var algorithmResult by remember { mutableStateOf<String?>(null) }
+    var locationTag by remember { mutableStateOf<String?>(null) }
 
     Column(
         modifier = Modifier
@@ -72,6 +74,7 @@ fun AlgorithmView(model: Algorithm) {
                         Button(
                             onClick = {
                                 algorithmResult = branch.result
+                                locationTag = branch.tag
                                 if (branch.isLeaf) {
                                     showResult = true
                                 } else {
@@ -114,7 +117,13 @@ fun AlgorithmView(model: Algorithm) {
                 },
                 dismissButton = {
                     if (model.hasMap) {
-                        TextButton(onClick = { /* showMap() */ }) {
+                        TextButton(onClick = {
+                            val intent: Intent = Intent(context, AvAnnulusMap::class.java)
+                            intent.putExtra("message", algorithmResult ?: "Accessory pathway map")
+                            intent.putExtra("location1", locationTag ?: "")
+                            intent.putExtra("location2", "")
+                            context.startActivity(intent)
+                        }) {
                             Text("Show Map")
                         }
                     }

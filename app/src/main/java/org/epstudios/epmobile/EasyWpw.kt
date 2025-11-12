@@ -31,7 +31,7 @@ class EasyWpw: Algorithm {
     override val resultTitle: String
         get() = "Accessory Pathway Location"
     override val hasMap: Boolean
-        get() = false
+        get() = true
 
     override fun getReferences(context: Context): List<Reference> {
         val references = ArrayList<Reference>()
