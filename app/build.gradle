@@ -1,5 +1,10 @@
-apply plugin: 'com.android.application'
-apply plugin: 'org.jetbrains.kotlin.android'
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '2.2.0'
+    id 'org.jetbrains.kotlin.plugin.compose' version '2.2.0'
+}
 
 android {
     compileSdk 35
@@ -30,9 +35,19 @@ android {
     namespace 'org.epstudios.epmobile'
     buildFeatures {
         buildConfig true
+        compose true
     }
     kotlinOptions {
         jvmTarget = '17'
+    }
+    sourceSets {
+        test.resources.srcDirs += 'src/test/res'
+    }
+    testOptions {
+        unitTests.includeAndroidResources = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.14"
     }
 }
 
@@ -45,7 +60,22 @@ dependencies {
         exclude group: 'androidx.lifecycle', module:'lifecycle-viewmodel'
         exclude group: 'androidx.lifecycle', module:'lifecycle-viewmodel-ktx'
     }
+    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.9.0'
     implementation 'androidx.core:core-ktx:1.16.0'
+    // Jetpack Compose
+    def compose_version = "1.5.4"
+    implementation "androidx.compose.ui:ui:$compose_version"
+    implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
+    implementation 'androidx.compose.material3:material3:1.1.2'
+    implementation "androidx.compose.material:material-icons-extended:$compose_version"
+    implementation "androidx.activity:activity-compose:1.8.0"
+    implementation "androidx.navigation:navigation-compose:2.7.5"
+
+
+    testImplementation 'androidx.test.ext:junit:1.3.0'
+    testImplementation 'androidx.test:core:1.7.0'
+    testImplementation 'org.robolectric:robolectric:4.12'
+    testImplementation 'com.google.truth:truth:1.1.5'
     testImplementation 'junit:junit:4.13.2'
     testImplementation 'org.mockito:mockito-core:5.10.0'
     implementation "org.jetbrains.kotlin:kotlin-test:2.1.20"

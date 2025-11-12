@@ -1,7 +1,5 @@
 package org.epstudios.epmobile
 
-import android.widget.CheckBox
-
 /**
  * Copyright (C) 2024 EP Studios, Inc.
  * www.epstudiossoftware.com
@@ -59,12 +57,13 @@ class HcmScd2024 : RiskScore() {
         }
 
     override fun showActivityReference() {
-        val references = arrayOfNulls<Reference>(4)
-        references[0] = Reference(this, R.string.hcm_scd_reference_5, R.string.hcm_scd_link_5)
-        references[1] = Reference(this, R.string.hcm_scd_reference_6, R.string.hcm_scd_link_6)
-        references[2] = Reference(this, R.string.hcm_scd_reference_7, R.string.hcm_scd_link_7)
-        references[3] = Reference(this, R.string.hcm_scd_reference_4, R.string.hcm_scd_link_4)
-        showReferenceAlertDialog(references as Array<Reference>?)
+        val references = arrayOf(
+            Reference(this, R.string.hcm_scd_reference_5, R.string.hcm_scd_link_5),
+            Reference(this, R.string.hcm_scd_reference_6, R.string.hcm_scd_link_6),
+            Reference(this, R.string.hcm_scd_reference_7, R.string.hcm_scd_link_7),
+            Reference(this, R.string.hcm_scd_reference_4, R.string.hcm_scd_link_4)
+        )
+        showReferenceAlertDialog(references)
     }
 
     override fun showActivityInstructions() {
@@ -82,7 +81,6 @@ class HcmScd2024 : RiskScore() {
             Recommendation.class2b -> message = "ICD may be considered (Class 2b)"
             Recommendation.class3 -> message = "ICD is not recommended (Class 3)"
             Recommendation.class1 -> message = "ERROR"
-            else -> message = "ERROR"
         }
         addRisks()
         displayResult(message, getString(R.string.hcm_scd_2024_title))
@@ -124,14 +122,15 @@ class HcmScd2024 : RiskScore() {
     }
 
     override fun init() {
-        checkBoxes = arrayOfNulls<CheckBox>(7) as Array<CheckBox>?
-        checkBoxes!![0] = findViewById<CheckBox?>(R.id.family_hx_scd)
-        checkBoxes!![1] = findViewById<CheckBox?>(R.id.massive_lvh)
-        checkBoxes!![2] = findViewById<CheckBox?>(R.id.unexplained_syncope)
-        checkBoxes!![3] = findViewById<CheckBox?>(R.id.apical_aneurysm)
-        checkBoxes!![4] = findViewById<CheckBox?>(R.id.low_lvef)
-        checkBoxes!![5] = findViewById<CheckBox?>(R.id.nsvt)
-        checkBoxes!![6] = findViewById<CheckBox?>(R.id.extensive_lge)
+        checkBoxes = arrayOf(
+            findViewById(R.id.family_hx_scd),
+            findViewById(R.id.massive_lvh),
+            findViewById(R.id.unexplained_syncope),
+            findViewById(R.id.apical_aneurysm),
+            findViewById(R.id.low_lvef),
+            findViewById(R.id.nsvt),
+            findViewById(R.id.extensive_lge)
+        )
     }
 
     override fun hideReferenceMenuItem(): Boolean {

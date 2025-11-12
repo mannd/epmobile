@@ -39,3 +39,6 @@ build/
 
 # Kotlin
 .kotlin
+
+# Ignore Android Studio heap dumps
+*.hprof

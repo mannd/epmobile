@@ -276,6 +276,9 @@
             android:label="@string/bmi_calculator_title" />
         <activity android:name=".Painesd"
             android:label="@string/painesd_risk_title" />
+        <activity
+            android:name=".AlgorithmActivity"
+            android:label="@string/algorithm_activity_title" />
     </application>
 
 </manifest>

@@ -18,9 +18,8 @@
 package org.epstudios.epmobile
 
 import android.content.ClipData
+import android.content.ClipboardManager
 import android.content.DialogInterface
-import android.os.Build
-import android.text.ClipboardManager
 import android.view.MenuItem
 import android.widget.CheckBox
 import android.widget.Toast
@@ -52,7 +51,6 @@ abstract class RiskScore : DiagnosticScore() {
         }
     }
 
-    @Suppress("deprecation")
     override fun displayResult(message: String?, title: String?) {
         // NB: This ensures that the clipboard gets the result message,
         // however, the callers are already doing this individually, which
@@ -73,25 +71,11 @@ abstract class RiskScore : DiagnosticScore() {
             DialogInterface.BUTTON_NEGATIVE,
             getString(R.string.copy_report_label),
             DialogInterface.OnClickListener { dialog1: DialogInterface?, which: Int ->
-                // clipboard handled differently depending on Android
-                // version
                 val textToCopy = this.fullRiskReport
                 showToast()
-                val sdk = Build.VERSION.SDK_INT
-                if (sdk < Build.VERSION_CODES.HONEYCOMB) {
-                    val clipboard = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager?
-                    if (clipboard != null) {
-                        clipboard.setText(textToCopy)
-                    }
-                } else {
-                    val clipboard =
-                        getSystemService(CLIPBOARD_SERVICE) as android.content.ClipboardManager?
-                    val clip = ClipData
-                        .newPlainText("Copied Text", textToCopy)
-                    if (clipboard != null) {
-                        clipboard.setPrimaryClip(clip)
-                    }
-                }
+                val clipboard = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
+                val clip = ClipData.newPlainText("Copied Text", textToCopy)
+                clipboard.setPrimaryClip(clip)
             })
         dialog.setTitle(title)
         dialog.show()

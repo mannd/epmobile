@@ -1,0 +1,110 @@
+{
+  "branches" : [
+    {
+      "branches" : [
+        {
+          "branches" : [
+            {
+              "id" : "34475BA8-452B-4EA9-A501-2062A2C859FB",
+              "label" : "None",
+              "result" : "Anterior (11-12 o'clock tricuspid annulus)"
+            },
+            {
+              "id" : "5246B7CD-68A6-496F-AF75-45F144DFF58A",
+              "label" : "1 lead: III",
+              "question" : "New question",
+              "result" : "Lateral-anterior (9-10 o'clock tricuspid annulus)"
+            },
+            {
+              "id" : "32B3DCDF-3DFD-4F59-A9D1-864A0D0DE656",
+              "label" : "2 leads: III, aVF",
+              "question" : "New question",
+              "result" : "Lateral posterior (8 o'clock tricuspid annulus)"
+            },
+            {
+              "id" : "DA283C4C-B930-4A32-955D-BB5FC78D6730",
+              "label" : "3 leads: II, III, aVF",
+              "question" : "New question",
+              "result" : "Posterior (6-7 o'clock tricuspid annulus)"
+            }
+          ],
+          "id" : "2718B082-D6E6-4511-8F35-07CCC52E9F96",
+          "label" : "Negative",
+          "note" : "Tricuspid annulus free wall",
+          "question" : "Negative in II, III, aVF?"
+        },
+        {
+          "branches" : [
+            {
+              "id" : "7C96138A-DB2C-4366-820E-CCB8AF3D7D87",
+              "label" : "None",
+              "question" : "New question",
+              "result" : "Anteroseptal (1-2 o'clock tricuspid annulus)"
+            },
+            {
+              "id" : "F8986F54-3A8B-4F6A-A9E6-EDD0510302A9",
+              "label" : "1 lead: III",
+              "question" : "New question",
+              "result" : "Midseptal (3 o'clock tricuspid annulus)"
+            },
+            {
+              "id" : "D6A2919E-CB57-412F-B451-95B822A80858",
+              "label" : "2 leads: III, aVF",
+              "question" : "New question",
+              "result" : "Midseptal-posterior (4 o'clock tricuspid annulus)"
+            },
+            {
+              "id" : "DE610535-AA3F-48F5-A5F6-DDCA9DAE02F3",
+              "label" : "3 leads: II, III, avF",
+              "question" : "New question",
+              "result" : "Posteroseptal (5 o'clock tricuspid annulus)"
+            }
+          ],
+          "id" : "D825CD43-CC03-4F92-92A9-3D27C63ADFAC",
+          "label" : "Positive",
+          "note" : "Tricuspid annulus septal",
+          "question" : "Negative in II, III, aVF?"
+        }
+      ],
+      "id" : "952F70EA-3D6E-4FEC-B7A3-6807523F8E81",
+      "label" : "Negative",
+      "note" : "Tricuspid annulus",
+      "question" : "Lead V3 polarity?"
+    },
+    {
+      "branches" : [
+        {
+          "id" : "8FFEA55D-D68D-4835-A2D0-01FF1B1E6A8E",
+          "label" : "None",
+          "question" : "New question",
+          "result" : "Lateral (1-3 o'clock mitral annulus)"
+        },
+        {
+          "id" : "AB0A4512-801C-43B5-A5C5-837B9914D89E",
+          "label" : "1 lead: III",
+          "question" : "New question",
+          "result" : "High-postero-lateral (4 o'clock mitral annulus)"
+        },
+        {
+          "id" : "5A629C79-4F23-4696-B7EE-7553924ADD68",
+          "label" : "2 leads",
+          "question" : "New question",
+          "result" : "Low-postero-lateral (5 o'clock mitral annulus)"
+        },
+        {
+          "id" : "178A40B8-ECCC-4A86-BAB3-B6DA23136BE6",
+          "label" : "3 leads: II, III, aVF",
+          "question" : "New question",
+          "result" : "Posterior and posteroseptal (6-7 o'clock mitral annulus)"
+        }
+      ],
+      "id" : "F6B07698-A893-400D-B69E-5BD4F7C8CE17",
+      "label" : "Positive",
+      "note" : "Mitral annulus",
+      "question" : "Negative in lead II, III, aVF?"
+    }
+  ],
+  "id" : "node-root",
+  "label" : "Root",
+  "question" : "Lead V1 polarity?"
+}

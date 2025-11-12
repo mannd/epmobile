@@ -1,0 +1,91 @@
+{
+  "branches" : [
+    {
+      "branches" : [
+        {
+          "branches" : [
+            {
+              "id" : "566353D3-6945-4FB3-8CEC-EBFC61F3CD37",
+              "label" : "II or III",
+              "result" : "Anteroseptal",
+              "tag" : "AS"
+            },
+            {
+              "id" : "97CCFF5D-858F-424B-B5F2-3B3AABB765EE",
+              "label" : "aVL or aVR",
+              "result" : "Posteroseptal tricuspid annulus or coronary sinus os",
+              "tag" : "PSTA"
+            }
+          ],
+          "id" : "3EAADB0D-F179-407F-96F8-B5442E9F30FE",
+          "label" : "Yes",
+          "question" : "Most positive delta wave?"
+        },
+        {
+          "branches" : [
+            {
+              "id" : "40B2D3C5-042B-4630-8496-C69F68771658",
+              "label" : "II",
+              "result" : "Anterolateral tricuspid annulus",
+              "tag" : "RAL"
+            },
+            {
+              "id" : "284C93AB-34C7-4454-BC3B-1AF561DE6873",
+              "label" : "III",
+              "result" : "Anteroseptal",
+              "tag" : "AS"
+            },
+            {
+              "id" : "79FF59D8-76BB-4AC1-95D4-C07C82C94CDF",
+              "label" : "aVR",
+              "result" : "Posteroseptal tricuspid annulus or coronary sinus os",
+              "tag" : "PSTA"
+            },
+            {
+              "id" : "A033F5A8-63AF-4FE6-AB76-9680D11F9B83",
+              "label" : "aVL",
+              "result" : "Posterolateral tricuspid annulus",
+              "tag" : "RPL"
+            }
+          ],
+          "id" : "D338995D-7A03-4D1F-94BC-522E72324A5F",
+          "label" : "No",
+          "question" : "Most positive delta wave?"
+        }
+      ],
+      "id" : "B081425A-CD04-4E82-8260-76D9F35A8388",
+      "label" : "Neg\/Isoelectric",
+      "note" : "Tricuspid annulus",
+      "question" : "QRS transition ≤ V3?"
+    },
+    {
+      "branches" : [
+        {
+          "id" : "F848DC7C-2DD2-483D-8012-E51E4AEE2447",
+          "label" : "avL",
+          "result" : "Posteroseptal mitral annulus",
+          "tag" : "PSMA"
+        },
+        {
+          "id" : "CE7AC6B6-A75A-406A-9383-396EBCEA7E98",
+          "label" : "II or aVR",
+          "result" : "Posterolateral mitral annulus",
+          "tag" : "LPL"
+        },
+        {
+          "id" : "F06718CD-8DB7-4398-B56E-53295E902039",
+          "label" : "III",
+          "result" : "Anterolateral mitral annulus",
+          "tag" : "LAL"
+        }
+      ],
+      "id" : "0724CC68-5778-41E5-A769-8D806703E440",
+      "label" : "Positive",
+      "note" : "Mitral annulus",
+      "question" : "Most positive delta wave?"
+    }
+  ],
+  "id" : "node-root",
+  "label" : "Root",
+  "question" : "Lead V1 polarity?"
+}

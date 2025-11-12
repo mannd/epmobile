@@ -20,6 +20,7 @@ package org.epstudios.epmobile
 import android.content.Intent
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
+import android.os.Build
 import android.text.Html
 import android.text.Spanned
 import android.text.method.LinkMovementMethod
@@ -170,20 +171,14 @@ open class EpActivity : BasicEpActivity() {
         @StringRes linkId: Int
     ) {
         val html = convertReferenceToHtml(referenceId, linkId)
-        if (html != null) {
-            showAlertDialog(getString(R.string.reference_label), html)
-        } else {
-            showAlertDialog(
-                getString(R.string.error_dialog_title),
-                getString(R.string.error_message)
-            )
-        }
+        showAlertDialog(getString(R.string.reference_label), html)
     }
 
     protected fun showReferenceAlertDialog(references: Array<Reference>?) {
         val html = convertReferencesToHtml(references)
         if (html != null) {
-            showAlertDialog(getString(R.string.references_label), html)
+            val dialogTitle: String = if ((references?.size ?: 0) > 1) getString(R.string.references_label) else getString(R.string.reference_label)
+            showAlertDialog(dialogTitle, html)
         } else {
             showAlertDialog(
                 getString(R.string.error_dialog_title),
@@ -196,33 +191,32 @@ open class EpActivity : BasicEpActivity() {
         showAlertDialog(R.string.key_label, keyId)
     }
 
+    private fun fromHtml(html: String): Spanned {
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            Html.fromHtml(html, Html.FROM_HTML_MODE_LEGACY)
+        } else {
+            @Suppress("DEPRECATION")
+            Html.fromHtml(html)
+        }
+    }
+
     fun convertReferenceToHtml(
         @StringRes referenceId: Int,
         @StringRes linkId: Int
-    ): Spanned? {
+    ): Spanned {
         val reference = getString(referenceId)
         val link = getString(linkId)
-        // Only forbidden combo is reference == null.  Can have a null
-        // link if the paper is old.
-        if (reference != null) {
-            val htmlString: String = convertReferenceToHtmlString(reference, link)
-            return Html.fromHtml(htmlString)
-        } else {
-            return null
-        }
+        val htmlString: String = convertReferenceToHtmlString(reference, link)
+        return fromHtml(htmlString)
     }
 
     fun convertReferenceToText(
         @StringRes referenceId: Int,
         @StringRes linkId: Int
-    ): String? {
+    ): String {
         val reference = getString(referenceId)
         val link = getString(linkId)
-        if (reference != null) {
-            val referencePlusLink = reference + " " + link
-            return referencePlusLink
-        }
-        return null
+        return reference + " " + link
     }
 
     // Handle multiple references.
@@ -231,7 +225,7 @@ open class EpActivity : BasicEpActivity() {
         if (htmlString == null) {
             return null
         } else {
-            return Html.fromHtml(htmlString)
+            return fromHtml(htmlString)
         }
     }
 
