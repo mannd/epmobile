@@ -1,9 +1,11 @@
 package org.epstudios.epmobile
 
+import android.app.Activity
 import android.content.Intent
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
@@ -34,7 +36,7 @@ fun AlgorithmView(model: Algorithm) {
 
     Column(
         modifier = Modifier
-            .fillMaxSize(),
+            .fillMaxWidth(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = androidx.compose.ui.Alignment.CenterHorizontally
     ) {
@@ -100,31 +102,44 @@ fun AlgorithmView(model: Algorithm) {
         }
 
         if (showResult) {
+            val activity = (LocalContext.current as? Activity)
             AlertDialog(
                 onDismissRequest = { showResult = false },
                 title = { Text(model.resultTitle) },
                 text = { Text(algorithmResult ?: "") },
                 confirmButton = {
-                    TextButton(
-                        onClick = {
-                            showResult = false
-                            currentNode = rootNode
-                            nodeStack.clear()
-                        }
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceEvenly
                     ) {
-                        Text("OK")
-                    }
-                },
-                dismissButton = {
-                    if (model.hasMap) {
-                        TextButton(onClick = {
-                            val intent: Intent = Intent(context, AvAnnulusMap::class.java)
-                            intent.putExtra("message", algorithmResult ?: "Accessory pathway map")
-                            intent.putExtra("location1", locationTag ?: "")
-                            intent.putExtra("location2", "")
-                            context.startActivity(intent)
-                        }) {
-                            Text("Show Map")
+                        if (model.hasMap) {
+                            TextButton(
+                                onClick = {
+                                    val intent = Intent(context, AvAnnulusMap::class.java)
+                                    intent.putExtra("message", algorithmResult ?: "Accessory pathway map")
+                                    intent.putExtra("location1", locationTag ?: "")
+                                    intent.putExtra("location2", "")
+                                    context.startActivity(intent)
+                                }
+                            ) {
+                                Text("Show Map")
+                            }
+                        }
+                        TextButton(
+                            onClick = {
+                                showResult = false
+                                currentNode = rootNode
+                                nodeStack.clear()
+                            }
+                        ) {
+                            Text("Reset")
+                        }
+                        TextButton(
+                            onClick = {
+                                activity?.finish()
+                            }
+                        ) {
+                            Text("Done")
                         }
                     }
                 }
