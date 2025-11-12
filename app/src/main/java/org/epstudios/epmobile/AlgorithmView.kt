@@ -92,7 +92,7 @@ fun AlgorithmView(model: Algorithm) {
                     }
                     if (nodeStack.isNotEmpty()) {
                         Button(
-                            onClick = { currentNode = nodeStack.removeLast() },
+                            onClick = { currentNode = nodeStack.removeAt(nodeStack.lastIndex) },
                             modifier = Modifier.padding(8.dp)
                         ) {
                             Text("Back")
