@@ -2,12 +2,12 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
-    id 'org.jetbrains.kotlin.plugin.serialization' version '2.2.0'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '2.2.21'
     id 'org.jetbrains.kotlin.plugin.compose' version '2.2.0'
 }
 
 android {
-    compileSdk 35
+    compileSdk 36
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
@@ -52,31 +52,31 @@ android {
 }
 
 dependencies {
-    implementation("com.google.android.material:material:1.12.0")
-    implementation 'androidx.webkit:webkit:1.13.0'
-    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation("com.google.android.material:material:1.13.0")
+    implementation 'androidx.webkit:webkit:1.14.0'
+    implementation 'androidx.appcompat:appcompat:1.7.1'
     implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.22"))
-    implementation('androidx.preference:preference:1.2.1') {
+    implementation('androidx.preference:preference-ktx:1.2.1') {
         exclude group: 'androidx.lifecycle', module:'lifecycle-viewmodel'
         exclude group: 'androidx.lifecycle', module:'lifecycle-viewmodel-ktx'
     }
     implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.9.0'
-    implementation 'androidx.core:core-ktx:1.16.0'
+    implementation 'androidx.core:core-ktx:1.17.0'
     // Jetpack Compose
     def compose_version = "1.5.4"
     implementation "androidx.compose.ui:ui:$compose_version"
     implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
     implementation 'androidx.compose.material3:material3:1.4.0'
     implementation "androidx.compose.material:material-icons-extended:$compose_version"
-    implementation "androidx.activity:activity-compose:1.8.0"
-    implementation "androidx.navigation:navigation-compose:2.7.5"
+    implementation "androidx.activity:activity-compose:1.11.0"
+    implementation "androidx.navigation:navigation-compose:2.9.6"
 
     testImplementation 'androidx.test.ext:junit:1.3.0'
     testImplementation 'androidx.test:core:1.7.0'
-    testImplementation 'org.robolectric:robolectric:4.12'
-    testImplementation 'com.google.truth:truth:1.1.5'
+    testImplementation 'org.robolectric:robolectric:4.16'
+    testImplementation 'com.google.truth:truth:1.4.5'
     testImplementation 'junit:junit:4.13.2'
-    testImplementation 'org.mockito:mockito-core:5.10.0'
+    testImplementation 'org.mockito:mockito-core:5.20.0'
     implementation "org.jetbrains.kotlin:kotlin-test:2.1.20"
 }
 
