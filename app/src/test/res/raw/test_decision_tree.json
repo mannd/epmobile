@@ -1,0 +1,25 @@
+
+{
+  "id": "test-root",
+  "question": "Is this a test?",
+  "isLeaf": false,
+  "note": "This is a tree for unit testing.",
+  "tag": "test-tag",
+  "branches": [
+    {
+      "label": "Yes",
+      "isLeaf": true,
+      "result": "Test successful."
+    },
+    {
+      "label": "No",
+      "isLeaf": false,
+      "question": "Is this a nested test?",
+      "branches": [
+        {
+          "result": "Nested test successful."
+        }
+      ]
+    }
+  ]
+}

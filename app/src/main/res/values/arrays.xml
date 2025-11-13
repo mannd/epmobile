@@ -108,8 +108,10 @@
         <item>@string/anatomy_av_annulus_title</item>
         <item>@string/arruda_title</item>
         <item>@string/davila_title</item>
+        <item>@string/easy_wpw_title</item>
         <item>@string/milstein_title</item>
         <item>@string/modified_arruda_title</item>
+        <item>@string/smart_wpw_title</item>
     </array>
     <array name="drug_calculator_list">
         <item>@string/apixaban_calculator_title</item>
