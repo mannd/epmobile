@@ -1,0 +1,4 @@
+EP Mobile 2.37.0 Release Notes
+Changes since 2.35.1
+* Added EASY-WPW algorithm
+* Added SMART-WPW algorithm
