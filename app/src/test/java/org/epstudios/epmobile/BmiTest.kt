@@ -1,5 +1,6 @@
 package org.epstudios.epmobile
 
+import org.epstudios.epmobile.calculators.data.BMI
 import org.junit.Test
 import kotlin.test.assertEquals
 

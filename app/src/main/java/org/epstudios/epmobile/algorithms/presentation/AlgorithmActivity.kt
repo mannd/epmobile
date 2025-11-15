@@ -1,7 +1,13 @@
-package org.epstudios.epmobile
+package org.epstudios.epmobile.algorithms.presentation
 
 import android.os.Bundle
 import androidx.compose.ui.platform.ComposeView
+import org.epstudios.epmobile.EpActivity
+import org.epstudios.epmobile.R
+import org.epstudios.epmobile.algorithms.data.Algorithm
+import org.epstudios.epmobile.algorithms.data.EasyWpw
+import org.epstudios.epmobile.algorithms.data.SmartWpw
+import org.epstudios.epmobile.ui.theme.AppTheme
 
 class AlgorithmActivity : EpActivity() {
 
@@ -26,7 +32,9 @@ class AlgorithmActivity : EpActivity() {
 
         val composeView = findViewById<ComposeView>(R.id.compose_view)
         composeView.setContent {
+            AppTheme() {
                 AlgorithmView(model = algorithm)
+            }
         }
     }
 

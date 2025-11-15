@@ -1,7 +1,7 @@
-package org.epstudios.epmobile
+package org.epstudios.epmobile.algorithms.presentation
 
-import android.app.Activity
 import android.content.Intent
+import androidx.activity.compose.LocalActivity
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -18,15 +18,20 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import org.epstudios.epmobile.AvAnnulusMap
+import org.epstudios.epmobile.CenteringGridLayout
+import org.epstudios.epmobile.DecisionNode
+import org.epstudios.epmobile.algorithms.data.Algorithm
 
 @Composable
 fun AlgorithmView(model: Algorithm) {
     val context = LocalContext.current
-    val rootNode = remember { DecisionNode.loadFromResource(context, model.rootNodeResId) }
+    val rootNode = remember { DecisionNode.Companion.loadFromResource(context, model.rootNodeResId) }
 
     var currentNode by remember { mutableStateOf(rootNode) }
     val nodeStack = remember { mutableStateListOf<DecisionNode>() }
@@ -38,12 +43,12 @@ fun AlgorithmView(model: Algorithm) {
         modifier = Modifier
             .fillMaxWidth(),
         verticalArrangement = Arrangement.Center,
-        horizontalAlignment = androidx.compose.ui.Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         if (currentNode.question != null) {
             Text(
                 text = currentNode.question!!,
-                color = MaterialTheme.colorScheme.primary,
+                color = MaterialTheme.colorScheme.onSurface,
                 style = MaterialTheme.typography.headlineMedium,
                 textAlign = TextAlign.Center,
                 modifier = Modifier.padding(16.dp)
@@ -103,7 +108,7 @@ fun AlgorithmView(model: Algorithm) {
         }
 
         if (showResult) {
-            val activity = (LocalContext.current as? Activity)
+            val activity = LocalActivity.current
             AlertDialog(
                 onDismissRequest = { showResult = false },
                 title = { Text(model.resultTitle) },

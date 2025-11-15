@@ -1,6 +1,8 @@
-package org.epstudios.epmobile
+package org.epstudios.epmobile.algorithms.data
 
 import android.content.Context
+import org.epstudios.epmobile.R
+import org.epstudios.epmobile.Reference
 
 /**
 Copyright (C) 2025 EP Studios, Inc.

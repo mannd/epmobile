@@ -272,12 +272,12 @@
             android:label="@string/hcm_scd_2022_title" />
         <activity android:name=".HcmScd2024"
             android:label="@string/hcm_scd_2024_title" />
-        <activity android:name=".BmiCalculator"
+        <activity android:name=".calculators.presentation.BmiCalculator"
             android:label="@string/bmi_calculator_title" />
         <activity android:name=".Painesd"
             android:label="@string/painesd_risk_title" />
         <activity
-            android:name=".AlgorithmActivity"
+            android:name=".algorithms.presentation.AlgorithmActivity"
             android:label="@string/algorithm_activity_title" />
     </application>
 

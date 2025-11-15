@@ -1,4 +1,4 @@
-package org.epstudios.epmobile
+package org.epstudios.epmobile.calculators.presentation
 
 import android.content.Intent
 import android.graphics.Color
@@ -11,8 +11,11 @@ import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.preference.PreferenceManager
-import org.epstudios.epmobile.BMI.Classification
-import org.epstudios.epmobile.BMI.Companion.getClassification
+import org.epstudios.epmobile.CalculatorList
+import org.epstudios.epmobile.EpActivity
+import org.epstudios.epmobile.R
+import org.epstudios.epmobile.UnitConverter
+import org.epstudios.epmobile.calculators.data.BMI
 
 /**
 Copyright (C) 2025 EP Studios, Inc.
@@ -199,11 +202,11 @@ class BmiCalculator : EpActivity() {
             if (getHeightUnitSelection() == HeightUnit.IN) {
                 height = UnitConverter.insToCms(height)
             }
-            val result = BMI.calculateCmRounded(weight, height)
+            val result = BMI.Companion.calculateCmRounded(weight, height)
             calculatedResult?.setText(getString(R.string.bmi_result, result.toString()))
             val message = getMessage(result)
             messageTextView?.setText(message)
-            if (!BMI.isNormalBmi(result)) {
+            if (!BMI.Companion.isNormalBmi(result)) {
                 calculatedResult?.setTextColor(Color.RED)
             }
         } catch (e: NumberFormatException) {
@@ -214,16 +217,16 @@ class BmiCalculator : EpActivity() {
     }
 
     fun getMessage(bmi: Double): String {
-        val classification = getClassification(bmi)
+        val classification = BMI.Companion.getClassification(bmi)
         when (classification) {
-            Classification.UNDERWEIGHT_SEVERE -> return getString(R.string.underweight_severe_label)
-            Classification.UNDERWEIGHT_MODERATE -> return getString(R.string.underweight_moderate_label)
-            Classification.UNDERWEIGHT_MILD -> return getString(R.string.underweight_mild_label)
-            Classification.NORMAL -> return getString(R.string.normal_label)
-            Classification.OVERWEIGHT_PREOBESE -> return getString(R.string.overweight_preobese_label)
-            Classification.OVERWEIGHT_CLASS_1 -> return getString(R.string.overweight_class_1_label)
-            Classification.OVERWEIGHT_CLASS_2 -> return getString(R.string.overweight_class_2_label)
-            Classification.OVERWEIGHT_CLASS_3 -> return getString(R.string.overweight_class_3_label)
+            BMI.Classification.UNDERWEIGHT_SEVERE -> return getString(R.string.underweight_severe_label)
+            BMI.Classification.UNDERWEIGHT_MODERATE -> return getString(R.string.underweight_moderate_label)
+            BMI.Classification.UNDERWEIGHT_MILD -> return getString(R.string.underweight_mild_label)
+            BMI.Classification.NORMAL -> return getString(R.string.normal_label)
+            BMI.Classification.OVERWEIGHT_PREOBESE -> return getString(R.string.overweight_preobese_label)
+            BMI.Classification.OVERWEIGHT_CLASS_1 -> return getString(R.string.overweight_class_1_label)
+            BMI.Classification.OVERWEIGHT_CLASS_2 -> return getString(R.string.overweight_class_2_label)
+            BMI.Classification.OVERWEIGHT_CLASS_3 -> return getString(R.string.overweight_class_3_label)
         }
     }
 
