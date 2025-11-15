@@ -1,4 +1,4 @@
-package org.epstudios.epmobile.algorithms.data
+package org.epstudios.epmobile.features.algorithms.data
 
 import android.content.Context
 import androidx.annotation.RawRes

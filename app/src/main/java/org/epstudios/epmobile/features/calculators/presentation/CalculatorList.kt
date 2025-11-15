@@ -1,14 +1,20 @@
-package org.epstudios.epmobile
+package org.epstudios.epmobile.features.calculators.presentation
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
-import android.widget.AdapterView.OnItemClickListener
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.TextView
-import org.epstudios.epmobile.calculators.presentation.BmiCalculator
+import org.epstudios.epmobile.CreatinineClearanceCalculator
+import org.epstudios.epmobile.DrugDoseCalculatorList
+import org.epstudios.epmobile.EpActivity
+import org.epstudios.epmobile.GfrCalculator
+import org.epstudios.epmobile.IbwCalculator
+import org.epstudios.epmobile.Qtc
+import org.epstudios.epmobile.QtcIvcd
+import org.epstudios.epmobile.R
 
 class CalculatorList : EpActivity() {
     public override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,7 +29,7 @@ class CalculatorList : EpActivity() {
         lv.setAdapter(adapter)
 
         lv.setTextFilterEnabled(true)
-        lv.setOnItemClickListener(OnItemClickListener { parent: AdapterView<*>?, view: View?, position: Int, id: Long ->
+        lv.setOnItemClickListener(AdapterView.OnItemClickListener { parent: AdapterView<*>?, view: View?, position: Int, id: Long ->
             val selection = (view as TextView).getText().toString()
             if (selection
                 == getString(R.string.cycle_length_calculator_title)

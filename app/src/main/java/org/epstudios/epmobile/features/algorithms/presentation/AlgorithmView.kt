@@ -1,4 +1,4 @@
-package org.epstudios.epmobile.algorithms.presentation
+package org.epstudios.epmobile.features.algorithms.presentation
 
 import android.content.Intent
 import androidx.activity.compose.LocalActivity
@@ -24,9 +24,9 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import org.epstudios.epmobile.AvAnnulusMap
-import org.epstudios.epmobile.CenteringGridLayout
-import org.epstudios.epmobile.DecisionNode
-import org.epstudios.epmobile.algorithms.data.Algorithm
+import org.epstudios.epmobile.ui.components.CenteringGridLayout
+import org.epstudios.epmobile.features.algorithms.data.DecisionNode
+import org.epstudios.epmobile.features.algorithms.data.Algorithm
 
 @Composable
 fun AlgorithmView(model: Algorithm) {

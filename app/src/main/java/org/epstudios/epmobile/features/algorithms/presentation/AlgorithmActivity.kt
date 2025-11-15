@@ -1,12 +1,12 @@
-package org.epstudios.epmobile.algorithms.presentation
+package org.epstudios.epmobile.features.algorithms.presentation
 
 import android.os.Bundle
 import androidx.compose.ui.platform.ComposeView
 import org.epstudios.epmobile.EpActivity
 import org.epstudios.epmobile.R
-import org.epstudios.epmobile.algorithms.data.Algorithm
-import org.epstudios.epmobile.algorithms.data.EasyWpw
-import org.epstudios.epmobile.algorithms.data.SmartWpw
+import org.epstudios.epmobile.features.algorithms.data.Algorithm
+import org.epstudios.epmobile.features.algorithms.data.EasyWpw
+import org.epstudios.epmobile.features.algorithms.data.SmartWpw
 import org.epstudios.epmobile.ui.theme.AppTheme
 
 class AlgorithmActivity : EpActivity() {

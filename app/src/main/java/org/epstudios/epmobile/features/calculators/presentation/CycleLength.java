@@ -16,7 +16,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package org.epstudios.epmobile;
+package org.epstudios.epmobile.features.calculators.presentation;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -28,6 +28,10 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+
+import org.epstudios.epmobile.BuildConfig;
+import org.epstudios.epmobile.EpActivity;
+import org.epstudios.epmobile.R;
 
 import androidx.annotation.NonNull;
 

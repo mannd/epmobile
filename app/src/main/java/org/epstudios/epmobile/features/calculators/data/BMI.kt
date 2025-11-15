@@ -1,4 +1,4 @@
-package org.epstudios.epmobile.calculators.data
+package org.epstudios.epmobile.features.calculators.data
 
 import kotlin.math.round
 

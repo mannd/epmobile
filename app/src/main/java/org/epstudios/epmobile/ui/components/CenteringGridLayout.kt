@@ -1,4 +1,4 @@
-package org.epstudios.epmobile
+package org.epstudios.epmobile.ui.components
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier

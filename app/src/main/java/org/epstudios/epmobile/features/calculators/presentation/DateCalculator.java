@@ -1,4 +1,4 @@
-package org.epstudios.epmobile;
+package org.epstudios.epmobile.features.calculators.presentation;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -13,6 +13,9 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.epstudios.epmobile.EpActivity;
+import org.epstudios.epmobile.R;
 
 import java.text.DateFormat;
 import java.util.Calendar;

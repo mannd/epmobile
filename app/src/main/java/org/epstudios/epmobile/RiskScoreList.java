@@ -6,6 +6,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import org.epstudios.epmobile.features.riskscores.presentation.AppleScore;
+import org.epstudios.epmobile.features.riskscores.presentation.Chads;
+import org.epstudios.epmobile.features.riskscores.presentation.ChadsVasc;
+
 public class RiskScoreList extends EpActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {

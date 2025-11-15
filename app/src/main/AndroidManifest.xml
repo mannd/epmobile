@@ -33,7 +33,7 @@
             android:name=".Dofetilide"
             android:label="@string/dofetilide_label"/>
         <activity
-            android:name=".CycleLength"
+            android:name=".features.calculators.presentation.CycleLength"
             android:windowSoftInputMode="adjustResize"
             android:label="@string/cycle_length_label"/>
         <activity
@@ -46,10 +46,10 @@
             android:name=".HasBled"
             android:label="@string/hasbled_title"/>
         <activity
-            android:name=".Chads"
+            android:name=".features.riskscores.presentation.Chads"
             android:label="@string/chads_title"/>
         <activity
-            android:name=".ChadsVasc"
+            android:name=".features.riskscores.presentation.ChadsVasc"
             android:label="@string/chadsvasc_title"/>
         <activity
             android:name=".Dabigatran"
@@ -148,7 +148,7 @@
             android:name=".DiagnosisList"
             android:label="@string/diagnosis_title"/>
         <activity
-            android:name=".CalculatorList"
+            android:name=".features.calculators.presentation.CalculatorList"
             android:label="@string/calculator_title"/>
         <activity
             android:name=".ReferenceList"
@@ -184,7 +184,7 @@
             android:name=".AtrialTachLocalization"
             android:label="@string/atrial_tachycardia_localization_title"/>
         <activity
-            android:name=".DateCalculator"
+            android:name=".features.calculators.presentation.DateCalculator"
             android:label="@string/date_calculator_title"/>
         <activity
             android:name=".Entrainment"
@@ -258,7 +258,7 @@
             android:label="@string/qt_prolongation_risk_title" />
         <activity android:name=".GfrCalculator"
             android:label="@string/gfr_calculator_title" />
-        <activity android:name=".AppleScore"
+        <activity android:name=".features.riskscores.presentation.AppleScore"
             android:label="@string/apple_score_title" />
         <activity android:name=".Frailty"
             android:label="@string/frailty_title" />
@@ -272,12 +272,12 @@
             android:label="@string/hcm_scd_2022_title" />
         <activity android:name=".HcmScd2024"
             android:label="@string/hcm_scd_2024_title" />
-        <activity android:name=".calculators.presentation.BmiCalculator"
+        <activity android:name=".features.calculators.presentation.BmiCalculator"
             android:label="@string/bmi_calculator_title" />
         <activity android:name=".Painesd"
             android:label="@string/painesd_risk_title" />
         <activity
-            android:name=".algorithms.presentation.AlgorithmActivity"
+            android:name=".features.algorithms.presentation.AlgorithmActivity"
             android:label="@string/algorithm_activity_title" />
     </application>
 

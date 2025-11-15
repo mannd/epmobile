@@ -24,7 +24,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import org.epstudios.epmobile.algorithms.presentation.AlgorithmActivity;
+import org.epstudios.epmobile.features.algorithms.presentation.AlgorithmActivity;
 
 public class WpwAlgorithmList extends EpActivity {
     @Override

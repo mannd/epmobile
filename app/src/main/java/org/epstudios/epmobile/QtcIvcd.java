@@ -37,6 +37,8 @@ import android.widget.Spinner;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
+import org.epstudios.epmobile.features.calculators.presentation.CalculatorList;
+
 @SuppressWarnings("SpellCheckingInspection")
 public class QtcIvcd extends EpActivity implements View.OnClickListener {
     private enum IntervalRate {

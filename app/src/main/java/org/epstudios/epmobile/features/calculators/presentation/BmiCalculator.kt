@@ -1,4 +1,4 @@
-package org.epstudios.epmobile.calculators.presentation
+package org.epstudios.epmobile.features.calculators.presentation
 
 import android.content.Intent
 import android.graphics.Color
@@ -11,11 +11,10 @@ import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.preference.PreferenceManager
-import org.epstudios.epmobile.CalculatorList
 import org.epstudios.epmobile.EpActivity
 import org.epstudios.epmobile.R
 import org.epstudios.epmobile.UnitConverter
-import org.epstudios.epmobile.calculators.data.BMI
+import org.epstudios.epmobile.features.calculators.data.BMI
 
 /**
 Copyright (C) 2025 EP Studios, Inc.
