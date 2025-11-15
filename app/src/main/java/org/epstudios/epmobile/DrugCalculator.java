@@ -13,6 +13,8 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import org.epstudios.epmobile.core.ui.base.EpActivity;
+
 import java.text.DecimalFormat;
 
 import androidx.preference.PreferenceManager;

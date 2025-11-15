@@ -8,6 +8,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import org.epstudios.epmobile.core.ui.base.EpActivity;
+
 public class AvAnnulusMap extends EpActivity {
     private FrameLayout frame;
 

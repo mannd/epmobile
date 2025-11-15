@@ -19,6 +19,7 @@ package org.epstudios.epmobile
 
 import android.os.Bundle
 import android.view.View
+import org.epstudios.epmobile.core.ui.base.EpActivity
 
 abstract class DiagnosticScore : EpActivity(), View.OnClickListener {
     protected override fun onCreate(savedInstanceState: Bundle?) {

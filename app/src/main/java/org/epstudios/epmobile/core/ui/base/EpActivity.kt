@@ -15,7 +15,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.epstudios.epmobile
+package org.epstudios.epmobile.core.ui.base
 
 import android.content.Intent
 import android.content.pm.PackageInfo
@@ -31,6 +31,9 @@ import android.view.View
 import android.widget.TextView
 import androidx.annotation.StringRes
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import org.epstudios.epmobile.Prefs
+import org.epstudios.epmobile.R
+import org.epstudios.epmobile.Reference
 
 /**
  * Abstract class that adds options menu support.
@@ -177,7 +180,8 @@ open class EpActivity : BasicEpActivity() {
     protected fun showReferenceAlertDialog(references: Array<Reference>?) {
         val html = convertReferencesToHtml(references)
         if (html != null) {
-            val dialogTitle: String = if ((references?.size ?: 0) > 1) getString(R.string.references_label) else getString(R.string.reference_label)
+            val dialogTitle: String = if ((references?.size ?: 0) > 1) getString(R.string.references_label) else getString(
+                R.string.reference_label)
             showAlertDialog(dialogTitle, html)
         } else {
             showAlertDialog(

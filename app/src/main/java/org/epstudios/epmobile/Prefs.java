@@ -21,6 +21,8 @@ package org.epstudios.epmobile;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import org.epstudios.epmobile.core.ui.base.BasicEpActivity;
+
 public class Prefs extends BasicEpActivity {
 
     @Override

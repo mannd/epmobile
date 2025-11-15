@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.TextView
 import androidx.annotation.StringRes
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import org.epstudios.epmobile.core.ui.base.EpActivity
 
 abstract class LocationAlgorithm : EpActivity() {
     @JvmField

@@ -16,7 +16,8 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import org.epstudios.epmobile.features.calculators.presentation.CalculatorList;
+import org.epstudios.epmobile.core.ui.base.EpActivity;
+import org.epstudios.epmobile.features.calculators.ui.CalculatorList;
 
 import java.text.DecimalFormat;
 

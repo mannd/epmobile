@@ -1,4 +1,4 @@
-package org.epstudios.epmobile.features.calculators.presentation
+package org.epstudios.epmobile.features.calculators.ui
 
 import android.content.Intent
 import android.graphics.Color
@@ -11,7 +11,7 @@ import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.preference.PreferenceManager
-import org.epstudios.epmobile.EpActivity
+import org.epstudios.epmobile.core.ui.base.EpActivity
 import org.epstudios.epmobile.R
 import org.epstudios.epmobile.UnitConverter
 import org.epstudios.epmobile.features.calculators.data.BMI

@@ -37,7 +37,8 @@ import android.widget.Spinner;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
-import org.epstudios.epmobile.features.calculators.presentation.CalculatorList;
+import org.epstudios.epmobile.core.ui.base.EpActivity;
+import org.epstudios.epmobile.features.calculators.ui.CalculatorList;
 
 @SuppressWarnings("SpellCheckingInspection")
 public class QtcIvcd extends EpActivity implements View.OnClickListener {

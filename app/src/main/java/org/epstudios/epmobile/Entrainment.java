@@ -10,6 +10,8 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.epstudios.epmobile.core.ui.base.EpActivity;
+
 public class Entrainment extends EpActivity implements OnClickListener {
     private EditText tclEditText;
     private EditText ppiEditText;

@@ -6,6 +6,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import org.epstudios.epmobile.core.ui.base.EpActivity;
+
 public class SyncopeRiskScoreList extends EpActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {

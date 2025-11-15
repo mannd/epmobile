@@ -1,4 +1,4 @@
-package org.epstudios.epmobile
+package org.epstudios.epmobile.core.ui.base
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -8,6 +8,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
+import org.epstudios.epmobile.R
 
 /**
 Copyright (C) 2025 EP Studios, Inc.

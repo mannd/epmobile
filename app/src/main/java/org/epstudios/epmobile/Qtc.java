@@ -35,7 +35,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import org.epstudios.epmobile.QtcCalculator.QtcFormula;
-import org.epstudios.epmobile.features.calculators.presentation.CalculatorList;
+import org.epstudios.epmobile.core.ui.base.EpActivity;
+import org.epstudios.epmobile.features.calculators.ui.CalculatorList;
 
 public class Qtc extends EpActivity implements OnClickListener {
     private enum IntervalRate {

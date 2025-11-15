@@ -1,4 +1,4 @@
-package org.epstudios.epmobile.features.riskscores.presentation;
+package org.epstudios.epmobile.features.riskscores.ui;
 
 import android.widget.CheckBox;
 

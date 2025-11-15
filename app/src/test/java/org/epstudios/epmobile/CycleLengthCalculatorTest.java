@@ -2,7 +2,7 @@ package org.epstudios.epmobile;
 
 import junit.framework.TestCase;
 
-import org.epstudios.epmobile.features.calculators.presentation.CycleLength;
+import org.epstudios.epmobile.features.calculators.ui.CycleLength;
 
 public class CycleLengthCalculatorTest extends TestCase {
 

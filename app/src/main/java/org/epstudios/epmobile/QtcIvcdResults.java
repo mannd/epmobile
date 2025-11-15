@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import org.epstudios.epmobile.core.ui.base.EpActivity;
+
 /**
  * Copyright (C) 2016 EP Studios, Inc.
  * www.epstudiossoftware.com

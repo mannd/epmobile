@@ -22,6 +22,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import org.epstudios.epmobile.core.ui.base.EpActivity;
+
 public class LongQtSubtypes extends EpActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {

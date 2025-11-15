@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.epstudios.epmobile.core.ui.base.EpActivity;
+
 import java.text.DecimalFormat;
 
 import static java.lang.Math.abs;

@@ -28,6 +28,8 @@ import android.widget.TextView;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
+import org.epstudios.epmobile.core.ui.base.EpActivity;
+
 public class Brugada extends EpActivity implements OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {

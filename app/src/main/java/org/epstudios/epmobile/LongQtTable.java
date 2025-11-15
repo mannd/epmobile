@@ -8,6 +8,8 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import org.epstudios.epmobile.core.ui.base.EpActivity;
+
 /**
  * Copyright (C) 2019 EP Studios, Inc.
  * www.epstudiossoftware.com

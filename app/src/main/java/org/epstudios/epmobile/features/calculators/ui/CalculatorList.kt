@@ -1,4 +1,4 @@
-package org.epstudios.epmobile.features.calculators.presentation
+package org.epstudios.epmobile.features.calculators.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,7 +9,7 @@ import android.widget.ListView
 import android.widget.TextView
 import org.epstudios.epmobile.CreatinineClearanceCalculator
 import org.epstudios.epmobile.DrugDoseCalculatorList
-import org.epstudios.epmobile.EpActivity
+import org.epstudios.epmobile.core.ui.base.EpActivity
 import org.epstudios.epmobile.GfrCalculator
 import org.epstudios.epmobile.IbwCalculator
 import org.epstudios.epmobile.Qtc

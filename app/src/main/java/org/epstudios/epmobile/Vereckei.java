@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
+import org.epstudios.epmobile.core.ui.base.EpActivity;
+
 public class Vereckei extends EpActivity implements OnClickListener {
     private Button backButton;
     private TextView stepTextView;

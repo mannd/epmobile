@@ -7,6 +7,8 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 
+import org.epstudios.epmobile.core.ui.base.EpActivity;
+
 
 /**
  * Copyright (C) 2015 EP Studios, Inc.

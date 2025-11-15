@@ -8,6 +8,7 @@ import android.widget.AdapterView.OnItemClickListener
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.TextView
+import org.epstudios.epmobile.core.ui.base.EpActivity
 
 class DiagnosisList : EpActivity() {
     public override fun onCreate(savedInstanceState: Bundle?) {

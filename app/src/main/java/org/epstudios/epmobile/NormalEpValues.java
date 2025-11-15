@@ -2,6 +2,8 @@ package org.epstudios.epmobile;
 
 import android.os.Bundle;
 
+import org.epstudios.epmobile.core.ui.base.EpActivity;
+
 public class NormalEpValues extends EpActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {

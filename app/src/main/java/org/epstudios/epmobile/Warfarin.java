@@ -31,6 +31,8 @@ import android.widget.RadioGroup;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
+import org.epstudios.epmobile.core.ui.base.EpActivity;
+
 public class Warfarin extends EpActivity implements
         OnClickListener {
     @Override

@@ -21,7 +21,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import org.epstudios.epmobile.features.calculators.presentation.CalculatorList
+import org.epstudios.epmobile.core.ui.base.EpActivity
+import org.epstudios.epmobile.features.calculators.ui.CalculatorList
 
 class EpMobile : EpActivity(), View.OnClickListener {
     public override fun onCreate(savedInstanceState: Bundle?) {

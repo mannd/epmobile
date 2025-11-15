@@ -1,8 +1,8 @@
-package org.epstudios.epmobile.features.algorithms.presentation
+package org.epstudios.epmobile.features.algorithms.ui
 
 import android.os.Bundle
 import androidx.compose.ui.platform.ComposeView
-import org.epstudios.epmobile.EpActivity
+import org.epstudios.epmobile.core.ui.base.EpActivity
 import org.epstudios.epmobile.R
 import org.epstudios.epmobile.features.algorithms.data.Algorithm
 import org.epstudios.epmobile.features.algorithms.data.EasyWpw

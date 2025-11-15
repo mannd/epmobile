@@ -1,4 +1,4 @@
-package org.epstudios.epmobile.features.algorithms.presentation
+package org.epstudios.epmobile.features.algorithms.ui
 
 import android.content.Intent
 import androidx.activity.compose.LocalActivity
