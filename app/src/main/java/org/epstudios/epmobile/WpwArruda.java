@@ -28,6 +28,8 @@ import android.widget.TextView;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
+import org.epstudios.epmobile.features.diagnosis.ui.AvAnnulusMap;
+
 // Supports both Arruda and modified Arruda algorithms
 @SuppressWarnings("SpellCheckingInspection")
 public class WpwArruda extends LocationAlgorithm implements OnClickListener {

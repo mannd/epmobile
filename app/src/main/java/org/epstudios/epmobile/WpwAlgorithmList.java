@@ -26,6 +26,8 @@ import android.widget.TextView;
 
 import org.epstudios.epmobile.core.ui.base.EpActivity;
 import org.epstudios.epmobile.features.algorithms.ui.AlgorithmActivity;
+import org.epstudios.epmobile.features.diagnosis.ui.AvAnnulusMap;
+import org.epstudios.epmobile.features.diagnosis.ui.DavilaAlgorithm;
 
 public class WpwAlgorithmList extends EpActivity {
     @Override

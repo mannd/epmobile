@@ -8,6 +8,7 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 
 import org.epstudios.epmobile.core.ui.base.EpActivity;
+import org.epstudios.epmobile.features.calculators.ui.CreatinineClearanceCalculator;
 
 
 /**

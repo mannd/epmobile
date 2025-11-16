@@ -18,6 +18,8 @@
 
 package org.epstudios.epmobile;
 
+import org.epstudios.epmobile.core.ui.base.DrugCalculator;
+
 public class Rivaroxaban extends DrugCalculator {
 
     @Override

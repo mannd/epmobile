@@ -74,7 +74,7 @@ class LaSizeOutOfRangeException extends Exception {
 }
 
 public class HcmRiskScdModel {
-    HcmRiskScdModel(String ageString, String maxLvWallThicknessString, String maxLvotGradientString,
+    public HcmRiskScdModel(String ageString, String maxLvWallThicknessString, String maxLvotGradientString,
                     String laSizeString, boolean hasFamilyHxScd, boolean hasNsvt, boolean hasSyncope) {
         this.ageString = ageString;
         this.maxLvWallThicknessString = maxLvWallThicknessString;

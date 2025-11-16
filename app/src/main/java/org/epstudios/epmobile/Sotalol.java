@@ -18,6 +18,8 @@
 
 package org.epstudios.epmobile;
 
+import org.epstudios.epmobile.core.ui.base.DrugCalculator;
+
 public class Sotalol extends DrugCalculator {
 
     @Override

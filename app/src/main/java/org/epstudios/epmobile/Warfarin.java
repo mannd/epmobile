@@ -32,6 +32,9 @@ import android.widget.RadioGroup;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import org.epstudios.epmobile.core.ui.base.EpActivity;
+import org.epstudios.epmobile.features.calculators.data.DoseCalculator;
+import org.epstudios.epmobile.features.calculators.ui.DoseTable;
+import org.epstudios.epmobile.features.calculators.ui.DrugDoseCalculatorList;
 
 public class Warfarin extends EpActivity implements
         OnClickListener {

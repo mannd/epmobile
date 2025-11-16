@@ -25,7 +25,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import org.epstudios.epmobile.AvAnnulusMap
+import org.epstudios.epmobile.features.diagnosis.ui.AvAnnulusMap
 import org.epstudios.epmobile.features.algorithms.data.Algorithm
 import org.epstudios.epmobile.features.algorithms.data.DecisionNode
 import org.epstudios.epmobile.ui.components.CenteringGridLayout

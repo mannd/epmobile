@@ -25,6 +25,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import org.epstudios.epmobile.core.ui.base.EpActivity;
+import org.epstudios.epmobile.features.diagnosis.ui.Estes;
 
 public class LvhList extends EpActivity {
     @Override

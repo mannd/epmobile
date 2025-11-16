@@ -24,6 +24,7 @@ import android.view.MenuItem
 import android.widget.CheckBox
 import android.widget.Toast
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import org.epstudios.epmobile.core.ui.base.DiagnosticScore
 
 abstract class RiskScore : DiagnosticScore() {
     @JvmField

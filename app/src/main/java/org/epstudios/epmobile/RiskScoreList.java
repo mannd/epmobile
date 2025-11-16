@@ -8,9 +8,13 @@ import android.widget.TextView;
 
 import org.epstudios.epmobile.core.ui.base.EpActivity;
 import org.epstudios.epmobile.features.riskscores.ui.AppleScore;
+import org.epstudios.epmobile.features.riskscores.ui.ArvcRisk;
 import org.epstudios.epmobile.features.riskscores.ui.AtriaBleed;
+import org.epstudios.epmobile.features.riskscores.ui.AtriaStroke;
 import org.epstudios.epmobile.features.riskscores.ui.Chads;
 import org.epstudios.epmobile.features.riskscores.ui.ChadsVasc;
+import org.epstudios.epmobile.features.riskscores.ui.Frailty;
+import org.epstudios.epmobile.features.riskscores.ui.HasBled;
 
 public class RiskScoreList extends EpActivity {
     @Override
