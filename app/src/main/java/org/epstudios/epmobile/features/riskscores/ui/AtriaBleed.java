@@ -1,6 +1,9 @@
-package org.epstudios.epmobile;
+package org.epstudios.epmobile.features.riskscores.ui;
 
 import android.widget.CheckBox;
+
+import org.epstudios.epmobile.R;
+import org.epstudios.epmobile.RiskScore;
 
 /**
  * Copyright (C) 2015 EP Studios, Inc.

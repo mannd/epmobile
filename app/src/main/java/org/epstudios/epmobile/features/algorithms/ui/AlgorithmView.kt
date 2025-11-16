@@ -7,6 +7,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
@@ -24,14 +26,15 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import org.epstudios.epmobile.AvAnnulusMap
-import org.epstudios.epmobile.ui.components.CenteringGridLayout
-import org.epstudios.epmobile.features.algorithms.data.DecisionNode
 import org.epstudios.epmobile.features.algorithms.data.Algorithm
+import org.epstudios.epmobile.features.algorithms.data.DecisionNode
+import org.epstudios.epmobile.ui.components.CenteringGridLayout
 
 @Composable
 fun AlgorithmView(model: Algorithm) {
     val context = LocalContext.current
     val rootNode = remember { DecisionNode.Companion.loadFromResource(context, model.rootNodeResId) }
+    val scrollState = rememberScrollState()
 
     var currentNode by remember { mutableStateOf(rootNode) }
     val nodeStack = remember { mutableStateListOf<DecisionNode>() }
@@ -41,9 +44,10 @@ fun AlgorithmView(model: Algorithm) {
 
     Column(
         modifier = Modifier
-            .fillMaxWidth(),
+            .fillMaxWidth()
+            .verticalScroll(scrollState),
         verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         if (currentNode.question != null) {
             Text(
