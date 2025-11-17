@@ -32,7 +32,7 @@ import java.util.List;
  * along with epmobile.  If not, see <http://www.gnu.org/licenses/>.
  */
 public class Frailty extends RiskScore {
-    interface FrailtyRule {
+    public interface FrailtyRule {
         int operation(int a);
     }
 

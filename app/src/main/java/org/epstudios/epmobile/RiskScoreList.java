@@ -15,6 +15,7 @@ import org.epstudios.epmobile.features.riskscores.ui.Chads;
 import org.epstudios.epmobile.features.riskscores.ui.ChadsVasc;
 import org.epstudios.epmobile.features.riskscores.ui.Frailty;
 import org.epstudios.epmobile.features.riskscores.ui.HasBled;
+import org.epstudios.epmobile.features.riskscores.ui.HcmRiskScd;
 
 public class RiskScoreList extends EpActivity {
     @Override

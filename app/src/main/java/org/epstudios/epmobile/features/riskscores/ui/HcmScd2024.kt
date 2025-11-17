@@ -1,4 +1,8 @@
-package org.epstudios.epmobile
+package org.epstudios.epmobile.features.riskscores.ui
+
+import org.epstudios.epmobile.R
+import org.epstudios.epmobile.Reference
+import org.epstudios.epmobile.RiskScore
 
 /**
  * Copyright (C) 2024 EP Studios, Inc.

@@ -1,6 +1,12 @@
-package org.epstudios.epmobile;
+package org.epstudios.epmobile.features.riskscores.ui;
 
 import android.widget.CheckBox;
+
+import org.epstudios.epmobile.R;
+import org.epstudios.epmobile.Reference;
+import org.epstudios.epmobile.features.riskscores.data.CalculationResult;
+import org.epstudios.epmobile.features.riskscores.data.HcmRiskScdModel;
+import org.epstudios.epmobile.features.riskscores.data.HcmValidationError;
 
 import java.text.DecimalFormat;
 
@@ -92,75 +98,57 @@ public class HcmScd2022 extends HcmRiskScd {
             CalculationResult.Success successResult = (CalculationResult.Success) calculationResult;
             double value = successResult.getValue();
             clearSelectedRisks();
-            addSelectedRisk("Age = " + ageString + " yrs");
-            addSelectedRisk("LV wall thickness = " + maxLvWallThicknessString + " mm");
-            addSelectedRisk("LA diameter = " + laDiameterString + " mm");
-            addSelectedRisk(("LVOT gradient = " + maxLvotGradientString + " mmHg"));
+
+            if (!ageString.isEmpty()) {
+                addSelectedRisk(getString(R.string.hcm_scd_input_age, ageString));
+            }
+            if (!maxLvWallThicknessString.isEmpty()) {
+                addSelectedRisk(getString(R.string.hcm_scd_input_lv_wall_thickness, maxLvWallThicknessString));
+            }
+            if (!laDiameterString.isEmpty()) {
+                addSelectedRisk(getString(R.string.hcm_scd_input_la_diameter, laDiameterString));
+            }
+            if (!maxLvotGradientString.isEmpty()) {
+                addSelectedRisk(getString(R.string.hcm_scd_input_lvot_gradient, maxLvotGradientString));
+            }
             addSelectedRisks(checkBoxes);
             displayResult(getResultMessage(value,
                     apicalAneurysm,
                     lowLvef,
                     extensiveLge,
                     abnormalBP,
-                    sarcomericMutation,
-                    NO_ERROR), getString(R.string.hcm_scd_2022_title));
+                    sarcomericMutation
+            ), getString(R.string.hcm_scd_2022_title));
         } else if (calculationResult instanceof CalculationResult.Failure) {
             CalculationResult.Failure failureResult = (CalculationResult.Failure) calculationResult;
             HcmValidationError error = failureResult.getError();
             String errorMessage;
+
             if (error instanceof HcmValidationError.AgeOutOfRange) {
-                // Cast to get the specific data
                 HcmValidationError.AgeOutOfRange ageError = (HcmValidationError.AgeOutOfRange) error;
-                errorMessage = "Error: Age (" + ageError.getAge() + ") must be between 16 and 115.";
+                errorMessage = getString(R.string.error_age_out_of_range, ageError.getAge());
 
             } else if (error instanceof HcmValidationError.LvWallThicknessOutOfRange) {
                 HcmValidationError.LvWallThicknessOutOfRange thicknessError = (HcmValidationError.LvWallThicknessOutOfRange) error;
-                errorMessage = "Error: LV Wall Thickness (" + thicknessError.getThickness() + ") must be between 10 and 35 mm.";
+                errorMessage = getString(R.string.error_lv_wall_thickness_out_of_range, thicknessError.getThickness());
 
             } else if (error instanceof HcmValidationError.LaSizeOutOfRange) {
                 HcmValidationError.LaSizeOutOfRange sizeError = (HcmValidationError.LaSizeOutOfRange) error;
-                errorMessage = "Error: LA Size (" + sizeError.getSize() + ") must be between 28 and 67 mm.";
+                errorMessage = getString(R.string.error_la_size_out_of_range, sizeError.getSize());
 
             } else if (error instanceof HcmValidationError.LvotGradientOutOfRange) {
                 HcmValidationError.LvotGradientOutOfRange gradientError = (HcmValidationError.LvotGradientOutOfRange) error;
-                errorMessage = "Error: LVOT Gradient (" + gradientError.getGradient() + ") must be between 2 and 154 mmHg.";
+                errorMessage = getString(R.string.error_lvot_gradient_out_of_range, gradientError.getGradient());
 
             } else if (error instanceof HcmValidationError.ParsingError) {
-                errorMessage = "Error: Please enter valid numbers in all fields.";
+                errorMessage = getString(R.string.error_parsing);
 
             } else {
-                // Fallback for any other error type you might add later
-                errorMessage = "An unknown error occurred.";
+                errorMessage = getString(R.string.error_unknown);
             }
+
             displayResult(errorMessage, getString(R.string.error_dialog_title));
         }
-    }
-
-    private String getResultMessage(int errorCode) {
-        String message = "";
-        switch (errorCode) {
-            case NUMBER_EXCEPTION:
-                message = getString(R.string.invalid_entries_message);
-                break;
-            case AGE_OUT_OF_RANGE:
-                message = getString(R.string.invalid_age_message);
-                break;
-            case THICKNESS_OUT_OF_RANGE:
-                message = getString(R.string.invalid_thickness_message);
-                break;
-            case GRADIENT_OUT_OF_RANGE:
-                message = getString(R.string.invalid_gradient_message);
-                break;
-            case SIZE_OUT_OF_RANGE:
-                message = getString(R.string.invalid_diameter_message);
-                break;
-            case NO_ERROR:      // drop through
-            default:
-                break;
-        }
-        // TODO: setResultMessage(message); is repeated everywhere
-        // We need a better mechanism for this embedded in RisScore!
-        return message;
     }
 
     private String getResultMessage(
@@ -169,49 +157,44 @@ public class HcmScd2022 extends HcmRiskScd {
             boolean lowLvef,
             boolean extensiveLge,
             boolean abnormalBP,
-            boolean sarcomericMutation,
-            int errorCode ) {
-        if (errorCode != NO_ERROR) {
-            return getResultMessage(errorCode);
-        } else {
-            Recommendation recommendation = Recommendation.class3;
-            if (result >= 0.06) {
-                recommendation = Recommendation.class2a;
-            }
-            if (result >= 0.04 && result < 0.06) {
-                if (apicalAneurysm || lowLvef || extensiveLge || abnormalBP || sarcomericMutation) {
-                    recommendation = Recommendation.class2a;
-                } else {
-                    recommendation = Recommendation.class2b;
-                }
-            }
-            if (result < 0.04) {
-                if (apicalAneurysm || lowLvef || extensiveLge) {
-                    recommendation = Recommendation.class2b;
-                } else {
-                    recommendation = Recommendation.class3;
-                }
-            }
-            result *= 100.0;
-            DecimalFormat formatter = new DecimalFormat("##.##");
-            String formattedResult = formatter.format(result);
-            String message = "5 year SCD risk = " + formattedResult + "%";
-            switch (recommendation) {
-                case class3:
-                    message += "\nICD generally not indicated. (Class 3)";
-                    break;
-                case class2b:
-                    message += "\nICD may be considered. (Class 2b)";
-                    break;
-                case class2a:
-                    message += "\nICD should be considered. (Class 2a)";
-                    break;
-                case class1:
-                    message += "\nICD is indicated. (Class 1)";
-                    break;
-            }
-            return message;
+            boolean sarcomericMutation ) {
+        Recommendation recommendation = Recommendation.class3;
+        if (result >= 0.06) {
+            recommendation = Recommendation.class2a;
         }
+        if (result >= 0.04 && result < 0.06) {
+            if (apicalAneurysm || lowLvef || extensiveLge || abnormalBP || sarcomericMutation) {
+                recommendation = Recommendation.class2a;
+            } else {
+                recommendation = Recommendation.class2b;
+            }
+        }
+        if (result < 0.04) {
+            if (apicalAneurysm || lowLvef || extensiveLge) {
+                recommendation = Recommendation.class2b;
+            } else {
+                recommendation = Recommendation.class3;
+            }
+        }
+        result *= 100.0;
+        DecimalFormat formatter = new DecimalFormat("##.##");
+        String formattedResult = formatter.format(result);
+        String message = "5 year SCD risk = " + formattedResult + "%";
+        switch (recommendation) {
+            case class3:
+                message += "\nICD generally not indicated. (Class 3)";
+                break;
+            case class2b:
+                message += "\nICD may be considered. (Class 2b)";
+                break;
+            case class2a:
+                message += "\nICD should be considered. (Class 2a)";
+                break;
+            case class1:
+                message += "\nICD is indicated. (Class 1)";
+                break;
+        }
+        return message;
     }
 
     @Override

@@ -7,6 +7,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import org.epstudios.epmobile.core.ui.base.EpActivity;
+import org.epstudios.epmobile.features.riskscores.ui.HcmRiskScd;
+import org.epstudios.epmobile.features.riskscores.ui.HcmScd2022;
+import org.epstudios.epmobile.features.riskscores.ui.HcmScd2024;
 
 /**
  * Copyright (C) 2024 EP Studios, Inc.

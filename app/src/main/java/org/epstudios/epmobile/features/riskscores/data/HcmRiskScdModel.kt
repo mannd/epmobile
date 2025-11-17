@@ -1,4 +1,4 @@
-package org.epstudios.epmobile
+package org.epstudios.epmobile.features.riskscores.data
 
 import kotlin.math.exp
 import kotlin.math.pow
@@ -29,18 +29,6 @@ import kotlin.math.pow
  * You should have received a copy of the GNU General Public License
  * along with epmobile.  If not, see <http:></http:>//www.gnu.org/licenses/>.
  */
-internal class AgeOutOfRangeException(val age: Int) : Exception()
-
-internal class LvWallThicknessOutOfRangeException(val lvWallThickness: Int) : Exception()
-
-internal class LvotGradientOutOfRangeException(val lvotGradient: Int) : Exception()
-
-internal class ParsingException : Exception {
-    constructor(message: String?) : super(message)
-    constructor()
-}
-
-internal class LaSizeOutOfRangeException(val laSize: Int) : Exception()
 
 // Define the restricted set of possible validation errors
 sealed interface HcmValidationError {
@@ -56,8 +44,8 @@ sealed interface CalculationResult {
     data class Failure(val error: HcmValidationError) : CalculationResult
 }
 
-class HcmRiskScdModel {
-    constructor(
+public class HcmRiskScdModel {
+    public constructor(
         ageString: String, maxLvWallThicknessString: String, maxLvotGradientString: String,
         laSizeString: String, hasFamilyHxScd: Boolean, hasNsvt: Boolean, hasSyncope: Boolean
     ) {
