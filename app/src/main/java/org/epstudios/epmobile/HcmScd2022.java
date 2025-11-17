@@ -77,7 +77,6 @@ public class HcmScd2022 extends HcmRiskScd {
         boolean extensiveLge = checkBoxes[5].isChecked();
         boolean abnormalBP = checkBoxes[6].isChecked();
         boolean sarcomericMutation = checkBoxes[7].isChecked();
-        try {
             HcmRiskScdModel model = new HcmRiskScdModel(
                     ageString,
                     maxLvWallThicknessString,
@@ -87,32 +86,54 @@ public class HcmScd2022 extends HcmRiskScd {
                     hasNsvt,
                     hasSyncope
             );
-            double result = model.calculateResult();
+            CalculationResult calculationResult = model.calculateResult();
+
+        if (calculationResult instanceof CalculationResult.Success) {
+            CalculationResult.Success successResult = (CalculationResult.Success) calculationResult;
+            double value = successResult.getValue();
             clearSelectedRisks();
             addSelectedRisk("Age = " + ageString + " yrs");
             addSelectedRisk("LV wall thickness = " + maxLvWallThicknessString + " mm");
             addSelectedRisk("LA diameter = " + laDiameterString + " mm");
             addSelectedRisk(("LVOT gradient = " + maxLvotGradientString + " mmHg"));
             addSelectedRisks(checkBoxes);
-            displayResult(getResultMessage(result,
+            displayResult(getResultMessage(value,
                     apicalAneurysm,
                     lowLvef,
                     extensiveLge,
                     abnormalBP,
                     sarcomericMutation,
                     NO_ERROR), getString(R.string.hcm_scd_2022_title));
-        } catch (AgeOutOfRangeException e) {
-            displayResult(getResultMessage(AGE_OUT_OF_RANGE), getString(R.string.error_dialog_title));
-        } catch (LvWallThicknessOutOfRangeException e) {
-            displayResult(getResultMessage(THICKNESS_OUT_OF_RANGE), getString(R.string.error_dialog_title));
-        } catch (LvotGradientOutOfRangeException e) {
-            displayResult(getResultMessage(GRADIENT_OUT_OF_RANGE), getString(R.string.error_dialog_title));
-        } catch (LaSizeOutOfRangeException e) {
-            displayResult(getResultMessage(SIZE_OUT_OF_RANGE), getString(R.string.error_dialog_title));
-        } catch (ParsingException e) {
-            displayResult(getResultMessage(NUMBER_EXCEPTION), getString(R.string.error_dialog_title));
-        }
+        } else if (calculationResult instanceof CalculationResult.Failure) {
+            CalculationResult.Failure failureResult = (CalculationResult.Failure) calculationResult;
+            HcmValidationError error = failureResult.getError();
+            String errorMessage;
+            if (error instanceof HcmValidationError.AgeOutOfRange) {
+                // Cast to get the specific data
+                HcmValidationError.AgeOutOfRange ageError = (HcmValidationError.AgeOutOfRange) error;
+                errorMessage = "Error: Age (" + ageError.getAge() + ") must be between 16 and 115.";
 
+            } else if (error instanceof HcmValidationError.LvWallThicknessOutOfRange) {
+                HcmValidationError.LvWallThicknessOutOfRange thicknessError = (HcmValidationError.LvWallThicknessOutOfRange) error;
+                errorMessage = "Error: LV Wall Thickness (" + thicknessError.getThickness() + ") must be between 10 and 35 mm.";
+
+            } else if (error instanceof HcmValidationError.LaSizeOutOfRange) {
+                HcmValidationError.LaSizeOutOfRange sizeError = (HcmValidationError.LaSizeOutOfRange) error;
+                errorMessage = "Error: LA Size (" + sizeError.getSize() + ") must be between 28 and 67 mm.";
+
+            } else if (error instanceof HcmValidationError.LvotGradientOutOfRange) {
+                HcmValidationError.LvotGradientOutOfRange gradientError = (HcmValidationError.LvotGradientOutOfRange) error;
+                errorMessage = "Error: LVOT Gradient (" + gradientError.getGradient() + ") must be between 2 and 154 mmHg.";
+
+            } else if (error instanceof HcmValidationError.ParsingError) {
+                errorMessage = "Error: Please enter valid numbers in all fields.";
+
+            } else {
+                // Fallback for any other error type you might add later
+                errorMessage = "An unknown error occurred.";
+            }
+            displayResult(errorMessage, getString(R.string.error_dialog_title));
+        }
     }
 
     private String getResultMessage(int errorCode) {

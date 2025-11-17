@@ -27,6 +27,9 @@ import android.widget.EditText;
 
 import java.text.DecimalFormat;
 
+/**
+ * This is the 2014 version of the HCM SCD risk score.
+ */
 public class HcmRiskScd extends RiskScore {
     protected static final int NO_ERROR = 8999;
     protected static final int NUMBER_EXCEPTION = 9000;
@@ -49,18 +52,20 @@ public class HcmRiskScd extends RiskScore {
         boolean hasFamilyHxScd = checkBoxes[0].isChecked();
         boolean hasNsvt = checkBoxes[1].isChecked();
         boolean hasSyncope = checkBoxes[2].isChecked();
-        try {
-            HcmRiskScdModel model = new HcmRiskScdModel(
-                    ageString,
-                    maxLvWallThicknessString,
-                    maxLvotGradientString,
-                    laDiameterString,
-                    hasFamilyHxScd,
-                    hasNsvt,
-                    hasSyncope
-            );
-            double result = model.calculateResult();
-            displayResult(getResultMessage(result, NO_ERROR),
+        HcmRiskScdModel model = new HcmRiskScdModel(
+                ageString,
+                maxLvWallThicknessString,
+                maxLvotGradientString,
+                laDiameterString,
+                hasFamilyHxScd,
+                hasNsvt,
+                hasSyncope
+        );
+        CalculationResult calculationResult = model.calculateResult();
+        if (calculationResult instanceof CalculationResult.Success) {
+            CalculationResult.Success successResult = (CalculationResult.Success) calculationResult;
+            double value = successResult.getValue();
+            displayResult(getResultMessage(value, NO_ERROR),
                     getString(R.string.hcm_scd_esc_score_title));
             clearSelectedRisks();
             addSelectedRisk("Age = " + ageString + " yrs");
@@ -68,16 +73,35 @@ public class HcmRiskScd extends RiskScore {
             addSelectedRisk("LA diameter = " + laDiameterString + " mm");
             addSelectedRisk(("LVOT gradient = " + maxLvotGradientString + " mmHg"));
             addSelectedRisks(checkBoxes);
-        } catch (AgeOutOfRangeException e) {
-            displayResult(getResultMessage(0.0, AGE_OUT_OF_RANGE), getString(R.string.error_dialog_title));
-        } catch (LvWallThicknessOutOfRangeException e) {
-            displayResult(getResultMessage(0.0, THICKNESS_OUT_OF_RANGE), getString(R.string.error_dialog_title));
-        } catch (LvotGradientOutOfRangeException e) {
-            displayResult(getResultMessage(0.0, GRADIENT_OUT_OF_RANGE), getString(R.string.error_dialog_title));
-        } catch (LaSizeOutOfRangeException e) {
-            displayResult(getResultMessage(0.0, SIZE_OUT_OF_RANGE), getString(R.string.error_dialog_title));
-        } catch (ParsingException e) {
-            displayResult(getResultMessage(0.0, NUMBER_EXCEPTION), getString(R.string.error_dialog_title));
+        } else if (calculationResult instanceof CalculationResult.Failure) {
+            CalculationResult.Failure failureResult = (CalculationResult.Failure) calculationResult;
+            HcmValidationError error = failureResult.getError();
+            String errorMessage;
+            if (error instanceof HcmValidationError.AgeOutOfRange) {
+                // Cast to get the specific data
+                HcmValidationError.AgeOutOfRange ageError = (HcmValidationError.AgeOutOfRange) error;
+                errorMessage = "Error: Age (" + ageError.getAge() + ") must be between 16 and 115.";
+
+            } else if (error instanceof HcmValidationError.LvWallThicknessOutOfRange) {
+                HcmValidationError.LvWallThicknessOutOfRange thicknessError = (HcmValidationError.LvWallThicknessOutOfRange) error;
+                errorMessage = "Error: LV Wall Thickness (" + thicknessError.getThickness() + ") must be between 10 and 35 mm.";
+
+            } else if (error instanceof HcmValidationError.LaSizeOutOfRange) {
+                HcmValidationError.LaSizeOutOfRange sizeError = (HcmValidationError.LaSizeOutOfRange) error;
+                errorMessage = "Error: LA Size (" + sizeError.getSize() + ") must be between 28 and 67 mm.";
+
+            } else if (error instanceof HcmValidationError.LvotGradientOutOfRange) {
+                HcmValidationError.LvotGradientOutOfRange gradientError = (HcmValidationError.LvotGradientOutOfRange) error;
+                errorMessage = "Error: LVOT Gradient (" + gradientError.getGradient() + ") must be between 2 and 154 mmHg.";
+
+            } else if (error instanceof HcmValidationError.ParsingError) {
+                errorMessage = "Error: Please enter valid numbers in all fields.";
+
+            } else {
+                // Fallback for any other error type you might add later
+                errorMessage = "An unknown error occurred.";
+            }
+            displayResult(errorMessage, getString(R.string.error_dialog_title));
         }
     }
 
