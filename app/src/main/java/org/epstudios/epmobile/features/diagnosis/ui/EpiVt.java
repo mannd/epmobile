@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import org.epstudios.epmobile.R;
-import org.epstudios.epmobile.VtList;
 import org.epstudios.epmobile.core.ui.base.EpActivity;
 
 public class EpiVt extends EpActivity {

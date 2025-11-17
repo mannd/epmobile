@@ -3,7 +3,7 @@ package org.epstudios.epmobile.features.riskscores.ui;
 import android.widget.CheckBox;
 
 import org.epstudios.epmobile.R;
-import org.epstudios.epmobile.Reference;
+import org.epstudios.epmobile.core.data.Reference;
 import org.epstudios.epmobile.features.riskscores.data.CalculationResult;
 import org.epstudios.epmobile.features.riskscores.data.HcmRiskScdModel;
 import org.epstudios.epmobile.features.riskscores.data.HcmValidationError;
@@ -31,7 +31,7 @@ import java.text.DecimalFormat;
  * You should have received a copy of the GNU General Public License
  * along with epmobile.  If not, see <http://www.gnu.org/licenses/>.
  */
-public class HcmScd2022 extends HcmRiskScd {
+public class HcmScd2022 extends HcmRiskScd2014 {
     private enum Recommendation {
         class1,
         class2a,

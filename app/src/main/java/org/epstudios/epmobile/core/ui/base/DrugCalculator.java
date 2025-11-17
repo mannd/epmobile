@@ -14,7 +14,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import org.epstudios.epmobile.R;
-import org.epstudios.epmobile.UnitConverter;
+import org.epstudios.epmobile.core.data.UnitConverter;
 import org.epstudios.epmobile.features.calculators.data.CreatinineClearance;
 
 import java.text.DecimalFormat;

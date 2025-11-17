@@ -6,7 +6,7 @@ import android.widget.RadioGroup;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import org.epstudios.epmobile.R;
-import org.epstudios.epmobile.RiskScore;
+import org.epstudios.epmobile.core.ui.base.RiskScore;
 
 /**
  * Copyright (C) 2015 EP Studios, Inc.

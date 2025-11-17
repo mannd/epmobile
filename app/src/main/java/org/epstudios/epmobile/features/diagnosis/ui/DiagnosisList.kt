@@ -8,15 +8,8 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.TextView
 import org.epstudios.epmobile.features.riskscores.ui.ErsScore
-import org.epstudios.epmobile.LinkView
-import org.epstudios.epmobile.LongQtList
-import org.epstudios.epmobile.LvhList
+import org.epstudios.epmobile.core.ui.base.LinkView
 import org.epstudios.epmobile.R
-import org.epstudios.epmobile.ShortQt
-import org.epstudios.epmobile.TamponadeScore
-import org.epstudios.epmobile.VtList
-import org.epstudios.epmobile.WctAlgorithmList
-import org.epstudios.epmobile.WpwAlgorithmList
 import org.epstudios.epmobile.core.ui.base.EpActivity
 import org.epstudios.epmobile.features.riskscores.ui.Arvc
 import org.epstudios.epmobile.features.riskscores.ui.ArvcOld

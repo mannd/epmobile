@@ -3,7 +3,7 @@ package org.epstudios.epmobile.features.riskscores.ui;
 import android.widget.CheckBox;
 
 import org.epstudios.epmobile.R;
-import org.epstudios.epmobile.SyncopeRiskScore;
+import org.epstudios.epmobile.core.ui.base.SyncopeRiskScore;
 
 public class EgsysScore extends SyncopeRiskScore {
     // These scores are from the validation group in the paper.

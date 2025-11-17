@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
-import org.epstudios.epmobile.LocationAlgorithm;
+import org.epstudios.epmobile.core.ui.base.LocationAlgorithm;
 import org.epstudios.epmobile.R;
 
 public class AtrialTachLocalization extends LocationAlgorithm implements

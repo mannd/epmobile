@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import org.epstudios.epmobile.R
-import org.epstudios.epmobile.ReferenceList
-import org.epstudios.epmobile.RiskScoreList
+import org.epstudios.epmobile.features.referencestools.ui.ReferenceList
+import org.epstudios.epmobile.features.riskscores.ui.RiskScoreList
 import org.epstudios.epmobile.core.ui.base.EpActivity
 import org.epstudios.epmobile.features.calculators.ui.CalculatorList
 import org.epstudios.epmobile.features.diagnosis.ui.DiagnosisList

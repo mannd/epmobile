@@ -31,9 +31,9 @@ import android.view.View
 import android.widget.TextView
 import androidx.annotation.StringRes
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import org.epstudios.epmobile.Prefs
+import org.epstudios.epmobile.features.preferences.ui.Prefs
 import org.epstudios.epmobile.R
-import org.epstudios.epmobile.Reference
+import org.epstudios.epmobile.core.data.Reference
 
 /**
  * Abstract class that adds options menu support.

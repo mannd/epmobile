@@ -23,7 +23,6 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import org.epstudios.epmobile.R;
-import org.epstudios.epmobile.Warfarin;
 import org.epstudios.epmobile.core.ui.base.EpActivity;
 import org.epstudios.epmobile.features.calculators.data.DoseCalculator;
 

@@ -6,9 +6,8 @@ import android.widget.CheckBox;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
-import org.epstudios.epmobile.LvhList;
 import org.epstudios.epmobile.R;
-import org.epstudios.epmobile.RiskScore;
+import org.epstudios.epmobile.core.ui.base.RiskScore;
 
 public class Estes extends RiskScore {
 

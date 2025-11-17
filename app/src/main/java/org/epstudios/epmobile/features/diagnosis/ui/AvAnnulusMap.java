@@ -9,8 +9,6 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import org.epstudios.epmobile.R;
-import org.epstudios.epmobile.WpwAlgorithmList;
-import org.epstudios.epmobile.WpwArruda;
 import org.epstudios.epmobile.core.ui.base.EpActivity;
 
 public class AvAnnulusMap extends EpActivity {

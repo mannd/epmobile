@@ -8,9 +8,6 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.TextView
 import org.epstudios.epmobile.core.ui.base.EpActivity
-import org.epstudios.epmobile.IbwCalculator
-import org.epstudios.epmobile.Qtc
-import org.epstudios.epmobile.QtcIvcd
 import org.epstudios.epmobile.R
 
 class CalculatorList : EpActivity() {

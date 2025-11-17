@@ -21,8 +21,8 @@ package org.epstudios.epmobile.features.riskscores.ui;
 import android.widget.CheckBox;
 
 import org.epstudios.epmobile.R;
-import org.epstudios.epmobile.Reference;
-import org.epstudios.epmobile.RiskScore;
+import org.epstudios.epmobile.core.data.Reference;
+import org.epstudios.epmobile.core.ui.base.RiskScore;
 
 public class ChadsVasc extends RiskScore {
     private boolean isFemale;

@@ -4,8 +4,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import org.epstudios.epmobile.R;
-import org.epstudios.epmobile.Reference;
-import org.epstudios.epmobile.RiskScore;
+import org.epstudios.epmobile.core.data.Reference;
+import org.epstudios.epmobile.core.ui.base.RiskScore;
 
 import java.util.ArrayList;
 import java.util.List;

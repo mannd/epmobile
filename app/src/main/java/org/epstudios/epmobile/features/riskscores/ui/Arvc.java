@@ -25,7 +25,7 @@ import android.widget.RadioGroup;
 
 import org.epstudios.epmobile.features.diagnosis.ui.DiagnosisList;
 import org.epstudios.epmobile.R;
-import org.epstudios.epmobile.RiskScore;
+import org.epstudios.epmobile.core.ui.base.RiskScore;
 
 public class Arvc extends RiskScore {
 

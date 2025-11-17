@@ -7,7 +7,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import org.epstudios.epmobile.R;
-import org.epstudios.epmobile.RiskScore;
+import org.epstudios.epmobile.core.ui.base.RiskScore;
 import org.epstudios.epmobile.features.riskscores.data.ArvcRiskModel;
 
 import java.text.NumberFormat;

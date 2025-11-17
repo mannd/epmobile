@@ -11,8 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import org.epstudios.epmobile.R;
-import org.epstudios.epmobile.Reference;
-import org.epstudios.epmobile.ReferenceList;
+import org.epstudios.epmobile.core.data.Reference;
 import org.epstudios.epmobile.core.ui.base.EpActivity;
 
 public class Entrainment extends EpActivity implements OnClickListener {

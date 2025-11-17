@@ -20,7 +20,6 @@
 package org.epstudios.epmobile.features.diagnosis.ui;
 
 import org.epstudios.epmobile.R;
-import org.epstudios.epmobile.WpwArruda;
 
 public class DavilaAlgorithm extends WpwArruda {
 

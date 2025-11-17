@@ -20,6 +20,7 @@ import junit.framework.TestCase;
 
 import org.epstudios.epmobile.features.calculators.data.CreatinineClearance;
 import org.epstudios.epmobile.features.calculators.data.DoseCalculator;
+import org.epstudios.epmobile.features.calculators.ui.Warfarin;
 import org.junit.Assert;
 import org.junit.Test;
 

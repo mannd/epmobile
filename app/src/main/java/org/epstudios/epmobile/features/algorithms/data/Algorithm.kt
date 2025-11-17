@@ -2,7 +2,7 @@ package org.epstudios.epmobile.features.algorithms.data
 
 import android.content.Context
 import androidx.annotation.RawRes
-import org.epstudios.epmobile.Reference
+import org.epstudios.epmobile.core.data.Reference
 
 /**
  * Basis of algorithms, such as WPW or WCT algorithms in the app.

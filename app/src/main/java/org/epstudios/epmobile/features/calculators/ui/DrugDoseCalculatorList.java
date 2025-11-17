@@ -25,9 +25,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import org.epstudios.epmobile.R;
-import org.epstudios.epmobile.Rivaroxaban;
-import org.epstudios.epmobile.Sotalol;
-import org.epstudios.epmobile.Warfarin;
 import org.epstudios.epmobile.core.ui.base.EpActivity;
 
 public class DrugDoseCalculatorList extends EpActivity {

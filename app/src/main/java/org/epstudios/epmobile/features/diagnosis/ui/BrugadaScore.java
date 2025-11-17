@@ -25,8 +25,8 @@ package org.epstudios.epmobile.features.diagnosis.ui;
 import android.widget.CheckBox;
 
 import org.epstudios.epmobile.R;
-import org.epstudios.epmobile.RiskScore;
-import org.epstudios.epmobile.UnitConverter;
+import org.epstudios.epmobile.core.ui.base.RiskScore;
+import org.epstudios.epmobile.core.data.UnitConverter;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -9,8 +9,7 @@ import android.widget.RadioGroup;
 import org.epstudios.epmobile.features.referencestools.data.CmsIcdModel;
 import org.epstudios.epmobile.features.referencestools.data.CmsIcdViewModel;
 import org.epstudios.epmobile.R;
-import org.epstudios.epmobile.ReferenceList;
-import org.epstudios.epmobile.RiskScore;
+import org.epstudios.epmobile.core.ui.base.RiskScore;
 
 public class CmsIcd extends RiskScore {
     protected CheckBox[] checkBox;

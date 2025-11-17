@@ -26,7 +26,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Qtc"
+            android:name=".features.calculators.ui.Qtc"
             android:windowSoftInputMode="adjustResize"
             android:label="@string/qtc_calculator_title"/>
         <activity
@@ -37,7 +37,7 @@
             android:windowSoftInputMode="adjustResize"
             android:label="@string/cycle_length_label"/>
         <activity
-            android:name=".Prefs"
+            android:name=".features.preferences.ui.Prefs"
             android:label="@string/settings_title"/>
 <!--        <activity-->
 <!--            android:name=".OldPrefs"-->
@@ -55,7 +55,7 @@
             android:name=".features.calculators.ui.Dabigatran"
             android:label="@string/dabigatran_label"/>
         <activity
-            android:name=".Warfarin"
+            android:name=".features.calculators.ui.Warfarin"
             android:label="@string/warfarin_label"/>
         <activity
             android:name=".features.calculators.ui.DoseTable"
@@ -64,19 +64,19 @@
             android:name=".features.diagnosis.ui.Brugada"
             android:label="@string/brugada_vt_title"/>
         <activity
-            android:name=".WctAlgorithmList"
+            android:name=".features.diagnosis.ui.WctAlgorithmList"
             android:label="@string/wct_algorithm_title"/>
         <activity
-            android:name=".WctMorphologyCriteria"
+            android:name=".features.diagnosis.ui.WctMorphologyCriteria"
             android:label="@string/morphology_label"/>
         <activity
-            android:name=".Rwpt"
+            android:name=".features.diagnosis.ui.Rwpt"
             android:label="@string/rwpt_title"/>
         <activity
             android:name=".features.diagnosis.ui.BrugadaMorphologyCriteria"
             android:label="@string/morphology_label"/>
         <activity
-            android:name=".NormalEpValues"
+            android:name=".features.referencestools.ui.NormalEpValues"
             android:label="@string/normal_ep_values_title"/>
         <activity
             android:name=".features.riskscores.ui.Arvc"
@@ -85,61 +85,61 @@
             android:name=".features.riskscores.ui.ArvcOld"
             android:label="@string/arvc_old_criteria_title"/>
         <activity
-            android:name=".Rivaroxaban"
+            android:name=".features.calculators.ui.Rivaroxaban"
             android:label="@string/rivaroxaban_calculator_title"/>
         <activity
-            android:name=".ShortQt"
+            android:name=".features.diagnosis.ui.ShortQt"
             android:label="@string/short_qt_title"/>
         <activity
             android:name=".features.calculators.ui.DrugDoseCalculatorList"
             android:label="@string/drug_dose_calculators_title"/>
         <activity
-            android:name=".RiskScoreList"
+            android:name=".features.riskscores.ui.RiskScoreList"
             android:label="@string/risk_scores_title"/>
         <activity
-            android:name=".HcmScd2002"
+            android:name=".features.riskscores.ui.HcmScd2002"
             android:label="@string/hcm_title"/>
         <activity
             android:name=".features.referencestools.ui.CmsIcd"
             android:label="@string/icd_calculator_title"/>
         <activity
-            android:name=".Hemorrhages"
+            android:name=".features.riskscores.ui.Hemorrhages"
             android:label="@string/hemorrhages_title"/>
         <activity
-            android:name=".WpwAlgorithmList"
+            android:name=".features.diagnosis.ui.WpwAlgorithmList"
             android:label="@string/wpw_algorithm_title"/>
         <activity
-            android:name=".WpwArruda"
+            android:name=".features.diagnosis.ui.WpwArruda"
             android:label="@string/arruda_title"/>
         <activity
             android:name=".features.diagnosis.ui.AvAnnulusMap"
             android:label="@string/av_annulus_map_title"/>
         <activity
-            android:name=".WpwModifiedArruda"
+            android:name=".features.diagnosis.ui.WpwModifiedArruda"
             android:label="@string/modified_arruda_title"/>
         <activity
-            android:name=".WpwMilstein"
+            android:name=".features.diagnosis.ui.WpwMilstein"
             android:label="@string/milstein_title"/>
         <activity
-            android:name=".LongQt"
+            android:name=".features.diagnosis.ui.LongQt"
             android:label="@string/long_qt_syndrome_diagnosis_title"/>
         <activity
-            android:name=".LvhList"
+            android:name=".features.diagnosis.ui.LvhList"
             android:label="@string/lvh_title"/>
         <activity
-            android:name=".LvhVoltage"
+            android:name=".features.diagnosis.ui.LvhVoltage"
             android:label="@string/other_lvh_criteria_title"/>
         <activity
             android:name=".features.diagnosis.ui.Estes"
             android:label="@string/estes_criteria_title"/>
         <activity
-            android:name=".LongQtList"
+            android:name=".features.diagnosis.ui.LongQtList"
             android:label="@string/lqt_syndrome_label"/>
         <activity
-            android:name=".LongQtSubtypes"
+            android:name=".features.diagnosis.ui.LongQtSubtypes"
             android:label="@string/lqt_subtypes_title"/>
         <activity
-            android:name=".LongQtEcg"
+            android:name=".features.diagnosis.ui.LongQtEcg"
             android:label="@string/lqt_ecg_title"/>
         <activity
             android:name=".features.diagnosis.ui.BrugadaEcg"
@@ -151,7 +151,7 @@
             android:name=".features.calculators.ui.CalculatorList"
             android:label="@string/calculator_title"/>
         <activity
-            android:name=".ReferenceList"
+            android:name=".features.referencestools.ui.ReferenceList"
             android:label="@string/reference_title"/>
         <activity
             android:name=".features.diagnosis.ui.BrugadaList"
@@ -163,19 +163,19 @@
             android:name=".features.riskscores.ui.ErsScore"
             android:label="@string/ers_title" />
          <activity
-            android:name=".VtList"
+            android:name=".features.diagnosis.ui.VtList"
             android:label="@string/vt_list_title"/>
         <activity
             android:name=".features.diagnosis.ui.EpiVt"
             android:label="@string/epicardial_vt_title"/>
         <activity
-            android:name=".OutflowVt"
+            android:name=".features.diagnosis.ui.OutflowVt"
             android:label="@string/outflow_tract_vt_title"/>
         <activity
-            android:name=".MitralAnnularVt"
+            android:name=".features.diagnosis.ui.MitralAnnularVt"
             android:label="@string/mitral_annular_vt_title"/>
         <activity
-            android:name=".Sotalol"
+            android:name=".features.calculators.ui.Sotalol"
             android:label="@string/sotalol_calculator_title"/>
         <activity
             android:name=".features.calculators.ui.Apixaban"
@@ -191,28 +191,28 @@
             android:label="@string/entrainment_title"
             android:configChanges="orientation|screenSize" />
         <activity
-            android:name=".IbwCalculator"
+            android:name=".features.calculators.ui.IbwCalculator"
             android:label="@string/ibw_calculator_title"/>
         <activity
-            android:name=".SyncopeRiskScoreList"
+            android:name=".features.riskscores.ui.SyncopeRiskScoreList"
             android:label="@string/syncope_list_title"/>
         <activity
-            android:name=".SyncopeSfRule"
+            android:name=".features.riskscores.ui.SyncopeSfRule"
             android:label="@string/syncope_sf_rule_title"/>
         <activity
-            android:name=".MartinAlgorithm"
+            android:name=".features.riskscores.ui.MartinAlgorithm"
             android:label="@string/syncope_martin_title"/>
         <activity
-            android:name=".OesilScore"
+            android:name=".features.riskscores.ui.OesilScore"
             android:label="@string/syncope_oesil_score_title"/>
         <activity
             android:name=".features.riskscores.ui.EgsysScore"
             android:label="@string/syncope_egsys_score_title"/>
         <activity
-            android:name=".Vereckei"
+            android:name=".features.diagnosis.ui.Vereckei"
             android:label="@string/vereckei_title"/>
         <activity
-            android:name=".IcdRisk"
+            android:name=".features.riskscores.ui.IcdRisk"
             android:label="@string/icd_risk_title"/>
         <activity android:name=".features.calculators.ui.Edoxaban"
             android:label="@string/edoxaban_calculator_title">
@@ -223,13 +223,13 @@
         <activity android:name=".features.referencestools.ui.DrugReferenceList"
             android:label="@string/drug_reference_title">
         </activity>
-        <activity android:name=".LinkView"
+        <activity android:name=".core.ui.base.LinkView"
             android:label = "">
         </activity>
         <activity android:name=".features.calculators.ui.CreatinineClearanceCalculator"
             android:label="@string/creatinine_clearance_calculator_title">
          </activity>
-        <activity android:name=".features.riskscores.ui.HcmRiskScd"
+        <activity android:name=".features.riskscores.ui.HcmRiskScd2014"
             android:label="@string/hcm_scd_esc_score_title">
         </activity>
         <activity android:name=".features.riskscores.ui.AtriaBleed"
@@ -238,23 +238,23 @@
         <activity android:name=".features.riskscores.ui.AtriaStroke"
             android:label="@string/atria_stroke_score_title">
         </activity>
-        <activity android:name=".SameTtr"
+        <activity android:name=".features.riskscores.ui.SameTtr"
             android:label="@string/same_tt2r2_title" />
-        <activity android:name=".Orbit"
+        <activity android:name=".features.riskscores.ui.Orbit"
             android:label="@string/orbit_risk_title" />
-        <activity android:name=".QtcIvcd"
+        <activity android:name=".features.calculators.ui.QtcIvcd"
             android:label="@string/qtc_ivcd_calculator_title" />
-        <activity android:name=".QtcIvcdResults"
+        <activity android:name=".features.calculators.ui.QtcIvcdResults"
             android:label="@string/qtc_ivcd_results_title" />
-        <activity android:name=".IcdMortalityRisk"
+        <activity android:name=".features.riskscores.ui.IcdMortalityRisk"
             android:label="@string/icd_mortality_risk_title" />
-        <activity android:name=".TamponadeScore"
+        <activity android:name=".features.diagnosis.ui.TamponadeScore"
             android:label="@string/tamponade_title" />
         <activity android:name=".features.riskscores.ui.ArvcRisk"
                   android:label = "@string/arvc_risk_title" />
-        <activity android:name=".LongQtTable"
+        <activity android:name=".features.diagnosis.ui.LongQtTable"
                   android:label="@string/long_qt_table_title" />
-        <activity android:name=".QTProlongationRisk"
+        <activity android:name=".features.riskscores.ui.QTProlongationRisk"
             android:label="@string/qt_prolongation_risk_title" />
         <activity android:name=".features.calculators.ui.GfrCalculator"
             android:label="@string/gfr_calculator_title" />
@@ -262,11 +262,11 @@
             android:label="@string/apple_score_title" />
         <activity android:name=".features.riskscores.ui.Frailty"
             android:label="@string/frailty_title" />
-        <activity android:name=".V2TransitionRatioVt"
+        <activity android:name=".features.diagnosis.ui.V2TransitionRatioVt"
             android:label="@string/v2_transition_ratio_vt_title" />
-        <activity android:name=".V2Calculator"
+        <activity android:name=".features.diagnosis.ui.V2Calculator"
             android:label="@string/v2_calculator_title" />
-        <activity android:name=".HcmScdList"
+        <activity android:name=".features.riskscores.ui.HcmScdList"
             android:label="@string/hcm_scd_list_title" />
         <activity android:name=".features.riskscores.ui.HcmScd2022"
             android:label="@string/hcm_scd_2022_title" />
@@ -274,7 +274,7 @@
             android:label="@string/hcm_scd_2024_title" />
         <activity android:name=".features.calculators.ui.BmiCalculator"
             android:label="@string/bmi_calculator_title" />
-        <activity android:name=".Painesd"
+        <activity android:name=".features.riskscores.ui.Painesd"
             android:label="@string/painesd_risk_title" />
         <activity
             android:name=".features.algorithms.ui.AlgorithmActivity"

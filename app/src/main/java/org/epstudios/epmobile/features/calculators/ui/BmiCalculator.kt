@@ -13,7 +13,7 @@ import android.widget.TextView
 import androidx.preference.PreferenceManager
 import org.epstudios.epmobile.core.ui.base.EpActivity
 import org.epstudios.epmobile.R
-import org.epstudios.epmobile.UnitConverter
+import org.epstudios.epmobile.core.data.UnitConverter
 import org.epstudios.epmobile.features.calculators.data.BMI
 
 /**

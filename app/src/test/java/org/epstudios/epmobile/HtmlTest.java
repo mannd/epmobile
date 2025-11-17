@@ -22,6 +22,7 @@ package org.epstudios.epmobile;
  * along with epmobile.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import org.epstudios.epmobile.core.data.Reference;
 import org.epstudios.epmobile.core.ui.base.EpActivity;
 import org.junit.Test;
 

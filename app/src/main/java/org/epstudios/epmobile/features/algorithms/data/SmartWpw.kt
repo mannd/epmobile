@@ -2,7 +2,7 @@ package org.epstudios.epmobile.features.algorithms.data
 
 import android.content.Context
 import org.epstudios.epmobile.R
-import org.epstudios.epmobile.Reference
+import org.epstudios.epmobile.core.data.Reference
 
 /**
 Copyright (C) 2025 EP Studios, Inc.
