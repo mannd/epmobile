@@ -57,29 +57,24 @@ class HcmAfViewModel : ViewModel() {
 
     fun onLaDiameterChanged(newText: String) {
         _laDiameterInput.value = newText
-        calculate()
     }
 
     fun onAgeAtEvalChanged(newText: String) {
         _ageAtEvalInput.value = newText
-        calculate()
     }
 
     fun onAgeAtDxChanged(newText: String) {
         _ageAtDxInput.value = newText
-        calculate()
     }
 
     fun onHfSxChanged(isChecked: Boolean) {
         _hfSxChecked.value = isChecked
-        calculate()
     }
 
 
     // 3. PROCESSING & TRANSLATION:
-    // Private function that does the work of converting data and running logic.
-
-    private fun calculate() {
+    // calculate() is activated by the calculate button in the UI.
+    public fun calculate() {
         // Translate Strings from UI state into Int?s for the Model
         val laDiameter = _laDiameterInput.value.toIntOrNull()
         val ageAtEval = _ageAtEvalInput.value.toIntOrNull()

@@ -74,6 +74,8 @@ class HcmAfViewModelTest {
             viewModel.onAgeAtDxChanged("35")
             viewModel.onHfSxChanged(true)
 
+            viewModel.calculate()
+
             // Assert: Check the final, formatted string that the user would see
             val successState = awaitItem()
             assertTrue("Should contain the score", successState.contains("HCM-AF Score: 29"))
@@ -87,8 +89,12 @@ class HcmAfViewModelTest {
         viewModel.resultState.test {
             awaitItem() // Skip initial state
 
+            viewModel.onAgeAtEvalChanged("50")
+            viewModel.onAgeAtDxChanged("35")
+            viewModel.onHfSxChanged(true)
             // Act: Change one input to be out of range
             viewModel.onLaDiameterChanged("99") // This is out of range
+            viewModel.calculate()
 
             // Assert: Check for the specific, user-friendly error message
             val errorState = awaitItem()
@@ -103,6 +109,7 @@ class HcmAfViewModelTest {
 
             // Act: Set one input to something that isn't a number
             viewModel.onAgeAtEvalChanged("abc")
+            viewModel.calculate()
 
             // Assert: Check for the parsing error message
             val errorState = awaitItem()
