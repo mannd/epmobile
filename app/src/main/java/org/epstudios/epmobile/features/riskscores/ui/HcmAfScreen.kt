@@ -88,12 +88,24 @@ fun HcmAfScreen(viewModel: HcmAfViewModel = viewModel()) {
                 Text("History of Heart Failure Symptoms")
             }
 
-            // Calculate Button
-            Button(
-                onClick = { viewModel.calculate() },
-                modifier = Modifier.fillMaxWidth()
+            // Action Buttons
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceEvenly
             ) {
-                Text("Calculate")
+                Button(
+                    onClick = { viewModel.calculate() },
+                    modifier = Modifier.weight(1f)
+                ) {
+                    Text("Calculate")
+                }
+                Spacer(modifier = Modifier.width(16.dp))
+                Button(
+                    onClick = { viewModel.clear() },
+                    modifier = Modifier.weight(1f)
+                ) {
+                    Text("Clear")
+                }
             }
 
             // Result Display

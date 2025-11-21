@@ -1908,4 +1908,14 @@
 
     <!-- HCM AF risk score - Input Summary Labels -->
     <string name="hcm_af_risk_title">HCM AF Risk Score</string>
+    <string name="hcm_af_risk_instructions">This score predicts the risk of developing atrial
+        fibrillation in patients with hypertrophic cardiomyopathy.  The result gives the risk
+        in terms of low, intermediate, and high yearly risk as well as predicted risk of
+        atrial fibrillation after 2 and 5 years.\n\nHeart failure symptoms are considered
+        to be present if the patient is in NYHA functional class II, III, or IV.</string>
+    <string name="hcm_af_reference">Carrick RT, Maron MS, Adler A, et al. Development and
+        Validation of a Clinical Predictive Model for Identifying Hypertrophic Cardiomyopathy
+        Patients at Risk for Atrial Fibrillation: The HCM-AF Score.
+        Circ: Arrhythmia and Electrophysiology. 2021;14(6):e009796.</string>
+    <string name="hcm_af_link">https://doi.org/10.1161/CIRCEP.120.009796</string>
 </resources>

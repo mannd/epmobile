@@ -71,6 +71,14 @@ class HcmAfViewModel : ViewModel() {
         _hfSxChecked.value = isChecked
     }
 
+    fun clear() {
+        _laDiameterInput.value = ""
+        _ageAtEvalInput.value = ""
+        _ageAtDxInput.value = ""
+        _hfSxChecked.value = false
+        _resultState.value = "Enter values to see result."
+    }
+
 
     // 3. PROCESSING & TRANSLATION:
     // calculate() is activated by the calculate button in the UI.

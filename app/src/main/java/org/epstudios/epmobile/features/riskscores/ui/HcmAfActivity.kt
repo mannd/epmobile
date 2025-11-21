@@ -23,4 +23,27 @@ class HcmAfActivity : EpActivity() {
             }
         }
     }
+
+    override fun hideInstructionsMenuItem(): Boolean {
+        return false
+    }
+
+    override fun hideKeyMenuItem(): Boolean {
+        return true
+    }
+
+    override fun hideReferenceMenuItem(): Boolean {
+        return false
+    }
+
+    override fun showActivityInstructions() {
+        showAlertDialog(
+            getString(R.string.hcm_af_risk_title),
+            getString(R.string.hcm_af_risk_instructions))
+    }
+
+    override fun showActivityReference() {
+        showReferenceAlertDialog(R.string.hcm_af_reference, R.string.hcm_af_link)
+    }
+
 }
