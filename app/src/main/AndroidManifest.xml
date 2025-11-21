@@ -279,6 +279,9 @@
         <activity
             android:name=".features.algorithms.ui.AlgorithmActivity"
             android:label="@string/algorithm_activity_title" />
+        <activity
+            android:name=".features.riskscores.ui.HcmAfActivity"
+            android:label="@string/hcm_af_risk_title" />
     </application>
 
 </manifest>

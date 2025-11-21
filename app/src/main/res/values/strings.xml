@@ -1905,4 +1905,7 @@
     <string name="error_lvot_gradient_out_of_range">Error: LVOT Gradient (%1$d mmHg) must be between 2 and 154 mmHg.</string>
     <string name="error_parsing">Error: Please enter valid numbers in all fields.</string>
     <string name="error_unknown">An unknown error occurred.</string>
+
+    <!-- HCM AF risk score - Input Summary Labels -->
+    <string name="hcm_af_risk_title">HCM AF Risk Score</string>
 </resources>

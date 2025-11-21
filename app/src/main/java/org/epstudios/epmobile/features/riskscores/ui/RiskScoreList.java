@@ -66,6 +66,8 @@ public class RiskScoreList extends EpActivity {
                 frailty();
             else if (selection.equals(getString(R.string.painesd_risk_title)))
                 painesd();
+            else if (selection.equals(getString(R.string.hcm_af_risk_title)))
+                hcmAfRisk();
         });
     }
 
@@ -154,6 +156,10 @@ public class RiskScoreList extends EpActivity {
 
     private void hcmScdList() {
         startActivity(new Intent(this, HcmScdList.class));
+    }
+
+    private void hcmAfRisk() {
+        startActivity(new Intent(this, HcmAfActivity.class));
     }
 
 }
