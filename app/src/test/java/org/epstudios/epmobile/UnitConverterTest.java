@@ -2,7 +2,7 @@ package org.epstudios.epmobile;
 
 import junit.framework.TestCase;
 
-import org.epstudios.epmobile.UnitConverter;
+import org.epstudios.epmobile.core.data.UnitConverter;
 
 public class UnitConverterTest extends TestCase {
 

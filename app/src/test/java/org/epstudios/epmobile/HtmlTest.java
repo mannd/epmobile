@@ -22,11 +22,10 @@ package org.epstudios.epmobile;
  * along with epmobile.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import android.text.Spanned;
+import org.epstudios.epmobile.core.data.Reference;
+import org.epstudios.epmobile.core.ui.base.EpActivity;
 import org.junit.Test;
-import androidx.annotation.StringRes;
 
-import static android.provider.Settings.System.getString;
 import static org.junit.Assert.assertEquals;
 
 public class HtmlTest {

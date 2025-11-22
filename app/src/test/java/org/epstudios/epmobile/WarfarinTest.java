@@ -18,7 +18,7 @@ package org.epstudios.epmobile;/*  EP Mobile -- Mobile tools for electrophysiolo
 
 import junit.framework.TestCase;
 
-import org.epstudios.epmobile.Warfarin;
+import org.epstudios.epmobile.features.calculators.ui.Warfarin;
 
 public class WarfarinTest extends TestCase {
 	public void testgetDoseFromPercentage() {

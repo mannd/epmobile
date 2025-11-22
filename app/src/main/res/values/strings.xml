@@ -1213,7 +1213,7 @@
         atrial fibrillation indication.</string>
     <string name="apixaban_esrd_caution">\nUse with caution in patients with ESRD on dialysis</string>
     <string name="short_creatinine_clearance_label">CrCl</string>
-    <string name="hcm_scd_esc_score_title">HCM SCD Risk (2014)</string>
+    <string name="hcm_scd_esc_score_title">HCM Risk-SCD (2014)</string>
     <string name="hcm_scd_esc_score_instructions" formatted="false">This risk score calculates the 5 year
         risk of sudden cardiac death in patients with hypertrophic cardiomyopathy.
         See the Key menu item for exact definitions of the parameters.
@@ -1248,13 +1248,13 @@
         (HCM Risk-SCD). European Heart Journal. 2014;35(30):2010-2020.</string>
     <string name="hcm_scd_link_2">https://doi.org/10.1093/eurheartj/eht439</string>
     <string name="age_in_years_label">Age in years</string>
-    <string name="age_in_years_hint">Age (yr)</string>
-    <string name="max_lv_wall_thickness_hint">Thickness (mm)</string>
-    <string name="max_lv_wall_thickness_label">Wall thickness (mm)</string>
+    <string name="age_in_years_hint">Age (16-115 yrs)</string>
+    <string name="max_lv_wall_thickness_hint">Thickness (10-35 mm)</string>
+    <string name="max_lv_wall_thickness_label">Max LV Wall thickness (mm)</string>
     <string name="max_lvot_gradient_label">Gradient (mmHg)</string>
-    <string name="max_lvot_gradient_hint">Grad (mmHg)</string>
+    <string name="max_lvot_gradient_hint">Grad (2-154 mmHg)</string>
     <string name="la_size_label">LA diameter (mm)</string>
-    <string name="la_size_hint">LA (mm)</string>
+    <string name="la_size_hint">LA (28-67 mm)</string>
     <string name="scd_in_family_label">Family hx of SCD</string>
     <string name="invalid_entries_message">One or more entries are invalid.</string>
     <string name="invalid_age_message">Age must be between 16 and 115 yrs.</string>
@@ -1890,4 +1890,32 @@
     <string name="smart_wpw_reference">Khalaph M, Trajkovska N, Didenko M, et al. A Novel ECG Algorithm for Accurate Localization of Manifest Accessory Pathways in Both Children and Adults: SMART-WPW. Heart Rhythm. 2025;0(0).</string>
     <string name="smart_wpw_link">https://doi.org/10.1016/j.hrthm.2025.04.058</string>
     <string name="easy_wpw_link">https://doi.org/10.1093/europace/euac216</string>
+
+    <!-- Messages for HCM SCD 2014 and 2022 entries -->
+    <!-- HCM SCD Risk Score - Input Summary Labels -->
+    <string name="hcm_scd_input_age">Age = %1$s yrs</string>
+    <string name="hcm_scd_input_lv_wall_thickness">LV wall thickness = %1$s mm</string>
+    <string name="hcm_scd_input_la_diameter">LA diameter = %1$s mm</string>
+    <string name="hcm_scd_input_lvot_gradient">LVOT gradient = %1$s mmHg</string>
+
+    <!-- Error messages for HCM SCD 2014 and 2022 entries -->
+    <string name="error_age_out_of_range">Error: Age (%1$d) must be between 16 and 115.</string>
+    <string name="error_lv_wall_thickness_out_of_range">Error: LV Wall Thickness (%1$d mm) must be between 10 and 35 mm.</string>
+    <string name="error_la_size_out_of_range">Error: LA Size (%1$d mm) must be between 28 and 67 mm.</string>
+    <string name="error_lvot_gradient_out_of_range">Error: LVOT Gradient (%1$d mmHg) must be between 2 and 154 mmHg.</string>
+    <string name="error_parsing">Error: Please enter valid numbers in all fields.</string>
+    <string name="error_unknown">An unknown error occurred.</string>
+
+    <!-- HCM AF risk score - Input Summary Labels -->
+    <string name="hcm_af_risk_title">HCM AF Risk Score</string>
+    <string name="hcm_af_risk_instructions">This score predicts the risk of developing atrial
+        fibrillation in patients with hypertrophic cardiomyopathy.  The result gives the risk
+        in terms of low, intermediate, and high yearly risk as well as predicted risk of
+        atrial fibrillation after 2 and 5 years.\n\nHeart failure symptoms are considered
+        to be present if the patient is in NYHA functional class II, III, or IV.</string>
+    <string name="hcm_af_reference">Carrick RT, Maron MS, Adler A, et al. Development and
+        Validation of a Clinical Predictive Model for Identifying Hypertrophic Cardiomyopathy
+        Patients at Risk for Atrial Fibrillation: The HCM-AF Score.
+        Circ: Arrhythmia and Electrophysiology. 2021;14(6):e009796.</string>
+    <string name="hcm_af_link">https://doi.org/10.1161/CIRCEP.120.009796</string>
 </resources>

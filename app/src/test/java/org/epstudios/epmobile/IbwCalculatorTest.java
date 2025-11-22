@@ -2,7 +2,7 @@ package org.epstudios.epmobile;
 
 import junit.framework.TestCase;
 
-import org.epstudios.epmobile.IbwCalculator;
+import org.epstudios.epmobile.features.calculators.ui.IbwCalculator;
 
 public class IbwCalculatorTest extends TestCase {
 
