@@ -18,9 +18,9 @@ package org.epstudios.epmobile;/*  EP Mobile -- Mobile tools for electrophysiolo
 
 import junit.framework.TestCase;
 
-import org.epstudios.epmobile.CreatinineClearance;
-import org.epstudios.epmobile.DoseCalculator;
-import org.epstudios.epmobile.Warfarin;
+import org.epstudios.epmobile.features.calculators.data.CreatinineClearance;
+import org.epstudios.epmobile.features.calculators.data.DoseCalculator;
+import org.epstudios.epmobile.features.calculators.ui.Warfarin;
 import org.junit.Assert;
 import org.junit.Test;
 

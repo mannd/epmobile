@@ -1,0 +1,329 @@
+/*  EP Mobile -- Mobile tools for electrophysiologists
+    Copyright (C) 2011 EP Studios, Inc.
+    www.epstudiossoftware.com
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+package org.epstudios.epmobile.features.calculators.ui;
+
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import org.epstudios.epmobile.R;
+import org.epstudios.epmobile.core.data.Reference;
+import org.epstudios.epmobile.core.data.QtcCalculator;
+import org.epstudios.epmobile.core.data.QtcCalculator.QtcFormula;
+import org.epstudios.epmobile.core.ui.base.EpActivity;
+
+public class Qtc extends EpActivity implements OnClickListener {
+    private enum IntervalRate {
+        INTERVAL, RATE
+    }
+
+    private Spinner intervalRateSpinner;
+    private TextView qtcTextView;
+    private EditText rrEditText;
+    private EditText qtEditText;
+    private TextView qtcFormulaTextView;
+    private String qtcFormula;
+    private OnItemSelectedListener itemListener;
+    private Spinner qtcFormulaSpinner;
+
+    private int qtcUpperLimit;
+    private final static int QTC_UPPER_LIMIT = 440;
+    private final static int INTERVAL_SELECTION = 0;
+    private final static int RATE_SELECTION = 1;
+
+    private final static int BAZETT_FORMULA = 0;
+    private final static int FRIDERICIA_FORMULA = 1;
+    private final static int SAGIE_FORMULA = 2;
+    private final static int HODGES_FORMULA = 3;
+
+    private IntervalRate defaultIntervalRateSelection = IntervalRate.INTERVAL;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.qtc);
+        setupInsets(R.id.qtc_root_view);
+        initToolbar();
+
+        View calculateQtcButton = findViewById(R.id.calculate_button);
+        calculateQtcButton.setOnClickListener(this);
+        View clearButton = findViewById(R.id.clear_button);
+        clearButton.setOnClickListener(this);
+
+        intervalRateSpinner = findViewById(R.id.interval_rate_spinner);
+        qtcTextView = findViewById(R.id.calculated_qtc);
+        rrEditText = findViewById(R.id.rrEditText);
+        qtEditText = findViewById(R.id.qtEditText);
+        qtcFormulaTextView = findViewById(R.id.qtc_formula);
+        qtcFormulaSpinner = findViewById(R.id.qtc_formula_spinner);
+
+        getPrefs();
+        setAdapters();
+        setFormulaAdapters();
+
+        clearEntries();
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            Intent parentActivityIntent = new Intent(this, CalculatorList.class);
+            parentActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+                    | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(parentActivityIntent);
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+        final int id = v.getId();
+        if (id == R.id.calculate_button) {
+            calculateQtc();
+        } else if (id == R.id.clear_button) {
+            clearEntries();
+        }
+    }
+
+    private void setAdapters() {
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this, R.array.interval_rate_labels,
+                android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        intervalRateSpinner.setAdapter(adapter);
+        if (defaultIntervalRateSelection.equals(IntervalRate.INTERVAL))
+            intervalRateSpinner.setSelection(INTERVAL_SELECTION);
+        else
+            intervalRateSpinner.setSelection(RATE_SELECTION);
+        itemListener = new OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View v,
+                                       int position, long id) {
+                updateIntervalRateSelection();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // do nothing
+            }
+
+        };
+
+        intervalRateSpinner.setOnItemSelectedListener(itemListener);
+
+    }
+
+    private void setFormulaAdapters() {
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this, R.array.formula_names,
+                android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        qtcFormulaSpinner.setAdapter(adapter);
+        int formula = BAZETT_FORMULA;
+        QtcFormula f = getQtcFormula(qtcFormula);
+        switch (f) {
+            case BAZETT:
+                // already initialized to BAZETT_FORMULA
+                break;
+            case FRIDERICIA:
+                formula = FRIDERICIA_FORMULA;
+                break;
+            case SAGIE:
+                formula = SAGIE_FORMULA;
+                break;
+            case HODGES:
+                formula = HODGES_FORMULA;
+                break;
+        }
+        qtcFormulaSpinner.setSelection(formula);
+        itemListener = new OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View v,
+                                       int position, long id) {
+                updateQtcFormula();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // do nothing
+            }
+
+        };
+
+        qtcFormulaSpinner.setOnItemSelectedListener(itemListener);
+
+    }
+
+    private void updateQtcFormula() {
+        int result = qtcFormulaSpinner.getSelectedItemPosition();
+        switch (result) {
+            case BAZETT_FORMULA:
+                qtcFormula = "BAZETT";
+                break;
+            case FRIDERICIA_FORMULA:
+                qtcFormula = "FRIDERICIA";
+                break;
+            case SAGIE_FORMULA:
+                qtcFormula = "SAGIE";
+                break;
+            case HODGES_FORMULA:
+                qtcFormula = "HODGES";
+                break;
+        }
+    }
+
+    private void updateIntervalRateSelection() {
+        IntervalRate intervalRateSelection = getIntervalRateSelection();
+        if (intervalRateSelection.equals(IntervalRate.INTERVAL))
+            rrEditText.setHint(getString(R.string.rr_hint));
+        else
+            rrEditText.setHint(getString(R.string.hr_hint));
+    }
+
+    private IntervalRate getIntervalRateSelection() {
+        String result = intervalRateSpinner.getSelectedItem().toString();
+        if (result.startsWith("RR"))
+            return IntervalRate.INTERVAL;
+        else
+            return IntervalRate.RATE;
+
+    }
+
+    private void showQtcFormula() {
+        qtcFormulaTextView.setText(getString(R.string.qtc_formula_used, qtcFormula));
+    }
+
+    private void calculateQtc() {
+        CharSequence rrText = rrEditText.getText();
+        CharSequence qtText = qtEditText.getText();
+        IntervalRate intervalRateSelection = getIntervalRateSelection();
+        try {
+            int rr = Integer.parseInt(rrText.toString());
+            if (intervalRateSelection.equals(IntervalRate.RATE))
+                rr = (int) Math.round(60000.0 / rr);
+            int qt = Integer.parseInt(qtText.toString());
+            // getPrefs();
+            showQtcFormula();
+            QtcFormula formula = getQtcFormula(qtcFormula);
+            Toast.makeText(this, "QTc Formula is " + qtcFormula,
+                    Toast.LENGTH_LONG).show();
+            int qtc = QtcCalculator.calculate(rr, qt, formula);
+            qtcTextView.setText(getString(R.string.qtc_result, String.valueOf(qtc)));
+            if (qtc >= qtcUpperLimit)
+                qtcTextView.setTextColor(Color.RED);
+            else
+                qtcTextView
+                        .setTextColor(getResources().getColor(R.color.green));
+        } catch (NumberFormatException e) {
+            qtcTextView.setText(getString(R.string.invalid_warning));
+            qtcTextView.setTextColor(Color.RED);
+        }
+    }
+
+    private QtcFormula getQtcFormula(String name) {
+        switch (name) {
+            case "FRIDERICIA":
+                return QtcFormula.FRIDERICIA;
+            case "SAGIE":
+                return QtcFormula.SAGIE;
+            case "HODGES":
+                return QtcFormula.HODGES;
+            case "BAZETT":
+            default:
+                return QtcFormula.BAZETT;
+        }
+
+    }
+
+    private void clearEntries() {
+        rrEditText.setText(null);
+        qtEditText.setText(null);
+        qtcTextView.setText(getString(R.string.qtc_result_label));
+        qtcTextView.setTextColor(Color.LTGRAY);
+        qtcFormulaTextView.setText(null);
+        rrEditText.requestFocus();
+    }
+
+    private void getPrefs() {
+        SharedPreferences prefs = PreferenceManager
+                .getDefaultSharedPreferences(getBaseContext());
+        qtcFormula = prefs.getString("qtc_formula", "BAZETT");
+        String intervalRatePreference = prefs.getString("interval_rate",
+                "INTERVAL");
+        if (intervalRatePreference.equals("INTERVAL"))
+            defaultIntervalRateSelection = IntervalRate.INTERVAL;
+        else
+            defaultIntervalRateSelection = IntervalRate.RATE;
+        String s = prefs.getString("maximum_qtc", "");
+        try {
+            qtcUpperLimit = Integer.parseInt(s);
+        } catch (NumberFormatException e) {
+            qtcUpperLimit = QTC_UPPER_LIMIT;
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putString("maximum_qtc", String.valueOf(QTC_UPPER_LIMIT));
+            editor.apply();
+        }
+    }
+
+    @Override
+    protected boolean hideReferenceMenuItem() {
+        return false;
+    }
+
+    @Override
+    protected void showActivityReference() {
+        Reference referenceBazett = new Reference(this,
+                R.string.qtc_calculator_reference_bazett,
+                R.string.qtc_calculator_link_bazett);
+        Reference referenceFridericia = new Reference(this,
+                R.string.qtc_calculator_reference_fridericia,
+                R.string.qtc_calculator_link_fridericia);
+        Reference referenceSagie = new Reference(this,
+                R.string.qtc_calculator_reference_sagie,
+                R.string.qtc_calculator_link_sagie);
+        Reference referenceHodges = new Reference(
+                getString(R.string.qtc_calculator_reference_hodges),
+                null);
+        Reference referenceQtcLimits = new Reference(this,
+                R.string.qtc_limits_reference,
+                R.string.qtc_limits_link);
+        Reference[] references = new Reference[5];
+        references[0] = referenceBazett;
+        references[1] = referenceFridericia;
+        references[2] = referenceSagie;
+        references[3] = referenceHodges;
+        references[4] = referenceQtcLimits;
+        showReferenceAlertDialog(references);
+    }
+}

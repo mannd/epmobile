@@ -1,5 +1,6 @@
 package org.epstudios.epmobile;
 
+import org.epstudios.epmobile.features.riskscores.ui.Frailty;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

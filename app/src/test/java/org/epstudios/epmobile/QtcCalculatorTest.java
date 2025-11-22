@@ -18,8 +18,8 @@ package org.epstudios.epmobile;/*  EP Mobile -- Mobile tools for electrophysiolo
 
 import junit.framework.TestCase;
 
-import org.epstudios.epmobile.QtcCalculator;
-import org.epstudios.epmobile.QtcCalculator.QtcFormula;
+import org.epstudios.epmobile.core.data.QtcCalculator;
+import org.epstudios.epmobile.core.data.QtcCalculator.QtcFormula;
 
 public class QtcCalculatorTest extends TestCase {
 

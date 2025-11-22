@@ -20,7 +20,7 @@ package org.epstudios.epmobile; /**
  * along with epmobile.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import org.epstudios.epmobile.Gfr;
+import org.epstudios.epmobile.core.data.Gfr;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 

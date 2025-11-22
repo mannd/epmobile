@@ -1,8 +1,7 @@
 package org.epstudios.epmobile;
 
+import org.epstudios.epmobile.features.referencestools.data.CmsIcdModel;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * Copyright (C) 2018 EP Studios, Inc.
