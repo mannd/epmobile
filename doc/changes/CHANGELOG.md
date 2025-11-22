@@ -5,6 +5,10 @@ See [keepachangelog.com](https://keepachangelog.com/en/1.0.0/) for information o
 
 This project roughly utilizes [Semantic Versioning](https://semver.org/spec/v2.0.0.html).  In some versions the PATCH of MAJOR.MINOR.PATCH is omitted.  Note also that unreleased versions are omitted.
 
+## [2.38.0] - 2025-11-21
+### Added
+- HCM AF risk score
+
 ## [2.37.0] - 2025-11-12
 ### Added
 - EASY-WPW algorithm

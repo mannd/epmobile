@@ -18,8 +18,8 @@ android {
         applicationId "org.epstudios.epmobile"
         minSdkVersion 21
         targetSdkVersion 35
-        versionCode 90
-        versionName "2.37.0"
+        versionCode 91
+        versionName "2.38.0"
     }
 
     buildTypes {
