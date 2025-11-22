@@ -51,7 +51,6 @@ class HcmAfViewModel : ViewModel() {
     private val _resultState = MutableStateFlow("Enter values to see result.")
     val resultState: StateFlow<String> = _resultState.asStateFlow()
 
-
     // 2. EVENT HANDLING:
     // Public functions that the UI calls to notify the ViewModel of user actions.
 

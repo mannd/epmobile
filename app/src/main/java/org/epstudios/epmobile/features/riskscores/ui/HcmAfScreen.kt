@@ -23,6 +23,8 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalClipboardManager
+import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -36,6 +38,7 @@ fun HcmAfScreen(viewModel: HcmAfViewModel = viewModel()) {
     val ageAtDx by viewModel.ageAtDxInput.collectAsState()
     val hfSxChecked by viewModel.hfSxChecked.collectAsState()
     val result by viewModel.resultState.collectAsState()
+    val clipboardManager = LocalClipboardManager.current
 
     Surface(
         modifier = Modifier.fillMaxSize(),
@@ -91,7 +94,7 @@ fun HcmAfScreen(viewModel: HcmAfViewModel = viewModel()) {
             // Action Buttons
             Row(
                 modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceEvenly
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 Button(
                     onClick = { viewModel.calculate() },
@@ -99,12 +102,17 @@ fun HcmAfScreen(viewModel: HcmAfViewModel = viewModel()) {
                 ) {
                     Text("Calculate")
                 }
-                Spacer(modifier = Modifier.width(16.dp))
                 Button(
                     onClick = { viewModel.clear() },
                     modifier = Modifier.weight(1f)
                 ) {
                     Text("Clear")
+                }
+                Button(
+                    onClick = { clipboardManager.setText(AnnotatedString(result)) },
+                    modifier = Modifier.weight(1f)
+                ) {
+                    Text("Copy")
                 }
             }
 
