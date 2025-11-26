@@ -1918,4 +1918,7 @@
         Patients at Risk for Atrial Fibrillation: The HCM-AF Score.
         Circ: Arrhythmia and Electrophysiology. 2021;14(6):e009796.</string>
     <string name="hcm_af_link">https://doi.org/10.1161/CIRCEP.120.009796</string>
+    <string name="hcm_af_la_diameter">LA Diameter (mm)</string>
+    <string name="hcm_af_age_at_evaluation">Age at Evaluation</string>
+    <string name="hcm_af_age_at_diagnosis">Age at Diagnosis</string>
 </resources>
