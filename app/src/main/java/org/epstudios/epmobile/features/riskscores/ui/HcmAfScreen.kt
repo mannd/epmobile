@@ -1,5 +1,7 @@
 package org.epstudios.epmobile.features.riskscores.ui
 
+import android.content.ClipData
+import android.content.Context
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -23,12 +25,13 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalClipboardManager
-import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import org.epstudios.epmobile.R
 
 @Composable
 fun HcmAfScreen(viewModel: HcmAfViewModel = viewModel()) {
@@ -38,7 +41,13 @@ fun HcmAfScreen(viewModel: HcmAfViewModel = viewModel()) {
     val ageAtDx by viewModel.ageAtDxInput.collectAsState()
     val hfSxChecked by viewModel.hfSxChecked.collectAsState()
     val result by viewModel.resultState.collectAsState()
-    val clipboardManager = LocalClipboardManager.current
+
+    val context = LocalContext.current
+    val clipboardManager = context.getSystemService(Context.CLIPBOARD_SERVICE) as android.content.ClipboardManager
+    val clipboardLabel = stringResource(R.string.hcm_af_risk_title)
+    val calculateLabel = stringResource(R.string.calculate_label)
+    val clearLabel = stringResource(R.string.clear_label)
+    val copyLabel = stringResource(R.string.copy_report_label)
 
     Scaffold { innerPadding ->
         Column(
@@ -54,7 +63,7 @@ fun HcmAfScreen(viewModel: HcmAfViewModel = viewModel()) {
             OutlinedTextField(
                 value = laDiameter,
                 onValueChange = viewModel::onLaDiameterChanged,
-                label = { Text("LA Diameter (mm)") },
+                label = { Text(stringResource(R.string.hcm_af_la_diameter)) },
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                 modifier = Modifier.fillMaxWidth()
             )
@@ -62,7 +71,7 @@ fun HcmAfScreen(viewModel: HcmAfViewModel = viewModel()) {
             OutlinedTextField(
                 value = ageAtEval,
                 onValueChange = viewModel::onAgeAtEvalChanged,
-                label = { Text("Age at Evaluation") },
+                label = { Text(stringResource(R.string.hcm_af_age_at_evaluation)) },
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                 modifier = Modifier.fillMaxWidth()
             )
@@ -70,7 +79,7 @@ fun HcmAfScreen(viewModel: HcmAfViewModel = viewModel()) {
             OutlinedTextField(
                 value = ageAtDx,
                 onValueChange = viewModel::onAgeAtDxChanged,
-                label = { Text("Age at Diagnosis") },
+                label = { Text(stringResource(R.string.hcm_af_age_at_diagnosis)) },
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                 modifier = Modifier.fillMaxWidth()
             )
@@ -99,19 +108,22 @@ fun HcmAfScreen(viewModel: HcmAfViewModel = viewModel()) {
                     onClick = { viewModel.calculate() },
                     modifier = Modifier.weight(1f)
                 ) {
-                    Text("Calculate")
+                    Text(calculateLabel)
                 }
                 Button(
                     onClick = { viewModel.clear() },
                     modifier = Modifier.weight(1f)
                 ) {
-                    Text("Clear")
+                    Text(clearLabel)
                 }
                 Button(
-                    onClick = { clipboardManager.setText(AnnotatedString(result)) },
+                    onClick = {
+                        val clip = ClipData.newPlainText(clipboardLabel, result)
+                        clipboardManager.setPrimaryClip(clip)
+                    },
                     modifier = Modifier.weight(1f)
                 ) {
-                    Text("Copy")
+                    Text(copyLabel)
                 }
             }
 
