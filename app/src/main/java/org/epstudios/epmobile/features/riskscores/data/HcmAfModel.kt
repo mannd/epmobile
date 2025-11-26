@@ -27,6 +27,7 @@ sealed interface HcmAfValidationError {
     data class LaDiameterOutOfRange(val diameter: Int) : HcmAfValidationError
     data class AgeAtEvalOutOfRange(val age: Int) : HcmAfValidationError
     data class AgeAtDxOutOfRange(val age: Int) : HcmAfValidationError
+    data class ScoreOutOfRange(val score: Int) : HcmAfValidationError
     object ParsingError : HcmAfValidationError
 }
 
