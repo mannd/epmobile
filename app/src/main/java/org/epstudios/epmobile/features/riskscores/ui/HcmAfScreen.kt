@@ -16,7 +16,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Surface
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -40,13 +40,12 @@ fun HcmAfScreen(viewModel: HcmAfViewModel = viewModel()) {
     val result by viewModel.resultState.collectAsState()
     val clipboardManager = LocalClipboardManager.current
 
-    Surface(
-        modifier = Modifier.fillMaxSize(),
-        color = MaterialTheme.colorScheme.background
-    ) {
+    Scaffold { innerPadding ->
         Column(
             modifier = Modifier
-                .padding(16.dp)
+                .padding(innerPadding)
+                .padding(horizontal = 16.dp)
+                .fillMaxSize()
                 .verticalScroll(rememberScrollState()),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(12.dp)
