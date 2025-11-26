@@ -51,6 +51,9 @@ class HcmAfViewModel : ViewModel() {
     private val _resultState = MutableStateFlow("Enter values to see result.")
     val resultState: StateFlow<String> = _resultState.asStateFlow()
 
+    private val _uiState = MutableStateFlow(HcmAfUiState())
+    val uiState: StateFlow<HcmAfUiState> = _uiState.asStateFlow()
+
     // 2. EVENT HANDLING:
     // Public functions that the UI calls to notify the ViewModel of user actions.
 
@@ -76,6 +79,37 @@ class HcmAfViewModel : ViewModel() {
         _ageAtDxInput.value = ""
         _hfSxChecked.value = false
         _resultState.value = "Enter values to see result."
+    }
+
+    public fun calculate2() {
+        // Translate Strings from UI state into Int?s for the Model
+        val laDiameter = _laDiameterInput.value.toIntOrNull()
+        val ageAtEval = _ageAtEvalInput.value.toIntOrNull()
+        val ageAtDx = _ageAtDxInput.value.toIntOrNull()
+        val hfSx = _hfSxChecked.value
+
+        val model = HcmAfModel(laDiameter, ageAtEval, ageAtDx, hfSx)
+        val pointsResult = model.getPoints()
+
+        val newState = when (pointsResult) {
+            is HcmAfCalculationResult.Success -> {
+                val points = pointsResult.points
+                val riskData = model.getRiskData(points)
+                HcmAfUiState(
+                    score = points,
+                    riskData = riskData,
+                    error = null
+                )
+            }
+            is HcmAfCalculationResult.Failure -> {
+                HcmAfUiState(
+                    score = null,
+                    riskData = null,
+                    error = pointsResult.error
+                )
+            }
+        }
+        _uiState.value = newState
     }
 
 
@@ -123,6 +157,9 @@ class HcmAfViewModel : ViewModel() {
 
                     is HcmAfValidationError.ParsingError ->
                         "Please enter all values."
+
+                    is HcmAfValidationError.ScoreOutOfRange ->
+                        "Unknown error."
                 }
             }
         }
