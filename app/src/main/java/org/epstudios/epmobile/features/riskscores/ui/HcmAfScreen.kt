@@ -145,6 +145,7 @@ fun HcmAfScreen(viewModel: HcmAfViewModel = viewModel()) {
 
 @Composable
 private fun getResult(uiState: HcmAfUiState): String {
+    // Formats UiState into a result or error string.
     if (uiState.error != null) {
         when (uiState.error) {
             is HcmAfValidationError.LaDiameterOutOfRange ->
@@ -167,11 +168,13 @@ private fun getResult(uiState: HcmAfUiState): String {
         return stringResource(R.string.hcm_af_enter_values)
     }
     val riskData = uiState.riskData
-    // Successful calculation and lookup
-    return "HCM-AF Score: ${riskData.score}\n" +
-            "${riskData.riskCategory.displayName}\n" +
-            "2-Year AF Risk: ${riskData.riskAt2YearsPercent}%\n" +
-            "5-Year AF Risk: ${riskData.riskAt5YearsPercent}%"
+    return stringResource(
+        id = R.string.hcm_af_result_success,
+        riskData.score,
+        riskData.riskCategory.displayName,
+        riskData.riskAt2YearsPercent,
+        riskData.riskAt5YearsPercent
+    )
 }
 
 
