@@ -1921,10 +1921,12 @@
     <string name="hcm_af_la_diameter">LA Diameter (mm)</string>
     <string name="hcm_af_age_at_evaluation">Age at Evaluation</string>
     <string name="hcm_af_age_at_diagnosis">Age at Diagnosis</string>
+    <string name="hcm_af_hx_of_heart_failure_label">History of Heart Failure Symptoms</string>
     <!-- HCM AF error messages -->
     <string name="hcm_af_la_diameter_out_of_range">Error: LA Diameter mus be between 24 and 65 mm.</string>
     <string name="hcm_af_age_at_evaluation_out_of_range">Error: Age at Evaluation must be between 10 and 79.</string>
     <string name="hcm_af_age_at_diagnosis_out_of_range">Error: Age at Diagnosis must be between 0 and 79.</string>
-    <string name="hcm_af_parsing_error">Please ener all values.</string>
+    <string name="hcm_af_parsing_error">Please enter all values.</string>
     <string name="hcm_af_score_out_of_range">Score (${1$d}) is out of valid range (8–31).</string>
+    <string name="hcm_af_enter_values">Enter values to see result.</string>
 </resources>

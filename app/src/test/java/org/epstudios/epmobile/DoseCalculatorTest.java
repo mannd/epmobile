@@ -23,9 +23,12 @@ import org.epstudios.epmobile.features.calculators.data.DoseCalculator;
 import org.epstudios.epmobile.features.calculators.ui.Warfarin;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
 
 import static org.junit.Assert.assertEquals;
 
+@RunWith(Enclosed.class)
 public class DoseCalculatorTest extends TestCase {
 
 	public void testWeeklyDosesEqual() {
