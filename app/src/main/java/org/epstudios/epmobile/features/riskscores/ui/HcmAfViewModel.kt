@@ -6,7 +6,6 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import org.epstudios.epmobile.features.riskscores.data.HcmAfCalculationResult
 import org.epstudios.epmobile.features.riskscores.data.HcmAfModel
-import org.epstudios.epmobile.features.riskscores.data.HcmAfValidationError
 
 /**
 Copyright (C) 2025 EP Studios, Inc.
@@ -82,7 +81,7 @@ class HcmAfViewModel : ViewModel() {
         _uiState.value = HcmAfUiState()
     }
 
-    public fun calculate2() {
+    public fun calculate() {
         // Translate Strings from UI state into Int?s for the Model
         val laDiameter = _laDiameterInput.value.toIntOrNull()
         val ageAtEval = _ageAtEvalInput.value.toIntOrNull()
@@ -109,59 +108,5 @@ class HcmAfViewModel : ViewModel() {
             }
         }
         _uiState.value = newState
-    }
-
-
-    // 3. PROCESSING & TRANSLATION:
-    // calculate() is activated by the calculate button in the UI.
-    public fun calculate() {
-        // Translate Strings from UI state into Int?s for the Model
-        val laDiameter = _laDiameterInput.value.toIntOrNull()
-        val ageAtEval = _ageAtEvalInput.value.toIntOrNull()
-        val ageAtDx = _ageAtDxInput.value.toIntOrNull()
-        val hfSx = _hfSxChecked.value
-
-        val model = HcmAfModel(laDiameter, ageAtEval, ageAtDx, hfSx)
-        val calculationResult = model.getCalculationResult()
-
-        // Translate the complex Result object from the Model into a simple String for the View
-        val message = when (calculationResult) {
-            is HcmAfCalculationResult.Success -> {
-                val points = calculationResult.points
-                val riskData = model.getRiskData(points)
-                if (riskData != null) {
-                    // Successful calculation and lookup
-                    "HCM-AF Score: $points\n" +
-                            "${riskData.riskCategory.displayName}\n" +
-                            "2-Year AF Risk: ${riskData.riskAt2YearsPercent}%\n" +
-                            "5-Year AF Risk: ${riskData.riskAt5YearsPercent}%"
-                } else {
-                    // Valid calculation but score is out of lookup range
-                    "Score ($points) is out of valid range (8-31)."
-                }
-            }
-
-            is HcmAfCalculationResult.Failure -> {
-                // Translate specific errors into user-friendly messages.
-                // In a real app, these would come from string resources (R.string.*)
-                when (calculationResult.error) {
-                    is HcmAfValidationError.LaDiameterOutOfRange ->
-                        "Error: LA Diameter must be between 24 and 65 mm."
-
-                    is HcmAfValidationError.AgeAtEvalOutOfRange ->
-                        "Error: Age at Evaluation must be between 10 and 79."
-
-                    is HcmAfValidationError.AgeAtDxOutOfRange ->
-                        "Error: Age at Diagnosis must be between 0 and 79."
-
-                    is HcmAfValidationError.ParsingError ->
-                        "Please enter all values."
-
-                    is HcmAfValidationError.ScoreOutOfRange ->
-                        "Unknown error."
-                }
-            }
-        }
-        _resultState.value = message
     }
 }

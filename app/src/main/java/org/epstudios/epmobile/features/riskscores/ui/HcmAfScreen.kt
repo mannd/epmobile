@@ -41,7 +41,6 @@ fun HcmAfScreen(viewModel: HcmAfViewModel = viewModel()) {
     val ageAtEval by viewModel.ageAtEvalInput.collectAsState()
     val ageAtDx by viewModel.ageAtDxInput.collectAsState()
     val hfSxChecked by viewModel.hfSxChecked.collectAsState()
-    val result by viewModel.resultState.collectAsState()
     val uiState by viewModel.uiState.collectAsState()
 
     val context = LocalContext.current
@@ -50,6 +49,8 @@ fun HcmAfScreen(viewModel: HcmAfViewModel = viewModel()) {
     val calculateLabel = stringResource(R.string.calculate_label)
     val clearLabel = stringResource(R.string.clear_label)
     val copyLabel = stringResource(R.string.copy_report_label)
+
+    val result = getResult(uiState)
 
     Scaffold { innerPadding ->
         Column(
@@ -107,7 +108,7 @@ fun HcmAfScreen(viewModel: HcmAfViewModel = viewModel()) {
                 horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 Button(
-                    onClick = { viewModel.calculate2() },
+                    onClick = { viewModel.calculate() },
                     modifier = Modifier.weight(1f)
                 ) {
                     Text(calculateLabel)
@@ -120,7 +121,7 @@ fun HcmAfScreen(viewModel: HcmAfViewModel = viewModel()) {
                 }
                 Button(
                     onClick = {
-                        val clip = ClipData.newPlainText(clipboardLabel, getResult2(uiState))
+                        val clip = ClipData.newPlainText(clipboardLabel, result)
                         clipboardManager.setPrimaryClip(clip)
                     },
                     modifier = Modifier.weight(1f)
@@ -132,7 +133,7 @@ fun HcmAfScreen(viewModel: HcmAfViewModel = viewModel()) {
             // Result Display
             Spacer(modifier = Modifier.height(16.dp))
             Text(
-                text = getResult2(uiState),
+                text = result,
                 style = MaterialTheme.typography.bodyLarge,
                 modifier = Modifier
                     .fillMaxWidth()
@@ -142,12 +143,8 @@ fun HcmAfScreen(viewModel: HcmAfViewModel = viewModel()) {
     }
 }
 
-private fun getResult(result: String): String {
-    return result
-}
-
 @Composable
-private fun getResult2(uiState: HcmAfUiState): String {
+private fun getResult(uiState: HcmAfUiState): String {
     if (uiState.error != null) {
         when (uiState.error) {
             is HcmAfValidationError.LaDiameterOutOfRange ->
