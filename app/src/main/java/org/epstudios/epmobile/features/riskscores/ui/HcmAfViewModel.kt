@@ -79,6 +79,7 @@ class HcmAfViewModel : ViewModel() {
         _ageAtDxInput.value = ""
         _hfSxChecked.value = false
         _resultState.value = "Enter values to see result."
+        _uiState.value = HcmAfUiState()
     }
 
     public fun calculate2() {
@@ -89,23 +90,21 @@ class HcmAfViewModel : ViewModel() {
         val hfSx = _hfSxChecked.value
 
         val model = HcmAfModel(laDiameter, ageAtEval, ageAtDx, hfSx)
-        val pointsResult = model.getPoints()
+        val calculationResult = model.getCalculationResult()
 
-        val newState = when (pointsResult) {
+        val newState = when (calculationResult) {
             is HcmAfCalculationResult.Success -> {
-                val points = pointsResult.points
+                val points = calculationResult.points
                 val riskData = model.getRiskData(points)
                 HcmAfUiState(
-                    score = points,
                     riskData = riskData,
                     error = null
                 )
             }
             is HcmAfCalculationResult.Failure -> {
                 HcmAfUiState(
-                    score = null,
                     riskData = null,
-                    error = pointsResult.error
+                    error = calculationResult.error
                 )
             }
         }
@@ -123,12 +122,12 @@ class HcmAfViewModel : ViewModel() {
         val hfSx = _hfSxChecked.value
 
         val model = HcmAfModel(laDiameter, ageAtEval, ageAtDx, hfSx)
-        val pointsResult = model.getPoints()
+        val calculationResult = model.getCalculationResult()
 
         // Translate the complex Result object from the Model into a simple String for the View
-        val message = when (pointsResult) {
+        val message = when (calculationResult) {
             is HcmAfCalculationResult.Success -> {
-                val points = pointsResult.points
+                val points = calculationResult.points
                 val riskData = model.getRiskData(points)
                 if (riskData != null) {
                     // Successful calculation and lookup
@@ -145,7 +144,7 @@ class HcmAfViewModel : ViewModel() {
             is HcmAfCalculationResult.Failure -> {
                 // Translate specific errors into user-friendly messages.
                 // In a real app, these would come from string resources (R.string.*)
-                when (pointsResult.error) {
+                when (calculationResult.error) {
                     is HcmAfValidationError.LaDiameterOutOfRange ->
                         "Error: LA Diameter must be between 24 and 65 mm."
 

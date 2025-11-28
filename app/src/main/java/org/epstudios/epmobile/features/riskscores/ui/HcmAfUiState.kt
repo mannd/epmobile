@@ -26,7 +26,6 @@ along with epmobile.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 public data class HcmAfUiState (
-    public val score: Int? = null,
     public val riskData: HcmAfRiskData? = null,
     public val error: HcmAfValidationError? = null
 )

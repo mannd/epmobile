@@ -30,11 +30,14 @@ import kotlinx.coroutines.test.StandardTestDispatcher
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runTest
 import kotlinx.coroutines.test.setMain
+import org.epstudios.epmobile.features.riskscores.data.HcmAfModel
+import org.epstudios.epmobile.features.riskscores.data.HcmAfValidationError
 import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
+import kotlin.test.assertNotNull
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class HcmAfViewModelTest {
@@ -59,6 +62,75 @@ class HcmAfViewModelTest {
     @Test
     fun `initial state is correct`() = runTest {
         assertEquals("Enter values to see result.", viewModel.resultState.value)
+    }
+
+    @Test
+    fun `initial uiState is correct`() = runTest {
+        assertEquals(HcmAfUiState(), viewModel.uiState.value)
+    }
+
+    @Test
+    fun `onLaDiameterChanged2() with valid input triggers correct success state`() = runTest {
+        // Use Turbine's `test` extension on the StateFlow to observe emissions
+        viewModel.uiState.test {
+            // The initial state is the first item emitted
+            assertEquals(HcmAfUiState(), awaitItem())
+
+            // Act: Change the inputs to valid values that result in a known score (29)
+            viewModel.onLaDiameterChanged("40")
+            viewModel.onAgeAtEvalChanged("50")
+            viewModel.onAgeAtDxChanged("35")
+            viewModel.onHfSxChanged(true)
+
+            viewModel.calculate2()
+
+            // Assert: Check the final, formatted string that the user would see
+            val successState = awaitItem()
+            val riskData = successState.riskData
+            assertNotNull(riskData, "Risk data should not be null")
+            assertEquals("The score should be correct", 29, riskData.score)
+            assertEquals("The risk category should be HIGH", HcmAfModel.HcmAfRiskCategory.HIGH, riskData.riskCategory)
+            assertEquals("The 2-year risk should be correct", 18.7, riskData.riskAt2YearsPercent, 0.001)
+            assertEquals("The 5-year risk should be correct", 39.3, riskData.riskAt5YearsPercent, 0.001)
+        }
+    }
+
+    @Test
+    fun `onLaDiameterChanged2() with out-of-range input triggers correct error state`() = runTest {
+        viewModel.uiState.test {
+            awaitItem() // Skip initial state
+
+            viewModel.onAgeAtEvalChanged("50")
+            viewModel.onAgeAtDxChanged("35")
+            viewModel.onHfSxChanged(true)
+            // Act: Change one input to be out of range
+            viewModel.onLaDiameterChanged("99") // This is out of range
+            viewModel.calculate2()
+
+            // Assert: Check for the specific, user-friendly error message
+            val errorState = awaitItem()
+            val error = errorState.error
+            assertNotNull(error, "Error should not be null")
+            assertTrue("Error: LA diameter should be out of range", error is HcmAfValidationError.LaDiameterOutOfRange)
+        }
+    }
+
+    @Test
+    fun `onAgeAtEvalChanged2() with non-numeric input triggers parsing error state`() = runTest {
+        viewModel.uiState.test {
+            awaitItem() // Skip initial state
+
+            // Act: Set one input to something that isn't a number
+            viewModel.onAgeAtEvalChanged("abc")
+            viewModel.calculate2()
+
+            // Assert: Check for the parsing error message
+            val errorState = awaitItem()
+            val error = errorState.error
+            assertNotNull(error, "Error should not be null")
+            assertTrue("Error: Parsing error", error is HcmAfValidationError.ParsingError)
+//            assertEquals("Please enter all values.", errorState)
+        }
     }
 
     @Test

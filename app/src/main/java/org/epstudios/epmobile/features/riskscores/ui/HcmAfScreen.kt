@@ -32,6 +32,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import org.epstudios.epmobile.R
+import org.epstudios.epmobile.features.riskscores.data.HcmAfValidationError
 
 @Composable
 fun HcmAfScreen(viewModel: HcmAfViewModel = viewModel()) {
@@ -41,6 +42,7 @@ fun HcmAfScreen(viewModel: HcmAfViewModel = viewModel()) {
     val ageAtDx by viewModel.ageAtDxInput.collectAsState()
     val hfSxChecked by viewModel.hfSxChecked.collectAsState()
     val result by viewModel.resultState.collectAsState()
+    val uiState by viewModel.uiState.collectAsState()
 
     val context = LocalContext.current
     val clipboardManager = context.getSystemService(Context.CLIPBOARD_SERVICE) as android.content.ClipboardManager
@@ -96,7 +98,7 @@ fun HcmAfScreen(viewModel: HcmAfViewModel = viewModel()) {
                     onCheckedChange = viewModel::onHfSxChanged
                 )
                 Spacer(modifier = Modifier.width(8.dp))
-                Text("History of Heart Failure Symptoms")
+                Text(stringResource(R.string.hcm_af_hx_of_heart_failure_label))
             }
 
             // Action Buttons
@@ -105,7 +107,7 @@ fun HcmAfScreen(viewModel: HcmAfViewModel = viewModel()) {
                 horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 Button(
-                    onClick = { viewModel.calculate() },
+                    onClick = { viewModel.calculate2() },
                     modifier = Modifier.weight(1f)
                 ) {
                     Text(calculateLabel)
@@ -118,7 +120,7 @@ fun HcmAfScreen(viewModel: HcmAfViewModel = viewModel()) {
                 }
                 Button(
                     onClick = {
-                        val clip = ClipData.newPlainText(clipboardLabel, result)
+                        val clip = ClipData.newPlainText(clipboardLabel, getResult2(uiState))
                         clipboardManager.setPrimaryClip(clip)
                     },
                     modifier = Modifier.weight(1f)
@@ -130,7 +132,7 @@ fun HcmAfScreen(viewModel: HcmAfViewModel = viewModel()) {
             // Result Display
             Spacer(modifier = Modifier.height(16.dp))
             Text(
-                text = result,
+                text = getResult2(uiState),
                 style = MaterialTheme.typography.bodyLarge,
                 modifier = Modifier
                     .fillMaxWidth()
@@ -139,6 +141,42 @@ fun HcmAfScreen(viewModel: HcmAfViewModel = viewModel()) {
         }
     }
 }
+
+private fun getResult(result: String): String {
+    return result
+}
+
+@Composable
+private fun getResult2(uiState: HcmAfUiState): String {
+    if (uiState.error != null) {
+        when (uiState.error) {
+            is HcmAfValidationError.LaDiameterOutOfRange ->
+                return stringResource(R.string.hcm_af_la_diameter_out_of_range)
+
+            is HcmAfValidationError.AgeAtEvalOutOfRange ->
+                return stringResource(R.string.hcm_af_age_at_evaluation_out_of_range)
+
+            is HcmAfValidationError.AgeAtDxOutOfRange ->
+                return stringResource(R.string.hcm_af_age_at_diagnosis_out_of_range)
+
+            is HcmAfValidationError.ParsingError ->
+                return stringResource(R.string.hcm_af_parsing_error)
+
+            is HcmAfValidationError.ScoreOutOfRange ->
+                return stringResource(R.string.hcm_af_score_out_of_range)
+        }
+    }
+    if (uiState.riskData == null) {
+        return stringResource(R.string.hcm_af_enter_values)
+    }
+    val riskData = uiState.riskData
+    // Successful calculation and lookup
+    return "HCM-AF Score: ${riskData.score}\n" +
+            "${riskData.riskCategory.displayName}\n" +
+            "2-Year AF Risk: ${riskData.riskAt2YearsPercent}%\n" +
+            "5-Year AF Risk: ${riskData.riskAt5YearsPercent}%"
+}
+
 
 @Preview(showBackground = true)
 @Composable
