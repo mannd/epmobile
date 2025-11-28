@@ -1929,4 +1929,6 @@
     <string name="hcm_af_parsing_error">Please enter all values.</string>
     <string name="hcm_af_score_out_of_range">Score (${1$d}) is out of valid range (8–31).</string>
     <string name="hcm_af_enter_values">Enter values to see result.</string>
+    <!-- Result string for a successful HCM-AF calculation -->
+    <string name="hcm_af_result_success">HCM-AF Score: %1$d\n%2$s\n2-Year AF Risk: %3$.1f%%\n5-Year AF Risk: %4$.1f%%</string>
 </resources>
