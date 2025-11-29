@@ -91,7 +91,7 @@ public class V2Calculator extends EpActivity implements View.OnClickListener {
         CharSequence rSrText = rWaveSr.getText();
         CharSequence sSrText = sWaveSr.getText();
         resultText.setText(null);
-        resultText.setTextColor(getResources().getColor(R.color.green));
+//        resultText.setTextColor(getResources().getColor(R.color.green));
         try {
             double rVt = abs(Double.parseDouble(rVtText.toString()));
             double sVt = abs(Double.parseDouble(sVtText.toString()));
@@ -132,7 +132,7 @@ public class V2Calculator extends EpActivity implements View.OnClickListener {
         sWaveVt.setText(null);
         sWaveSr.setText(null);
         resultText.setText(null);
-        resultText.setTextColor(getResources().getColor(R.color.green));
+//        resultText.setTextColor(getResources().getColor(R.color.green));
     }
 
     @Override

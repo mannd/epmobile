@@ -103,16 +103,14 @@ public class Entrainment extends EpActivity implements OnClickListener {
                     message = getString(R.string.entrainment_remote_site_message);
                 else {
                     message = getString(R.string.entrainment_outer_loop_message);
-                    resultTextView.setTextColor(getResources().getColor(
-                            R.color.cyan));
+//                    resultTextView.setTextColor(getResources().getColor( R.color.cyan));
                 }
             } else { // concealed fusion present!
                 if (ppiMinusTcl > 30) {
                     message = getString(R.string.entrainment_bystander_message);
                 } else {
                     message = getString(R.string.entrainment_inner_loop_message);
-                    resultTextView.setTextColor(getResources().getColor(
-                            R.color.green));
+//                    resultTextView.setTextColor(getResources().getColor( R.color.green));
                     int egmQrs = 0;
                     int sqrs = 0;
                     boolean hasEgmQrs = false;

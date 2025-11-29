@@ -41,8 +41,8 @@
             </TableRow>
 
             <View
-                android:layout_height="2dip"
-                android:background="@color/divider" />
+                android:layout_height="2dip" />
+<!--                android:background="@color/divider" />-->
 
             <TableRow>
 
@@ -157,8 +157,8 @@
             </TableRow>
 
             <View
-                android:layout_height="2dip"
-                android:background="@color/divider" />
+                android:layout_height="2dip" />
+<!--                android:background="@color/divider" />-->
 
             <TableRow>
 
