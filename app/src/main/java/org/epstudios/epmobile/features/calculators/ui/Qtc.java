@@ -40,6 +40,8 @@ import org.epstudios.epmobile.core.data.QtcCalculator;
 import org.epstudios.epmobile.core.data.QtcCalculator.QtcFormula;
 import org.epstudios.epmobile.core.ui.base.EpActivity;
 
+import androidx.core.content.ContextCompat;
+
 public class Qtc extends EpActivity implements OnClickListener {
     private enum IntervalRate {
         INTERVAL, RATE
@@ -64,6 +66,10 @@ public class Qtc extends EpActivity implements OnClickListener {
     private final static int SAGIE_FORMULA = 2;
     private final static int HODGES_FORMULA = 3;
 
+    private int errorColor;
+    private int textColor;
+    private int normalColor;
+
     private IntervalRate defaultIntervalRateSelection = IntervalRate.INTERVAL;
 
     @Override
@@ -72,6 +78,10 @@ public class Qtc extends EpActivity implements OnClickListener {
         setContentView(R.layout.qtc);
         setupInsets(R.id.qtc_root_view);
         initToolbar();
+
+        errorColor = ContextCompat.getColor(this, R.color.md_theme_error);
+        textColor = ContextCompat.getColor(this, R.color.md_theme_secondary);
+        normalColor = textColor;
 
         View calculateQtcButton = findViewById(R.id.calculate_button);
         calculateQtcButton.setOnClickListener(this);
@@ -241,27 +251,22 @@ public class Qtc extends EpActivity implements OnClickListener {
             int qtc = QtcCalculator.calculate(rr, qt, formula);
             qtcTextView.setText(getString(R.string.qtc_result, String.valueOf(qtc)));
             if (qtc >= qtcUpperLimit)
-                qtcTextView.setTextColor(Color.RED);
-//            else
-//                qtcTextView .setTextColor(getResources().getColor(R.color.green));
+                qtcTextView.setTextColor(errorColor);
+            else
+                qtcTextView .setTextColor(normalColor);
         } catch (NumberFormatException e) {
             qtcTextView.setText(getString(R.string.invalid_warning));
-            qtcTextView.setTextColor(Color.RED);
+            qtcTextView.setTextColor(errorColor);
         }
     }
 
     private QtcFormula getQtcFormula(String name) {
-        switch (name) {
-            case "FRIDERICIA":
-                return QtcFormula.FRIDERICIA;
-            case "SAGIE":
-                return QtcFormula.SAGIE;
-            case "HODGES":
-                return QtcFormula.HODGES;
-            case "BAZETT":
-            default:
-                return QtcFormula.BAZETT;
-        }
+        return switch (name) {
+            case "FRIDERICIA" -> QtcFormula.FRIDERICIA;
+            case "SAGIE" -> QtcFormula.SAGIE;
+            case "HODGES" -> QtcFormula.HODGES;
+            default -> QtcFormula.BAZETT;
+        };
 
     }
 
@@ -269,7 +274,7 @@ public class Qtc extends EpActivity implements OnClickListener {
         rrEditText.setText(null);
         qtEditText.setText(null);
         qtcTextView.setText(getString(R.string.qtc_result_label));
-        qtcTextView.setTextColor(Color.LTGRAY);
+        qtcTextView.setTextColor(normalColor);
         qtcFormulaTextView.setText(null);
         rrEditText.requestFocus();
     }
