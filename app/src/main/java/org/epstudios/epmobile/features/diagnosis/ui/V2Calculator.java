@@ -13,6 +13,8 @@ import org.epstudios.epmobile.core.ui.base.EpActivity;
 
 import java.text.DecimalFormat;
 
+import androidx.core.content.ContextCompat;
+
 import static java.lang.Math.abs;
 
 /**
@@ -91,7 +93,7 @@ public class V2Calculator extends EpActivity implements View.OnClickListener {
         CharSequence rSrText = rWaveSr.getText();
         CharSequence sSrText = sWaveSr.getText();
         resultText.setText(null);
-//        resultText.setTextColor(getResources().getColor(R.color.green));
+        resultText.setTextColor(ContextCompat.getColor(this, R.color.md_theme_secondary));
         try {
             double rVt = abs(Double.parseDouble(rVtText.toString()));
             double sVt = abs(Double.parseDouble(sVtText.toString()));
@@ -132,7 +134,8 @@ public class V2Calculator extends EpActivity implements View.OnClickListener {
         sWaveVt.setText(null);
         sWaveSr.setText(null);
         resultText.setText(null);
-//        resultText.setTextColor(getResources().getColor(R.color.green));
+        resultText.setTextColor(ContextCompat.getColor(this, R.color.md_theme_secondary));
+        rWaveVt.requestFocus();
     }
 
     @Override

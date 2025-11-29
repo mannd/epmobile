@@ -34,6 +34,7 @@ import org.epstudios.epmobile.core.ui.base.EpActivity;
 import org.epstudios.epmobile.R;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 
 public class CycleLength extends EpActivity implements OnClickListener {
     @Override
@@ -122,7 +123,7 @@ public class CycleLength extends EpActivity implements OnClickListener {
         CharSequence resultText = inputEditText.getText();
         resultTextView.setTextAppearance(this,
                 android.R.style.TextAppearance_Large);
-        //resultTextView.setTextColor(getResources().getColor(R.color.green));
+        resultTextView.setTextColor(ContextCompat.getColor(this, R.color.md_theme_secondary));
         try {
             int result = Integer.parseInt(resultText.toString());
             if (result == 0)
@@ -134,7 +135,7 @@ public class CycleLength extends EpActivity implements OnClickListener {
                 resultTextView.setText(getString(R.string.cl_result_as_interval, String.valueOf(result)));
         } catch (NumberFormatException e) {
             resultTextView.setText(getString(R.string.invalid_warning));
-            resultTextView.setTextColor(Color.RED);
+            resultTextView.setTextColor(ContextCompat.getColor(this, R.color.md_theme_error));
         }
     }
 
