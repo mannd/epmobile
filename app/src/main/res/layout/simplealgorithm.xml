@@ -37,24 +37,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/yes"
-                tools:ignore="ButtonStyle" />
+                android:text="@string/yes" />
 
             <Button
                 android:id="@+id/no_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/no"
-                tools:ignore="ButtonStyle" />
+                android:text="@string/no" />
 
             <Button
                 android:id="@+id/back_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/back"
-                tools:ignore="ButtonStyle" />
+                android:text="@string/back" />
         </LinearLayout>
 
     </LinearLayout>
