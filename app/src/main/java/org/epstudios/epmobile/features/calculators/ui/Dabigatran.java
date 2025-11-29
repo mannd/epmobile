@@ -21,16 +21,18 @@ package org.epstudios.epmobile.features.calculators.ui;
 import org.epstudios.epmobile.core.ui.base.DrugCalculator;
 import org.epstudios.epmobile.R;
 
+import androidx.core.content.ContextCompat;
+
 public class Dabigatran extends DrugCalculator {
     @Override
     protected String getMessage(int crCl, double age) {
         String msg = super.getMessage(crCl, age);
         if ((crCl >= 15) && (crCl <= 30)) {
             msg += "\n" + getString(R.string.dabigatran_warning_severe);
-//            ccTextView.setTextColor(getResources().getColor(R.color.sienna_2));
+            ccTextView.setTextColor(ContextCompat.getColor(this, R.color.md_theme_error));
         } else if ((crCl > 30) && (crCl <= 50)) {
             msg += "\n" + getString(R.string.dabigatran_warning_mild);
-//            ccTextView.setTextColor(getResources().getColor( R.color.dark_goldenrod_1));
+            ccTextView.setTextColor(ContextCompat.getColor(this, R.color.md_theme_error));
         } else
             ccTextView.setTextAppearance(this,
                     android.R.style.TextAppearance_Medium);

@@ -14,6 +14,8 @@ import org.epstudios.epmobile.R;
 import org.epstudios.epmobile.core.data.Reference;
 import org.epstudios.epmobile.core.ui.base.EpActivity;
 
+import androidx.core.content.ContextCompat;
+
 public class Entrainment extends EpActivity implements OnClickListener {
     private EditText tclEditText;
     private EditText ppiEditText;
@@ -99,18 +101,21 @@ public class Entrainment extends EpActivity implements OnClickListener {
                 throw new NumberFormatException();
             String message;
             if (!concealedFusionCheckBox.isChecked()) {
-                if (ppiMinusTcl > 30)
+                if (ppiMinusTcl > 30) {
                     message = getString(R.string.entrainment_remote_site_message);
+                    resultTextView.setTextColor(ContextCompat.getColor(this, R.color.md_theme_tertiary));
+                }
                 else {
                     message = getString(R.string.entrainment_outer_loop_message);
-//                    resultTextView.setTextColor(getResources().getColor( R.color.cyan));
+                    resultTextView.setTextColor(ContextCompat.getColor(this, R.color.md_theme_secondary));
                 }
             } else { // concealed fusion present!
                 if (ppiMinusTcl > 30) {
                     message = getString(R.string.entrainment_bystander_message);
+                    resultTextView.setTextColor(ContextCompat.getColor(this, R.color.md_theme_tertiary));
                 } else {
                     message = getString(R.string.entrainment_inner_loop_message);
-//                    resultTextView.setTextColor(getResources().getColor( R.color.green));
+                    resultTextView.setTextColor(ContextCompat.getColor(this, R.color.md_theme_primary));
                     int egmQrs = 0;
                     int sqrs = 0;
                     boolean hasEgmQrs = false;
@@ -163,7 +168,7 @@ public class Entrainment extends EpActivity implements OnClickListener {
 
         } catch (NumberFormatException e) {
             resultTextView.setText(getString(R.string.invalid_warning));
-            resultTextView.setTextColor(Color.RED);
+            resultTextView.setTextColor(ContextCompat.getColor(this, R.color.md_theme_error));
         }
     }
 
