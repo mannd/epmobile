@@ -8,6 +8,4 @@
     android:layout_height="wrap_content"
     android:minHeight="?attr/actionBarSize"
     android:elevation="4dp"
-    android:theme="@style/ThemeOverlay.AppCompat.DayNight.ActionBar"
-    android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
     tools:ignore="Overdraw,UnusedAttribute" />
