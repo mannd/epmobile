@@ -4,7 +4,7 @@ import android.text.TextUtils;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
-import android.widget.Switch;
+import com.google.android.material.switchmaterial.SwitchMaterial;
 import android.widget.TextView;
 
 import org.epstudios.epmobile.R;
@@ -37,11 +37,11 @@ import java.text.NumberFormat;
 public class ArvcRisk extends RiskScore {
     EditText ageText;
     RadioGroup sexRadioGroup;
-    Switch syncopeSwitch;
+    SwitchMaterial syncopeSwitch;
     SeekBar twiSeekBar;
     TextView twiTextView;
     EditText pvcText;
-    Switch nsvtSwitch;
+    SwitchMaterial nsvtSwitch;
     SeekBar rvefSeekBar;
     TextView rvefTextView;
 
