@@ -1,7 +1,6 @@
 package org.epstudios.epmobile.features.calculators.ui
 
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
@@ -11,9 +10,9 @@ import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.preference.PreferenceManager
-import org.epstudios.epmobile.core.ui.base.EpActivity
 import org.epstudios.epmobile.R
 import org.epstudios.epmobile.core.data.UnitConverter
+import org.epstudios.epmobile.core.ui.base.EpActivity
 import org.epstudios.epmobile.features.calculators.data.BMI
 
 /**
@@ -206,11 +205,11 @@ class BmiCalculator : EpActivity() {
             val message = getMessage(result)
             messageTextView?.setText(message)
             if (!BMI.Companion.isNormalBmi(result)) {
-                calculatedResult?.setTextColor(Color.RED)
+                calculatedResult?.setTextAppearance(R.style.TextAppearance_Calculator_Error)
             }
         } catch (e: NumberFormatException) {
             calculatedResult!!.setText(getString(R.string.invalid_warning))
-            calculatedResult!!.setTextColor(Color.RED)
+            calculatedResult?.setTextAppearance(R.style.TextAppearance_Calculator_Error)
             messageTextView!!.setText(null)
         }
     }
@@ -243,9 +242,7 @@ class BmiCalculator : EpActivity() {
     }
 
     private fun resetResultTextColor() {
-        calculatedResult!!.setTextAppearance(
-            android.R.style.TextAppearance_Medium
-        )
+        calculatedResult!!.setTextAppearance(R.style.TextAppearance_Calculator_Result)
     }
 
     private fun getPrefs() {

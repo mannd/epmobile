@@ -66,10 +66,6 @@ public class Qtc extends EpActivity implements OnClickListener {
     private final static int SAGIE_FORMULA = 2;
     private final static int HODGES_FORMULA = 3;
 
-    private int errorColor;
-    private int textColor;
-    private int normalColor;
-
     private IntervalRate defaultIntervalRateSelection = IntervalRate.INTERVAL;
 
     @Override
@@ -78,10 +74,6 @@ public class Qtc extends EpActivity implements OnClickListener {
         setContentView(R.layout.qtc);
         setupInsets(R.id.qtc_root_view);
         initToolbar();
-
-        errorColor = ContextCompat.getColor(this, R.color.md_theme_error);
-        textColor = ContextCompat.getColor(this, R.color.md_theme_secondary);
-        normalColor = textColor;
 
         View calculateQtcButton = findViewById(R.id.calculate_button);
         calculateQtcButton.setOnClickListener(this);
@@ -251,12 +243,12 @@ public class Qtc extends EpActivity implements OnClickListener {
             int qtc = QtcCalculator.calculate(rr, qt, formula);
             qtcTextView.setText(getString(R.string.qtc_result, String.valueOf(qtc)));
             if (qtc >= qtcUpperLimit)
-                qtcTextView.setTextColor(errorColor);
+                qtcTextView.setTextAppearance(R.style.TextAppearance_Calculator_Error);
             else
-                qtcTextView .setTextColor(normalColor);
+                qtcTextView .setTextAppearance(R.style.TextAppearance_Calculator_Result);
         } catch (NumberFormatException e) {
             qtcTextView.setText(getString(R.string.invalid_warning));
-            qtcTextView.setTextColor(errorColor);
+            qtcTextView.setTextAppearance(R.style.TextAppearance_Calculator_Error);
         }
     }
 
@@ -274,7 +266,7 @@ public class Qtc extends EpActivity implements OnClickListener {
         rrEditText.setText(null);
         qtEditText.setText(null);
         qtcTextView.setText(getString(R.string.qtc_result_label));
-        qtcTextView.setTextColor(normalColor);
+        qtcTextView.setTextAppearance(R.style.TextAppearance_Calculator_Result);
         qtcFormulaTextView.setText(null);
         rrEditText.requestFocus();
     }
