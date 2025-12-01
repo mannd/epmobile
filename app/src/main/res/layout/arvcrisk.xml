@@ -68,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/cardiac_syncope_label" />
 
-            <androidx.appcompat.widget.SwitchCompat
+            <Switch
                 android:id="@+id/hxSyncopeSwitch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -90,7 +90,6 @@
                 android:id="@+id/twiCountSeekBarValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?attr/textAppearanceBodyLargeEmphasized"
                 android:gravity="end"
                 android:text="" />
 
@@ -136,7 +135,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/hx_nsvt_label" />
 
-            <androidx.appcompat.widget.SwitchCompat
+            <Switch
                 android:id="@+id/hxNSVTSwitch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -158,7 +157,6 @@
                 android:id="@+id/rvefSeekBarValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?attr/textAppearanceBodyLargeEmphasized"
                 android:gravity="right"
                 android:text=""/>
 
