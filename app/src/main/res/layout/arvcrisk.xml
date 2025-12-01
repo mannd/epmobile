@@ -68,11 +68,12 @@
                 android:layout_height="wrap_content"
                 android:text="@string/cardiac_syncope_label" />
 
-            <Switch
+            <com.google.android.material.switchmaterial.SwitchMaterial
                 android:id="@+id/hxSyncopeSwitch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/cardiac_syncope_within_6_months_label"/>
+                android:text="@string/cardiac_syncope_within_6_months_label"
+                style="@style/Widget.App.Switch" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -135,11 +136,12 @@
                 android:layout_height="wrap_content"
                 android:text="@string/hx_nsvt_label" />
 
-            <Switch
+            <com.google.android.material.switchmaterial.SwitchMaterial
                 android:id="@+id/hxNSVTSwitch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/hx_nsvt_details"/>
+                android:text="@string/hx_nsvt_details"
+                style="@style/Widget.App.Switch" />
 
             <LinearLayout
                 android:layout_width="match_parent"
