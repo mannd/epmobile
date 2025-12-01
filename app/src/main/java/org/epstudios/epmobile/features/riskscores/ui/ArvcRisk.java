@@ -4,6 +4,7 @@ import android.text.TextUtils;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import org.epstudios.epmobile.R;
@@ -11,8 +12,6 @@ import org.epstudios.epmobile.core.ui.base.RiskScore;
 import org.epstudios.epmobile.features.riskscores.data.ArvcRiskModel;
 
 import java.text.NumberFormat;
-
-import androidx.appcompat.widget.SwitchCompat;
 
 /**
  * Copyright (C) 2019 EP Studios, Inc.
@@ -38,11 +37,11 @@ import androidx.appcompat.widget.SwitchCompat;
 public class ArvcRisk extends RiskScore {
     EditText ageText;
     RadioGroup sexRadioGroup;
-    SwitchCompat syncopeSwitch;
+    Switch syncopeSwitch;
     SeekBar twiSeekBar;
     TextView twiTextView;
     EditText pvcText;
-    SwitchCompat nsvtSwitch;
+    Switch nsvtSwitch;
     SeekBar rvefSeekBar;
     TextView rvefTextView;
 

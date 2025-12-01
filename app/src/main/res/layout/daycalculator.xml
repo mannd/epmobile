@@ -28,7 +28,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/index_event_label"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+                android:textAppearance="?attr/textAppearanceHeadlineMedium"
+                    />
 
             <DatePicker
                 android:id="@+id/indexDatePicker"

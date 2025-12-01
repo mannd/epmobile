@@ -20,7 +20,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:padding">3dip</item>
         <item name="android:textColor">?attr/colorPrimary</item>
-        <item name="android:textAppearance">?attr/textAppearanceLabelLargeEmphasized</item>
+        <item name="android:textAppearance">?attr/textAppearanceLabelLarge</item>
     </style>
 
     <style name="Header2">
