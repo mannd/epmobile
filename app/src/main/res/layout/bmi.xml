@@ -65,8 +65,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:layout_marginTop="16dp"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+                android:textAppearance="@style/TextAppearance.Calculator.Result"
+                android:layout_marginTop="16dp" />
         </TableLayout>
 
     </ScrollView>

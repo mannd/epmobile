@@ -25,7 +25,7 @@ import org.epstudios.epmobile.R;
  * GNU General Public License for more details.
  * <p/>
  * You should have received a copy of the GNU General Public License
- * along with EP Mobile.  If not, see <http://www.gnu.org/licenses/>.
+ * along with EP Mobile.  If not, see <<a href="http://www.gnu.org/licenses/">...</a>>.
  */
 public class CreatinineClearanceCalculator extends DrugCalculator {
     @Override

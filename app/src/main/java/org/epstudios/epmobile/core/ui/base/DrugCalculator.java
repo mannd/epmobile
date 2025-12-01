@@ -202,16 +202,13 @@ public abstract class DrugCalculator extends EpActivity implements
             double age = Double.parseDouble(ageText.toString());
             if (age < 18 && !pediatricDosingOk()) {
                 calculatedDoseTextView.setText(getString(R.string.do_not_use_warning));
-                calculatedDoseTextView.setTextColor(Color.RED);
-                ccTextView.setTextColor(Color.RED);
+                calculatedDoseTextView.setTextAppearance(R.style.TextAppearance_Calculator_Error);
                 ccTextView.setText(getString(R.string.pediatric_use_warning));
                 return;
             }
             boolean useMmolUnits = (getCreatinineUnitSelection() == CreatinineUnit.MMOL);
             int cc = CreatinineClearance.calculate(isMale, age, weight,
                     creatinine, useMmolUnits);
-            ccTextView.setTextAppearance(this,
-                    android.R.style.TextAppearance_Medium);
             String ccMessage = getMessage(cc, age);
             ccTextView.setText(String.format("%s%s", ccMessage, getDisclaimer()));
             creatinineClearanceReturnString = getCrClResultString(cc, isMale, age, weight, creatinine,
@@ -219,8 +216,6 @@ public abstract class DrugCalculator extends EpActivity implements
             double dose = getDose(cc);
             if (dose == USE_APIXABAN_DOSING) {
                 // special processing here
-                ccTextView.setTextAppearance(this,
-                        android.R.style.TextAppearance_Medium);
                 boolean creatinineTooHigh = ((creatinine >= 133 && useMmolUnits) || (creatinine >= 1.5 && !useMmolUnits));
                 if ((creatinineTooHigh && (age >= 80 || weight <= 60))
                         || (age >= 80 && weight <= 60))
@@ -242,24 +237,21 @@ public abstract class DrugCalculator extends EpActivity implements
                 ccTextView.setText(message);
             }
             if (dose < 0) {  // CrCl only
-                calculatedDoseTextView.setTextAppearance(this,
-                        android.R.style.TextAppearance_Large);
+                calculatedDoseTextView.setTextAppearance(R.style.TextAppearance_Calculator_Result);
                 calculatedDoseTextView.setText(String.format("%s mL/min", cc));
             } else if (dose == 0) {
                 calculatedDoseTextView
                         .setText(getString(R.string.do_not_use_warning));
-                calculatedDoseTextView.setTextColor(Color.RED);
-                ccTextView.setTextColor(Color.RED);
+                calculatedDoseTextView.setTextAppearance(R.style.TextAppearance_Calculator_Error);
             } else {
-                calculatedDoseTextView.setTextAppearance(this,
-                        android.R.style.TextAppearance_Large);
+                calculatedDoseTextView.setTextAppearance(R.style.TextAppearance_Calculator_Result);
                 // format to only show decimal if non-zero
                 calculatedDoseTextView.setText(String.format("%s%s", new DecimalFormat("#.#")
                         .format(dose), doseFrequency(cc)));
             }
         } catch (NumberFormatException e) {
             calculatedDoseTextView.setText(getString(R.string.invalid_warning));
-            calculatedDoseTextView.setTextColor(Color.RED);
+            calculatedDoseTextView.setTextAppearance(R.style.TextAppearance_Calculator_Error);
             ccTextView.setText(R.string.creatinine_clearance_label);
         }
     }
@@ -269,7 +261,7 @@ public abstract class DrugCalculator extends EpActivity implements
         String result = "CrCl = " + Math.round(crCl) + "mL/min (";
         result += Math.round(age) + "y" + (isMale ? "M" : "F") + " ";
         result += Math.round(weight) + "kg Cr ";
-        result += cr + (crIsMmMolUnits ? "\u00B5mol/L)" : "mg/dL)");
+        result += cr + (crIsMmMolUnits ? "µmol/L)" : "mg/dL)");
         return result;
     }
 
@@ -286,11 +278,8 @@ public abstract class DrugCalculator extends EpActivity implements
         creatinineEditText.setText(null);
         ageEditText.setText(null);
         ccTextView.setText(R.string.creatinine_clearance_label);
-        ccTextView.setTextAppearance(this,
-                android.R.style.TextAppearance_Medium);
         calculatedDoseTextView.setText(defaultResultLabel());
-        calculatedDoseTextView.setTextAppearance(this,
-                android.R.style.TextAppearance_Large);
+        calculatedDoseTextView.setTextAppearance(R.style.TextAppearance_Calculator_Result);
         ageEditText.requestFocus();
     }
 
