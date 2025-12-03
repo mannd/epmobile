@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:text="@string/calculated_result_label"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="@style/TextAppearance.Calculator.Result" />
 
 
     </TableLayout>

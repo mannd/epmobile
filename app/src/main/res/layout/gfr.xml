@@ -115,7 +115,7 @@
                     android:layout_weight="1"
                     android:gravity="center_horizontal"
                     android:text="@string/gfr_result_label"
-                    android:textAppearance="?android:attr/textAppearanceLarge" />
+                    android:textAppearance="@style/TextAppearance.Calculator.Result" />
 
             </LinearLayout>
 
@@ -125,7 +125,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:text=""
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+                android:textAppearance="@style/TextAppearance.Message.Normal" />
 
         </LinearLayout>
 

@@ -61,7 +61,7 @@
 
                 <TextView
                     android:text="@string/qt_label"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                    android:textAppearance="@style/TextAppearance.App.LabelLarge" />
 
                 <EditText
                     android:id="@+id/qtEditText"
@@ -76,7 +76,7 @@
 
                 <TextView
                     android:text="@string/qrs_label"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                    android:textAppearance="@style/TextAppearance.App.LabelLarge" />
 
                 <EditText
                     android:id="@+id/qrsEditText"
@@ -90,7 +90,7 @@
 
                 <TextView
                     android:text="@string/qtc_formula_label"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                    android:textAppearance="@style/TextAppearance.App.LabelLarge" />
 
                 <Spinner
                     android:id="@+id/qtc_formula_spinner"
@@ -101,8 +101,7 @@
             <TableRow>
                 <TextView
                     android:text="@string/lbbb_query"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    />
+                    android:textAppearance="@style/TextAppearance.App.LabelLarge" />
 
                 <CheckBox
                     android:id="@+id/lbbbCheckBox"

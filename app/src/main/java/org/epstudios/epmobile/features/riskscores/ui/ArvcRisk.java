@@ -32,7 +32,7 @@ import java.text.NumberFormat;
  * GNU General Public License for more details.
  * <p>
  * You should have received a copy of the GNU General Public License
- * along with epmobile.  If not, see <http://www.gnu.org/licenses/>.
+ * along with epmobile.  If not, see <<a href="http://www.gnu.org/licenses/">...</a>>.
  */
 public class ArvcRisk extends RiskScore {
     EditText ageText;
@@ -102,9 +102,8 @@ public class ArvcRisk extends RiskScore {
 
     //@Override
     protected String getFullReference() {
-        String fullReference = convertReferenceToText(R.string.arvc_risk_full_reference,
+        return convertReferenceToText(R.string.arvc_risk_full_reference,
                 R.string.arvc_risk_link);
-        return fullReference;
     }
 
     @Override

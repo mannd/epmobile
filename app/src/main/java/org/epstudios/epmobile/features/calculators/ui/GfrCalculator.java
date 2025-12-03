@@ -36,7 +36,7 @@ import androidx.preference.PreferenceManager;
  * GNU General Public License for more details.
  * <p>
  * You should have received a copy of the GNU General Public License
- * along with epmobile.  If not, see <http://www.gnu.org/licenses/>.
+ * along with epmobile.  If not, see <<a href="http://www.gnu.org/licenses/">...</a>>.
  */
 public class GfrCalculator extends EpActivity implements View.OnClickListener {
     private TextView calculatedResultTextView;
@@ -102,7 +102,7 @@ public class GfrCalculator extends EpActivity implements View.OnClickListener {
             double age = Double.parseDouble(ageText.toString());
             if (age > MAX_AGE) {
                 calculatedResultTextView.setText(getString(R.string.invalid_warning));
-                calculatedResultTextView.setTextColor(Color.RED);
+                calculatedResultTextView.setTextAppearance(R.style.TextAppearance_Calculator_Error);
                 return;
             }
             double cr = Double.parseDouble(crText.toString());
@@ -112,9 +112,10 @@ public class GfrCalculator extends EpActivity implements View.OnClickListener {
             double result = Gfr.ckdEpiGfr(cr, (int)age, isMale, isBlack);
             String resultString = getString(R.string.gfr_result_string, Math.round(result));
             calculatedResultTextView.setText(resultString);
+            calculatedResultTextView.setTextAppearance(R.style.TextAppearance_Calculator_Result);
         } catch (NumberFormatException e) {
             calculatedResultTextView.setText(getString(R.string.invalid_warning));
-            calculatedResultTextView.setTextColor(Color.RED);
+            calculatedResultTextView.setTextAppearance(R.style.TextAppearance_Calculator_Error);
         }
     }
 
@@ -122,8 +123,7 @@ public class GfrCalculator extends EpActivity implements View.OnClickListener {
         ageEditText.setText(null);
         creatinineEditText.setText(null);
         calculatedResultTextView.setText(getString(R.string.gfr_result_label));
-        calculatedResultTextView.setTextAppearance(this,
-                android.R.style.TextAppearance_Large); // this also resets the color to default
+        calculatedResultTextView.setTextAppearance(R.style.TextAppearance_Calculator_Result);
         ageEditText.requestFocus();
     }
 
