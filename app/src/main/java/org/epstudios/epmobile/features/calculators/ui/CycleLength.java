@@ -121,9 +121,7 @@ public class CycleLength extends EpActivity implements OnClickListener {
 
     private void calculateResult() {
         CharSequence resultText = inputEditText.getText();
-        resultTextView.setTextAppearance(this,
-                android.R.style.TextAppearance_Large);
-        resultTextView.setTextColor(ContextCompat.getColor(this, R.color.md_theme_secondary));
+        resultTextView.setTextAppearance(R.style.TextAppearance_Calculator_Result);
         try {
             int result = Integer.parseInt(resultText.toString());
             if (result == 0)
@@ -135,7 +133,7 @@ public class CycleLength extends EpActivity implements OnClickListener {
                 resultTextView.setText(getString(R.string.cl_result_as_interval, String.valueOf(result)));
         } catch (NumberFormatException e) {
             resultTextView.setText(getString(R.string.invalid_warning));
-            resultTextView.setTextColor(ContextCompat.getColor(this, R.color.md_theme_error));
+            resultTextView.setTextAppearance(R.style.TextAppearance_Calculator_Error);
         }
     }
 

@@ -34,7 +34,8 @@
 
             <TextView
                 android:text="@string/qt_label"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+                android:textAppearance="@style/TextAppearance.App.LabelLarge" />
+
 
             <EditText
                 android:id="@+id/qtEditText"
@@ -48,7 +49,7 @@
 
             <TextView
                 android:text="@string/qtc_formula_label"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+                android:textAppearance="@style/TextAppearance.App.LabelLarge" />
 
             <Spinner
                 android:id="@+id/qtc_formula_spinner"
@@ -68,7 +69,7 @@
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
                 android:text="@string/qtc_result_label"
-                android:textAppearance="?android:attr/textAppearanceMedium"/>
+                android:textAppearance="@style/TextAppearance.Calculator.Result" />
 
         </LinearLayout>
 
@@ -77,8 +78,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:layout_weight="1"
-            android:textAppearance="?android:attr/textAppearanceMedium"/>
+            android:layout_weight="1" />
 
     </TableLayout>
 

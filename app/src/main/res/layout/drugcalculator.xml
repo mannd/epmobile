@@ -115,6 +115,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
+                android:textAppearance="@style/TextAppearance.Message.Normal"
                 android:text="" />
         </LinearLayout>
 

@@ -229,7 +229,7 @@ class BmiCalculator : EpActivity() {
     }
 
     private fun formatWeight(weight: String?, units: String?): String {
-        return weight + " " + units + ")."
+        return "$weight $units)."
     }
 
     private fun clearEntries() {

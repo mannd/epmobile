@@ -41,8 +41,6 @@ public class CreatinineClearanceCalculator extends DrugCalculator {
 
     @Override
     protected String defaultResultLabel() {
-        ccTextView.setTextAppearance(this,
-                android.R.style.TextAppearance_Medium);
         return getString(R.string.short_creatinine_clearance_label);
     }
 

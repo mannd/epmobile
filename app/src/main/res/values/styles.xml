@@ -64,5 +64,17 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="TextAppearance.Message.Normal"
+        parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">?attr/colorSecondary</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TextAppearance.Message.Error"
+        parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">?attr/colorError</item>
+        <item name="android:gravity">center</item>
+    </style>
+
     <style name="Widget.App.Switch" parent="Widget.Material3.CompoundButton.MaterialSwitch" />
 </resources>

@@ -29,13 +29,9 @@ public class Dabigatran extends DrugCalculator {
         String msg = super.getMessage(crCl, age);
         if ((crCl >= 15) && (crCl <= 30)) {
             msg += "\n" + getString(R.string.dabigatran_warning_severe);
-            ccTextView.setTextColor(ContextCompat.getColor(this, R.color.md_theme_error));
         } else if ((crCl > 30) && (crCl <= 50)) {
             msg += "\n" + getString(R.string.dabigatran_warning_mild);
-            ccTextView.setTextColor(ContextCompat.getColor(this, R.color.md_theme_error));
-        } else
-            ccTextView.setTextAppearance(this,
-                    android.R.style.TextAppearance_Medium);
+        }
         if (age >= 75.0 && crCl >= 15) // don't bother with age warning if drug
             // shouldn't be used
             msg += "\n" + getString(R.string.dabigatran_warning_75_years_old);
