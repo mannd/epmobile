@@ -17,7 +17,7 @@
         android:layout_marginRight="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:gravity="center_horizontal"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="@style/TextAppearance.Message.Normal" />
 
     <ScrollView
         android:id="@+id/scrollView"
