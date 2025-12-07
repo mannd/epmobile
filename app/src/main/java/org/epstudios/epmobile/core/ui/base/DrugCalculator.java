@@ -1,16 +1,14 @@
 package org.epstudios.epmobile.core.ui.base;
 
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.RadioGroup;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import org.epstudios.epmobile.R;
@@ -42,13 +40,14 @@ public abstract class DrugCalculator extends EpActivity implements
         clearButton.setOnClickListener(this);
 
         calculatedDoseTextView = findViewById(R.id.calculated_dose);
-        ccTextView = findViewById(R.id.ccTextView);
+        creatinineClearanceTextView = findViewById(R.id.ccTextView);
         weightEditText = findViewById(R.id.weightEditText);
         creatinineEditText = findViewById(R.id.creatinineEditText);
         ageEditText = findViewById(R.id.ageEditText);
         sexRadioGroup = findViewById(R.id.sexRadioGroup);
-        weightSpinner = findViewById(R.id.weight_spinner);
-        creatinineSpinner = findViewById(R.id.creatinine_spinner);
+
+        weightUnitSpinner = findViewById(R.id.weightUnitSpinner);
+        creatinineUnitSpinner = findViewById(R.id.creatinineUnitSpinner);
 
         getPrefs();
         setAdapters();
@@ -68,9 +67,10 @@ public abstract class DrugCalculator extends EpActivity implements
     private EditText creatinineEditText;
     private RadioGroup sexRadioGroup;
     private EditText ageEditText;
-    protected TextView ccTextView; // cc == Creatinine Clearance
-    private Spinner weightSpinner;
-    private Spinner creatinineSpinner;
+    protected TextView creatinineClearanceTextView; // cc == Creatinine Clearance
+
+    private AutoCompleteTextView weightUnitSpinner;
+    private AutoCompleteTextView creatinineUnitSpinner;
 
     private final static int KG_SELECTION = 0;
     private final static int LB_SELECTION = 1;
@@ -103,58 +103,67 @@ public abstract class DrugCalculator extends EpActivity implements
     }
 
     private void setAdapters() {
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                this, R.array.weight_unit_labels,
-                android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        weightSpinner.setAdapter(adapter);
-        if (defaultWeightUnitSelection.equals(WeightUnit.KG))
-            weightSpinner.setSelection(KG_SELECTION);
-        else
-            weightSpinner.setSelection(LB_SELECTION);
-        OnItemSelectedListener itemListener = new OnItemSelectedListener() {
+        // Weight Spinner
+        String[] weightUnits = getResources().getStringArray(
+                R.array.weight_unit_labels);
+        ArrayAdapter<String> weightUnitAdapter = new ArrayAdapter<String>(
+                this, R.layout.dropdown_menu_item, weightUnits);
+        weightUnitSpinner.setAdapter(weightUnitAdapter);
+
+        if (defaultWeightUnitSelection.equals(WeightUnit.KG)) {
+            weightUnitSpinner.setText(weightUnits[KG_SELECTION], false);
+        } else {
+            weightUnitSpinner.setText(weightUnits[LB_SELECTION], false);
+        }
+
+        weightUnitSpinner.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View v,
-                                       int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 updateWeightUnitSelection();
             }
+        });
 
+        // Creatinine Spinner
+        String[] creatinineUnits = getResources().getStringArray(
+                R.array.creatinine_unit_labels);
+        ArrayAdapter<String> creatinineUnitAdapter = new ArrayAdapter<String>(
+                this, R.layout.dropdown_menu_item, creatinineUnits);
+        creatinineUnitSpinner.setAdapter(creatinineUnitAdapter);
+
+        if (defaultCreatinineUnitSelection.equals(CreatinineUnit.MG)) {
+            creatinineUnitSpinner.setText(creatinineUnits[MG_SELECTION], false);
+        } else {
+            creatinineUnitSpinner.setText(creatinineUnits[MMOL_SELECTION], false);
+        }
+
+        creatinineUnitSpinner.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                // do nothing
-            }
-
-        };
-
-        // creatinineSpinner.setOnItemSelectedListener(itemListener);
-
-        ArrayAdapter<CharSequence> creatAdapter = ArrayAdapter
-                .createFromResource(this, R.array.creatinine_unit_labels,
-                        android.R.layout.simple_spinner_item);
-        creatAdapter
-                .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        creatinineSpinner.setAdapter(creatAdapter);
-        if (defaultCreatinineUnitSelection.equals(CreatinineUnit.MG))
-            creatinineSpinner.setSelection(MG_SELECTION);
-        else
-            creatinineSpinner.setSelection(MMOL_SELECTION);
-        OnItemSelectedListener creatItemListener = new OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View v,
-                                       int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 updateCreatinineUnitSelection();
             }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                // do nothing
-            }
-
-        };
-
-        weightSpinner.setOnItemSelectedListener(itemListener);
-        creatinineSpinner.setOnItemSelectedListener(creatItemListener);
+        });
     }
+
+    private WeightUnit getWeightUnitSelection() {
+        String selectedUnit = weightUnitSpinner.getText().toString();
+        String kgUnit = getResources().getStringArray(R.array.weight_unit_labels)[KG_SELECTION];
+        if (selectedUnit.equals(kgUnit)) {
+            return WeightUnit.KG;
+        } else {
+            return WeightUnit.LB;
+        }
+    }
+
+    private CreatinineUnit getCreatinineUnitSelection() {
+        String selectedUnit = creatinineUnitSpinner.getText().toString();
+        String mgUnit = getResources().getStringArray(R.array.creatinine_unit_labels)[MG_SELECTION];
+        if (selectedUnit.equals(mgUnit)) {
+            return CreatinineUnit.MG;
+        } else {
+            return CreatinineUnit.MMOL;
+        }
+    }
+
 
     private void updateWeightUnitSelection() {
         WeightUnit weightUnitSelection = getWeightUnitSelection();
@@ -163,15 +172,15 @@ public abstract class DrugCalculator extends EpActivity implements
         else
             weightEditText.setHint(getString(R.string.weight_lb_hint));
     }
-
-    private WeightUnit getWeightUnitSelection() {
-        int result = weightSpinner.getSelectedItemPosition();
-        if (result == KG_SELECTION)
-            return WeightUnit.KG;
-        else
-            return WeightUnit.LB;
-    }
-
+//
+//    private WeightUnit getWeightUnitSelection() {
+//        int result = weightSpinner.getSelectedItemPosition();
+//        if (result == KG_SELECTION)
+//            return WeightUnit.KG;
+//        else
+//            return WeightUnit.LB;
+//    }
+//
     private void updateCreatinineUnitSelection() {
         CreatinineUnit creatinineUnitSelection = getCreatinineUnitSelection();
         if (creatinineUnitSelection.equals(CreatinineUnit.MG))
@@ -181,13 +190,13 @@ public abstract class DrugCalculator extends EpActivity implements
                     .setHint(getString(R.string.creatinine_mmol_hint));
     }
 
-    private CreatinineUnit getCreatinineUnitSelection() {
-        int result = creatinineSpinner.getSelectedItemPosition();
-        if (result == MG_SELECTION)
-            return CreatinineUnit.MG;
-        else
-            return CreatinineUnit.MMOL;
-    }
+//    private CreatinineUnit getCreatinineUnitSelection() {
+//        int result = creatinineSpinner.getSelectedItemPosition();
+//        if (result == MG_SELECTION)
+//            return CreatinineUnit.MG;
+//        else
+//            return CreatinineUnit.MMOL;
+//    }
 
     protected void calculateDose() {
         CharSequence weightText = weightEditText.getText();
@@ -203,14 +212,14 @@ public abstract class DrugCalculator extends EpActivity implements
             if (age < 18 && !pediatricDosingOk()) {
                 calculatedDoseTextView.setText(getString(R.string.do_not_use_warning));
                 calculatedDoseTextView.setTextAppearance(R.style.TextAppearance_Calculator_Error);
-                ccTextView.setText(getString(R.string.pediatric_use_warning));
+                creatinineClearanceTextView.setText(getString(R.string.pediatric_use_warning));
                 return;
             }
             boolean useMmolUnits = (getCreatinineUnitSelection() == CreatinineUnit.MMOL);
             int cc = CreatinineClearance.calculate(isMale, age, weight,
                     creatinine, useMmolUnits);
             String ccMessage = getMessage(cc, age);
-            ccTextView.setText(String.format("%s%s", ccMessage, getDisclaimer()));
+            creatinineClearanceTextView.setText(String.format("%s%s", ccMessage, getDisclaimer()));
             creatinineClearanceReturnString = getCrClResultString(cc, isMale, age, weight, creatinine,
                     useMmolUnits);
             double dose = getDose(cc);
@@ -234,7 +243,7 @@ public abstract class DrugCalculator extends EpActivity implements
                     message += getString(R.string.apixaban_esrd_caution);
                 }
                 message += getDisclaimer();
-                ccTextView.setText(message);
+                creatinineClearanceTextView.setText(message);
             }
             if (dose < 0) {  // CrCl only
                 calculatedDoseTextView.setTextAppearance(R.style.TextAppearance_Calculator_Result);
@@ -252,7 +261,7 @@ public abstract class DrugCalculator extends EpActivity implements
         } catch (NumberFormatException e) {
             calculatedDoseTextView.setText(getString(R.string.invalid_warning));
             calculatedDoseTextView.setTextAppearance(R.style.TextAppearance_Calculator_Error);
-            ccTextView.setText(R.string.creatinine_clearance_label);
+            creatinineClearanceTextView.setText(R.string.creatinine_clearance_label);
         }
     }
 
@@ -277,7 +286,7 @@ public abstract class DrugCalculator extends EpActivity implements
         weightEditText.setText(null);
         creatinineEditText.setText(null);
         ageEditText.setText(null);
-        ccTextView.setText(R.string.creatinine_clearance_label);
+        creatinineClearanceTextView.setText(R.string.creatinine_clearance_label);
         calculatedDoseTextView.setText(defaultResultLabel());
         calculatedDoseTextView.setTextAppearance(R.style.TextAppearance_Calculator_Result);
         ageEditText.requestFocus();

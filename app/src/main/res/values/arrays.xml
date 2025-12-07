@@ -171,8 +171,8 @@
         <item>RBBB Morphology</item>
     </array>
     <array name="weight_unit_labels">
-        <item>Weight (kg)</item>
-        <item>Weight (lb)</item>
+        <item>kg</item>
+        <item>lb</item>
     </array>
     <array name="weight_unit_values">
         <item>KG</item>

@@ -103,7 +103,7 @@
                     android:layout_weight="1"
                     android:gravity="center_horizontal"
                     android:text="@string/date_result_label"
-                    android:textAppearance="?android:attr/textAppearanceLarge" />
+                    android:textAppearance="@style/TextAppearance.Calculator.Result" />
 
             </LinearLayout>
         </LinearLayout>

@@ -110,7 +110,7 @@ public class DateCalculator extends EpActivity implements OnClickListener {
             Toast.makeText(this, message, Toast.LENGTH_LONG).show();
         } catch (NumberFormatException e) {
             calculatedDateTextView.setText(getString(R.string.invalid_warning));
-            calculatedDateTextView.setTextColor(Color.RED);
+            calculatedDateTextView.setTextAppearance(R.style.TextAppearance_Calculator_Error);
         }
 
     }
@@ -120,8 +120,7 @@ public class DateCalculator extends EpActivity implements OnClickListener {
         calculatedDateTextView.setText(getString(R.string.date_result_label));
         dayRadioGroup.check(R.id.ninetyRadio);
         numberOfDaysEditText.setText(getString(R.string.dc_default_number_of_days));
-        calculatedDateTextView.setTextAppearance(this,
-                android.R.style.TextAppearance_Large);
+        calculatedDateTextView.setTextAppearance(R.style.TextAppearance_Calculator_Result);
 
     }
 
