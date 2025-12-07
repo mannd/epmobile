@@ -167,36 +167,11 @@ public abstract class DrugCalculator extends EpActivity implements
 
     private void updateWeightUnitSelection() {
         WeightUnit weightUnitSelection = getWeightUnitSelection();
-        if (weightUnitSelection.equals(WeightUnit.KG))
-            weightEditText.setHint(getString(R.string.weight_hint));
-        else
-            weightEditText.setHint(getString(R.string.weight_lb_hint));
-    }
-//
-//    private WeightUnit getWeightUnitSelection() {
-//        int result = weightSpinner.getSelectedItemPosition();
-//        if (result == KG_SELECTION)
-//            return WeightUnit.KG;
-//        else
-//            return WeightUnit.LB;
-//    }
-//
-    private void updateCreatinineUnitSelection() {
-        CreatinineUnit creatinineUnitSelection = getCreatinineUnitSelection();
-        if (creatinineUnitSelection.equals(CreatinineUnit.MG))
-            creatinineEditText.setHint(getString(R.string.creatinine_mg_hint));
-        else
-            creatinineEditText
-                    .setHint(getString(R.string.creatinine_mmol_hint));
     }
 
-//    private CreatinineUnit getCreatinineUnitSelection() {
-//        int result = creatinineSpinner.getSelectedItemPosition();
-//        if (result == MG_SELECTION)
-//            return CreatinineUnit.MG;
-//        else
-//            return CreatinineUnit.MMOL;
-//    }
+    private void updateCreatinineUnitSelection() {
+        CreatinineUnit creatinineUnitSelection = getCreatinineUnitSelection();
+    }
 
     protected void calculateDose() {
         CharSequence weightText = weightEditText.getText();
