@@ -6,6 +6,7 @@
     android:orientation="vertical">
 
     <include layout="@layout/toolbar" />
+
     <include layout="@layout/calculatebuttons" />
 
     <TextView
@@ -29,36 +30,93 @@
         android:layout_marginRight="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin">
 
-        <TableLayout
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:stretchColumns="*">
+            android:layout_height="wrap_content">
 
-            <TableRow>
+            <!-- Weight -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:paddingBottom="16dp"
+                android:orientation="horizontal">
 
-                <Spinner android:id="@+id/weight_spinner" />
-
-                <EditText
-                    android:id="@+id/weightEditText"
-                    android:layout_width="match_parent"
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:hint="@string/weight_hint"
-                    android:inputType="numberDecimal"
-                    android:importantForAutofill="no" />
-            </TableRow>
+                    android:layout_weight="1"
+                    android:hint="@string/weight_hint">
 
-            <TableRow>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/weightEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:importantForAutofill="no" />
 
-                <Spinner android:id="@+id/height_spinner" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-                <EditText
-                    android:id="@+id/heightEditText"
-                    android:layout_width="match_parent"
+                <!-- The units dropdown menu -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="@string/height_hint"
-                    android:inputType="numberDecimal"
-                    android:importantForAutofill="no" />
-            </TableRow>
+                    android:layout_marginStart="8dp">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/weightUnitSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        android:hint="@string/weight_unit_description"
+                        android:minWidth="80dp"/> <!-- Give it a minimum width -->
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <!-- Height-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/height_hint">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/heightEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:importantForAutofill="no" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- The units dropdown menu -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/heightUnitSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        android:hint="@string/height_unit_description"
+                        android:minWidth="80dp"/> <!-- Give it a minimum width -->
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/calculated_result"
@@ -67,8 +125,7 @@
                 android:gravity="center_horizontal"
                 android:textAppearance="@style/TextAppearance.Calculator.Result"
                 android:layout_marginTop="16dp" />
-        </TableLayout>
-
+        </LinearLayout>
     </ScrollView>
 
 </RelativeLayout>

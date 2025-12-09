@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
+import android.widget.AdapterView.OnItemClickListener
 import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
@@ -39,12 +41,22 @@ along with epmobile.  If not, see <http://www.gnu.org/licenses/>.
 
 class BmiCalculator : EpActivity() {
 
+
+    companion object {
+        private const val KG_SELECTION = 0
+        private const val LB_SELECTION = 1
+    }
+
     private var weightEditText: EditText? = null
     private var heightEditText: EditText? = null
     private var weightSpinner: Spinner? = null
     private var heightSpinner: Spinner? = null
     private var messageTextView: TextView? = null
     private var calculatedResult: TextView? = null
+
+    private var weightUnitSpinner: AutoCompleteTextView? = null
+    private var heightUnitSpinner: AutoCompleteTextView? = null
+
 
     private enum class WeightUnit {
         KG, LB
@@ -84,6 +96,9 @@ class BmiCalculator : EpActivity() {
         messageTextView = findViewById<TextView?>(R.id.messageTextView)
         calculatedResult = findViewById<TextView?>(R.id.calculated_result)
 
+        weightUnitSpinner = findViewById<AutoCompleteTextView?>(R.id.weightUnitSpinner)
+        heightUnitSpinner = findViewById<AutoCompleteTextView?>(R.id.heightUnitSpinner)
+
         getPrefs()
         setAdapters()
         clearEntries()
@@ -104,28 +119,76 @@ class BmiCalculator : EpActivity() {
     }
 
     private fun setAdapters() {
-        val adapter = ArrayAdapter.createFromResource(
-            this, R.array.weight_unit_labels,
-            android.R.layout.simple_spinner_item
+        // Weight Spinner
+        val weightUnits = getResources().getStringArray(R.array.weight_unit_labels)
+        val weightUnitAdapter = ArrayAdapter<String?>(
+            this, R.layout.dropdown_menu_item, weightUnits
         )
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        weightSpinner!!.setAdapter(adapter)
-        if (defaultWeightUnitSelection == WeightUnit.KG) weightSpinner!!.setSelection(KG_SELECTION)
-        else weightSpinner!!.setSelection(LB_SELECTION)
-        // do nothing
-        val itemListener: AdapterView.OnItemSelectedListener =
-            object : AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(
-                    parent: AdapterView<*>?, v: View?,
-                    position: Int, id: Long
-                ) {
-                    updateWeightUnitSelection()
-                }
+        weightUnitSpinner!!.setAdapter<ArrayAdapter<String?>?>(weightUnitAdapter)
 
-                override fun onNothingSelected(parent: AdapterView<*>?) {
-                    // do nothing
-                }
+        if (defaultWeightUnitSelection == WeightUnit.KG) {
+            weightUnitSpinner!!.setText(weightUnits[KG_SELECTION], false)
+        } else {
+            weightUnitSpinner!!.setText(weightUnits[LB_SELECTION], false)
+        }
+
+        weightUnitSpinner!!.setOnItemClickListener(object : OnItemClickListener {
+            override fun onItemClick(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                updateWeightUnitSelection()
             }
+        })
+
+        // Height spinner
+        val heightUnits = getResources().getStringArray(R.array.height_unit_labels)
+        val heightUnitAdapter = ArrayAdapter<String?>(
+            this, R.layout.dropdown_menu_item, heightUnits
+        )
+        heightUnitSpinner!!.setAdapter<ArrayAdapter<String?>?>(heightUnitAdapter)
+
+        if (defaultHeightUnitSelection == HeightUnit.CM) {
+            heightUnitSpinner!!.setText(heightUnits[CM_SELECTION], false)
+        } else {
+            heightUnitSpinner!!.setText(heightUnits[IN_SELECTION], false)
+        }
+
+        heightUnitSpinner!!.setOnItemClickListener(object : OnItemClickListener {
+            override fun onItemClick(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                updateHeightUnitSelection()
+            }
+        })
+
+//        val adapter = ArrayAdapter.createFromResource(
+//            this, R.array.weight_unit_labels,
+//            android.R.layout.simple_spinner_item
+//        )
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+//        weightSpinner!!.setAdapter(adapter)
+//        if (defaultWeightUnitSelection == WeightUnit.KG) weightSpinner!!.setSelection(KG_SELECTION)
+//        else weightSpinner!!.setSelection(LB_SELECTION)
+//        // do nothing
+//        val itemListener: AdapterView.OnItemSelectedListener =
+//            object : AdapterView.OnItemSelectedListener {
+//                override fun onItemSelected(
+//                    parent: AdapterView<*>?, v: View?,
+//                    position: Int, id: Long
+//                ) {
+//                    updateWeightUnitSelection()
+//                }
+//
+//                override fun onNothingSelected(parent: AdapterView<*>?) {
+//                    // do nothing
+//                }
+//            }
 
         val heightAdapter = ArrayAdapter
             .createFromResource(
@@ -134,9 +197,9 @@ class BmiCalculator : EpActivity() {
             )
         heightAdapter
             .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        heightSpinner!!.setAdapter(heightAdapter)
-        if (defaultHeightUnitSelection == HeightUnit.CM) heightSpinner!!.setSelection(CM_SELECTION)
-        else heightSpinner!!.setSelection(IN_SELECTION)
+        heightUnitSpinner!!.setAdapter(heightAdapter)
+        if (defaultHeightUnitSelection == HeightUnit.CM) heightUnitSpinner!!.setSelection(CM_SELECTION)
+        else heightUnitSpinner!!.setSelection(IN_SELECTION)
         // do nothing
         val heightItemListener: AdapterView.OnItemSelectedListener =
             object : AdapterView.OnItemSelectedListener {
@@ -152,36 +215,59 @@ class BmiCalculator : EpActivity() {
                 }
             }
 
-        weightSpinner!!.setOnItemSelectedListener(itemListener)
-        heightSpinner!!.setOnItemSelectedListener(heightItemListener)
+//        weightSpinner!!.setOnItemSelectedListener(itemListener)
+        //heightSpinner!!.setOnItemSelectedListener(heightItemListener)
     }
+
+    private val weightUnitSelection: WeightUnit
+        get() {
+            val selectedUnit = weightUnitSpinner!!.getText().toString()
+            val kgUnit =
+                getResources().getStringArray(R.array.weight_unit_labels)[BmiCalculator.Companion.KG_SELECTION]
+            if (selectedUnit == kgUnit) {
+                return WeightUnit.KG
+            } else {
+                return WeightUnit.LB
+            }
+        }
+
+    private val heightUnitSelection: HeightUnit
+        get() {
+            val selectedUnit = heightUnitSpinner!!.getText().toString()
+            val cmUnit =
+                getResources().getStringArray(R.array.height_unit_labels)[BmiCalculator.Companion.KG_SELECTION]
+            if (selectedUnit == cmUnit) {
+                return HeightUnit.CM
+            } else {
+                return HeightUnit.IN
+            }
+        }
 
     private fun updateWeightUnitSelection() {
-        val weightUnitSelection = getWeightUnitSelection()
-        if (weightUnitSelection == WeightUnit.KG) {
-            weightEditText!!.setHint(getString(R.string.weight_hint))
-        } else {
-            weightEditText!!.setHint(getString(R.string.weight_lb_hint))
-        }
-    }
-
-    private fun getWeightUnitSelection(): WeightUnit {
-        val result = weightSpinner!!.getSelectedItemPosition()
-        if (result == KG_SELECTION) return WeightUnit.KG
-        else return WeightUnit.LB
+        val weightUnitSelection =
+            this.weightUnitSelection
     }
 
     private fun updateHeightUnitSelection() {
-        val heightUnitSelection = getHeightUnitSelection()
-        if (heightUnitSelection == HeightUnit.CM) heightEditText!!.setHint(getString(R.string.height_hint))
-        else heightEditText!!.setHint(getString(R.string.height_inches_hint))
+        val heightUnitSelection =
+            this.heightUnitSelection
     }
 
-    private fun getHeightUnitSelection(): HeightUnit {
-        val result = heightSpinner!!.getSelectedItemPosition()
-        if (result == CM_SELECTION) return HeightUnit.CM
-        else return HeightUnit.IN
-    }
+//    private fun updateWeightUnitSelection() {
+//        val weightUnitSelection = getWeightUnitSelection()
+//        if (weightUnitSelection == WeightUnit.KG) {
+//            weightEditText!!.setHint(getString(R.string.weight_hint))
+//        } else {
+//            weightEditText!!.setHint(getString(R.string.weight_lb_hint))
+//        }
+//    }
+//
+//    private fun getWeightUnitSelection(): WeightUnit {
+//        val result = weightSpinner!!.getSelectedItemPosition()
+//        if (result == KG_SELECTION) return WeightUnit.KG
+//        else return WeightUnit.LB
+//    }
+
 
     private fun calculate() {
         // clear any message
@@ -193,11 +279,11 @@ class BmiCalculator : EpActivity() {
         try {
             var unitsInLbs = false
             var weight = weightText.toString().toDouble()
-            if (getWeightUnitSelection() == WeightUnit.LB) {
+            if (weightUnitSelection == WeightUnit.LB) {
                 weight = UnitConverter.lbsToKgs(weight)
             }
             var height = heightText.toString().toDouble()
-            if (getHeightUnitSelection() == HeightUnit.IN) {
+            if (heightUnitSelection == HeightUnit.IN) {
                 height = UnitConverter.insToCms(height)
             }
             val result = BMI.Companion.calculateCmRounded(weight, height)

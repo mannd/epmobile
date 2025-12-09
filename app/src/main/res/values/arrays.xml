@@ -187,8 +187,8 @@
         <item>MMOL</item>
     </array>
     <array name="height_unit_labels">
-        <item>Height (cm)</item>
-        <item>Height (in)</item>
+        <item>cm</item>
+        <item>in</item>
     </array>
     <array name="height_unit_values">
         <item>CM</item>
