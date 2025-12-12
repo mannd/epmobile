@@ -58,5 +58,6 @@
         <!-- Use your new BodyLarge as the default for all text -->
         <item name="android:textAppearance">?attr/textAppearanceBodyLarge</item>
 
+
     </style>
 </resources>

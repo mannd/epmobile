@@ -5,30 +5,33 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/toolbar" />
-
-    <include layout="@layout/calculatebuttons" />
-
-    <TextView
-        android:id="@+id/messageTextView"
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/scrollView"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:gravity="center_horizontal"
-        android:textAppearance="@style/TextAppearance.Message.Normal" />
+        android:layout_alignParentTop="true" />
+
+
+    <include
+        android:id="@+id/calculatebuttons"
+        layout="@layout/calculatebuttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
 
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_height="match_parent"
         android:layout_below="@id/toolbar"
+        android:layout_above="@id/calculatebuttons"
+        android:layout_centerHorizontal="true"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin">
+
 
         <LinearLayout
             android:orientation="vertical"
@@ -48,6 +51,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:labelFor="@id/weightUnitSpinner"
                     android:hint="@string/weight_hint">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -71,8 +75,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="none"
-                        android:hint="@string/weight_unit_description"
-                        android:minWidth="80dp"/> <!-- Give it a minimum width -->
+                        android:contentDescription="@string/weight_unit_description"
+                        android:minWidth="80dp"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
@@ -89,6 +93,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:labelFor="@id/heightUnitSpinner"
                     android:hint="@string/height_hint">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -111,8 +116,8 @@
                         android:id="@+id/heightUnitSpinner"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:contentDescription="@string/height_unit_description"
                         android:inputType="none"
-                        android:hint="@string/height_unit_description"
                         android:minWidth="80dp"/> <!-- Give it a minimum width -->
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -125,6 +130,18 @@
                 android:gravity="center_horizontal"
                 android:textAppearance="@style/TextAppearance.Calculator.Result"
                 android:layout_marginTop="16dp" />
+
+
+            <TextView
+                android:id="@+id/messageTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:gravity="center_horizontal"
+                android:textAppearance="@style/TextAppearance.Message.Normal" />
+
         </LinearLayout>
     </ScrollView>
 
