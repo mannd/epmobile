@@ -1946,4 +1946,18 @@
     <string name="hcm_af_result_success">HCM-AF Score: %1$d\n%2$s\n2-Year AF Risk: %3$.1f%%\n5-Year AF Risk: %4$.1f%%</string>
     <string name="weight_unit_description">Weight units in kilograms or pounds</string>
     <string name="height_unit_description">Height in centimeters or inches</string>
-</resources>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="male_abbrev">M</string>
+    <string name="female_abbrev">F</string>
+    <!--
+      Formatted string for the Creatinine Clearance result summary.
+      Placeholders:
+      %1$d: Rounded CrCl value (integer)
+      %2$s: Age (string)
+      %3$s: Sex ("M" or "F")
+      %4$s: Weight (string)
+      %5$s: Creatinine value (string)
+      %6$s: Creatinine unit (string)
+    -->
+    <string name="crcl_results_summary">CrCl = %1$d mL/min (%2$sy%3$s %4$skg Cr %5$s%6$s)</string></resources>

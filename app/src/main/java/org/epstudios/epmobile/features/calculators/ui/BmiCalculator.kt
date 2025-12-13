@@ -10,9 +10,12 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.preference.PreferenceManager
 import org.epstudios.epmobile.R
+import org.epstudios.epmobile.core.data.HeightUnit
 import org.epstudios.epmobile.core.data.UnitConverter
+import org.epstudios.epmobile.core.data.WeightUnit
 import org.epstudios.epmobile.core.ui.base.EpActivity
 import org.epstudios.epmobile.features.calculators.data.BMI
+
 
 /**
 Copyright (C) 2025 EP Studios, Inc.
@@ -44,16 +47,6 @@ class BmiCalculator : EpActivity() {
     private var calculatedResult: TextView? = null
     private var weightUnitSpinner: AutoCompleteTextView? = null
     private var heightUnitSpinner: AutoCompleteTextView? = null
-
-    private enum class WeightUnit(val arrayIndex: Int) {
-        KG(0),
-        LB(1)
-    }
-
-    private enum class HeightUnit(val arrayIndex: Int) {
-        CM(0),
-        IN(1)
-    }
 
     private var defaultWeightUnitSelection = WeightUnit.KG
     private var defaultHeightUnitSelection = HeightUnit.CM
@@ -130,7 +123,7 @@ class BmiCalculator : EpActivity() {
 
     private val weightUnitSelection: WeightUnit
         get() {
-            val selectedUnit = weightUnitSpinner?.text.toString()
+            val selectedUnit = weightUnitSpinner?.text?.toString()
             val kgUnit =
                 getResources().getStringArray(R.array.weight_unit_labels)[WeightUnit.KG.arrayIndex]
             return if (selectedUnit == kgUnit) {
@@ -142,7 +135,7 @@ class BmiCalculator : EpActivity() {
 
     private val heightUnitSelection: HeightUnit
         get() {
-            val selectedUnit = heightUnitSpinner?.text.toString()
+            val selectedUnit = heightUnitSpinner?.text?.toString()
             val cmUnit =
                 getResources().getStringArray(R.array.height_unit_labels)[HeightUnit.CM.arrayIndex]
             return if (selectedUnit == cmUnit) {

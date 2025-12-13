@@ -170,6 +170,14 @@
         <item>LBBB Morphology</item>
         <item>RBBB Morphology</item>
     </array>
+    <array name="sex_labels">
+        <item>@string/male</item>
+        <item>@string/female</item>
+    </array>
+    <array name="sex_abbrev">
+        <item>@string/male_abbrev</item>
+        <item>@string/female_abbrev</item>
+    </array>
     <array name="weight_unit_labels">
         <item>kg</item>
         <item>lb</item>
