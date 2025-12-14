@@ -1946,6 +1946,7 @@
     <string name="hcm_af_result_success">HCM-AF Score: %1$d\n%2$s\n2-Year AF Risk: %3$.1f%%\n5-Year AF Risk: %4$.1f%%</string>
     <string name="weight_unit_description">Weight units in kilograms or pounds</string>
     <string name="height_unit_description">Height in centimeters or inches</string>
+    <string name="creatinine_unit_description">Creatinine in mg/dL or micromol/L</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
     <string name="male_abbrev">M</string>

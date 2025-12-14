@@ -5,9 +5,10 @@ import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.EditText
-import android.widget.RadioGroup
 import android.widget.TextView
 import androidx.preference.PreferenceManager
+import com.google.android.material.chip.Chip
+import com.google.android.material.chip.ChipGroup
 import org.epstudios.epmobile.R
 import org.epstudios.epmobile.core.data.CreatinineUnit
 import org.epstudios.epmobile.core.data.Sex
@@ -34,7 +35,11 @@ abstract class DrugCalculator : EpActivity(), View.OnClickListener {
         weightEditText = findViewById(R.id.weightEditText)
         creatinineEditText = findViewById(R.id.creatinineEditText)
         ageEditText = findViewById(R.id.ageEditText)
-        sexRadioGroup = findViewById(R.id.sexRadioGroup)
+
+        // New ChipGroup for sex
+        sexChipGroup = findViewById(R.id.sexChipGroup)
+        maleChip = findViewById(R.id.maleChip)
+        femaleChip = findViewById(R.id.femaleChip)
 
         weightUnitSpinner = findViewById(R.id.weightUnitSpinner)
         creatinineUnitSpinner = findViewById(R.id.creatinineUnitSpinner)
@@ -47,7 +52,9 @@ abstract class DrugCalculator : EpActivity(), View.OnClickListener {
     private var calculatedDoseTextView: TextView? = null
     private var weightEditText: EditText? = null
     private var creatinineEditText: EditText? = null
-    private var sexRadioGroup: RadioGroup? = null
+    private var sexChipGroup: ChipGroup? = null
+    private var maleChip: Chip? = null
+    private var femaleChip: Chip? = null
     private var ageEditText: EditText? = null
     protected var creatinineClearanceTextView: TextView? = null // cc == Creatinine Clearance
 
@@ -131,7 +138,7 @@ abstract class DrugCalculator : EpActivity(), View.OnClickListener {
         val weightText: CharSequence = weightEditText?.text ?: ""
         val creatinineText: CharSequence = creatinineEditText?.text ?: ""
         val ageText: CharSequence = ageEditText?.text ?: ""
-        val isMale = (sexRadioGroup?.checkedRadioButtonId ?: R.id.male) == R.id.male
+        val isMale = sexChipGroup?.checkedChipId == R.id.maleChip
         val sex = if (isMale) Sex.MALE else Sex.FEMALE
         try {
             var weight = weightText.toString().toDouble()
@@ -245,10 +252,11 @@ abstract class DrugCalculator : EpActivity(), View.OnClickListener {
         weightEditText?.text = null
         creatinineEditText?.text = null
         ageEditText?.text = null
+        sexChipGroup?.check(R.id.maleChip)
         creatinineClearanceTextView?.setText(R.string.creatinine_clearance_label)
         calculatedDoseTextView?.text = defaultResultLabel()
         calculatedDoseTextView?.setTextAppearance(R.style.TextAppearance_Calculator_Result)
-        ageEditText!!.requestFocus()
+        ageEditText?.requestFocus()
     }
 
     protected open fun defaultResultLabel(): String? {
