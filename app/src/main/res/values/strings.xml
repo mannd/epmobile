@@ -1871,7 +1871,7 @@
     <string name="painesd_reference">Muser D, Castro SA, Liang JJ, Santangeli P. Identifying Risk and Management of Acute Haemodynamic Decompensation During Catheter Ablation of Ventricular Tachycardia. Arrhythm Electrophysiol Rev. 2018;7(4):282-287.</string>
     <string name="painesd_link">https://doi.org/10.15420/aer.2018.36.3</string>
     <string name="painesd_label">PAINESD score</string>
-    <string name="painesd_instructions">The PAINESD score estimates the risk of periprocedural
+    <string name="painesd_instructions" formatted="false">The PAINESD score estimates the risk of periprocedural
         acute hemodynamic decompensation (AHD) in patients undergoing catheter ablation of ventricular tachycardia.
         AHD is defined as an event with a blood pressure &lt; 90 despite
         vasopressors that requires a mechanical assist device.\n\nAHD

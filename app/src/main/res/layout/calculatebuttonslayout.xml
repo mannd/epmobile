@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  This layout uses a LinearLayout to ensure that the buttons
+  are distributed evenly, which is a common pattern for action footers.
+  It uses modern MaterialButtons for styling.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/calculateButtonsLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp">
+
+    <!--
+      The "Clear" button uses an outlined style, which is common
+      for secondary actions. The weight of 1 ensures it takes up
+      half of the available space.
+    -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/clear_button"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginEnd="8dp"
+        android:text="@string/clear_label" />
+
+    <!--
+      The "Calculate" button uses the default filled style, which
+      is appropriate for primary actions. The weight of 1 ensures it also
+      takes up half of the space.
+    -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/calculate_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="8dp"
+        android:text="@string/calculate_label" />
+
+</LinearLayout>

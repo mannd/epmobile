@@ -7,7 +7,12 @@
     android:orientation="vertical">
 
     <include layout="@layout/toolbar" />
-    <include layout="@layout/calculatebuttons" />
+    <include
+        layout="@layout/calculatebuttonslayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -111,3 +116,4 @@
     </ScrollView>
 
 </RelativeLayout>
+
