@@ -9,6 +9,7 @@
     <include layout="@layout/toolbar" />
     <include
         layout="@layout/calculatebuttonslayout"
+        android:id="@+id/calculateButtonsLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -81,11 +82,13 @@
                     android:text="@string/days_90" />
 
                 <RadioButton
+                    android:id="@+id/fortyRadio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/days_40" />
 
                 <RadioButton
+                    android:id="@+id/thirtyRadio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/days_30" />

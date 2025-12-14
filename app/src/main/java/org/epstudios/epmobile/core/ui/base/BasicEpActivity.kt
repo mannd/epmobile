@@ -1,6 +1,7 @@
 package org.epstudios.epmobile.core.ui.base
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
@@ -40,6 +41,21 @@ abstract class BasicEpActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+    }
+
+    // NEW overloaded function that accepts a View object
+    // This is the function your View Binding code will use
+    protected fun setupInsets(view: View) {
+        ViewCompat.setOnApplyWindowInsetsListener(view) { v, windowInsets ->
+            val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.updatePadding(
+                left = insets.left, // It's good practice to handle all padding
+                top = insets.top,
+                right = insets.right,
+                bottom = insets.bottom
+            )
+            WindowInsetsCompat.CONSUMED
+        }
     }
 
     protected fun setupInsets(@IdRes viewId: Int) {

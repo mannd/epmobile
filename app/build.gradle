@@ -22,6 +22,10 @@ android {
         versionName "2.39.0"
     }
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     buildTypes {
         release {
             minifyEnabled true
