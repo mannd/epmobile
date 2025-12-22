@@ -57,7 +57,7 @@ class DateCalculator : EpActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View) {
-        val id = v.getId()
+        val id = v.id
         if (id == R.id.calculate_button) {
             calculateDays()
         } else if (id == R.id.clear_button) {

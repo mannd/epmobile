@@ -5,15 +5,13 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
-import android.widget.EditText
-import android.widget.TextView
 import androidx.preference.PreferenceManager
 import org.epstudios.epmobile.R
 import org.epstudios.epmobile.core.data.HeightUnit
 import org.epstudios.epmobile.core.data.UnitConverter
 import org.epstudios.epmobile.core.data.WeightUnit
 import org.epstudios.epmobile.core.ui.base.EpActivity
+import org.epstudios.epmobile.databinding.BmiBinding
 import org.epstudios.epmobile.features.calculators.data.BMI
 
 
@@ -39,40 +37,24 @@ You should have received a copy of the GNU General Public License
 along with epmobile.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-class BmiCalculator : EpActivity() {
-
-    private var weightEditText: EditText? = null
-    private var heightEditText: EditText? = null
-    private var messageTextView: TextView? = null
-    private var calculatedResult: TextView? = null
-    private var weightUnitSpinner: AutoCompleteTextView? = null
-    private var heightUnitSpinner: AutoCompleteTextView? = null
+class BmiCalculator : EpActivity(), View.OnClickListener {
 
     private var defaultWeightUnitSelection = WeightUnit.KG
     private var defaultHeightUnitSelection = HeightUnit.CM
 
+    private lateinit var binding : BmiBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.bmi)
-        setupInsets(R.id.bmi_root_view)
+
+        binding = BmiBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        setContentView(binding.root)
+
         initToolbar()
 
-        val calculateButton = findViewById<View?>(R.id.calculate_button)
-        calculateButton?.setOnClickListener {
-            calculate()
-        }
-        val clearButton = findViewById<View?>(R.id.clear_button)
-        clearButton?.setOnClickListener {
-            clearEntries()
-        }
-
-        weightEditText = findViewById(R.id.weightEditText)
-        heightEditText = findViewById(R.id.heightEditText)
-        messageTextView = findViewById(R.id.messageTextView)
-        calculatedResult = findViewById(R.id.calculated_result)
-
-        weightUnitSpinner = findViewById(R.id.weightUnitSpinner)
-        heightUnitSpinner = findViewById(R.id.heightUnitSpinner)
+        binding.calculateButtonsLayout.calculateButton.setOnClickListener(this)
+        binding.calculateButtonsLayout.clearButton.setOnClickListener(this)
 
         getPrefs()
         setAdapters()
@@ -93,18 +75,27 @@ class BmiCalculator : EpActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+    override fun onClick(v: View) {
+        val id = v.id
+        if (id == R.id.calculate_button) {
+            calculate()
+        } else if (id == R.id.clear_button) {
+            clearEntries()
+        }
+    }
+
     private fun setAdapters() {
         // Weight Spinner
         val weightUnits = getResources().getStringArray(R.array.weight_unit_labels)
         val weightUnitAdapter = ArrayAdapter<String?>(
             this, R.layout.dropdown_menu_item, weightUnits
         )
-        weightUnitSpinner?.setAdapter(weightUnitAdapter)
+        binding.weightUnitSpinner.setAdapter(weightUnitAdapter)
 
         if (defaultWeightUnitSelection == WeightUnit.KG) {
-            weightUnitSpinner?.setText(weightUnits[WeightUnit.KG.arrayIndex], false)
+            binding.weightUnitSpinner.setText(weightUnits[WeightUnit.KG.arrayIndex], false)
         } else {
-            weightUnitSpinner?.setText(weightUnits[WeightUnit.LB.arrayIndex], false)
+            binding.weightUnitSpinner.setText(weightUnits[WeightUnit.LB.arrayIndex], false)
         }
 
         // Height spinner
@@ -112,18 +103,18 @@ class BmiCalculator : EpActivity() {
         val heightUnitAdapter = ArrayAdapter<String?>(
             this, R.layout.dropdown_menu_item, heightUnits
         )
-        heightUnitSpinner?.setAdapter(heightUnitAdapter)
+        binding.heightUnitSpinner.setAdapter(heightUnitAdapter)
 
         if (defaultHeightUnitSelection == HeightUnit.CM) {
-            heightUnitSpinner?.setText(heightUnits[HeightUnit.CM.arrayIndex], false)
+            binding.heightUnitSpinner.setText(heightUnits[HeightUnit.CM.arrayIndex], false)
         } else {
-            heightUnitSpinner?.setText(heightUnits[HeightUnit.IN.arrayIndex], false)
+            binding.heightUnitSpinner.setText(heightUnits[HeightUnit.IN.arrayIndex], false)
         }
     }
 
     private val weightUnitSelection: WeightUnit
         get() {
-            val selectedUnit = weightUnitSpinner?.text?.toString()
+            val selectedUnit = binding.weightUnitSpinner.text.toString()
             val kgUnit =
                 getResources().getStringArray(R.array.weight_unit_labels)[WeightUnit.KG.arrayIndex]
             return if (selectedUnit == kgUnit) {
@@ -135,7 +126,7 @@ class BmiCalculator : EpActivity() {
 
     private val heightUnitSelection: HeightUnit
         get() {
-            val selectedUnit = heightUnitSpinner?.text?.toString()
+            val selectedUnit = binding.heightUnitSpinner.text.toString()
             val cmUnit =
                 getResources().getStringArray(R.array.height_unit_labels)[HeightUnit.CM.arrayIndex]
             return if (selectedUnit == cmUnit) {
@@ -147,11 +138,11 @@ class BmiCalculator : EpActivity() {
 
     private fun calculate() {
         // clear any message
-        messageTextView?.text == null
+        binding.messageTextView.text == null
         // make sure message white with 2 calculations in row, 1st invalid
         resetResultTextColor()
-        val weightText: CharSequence = weightEditText?.text ?: ""
-        val heightText: CharSequence = heightEditText?.text ?: ""
+        val weightText: CharSequence = binding.weightEditText.text ?: ""
+        val heightText: CharSequence = binding.heightEditText.text ?: ""
         try {
             var weight = weightText.toString().toDouble()
             if (weightUnitSelection == WeightUnit.LB) {
@@ -162,16 +153,16 @@ class BmiCalculator : EpActivity() {
                 height = UnitConverter.insToCms(height)
             }
             val result = BMI.calculateCmRounded(weight, height)
-            calculatedResult?.text = getString(R.string.bmi_result, result.toString())
+            binding.calculatedResult.text = getString(R.string.bmi_result, result.toString())
             val message = getMessage(result)
-            messageTextView?.text = message
+            binding.messageTextView.text = message
             if (!BMI.isNormalBmi(result)) {
-                calculatedResult?.setTextAppearance(R.style.TextAppearance_Calculator_Error)
+                binding.calculatedResult.setTextAppearance(R.style.TextAppearance_Calculator_Error)
             }
         } catch (_: NumberFormatException) {
-            calculatedResult?.text = getString(R.string.invalid_warning)
-            calculatedResult?.setTextAppearance(R.style.TextAppearance_Calculator_Error)
-            messageTextView?.text = null
+            binding.calculatedResult.text = getString(R.string.invalid_warning)
+            binding.calculatedResult.setTextAppearance(R.style.TextAppearance_Calculator_Error)
+            binding.messageTextView.text = null
         }
     }
 
@@ -190,16 +181,16 @@ class BmiCalculator : EpActivity() {
     }
 
     private fun clearEntries() {
-        weightEditText?.text = null
-        heightEditText?.text = null
-        messageTextView?.text = null
-        calculatedResult?.text = null
-        weightEditText?.requestFocus()
+        binding.weightEditText.text = null
+        binding.heightEditText.text = null
+        binding.messageTextView.text = null
+        binding.calculatedResult.text = null
+        binding.weightEditText.requestFocus()
         resetResultTextColor()
     }
 
     private fun resetResultTextColor() {
-        calculatedResult?.setTextAppearance(R.style.TextAppearance_Calculator_Result)
+        binding.calculatedResult.setTextAppearance(R.style.TextAppearance_Calculator_Result)
     }
 
     private fun getPrefs() {
