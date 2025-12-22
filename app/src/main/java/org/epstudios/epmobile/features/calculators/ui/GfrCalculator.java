@@ -1,7 +1,6 @@
 package org.epstudios.epmobile.features.calculators.ui;
 
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -72,7 +71,7 @@ public class GfrCalculator extends EpActivity implements View.OnClickListener {
         sexRadioGroup = findViewById(R.id.sexRadioGroup);
         raceRadioGroup = findViewById(R.id.raceRadioGroup);
         ageEditText = findViewById(R.id.ageEditText);
-        ccTextView = findViewById(R.id.ccTextView);
+        ccTextView = findViewById(R.id.creatinine_clearance_text_view);
         creatinineSpinner = findViewById(R.id.creatinine_spinner);
 
         getPrefs();

@@ -3,63 +3,18 @@ package org.epstudios.epmobile.core.ui.base
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
-import android.widget.EditText
-import android.widget.TextView
 import androidx.preference.PreferenceManager
-import com.google.android.material.chip.Chip
-import com.google.android.material.chip.ChipGroup
 import org.epstudios.epmobile.R
 import org.epstudios.epmobile.core.data.CreatinineUnit
 import org.epstudios.epmobile.core.data.Sex
 import org.epstudios.epmobile.core.data.UnitConverter
 import org.epstudios.epmobile.core.data.WeightUnit
+import org.epstudios.epmobile.databinding.DrugcalculatorBinding
 import org.epstudios.epmobile.features.calculators.data.CreatinineClearance
 import java.text.DecimalFormat
 import kotlin.math.roundToInt
 
 abstract class DrugCalculator : EpActivity(), View.OnClickListener {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.drugcalculator)
-        setupInsets(R.id.selection_list_root_view)
-        initToolbar()
-
-        val calculateDoseButton = findViewById<View>(R.id.calculate_button)
-        calculateDoseButton.setOnClickListener(this)
-        val clearButton = findViewById<View>(R.id.clear_button)
-        clearButton.setOnClickListener(this)
-
-        calculatedDoseTextView = findViewById(R.id.calculated_dose)
-        creatinineClearanceTextView = findViewById(R.id.ccTextView)
-        weightEditText = findViewById(R.id.weightEditText)
-        creatinineEditText = findViewById(R.id.creatinineEditText)
-        ageEditText = findViewById(R.id.ageEditText)
-
-        // New ChipGroup for sex
-        sexChipGroup = findViewById(R.id.sexChipGroup)
-        maleChip = findViewById(R.id.maleChip)
-        femaleChip = findViewById(R.id.femaleChip)
-
-        weightUnitSpinner = findViewById(R.id.weightUnitSpinner)
-        creatinineUnitSpinner = findViewById(R.id.creatinineUnitSpinner)
-
-        this.prefs
-        setAdapters()
-        clearEntries()
-    }
-
-    private var calculatedDoseTextView: TextView? = null
-    private var weightEditText: EditText? = null
-    private var creatinineEditText: EditText? = null
-    private var sexChipGroup: ChipGroup? = null
-    private var maleChip: Chip? = null
-    private var femaleChip: Chip? = null
-    private var ageEditText: EditText? = null
-    protected var creatinineClearanceTextView: TextView? = null // cc == Creatinine Clearance
-
-    private var weightUnitSpinner: AutoCompleteTextView? = null
-    private var creatinineUnitSpinner: AutoCompleteTextView? = null
 
     private var defaultWeightUnitSelection = WeightUnit.KG
     private var defaultCreatinineUnitSelection = CreatinineUnit.MG
@@ -67,6 +22,26 @@ abstract class DrugCalculator : EpActivity(), View.OnClickListener {
     // return string for Drug Reference CrCl calculator
     protected var creatinineClearanceReturnString: String? = null
         private set
+
+    lateinit var binding: DrugcalculatorBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        binding = DrugcalculatorBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        setupInsets(binding.root)
+
+        initToolbar()
+
+        binding.calculateButtonsLayout.calculateButton.setOnClickListener(this)
+        binding.calculateButtonsLayout.clearButton.setOnClickListener(this)
+
+        this.prefs
+        setAdapters()
+        clearEntries()
+    }
+
 
     override fun onClick(v: View) {
         val id = v.id
@@ -85,12 +60,12 @@ abstract class DrugCalculator : EpActivity(), View.OnClickListener {
         val weightUnitAdapter = ArrayAdapter<String?>(
             this, R.layout.dropdown_menu_item, weightUnits
         )
-        weightUnitSpinner!!.setAdapter(weightUnitAdapter)
+        binding.weightUnitSpinner.setAdapter(weightUnitAdapter)
 
         if (defaultWeightUnitSelection == WeightUnit.KG) {
-            weightUnitSpinner!!.setText(weightUnits[WeightUnit.KG.arrayIndex], false)
+            binding.weightUnitSpinner.setText(weightUnits[WeightUnit.KG.arrayIndex], false)
         } else {
-            weightUnitSpinner!!.setText(weightUnits[WeightUnit.LB.arrayIndex], false)
+            binding.weightUnitSpinner.setText(weightUnits[WeightUnit.LB.arrayIndex], false)
         }
 
 
@@ -101,18 +76,18 @@ abstract class DrugCalculator : EpActivity(), View.OnClickListener {
         val creatinineUnitAdapter = ArrayAdapter<String?>(
             this, R.layout.dropdown_menu_item, creatinineUnits
         )
-        creatinineUnitSpinner!!.setAdapter(creatinineUnitAdapter)
+        binding.creatinineUnitSpinner.setAdapter(creatinineUnitAdapter)
 
         if (defaultCreatinineUnitSelection == CreatinineUnit.MG) {
-            creatinineUnitSpinner!!.setText(creatinineUnits[CreatinineUnit.MG.arrayIndex], false)
+            binding.creatinineUnitSpinner.setText(creatinineUnits[CreatinineUnit.MG.arrayIndex], false)
         } else {
-            creatinineUnitSpinner!!.setText(creatinineUnits[CreatinineUnit.MMOL.arrayIndex], false)
+            binding.creatinineUnitSpinner.setText(creatinineUnits[CreatinineUnit.MMOL.arrayIndex], false)
         }
     }
 
     private val weightUnitSelection: WeightUnit
         get() {
-            val selectedUnit = weightUnitSpinner?.text?.toString() ?: ""
+            val selectedUnit = binding.weightUnitSpinner.text.toString()
             val kgUnit =
                 getResources().getStringArray(R.array.weight_unit_labels)[WeightUnit.KG.arrayIndex]
             return if (selectedUnit == kgUnit) {
@@ -124,7 +99,7 @@ abstract class DrugCalculator : EpActivity(), View.OnClickListener {
 
     private val creatinineUnitSelection: CreatinineUnit
         get() {
-            val selectedUnit = creatinineUnitSpinner?.text?.toString() ?: ""
+            val selectedUnit = binding.creatinineUnitSpinner.text.toString()
             val mgUnit =
                 getResources().getStringArray(R.array.creatinine_unit_labels)[CreatinineUnit.MG.arrayIndex]
             return if (selectedUnit == mgUnit) {
@@ -135,10 +110,10 @@ abstract class DrugCalculator : EpActivity(), View.OnClickListener {
         }
 
     protected open fun calculateDose() {
-        val weightText: CharSequence = weightEditText?.text ?: ""
-        val creatinineText: CharSequence = creatinineEditText?.text ?: ""
-        val ageText: CharSequence = ageEditText?.text ?: ""
-        val isMale = sexChipGroup?.checkedChipId == R.id.maleChip
+        val weightText: CharSequence = binding.weightEditText.text ?: ""
+        val creatinineText: CharSequence = binding.creatinineEditText.text ?: ""
+        val ageText: CharSequence = binding.ageEditText.text ?: ""
+        val isMale = binding.sexChipGroup.checkedChipId == R.id.maleChip
         val sex = if (isMale) Sex.MALE else Sex.FEMALE
         try {
             var weight = weightText.toString().toDouble()
@@ -146,9 +121,9 @@ abstract class DrugCalculator : EpActivity(), View.OnClickListener {
             val creatinine = creatinineText.toString().toDouble()
             val age = ageText.toString().toDouble()
             if (age < 18 && !pediatricDosingOk()!!) {
-                calculatedDoseTextView?.text = getString(R.string.do_not_use_warning)
-                calculatedDoseTextView?.setTextAppearance(R.style.TextAppearance_Calculator_Error)
-                creatinineClearanceTextView?.text = getString(R.string.pediatric_use_warning)
+                binding.calculatedDose.text = getString(R.string.do_not_use_warning)
+                binding.calculatedDose.setTextAppearance(R.style.TextAppearance_Calculator_Error)
+                binding.creatinineClearanceTextView.text = getString(R.string.pediatric_use_warning)
                 return
             }
             val useMmolUnits = (this.creatinineUnitSelection == CreatinineUnit.MMOL)
@@ -158,7 +133,7 @@ abstract class DrugCalculator : EpActivity(), View.OnClickListener {
                 creatinine, useMmolUnits
             )
             val ccMessage = getMessage(cc, age)
-            creatinineClearanceTextView?.text = String.format(
+            binding.creatinineClearanceTextView.text = String.format(
                 "%s%s", ccMessage,
                 this.disclaimer
             )
@@ -187,26 +162,26 @@ abstract class DrugCalculator : EpActivity(), View.OnClickListener {
                     message += getString(R.string.apixaban_esrd_caution)
                 }
                 message += this.disclaimer
-                creatinineClearanceTextView?.text = message
+                binding.creatinineClearanceTextView.text = message
             }
             if (dose < 0) {  // CrCl only
-                calculatedDoseTextView?.setTextAppearance(R.style.TextAppearance_Calculator_Result)
-                calculatedDoseTextView?.text = String.format("%s mL/min", cc)
+                binding.calculatedDose.setTextAppearance(R.style.TextAppearance_Calculator_Result)
+                binding.calculatedDose.text = String.format("%s mL/min", cc)
             } else if (dose == 0.0) {
-                calculatedDoseTextView!!.text = getString(R.string.do_not_use_warning)
-                calculatedDoseTextView!!.setTextAppearance(R.style.TextAppearance_Calculator_Error)
+                binding.calculatedDose.text = getString(R.string.do_not_use_warning)
+                binding.calculatedDose.setTextAppearance(R.style.TextAppearance_Calculator_Error)
             } else {
-                calculatedDoseTextView!!.setTextAppearance(R.style.TextAppearance_Calculator_Result)
+                binding.calculatedDose.setTextAppearance(R.style.TextAppearance_Calculator_Result)
                 // format to only show decimal if non-zero
-                calculatedDoseTextView!!.text = String.format(
+                binding.calculatedDose.text = String.format(
                     "%s%s", DecimalFormat("#.#")
                         .format(dose), doseFrequency(cc)
                 )
             }
         } catch (_: NumberFormatException) {
-            calculatedDoseTextView?.text = getString(R.string.invalid_warning)
-            calculatedDoseTextView?.setTextAppearance(R.style.TextAppearance_Calculator_Error)
-            creatinineClearanceTextView?.setText(R.string.creatinine_clearance_label)
+            binding.calculatedDose.text = getString(R.string.invalid_warning)
+            binding.calculatedDose.setTextAppearance(R.style.TextAppearance_Calculator_Error)
+            binding.creatinineClearanceTextView.setText(R.string.creatinine_clearance_label)
         }
     }
 
@@ -249,14 +224,14 @@ abstract class DrugCalculator : EpActivity(), View.OnClickListener {
     }
 
     private fun clearEntries() {
-        weightEditText?.text = null
-        creatinineEditText?.text = null
-        ageEditText?.text = null
-        sexChipGroup?.check(R.id.maleChip)
-        creatinineClearanceTextView?.setText(R.string.creatinine_clearance_label)
-        calculatedDoseTextView?.text = defaultResultLabel()
-        calculatedDoseTextView?.setTextAppearance(R.style.TextAppearance_Calculator_Result)
-        ageEditText?.requestFocus()
+        binding.weightEditText.text = null
+        binding.creatinineEditText.text = null
+        binding.ageEditText.text = null
+        binding.sexChipGroup.check(R.id.maleChip)
+        binding.creatinineClearanceTextView.setText(R.string.creatinine_clearance_label)
+        binding.calculatedDose.text = defaultResultLabel()
+        binding.calculatedDose.setTextAppearance(R.style.TextAppearance_Calculator_Result)
+        binding.ageEditText.requestFocus()
     }
 
     protected open fun defaultResultLabel(): String? {

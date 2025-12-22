@@ -49,7 +49,7 @@ class BmiCalculator : EpActivity(), View.OnClickListener {
 
         binding = BmiBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setContentView(binding.root)
+        setupInsets(binding.root)
 
         initToolbar()
 

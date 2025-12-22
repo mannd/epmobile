@@ -196,7 +196,7 @@ android:layout_height="match_parent">
 
         <!-- Result Creatinine Clearance -->
         <TextView
-            android:id="@+id/ccTextView"
+            android:id="@+id/creatinine_clearance_text_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
