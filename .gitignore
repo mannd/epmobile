@@ -42,3 +42,4 @@ build/
 
 # Ignore Android Studio heap dumps
 *.hprof
+emulator.log
