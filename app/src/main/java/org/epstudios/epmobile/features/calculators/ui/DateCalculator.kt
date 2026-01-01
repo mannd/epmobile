@@ -5,15 +5,18 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
+import com.google.android.material.datepicker.MaterialDatePicker
 import org.epstudios.epmobile.R
 import org.epstudios.epmobile.core.ui.base.EpActivity
 import org.epstudios.epmobile.databinding.DatecalculatorBinding
 import java.text.DateFormat
 import java.util.Calendar
 import java.util.GregorianCalendar
+import java.util.TimeZone
 
 class DateCalculator : EpActivity(), View.OnClickListener {
     private lateinit var binding: DatecalculatorBinding
+    private var selectedDate: Calendar = Calendar.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,8 +28,10 @@ class DateCalculator : EpActivity(), View.OnClickListener {
 
         binding.calculateButtonsLayout.calculateButton.setOnClickListener(this)
         binding.calculateButtonsLayout.clearButton.setOnClickListener(this)
+        binding.indexDateButton.setOnClickListener { showDatePicker() }
 
         binding.numberOfDaysEditText.setText(R.string.dc_default_number_of_days)
+        updateDateButtonText()
 
         binding.dayRadioGroup.setOnCheckedChangeListener {
             _, checkedId ->
@@ -71,8 +76,9 @@ class DateCalculator : EpActivity(), View.OnClickListener {
             var number = numberOfDays.toString().toInt()
             if (binding.reverseTimeCheckBox.isChecked()) number = -number
             val cal: Calendar = GregorianCalendar(
-                binding.indexDatePicker.getYear(),
-                binding.indexDatePicker.getMonth(), binding.indexDatePicker.getDayOfMonth()
+                selectedDate.get(Calendar.YEAR),
+                selectedDate.get(Calendar.MONTH),
+                selectedDate.get(Calendar.DAY_OF_MONTH)
             )
             cal.add(Calendar.DATE, number)
             // DateFormat =
@@ -92,6 +98,8 @@ class DateCalculator : EpActivity(), View.OnClickListener {
         binding.dayRadioGroup.check(R.id.ninetyRadio)
         binding.numberOfDaysEditText.setText(getString(R.string.dc_default_number_of_days))
         binding.calculatedDate.setTextAppearance(R.style.TextAppearance_Calculator_Result)
+        selectedDate = Calendar.getInstance()
+        updateDateButtonText()
     }
 
     override fun hideInstructionsMenuItem(): Boolean {
@@ -103,5 +111,46 @@ class DateCalculator : EpActivity(), View.OnClickListener {
             R.string.date_calculator_title,
             R.string.date_calculator_instructions
         )
+    }
+
+    private fun showDatePicker() {
+        val picker = MaterialDatePicker.Builder.datePicker()
+            .setTitleText(R.string.select_date_title)
+            .setSelection(utcMillisFromCalendar(selectedDate))
+            .build()
+        picker.addOnPositiveButtonClickListener { selection ->
+            selection?.let {
+                selectedDate = calendarFromUtc(it)
+                updateDateButtonText()
+            }
+        }
+        picker.show(supportFragmentManager, "date-picker")
+    }
+
+    private fun updateDateButtonText() {
+        val dateText = DateFormat.getDateInstance(DateFormat.MEDIUM).format(selectedDate.time)
+        binding.indexDateButton.text = dateText
+    }
+
+    private fun calendarFromUtc(utcMillis: Long): Calendar {
+        val utcCalendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"))
+        utcCalendar.timeInMillis = utcMillis
+        val localCalendar = Calendar.getInstance()
+        localCalendar.set(
+            utcCalendar.get(Calendar.YEAR),
+            utcCalendar.get(Calendar.MONTH),
+            utcCalendar.get(Calendar.DAY_OF_MONTH)
+        )
+        return localCalendar
+    }
+
+    private fun utcMillisFromCalendar(calendar: Calendar): Long {
+        val utcCalendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"))
+        utcCalendar.set(
+            calendar.get(Calendar.YEAR),
+            calendar.get(Calendar.MONTH),
+            calendar.get(Calendar.DAY_OF_MONTH)
+        )
+        return utcCalendar.timeInMillis
     }
 }

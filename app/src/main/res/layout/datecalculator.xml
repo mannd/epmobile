@@ -37,14 +37,13 @@
                 android:textAppearance="?attr/textAppearanceHeadlineMedium"
                     />
 
-            <DatePicker
-                android:id="@+id/indexDatePicker"
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/indexDateButton"
+                style="?attr/materialButtonOutlinedStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:calendarViewShown="false"
-                android:gravity="center"
-                tools:ignore="UnusedAttribute" />
+                android:text="@string/select_date_title" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -119,4 +118,3 @@
     </ScrollView>
 
 </RelativeLayout>
-
