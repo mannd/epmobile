@@ -626,6 +626,11 @@
         Prognostic value of electrocardiographic criteria for left ventricular
         hypertrophy. American Heart Journal. 2005;150(1):161-167.</string>
     <string name="other_lvh_link">https://doi.org/10.1016/j.ahj.2004.08.041</string>
+    <string name="peguero_lvh_title">Peguero-Lo Presti Criteria</string>
+    <string name="peguero_male_criteria_label">Deepest S + S in V4 (men)</string>
+    <string name="peguero_female_criteria_label">Deepest S + S in V4 (women)</string>
+    <string name="peguero_male_result">≥ 2.8 mV</string>
+    <string name="peguero_female_result">≥ 2.3 mV</string>
     <string name="estes_voltage_label">Any limb-lead R or S \u2265 20 mm
         or S V1 or V2 \u2265 30 mm or R V5 or V6 \u2265 30 mm</string>
     <string name="estes_strain_without_dig_label">Left ventricular strain pattern without digitalis</string>
