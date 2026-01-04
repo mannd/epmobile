@@ -113,7 +113,36 @@
             <TextView
                 android:text="@string/other_lvh_key" />
 
+            <TextView
+                style="@style/Header1"
+                android:text="@string/peguero_lvh_title" />
+
+
+            <TableRow>
+
+                <TextView
+                    style="@style/LeftColumnLabel"
+                    android:text="@string/peguero_male_criteria_label" />
+
+                <TextView
+                    style="@style/RightColumnValue"
+                    android:text="@string/peguero_male_result" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/LeftColumnLabel"
+                    android:text="@string/peguero_female_criteria_label" />
+
+                <TextView
+                    style="@style/RightColumnValue"
+                    android:text="@string/peguero_female_result" />
+            </TableRow>
+
+
         </TableLayout>
+
 
     </ScrollView>
 

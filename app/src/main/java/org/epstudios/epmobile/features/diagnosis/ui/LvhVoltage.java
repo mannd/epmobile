@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import org.epstudios.epmobile.R;
+import org.epstudios.epmobile.core.data.Reference;
 import org.epstudios.epmobile.core.ui.base.EpActivity;
 
 public class LvhVoltage extends EpActivity {
@@ -36,7 +37,12 @@ public class LvhVoltage extends EpActivity {
 
     @Override
     protected void showActivityReference() {
-        showReferenceAlertDialog(R.string.other_lvh_reference,
-                R.string.other_lvh_link);
+
+        Reference[] references = new Reference[3];
+        references[0] = new Reference(this, R.string.other_lvh_reference, R.string.other_lvh_link);
+        references[1] = new Reference(this, R.string.peguero_reference_1, R.string.peguero_link_1);
+        references[2] = new Reference(this, R.string.peguero_reference_2, R.string.peguero_link_2);
+
+        showReferenceAlertDialog(references);
     }
 }
