@@ -1,0 +1,3 @@
+EP Mobile 2.39.0 Release Notes
+Changes since 2.38.0
+* Added Peguero-Lo Presti LVH criteria
