@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">EP Mobile</string>
     <string name="about_text">
-		Copyright \u00a9 2011-2025 EP Studios, Inc.\nAll rights reserved.
+		Copyright \u00a9 2011-2026 EP Studios, Inc.\nAll rights reserved.
         \n\nVersion: %s
 		\n\nepstudiossoftware.com
 		\ngithub.com/mannd/epmobile
@@ -626,6 +626,19 @@
         Prognostic value of electrocardiographic criteria for left ventricular
         hypertrophy. American Heart Journal. 2005;150(1):161-167.</string>
     <string name="other_lvh_link">https://doi.org/10.1016/j.ahj.2004.08.041</string>
+    <string name="peguero_lvh_title">Peguero-Lo Presti Criteria</string>
+    <string name="peguero_male_criteria_label">Deepest S + S in V4 (men)</string>
+    <string name="peguero_female_criteria_label">Deepest S + S in V4 (women)</string>
+    <string name="peguero_male_result">≥ 2.8 mV</string>
+    <string name="peguero_female_result">≥ 2.3 mV</string>
+    <string name="peguero_reference_1">Peguero JG, Lo Presti S, Perez J, Issa O, Brenes JC,
+        Tolentino A. Electrocardiographic Criteria for the Diagnosis of Left Ventricular
+        Hypertrophy. J Am Coll Cardiol. 2017;69(13):1694-1703.</string>
+    <string name="peguero_link_1">https://doi.org/10.1016/j.jacc.2017.01.037</string>
+    <string name="peguero_reference_2">Yu Z, Song J, Cheng L, et al.
+        Peguero-Lo Presti criteria for the diagnosis of left ventricular hypertrophy:
+        A systematic review and meta-analysis. PLoS One. 2021;16(1):e0246305.</string>
+    <string name="peguero_link_2">https://doi.org/10.1371/journal.pone.0246305</string>
     <string name="estes_voltage_label">Any limb-lead R or S \u2265 20 mm
         or S V1 or V2 \u2265 30 mm or R V5 or V6 \u2265 30 mm</string>
     <string name="estes_strain_without_dig_label">Left ventricular strain pattern without digitalis</string>
