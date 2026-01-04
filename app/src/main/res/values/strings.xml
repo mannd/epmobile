@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">EP Mobile</string>
     <string name="about_text">
-		Copyright \u00a9 2011-2025 EP Studios, Inc.\nAll rights reserved.
+		Copyright \u00a9 2011-2026 EP Studios, Inc.\nAll rights reserved.
         \n\nVersion: %s
 		\n\nepstudiossoftware.com
 		\ngithub.com/mannd/epmobile
