@@ -77,4 +77,6 @@
     </style>
 
     <style name="Widget.App.Switch" parent="Widget.Material3.CompoundButton.MaterialSwitch" />
+
+    <style name="Widget.Button.OutlinedButton" parent="Widget.Material3.Button.OutlinedButton" />
 </resources>
