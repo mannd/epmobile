@@ -159,8 +159,8 @@
         <item>@string/v2_transition_ratio_vt_title</item>
     </array>
     <array name="interval_rate_labels">
-        <item>RR Interval (msec)</item>
-        <item>Heart Rate (bpm)</item>
+        <item>RR (msec)</item>
+        <item>Rate (bpm)</item>
     </array>
     <array name="interval_rate_values">
         <item>INTERVAL</item>
