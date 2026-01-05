@@ -1962,4 +1962,9 @@
       %5$s: Creatinine value (string)
       %6$s: Creatinine unit (string)
     -->
-    <string name="crcl_results_summary">CrCl = %1$d mL/min (%2$sy%3$s %4$skg Cr %5$s%6$s)</string></resources>
+    <string name="crcl_results_summary">CrCl = %1$d mL/min (%2$sy%3$s %4$skg Cr %5$s%6$s)</string>
+    <string name="bazett_formula_name">Bazett\n</string>
+    <string name="fridericia_formula_name">Fridericia</string>
+    <string name="sagie_formula_name">Sagie</string>
+    <string name="measurement_label">Measurement</string>
+</resources>
