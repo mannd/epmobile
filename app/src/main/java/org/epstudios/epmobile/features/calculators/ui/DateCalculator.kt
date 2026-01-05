@@ -3,7 +3,6 @@ package org.epstudios.epmobile.features.calculators.ui
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
-import android.view.View
 import android.widget.Toast
 import com.google.android.material.datepicker.MaterialDatePicker
 import org.epstudios.epmobile.R
@@ -14,7 +13,7 @@ import java.util.Calendar
 import java.util.GregorianCalendar
 import java.util.TimeZone
 
-class DateCalculator : EpActivity(), View.OnClickListener {
+class DateCalculator : EpActivity() {
     private lateinit var binding: DatecalculatorBinding
     private var selectedDate: Calendar = Calendar.getInstance()
 
@@ -26,8 +25,8 @@ class DateCalculator : EpActivity(), View.OnClickListener {
         setupInsets(binding.root)
         initToolbar()
 
-        binding.calculateButtonsLayout.calculateButton.setOnClickListener(this)
-        binding.calculateButtonsLayout.clearButton.setOnClickListener(this)
+        binding.calculateButtonsLayout.calculateButton.setOnClickListener { calculateDays() }
+        binding.calculateButtonsLayout.clearButton.setOnClickListener { clearEntries() }
         binding.indexDateButton.setOnClickListener { showDatePicker() }
 
         binding.numberOfDaysEditText.setText(R.string.dc_default_number_of_days)
@@ -48,53 +47,44 @@ class DateCalculator : EpActivity(), View.OnClickListener {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.getItemId() == android.R.id.home) {
-            val parentActivityIntent = Intent(this, CalculatorList::class.java)
-            parentActivityIntent.addFlags(
-                Intent.FLAG_ACTIVITY_CLEAR_TOP
-                        or Intent.FLAG_ACTIVITY_NEW_TASK
-            )
-            startActivity(parentActivityIntent)
-            finish()
-            return true
-        }
-        return super.onOptionsItemSelected(item)
-    }
-
-    override fun onClick(v: View) {
-        val id = v.id
-        if (id == R.id.calculate_button) {
-            calculateDays()
-        } else if (id == R.id.clear_button) {
-            clearEntries()
+        return when (item.itemId) {
+            android.R.id.home -> {
+                val parentActivityIntent = Intent(this, CalculatorList::class.java)
+                parentActivityIntent.addFlags(
+                    Intent.FLAG_ACTIVITY_CLEAR_TOP
+                            or Intent.FLAG_ACTIVITY_NEW_TASK
+                )
+                startActivity(parentActivityIntent)
+                finish()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 
     private fun calculateDays() {
-        val numberOfDays: CharSequence = binding.numberOfDaysEditText.getText()
+        val numberOfDays = binding.numberOfDaysEditText.text.toString()
         try {
-            var number = numberOfDays.toString().toInt()
-            if (binding.reverseTimeCheckBox.isChecked()) number = -number
+            var number = numberOfDays.toInt()
+            if (binding.reverseTimeCheckBox.isChecked) number = -number
             val cal: Calendar = GregorianCalendar(
                 selectedDate.get(Calendar.YEAR),
                 selectedDate.get(Calendar.MONTH),
                 selectedDate.get(Calendar.DAY_OF_MONTH)
             )
             cal.add(Calendar.DATE, number)
-            // DateFormat =
-            // SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
-            val message = DateFormat.getDateInstance(DateFormat.MEDIUM).format(cal.getTime())
-            binding.calculatedDate.setText(message)
+            val message = DateFormat.getDateInstance(DateFormat.MEDIUM).format(cal.time)
+            binding.calculatedDate.text = message
             Toast.makeText(this, message, Toast.LENGTH_LONG).show()
         } catch (_: NumberFormatException) {
-            binding.calculatedDate.setText(getString(R.string.invalid_warning))
+            binding.calculatedDate.text = getString(R.string.invalid_warning)
             binding.calculatedDate.setTextAppearance(R.style.TextAppearance_Calculator_Error)
         }
     }
 
     private fun clearEntries() {
-        binding.numberOfDaysEditText.setText(null)
-        binding.calculatedDate.setText(getString(R.string.date_result_label))
+        binding.numberOfDaysEditText.text = null
+        binding.calculatedDate.text = getString(R.string.date_result_label)
         binding.dayRadioGroup.check(R.id.ninetyRadio)
         binding.numberOfDaysEditText.setText(getString(R.string.dc_default_number_of_days))
         binding.calculatedDate.setTextAppearance(R.style.TextAppearance_Calculator_Result)
