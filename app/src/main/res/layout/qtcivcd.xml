@@ -1,115 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/qtcivcd_root_view"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <include layout="@layout/toolbar" />
-    <include layout="@layout/calculatebuttons" />
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <include
+        android:id="@+id/calculateButtonsLayout"
+        layout="@layout/calculatebuttonslayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ScrollView
         android:id="@+id/scrollView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="@dimen/activity_vertical_margin">
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        app:layout_constraintBottom_toTopOf="@id/calculateButtonsLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
-        <TableLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:stretchColumns="*"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:padding="10dp"
-            android:layout_marginTop="@dimen/activity_vertical_margin">
+            android:orientation="vertical">
 
             <RadioGroup
                 android:id="@+id/sexRadioGroup"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <RadioButton
+                <com.google.android.material.radiobutton.MaterialRadioButton
                     android:id="@+id/male"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:checked="true"
                     android:text="@string/male_label" />
 
-                <RadioButton
+                <com.google.android.material.radiobutton.MaterialRadioButton
                     android:id="@+id/female"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="@string/female_label" />
             </RadioGroup>
 
-            <TableRow>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
 
-                <Spinner android:id="@+id/interval_rate_spinner" />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/interval_rate_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/measurement_label">
 
-                <EditText
-                    android:id="@+id/rrEditText"
-                    android:hint="@string/rr_hint"
-                    android:inputType="number"
-                    android:text=""
-                    android:importantForAutofill="no" />
-            </TableRow>
+                    <AutoCompleteTextView
+                        android:id="@+id/interval_rate_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-            <TableRow>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/rrInputLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:hint="@string/rr_hint">
 
-                <TextView
-                    android:text="@string/qt_label"
-                    android:textAppearance="@style/TextAppearance.App.LabelLarge" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/rrEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
 
-                <EditText
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/qtInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="@string/qt_hint">
+
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/qtEditText"
-                    android:hint="@string/qt_hint"
-                    android:inputType="number"
-                    android:text=""
-                    android:importantForAutofill="no" />
-            </TableRow>
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/qrsInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="@string/qrs_hint">
 
-            <TableRow>
-
-                <TextView
-                    android:text="@string/qrs_label"
-                    android:textAppearance="@style/TextAppearance.App.LabelLarge" />
-
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/qrsEditText"
-                    android:hint="@string/qrs_hint"
-                    android:inputType="number"
-                    android:text=""
-                    android:importantForAutofill="no" />
-            </TableRow>
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <TableRow>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/qtc_formula_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="@string/qtc_formula_label">
 
-                <TextView
-                    android:text="@string/qtc_formula_label"
-                    android:textAppearance="@style/TextAppearance.App.LabelLarge" />
-
-                <Spinner
+                <AutoCompleteTextView
                     android:id="@+id/qtc_formula_spinner"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-            </TableRow>
+                    android:layout_height="wrap_content"
+                    android:inputType="none" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <TableRow>
-                <TextView
-                    android:text="@string/lbbb_query"
-                    android:textAppearance="@style/TextAppearance.App.LabelLarge" />
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/lbbbCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/lbbb_query" />
 
-                <CheckBox
-                    android:id="@+id/lbbbCheckBox"
-                    />
+            <TextView
+                android:id="@+id/calculated_qtc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center_horizontal"
+                android:textAppearance="@style/TextAppearance.Calculator.Result"
+                tools:text="QTc = 440 msec" />
 
-            </TableRow>
+            <TextView
+                android:id="@+id/qt_corrected_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center_horizontal"
+                android:textAppearance="@style/TextAppearance.Message.Normal"
+                tools:text="QT corrected for IVCD/LBBB" />
 
-        </TableLayout>
+        </LinearLayout>
     </ScrollView>
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
