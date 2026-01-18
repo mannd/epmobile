@@ -1,20 +1,3 @@
-package org.epstudios.epmobile.features.calculators.ui
-
-import android.content.Intent
-import android.os.Bundle
-import android.view.MenuItem
-import android.view.View
-import android.widget.ArrayAdapter
-import androidx.preference.PreferenceManager
-import org.epstudios.epmobile.R
-import org.epstudios.epmobile.core.data.HeightUnit
-import org.epstudios.epmobile.core.data.UnitConverter
-import org.epstudios.epmobile.core.data.WeightUnit
-import org.epstudios.epmobile.core.ui.base.EpActivity
-import org.epstudios.epmobile.databinding.BmiBinding
-import org.epstudios.epmobile.features.calculators.data.BMI
-
-
 /**
 Copyright (C) 2025 EP Studios, Inc.
 www.epstudiossoftware.com
@@ -37,6 +20,21 @@ You should have received a copy of the GNU General Public License
 along with epmobile.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+package org.epstudios.epmobile.features.calculators.ui
+
+import android.content.Intent
+import android.os.Bundle
+import android.view.MenuItem
+import android.view.View
+import androidx.preference.PreferenceManager
+import org.epstudios.epmobile.R
+import org.epstudios.epmobile.core.data.HeightUnit
+import org.epstudios.epmobile.core.data.UnitConverter
+import org.epstudios.epmobile.core.data.WeightUnit
+import org.epstudios.epmobile.core.ui.base.EpActivity
+import org.epstudios.epmobile.databinding.BmiBinding
+import org.epstudios.epmobile.features.calculators.data.BMI
+
 class BmiCalculator : EpActivity(), View.OnClickListener {
 
     private var defaultWeightUnitSelection = WeightUnit.KG
@@ -50,14 +48,15 @@ class BmiCalculator : EpActivity(), View.OnClickListener {
         binding = BmiBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setupInsets(binding.root)
-
         initToolbar()
 
         binding.calculateButtonsLayout.calculateButton.setOnClickListener(this)
         binding.calculateButtonsLayout.clearButton.setOnClickListener(this)
 
         getPrefs()
-        setAdapters()
+        // The setAdapters() method is no longer needed!
+        // We will set the initial state of the chips instead.
+        setInitialChipState()
         clearEntries()
     }
 
@@ -76,70 +75,47 @@ class BmiCalculator : EpActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View) {
-        val id = v.id
-        if (id == R.id.calculate_button) {
-            calculate()
-        } else if (id == R.id.clear_button) {
-            clearEntries()
+        when (v.id) {
+            R.id.calculate_button -> calculate()
+            R.id.clear_button -> clearEntries()
         }
     }
 
-    private fun setAdapters() {
-        // Weight Spinner
-        val weightUnits = getResources().getStringArray(R.array.weight_unit_labels)
-        val weightUnitAdapter = ArrayAdapter<String?>(
-            this, R.layout.dropdown_menu_item, weightUnits
-        )
-        binding.weightUnitSpinner.setAdapter(weightUnitAdapter)
-
+    // This replaces setAdapters()
+    private fun setInitialChipState() {
         if (defaultWeightUnitSelection == WeightUnit.KG) {
-            binding.weightUnitSpinner.setText(weightUnits[WeightUnit.KG.arrayIndex], false)
+            binding.weightUnitChipGroup.check(R.id.kg_chip)
         } else {
-            binding.weightUnitSpinner.setText(weightUnits[WeightUnit.LB.arrayIndex], false)
+            binding.weightUnitChipGroup.check(R.id.lb_chip)
         }
-
-        // Height spinner
-        val heightUnits = getResources().getStringArray(R.array.height_unit_labels)
-        val heightUnitAdapter = ArrayAdapter<String?>(
-            this, R.layout.dropdown_menu_item, heightUnits
-        )
-        binding.heightUnitSpinner.setAdapter(heightUnitAdapter)
 
         if (defaultHeightUnitSelection == HeightUnit.CM) {
-            binding.heightUnitSpinner.setText(heightUnits[HeightUnit.CM.arrayIndex], false)
+            binding.heightUnitChipGroup.check(R.id.cm_chip)
         } else {
-            binding.heightUnitSpinner.setText(heightUnits[HeightUnit.IN.arrayIndex], false)
+            binding.heightUnitChipGroup.check(R.id.in_chip)
         }
     }
 
+    // We now get the selection directly from the ChipGroup
     private val weightUnitSelection: WeightUnit
         get() {
-            val selectedUnit = binding.weightUnitSpinner.text.toString()
-            val kgUnit =
-                getResources().getStringArray(R.array.weight_unit_labels)[WeightUnit.KG.arrayIndex]
-            return if (selectedUnit == kgUnit) {
-                WeightUnit.KG
-            } else {
-                WeightUnit.LB
+            return when (binding.weightUnitChipGroup.checkedChipId) {
+                R.id.kg_chip -> WeightUnit.KG
+                else -> WeightUnit.LB
             }
         }
 
+    // Same for height
     private val heightUnitSelection: HeightUnit
         get() {
-            val selectedUnit = binding.heightUnitSpinner.text.toString()
-            val cmUnit =
-                getResources().getStringArray(R.array.height_unit_labels)[HeightUnit.CM.arrayIndex]
-            return if (selectedUnit == cmUnit) {
-                HeightUnit.CM
-            } else {
-                HeightUnit.IN
+            return when (binding.heightUnitChipGroup.checkedChipId) {
+                R.id.cm_chip -> HeightUnit.CM
+                else -> HeightUnit.IN
             }
         }
 
     private fun calculate() {
-        // clear any message
-        binding.messageTextView.text == null
-        // make sure message white with 2 calculations in row, 1st invalid
+        binding.messageTextView.text = null
         resetResultTextColor()
         val weightText: CharSequence = binding.weightEditText.text ?: ""
         val heightText: CharSequence = binding.heightEditText.text ?: ""
@@ -181,11 +157,11 @@ class BmiCalculator : EpActivity(), View.OnClickListener {
     }
 
     private fun clearEntries() {
-        binding.weightEditText.text = null
-        binding.heightEditText.text = null
+//        binding.weightEditText.text = null
+//        binding.heightEditText.text = null
         binding.messageTextView.text = null
         binding.calculatedResult.text = null
-        binding.weightEditText.requestFocus()
+//        binding.weightEditText.requestFocus()
         resetResultTextColor()
     }
 
@@ -195,29 +171,15 @@ class BmiCalculator : EpActivity(), View.OnClickListener {
 
     private fun getPrefs() {
         val prefs = PreferenceManager.getDefaultSharedPreferences(this)
-
-        prefs.getString("default_weight_unit", "KG")?.let {
-            weightUnitPref ->
-            defaultWeightUnitSelection = if (weightUnitPref == "KG") {
-                WeightUnit.KG
-            } else {
-                WeightUnit.LB
-            }
+        prefs.getString("default_weight_unit", "KG")?.let { weightUnitPref ->
+            defaultWeightUnitSelection = if (weightUnitPref == "KG") WeightUnit.KG else WeightUnit.LB
         }
-
-        prefs.getString("default_height_unit", "CM")?.let {
-            heightUnitPref ->
-            defaultHeightUnitSelection = if (heightUnitPref == "CM") {
-                HeightUnit.CM
-            } else {
-                HeightUnit.IN
-            }
+        prefs.getString("default_height_unit", "CM")?.let { heightUnitPref ->
+            defaultHeightUnitSelection = if (heightUnitPref == "CM") HeightUnit.CM else HeightUnit.IN
         }
     }
 
-    override fun hideInstructionsMenuItem(): Boolean {
-        return false
-    }
+    override fun hideInstructionsMenuItem(): Boolean = false
 
     override fun showActivityInstructions() {
         showAlertDialog(
@@ -226,9 +188,7 @@ class BmiCalculator : EpActivity(), View.OnClickListener {
         )
     }
 
-    override fun hideReferenceMenuItem(): Boolean {
-        return false
-    }
+    override fun hideReferenceMenuItem(): Boolean = false
 
     override fun showActivityReference() {
         showReferenceAlertDialog(

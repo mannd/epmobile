@@ -46,27 +46,85 @@
             android:paddingStart="@dimen/activity_horizontal_margin"
             android:paddingEnd="@dimen/activity_horizontal_margin">
 
-            <!-- Weight Unit Spinner -->
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/weightUnitSpinnerLayout"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:labelFor="@id/weightUnitSpinner"
-                android:hint="@string/weight_unit_description">
+            <!-- In your bmi.xml, replace the weight unit TextInputLayout -->
 
-                <AutoCompleteTextView
-                    android:id="@+id/weightUnitSpinner"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="none"
-                    android:minWidth="96dp" />
+            <!-- And replace the height unit TextInputLayout -->
 
-            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--            &lt;!&ndash; Weight Unit Spinner &ndash;&gt;-->
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:id="@+id/weightUnitSpinnerLayout"-->
+<!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                android:labelFor="@id/weightUnitSpinner"-->
+<!--                android:hint="@string/weight_unit_description">-->
+
+<!--                <AutoCompleteTextView-->
+<!--                    android:id="@+id/weightUnitSpinner"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:inputType="none"-->
+<!--                    android:minWidth="96dp" />-->
+
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
 
             <!-- Weight Input -->
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/weight_unit_chip_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:selectionRequired="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/lb_chip"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lb_label" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/kg_chip"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/kg_label" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/height_unit_chip_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="88dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:selectionRequired="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/in_chip"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/in_label" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/cm_chip"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cm_label" />
+
+            </com.google.android.material.chip.ChipGroup>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/weightInputLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -74,7 +132,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:hint="@string/weight_hint"
-                app:layout_constraintEnd_toStartOf="@id/weightUnitSpinnerLayout"
+                app:layout_constraintEnd_toStartOf="@id/weight_unit_chip_group"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -88,26 +146,26 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-            <!-- Height Unit Spinner -->
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/heightUnitSpinnerLayout"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:hint="@string/height_unit_description"
-                android:labelFor="@id/heightUnitSpinner"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/weightInputLayout">
+<!--            &lt;!&ndash; Height Unit Spinner &ndash;&gt;-->
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:id="@+id/heightUnitSpinnerLayout"-->
+<!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:hint="@string/height_unit_description"-->
+<!--                android:labelFor="@id/heightUnitSpinner"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/weightInputLayout">-->
 
-                <AutoCompleteTextView
-                    android:id="@+id/heightUnitSpinner"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="none"
-                    android:minWidth="96dp" />
+<!--                <AutoCompleteTextView-->
+<!--                    android:id="@+id/heightUnitSpinner"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:inputType="none"-->
+<!--                    android:minWidth="96dp" />-->
 
-            </com.google.android.material.textfield.TextInputLayout>
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
 
             <!-- Height Input -->
             <com.google.android.material.textfield.TextInputLayout
@@ -118,7 +176,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:hint="@string/height_hint"
-                app:layout_constraintEnd_toStartOf="@id/heightUnitSpinnerLayout"
+                app:layout_constraintEnd_toStartOf="@id/height_unit_chip_group"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/weightInputLayout">
 
