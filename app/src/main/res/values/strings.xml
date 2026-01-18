@@ -1001,12 +1001,15 @@
     <string name="abw_hint">ABW (kg)</string>
     <string name="abw_lb_label">Adjusted Body Weight (lb)</string>
     <string name="abw_lb_hint">ABW (lb)</string>
+    <string name="unit_label">units</string>
+    <string name="ibw_result_label">IBW = %s %s</string>
+    <string name="abw_result_label">ABW = %s %s</string>
     <string name="default_height_unit_title">Default Height Unit</string>
     <string name="default_height_unit_summary">Select default unit for height</string>
-    <string name="overweight_message" tools:ignore="PluralsCandidate">Actual weight is at least 30%% over Ideal Body Weight.  Recommended weight is Adjusted Body Weight (%s</string>
+    <string name="overweight_message" tools:ignore="PluralsCandidate">Actual weight is at least 30%% over Ideal Body Weight.  Recommended weight is Adjusted Body Weight (%s)</string>
     <string name="underheight_message">These measurements may not be useful when height is &lt; 60 inches.</string>
-    <string name="underweight_message">Actual weight is less than Ideal Body Weight.  Recommended weight is Actual Weight (%s</string>
-    <string name="normalweight_message">Weight is in the normal range.  Recommended weight is Ideal Body Weight (%s</string>
+    <string name="underweight_message">Actual weight is less than Ideal Body Weight.  Recommended weight is Actual Weight (%s)</string>
+    <string name="normalweight_message">Weight is in the normal range.  Recommended weight is Ideal Body Weight (%s)</string>
     <string name="pound_abbreviation">lb</string>
     <string name="kg_abbreviation">kg</string>
     <string name="syncope_list_title">Syncope Risk Scores</string>
