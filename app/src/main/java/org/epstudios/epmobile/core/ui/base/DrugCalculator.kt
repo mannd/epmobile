@@ -2,7 +2,6 @@ package org.epstudios.epmobile.core.ui.base
 
 import android.os.Bundle
 import android.view.View
-import android.widget.ArrayAdapter
 import androidx.preference.PreferenceManager
 import org.epstudios.epmobile.R
 import org.epstudios.epmobile.core.data.CreatinineUnit
@@ -38,7 +37,7 @@ abstract class DrugCalculator : EpActivity(), View.OnClickListener {
         binding.calculateButtonsLayout.clearButton.setOnClickListener(this)
 
         this.prefs
-        setAdapters()
+        setInitialChipState()
         clearEntries()
     }
 
@@ -52,60 +51,33 @@ abstract class DrugCalculator : EpActivity(), View.OnClickListener {
         }
     }
 
-    private fun setAdapters() {
-        // Weight Spinner
-        val weightUnits = getResources().getStringArray(
-            R.array.weight_unit_labels
-        )
-        val weightUnitAdapter = ArrayAdapter<String?>(
-            this, R.layout.dropdown_menu_item, weightUnits
-        )
-        binding.weightUnitSpinner.setAdapter(weightUnitAdapter)
-
+    private fun setInitialChipState() {
         if (defaultWeightUnitSelection == WeightUnit.KG) {
-            binding.weightUnitSpinner.setText(weightUnits[WeightUnit.KG.arrayIndex], false)
+            binding.weightUnitChipGroup.check(R.id.kg_chip)
         } else {
-            binding.weightUnitSpinner.setText(weightUnits[WeightUnit.LB.arrayIndex], false)
+            binding.weightUnitChipGroup.check(R.id.lb_chip)
         }
 
-
-        // Creatinine Spinner
-        val creatinineUnits = getResources().getStringArray(
-            R.array.creatinine_unit_labels
-        )
-        val creatinineUnitAdapter = ArrayAdapter<String?>(
-            this, R.layout.dropdown_menu_item, creatinineUnits
-        )
-        binding.creatinineUnitSpinner.setAdapter(creatinineUnitAdapter)
-
         if (defaultCreatinineUnitSelection == CreatinineUnit.MG) {
-            binding.creatinineUnitSpinner.setText(creatinineUnits[CreatinineUnit.MG.arrayIndex], false)
+            binding.creatinineUnitChipGroup.check(R.id.mg_chip)
         } else {
-            binding.creatinineUnitSpinner.setText(creatinineUnits[CreatinineUnit.MMOL.arrayIndex], false)
+            binding.creatinineUnitChipGroup.check(R.id.mmol_chip)
         }
     }
 
     private val weightUnitSelection: WeightUnit
         get() {
-            val selectedUnit = binding.weightUnitSpinner.text.toString()
-            val kgUnit =
-                getResources().getStringArray(R.array.weight_unit_labels)[WeightUnit.KG.arrayIndex]
-            return if (selectedUnit == kgUnit) {
-                WeightUnit.KG
-            } else {
-                WeightUnit.LB
+            return when (binding.weightUnitChipGroup.checkedChipId) {
+                R.id.kg_chip -> WeightUnit.KG
+                else -> WeightUnit.LB
             }
         }
 
     private val creatinineUnitSelection: CreatinineUnit
         get() {
-            val selectedUnit = binding.creatinineUnitSpinner.text.toString()
-            val mgUnit =
-                getResources().getStringArray(R.array.creatinine_unit_labels)[CreatinineUnit.MG.arrayIndex]
-            return if (selectedUnit == mgUnit) {
-                CreatinineUnit.MG
-            } else {
-                CreatinineUnit.MMOL
+            return when (binding.creatinineUnitChipGroup.checkedChipId) {
+                R.id.mg_chip -> CreatinineUnit.MG
+                else -> CreatinineUnit.MMOL
             }
         }
 

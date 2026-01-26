@@ -99,25 +99,38 @@ android:layout_height="match_parent">
                 android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Weight Unit Spinner -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/weightUnitSpinnerLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+
+
+        <!-- Weight Input -->
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/weight_unit_chip_group"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="@string/weight_unit_description"
-            android:labelFor="@id/weightUnitSpinner"
+            android:layout_marginTop="12dp"
+            app:layout_constraintStart_toEndOf="@id/weightEditTextLayout"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ageEditTextLayout">
+            app:layout_constraintTop_toTopOf="@id/weightEditTextLayout"
+            app:layout_constraintTop_toBottomOf="@id/ageEditTextLayout"
+            app:selectionRequired="true"
+            app:singleSelection="true">
 
-            <AutoCompleteTextView
-                android:id="@+id/weightUnitSpinner"
-                android:layout_width="match_parent"
+            <com.google.android.material.chip.Chip
+                android:id="@+id/lb_chip"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="none"
-                android:minWidth="96dp" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:text="@string/lb_label" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/kg_chip"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/kg_label" />
+
+        </com.google.android.material.chip.ChipGroup>
+
 
         <!-- Weight Input -->
         <com.google.android.material.textfield.TextInputLayout
@@ -128,7 +141,7 @@ android:layout_height="match_parent">
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:hint="@string/weight_hint"
-            app:layout_constraintEnd_toStartOf="@id/weightUnitSpinnerLayout"
+            app:layout_constraintEnd_toStartOf="@id/weight_unit_chip_group"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ageEditTextLayout">
 
@@ -140,25 +153,37 @@ android:layout_height="match_parent">
                 android:inputType="numberDecimal" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Creatinine Unit Spinner -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/creatinineUnitSpinnerLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+
+
+        <!-- Creatinine Input -->
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/creatinine_unit_chip_group"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="@string/creatinine_unit_description"
-            android:labelFor="@id/creatinineUnitSpinner"
+            android:layout_marginTop="12dp"
+            app:layout_constraintStart_toEndOf="@id/creatinineEditTextLayout"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/weightEditTextLayout">
+            app:layout_constraintTop_toTopOf="@id/creatinineEditTextLayout"
+            app:layout_constraintTop_toBottomOf="@id/creatinineEditTextLayout"
+            app:selectionRequired="true"
+            app:singleSelection="true">
 
-            <AutoCompleteTextView
-                android:id="@+id/creatinineUnitSpinner"
-                android:layout_width="match_parent"
+            <com.google.android.material.chip.Chip
+                android:id="@+id/mg_chip"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="none"
-                android:minWidth="96dp" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:text="@string/creatinine_mg_per_dl" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/mmol_chip"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/creatinine_mmol_per_l" />
+
+        </com.google.android.material.chip.ChipGroup>
 
         <!-- Creatinine Input -->
         <com.google.android.material.textfield.TextInputLayout
@@ -169,7 +194,7 @@ android:layout_height="match_parent">
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:hint="@string/creatinine_hint"
-            app:layout_constraintEnd_toStartOf="@id/creatinineUnitSpinnerLayout"
+            app:layout_constraintEnd_toStartOf="@id/creatinine_unit_chip_group"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/weightEditTextLayout">
 
