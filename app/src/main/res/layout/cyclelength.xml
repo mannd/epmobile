@@ -38,27 +38,27 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <RadioGroup
-                android:id="@+id/intervalRateRadioGroup"
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/intervalRateChipGroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                app:singleSelection="true">
 
-                <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/cl_button"
-                    android:layout_width="0dp"
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/cl_chip"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:checked="true"
                     android:text="@string/cl_label" />
 
-                <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/hr_button"
-                    android:layout_width="0dp"
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/hr_chip"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:text="@string/hr_label" />
-            </RadioGroup>
+            </com.google.android.material.chip.ChipGroup>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/inputLayout"

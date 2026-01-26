@@ -22,7 +22,7 @@ class CycleLength : EpActivity() {
         binding.calculateButtonsLayout.calculateButton.setOnClickListener { calculateResult() }
         binding.calculateButtonsLayout.clearButton.setOnClickListener { clearEntries() }
 
-        binding.intervalRateRadioGroup.setOnCheckedChangeListener { _, _ ->
+        binding.intervalRateChipGroup.setOnCheckedChangeListener { _, _ ->
             updateInputHint()
             binding.calculatedResult.setText(R.string.calculated_result_label)
         }
@@ -46,7 +46,7 @@ class CycleLength : EpActivity() {
     }
 
     private fun updateInputHint() {
-        val hintResId = if (binding.intervalRateRadioGroup.checkedRadioButtonId == R.id.cl_button) {
+        val hintResId = if (binding.intervalRateChipGroup.checkedChipId == R.id.cl_chip) {
             R.string.cl_hint
         } else {
             R.string.hr_hint
@@ -62,7 +62,7 @@ class CycleLength : EpActivity() {
             if (input == 0) throw NumberFormatException()
 
             val result = calculate(input)
-            val resultStringId = if (binding.intervalRateRadioGroup.checkedRadioButtonId == R.id.cl_button) {
+            val resultStringId = if (binding.intervalRateChipGroup.checkedChipId == R.id.cl_chip) {
                 R.string.cl_result_as_rate
             } else {
                 R.string.cl_result_as_interval
