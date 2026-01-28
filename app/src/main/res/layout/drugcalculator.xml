@@ -14,7 +14,7 @@ android:layout_height="match_parent">
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
 
-<!-- Your new, modernized calculator buttons constrained to the bottom -->
+<!-- calculator buttons constrained to the bottom -->
 <include
     android:id="@+id/calculateButtonsLayout"
     layout="@layout/calculatebuttonslayout"

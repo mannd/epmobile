@@ -2,9 +2,9 @@ package org.epstudios.epmobile.features.calculators.ui
 
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.widget.ArrayAdapter
 import androidx.preference.PreferenceManager
 import org.epstudios.epmobile.R
+import org.epstudios.epmobile.core.data.CreatinineUnit
 import org.epstudios.epmobile.core.data.Gfr
 import org.epstudios.epmobile.core.ui.base.EpActivity
 import org.epstudios.epmobile.databinding.GfrBinding
@@ -12,8 +12,6 @@ import org.epstudios.epmobile.databinding.GfrBinding
 class GfrCalculator : EpActivity() {
 
     private lateinit var binding: GfrBinding
-
-    private enum class CreatinineUnit { MG, MMOL }
 
     private var defaultCreatinineUnitSelection = CreatinineUnit.MG
     private var creatinineUnitPosition: Int = 0
@@ -33,9 +31,26 @@ class GfrCalculator : EpActivity() {
         binding.calculateButtonsLayout.clearButton.setOnClickListener { clearEntries() }
 
         getPrefs()
-        setAdapters()
+        setInitialChipState()
         clearEntries()
     }
+
+
+    private fun setInitialChipState() {
+        if (defaultCreatinineUnitSelection == CreatinineUnit.MG) {
+            binding.creatinineUnitChipGroup.check(R.id.mg_chip)
+        } else {
+            binding.creatinineUnitChipGroup.check(R.id.mmol_chip)
+        }
+    }
+
+    private val creatinineUnitSelection: org.epstudios.epmobile.core.data.CreatinineUnit
+        get() {
+            return when (binding.creatinineUnitChipGroup.checkedChipId) {
+                R.id.mg_chip -> org.epstudios.epmobile.core.data.CreatinineUnit.MG
+                else -> org.epstudios.epmobile.core.data.CreatinineUnit.MMOL
+            }
+        }
 
     private fun calculateResult() {
         // Reset to normal appearing text color
@@ -43,8 +58,8 @@ class GfrCalculator : EpActivity() {
 
         val ageText = binding.ageEditText.text.toString()
         val crText = binding.creatinineEditText.text.toString()
-        val isMale = binding.sexRadioGroup.checkedRadioButtonId == R.id.male
-        val isBlack = binding.raceRadioGroup.checkedRadioButtonId == R.id.black
+        val isMale = binding.maleChip.isChecked
+        val isBlack = binding.blackChip.isChecked
 
         try {
             val age = ageText.toDouble()
@@ -53,7 +68,7 @@ class GfrCalculator : EpActivity() {
                 return
             }
             var cr = crText.toDouble()
-            if (getCreatinineUnitSelection() == CreatinineUnit.MMOL) {
+            if (creatinineUnitSelection == CreatinineUnit.MMOL) {
                 cr = Gfr.convertMicroMolPerLiterToMgPerDL(cr)
             }
             val result = Gfr.ckdEpiGfr(cr, age.toInt(), isMale, isBlack)
@@ -78,39 +93,11 @@ class GfrCalculator : EpActivity() {
         binding.ageEditText.requestFocus()
     }
 
-    private fun setAdapters() {
-        val creatinineItems = resources.getStringArray(R.array.creatinine_unit_labels)
-        val creatinineAdapter = ArrayAdapter(this, R.layout.dropdown_menu_item, creatinineItems)
-        binding.creatinineUnitsSpinner.setAdapter(creatinineAdapter)
-
-        binding.creatinineUnitsSpinner.setOnItemClickListener { _, _, position, _ ->
-            creatinineUnitPosition = position
-            updateCreatinineUnitSelection(position)
-        }
-        // Set initial selection
-        val initialPosition = if (defaultCreatinineUnitSelection == CreatinineUnit.MG) 0 else 1
-        creatinineUnitPosition = initialPosition
-        binding.creatinineUnitsSpinner.setText(creatinineAdapter.getItem(initialPosition), false)
-        updateCreatinineUnitSelection(initialPosition)
-    }
 
     private fun getPrefs() {
         val prefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(baseContext)
         val creatinineUnitPreference = prefs.getString(getString(R.string.creatinine_clearance_unit_key), "MG")
         defaultCreatinineUnitSelection = if (creatinineUnitPreference == "MG") CreatinineUnit.MG else CreatinineUnit.MMOL
-    }
-
-    private fun updateCreatinineUnitSelection(position: Int) {
-        val hint = if (position == 0) {
-            getString(R.string.creatinine_mg_hint)
-        } else {
-            getString(R.string.creatinine_mmol_hint)
-        }
-        binding.creatinineInputLayout.hint = hint
-    }
-
-    private fun getCreatinineUnitSelection(): CreatinineUnit {
-        return if (creatinineUnitPosition == 0) CreatinineUnit.MG else CreatinineUnit.MMOL
     }
 
     override fun hideReferenceMenuItem() = false

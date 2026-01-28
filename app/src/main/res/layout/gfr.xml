@@ -34,63 +34,80 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
-            <RadioGroup
-                android:id="@+id/sexRadioGroup"
-                android:layout_width="match_parent"
+
+            <!-- Gender selection with modern ChipGroup -->
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/sexChipGroup"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:selectionRequired="true"
+                app:singleSelection="true">
 
-                <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/male"
-                    android:layout_width="0dp"
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/maleChip"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:checked="true"
                     android:text="@string/male_label" />
 
-                <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/female"
-                    android:layout_width="0dp"
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/femaleChip"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:text="@string/female_label" />
-            </RadioGroup>
 
-            <RadioGroup
-                android:id="@+id/raceRadioGroup"
-                android:layout_width="match_parent"
+            </com.google.android.material.chip.ChipGroup>
+
+
+            <!-- Race selection with modern ChipGroup -->
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/raceChipGroup"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:orientation="horizontal">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sexChipGroup"
+                app:selectionRequired="true"
+                app:singleSelection="true">
 
-                <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/non_black"
-                    android:layout_width="0dp"
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/non_blackChip"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:checked="true"
                     android:text="@string/non_black_label" />
 
-                <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/black"
-                    android:layout_width="0dp"
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/blackChip"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:text="@string/black_label" />
-            </RadioGroup>
+
+            </com.google.android.material.chip.ChipGroup>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/ageInputLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:hint="@string/age_label">
+                android:hint="@string/age_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/raceChipGroup">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/ageEditText"
@@ -99,60 +116,81 @@
                     android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
+
+            <!-- Creatinine Input -->
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/creatinine_unit_chip_group"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:orientation="horizontal">
+                android:layout_marginTop="12dp"
+                app:layout_constraintStart_toEndOf="@id/creatinineEditTextLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/creatinineEditTextLayout"
+                app:layout_constraintTop_toBottomOf="@id/creatinineEditTextLayout"
+                app:selectionRequired="true"
+                app:singleSelection="true">
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/creatinineInputLayout"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:hint="@string/creatinine_hint">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/creatinineEditText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="numberDecimal" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/creatinine_units_layout"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/mg_chip"
+                    style="@style/Widget.Material3.Chip.Filter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp">
+                    android:text="@string/creatinine_mg_per_dl" />
 
-                    <AutoCompleteTextView
-                        android:id="@+id/creatinine_units_spinner"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:inputType="none"
-                        tools:text="mg/dL" />
-                </com.google.android.material.textfield.TextInputLayout>
-            </LinearLayout>
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/mmol_chip"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/creatinine_mmol_per_l" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <!-- Creatinine Input -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/creatinineEditTextLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:hint="@string/creatinine_hint"
+                app:layout_constraintEnd_toStartOf="@id/creatinine_unit_chip_group"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ageInputLayout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/creatinineEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:importantForAutofill="no"
+                    android:inputType="numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
                 android:id="@+id/calculated_gfr"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:gravity="center_horizontal"
                 android:text="@string/gfr_result_label"
-                android:textAppearance="@style/TextAppearance.Calculator.Result" />
+                android:textAppearance="@style/TextAppearance.Calculator.Result"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/creatinineEditTextLayout" />
 
             <TextView
                 android:id="@+id/gfrTextView"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:textAppearance="@style/TextAppearance.Message.Normal" />
+                android:textAppearance="@style/TextAppearance.Message.Normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/calculated_gfr" />
 
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
 
