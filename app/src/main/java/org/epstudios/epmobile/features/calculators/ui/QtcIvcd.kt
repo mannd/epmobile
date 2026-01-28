@@ -4,13 +4,14 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.ArrayAdapter
 import androidx.preference.PreferenceManager
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import org.epstudios.epmobile.R
 import org.epstudios.epmobile.core.data.QtcCalculator
+import org.epstudios.epmobile.core.data.QtcCalculator.QtcFormula
 import org.epstudios.epmobile.core.data.Reference
 import org.epstudios.epmobile.core.ui.base.EpActivity
+import org.epstudios.epmobile.core.ui.base.MaterialSpinnerAdapter
 import org.epstudios.epmobile.databinding.QtcivcdBinding
 
 class QtcIvcd : EpActivity() {
@@ -56,10 +57,9 @@ class QtcIvcd : EpActivity() {
     }
 
     private fun setAdapters() {
-        val adapter = ArrayAdapter.createFromResource(
-            this, R.array.interval_rate_labels,
-            R.layout.dropdown_menu_item
-        )
+        val labels = resources.getStringArray(R.array.interval_rate_labels)
+        val adapter = MaterialSpinnerAdapter(this, R.layout.dropdown_menu_item, labels)
+
         binding.intervalRateSpinner.setAdapter(adapter)
         val initialPosition = if (defaultIntervalRateSelection == IntervalRate.INTERVAL) 0 else 1
         binding.intervalRateSpinner.setText(adapter.getItem(initialPosition), false)
@@ -71,18 +71,16 @@ class QtcIvcd : EpActivity() {
     }
 
     private fun setFormulaAdapters() {
-        val adapter = ArrayAdapter.createFromResource(
-            this, R.array.formula_names,
-            R.layout.dropdown_menu_item
-        )
+        val formulaNames = resources.getStringArray(R.array.formula_names)
+        val adapter = MaterialSpinnerAdapter(this, R.layout.dropdown_menu_item, formulaNames)
         binding.qtcFormulaSpinner.setAdapter(adapter)
-        val formulaPosition = when (getQtcFormula(qtcFormula)) {
-            QtcCalculator.QtcFormula.BAZETT -> 0
-            QtcCalculator.QtcFormula.FRIDERICIA -> 1
-            QtcCalculator.QtcFormula.SAGIE -> 2
-            QtcCalculator.QtcFormula.HODGES -> 3
+        val formula = when (getQtcFormula(qtcFormula)) {
+            QtcFormula.BAZETT -> 0
+            QtcFormula.FRIDERICIA -> 1
+            QtcFormula.SAGIE -> 2
+            QtcFormula.HODGES -> 3
         }
-        binding.qtcFormulaSpinner.setText(adapter.getItem(formulaPosition), false)
+        binding.qtcFormulaSpinner.setText(adapter.getItem(formula), false)
 
         binding.qtcFormulaSpinner.setOnItemClickListener { _, _, position, _ ->
             qtcFormula = when (position) {
@@ -126,7 +124,7 @@ class QtcIvcd : EpActivity() {
         val rateIntervalText = binding.rrEditText.text.toString()
         val qtText = binding.qtEditText.text.toString()
         val qrsText = binding.qrsEditText.text.toString()
-        val isMale = binding.sexRadioGroup.checkedRadioButtonId == R.id.male
+        val isMale = binding.maleChip.isChecked
         val isLBBB = binding.lbbbCheckBox.isChecked
 
         try {
