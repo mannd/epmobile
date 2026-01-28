@@ -44,22 +44,13 @@ android:layout_height="match_parent">
         android:paddingBottom="@dimen/activity_vertical_margin">
 
         <!-- Gender selection with modern ChipGroup -->
-        <TextView
-            android:id="@+id/sexLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/sex_label"
-            android:textAppearance="?attr/textAppearanceLabelLarge"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/sexChipGroup"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/sexLabel"
+            app:layout_constraintTop_toTopOf="parent"
             app:selectionRequired="true"
             app:singleSelection="true">
 

@@ -3,7 +3,6 @@ package org.epstudios.epmobile.features.calculators.ui
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.preference.PreferenceManager
 import org.epstudios.epmobile.R
@@ -11,6 +10,7 @@ import org.epstudios.epmobile.core.data.QtcCalculator
 import org.epstudios.epmobile.core.data.QtcCalculator.QtcFormula
 import org.epstudios.epmobile.core.data.Reference
 import org.epstudios.epmobile.core.ui.base.EpActivity
+import org.epstudios.epmobile.core.ui.base.MaterialSpinnerAdapter
 import org.epstudios.epmobile.databinding.QtcBinding
 
 class Qtc : EpActivity() {
@@ -59,10 +59,9 @@ class Qtc : EpActivity() {
     }
 
     private fun setAdapters() {
-        val adapter = ArrayAdapter.createFromResource(
-            this, R.array.interval_rate_labels,
-            R.layout.dropdown_menu_item
-        )
+        val labels = resources.getStringArray(R.array.interval_rate_labels)
+        val adapter = MaterialSpinnerAdapter(this, R.layout.dropdown_menu_item, labels)
+
         binding.intervalRateSpinner.setAdapter(adapter)
         val initialPosition = if (defaultIntervalRateSelection == IntervalRate.INTERVAL) 0 else 1
         binding.intervalRateSpinner.setText(adapter.getItem(initialPosition), false)
@@ -74,10 +73,8 @@ class Qtc : EpActivity() {
     }
 
     private fun setFormulaAdapters() {
-        val adapter = ArrayAdapter.createFromResource(
-            this, R.array.formula_names,
-            R.layout.dropdown_menu_item
-        )
+        val formulaNames = resources.getStringArray(R.array.formula_names)
+        val adapter = MaterialSpinnerAdapter(this, R.layout.dropdown_menu_item, formulaNames)
         binding.qtcFormulaSpinner.setAdapter(adapter)
         val formula = when (getQtcFormula(qtcFormula)) {
             QtcFormula.BAZETT -> 0
