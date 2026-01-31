@@ -30,11 +30,14 @@ import kotlinx.coroutines.test.StandardTestDispatcher
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runTest
 import kotlinx.coroutines.test.setMain
+import org.epstudios.epmobile.features.riskscores.data.HcmAfModel
+import org.epstudios.epmobile.features.riskscores.data.HcmAfValidationError
 import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
+import kotlin.test.assertNotNull
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class HcmAfViewModelTest {
@@ -62,11 +65,16 @@ class HcmAfViewModelTest {
     }
 
     @Test
-    fun `onLaDiameterChanged() with valid input triggers correct success state`() = runTest {
+    fun `initial uiState is correct`() = runTest {
+        assertEquals(HcmAfUiState(), viewModel.uiState.value)
+    }
+
+    @Test
+    fun `onLaDiameterChanged2() with valid input triggers correct success state`() = runTest {
         // Use Turbine's `test` extension on the StateFlow to observe emissions
-        viewModel.resultState.test {
+        viewModel.uiState.test {
             // The initial state is the first item emitted
-            assertEquals("Enter values to see result.", awaitItem())
+            assertEquals(HcmAfUiState(), awaitItem())
 
             // Act: Change the inputs to valid values that result in a known score (29)
             viewModel.onLaDiameterChanged("40")
@@ -78,15 +86,32 @@ class HcmAfViewModelTest {
 
             // Assert: Check the final, formatted string that the user would see
             val successState = awaitItem()
-            assertTrue("Should contain the score", successState.contains("HCM-AF Score: 29"))
-            assertTrue("Should contain the risk category", successState.contains("High risk (>2.0%/y)"))
-            assertTrue("Should contain the 5-year risk", successState.contains("5-Year AF Risk: 39.3%"))
+            val riskData = successState.riskData
+            assertNotNull(riskData, "Risk data should not be null")
+            assertEquals("The score should be correct", 29, riskData.score)
+            assertEquals(
+                "The risk category should be HIGH",
+                HcmAfModel.HcmAfRiskCategory.HIGH,
+                riskData.riskCategory
+            )
+            assertEquals(
+                "The 2-year risk should be correct",
+                18.7,
+                riskData.riskAt2YearsPercent,
+                0.001
+            )
+            assertEquals(
+                "The 5-year risk should be correct",
+                39.3,
+                riskData.riskAt5YearsPercent,
+                0.001
+            )
         }
     }
 
     @Test
-    fun `onLaDiameterChanged() with out-of-range input triggers correct error state`() = runTest {
-        viewModel.resultState.test {
+    fun `onLaDiameterChanged2() with out-of-range input triggers correct error state`() = runTest {
+        viewModel.uiState.test {
             awaitItem() // Skip initial state
 
             viewModel.onAgeAtEvalChanged("50")
@@ -98,13 +123,18 @@ class HcmAfViewModelTest {
 
             // Assert: Check for the specific, user-friendly error message
             val errorState = awaitItem()
-            assertEquals("Error: LA Diameter must be between 24 and 65 mm.", errorState)
+            val error = errorState.error
+            assertNotNull(error, "Error should not be null")
+            assertTrue(
+                "Error: LA diameter should be out of range",
+                error is HcmAfValidationError.LaDiameterOutOfRange
+            )
         }
     }
 
     @Test
-    fun `onAgeAtEvalChanged() with non-numeric input triggers parsing error state`() = runTest {
-        viewModel.resultState.test {
+    fun `onAgeAtEvalChanged2() with non-numeric input triggers parsing error state`() = runTest {
+        viewModel.uiState.test {
             awaitItem() // Skip initial state
 
             // Act: Set one input to something that isn't a number
@@ -113,7 +143,10 @@ class HcmAfViewModelTest {
 
             // Assert: Check for the parsing error message
             val errorState = awaitItem()
-            assertEquals("Please enter all values.", errorState)
+            val error = errorState.error
+            assertNotNull(error, "Error should not be null")
+            assertTrue("Error: Parsing error", error is HcmAfValidationError.ParsingError)
+//            assertEquals("Please enter all values.", errorState)
         }
     }
 }

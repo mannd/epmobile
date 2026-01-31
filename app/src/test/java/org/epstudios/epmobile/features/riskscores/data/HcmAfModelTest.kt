@@ -29,10 +29,10 @@ import org.junit.Test
 
 class HcmAfModelTest {
 
-    //region getPoints() Tests
+    //region getCalculationResult() Tests
 
     @Test
-    fun `getPoints() with valid inputs returns Success with correct score`() {
+    fun `getCalculationResult() with valid inputs returns Success with correct score`() {
         // Let's manually calculate an expected score:
         // LA Diameter (40): (40-24)/6 = 2 -> 2*2+8 = 12 points
         // Age at Eval (50): (50-10)/10 = 4 -> 4*3+8 = 20 points
@@ -47,7 +47,7 @@ class HcmAfModelTest {
             hfSx = true
         )
 
-        val result = model.getPoints()
+        val result = model.getCalculationResult()
 
         assertTrue("Result should be Success", result is HcmAfCalculationResult.Success)
         val points = (result as HcmAfCalculationResult.Success).points
@@ -55,7 +55,7 @@ class HcmAfModelTest {
     }
 
     @Test
-    fun `getPoints() with heart failure symptoms false correctly adjusts score`() {
+    fun `getCalculationResult() with heart failure symptoms false correctly adjusts score`() {
         // Using same values as above, but hfSx = false (0 points)
         // Total = 12 + 20 - 6 + 0 = 26 points
         val model = HcmAfModel(
@@ -65,14 +65,14 @@ class HcmAfModelTest {
             hfSx = false
         )
 
-        val result = model.getPoints()
+        val result = model.getCalculationResult()
 
         assertTrue("Result should be Success", result is HcmAfCalculationResult.Success)
         assertEquals(26, (result as HcmAfCalculationResult.Success).points)
     }
 
     @Test
-    fun `getPoints() with null input returns ParsingError`() {
+    fun `getCalculationResult() with null input returns ParsingError`() {
         val model = HcmAfModel(
             laDiameter = null, // Null input
             ageAtEval = 50,
@@ -80,7 +80,7 @@ class HcmAfModelTest {
             hfSx = false
         )
 
-        val result = model.getPoints()
+        val result = model.getCalculationResult()
 
         assertTrue("Result should be Failure", result is HcmAfCalculationResult.Failure)
         val error = (result as HcmAfCalculationResult.Failure).error
@@ -88,49 +88,49 @@ class HcmAfModelTest {
     }
 
     @Test
-    fun `getPoints() with LA diameter below range returns LaDiameterOutOfRange error`() {
+    fun `getCalculationResult() with LA diameter below range returns LaDiameterOutOfRange error`() {
         val model = HcmAfModel(laDiameter = 23, ageAtEval = 50, ageAtDx = 35, hfSx = false)
-        val result = model.getPoints()
+        val result = model.getCalculationResult()
         assertTrue(result is HcmAfCalculationResult.Failure)
         assertTrue((result as HcmAfCalculationResult.Failure).error is HcmAfValidationError.LaDiameterOutOfRange)
     }
 
     @Test
-    fun `getPoints() with LA diameter above range returns LaDiameterOutOfRange error`() {
+    fun `getCalculationResult() with LA diameter above range returns LaDiameterOutOfRange error`() {
         val model = HcmAfModel(laDiameter = 66, ageAtEval = 50, ageAtDx = 35, hfSx = false)
-        val result = model.getPoints()
+        val result = model.getCalculationResult()
         assertTrue(result is HcmAfCalculationResult.Failure)
         assertTrue((result as HcmAfCalculationResult.Failure).error is HcmAfValidationError.LaDiameterOutOfRange)
     }
 
     @Test
-    fun `getPoints() with Age at Eval below range returns AgeAtEvalOutOfRange error`() {
+    fun `getCalculationResult() with Age at Eval below range returns AgeAtEvalOutOfRange error`() {
         val model = HcmAfModel(laDiameter = 40, ageAtEval = 9, ageAtDx = 35, hfSx = false)
-        val result = model.getPoints()
+        val result = model.getCalculationResult()
         assertTrue(result is HcmAfCalculationResult.Failure)
         assertTrue((result as HcmAfCalculationResult.Failure).error is HcmAfValidationError.AgeAtEvalOutOfRange)
     }
 
     @Test
-    fun `getPoints() with Age at Eval above range returns AgeAtEvalOutOfRange error`() {
+    fun `getCalculationResult() with Age at Eval above range returns AgeAtEvalOutOfRange error`() {
         val model = HcmAfModel(laDiameter = 40, ageAtEval = 80, ageAtDx = 35, hfSx = false)
-        val result = model.getPoints()
+        val result = model.getCalculationResult()
         assertTrue(result is HcmAfCalculationResult.Failure)
         assertTrue((result as HcmAfCalculationResult.Failure).error is HcmAfValidationError.AgeAtEvalOutOfRange)
     }
 
     @Test
-    fun `getPoints() with Age at Dx below range returns AgeAtDxOutOfRange error`() {
+    fun `getCalculationResult() with Age at Dx below range returns AgeAtDxOutOfRange error`() {
         val model = HcmAfModel(laDiameter = 40, ageAtEval = 50, ageAtDx = -1, hfSx = false)
-        val result = model.getPoints()
+        val result = model.getCalculationResult()
         assertTrue(result is HcmAfCalculationResult.Failure)
         assertTrue((result as HcmAfCalculationResult.Failure).error is HcmAfValidationError.AgeAtDxOutOfRange)
     }
 
     @Test
-    fun `getPoints() with Age at Dx above range returns AgeAtDxOutOfRange error`() {
+    fun `getCalculationResult() with Age at Dx above range returns AgeAtDxOutOfRange error`() {
         val model = HcmAfModel(laDiameter = 40, ageAtEval = 50, ageAtDx = 80, hfSx = false)
-        val result = model.getPoints()
+        val result = model.getCalculationResult()
         assertTrue(result is HcmAfCalculationResult.Failure)
         assertTrue((result as HcmAfCalculationResult.Failure).error is HcmAfValidationError.AgeAtDxOutOfRange)
     }

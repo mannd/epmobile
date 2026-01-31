@@ -35,7 +35,7 @@
                     android:backgroundTint="@android:color/holo_green_light"
                     android:drawableTop="@drawable/ic_calculator_svgrepo_com"
                     android:padding="20dip"
-                    android:textColor="#000000"
+                    android:textAppearance="@style/TextAppearance.App.LabelLarge"
                     android:text="@string/calculator_list_title" />
 
                 <Button
@@ -47,7 +47,7 @@
                     android:backgroundTint="@android:color/holo_orange_light"
                     android:drawableTop="@drawable/ic_stethoscope_svgrepo_com"
                     android:padding="20dip"
-                    android:textColor="#000000"
+                    android:textAppearance="@style/TextAppearance.App.LabelLarge"
                     android:text="@string/diagnosis_list_title" />
 
                 <TextView />
@@ -66,8 +66,8 @@
                     android:backgroundTint="@android:color/holo_blue_light"
                     android:drawableTop="@drawable/ic_toolbox_svgrepo_com_2"
                     android:padding="20dip"
-                    android:text="@string/reference_list_title"
-                    android:textColor="#000000" />
+                    android:textAppearance="@style/TextAppearance.App.LabelLarge"
+                    android:text="@string/reference_list_title" />
 
                 <Button
                     android:id="@+id/risk_scores_button"
@@ -78,7 +78,7 @@
                     android:backgroundTint="@android:color/holo_red_light"
                     android:drawableTop="@drawable/ic_gauge_svgrepo_com"
                     android:padding="20dip"
-                    android:textColor="#000000"
+                    android:textAppearance="@style/TextAppearance.App.LabelLarge"
                     android:text="@string/risk_score_list_title" />
 
                 <TextView />

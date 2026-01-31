@@ -44,9 +44,9 @@
     <string name="calculate_label">Calculate</string>
     <string name="clear_label">Clear</string>
     <string name="dose_result_label">Dose</string>
-    <string name="weight_hint">Weight (kg)</string>
+    <string name="weight_hint">Weight</string>
     <string name="weight_lb_hint">Weight (lb)</string>
-    <string name="creatinine_hint">Creatinine (mg/dL)</string>
+    <string name="creatinine_hint">Creatinine</string>
     <string name="age_hint">Age (yr)</string>
     <string name="age_label">Age (yr)</string>
     <string name="male_label">Male</string>
@@ -847,8 +847,8 @@
 		to dosing changes or the patient\'s age.  Warfarin dosing is not an exact science!</string>
     <string name="default_creatinine_unit_title">Default Creatinine Unit</string>
     <string name="default_creatinine_unit_summary">Select default unit for creatinine</string>
-    <string name="creatinine_mg_per_dl">Cr (mg/dL)</string>
-    <string name="creatinine_mmol_per_l">Cr (\u00B5mol/L)</string>
+    <string name="creatinine_mg_per_dl">mg/dL</string>
+    <string name="creatinine_mmol_per_l">\u00B5mol/L</string>
     <string name="creatinine_mg_hint">Creatinine (mg/dL)</string>
     <string name="creatinine_mmol_hint">Creatinine (\u00B5mol/L)</string>
     <string name="entrainment_title">Entrainment Mapping</string>
@@ -904,6 +904,7 @@
         in the future or past that you are adding or subtracting.  Turn Subtract days on
         to subtract days from the index date.</string>
     <string name="index_event_label">Index Event Date</string>
+    <string name="select_date_title">Select date</string>
     <string name="number_of_days_label">Number of Days</string>
     <string name="number_of_days_hint">Days</string>
     <string name="days_40">40 Days (ICD OK s/p MI)</string>
@@ -989,8 +990,8 @@
         Impact of various body weights and serum creatinine concentrations
         on the bias and accuracy of the Cockcroft-Gault equation.
         Pharmacotherapy. 2012;32(7):604-612.</string>
-    <string name="ibw_calculator_link">https://doi.org/10.1002/j.1875-9114.2012.01098.x</string>
-    <string name="height_hint">Height (cm)</string>
+    <string name="ibw_calculator_link" tools:ignore="TypographyDashes">https://doi.org/10.1002/j.1875-9114.2012.01098.x</string>
+    <string name="height_hint">Height</string>
     <string name="height_inches_hint">Height (in)</string>
     <string name="ibw_label">Ideal Body Weight (kg)</string>
     <string name="ibw_hint">IBW (kg)</string>
@@ -1000,12 +1001,15 @@
     <string name="abw_hint">ABW (kg)</string>
     <string name="abw_lb_label">Adjusted Body Weight (lb)</string>
     <string name="abw_lb_hint">ABW (lb)</string>
+    <string name="unit_label">units</string>
+    <string name="ibw_result_label">IBW = %1$s %2$s</string>
+    <string name="abw_result_label">ABW = %1$s %2$s</string>
     <string name="default_height_unit_title">Default Height Unit</string>
     <string name="default_height_unit_summary">Select default unit for height</string>
-    <string name="overweight_message" tools:ignore="PluralsCandidate">Actual weight is at least 30%% over Ideal Body Weight.  Recommended weight is Adjusted Body Weight (%s</string>
+    <string name="overweight_message" tools:ignore="PluralsCandidate">Actual weight is at least 30%% over Ideal Body Weight.  Recommended weight is Adjusted Body Weight (%s)</string>
     <string name="underheight_message">These measurements may not be useful when height is &lt; 60 inches.</string>
-    <string name="underweight_message">Actual weight is less than Ideal Body Weight.  Recommended weight is Actual Weight (%s</string>
-    <string name="normalweight_message">Weight is in the normal range.  Recommended weight is Ideal Body Weight (%s</string>
+    <string name="underweight_message">Actual weight is less than Ideal Body Weight.  Recommended weight is Actual Weight (%s)</string>
+    <string name="normalweight_message">Weight is in the normal range.  Recommended weight is Ideal Body Weight (%s)</string>
     <string name="pound_abbreviation">lb</string>
     <string name="kg_abbreviation">kg</string>
     <string name="syncope_list_title">Syncope Risk Scores</string>
@@ -1674,11 +1678,11 @@
     <string name="gfr_reference">Levey AS, Stevens LA, Schmid CH, et al.
         A new equation to estimate glomerular filtration rate. Ann Intern Med.
         2009;150(9):604-612.</string>
-    <string name="gfr_link">https://doi.org/10.7326/0003-4819-150-9-200905050-00006</string>
+    <string name="gfr_link" tools:ignore="TypographyDashes">https://doi.org/10.7326/0003-4819-150-9-200905050-00006</string>
     <string name="gfr_instructions">Use this calculator to estimate glomerular filtration
         rate normalized for estimated body surface area.  If you want to estimate creatinine
         clearance for determining drug dosing, use the Creatinine Clearance Calculator.
-        \n\nThis calculator uses the CKD-EPI equation.
+        \n\nThis calculator uses the CKD-EPI equation (2009 version).
     </string>
     <string name="notes_label">Notes</string>
     <string name="error_message">Unexpected error!</string>
@@ -1871,7 +1875,7 @@
     <string name="painesd_reference">Muser D, Castro SA, Liang JJ, Santangeli P. Identifying Risk and Management of Acute Haemodynamic Decompensation During Catheter Ablation of Ventricular Tachycardia. Arrhythm Electrophysiol Rev. 2018;7(4):282-287.</string>
     <string name="painesd_link">https://doi.org/10.15420/aer.2018.36.3</string>
     <string name="painesd_label">PAINESD score</string>
-    <string name="painesd_instructions">The PAINESD score estimates the risk of periprocedural
+    <string name="painesd_instructions" formatted="false">The PAINESD score estimates the risk of periprocedural
         acute hemodynamic decompensation (AHD) in patients undergoing catheter ablation of ventricular tachycardia.
         AHD is defined as an event with a blood pressure &lt; 90 despite
         vasopressors that requires a mechanical assist device.\n\nAHD
@@ -1919,7 +1923,7 @@
     <string name="error_parsing">Error: Please enter valid numbers in all fields.</string>
     <string name="error_unknown">An unknown error occurred.</string>
 
-    <!-- HCM AF risk score - Input Summary Labels -->
+    <!-- HCM AF risk score -->
     <string name="hcm_af_risk_title">HCM AF Risk Score</string>
     <string name="hcm_af_risk_instructions">This score predicts the risk of developing atrial
         fibrillation in patients with hypertrophic cardiomyopathy.  The result gives the risk
@@ -1931,4 +1935,44 @@
         Patients at Risk for Atrial Fibrillation: The HCM-AF Score.
         Circ: Arrhythmia and Electrophysiology. 2021;14(6):e009796.</string>
     <string name="hcm_af_link">https://doi.org/10.1161/CIRCEP.120.009796</string>
+    <string name="hcm_af_la_diameter">LA Diameter (mm)</string>
+    <string name="hcm_af_age_at_evaluation">Age at Evaluation</string>
+    <string name="hcm_af_age_at_diagnosis">Age at Diagnosis</string>
+    <string name="hcm_af_hx_of_heart_failure_label">History of Heart Failure Symptoms</string>
+    <!-- HCM AF error messages -->
+    <string name="hcm_af_la_diameter_out_of_range">Error: LA Diameter mus be between 24 and 65 mm.</string>
+    <string name="hcm_af_age_at_evaluation_out_of_range">Error: Age at Evaluation must be between 10 and 79.</string>
+    <string name="hcm_af_age_at_diagnosis_out_of_range">Error: Age at Diagnosis must be between 0 and 79.</string>
+    <string name="hcm_af_parsing_error">Please enter all values.</string>
+    <string name="hcm_af_score_out_of_range">Score (${1$d}) is out of valid range (8–31).</string>
+    <string name="hcm_af_enter_values">Enter values to see result.</string>
+    <!-- Result string for a successful HCM-AF calculation -->
+    <string name="hcm_af_result_success">HCM-AF Score: %1$d\n%2$s\n2-Year AF Risk: %3$.1f%%\n5-Year AF Risk: %4$.1f%%</string>
+    <string name="weight_unit_description">Units</string>
+    <string name="height_unit_description">Units</string>
+    <string name="creatinine_unit_description">Creatinine in mg/dL or micromol/L</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="male_abbrev">M</string>
+    <string name="female_abbrev">F</string>
+    <!--
+      Formatted string for the Creatinine Clearance result summary.
+      Placeholders:
+      %1$d: Rounded CrCl value (integer)
+      %2$s: Age (string)
+      %3$s: Sex ("M" or "F")
+      %4$s: Weight (string)
+      %5$s: Creatinine value (string)
+      %6$s: Creatinine unit (string)
+    -->
+    <string name="crcl_results_summary">CrCl = %1$d mL/min (%2$sy%3$s %4$skg Cr %5$s%6$s)</string>
+    <string name="bazett_formula_name">Bazett\n</string>
+    <string name="fridericia_formula_name">Fridericia</string>
+    <string name="sagie_formula_name">Sagie</string>
+    <string name="measurement_label">Measurement</string>
+
+    <string name="lb_label">lb</string>
+    <string name="kg_label">kg</string>
+    <string name="in_label">in</string>
+    <string name="cm_label">cm</string>
 </resources>

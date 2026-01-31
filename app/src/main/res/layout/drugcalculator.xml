@@ -1,125 +1,230 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/selection_list_root_view"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/selection_list_root_view"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
 
-    <include layout="@layout/toolbar" />
-    <include layout="@layout/calculatebuttons" />
+<!-- Toolbar constrained to the top -->
+<include
+    android:id="@+id/toolbar"
+    layout="@layout/toolbar"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
 
-    <ScrollView
+<!-- calculator buttons constrained to the bottom -->
+<include
+    android:id="@+id/calculateButtonsLayout"
+    layout="@layout/calculatebuttonslayout"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent" />
+
+<!-- ScrollView fills the space between the toolbar and buttons -->
+<ScrollView
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:clipToPadding="false"
+    app:layout_constraintBottom_toTopOf="@id/calculateButtonsLayout"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+    <!-- All content is now inside a single, flat ConstraintLayout, eliminating all nested LinearLayouts -->
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar"
-        android:layout_above="@id/calculateButtonsLayout"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin">
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:paddingEnd="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <!-- Gender selection with modern ChipGroup -->
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/sexChipGroup"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:selectionRequired="true"
+            app:singleSelection="true">
 
-            <TableLayout
+            <com.google.android.material.chip.Chip
+                android:id="@+id/maleChip"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/male_label" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/femaleChip"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/female_label" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+        <!-- Age Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ageEditTextLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/age_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sexChipGroup">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ageEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:stretchColumns="*">
+                android:importantForAutofill="no"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-                <RadioGroup
-                    android:id="@+id/sexRadioGroup"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
 
-                    <RadioButton
-                        android:id="@+id/male"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checked="true"
-                        android:text="@string/male_label" />
 
-                    <RadioButton
-                        android:id="@+id/female"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/female_label" />
-                </RadioGroup>
+        <!-- Weight Input -->
 
-                <TableRow>
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/weight_unit_chip_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:layout_constraintStart_toEndOf="@id/weightEditTextLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/weightEditTextLayout"
+            app:layout_constraintTop_toBottomOf="@id/ageEditTextLayout"
+            app:selectionRequired="true"
+            app:singleSelection="true">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="@dimen/activity_horizontal_margin"
-                        android:paddingRight="@dimen/activity_horizontal_margin"
-                        android:paddingTop="@dimen/activity_vertical_margin"
-                        android:paddingBottom="@dimen/activity_vertical_margin"
-                        android:text="@string/age_label"
-                        android:textAppearance="?android:attr/textAppearanceMedium" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/lb_chip"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lb_label" />
 
-                    <EditText
-                        android:id="@+id/ageEditText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:hint="@string/age_hint"
-                        android:inputType="number"
-                        android:importantForAutofill="no" />
-                </TableRow>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/kg_chip"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/kg_label" />
 
-                <TableRow>
+        </com.google.android.material.chip.ChipGroup>
 
-                    <Spinner android:id="@+id/weight_spinner" />
 
-                    <EditText
-                        android:id="@+id/weightEditText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/weight_hint"
-                        android:inputType="numberDecimal"
-                        android:importantForAutofill="no" />
-                </TableRow>
+        <!-- Weight Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/weightEditTextLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:hint="@string/weight_hint"
+            app:layout_constraintEnd_toStartOf="@id/weight_unit_chip_group"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ageEditTextLayout">
 
-                <TableRow>
-
-                    <Spinner android:id="@+id/creatinine_spinner" />
-
-                    <EditText
-                        android:id="@+id/creatinineEditText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/creatinine_hint"
-                        android:inputType="numberDecimal"
-                        android:importantForAutofill="no" />
-                </TableRow>
-            </TableLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/calculated_dose"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal"
-                    android:text="@string/dose_result_label"
-                    android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/ccTextView"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/weightEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text=""
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-        </LinearLayout>
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    </ScrollView>
 
-</RelativeLayout>
+
+        <!-- Creatinine Input -->
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/creatinine_unit_chip_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:layout_constraintStart_toEndOf="@id/creatinineEditTextLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/creatinineEditTextLayout"
+            app:layout_constraintTop_toBottomOf="@id/creatinineEditTextLayout"
+            app:selectionRequired="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/mg_chip"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/creatinine_mg_per_dl" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/mmol_chip"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/creatinine_mmol_per_l" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+        <!-- Creatinine Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/creatinineEditTextLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:hint="@string/creatinine_hint"
+            app:layout_constraintEnd_toStartOf="@id/creatinine_unit_chip_group"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/weightEditTextLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/creatinineEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Result Dose -->
+        <TextView
+            android:id="@+id/calculated_dose"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center_horizontal"
+            android:textAppearance="@style/TextAppearance.Calculator.Result"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/creatinineEditTextLayout"
+            tools:text="Dose: 100 mg" />
+
+        <!-- Result Creatinine Clearance -->
+        <TextView
+            android:id="@+id/creatinine_clearance_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_horizontal"
+            android:textAppearance="@style/TextAppearance.Message.Normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/calculated_dose"
+            tools:text="CrCl: 120 mL/min" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

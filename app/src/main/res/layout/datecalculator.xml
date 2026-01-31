@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/cycleLength_root_view"
+    android:id="@+id/selection_list_root_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -38,51 +38,87 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.google.android.material.chip.ChipGroup
-                android:id="@+id/intervalRateChipGroup"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:singleSelection="true">
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/cl_chip"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/indexDateButton"
+                    style="@style/Widget.Button.OutlinedButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="true"
-                    android:text="@string/cl_label" />
+                    android:text="@string/select_date_title" />
 
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/hr_chip"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
-                    android:layout_width="wrap_content"
+                <TextView
+                    style="@style/LeftColumnLabel"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/hr_label" />
-            </com.google.android.material.chip.ChipGroup>
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:text="@string/index_event_label" />
+
+            </LinearLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/inputLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:hint="@string/cl_hint">
+                android:hint="@string/number_of_days_label">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/inputEditText"
+                    android:id="@+id/numberOfDaysEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="number"
-                    tools:text="100" />
+                    android:gravity="end"
+                    android:importantForAutofill="no"
+                    android:inputType="numberSigned"
+                    tools:text="90" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
-                android:id="@+id/calculated_result"
+            <RadioGroup
+                android:id="@+id/dayRadioGroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/ninetyRadio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/days_90" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/fortyRadio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/days_40" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/thirtyRadio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/days_30" />
+            </RadioGroup>
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/reverseTimeCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/reverse_time_label" />
+
+            <TextView
+                android:id="@+id/calculated_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/calculated_result_label"
+                android:gravity="center_horizontal"
+                android:text="@string/date_result_label"
                 android:textAppearance="@style/TextAppearance.Calculator.Result" />
 
         </LinearLayout>

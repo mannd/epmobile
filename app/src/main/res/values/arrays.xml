@@ -159,8 +159,8 @@
         <item>@string/v2_transition_ratio_vt_title</item>
     </array>
     <array name="interval_rate_labels">
-        <item>RR Interval (msec)</item>
-        <item>Heart Rate (bpm)</item>
+        <item>RR (msec)</item>
+        <item>Rate (bpm)</item>
     </array>
     <array name="interval_rate_values">
         <item>INTERVAL</item>
@@ -170,9 +170,17 @@
         <item>LBBB Morphology</item>
         <item>RBBB Morphology</item>
     </array>
+    <array name="sex_labels">
+        <item>@string/male</item>
+        <item>@string/female</item>
+    </array>
+    <array name="sex_abbrev">
+        <item>@string/male_abbrev</item>
+        <item>@string/female_abbrev</item>
+    </array>
     <array name="weight_unit_labels">
-        <item>Weight (kg)</item>
-        <item>Weight (lb)</item>
+        <item>kg</item>
+        <item>lb</item>
     </array>
     <array name="weight_unit_values">
         <item>KG</item>
@@ -187,8 +195,8 @@
         <item>MMOL</item>
     </array>
     <array name="height_unit_labels">
-        <item>Height (cm)</item>
-        <item>Height (in)</item>
+        <item>cm</item>
+        <item>in</item>
     </array>
     <array name="height_unit_values">
         <item>CM</item>

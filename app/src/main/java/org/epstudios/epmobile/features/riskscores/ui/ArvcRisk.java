@@ -4,6 +4,7 @@ import android.text.TextUtils;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
+import com.google.android.material.switchmaterial.SwitchMaterial;
 import android.widget.TextView;
 
 import org.epstudios.epmobile.R;
@@ -11,8 +12,6 @@ import org.epstudios.epmobile.core.ui.base.RiskScore;
 import org.epstudios.epmobile.features.riskscores.data.ArvcRiskModel;
 
 import java.text.NumberFormat;
-
-import androidx.appcompat.widget.SwitchCompat;
 
 /**
  * Copyright (C) 2019 EP Studios, Inc.
@@ -33,16 +32,16 @@ import androidx.appcompat.widget.SwitchCompat;
  * GNU General Public License for more details.
  * <p>
  * You should have received a copy of the GNU General Public License
- * along with epmobile.  If not, see <http://www.gnu.org/licenses/>.
+ * along with epmobile.  If not, see <<a href="http://www.gnu.org/licenses/">...</a>>.
  */
 public class ArvcRisk extends RiskScore {
     EditText ageText;
     RadioGroup sexRadioGroup;
-    SwitchCompat syncopeSwitch;
+    SwitchMaterial syncopeSwitch;
     SeekBar twiSeekBar;
     TextView twiTextView;
     EditText pvcText;
-    SwitchCompat nsvtSwitch;
+    SwitchMaterial nsvtSwitch;
     SeekBar rvefSeekBar;
     TextView rvefTextView;
 
@@ -103,9 +102,8 @@ public class ArvcRisk extends RiskScore {
 
     //@Override
     protected String getFullReference() {
-        String fullReference = convertReferenceToText(R.string.arvc_risk_full_reference,
+        return convertReferenceToText(R.string.arvc_risk_full_reference,
                 R.string.arvc_risk_link);
-        return fullReference;
     }
 
     @Override
