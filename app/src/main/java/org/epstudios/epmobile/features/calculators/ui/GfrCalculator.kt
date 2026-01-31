@@ -14,7 +14,6 @@ class GfrCalculator : EpActivity() {
     private lateinit var binding: GfrBinding
 
     private var defaultCreatinineUnitSelection = CreatinineUnit.MG
-    private var creatinineUnitPosition: Int = 0
 
     companion object {
         private const val MAX_AGE = 120

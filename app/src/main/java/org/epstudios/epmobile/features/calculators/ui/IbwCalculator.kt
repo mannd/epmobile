@@ -3,10 +3,11 @@ package org.epstudios.epmobile.features.calculators.ui
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.ArrayAdapter
 import androidx.preference.PreferenceManager
 import org.epstudios.epmobile.R
+import org.epstudios.epmobile.core.data.HeightUnit
 import org.epstudios.epmobile.core.data.UnitConverter
+import org.epstudios.epmobile.core.data.WeightUnit
 import org.epstudios.epmobile.core.ui.base.EpActivity
 import org.epstudios.epmobile.databinding.IbwBinding
 import java.text.DecimalFormat
@@ -14,14 +15,8 @@ import java.text.DecimalFormat
 class IbwCalculator : EpActivity() {
     private lateinit var binding: IbwBinding
 
-    private enum class WeightUnit { KG, LB }
-    private enum class HeightUnit { CM, IN }
-
     private var defaultWeightUnitSelection = WeightUnit.KG
     private var defaultHeightUnitSelection = HeightUnit.CM
-
-    private var weightUnitPosition: Int = 0
-    private var heightUnitPosition: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +29,7 @@ class IbwCalculator : EpActivity() {
         binding.calculateButtonsLayout.clearButton.setOnClickListener { clearEntries() }
 
         getPrefs()
-        setAdapters()
+        setInitialChipState()
         clearEntries()
     }
 
@@ -46,61 +41,61 @@ class IbwCalculator : EpActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    private fun setAdapters() {
-        val weightLabels = resources.getStringArray(R.array.weight_unit_labels)
-        val weightAdapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, weightLabels)
-        binding.weightSpinner.setAdapter(weightAdapter)
-        val initialWeightPosition = if (defaultWeightUnitSelection == WeightUnit.KG) 0 else 1
-        weightUnitPosition = initialWeightPosition
-        binding.weightSpinner.setText(weightAdapter.getItem(initialWeightPosition), false)
-
-        binding.weightSpinner.setOnItemClickListener { _, _, position, _ ->
-            weightUnitPosition = position
+    private fun setInitialChipState() {
+        if (defaultWeightUnitSelection == WeightUnit.KG) {
+            binding.weightUnitChipGroup.check(R.id.kg_chip)
+        } else {
+            binding.weightUnitChipGroup.check(R.id.lb_chip)
         }
 
-        val heightLabels = resources.getStringArray(R.array.height_unit_labels)
-        val heightAdapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, heightLabels)
-        binding.heightSpinner.setAdapter(heightAdapter)
-        val initialHeightPosition = if (defaultHeightUnitSelection == HeightUnit.CM) 0 else 1
-        heightUnitPosition = initialHeightPosition
-        binding.heightSpinner.setText(heightAdapter.getItem(initialHeightPosition), false)
-
-        binding.heightSpinner.setOnItemClickListener { _, _, position, _ ->
-            heightUnitPosition = position
+        if (defaultHeightUnitSelection == HeightUnit.CM) {
+            binding.heightUnitChipGroup.check(R.id.cm_chip)
+        } else {
+            binding.heightUnitChipGroup.check(R.id.in_chip)
         }
     }
 
-    private fun getWeightUnitSelection(): WeightUnit {
-        return if (weightUnitPosition == 0) WeightUnit.KG else WeightUnit.LB
-    }
+    // We now get the selection directly from the ChipGroup
+    private val weightUnitSelection: WeightUnit
+        get() {
+            return when (binding.weightUnitChipGroup.checkedChipId) {
+                R.id.kg_chip -> WeightUnit.KG
+                else -> WeightUnit.LB
+            }
+        }
 
-    private fun getHeightUnitSelection(): HeightUnit {
-        return if (heightUnitPosition == 0) HeightUnit.CM else HeightUnit.IN
-    }
+    // Same for height
+    private val heightUnitSelection: HeightUnit
+        get() {
+            return when (binding.heightUnitChipGroup.checkedChipId) {
+                R.id.cm_chip -> HeightUnit.CM
+                else -> HeightUnit.IN
+            }
+        }
 
     private fun calculate() {
         binding.messageTextView.text = null
         resetResultTextColor()
-        val isMale = binding.sexRadioGroup.checkedRadioButtonId == R.id.male
+        val isMale = binding.maleChip.isChecked
         val weightText = binding.weightEditText.text.toString()
         val heightText = binding.heightEditText.text.toString()
 
         try {
             var weight = weightText.toDouble()
             val originalWeight = weight
-            if (getWeightUnitSelection() == WeightUnit.LB) {
+            if (weightUnitSelection == WeightUnit.LB) {
                 weight = UnitConverter.lbsToKgs(weight)
             }
 
             var height = heightText.toDouble()
-            if (getHeightUnitSelection() == HeightUnit.CM) {
+            if (heightUnitSelection == HeightUnit.CM) {
                 height = UnitConverter.cmsToIns(height)
             }
 
             val ibw = idealBodyWeight(height, isMale)
             val abw = adjustedBodyWeight(ibw, weight)
 
-            val unitsInLbs = getWeightUnitSelection() == WeightUnit.LB
+            val unitsInLbs = weightUnitSelection == WeightUnit.LB
             val weightUnitAbbreviation = if (unitsInLbs) getString(R.string.pound_abbreviation) else getString(R.string.kg_abbreviation)
 
             val displayIbw = if (unitsInLbs) UnitConverter.kgsToLbs(ibw) else ibw

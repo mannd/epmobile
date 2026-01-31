@@ -59,6 +59,7 @@ android:layout_height="match_parent">
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:checked="true"
                 android:text="@string/male_label" />
 
             <com.google.android.material.chip.Chip

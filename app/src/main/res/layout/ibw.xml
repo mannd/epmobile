@@ -38,47 +38,92 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <RadioGroup
-                android:id="@+id/sexRadioGroup"
+
+            <!-- Weight Input -->
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/weight_unit_chip_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:layout_constraintStart_toEndOf="@id/weightInputLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/weightInputLayout"
+                app:selectionRequired="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/lb_chip"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lb_label" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/kg_chip"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/kg_label" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/height_unit_chip_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:layout_constraintStart_toEndOf="@id/heightInputLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/heightInputLayout"
+                app:selectionRequired="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/in_chip"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/in_label" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/cm_chip"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cm_label" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+
+            <!-- Gender selection with modern ChipGroup -->
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/sexChipGroup"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toTopOf="parent"
+                app:selectionRequired="true"
+                app:singleSelection="true">
 
-                <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/male"
-                    android:layout_width="0dp"
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/maleChip"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:checked="true"
                     android:text="@string/male_label" />
 
-                <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/female"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/female_label" />
-            </RadioGroup>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/weight_units_layout"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:hint="@string/unit_label"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/sexRadioGroup">
-
-                <AutoCompleteTextView
-                    android:id="@+id/weight_spinner"
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/femaleChip"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:inputType="none" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:text="@string/female_label" />
+
+            </com.google.android.material.chip.ChipGroup>
+
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/weightInputLayout"
@@ -86,11 +131,11 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
                 android:hint="@string/weight_hint"
-                app:layout_constraintBottom_toBottomOf="@id/weight_units_layout"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/weight_units_layout"
-                app:layout_constraintTop_toTopOf="@id/weight_units_layout">
+                app:layout_constraintEnd_toStartOf="@id/weight_unit_chip_group"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sexChipGroup">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/weightEditText"
@@ -100,33 +145,17 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/height_units_layout"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:hint="@string/unit_label"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/weight_units_layout">
-
-                <AutoCompleteTextView
-                    android:id="@+id/height_spinner"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="none" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/heightInputLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
                 android:hint="@string/height_hint"
-                app:layout_constraintBottom_toBottomOf="@id/height_units_layout"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/height_units_layout"
-                app:layout_constraintTop_toTopOf="@id/height_units_layout">
+                app:layout_constraintEnd_toStartOf="@id/height_unit_chip_group"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/weightInputLayout"
+                >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/heightEditText"
