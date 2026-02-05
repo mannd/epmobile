@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+     This theme is ONLY used on Android 12 (API 31) and above.
+     It inherits from a special parent that automatically applies
+     the user's wallpaper colors (Material You).
+   -->
+    <style name="AppTheme.Base" parent="Theme.Material3.DynamicColors.DayNight.NoActionBar">
+    </style>
+</resources>

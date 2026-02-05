@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base text appearance -->
+    <style name="TextAppearance.App" parent="TextAppearance.MaterialComponents.Body1">
+        <!-- You can define a custom font family here if you have one -->
+        <!-- <item name="fontFamily">@font/my_font</item> -->
+    </style>
+
+    <!--
+      Now, define your own styles for the M3 roles.
+      The font sizes (sp) are taken from the official M3 spec.
+    -->
+    <style name="TextAppearance.App.HeadlineMedium" parent="TextAppearance.App">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.App.HeadlineSmall" parent="TextAppearance.App">
+        <item name="android:textSize">24sp</item>
+        <!-- Note: M3 Headline Small is regular weight, not bold -->
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="TextAppearance.App.TitleLarge" parent="TextAppearance.App">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="TextAppearance.App.BodyLarge" parent="TextAppearance.App">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextAppearance.App.BodyMedium" parent="TextAppearance.App">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="TextAppearance.App.LabelLarge" parent="TextAppearance.App">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

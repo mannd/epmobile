@@ -25,7 +25,7 @@ import org.epstudios.epmobile.R;
  * GNU General Public License for more details.
  * <p/>
  * You should have received a copy of the GNU General Public License
- * along with EP Mobile.  If not, see <http://www.gnu.org/licenses/>.
+ * along with EP Mobile.  If not, see <<a href="http://www.gnu.org/licenses/">...</a>>.
  */
 public class CreatinineClearanceCalculator extends DrugCalculator {
     @Override
@@ -41,8 +41,6 @@ public class CreatinineClearanceCalculator extends DrugCalculator {
 
     @Override
     protected String defaultResultLabel() {
-        ccTextView.setTextAppearance(this,
-                android.R.style.TextAppearance_Medium);
         return getString(R.string.short_creatinine_clearance_label);
     }
 

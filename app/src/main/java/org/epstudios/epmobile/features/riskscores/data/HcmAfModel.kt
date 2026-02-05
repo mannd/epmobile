@@ -27,6 +27,7 @@ sealed interface HcmAfValidationError {
     data class LaDiameterOutOfRange(val diameter: Int) : HcmAfValidationError
     data class AgeAtEvalOutOfRange(val age: Int) : HcmAfValidationError
     data class AgeAtDxOutOfRange(val age: Int) : HcmAfValidationError
+    data class ScoreOutOfRange(val score: Int) : HcmAfValidationError
     object ParsingError : HcmAfValidationError
 }
 
@@ -117,7 +118,7 @@ class HcmAfModel(
         return if (hasSx) 3 else 0
     }
 
-    fun getPoints(): HcmAfCalculationResult {
+    fun getCalculationResult(): HcmAfCalculationResult {
         if (laDiameter == null || ageAtEval == null || ageAtDx == null || hfSx == null) {
             return HcmAfCalculationResult.Failure(HcmAfValidationError.ParsingError)
         }
@@ -136,7 +137,9 @@ class HcmAfModel(
         val ageAtDxPoints = getPointsAgeAtDx(ageAtDx)
         val hfSxPoints = getPointsHfSx(hfSx)
         val points = laDiameterPoints + ageAtEvalPoints + ageAtDxPoints + hfSxPoints
-
+        if (points !in 8..31) {
+            return HcmAfCalculationResult.Failure(HcmAfValidationError.ScoreOutOfRange(points))
+        }
         return HcmAfCalculationResult.Success(points)
     }
 }

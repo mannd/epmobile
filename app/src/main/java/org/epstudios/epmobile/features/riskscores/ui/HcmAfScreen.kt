@@ -1,5 +1,7 @@
 package org.epstudios.epmobile.features.riskscores.ui
 
+import android.content.ClipData
+import android.content.Context
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -16,19 +18,21 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Surface
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalClipboardManager
-import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import org.epstudios.epmobile.R
+import org.epstudios.epmobile.features.riskscores.data.HcmAfValidationError
 
 @Composable
 fun HcmAfScreen(viewModel: HcmAfViewModel = viewModel()) {
@@ -37,16 +41,23 @@ fun HcmAfScreen(viewModel: HcmAfViewModel = viewModel()) {
     val ageAtEval by viewModel.ageAtEvalInput.collectAsState()
     val ageAtDx by viewModel.ageAtDxInput.collectAsState()
     val hfSxChecked by viewModel.hfSxChecked.collectAsState()
-    val result by viewModel.resultState.collectAsState()
-    val clipboardManager = LocalClipboardManager.current
+    val uiState by viewModel.uiState.collectAsState()
 
-    Surface(
-        modifier = Modifier.fillMaxSize(),
-        color = MaterialTheme.colorScheme.background
-    ) {
+    val context = LocalContext.current
+    val clipboardManager = context.getSystemService(Context.CLIPBOARD_SERVICE) as android.content.ClipboardManager
+    val clipboardLabel = stringResource(R.string.hcm_af_risk_title)
+    val calculateLabel = stringResource(R.string.calculate_label)
+    val clearLabel = stringResource(R.string.clear_label)
+    val copyLabel = stringResource(R.string.copy_report_label)
+
+    val result = getResult(uiState)
+
+    Scaffold { innerPadding ->
         Column(
             modifier = Modifier
-                .padding(16.dp)
+                .padding(innerPadding)
+                .padding(horizontal = 16.dp)
+                .fillMaxSize()
                 .verticalScroll(rememberScrollState()),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(12.dp)
@@ -55,7 +66,7 @@ fun HcmAfScreen(viewModel: HcmAfViewModel = viewModel()) {
             OutlinedTextField(
                 value = laDiameter,
                 onValueChange = viewModel::onLaDiameterChanged,
-                label = { Text("LA Diameter (mm)") },
+                label = { Text(stringResource(R.string.hcm_af_la_diameter)) },
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                 modifier = Modifier.fillMaxWidth()
             )
@@ -63,7 +74,7 @@ fun HcmAfScreen(viewModel: HcmAfViewModel = viewModel()) {
             OutlinedTextField(
                 value = ageAtEval,
                 onValueChange = viewModel::onAgeAtEvalChanged,
-                label = { Text("Age at Evaluation") },
+                label = { Text(stringResource(R.string.hcm_af_age_at_evaluation)) },
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                 modifier = Modifier.fillMaxWidth()
             )
@@ -71,7 +82,7 @@ fun HcmAfScreen(viewModel: HcmAfViewModel = viewModel()) {
             OutlinedTextField(
                 value = ageAtDx,
                 onValueChange = viewModel::onAgeAtDxChanged,
-                label = { Text("Age at Diagnosis") },
+                label = { Text(stringResource(R.string.hcm_af_age_at_diagnosis)) },
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                 modifier = Modifier.fillMaxWidth()
             )
@@ -88,7 +99,7 @@ fun HcmAfScreen(viewModel: HcmAfViewModel = viewModel()) {
                     onCheckedChange = viewModel::onHfSxChanged
                 )
                 Spacer(modifier = Modifier.width(8.dp))
-                Text("History of Heart Failure Symptoms")
+                Text(stringResource(R.string.hcm_af_hx_of_heart_failure_label))
             }
 
             // Action Buttons
@@ -100,19 +111,22 @@ fun HcmAfScreen(viewModel: HcmAfViewModel = viewModel()) {
                     onClick = { viewModel.calculate() },
                     modifier = Modifier.weight(1f)
                 ) {
-                    Text("Calculate")
+                    Text(calculateLabel)
                 }
                 Button(
                     onClick = { viewModel.clear() },
                     modifier = Modifier.weight(1f)
                 ) {
-                    Text("Clear")
+                    Text(clearLabel)
                 }
                 Button(
-                    onClick = { clipboardManager.setText(AnnotatedString(result)) },
+                    onClick = {
+                        val clip = ClipData.newPlainText(clipboardLabel, result)
+                        clipboardManager.setPrimaryClip(clip)
+                    },
                     modifier = Modifier.weight(1f)
                 ) {
-                    Text("Copy")
+                    Text(copyLabel)
                 }
             }
 
@@ -128,6 +142,41 @@ fun HcmAfScreen(viewModel: HcmAfViewModel = viewModel()) {
         }
     }
 }
+
+@Composable
+private fun getResult(uiState: HcmAfUiState): String {
+    // Formats UiState into a result or error string.
+    if (uiState.error != null) {
+        when (uiState.error) {
+            is HcmAfValidationError.LaDiameterOutOfRange ->
+                return stringResource(R.string.hcm_af_la_diameter_out_of_range)
+
+            is HcmAfValidationError.AgeAtEvalOutOfRange ->
+                return stringResource(R.string.hcm_af_age_at_evaluation_out_of_range)
+
+            is HcmAfValidationError.AgeAtDxOutOfRange ->
+                return stringResource(R.string.hcm_af_age_at_diagnosis_out_of_range)
+
+            is HcmAfValidationError.ParsingError ->
+                return stringResource(R.string.hcm_af_parsing_error)
+
+            is HcmAfValidationError.ScoreOutOfRange ->
+                return stringResource(R.string.hcm_af_score_out_of_range)
+        }
+    }
+    if (uiState.riskData == null) {
+        return stringResource(R.string.hcm_af_enter_values)
+    }
+    val riskData = uiState.riskData
+    return stringResource(
+        id = R.string.hcm_af_result_success,
+        riskData.score,
+        riskData.riskCategory.displayName,
+        riskData.riskAt2YearsPercent,
+        riskData.riskAt5YearsPercent
+    )
+}
+
 
 @Preview(showBackground = true)
 @Composable
