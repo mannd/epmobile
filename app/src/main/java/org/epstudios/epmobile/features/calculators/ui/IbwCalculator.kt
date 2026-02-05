@@ -149,22 +149,31 @@ class IbwCalculator : EpActivity() {
         binding.weightEditText.requestFocus()
     }
 
-    private fun idealBodyWeight(height: Double, isMale: Boolean): Double {
-        var weight = if (height > 60.0) (height - 60.0) * 2.3 else 0.0
-        weight += if (isMale) 50.0 else 45.5
-        return weight
+    companion object {
+        @JvmStatic
+        public fun idealBodyWeight(height: Double, isMale: Boolean): Double {
+            var weight = if (height > 60.0) (height - 60.0) * 2.3 else 0.0
+            weight += if (isMale) 50.0 else 45.5
+            return weight
+        }
+
+        @JvmStatic
+        fun adjustedBodyWeight(ibw: Double, actualWeight: Double): Double {
+            val abw = ibw + 0.4 * (actualWeight - ibw)
+            return if (actualWeight > ibw) abw else actualWeight
+        }
+
+        @JvmStatic
+        fun isOverweight(ibw: Double, actualWeight: Double) = actualWeight > ibw * 1.3
+
+        @JvmStatic
+        fun isUnderHeight(height: Double) = height <= 60.0
+
+        @JvmStatic
+        fun isUnderWeight(weight: Double, ibw: Double) = weight < ibw
     }
 
-    private fun adjustedBodyWeight(ibw: Double, actualWeight: Double): Double {
-        val abw = ibw + 0.4 * (actualWeight - ibw)
-        return if (actualWeight > ibw) abw else actualWeight
-    }
 
-    private fun isOverweight(ibw: Double, actualWeight: Double) = actualWeight > ibw * 1.3
-
-    private fun isUnderHeight(height: Double) = height <= 60.0
-
-    private fun isUnderWeight(weight: Double, ibw: Double) = weight < ibw
 
     override fun hideInstructionsMenuItem() = false
 
