@@ -12,6 +12,7 @@ This project roughly utilizes [Semantic Versioning](https://semver.org/spec/v2.0
 - Other miscellaneous changes
 ### Fixed
 - Main menu label sizes
+- Fix gradle incompatibilities in unreleased 2.40.0 version
 
 ## [2.39.0] - 2026-01-03
 ### Added
