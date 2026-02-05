@@ -1,7 +1,7 @@
 package org.epstudios.epmobile.features.algorithms.ui
 
+import android.app.Activity
 import android.content.Intent
-import androidx.activity.compose.LocalActivity
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -124,7 +124,7 @@ fun AlgorithmView(model: Algorithm) {
                 }
 
                 if (showResult) {
-                    val activity = LocalActivity.current
+                    val activity = LocalContext.current as Activity
                     AlertDialog(
                         onDismissRequest = { showResult = false },
                         title = { Text(model.resultTitle) },
