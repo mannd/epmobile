@@ -1,0 +1,6 @@
+EP Mobile 2.40.0 Release Notes
+Changes since 2.39.0
+- Updated UI in all calculators to modern Android Material Design 3
+- Converted multiple modules from Java to Kotlin
+- Other miscellaneous changes
+- Fixed main menu label sizes

@@ -2,8 +2,8 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
-    id 'org.jetbrains.kotlin.plugin.serialization' version '2.3.0'
-    id 'org.jetbrains.kotlin.plugin.compose' version '2.3.0'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '2.3.10'
+    id 'org.jetbrains.kotlin.plugin.compose' version '2.3.10'
 }
 
 android {
@@ -18,8 +18,8 @@ android {
         applicationId "org.epstudios.epmobile"
         minSdkVersion 24
         targetSdkVersion 35
-        versionCode 92
-        versionName "2.39.0"
+        versionCode 93
+        versionName "2.40.0"
     }
 
     buildFeatures {
