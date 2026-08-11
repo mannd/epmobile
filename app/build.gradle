@@ -1,23 +1,21 @@
 plugins {
     id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
-    id 'kotlin-kapt'
-    id 'org.jetbrains.kotlin.plugin.serialization' version '2.0.0'
-    id 'org.jetbrains.kotlin.plugin.compose' version '2.0.0'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '2.4.10'
+    id 'org.jetbrains.kotlin.plugin.compose' version '2.4.10'
 }
 
 android {
-    compileSdk = 36
+    compileSdk = 37
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
     }
 
     defaultConfig {
         applicationId "org.epstudios.epmobile"
         minSdkVersion 24
-        targetSdkVersion 35
+        targetSdkVersion 37
         versionCode 94
         versionName "2.40.1"
     }
@@ -38,9 +36,6 @@ android {
         buildConfig = true
         compose = true
     }
-    kotlinOptions {
-        jvmTarget = '17'
-    }
     sourceSets {
         test.resources.srcDirs += 'src/test/res'
     }
@@ -50,32 +45,32 @@ android {
 }
 
 dependencies {
-    implementation 'com.google.android.material:material:1.13.0'
-    implementation 'androidx.webkit:webkit:1.15.0'
+    implementation 'com.google.android.material:material:1.14.0'
+    implementation 'androidx.webkit:webkit:1.16.0'
     implementation 'androidx.appcompat:appcompat:1.7.1'
-    implementation(platform("org.jetbrains.kotlin:kotlin-bom:2.0.0"))
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:2.4.10"))
     implementation('androidx.preference:preference-ktx:1.2.1') {
         exclude group: 'androidx.lifecycle', module:'lifecycle-viewmodel'
         exclude group: 'androidx.lifecycle', module:'lifecycle-viewmodel-ktx'
     }
-    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.0'
-    implementation 'androidx.core:core-ktx:1.17.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.11.0'
+    implementation 'androidx.core:core-ktx:1.19.0'
     // Jetpack Compose
-    implementation(platform("androidx.compose:compose-bom:2024.06.00"))
+    implementation(platform("androidx.compose:compose-bom:2026.06.01"))
     implementation "androidx.compose.ui:ui"
     implementation "androidx.compose.ui:ui-tooling-preview"
     implementation "androidx.compose.material3:material3"
     implementation "androidx.compose.material:material-icons-extended"
     implementation "androidx.activity:activity-compose"
-    implementation "androidx.navigation:navigation-compose:2.9.7"
-    implementation "org.jetbrains.kotlin:kotlin-test:2.0.0"
+    implementation "androidx.navigation:navigation-compose:2.9.8"
+    implementation "org.jetbrains.kotlin:kotlin-test:2.4.10"
 
     testImplementation 'androidx.test.ext:junit:1.3.0'
     testImplementation 'androidx.test:core:1.7.0'
     testImplementation 'org.robolectric:robolectric:4.16.1'
     testImplementation 'com.google.truth:truth:1.4.5'
     testImplementation 'junit:junit:4.13.2'
-    testImplementation 'org.mockito:mockito-core:5.21.0'
+    testImplementation 'org.mockito:mockito-core:5.23.0'
     testImplementation "app.cash.turbine:turbine:1.2.1"
-    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.9.0-RC"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.11.0"
 }
