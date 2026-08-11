@@ -104,8 +104,11 @@ class IbwCalculator : EpActivity() {
             val formattedIbw = DecimalFormat("#.0").format(displayIbw)
             val formattedAbw = DecimalFormat("#.0").format(displayAbw)
 
-            binding.ibwResultTextView.text = "${getString(R.string.ibw_label)} = $formattedIbw $weightUnitAbbreviation"
-            binding.abwResultTextView.text = "${getString(R.string.abw_label)} = $formattedAbw $weightUnitAbbreviation"
+            binding.ibwResultTextView.text = getString(R.string.alt_ibw_label, formattedIbw,
+                weightUnitAbbreviation
+            )
+            binding.abwResultTextView.text = getString(R.string.alt_abw_label, formattedAbw,
+                weightUnitAbbreviation)
 
             val underHeight = isUnderHeight(height)
             val overWeight = isOverweight(ibw, weight)
@@ -118,7 +121,7 @@ class IbwCalculator : EpActivity() {
                 else -> getString(R.string.normalweight_message, "$formattedIbw $weightUnitAbbreviation")
             }
 
-        } catch (e: NumberFormatException) {
+        } catch (_: NumberFormatException) {
             binding.ibwResultTextView.text = getString(R.string.invalid_warning)
             binding.ibwResultTextView.setTextAppearance(R.style.TextAppearance_Calculator_Error)
             binding.abwResultTextView.text = getString(R.string.invalid_warning)
@@ -151,7 +154,7 @@ class IbwCalculator : EpActivity() {
 
     companion object {
         @JvmStatic
-        public fun idealBodyWeight(height: Double, isMale: Boolean): Double {
+        fun idealBodyWeight(height: Double, isMale: Boolean): Double {
             var weight = if (height > 60.0) (height - 60.0) * 2.3 else 0.0
             weight += if (isMale) 50.0 else 45.5
             return weight
