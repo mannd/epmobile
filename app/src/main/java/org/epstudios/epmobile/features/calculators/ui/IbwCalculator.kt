@@ -104,8 +104,11 @@ class IbwCalculator : EpActivity() {
             val formattedIbw = DecimalFormat("#.0").format(displayIbw)
             val formattedAbw = DecimalFormat("#.0").format(displayAbw)
 
-            binding.ibwResultTextView.text = "${getString(R.string.ibw_label)} = $formattedIbw $weightUnitAbbreviation"
-            binding.abwResultTextView.text = "${getString(R.string.abw_label)} = $formattedAbw $weightUnitAbbreviation"
+            binding.ibwResultTextView.text = getString(R.string.alt_ibw_label, formattedIbw,
+                weightUnitAbbreviation
+            )
+            binding.abwResultTextView.text = getString(R.string.alt_abw_label, formattedAbw,
+                weightUnitAbbreviation)
 
             val underHeight = isUnderHeight(height)
             val overWeight = isOverweight(ibw, weight)
@@ -118,7 +121,7 @@ class IbwCalculator : EpActivity() {
                 else -> getString(R.string.normalweight_message, "$formattedIbw $weightUnitAbbreviation")
             }
 
-        } catch (e: NumberFormatException) {
+        } catch (_: NumberFormatException) {
             binding.ibwResultTextView.text = getString(R.string.invalid_warning)
             binding.ibwResultTextView.setTextAppearance(R.style.TextAppearance_Calculator_Error)
             binding.abwResultTextView.text = getString(R.string.invalid_warning)
@@ -149,22 +152,31 @@ class IbwCalculator : EpActivity() {
         binding.weightEditText.requestFocus()
     }
 
-    private fun idealBodyWeight(height: Double, isMale: Boolean): Double {
-        var weight = if (height > 60.0) (height - 60.0) * 2.3 else 0.0
-        weight += if (isMale) 50.0 else 45.5
-        return weight
+    companion object {
+        @JvmStatic
+        fun idealBodyWeight(height: Double, isMale: Boolean): Double {
+            var weight = if (height > 60.0) (height - 60.0) * 2.3 else 0.0
+            weight += if (isMale) 50.0 else 45.5
+            return weight
+        }
+
+        @JvmStatic
+        fun adjustedBodyWeight(ibw: Double, actualWeight: Double): Double {
+            val abw = ibw + 0.4 * (actualWeight - ibw)
+            return if (actualWeight > ibw) abw else actualWeight
+        }
+
+        @JvmStatic
+        fun isOverweight(ibw: Double, actualWeight: Double) = actualWeight > ibw * 1.3
+
+        @JvmStatic
+        fun isUnderHeight(height: Double) = height <= 60.0
+
+        @JvmStatic
+        fun isUnderWeight(weight: Double, ibw: Double) = weight < ibw
     }
 
-    private fun adjustedBodyWeight(ibw: Double, actualWeight: Double): Double {
-        val abw = ibw + 0.4 * (actualWeight - ibw)
-        return if (actualWeight > ibw) abw else actualWeight
-    }
 
-    private fun isOverweight(ibw: Double, actualWeight: Double) = actualWeight > ibw * 1.3
-
-    private fun isUnderHeight(height: Double) = height <= 60.0
-
-    private fun isUnderWeight(weight: Double, ibw: Double) = weight < ibw
 
     override fun hideInstructionsMenuItem() = false
 

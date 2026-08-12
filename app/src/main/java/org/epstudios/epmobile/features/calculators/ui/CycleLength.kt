@@ -80,7 +80,9 @@ class CycleLength : EpActivity() {
         binding.inputEditText.requestFocus()
     }
 
+
     companion object {
+        @JvmStatic
         fun calculate(value: Int): Int {
             require(value != 0)
             return (60000.0 / value).roundToInt()

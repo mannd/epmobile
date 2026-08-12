@@ -4,6 +4,7 @@ import junit.framework.TestCase;
 
 import org.epstudios.epmobile.features.calculators.ui.CycleLength;
 
+
 public class CycleLengthCalculatorTest extends TestCase {
 
 	public void testCalculate() {

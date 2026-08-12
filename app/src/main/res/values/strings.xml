@@ -994,10 +994,12 @@
     <string name="height_hint">Height</string>
     <string name="height_inches_hint">Height (in)</string>
     <string name="ibw_label">Ideal Body Weight (kg)</string>
+    <string name="alt_ibw_label">Ideal Body Weight (kg) = %1$s %2$s</string>
     <string name="ibw_hint">IBW (kg)</string>
     <string name="ibw_lb_label">Ideal Body Weight (lb)</string>
     <string name="ibw_lb_hint">IBW (lb)</string>
     <string name="abw_label">Adjusted Body Weight (kg)</string>
+    <string name="alt_abw_label">Adjusted Body Weight (kg) = %1$s %2$s</string>
     <string name="abw_hint">ABW (kg)</string>
     <string name="abw_lb_label">Adjusted Body Weight (lb)</string>
     <string name="abw_lb_hint">ABW (lb)</string>
